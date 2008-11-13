@@ -98,6 +98,8 @@ static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 	unsigned int nid = (cmd >> 20) & 0x7f;
 	unsigned int verb = (cmd >> 8) & 0xfff;
 	unsigned int parm = cmd & 0xff;
+	int err;
+
 	hda_log(HDA_LOG_VERB,
 		"send: NID=0x%x, VERB=0x%x(%s), PARM=0x%x",
 		nid, verb, get_verb_name(cmd), parm);
@@ -106,10 +108,13 @@ static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 			get_parameter_name(cmd));
 	hda_log(HDA_LOG_VERB, "\n");
 
-	if (hda_cmd(&proc, cmd) < 0)
+	err = hda_cmd(&proc, cmd);
+	if (err < 0) {
 		hda_log(HDA_LOG_VERB, "invalid command: "
 			"NID=0x%x, verb=0x%x, parm=0x%x\n",
 			nid, verb, parm);
+		return err;
+	}
 	return 0;
 }
 
