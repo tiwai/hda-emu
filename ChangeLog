@@ -1,0 +1,9 @@
+* version 0.0.2:
+
+Takashi Iwai (5):
+      Return error code in cmd_send() of hda-emu
+      Insert widgets in the order of NID
+      Build hda_beep.c
+      Updated kernel/* files
+      More codec files
+
