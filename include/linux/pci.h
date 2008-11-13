@@ -2,6 +2,7 @@
 #define __LINUX_PCI_H
 
 #include "wrapper.h"
+#include <linux/device.h>
 
 struct pci_dev {
 	unsigned short vendor;
@@ -9,6 +10,7 @@ struct pci_dev {
 	unsigned short subsystem_vendor;
 	unsigned short subsystem_device;
 	unsigned short revision;
+	struct device dev;
 };
 
 #endif /* __LINUX_PCI_H */

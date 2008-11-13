@@ -24,13 +24,21 @@
 #define KERN_ERR
 
 typedef uint64_t u64;
+typedef uint64_t __u64;
 typedef int64_t s64;
+typedef int64_t __s64;
 typedef uint32_t u32;
+typedef uint32_t __u32;
 typedef int32_t s32;
+typedef int32_t __s32;
 typedef uint16_t u16;
+typedef uint16_t __u16;
 typedef int16_t s16;
+typedef int16_t __s16;
 typedef uint8_t u8;
+typedef uint8_t __u8;
 typedef int8_t s8;
+typedef int8_t __s8;
 
 #define PAGE_SIZE	4096
 
@@ -38,29 +46,6 @@ typedef int8_t s8;
 #define module_param(a,b,c) b *a##_parameter = &a
 #define module_param_array(a,b,c,d)
 #define MODULE_PARM_DESC(a,b)
-
-struct work_struct {
-	void (*func)(struct work_struct *);
-};
-
-struct delayed_work {
-	struct work_struct work;
-};
-
-extern struct delayed_work *__work_pending;
-
-#define INIT_WORK(x,y) ((x)->func = (y))
-#define schedule_work(x) (x)->func(x)
-#define INIT_DELAYED_WORK(x,y) ((x)->work.func = (y))
-#define schedule_delayed_work(x,y) __work_pending = (x)
-#define cancel_delayed_work(x)
-static inline void flush_scheduled_work(void)
-{
-	if (__work_pending) {
-		__work_pending->work.func(&__work_pending->work);
-		__work_pending = NULL;
-	}
-}
 
 #define EXPORT_SYMBOL(x)
 
@@ -99,5 +84,15 @@ typedef int pm_message_t;
 #define PCI_VENDOR_ID_DELL		0x1028
 #define PCI_VENDOR_ID_HP		0x103c
 #define PCI_VENDOR_ID_INTEL		0x8086
+
+typedef int spinlock_t;
+
+#define BITS_PER_LONG		(sizeof(long) * 8)
+#define BIT(nr)			(1UL << (nr))
+#define BIT_MASK(nr)		(1UL << ((nr) % BITS_PER_LONG))
+#define BIT_WORD(nr)		((nr) / BITS_PER_LONG)
+#define BITS_PER_BYTE		8
+
+#include <linux/workqueue.h>
 
 #endif /* __HDA_WRAPPER_H */
