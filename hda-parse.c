@@ -57,16 +57,28 @@ static struct xhda_node *create_node(unsigned int nid, unsigned int wcaps)
 	struct xhda_node **prevp;
 
 	node = calloc(1, sizeof(*node));
-	if (!node)
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "No memory left\n");
 		return NULL;
+	}
 	node->nid = nid;
 	node->wcaps = wcaps;
 
 	if (nid > codec->num_widgets)
 		codec->num_widgets = nid;
-	/* append it */
-	for (prevp = &codec->afg.next; *prevp; prevp = &(*prevp)->next)
-		;
+	/* insert it */
+	for (prevp = &codec->afg.next; *prevp; prevp = &(*prevp)->next) {
+		if ((*prevp)->nid >= nid) {
+			if ((*prevp)->nid == nid) {
+				hda_log(HDA_LOG_ERR,
+					"Duplicated widget NID 0x%x\n", nid);
+				free(node);
+				return NULL;
+			}
+			break;
+		}
+	}
+	node->next = *prevp;
 	*prevp = node;
 	return node;
 }
@@ -93,10 +105,8 @@ static int parse_node(const char *buf)
 		return -EINVAL;
 	}
 	current_node = create_node(nid, wcaps);
-	if (!current_node) {
-		hda_log(HDA_LOG_ERR, "No memory left\n");
+	if (!current_node)
 		return -ENOMEM;
-	}
 	parse_mode = PARSE_NODE;
 	return 0;
 }
