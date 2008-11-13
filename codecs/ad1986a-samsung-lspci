@@ -1,0 +1,136 @@
+00:00.0 Class 0600: 8086:2590 (rev 03)
+	Subsystem: 144d:c014
+	Flags: bus master, fast devsel, latency 0
+	Capabilities: [e0] #09 [2109]
+
+00:01.0 Class 0604: 8086:2591 (rev 03)
+	Flags: bus master, fast devsel, latency 0
+	Bus: primary=00, secondary=01, subordinate=01, sec-latency=0
+	Memory behind bridge: 90000000-afffffff
+	Prefetchable memory behind bridge: c0000000-cfffffff
+	Capabilities: [88] #0d [0000]
+	Capabilities: [80] Power Management version 2
+	Capabilities: [90] Message Signalled Interrupts: 64bit- Queue=0/0 Enable-
+	Capabilities: [a0] #10 [0141]
+
+00:1b.0 Class 0403: 8086:2668 (rev 03)
+	Subsystem: 144d:c014
+	Flags: bus master, fast devsel, latency 0, IRQ 11
+	Memory at 80000000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: [50] Power Management version 2
+	Capabilities: [60] Message Signalled Interrupts: 64bit+ Queue=0/0 Enable-
+	Capabilities: [70] #10 [0091]
+
+00:1c.0 Class 0604: 8086:2660 (rev 03)
+	Flags: bus master, fast devsel, latency 0
+	Bus: primary=00, secondary=02, subordinate=02, sec-latency=0
+	I/O behind bridge: 00002000-00002fff
+	Memory behind bridge: b0000000-b3ffffff
+	Prefetchable memory behind bridge: 00000000d0000000-00000000d3f00000
+	Capabilities: [40] #10 [0141]
+	Capabilities: [80] Message Signalled Interrupts: 64bit- Queue=0/0 Enable-
+	Capabilities: [90] #0d [0000]
+	Capabilities: [a0] Power Management version 2
+
+00:1d.0 Class 0c03: 8086:2658 (rev 03)
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 0, IRQ 5
+	I/O ports at 1800 [size=32]
+
+00:1d.1 Class 0c03: 8086:2659 (rev 03)
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 0, IRQ 5
+	I/O ports at 1820 [size=32]
+
+00:1d.2 Class 0c03: 8086:265a (rev 03)
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 0, IRQ 5
+	I/O ports at 1840 [size=32]
+
+00:1d.3 Class 0c03: 8086:265b (rev 03)
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 0, IRQ 11
+	I/O ports at 1860 [size=32]
+
+00:1d.7 Class 0c03: 8086:265c (rev 03) (prog-if 20)
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 0, IRQ 5
+	Memory at 80004000 (32-bit, non-prefetchable) [size=1K]
+	Capabilities: [50] Power Management version 2
+	Capabilities: [58] #0a [20a0]
+
+00:1e.0 Class 0604: 8086:2448 (rev d3) (prog-if 01)
+	Flags: bus master, fast devsel, latency 0
+	Bus: primary=00, secondary=06, subordinate=06, sec-latency=32
+	Memory behind bridge: b4000000-b40fffff
+	Capabilities: [50] #0d [0000]
+
+00:1f.0 Class 0601: 8086:2641 (rev 03)
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 0
+
+00:1f.1 Class 0101: 8086:266f (rev 03) (prog-if 8a [Master SecP PriP])
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 0
+	I/O ports at <unassigned>
+	I/O ports at <unassigned>
+	I/O ports at <unassigned>
+	I/O ports at <unassigned>
+	I/O ports at 1880 [size=16]
+
+00:1f.3 Class 0c05: 8086:266a (rev 03)
+	Subsystem: 144d:c014
+	Flags: medium devsel, IRQ 5
+	I/O ports at 18a0 [size=32]
+
+01:00.0 Class 0300: 10de:0148 (rev a2)
+	Flags: bus master, fast devsel, latency 0, IRQ 11
+	Memory at a0000000 (32-bit, non-prefetchable) [size=64M]
+	Memory at c0000000 (64-bit, prefetchable) [size=128M]
+	Memory at 90000000 (64-bit, non-prefetchable) [size=16M]
+	Expansion ROM at <unassigned> [disabled] [size=128K]
+	Capabilities: [60] Power Management version 2
+	Capabilities: [68] Message Signalled Interrupts: 64bit+ Queue=0/0 Enable-
+	Capabilities: [78] #10 [0001]
+
+06:05.0 Class 0200: 14e4:169c (rev 03)
+	Subsystem: 144d:c018
+	Flags: bus master, 66Mhz, medium devsel, latency 64, IRQ 5
+	Memory at b4000000 (32-bit, non-prefetchable) [size=64K]
+	Capabilities: [48] Power Management version 2
+	Capabilities: [50] Vital Product Data
+	Capabilities: [58] Message Signalled Interrupts: 64bit+ Queue=0/3 Enable-
+
+06:09.0 Class 0607: 1180:0476 (rev b3)
+	Subsystem: 144d:c014
+	Flags: bus master, medium devsel, latency 64
+	Memory at 10000000 (32-bit, non-prefetchable) [size=4K]
+	Bus: primary=06, secondary=07, subordinate=0a, sec-latency=0
+	I/O window 0: 00000000-00000003
+	I/O window 1: 00000000-00000003
+	16-bit legacy interface ports at 0001
+
+06:09.1 Class 0c00: 1180:0552 (rev 08) (prog-if 10)
+	Subsystem: 144d:401e
+	Flags: medium devsel, IRQ 10
+	Memory at b4010000 (32-bit, non-prefetchable) [disabled] [size=2K]
+	Capabilities: [dc] Power Management version 2
+
+06:09.2 Class 0805: 1180:0822 (rev 17)
+	Subsystem: 144d:401e
+	Flags: medium devsel, IRQ 5
+	Memory at b4010800 (32-bit, non-prefetchable) [disabled] [size=256]
+	Capabilities: [80] Power Management version 2
+
+06:09.3 Class 0880: 1180:0592 (rev 08)
+	Subsystem: 144d:401e
+	Flags: medium devsel, IRQ 5
+	Memory at b4010c00 (32-bit, non-prefetchable) [disabled] [size=256]
+	Capabilities: [80] Power Management version 2
+
+06:09.4 Class 0880: 1180:0852 (rev 03)
+	Subsystem: 144d:401e
+	Flags: medium devsel, IRQ 5
+	Memory at b4011000 (32-bit, non-prefetchable) [disabled] [size=256]
+	Capabilities: [80] Power Management version 2
+

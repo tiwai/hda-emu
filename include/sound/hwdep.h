@@ -1,0 +1,3 @@
+/*
+ */
+struct snd_hwdep;

@@ -1,0 +1,888 @@
+/*
+ * hda-emu - simple HD-audio codec emulator for debugging snd-hda-intel driver
+ *
+ * Emulate the communication of HD-audio codec
+ *
+ * Copyright (c) Takashi Iwai <tiwai@suse.de>
+ *
+ *  This driver is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This driver is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ */
+
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+#include "hda-types.h"
+#include "hda-log.h"
+
+
+#define AC_AMP_GET_LEFT			(1<<13)
+#define AC_AMP_GET_RIGHT		(0<<13)
+#define AC_AMP_GET_OUTPUT		(1<<15)
+#define AC_AMP_GET_INPUT		(0<<15)
+
+#define AC_AMP_SET_INDEX		(0xf<<8)
+#define AC_AMP_SET_INDEX_SHIFT		8
+#define AC_AMP_SET_RIGHT		(1<<12)
+#define AC_AMP_SET_LEFT			(1<<13)
+#define AC_AMP_SET_INPUT		(1<<14)
+#define AC_AMP_SET_OUTPUT		(1<<15)
+
+/* Audio Widget Capabilities */
+#define AC_WCAP_STEREO			(1<<0)	/* stereo I/O */
+#define AC_WCAP_IN_AMP			(1<<1)	/* AMP-in present */
+#define AC_WCAP_OUT_AMP			(1<<2)	/* AMP-out present */
+#define AC_WCAP_AMP_OVRD		(1<<3)	/* AMP-parameter override */
+#define AC_WCAP_FORMAT_OVRD		(1<<4)	/* format override */
+#define AC_WCAP_STRIPE			(1<<5)	/* stripe */
+#define AC_WCAP_PROC_WID		(1<<6)	/* Proc Widget */
+#define AC_WCAP_UNSOL_CAP		(1<<7)	/* Unsol capable */
+#define AC_WCAP_CONN_LIST		(1<<8)	/* connection list */
+#define AC_WCAP_DIGITAL			(1<<9)	/* digital I/O */
+#define AC_WCAP_POWER			(1<<10)	/* power control */
+#define AC_WCAP_LR_SWAP			(1<<11)	/* L/R swap */
+#define AC_WCAP_DELAY			(0xf<<16)
+#define AC_WCAP_DELAY_SHIFT		16
+#define AC_WCAP_TYPE			(0xf<<20)
+#define AC_WCAP_TYPE_SHIFT		20
+
+
+/*
+ */
+
+struct verb_table {
+	unsigned int verb;
+	int (*func)(struct xhda_codec *codec, struct xhda_node *node,
+		    unsigned int cmd);
+	const char *name;
+};
+
+static const struct verb_table *
+find_verb(unsigned int verb, const struct verb_table *tbl)
+{
+	for (; tbl->verb || tbl->func; tbl++)
+		if (tbl->verb == verb)
+			return tbl;
+	return NULL;
+}
+
+/*
+ */
+
+static int set_stream_format(struct xhda_codec *codec, struct xhda_node *node,
+			     unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->stream_format = cmd & 0xffff;
+	return 0;
+}
+
+static int get_stream_format(struct xhda_codec *codec, struct xhda_node *node,
+			     unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->stream_format;
+}
+
+static int set_amp(struct xhda_amp_vals *vals, unsigned int ampval)
+{
+	unsigned int idx;
+	idx = (ampval & AC_AMP_SET_INDEX) >> AC_AMP_SET_INDEX_SHIFT;
+	if (idx >= HDA_MAX_CONNECTIONS) {
+		hda_log(HDA_LOG_INFO, "invalid amp index %d\n", idx);
+		return 0;
+	}
+	if (ampval & AC_AMP_SET_LEFT)
+		vals->vals[idx][0] = ampval & 0xff;
+	if (ampval & AC_AMP_SET_RIGHT)
+		vals->vals[idx][1] = ampval & 0xff;
+	return 0;
+}
+
+static int set_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
+			     unsigned int cmd)
+{
+	unsigned int ampval;
+
+	if (!node)
+		return 0;
+	ampval = cmd & 0xffff;
+	if (ampval & AC_AMP_SET_OUTPUT)
+		set_amp(&node->amp_out_vals, ampval);
+	if (ampval & AC_AMP_SET_INPUT)
+		set_amp(&node->amp_in_vals, ampval);
+	return 0;
+}
+
+static int get_amp(struct xhda_amp_vals *vals, unsigned int ampval)
+{
+	unsigned int idx;
+	idx = (ampval & AC_AMP_SET_INDEX) >> AC_AMP_SET_INDEX_SHIFT;
+	if (idx >= HDA_MAX_CONNECTIONS)
+		return 0;
+	if (ampval & AC_AMP_GET_LEFT)
+		return vals->vals[idx][0];
+	else
+		return vals->vals[idx][1];
+}
+
+static int get_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
+			     unsigned int cmd)
+{
+	unsigned int ampval;
+
+	if (!node)
+		return 0;
+	ampval = cmd & 0xffff;
+	if (ampval & AC_AMP_GET_OUTPUT)
+		return get_amp(&node->amp_out_vals, ampval);
+	else
+		return get_amp(&node->amp_in_vals, ampval);
+}
+
+static int set_connect_sel(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	unsigned int sel;
+
+	if (!node)
+		return 0;
+	sel = cmd & 0xff;
+	if (sel < node->num_nodes)
+		node->curr_conn = sel;
+	return 0;
+}
+
+static int get_connect_sel(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->curr_conn;
+}
+
+static int get_connect_list(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	unsigned int idx, i;
+	unsigned int val;
+	if (!node)
+		return 0;
+	idx = cmd & 0xff;
+	if (idx >= node->num_nodes)
+		return 0;
+	val = 0;
+	for (i = 0; i < 4; i++, idx++) {
+		if (idx >= node->num_nodes)
+			break;
+		val |= node->node[idx] << (i * 8);
+	}
+	return val;
+}
+
+static int set_proc_state(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	node->proc_state = cmd & 0xff;
+	return 0;
+}
+
+static int get_proc_state(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	return node->proc_state;
+}
+
+static int set_power_state(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	if (node->nid != 0x01 &&
+	    (!node->wcaps & AC_WCAP_POWER))
+		return 0;
+	node->power_setting = cmd & 0x0f;
+	node->power_current = node->power_setting;
+	return 0;
+}
+
+static int get_power_state(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->power_setting | (node->power_current << 4);
+}
+
+static int set_sdi_select(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	node->sdi = cmd & 0x0f;
+	return 0;
+}
+
+static int get_sdi_select(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	return node->sdi;
+}
+
+static int set_channel_streamid(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->streamid = cmd & 0xff;
+	return 0;
+}
+
+static int get_channel_streamid(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->streamid;
+}
+
+static int set_pin_ctl(struct xhda_codec *codec, struct xhda_node *node,
+		       unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->pinctl = cmd & 0xff;
+	return 0;
+}
+
+static int get_pin_ctl(struct xhda_codec *codec, struct xhda_node *node,
+		       unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->pinctl;
+}
+
+static int set_unsol_enable(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->unsol = cmd & 0xff;
+	return 0;
+}
+
+static int get_unsol_resp(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->unsol;
+}
+
+static int exec_pin_sense(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	return 0;
+}
+
+static int get_pin_sense(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	return node->jack_state ? (1 << 31) : 0;
+}
+
+static int set_eapd_btl(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->eapd = cmd & 0xff;
+	return 0;
+}
+
+static int get_eapd_btl(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->eapd;
+}
+
+static int set_digi_cvt_1(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->dig_conv = cmd & 0xff;
+	return 0;
+}
+
+static int set_digi_cvt_2(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->dig_category = cmd & 0xff;
+	return 0;
+}
+
+static int get_digi_cvt(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return (node->dig_category << 8) | node->dig_conv;
+}
+
+static int set_config_def_0(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->pin_default &= ~0xff;
+	node->pin_default |= (cmd & 0xff);
+	return 0;
+}
+
+static int set_config_def_1(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->pin_default &= ~0xff00;
+	node->pin_default |= (cmd & 0xff) << 8;
+	return 0;
+}
+
+static int set_config_def_2(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->pin_default &= ~0xff0000;
+	node->pin_default |= (cmd & 0xff) << 16;
+	return 0;
+}
+
+static int set_config_def_3(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->pin_default &= ~0xff000000;
+	node->pin_default |= (cmd & 0xff) << 24;
+	return 0;
+}
+
+static int get_config_default(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->pin_default;
+}
+
+static int get_ssid(struct xhda_codec *codec, struct xhda_node *node,
+		    unsigned int cmd)
+{
+	return codec->subsystem_id;
+}
+
+static int set_codec_reset(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	hda_log(HDA_LOG_INFO, "CODEC RESET\n");
+	return 0;
+}
+
+static int set_coef_index(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	node->coef_idx = cmd & 0xffff;
+	return 0;
+}
+
+static int get_coef_index(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	return node->coef_idx;
+}
+
+static struct xhda_coef_table *find_proc_coef(struct xhda_node *node,
+					      unsigned int idx)
+{
+	struct xhda_coef_table *tbl;
+	for (tbl = node->coef_tbl; tbl; tbl = tbl->next) {
+		if (tbl->idx == idx)
+			return tbl;
+	}
+	return NULL;
+}
+
+static struct xhda_coef_table *create_proc_coef(struct xhda_node *node,
+						unsigned int idx)
+{
+	struct xhda_coef_table *tbl;
+	tbl = calloc(1, sizeof(*tbl));
+	if (!tbl)
+		return NULL;
+	tbl->idx = idx;
+	tbl->next = node->coef_tbl;
+	node->coef_tbl = tbl;
+	return tbl;
+}
+
+static int set_proc_coef(struct xhda_codec *codec, struct xhda_node *node,
+			 unsigned int cmd)
+{
+	struct xhda_coef_table *tbl;
+	tbl = find_proc_coef(node, node->coef_idx);
+	if (!tbl) {
+		tbl = create_proc_coef(node, node->coef_idx);
+		if (!tbl)
+			return 0;
+	}
+	tbl->value = cmd & 0xffff;
+	node->coef_idx++;
+	return 0;
+}
+
+static int get_proc_coef(struct xhda_codec *codec, struct xhda_node *node,
+			 unsigned int cmd)
+{
+	struct xhda_coef_table *tbl;
+	tbl = find_proc_coef(node, node->coef_idx);
+	node->coef_idx++;
+	return tbl ? tbl->value : 0;
+}
+
+static int set_beep_ctl(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	node->beep_div = cmd & 0xff;
+	return 0;
+}
+
+static int get_beep_ctl(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	return node->beep_div;
+}
+
+static int set_volknob_ctl(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	node->volknob_ctl = cmd & 0xff;
+	return 0;
+}
+
+static int get_volknob_ctl(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	return node->volknob_ctl;
+}
+
+static int set_gpio_data(struct xhda_codec *codec, struct xhda_node *node,
+			 unsigned int cmd)
+{
+	node->gpio_data = cmd & 0xff;
+	return 0;
+}
+
+static int get_gpio_data(struct xhda_codec *codec, struct xhda_node *node,
+			 unsigned int cmd)
+{
+	return node->gpio_data;
+}
+
+static int set_gpio_mask(struct xhda_codec *codec, struct xhda_node *node,
+			 unsigned int cmd)
+{
+	node->gpio_mask = cmd & 0xff;
+	return 0;
+}
+
+static int get_gpio_mask(struct xhda_codec *codec, struct xhda_node *node,
+			 unsigned int cmd)
+{
+	return node->gpio_mask;
+}
+
+static int set_gpio_dir(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	node->gpio_dir = cmd & 0xff;
+	return 0;
+}
+
+static int get_gpio_dir(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	return node->gpio_dir;
+}
+
+static int set_gpio_wake_mask(struct xhda_codec *codec, struct xhda_node *node,
+			      unsigned int cmd)
+{
+	node->gpio_wake = cmd & 0xff;
+	return 0;
+}
+
+static int get_gpio_wake_mask(struct xhda_codec *codec, struct xhda_node *node,
+			      unsigned int cmd)
+{
+	return node->gpio_wake;
+}
+
+static int set_gpio_unsol_rsp(struct xhda_codec *codec, struct xhda_node *node,
+			      unsigned int cmd)
+{
+	node->gpio_unsol = cmd & 0xff;
+	return 0;
+}
+
+static int get_gpio_unsol_rsp(struct xhda_codec *codec, struct xhda_node *node,
+			      unsigned int cmd)
+{
+	return node->gpio_unsol;
+}
+
+static int set_gpio_sticky_mask(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	node->gpio_sticky = cmd & 0xff;
+	return 0;
+}
+
+static int get_gpio_sticky_mask(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	return node->gpio_sticky;
+}
+
+
+/*
+ * parameters
+ */
+static int par_vendor_id(struct xhda_codec *codec, struct xhda_node *node,
+			 unsigned int cmd)
+{
+	return codec->vendor_id;
+}	
+
+static int par_subsystem_id(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	return codec->subsystem_id;
+}	
+
+static int par_revision_id(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	return codec->revision_id;
+}	
+
+static int par_node_count(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	unsigned int start_nid;
+	if (!node)
+		return codec->num_widgets | (0x01 << 16);
+	if (!codec->afg.next)
+		return 0;
+	start_nid = codec->afg.next->nid;
+	return (codec->num_widgets - start_nid + 1) | (start_nid << 16);
+}
+
+static int par_function_type(struct xhda_codec *codec, struct xhda_node *node,
+			     unsigned int cmd)
+{
+	if (node && node->nid == 0x01)
+		return 0x01;
+	return 0;
+}
+
+static int par_fg_cap(struct xhda_codec *codec, struct xhda_node *node,
+		      unsigned int cmd)
+{
+	return 0; /* FIXME */
+}
+
+static int par_audio_widget_cap(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->wcaps;
+}
+
+static int par_pcm(struct xhda_codec *codec, struct xhda_node *node,
+		   unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->pcm.rates | (node->pcm.bits << 16);
+}
+
+static int par_stream(struct xhda_codec *codec, struct xhda_node *node,
+		      unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->pcm.formats;
+}
+
+static int par_pin_cap(struct xhda_codec *codec, struct xhda_node *node,
+		       unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->pincap;
+}
+
+static int par_amp_in_cap(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->amp_in_caps.ofs |
+		(node->amp_in_caps.nsteps << 8) |
+		(node->amp_in_caps.stepsize << 16) |
+		(node->amp_in_caps.mute << 31);
+}
+
+static int par_connlist_len(struct xhda_codec *codec, struct xhda_node *node,
+			    unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->num_nodes;
+}
+
+static int par_power_state(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	if (node->nid == 0x01)
+		return 0x0f;
+	if (node->wcaps & AC_WCAP_POWER)
+		return 0x0f;
+	return 0; /* FIXME */
+}
+
+static int par_proc_cap(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->coef_benign | (node->coef_num << 8);
+}
+
+static int par_gpio_cap(struct xhda_codec *codec, struct xhda_node *node,
+			unsigned int cmd)
+{
+	return 0; /* FIXME */
+}
+
+static int par_amp_out_cap(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	return node->amp_out_caps.ofs |
+		(node->amp_out_caps.nsteps << 8) |
+		(node->amp_out_caps.stepsize << 16) |
+		(node->amp_out_caps.mute << 31);
+}
+
+static int par_vol_knb_cap(struct xhda_codec *codec, struct xhda_node *node,
+			   unsigned int cmd)
+{
+	return 0; /* FIXME */
+}
+
+static struct verb_table par_tbl[] = {
+	{ 0x00, par_vendor_id, "vendor id" },
+	{ 0x01, par_subsystem_id, "subsystem_id"  },
+	{ 0x02, par_revision_id, "revision_id" },
+	{ 0x04, par_node_count, "node_count" },
+	{ 0x05, par_function_type, "function_type" },
+	{ 0x08, par_fg_cap, "FG_cap" },
+	{ 0x09, par_audio_widget_cap, "audio_wid_cap" },
+	{ 0x0a, par_pcm, "PCM" },
+	{ 0x0b, par_stream, "stream" },
+	{ 0x0c, par_pin_cap, "pin_cap" },
+	{ 0x0d, par_amp_in_cap, "amp_in_cap" },
+	{ 0x0e, par_connlist_len, "connect_len" },
+	{ 0x0f, par_power_state, "power_state" },
+	{ 0x10, par_proc_cap, "proc_cap" },
+	{ 0x11, par_gpio_cap, "GPIO_cap" },
+	{ 0x12, par_amp_out_cap, "amp_out_cap" },
+	{ 0x13, par_vol_knb_cap, "volknob_cap" },
+	{}
+};
+
+static int get_parameters(struct xhda_codec *codec, struct xhda_node *node,
+			  unsigned int cmd)
+{
+	const struct verb_table *tbl;
+	unsigned int par;
+
+	tbl = find_verb(cmd & 0xff, par_tbl);
+	if (tbl && tbl->func)
+		return tbl->func(codec, node, cmd);
+	return 0;
+}
+
+
+/*
+ */
+
+static struct verb_table verb_class[] = {
+	{ 2, set_stream_format, "set_stream_format" },
+	{ 3, set_amp_gain_mute, "set_amp_gain_mute" },
+	{ 4, set_proc_coef, "set_proc_coef" },
+	{ 5, set_coef_index, "set_coef_index" },
+	{ 10, get_stream_format, "get_stream_format" },
+	{ 11, get_amp_gain_mute, "get_amp_gain_mute" },
+	{ 12, get_proc_coef, "get_proc_coef" },
+	{ 13, get_coef_index, "get_coef_index" },
+	{}
+};
+
+static struct verb_table verb_tbl[] = {
+	{ 0x701, set_connect_sel, "set_connect_sel" },
+	{ 0x703, set_proc_state, "set_proc_state" },
+	{ 0x704, set_sdi_select, "set_sdi_select" },
+	{ 0x705, set_power_state, "set_power_state" },
+	{ 0x706, set_channel_streamid, "set_channel_streamid" },
+	{ 0x707, set_pin_ctl, "set_pin_ctl" },
+	{ 0x708, set_unsol_enable, "set_unsol_enable" },
+	{ 0x709, exec_pin_sense, "exec_pin_sense" },
+	{ 0x70a, set_beep_ctl, "set_beep_ctl" },
+	{ 0x70c, set_eapd_btl, "set_eapd_btl" },
+	{ 0x70d, set_digi_cvt_1, "set_digi_cvt_1" },
+	{ 0x70e, set_digi_cvt_2, "set_digi_cvt_2" },
+	{ 0x70f, set_volknob_ctl, "set_volknob_ctl" },
+	{ 0x715, set_gpio_data, "set_gpio_data" },
+	{ 0x716, set_gpio_mask, "set_gpio_mask" },
+	{ 0x717, set_gpio_dir, "set_gpio_dir" },
+	{ 0x718, set_gpio_wake_mask, "set_gpio_wake_mask" },
+	{ 0x719, set_gpio_unsol_rsp, "set_gpio_unsol_rsp" },
+	{ 0x71a, set_gpio_sticky_mask, "set_gpio_sticky_mask" },
+	{ 0x71c, set_config_def_0, "set_config_def_0" },
+	{ 0x71d, set_config_def_1, "set_config_def_1" },
+	{ 0x71e, set_config_def_2, "set_config_def_2" },
+	{ 0x71f, set_config_def_3, "set_config_def_3" },
+	{ 0x7ff, set_codec_reset, "set_codec_reset" },
+	{ 0xf00, get_parameters, "get_parameters" },
+	{ 0xf01, get_connect_sel, "get_connect_sel" },
+	{ 0xf02, get_connect_list, "get_connect_list" },
+	{ 0xf03, get_proc_state, "get_proc_state" },
+	{ 0xf04, get_sdi_select, "get_sdi_select" },
+	{ 0xf05, get_power_state, "get_power_state" },
+	{ 0xf06, get_channel_streamid, "get_channel_streamid" },
+	{ 0xf07, get_pin_ctl, "get_pin_ctl" },
+	{ 0xf08, get_unsol_resp, "get_unsol_resp" },
+	{ 0xf09, get_pin_sense, "get_pin_sense" },
+	{ 0xf0a, get_beep_ctl, "get_beep_ctl" },
+	{ 0xf0c, get_eapd_btl, "get_eapd_btl" },
+	{ 0xf0d, get_digi_cvt, "get_digi_cvt" },
+	{ 0xf0f, get_volknob_ctl, "get_volknob_ctl" },
+	{ 0xf15, get_gpio_data, "get_gpio_data" },
+	{ 0xf16, get_gpio_mask, "get_gpio_mask" },
+	{ 0xf17, get_gpio_dir, "get_gpio_dir" },
+	{ 0xf18, get_gpio_wake_mask, "get_gpio_wake_mask" },
+	{ 0xf19, get_gpio_unsol_rsp, "get_gpio_unsol_rsp" },
+	{ 0xf1a, get_gpio_sticky_mask, "get_gpio_sticky_mask" },
+	{ 0xf1c, get_config_default, "get_config_default" },
+	{ 0xf20, get_ssid, "get_ssid" },
+	{}
+};
+
+static struct xhda_node *find_node(struct xhda_codec *codec, unsigned int nid)
+{
+	struct xhda_node *node;
+
+	for (node = &codec->afg; node; node = node->next)
+		if (node->nid == nid)
+			return node;
+	return NULL;
+}
+
+int hda_cmd(struct xhda_codec *codec, unsigned int cmd)
+{
+	const struct verb_table *tbl;
+	struct xhda_node *node;
+	unsigned int nid = (cmd >> 20) & 0x7f;
+	unsigned int verb = (cmd >> 8) & 0xfff;
+
+	tbl = find_verb((verb >> 8) & 0xf, verb_class);
+	if (!tbl) {
+		tbl = find_verb(verb, verb_tbl);
+		if (!tbl)
+			return -ENXIO;
+	}
+	if (!tbl->func)
+		return 0;
+	if (!nid)
+		node = NULL;
+	else {
+		node = find_node(codec, nid);
+		if (!node)
+			return -EINVAL;
+	}
+	codec->rc = tbl->func(codec, node, cmd);
+	return 0;
+}
+
+int hda_get_jack_state(struct xhda_codec *codec, int nid)
+{
+	struct xhda_node *node = find_node(codec, nid);
+	if (node)
+		return node->jack_state;
+	return -1;
+}
+
+int hda_set_jack_state(struct xhda_codec *codec, int nid, int val)
+{
+	struct xhda_node *node = find_node(codec, nid);
+	if (!node)
+		return -1;
+	node->jack_state = !!val;
+	return node->unsol;
+}
+
+const char *get_verb_name(unsigned int cmd)
+{
+	unsigned int verb = (cmd >> 8) & 0xfff;
+	const struct verb_table *tbl;
+
+	tbl = find_verb((verb >> 8) & 0xf, verb_class);
+	if (!tbl) {
+		tbl = find_verb(verb, verb_tbl);
+		if (!tbl)
+			return "unknown";
+	}
+	return tbl->name;
+}
+
+const char *get_parameter_name(unsigned int cmd)
+{
+	const struct verb_table *tbl;
+	tbl = find_verb(cmd & 0xff, par_tbl);
+	return tbl ? tbl->name : "unknown";
+}

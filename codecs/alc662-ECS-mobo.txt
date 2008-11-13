@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+	<title>general pastebin - randall - post number 1048637</title>
+	  <meta name="microid" content="ca0462a24e49b118730aa3ba02c4e6cc5a55cd2d" />
+	  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	  <link rel="pingback" href="http://pastebin.ca/xmlrpc.php" />
+	  <link rel="stylesheet" href="http://static.pastebin.ca.tbcdn.com/css/pb-c1.css" type="text/css" />
+	  	  <link rel="icon" href="/pastebin.ico" type="image/x-icon" />
+	  <link rel="shortcut icon" href="/pastebin.ico" type="image/x-icon" />
+	  <link rel="alternate" href="http://en.pastebin.ca/1048637" hreflang="en" title="English Translation" />
+	  <link rel="alternate" href="http://fr.pastebin.ca/1048637" hreflang="fr" title="French Translation" />
+	  <link rel="alternate" href="http://de.pastebin.ca/1048637" hreflang="de" title="German Translation" />
+	  <link rel="alternate" href="http://ja.pastebin.ca/1048637" hreflang="ja" title="Japanese Translation" />
+	  <link href="mailto:admin@pastebin.ca" rev="made" />
+	  <link rel="alternate" type="application/rss+xml" title="Posts" href="/rss/posts.rss" />
+	  <link rel="alternate" type="application/rss+xml" title="News" href="/rss/news.rss" />
+	  <link rel="Help" href="/what.php" />
+	  <script type="text/javascript" src="http://static.pastebin.ca.tbcdn.com/js/pb.js"></script>
+		 </head>
+	 <body>
+	  <div id="header">
+		<div id="runner"><a href="javascript:showHideMenu()" id="showhide">Hide Menu</a> --
+	 	  <a href="http://en.pastebin.ca/1048637"><img src="http://static.pastebin.ca.tbcdn.com/imgs/ca.gif" width="18" height="12" style="border:2px solid black" alt="English (CA)" /></a>
+		  <a href="http://fr.pastebin.ca/1048637"><img src="http://static.pastebin.ca.tbcdn.com/imgs/fr.gif" width="18" height="12" style="border:2px solid #6464c8" alt="French" /></a>
+		  <a href="http://de.pastebin.ca/1048637"><img src="http://static.pastebin.ca.tbcdn.com/imgs/de.gif" width="18" height="12" style="border:2px solid #6464c8" alt="German" /></a>
+		  <a href="http://ja.pastebin.ca/1048637"><img src="http://static.pastebin.ca.tbcdn.com/imgs/jp.png" width="18" height="12" style="border:2px solid #6464c8" alt="Japanese" /></a>
+		</div>
+		<h1><a href="/" class="tlink">general pastebin</a> - randall - post number 1048637</h1>
+	  </div>
+	  <div id="body">
+	<div id="sidebar-left"><div class="bl"><div class="br"><div class="tl"><div class="tr"><div class="menu" id="idmenu0"><div class="menutitle"><h2><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-10-eeeeee.png" style="width:10px;height:10px;float:right;margin-top:0.25em;margin-bottom:0.25em;margin-right:10px" onclick="javascript:showHideDiv('idmenu0-collapse',this,'eeeeee')" alt="Show/Hide" /><script type="text/javascript">showhideobj['idmenu0-collapse'] = 'block';</script>Stuff to Do</h2></div><div class="items" id="idmenu0-collapse"><div class="link"><a href="/new.php">New Post</a>
+</div>
+<div class="link"><a href="/upload.php">Upload a Post</a>
+</div>
+<div class="link"><a href="/newest.php">Goto Newest</a>
+</div>
+<div class="link"><a href="/search.php">Search</a>
+</div>
+<div class="link"><a href="/archive1">Archives</a>
+</div>
+<div class="link"><a href="/tools.php">Tools / APIs</a>
+</div>
+<div class="link"><a href="/donate.php">Donate</a>
+<div style="text-align:center;font-size:75%;background:#ddd"><b>Top Recent Donations</b><br/>Mike Chuppe: $0.30<br/>Netskin: $0.01<br/>Anonymous: $0.01</div>
+</div>
+</div>
+</div>
+<div class="menu" id="idmenu1"><div class="menutitle"><h2><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-10-eeeeee.png" style="width:10px;height:10px;float:right;margin-top:0.25em;margin-bottom:0.25em;margin-right:10px" onclick="javascript:showHideDiv('idmenu1-collapse',this,'eeeeee')" alt="Show/Hide" /><script type="text/javascript">showhideobj['idmenu1-collapse'] = 'block';</script>Information</h2></div><div class="items" id="idmenu1-collapse"><div class="link"><a href="/news.php">Site News</a>
+</div>
+<div class="link"><a href="/makesub.php" style="color:green">Get a Pastebin</a>
+</div>
+<div class="link"><a href="/what.php">What is This?</a>
+</div>
+<div class="link"><a href="/statistics.php">Statistics</a>
+</div>
+</div>
+</div>
+<div class="menu" id="idmenu2"><div class="menutitle"><h2><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-10-eeeeee.png" style="width:10px;height:10px;float:right;margin-top:0.25em;margin-bottom:0.25em;margin-right:10px" onclick="javascript:showHideDiv('idmenu2-collapse',this,'eeeeee')" alt="Show/Hide" /><script type="text/javascript">showhideobj['idmenu2-collapse'] = 'block';</script>Related</h2></div><div class="items" id="idmenu2-collapse"><div class="link"><a href="http://imagebin.ca/">Imagebin</a>
+</div>
+<div class="link"><a href="http://filebin.ca/">Filebin</a>
+</div>
+<div class="link"><a href="http://turl.ca/">TURL</a>
+</div>
+<div class="link"><a href="http://pastewiki.ca/">PasteWiki</a>
+</div>
+</div>
+</div>
+
+                        <div class="menu" id="id2243099">
+	                          <div class="menutitle">
+		                            <h2><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-10-eeeeee.png" style="width:10px;height:10px;float:right;margin-top:0.25em;margin-bottom:0.25em;margin-right:10px" onclick="javascript:showHideDiv('id2243099-collapse',this,'eeeeee')" alt="Show/Hide" /><script type="text/javascript">showhideobj['id2243099-collapse'] = 'block';</script>Login</h2>
+	                          </div>
+	                          <div id="id2243099-collapse" style="display:block">
+	                            <form method="get" action="/oid_login.php">
+	                              <fieldset id="lbar" class="searchbar">
+	                              <div id="openid">
+	                              <input type="text" size="15" name="openid_url" id="openid_url" class="input-box" style="width:9em;background:url(http://static.pastebin.ca.tbcdn.com/imgs/openid-bg.png) no-repeat #efe;background-position:0 50%;padding-left:18px;" />
+	                              <a style="font-size:8pt;color:#444;text-decoration:underline" href="/oid.php">Want an account?</a>
+	</div>			<input type="hidden" name="event" value="openid_login" />
+	                              <input type="submit" name="ls" value="Login" class="submit-button" onclick="this.value='Trying...'" />
+	                              </fieldset>
+	                            </form>
+        	</div></div>
+	                <div class="menu" id="id2243084">
+	                  <div class="menutitle">
+	                    <h2><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-10-eeeeee.png" style="width:10px;height:10px;float:right;margin-top:0.25em;margin-bottom:0.25em;margin-right:10px" onclick="javascript:showHideDiv('id2243084-collapse',this,'eeeeee')" alt="Show/Hide" /><script type="text/javascript">showhideobj['id2243084-collapse'] = 'block';</script>Quick Search</h2>
+	                  </div>
+	
+	                  <div id="id2243084-collapse">
+	                    <form method="get" action="/search.php">
+	                      <fieldset id="searchbar" class="searchbar">
+	                        <input type="text" name="q" size="15" style="width:10em" class="input-box" />
+	                        <br />
+	                        <input type="submit" value="Search" class="submit-button" onclick="this.value='Searching...'" />
+	                        <br />
+	                      </fieldset>
+	                    </form>
+			    <form method="get" action="http://www.google.ca/custom">
+			      <fieldset id="googlebar" class="searchbar">
+				<label for="sbi" style="display: none">Enter your search terms</label>
+				<input type="text" name="q" size="15" maxlength="255" value="" id="sbi" style="width:10em" class="input-box"></input>
+				<label for="sbb" style="display: none">Submit search form</label>
+				<input type="submit" name="sa" value="Google Search" id="sbb" class="submit-button"></input>
+				<input type="hidden" name="domains" value="pastebin.ca"></input>
+				<input type="hidden" name="client" value="pub-0367252804969302"></input>
+				<input type="hidden" name="forid" value="1"></input>
+				<input type="hidden" name="channel" value="4359158558"></input>
+				<input type="hidden" name="ie" value="UTF-8"></input>
+				<input type="hidden" name="oe" value="UTF-8"></input>
+				<input type="hidden" name="flav" value="0000"></input>
+				<input type="hidden" name="sig" value="gvqHfWj_WHAS1QaX"></input>
+				<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:64;LW:69;L:http://pastebin.ca/pb-what.png;S:http://pastebin.ca/;LP:1;FORID:1"></input>
+				<input type="hidden" name="hl" value="en"></input>
+			      </fieldset>
+			    </form>
+<!--	                    <form method="get" action="/multi-search.php">
+	                      <fieldset id="searchbar" class="searchbar">
+	                        <input type="text" name="q" size="15" style="width:10em" class="input-box" />
+				<br />
+				<select class="input-box" name="engine"><option value="php">PHP</option><option value="mysql">MySQL</option></select>
+	                        <br />
+	                        <input type="submit" value="Search" class="submit-button" onclick="this.value='Searching...'" />
+	                        <br />
+	                      </fieldset>
+	                    </form> -->
+	                  </div>
+	                </div>
+		    <div class="menu" id="idmenurecent">
+	    <div class="menutitle"><h2><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-10-eeeeee.png" style="width:10px;height:10px;float:right;margin-top:0.25em;margin-bottom:0.25em;margin-right:10px" onclick="javascript:showHideDiv('idmenurecent-collapse',this,'eeeeee')" alt="Show/Hide" /><script type="text/javascript">showhideobj['idmenurecent-collapse'] = 'block';</script>Recent Posts</h2></div>
+	    <div class="items" id="idmenurecent-collapse">
+		<div class='recentlink'><a href="/1050920">Mine</a><div class='recentdetail'>2 mins </div></div><div class='recentlink'><a href="/1050919">Miscellany</a><div class='recentdetail'>3 mins 32 secs</div></div><div class='recentlink'><a href="/1050916">Unnamed</a><div class='recentdetail'>5 mins 37 secs</div></div><div class='recentlink'><a href="/1050915">Anonymous</a><div class='recentdetail'>5 mins 56 secs</div></div><div class='recentlink'><a href="/1050913">Stuff</a><div class='recentdetail'>10 mins 13 secs</div></div><div class='recentlink'><a href="/1050912">Untitled</a><div class='recentdetail'>10 mins 51 secs</div></div><div class='recentlink'><a href="/1050911">Anonymous</a><div class='recentdetail'>11 mins 15 secs</div></div><div class='recentlink'><a href="/1050910">Unnamed</a><div class='recentdetail'>15 mins 50 secs</div></div><div class='recentlink'><a href="/1050909">xuzuvziko</a><div class='recentdetail'>18 mins <br/><i>ASP</i></div></div><div class='recentlink'><a href="/1050908">Something</a><div class='recentdetail'>18 mins 16 secs</div></div><div class='recentlink'><a href="/1050907">Gtkhtml error</a><div class='recentdetail'>20 mins 40 secs</div></div><div class='recentlink'><a href="/1050905">OpenSLAED</a><div class='recentdetail'>25 mins 49 secs<br/><i>CSS</i></div></div><div class='recentlink'><a href="/1050904">traffiicadd</a><div class='recentdetail'>31 mins 9 secs<br/><i>ASP</i></div></div><div class='recentlink'><a href="/1050903">mara</a><div class='recentdetail'>31 mins 47 secs<br/><i>Script Log</i></div></div><div class='recentlink'><a href="/1050902">Unnamed</a><div class='recentdetail'>47 mins 29 secs<br/><i>Python Source</i></div></div></div></div></div></div></div></div></div><div style="text-align:center;padding-left:9.5em;margin-top:0px;padding-top:0px;padding-right:6pt"><script type="text/javascript"><!--
+google_ad_client = "pub-0367252804969302";
+//Pastebin Primary
+google_ad_slot = "9977752306";
+google_ad_width = 468;
+google_ad_height = 60;
+// google_alternate_ad_url = "http://pastebin.ca/google-publicservice.php";
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div id='content'>
+<!--
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dc="http://purl.org/dc/elements/1.1/"
+             xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+    <rdf:Description
+        rdf:about="http://pastebin.ca/1048637"
+        dc:identifier="http://pastebin.ca/1048637"
+        dc:title="pastebin.ca paste 1048637 - randall"
+        trackback:ping="http://pastebin.ca/trackback.php/1048637" />
+    </rdf:RDF>
+-->
+<div id="main"><div id="idsec0" class="section"><div class="first" ondblclick="javascript:showHideDiv('idsec0-collapse',this,'5050b4')"><h2 class="first"><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-12-5050b4.png" style="width:12px;height:12px;float:right;margin-bottom:0.25em;margin-top:0.25em;padding:2px" onclick="javascript:showHideDiv('idsec0-collapse',this,'5050b4')" alt="Show/Hide" /><script type="text/javascript">showhideobj['idsec0'] = 'block';</script><dl class="bookend h2"><dt>randall</dt><dd>Monday, June      16th, 2008 at 10:22:51am MDT</dd></dl></h2></div><div id="idsec0-collapse"><dl class="bookend h3"><dt>This URL: <a href="/1048637">http://pastebin.ca/1048637</a></dt><dd>Alternatives: <a href="/raw/1048637">Raw</a></dd><dt>Language: Script Log</dt><dd><span style="padding-right:1.25em">Age: 2 days 17 hrs</span></dd></dl><div style="margin:0.5em;border:1px solid blue;background:#ddddee;text-align:justify"><h3>description of this post</h3><p>/tmp/alsa-info.txt</p></div><div class="c collapsable" id="source" style="font-family:monospace;"><ol><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">################################</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">ALSA Information Script v 0.4.48</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">################################</span></li><li class="li1">&nbsp;</li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Script ran on: Mon Jun 16 09:22:47 PDT 2008</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Linux Distribution</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">------------------</span></li><li class="li2">&nbsp;</li><li class="li1"><span class="de1">Welcome to openSUSE 10.3 (X86-64) - Kernel \r (\l). LSB_VERSION=&quot;core-2.0-noarch:core-3.0-noarch:core-2.0-x86_64:core-3.0-x86_64&quot; openSUSE 10.3 (X86-64)</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Kernel Information</span></li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">------------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">Kernel release: &nbsp; &nbsp;2.6.22.17-0.1-default</span></li><li class="li1"><span class="de1">Operating System: &nbsp;GNU/Linux</span></li><li class="li1"><span class="de1">Architecture: &nbsp; &nbsp; &nbsp;x86_64</span></li><li class="li2"><span class="de1">Processor: &nbsp; &nbsp; &nbsp; &nbsp; x86_64</span></li><li class="li1"><span class="de1">SMP Enabled: &nbsp; &nbsp; &nbsp; Yes</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">ALSA Version</span></li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">Driver version: &nbsp; &nbsp; 1.0.17rc1</span></li><li class="li1"><span class="de1">Library version: &nbsp; &nbsp;1.0.16</span></li><li class="li1"><span class="de1">Utilities version: &nbsp;1.0.17rc1</span></li><li class="li2">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Loaded ALSA modules</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">-------------------</span></li><li class="li1">&nbsp;</li><li class="li2"><span class="de1">snd_hda_intel</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Soundcards recognised by ALSA</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">-----------------------------</span></li><li class="li2">&nbsp;</li><li class="li1"><span class="de1"> 0 [NVidia &nbsp; &nbsp; &nbsp; &nbsp; ]: HDA-Intel - HDA NVidia</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HDA NVidia at 0xfe028000 irq 22</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">PCI Soundcards installed in the system</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">--------------------------------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">00:05.0 Audio device: nVidia Corporation MCP61 High Definition Audio (rev a2)</span></li><li class="li1">&nbsp;</li><li class="li2">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Advanced information - PCI Vendor/Device/Susbsystem ID's</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">--------------------------------------------------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">00:05.0 Class 0403: 10de:03f0 (rev a2)</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp Subsystem: 1019:2151</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Modprobe options (Sound related)</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">--------------------------------</span></li><li class="li2">&nbsp;</li><li class="li1"><span class="de1">snd-hda-intel: enable=1 index=0 model=3stack-6ch</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Loaded sound module options</span></li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">--------------------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Module: snd_hda_intel</span></li><li class="li1"><span class="de1">bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1</span></li><li class="li1"><span class="de1">enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y</span></li><li class="li2"><span class="de1">enable_msi : 0</span></li><li class="li1"><span class="de1">id : &lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;</span></li><li class="li1"><span class="de1">index : 0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1</span></li><li class="li1"><span class="de1">model : 3stack-6ch,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;</span></li><li class="li1"><span class="de1">position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></li><li class="li2"><span class="de1">power_save : 0</span></li><li class="li1"><span class="de1">power_save_controller : Y</span></li><li class="li1"><span class="de1">probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1</span></li><li class="li1"><span class="de1">single_cmd : N</span></li><li class="li1">&nbsp;</li><li class="li2">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">HDA-Intel Codec information</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">---------------------------</span></li><li class="li1"><a href="javascript:showColl(1)" id="textcoll1">(following section hidden - click to display)</a></li></ol><ol id="sectcoll1" style="display:none;counter-reset: item 83;margin-top:-1em"><li class="li1">&nbsp;</li><li class="li1"><span class="de1">Codec: Realtek ALC662 rev1</span></li><li class="li2"><span class="de1">Address: 0</span></li><li class="li1"><span class="de1">Vendor Id: 0x10ec0662</span></li><li class="li1"><span class="de1">Subsystem Id: 0x10192151</span></li><li class="li1"><span class="de1">Revision Id: 0x100101</span></li><li class="li1"><span class="de1">No Modem Function Group found</span></li><li class="li2"><span class="de1">Default PCM:</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;rates [0x160]: 44100 48000 96000</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;bits [0xe]: 16 20 24</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;formats [0x1]: PCM</span></li><li class="li1"><span class="de1">Default Amp-In caps: N/A</span></li><li class="li2"><span class="de1">Default Amp-Out caps: N/A</span></li><li class="li1"><span class="de1">GPIO: io=2, o=0, i=0, unsolicited=1, wake=0</span></li><li class="li1"><span class="de1"> &nbsp;IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0</span></li><li class="li1"><span class="de1"> &nbsp;IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0</span></li><li class="li1"><span class="de1">Node 0x02 [Audio Output] wcaps 0x1d: Stereo Amp-Out</span></li><li class="li2"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Converter: stream=5, channel=0</span></li><li class="li1"><span class="de1"> &nbsp;PCM:</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;rates [0x160]: 44100 48000 96000</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;bits [0xe]: 16 20 24</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;formats [0x1]: PCM</span></li><li class="li1"><span class="de1">Node 0x03 [Audio Output] wcaps 0x1d: Stereo Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x20 0x20]</span></li><li class="li2"><span class="de1"> &nbsp;Converter: stream=5, channel=0</span></li><li class="li1"><span class="de1"> &nbsp;PCM:</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;rates [0x160]: 44100 48000 96000</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;bits [0xe]: 16 20 24</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;formats [0x1]: PCM</span></li><li class="li2"><span class="de1">Node 0x04 [Audio Output] wcaps 0x1d: Stereo Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x20 0x20]</span></li><li class="li1"><span class="de1"> &nbsp;Converter: stream=5, channel=0</span></li><li class="li1"><span class="de1"> &nbsp;PCM:</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;rates [0x160]: 44100 48000 96000</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;bits [0xe]: 16 20 24</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;formats [0x1]: PCM</span></li><li class="li1"><span class="de1">Node 0x05 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x06 [Audio Output] wcaps 0x211: Stereo Digital</span></li><li class="li2"><span class="de1"> &nbsp;Converter: stream=0, channel=0</span></li><li class="li1"><span class="de1"> &nbsp;Digital:</span></li><li class="li1"><span class="de1"> &nbsp;Digital category: 0x0</span></li><li class="li1"><span class="de1"> &nbsp;PCM:</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;rates [0x160]: 44100 48000 96000</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;bits [0x1e]: 16 20 24 32</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;formats [0x1]: PCM</span></li><li class="li1"><span class="de1">Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x08 [Audio Input] wcaps 0x10011b: Stereo Amp-In</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x09, nsteps=0x1f, stepsize=0x05, mute=1</span></li><li class="li2"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x89 0x89]</span></li><li class="li1"><span class="de1"> &nbsp;Converter: stream=0, channel=0</span></li><li class="li1"><span class="de1"> &nbsp;SDI-Select: 0</span></li><li class="li1"><span class="de1"> &nbsp;PCM:</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;rates [0x160]: 44100 48000 96000</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;bits [0x6]: 16 20</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;formats [0x1]: PCM</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x23</span></li><li class="li1"><span class="de1">Node 0x09 [Audio Input] wcaps 0x10011b: Stereo Amp-In</span></li><li class="li2"><span class="de1"> &nbsp;Amp-In caps: ofs=0x09, nsteps=0x1f, stepsize=0x05, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x80 0x80]</span></li><li class="li1"><span class="de1"> &nbsp;Converter: stream=0, channel=0</span></li><li class="li1"><span class="de1"> &nbsp;SDI-Select: 0</span></li><li class="li1"><span class="de1"> &nbsp;PCM:</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;rates [0x160]: 44100 48000 96000</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;bits [0x6]: 16 20</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;formats [0x1]: PCM</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x22</span></li><li class="li2"><span class="de1">Node 0x0a [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x15 0x15] [0x11 0x11] [0x15 0x15] [0x80 0x80] [0x15 0x15] [0x94 0x94] [0x80 0x80] [0x80 0x80] [0x80 0x80]</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 9</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp; 0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16</span></li><li class="li1"><span class="de1">Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x00 0x00] [0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 2</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp; 0x02 0x0b</span></li><li class="li1"><span class="de1">Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x00 0x00] [0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 2</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp; 0x03 0x0b</span></li><li class="li1"><span class="de1">Node 0x0e [Audio Mixer] wcaps 0x20010b: Stereo Amp-In</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x00 0x00] [0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 2</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp; 0x04 0x0b</span></li><li class="li1"><span class="de1">Node 0x0f [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x10 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x11 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x12 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li2"><span class="de1">Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x081003c: IN OUT HP EAPD Detect</span></li><li class="li2"><span class="de1"> &nbsp;EAPD 0x2: EAPD</span></li><li class="li1"><span class="de1"> &nbsp;Pin Default 0x01014010: [Jack] Line Out at Ext Rear</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = 1/8, Color = Green</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0x1, Sequence = 0x0</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x40: OUT</span></li><li class="li2"><span class="de1"> &nbsp;Unsolicited: tag=00, enabled=0</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x0c</span></li><li class="li1"><span class="de1">Node 0x15 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li2"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x0810034: IN OUT EAPD Detect</span></li><li class="li1"><span class="de1"> &nbsp;EAPD 0x2: EAPD</span></li><li class="li1"><span class="de1"> &nbsp;Pin Default 0x411111f0: [N/A] Speaker at Ext Rear</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = 1/8, Color = Black</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0xf, Sequence = 0x0</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Misc = NO_PRESENCE</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x40: OUT</span></li><li class="li1"><span class="de1"> &nbsp;Unsolicited: tag=00, enabled=0</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp; 0x0d</span></li><li class="li1"><span class="de1">Node 0x16 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x0834: IN OUT Detect</span></li><li class="li2"><span class="de1"> &nbsp;Pin Default 0x411111f0: [N/A] Speaker at Ext Rear</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = 1/8, Color = Black</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0xf, Sequence = 0x0</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Misc = NO_PRESENCE</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x40: OUT</span></li><li class="li2"><span class="de1"> &nbsp;Unsolicited: tag=00, enabled=0</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x0e</span></li><li class="li1"><span class="de1">Node 0x17 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x18 [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out</span></li><li class="li2"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x081734: IN OUT Detect</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;Vref caps: HIZ 50 GRD 80</span></li><li class="li1"><span class="de1"> &nbsp;Pin Default 0x01a19840: [Jack] Mic at Ext Rear</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = 1/8, Color = Pink</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0x4, Sequence = 0x0</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x40: OUT VREF_HIZ</span></li><li class="li2"><span class="de1"> &nbsp;Unsolicited: tag=00, enabled=0</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x0e</span></li><li class="li1"><span class="de1">Node 0x19 [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0</span></li><li class="li2"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x80 0x80]</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x08173c: IN OUT HP Detect</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Vref caps: HIZ 50 GRD 80</span></li><li class="li2"><span class="de1"> &nbsp;Pin Default 0x02a19c50: [Jack] Mic at Ext Front</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = 1/8, Color = Pink</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0x5, Sequence = 0x0</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x24: IN VREF_80</span></li><li class="li1"><span class="de1"> &nbsp;Unsolicited: tag=00, enabled=0</span></li><li class="li2"><span class="de1"> &nbsp;Connection: 2</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x0c* 0x0e</span></li><li class="li1"><span class="de1">Node 0x1a [Pin Complex] wcaps 0x40018d: Stereo Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x00 0x00]</span></li><li class="li2"><span class="de1"> &nbsp;Pincap 0x0834: IN OUT Detect</span></li><li class="li1"><span class="de1"> &nbsp;Pin Default 0x0181304f: [Jack] Line In at Ext Rear</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = 1/8, Color = Blue</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0x4, Sequence = 0xf</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x40: OUT</span></li><li class="li2"><span class="de1"> &nbsp;Unsolicited: tag=00, enabled=0</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x0d</span></li><li class="li1"><span class="de1">Node 0x1b [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0</span></li><li class="li2"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li1"><span class="de1"> &nbsp;Amp-Out vals: &nbsp;[0x00 0x00]</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x08173c: IN OUT HP Detect</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Vref caps: HIZ 50 GRD 80</span></li><li class="li2"><span class="de1"> &nbsp;Pin Default 0x02214c20: [Jack] HP Out at Ext Front</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = 1/8, Color = Green</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0x2, Sequence = 0x0</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0xc0: OUT HP VREF_HIZ</span></li><li class="li1"><span class="de1"> &nbsp;Unsolicited: tag=00, enabled=0</span></li><li class="li2"><span class="de1"> &nbsp;Connection: 2</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x0c* 0x0e</span></li><li class="li1"><span class="de1">Node 0x1c [Pin Complex] wcaps 0x400001: Stereo</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x0820: IN</span></li><li class="li1"><span class="de1"> &nbsp;Pin Default 0x593301f0: [N/A] CD at Int ATAPI</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;Conn = ATAPI, Color = Unknown</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0xf, Sequence = 0x0</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Misc = NO_PRESENCE</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x20: IN</span></li><li class="li1"><span class="de1">Node 0x1d [Pin Complex] wcaps 0x400000: Mono</span></li><li class="li2"><span class="de1"> &nbsp;Pincap 0x0820: IN</span></li><li class="li1"><span class="de1"> &nbsp;Pin Default 0x4004c601: [N/A] Line Out at Ext N/A</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = RCA, Color = UNKNOWN</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0x0, Sequence = 0x1</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x20: IN</span></li><li class="li2"><span class="de1">Node 0x1e [Pin Complex] wcaps 0x400300: Mono Digital</span></li><li class="li1"><span class="de1"> &nbsp;Pincap 0x0810: OUT</span></li><li class="li1"><span class="de1"> &nbsp;Pin Default 0x014b7130: [Jack] SPDIF Out at Ext Rear</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;Conn = Comb, Color = Yellow</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp;DefAssociation = 0x3, Sequence = 0x0</span></li><li class="li2"><span class="de1"> &nbsp; &nbsp;Misc = NO_PRESENCE</span></li><li class="li1"><span class="de1"> &nbsp;Pin-ctls: 0x40: OUT</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 1</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x06</span></li><li class="li1"><span class="de1">Node 0x1f [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li2"><span class="de1">Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono</span></li><li class="li1"><span class="de1"> &nbsp;Processing caps: benign=0, ncoeff=12</span></li><li class="li1"><span class="de1">Node 0x21 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li2"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 10</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x0b</span></li><li class="li1"><span class="de1">Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In</span></li><li class="li1"><span class="de1"> &nbsp;Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1</span></li><li class="li2"><span class="de1"> &nbsp;Amp-In vals: &nbsp;[0x00 0x00] [0x00 0x00] [0x00 0x00] [0x80 0x80] [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]</span></li><li class="li1"><span class="de1"> &nbsp;Connection: 10</span></li><li class="li1"><span class="de1"> &nbsp; &nbsp; 0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x0b</span></li><li class="li1"><span class="de1">Node 0x24 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1"><span class="de1">Node 0x25 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li2"><span class="de1">Node 0x26 [Vendor Defined Widget] wcaps 0xf00000: Mono</span></li><li class="li1">(end collapsed section)</li></ol><ol style="counter-reset: item 311;margin-top:-1em"><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">ALSA Device nodes</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">-----------------</span></li><li class="li2">&nbsp;</li><li class="li1"><span class="de1">crw-rw---- &nbsp;1 root audio 116, 6 2008-06-15 21:25 /dev/snd/controlC0</span></li><li class="li1"><span class="de1">crw-rw---- &nbsp;1 root audio 116, 5 2008-06-15 21:25 /dev/snd/hwC0D0</span></li><li class="li1"><span class="de1">crw-rw---- &nbsp;1 root audio 116, 4 2008-06-15 21:25 /dev/snd/pcmC0D0c</span></li><li class="li1"><span class="de1">crw-rw---- &nbsp;1 root audio 116, 3 2008-06-15 21:25 /dev/snd/pcmC0D0p</span></li><li class="li2"><span class="de1">crw-rw---- &nbsp;1 root audio 116, 7 2008-06-15 21:26 /dev/snd/seq</span></li><li class="li1"><span class="de1">crw-rw---- &nbsp;1 root audio 116, 2 2008-06-15 21:25 /dev/snd/timer</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Aplay/Arecord output</span></li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">APLAY</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">**** List of PLAYBACK Hardware Devices ****</span></li><li class="li2"><span class="de1">card 0: NVidia [HDA NVidia], device 0: ALC662 Analog [ALC662 Analog]</span></li><li class="li1"><span class="de1"> &nbsp;Subdevices: 0/1</span></li><li class="li1"><span class="de1"> &nbsp;Subdevice #0: subdevice #0</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">ARECORD</span></li><li class="li2">&nbsp;</li><li class="li1"><span class="de1">**** List of CAPTURE Hardware Devices ****</span></li><li class="li1"><span class="de1">card 0: NVidia [HDA NVidia], device 0: ALC662 Analog [ALC662 Analog]</span></li><li class="li1"><span class="de1"> &nbsp;Subdevices: 1/1</span></li><li class="li1"><span class="de1"> &nbsp;Subdevice #0: subdevice #0</span></li><li class="li2">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Amixer output</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">-------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">-------Mixer controls for card 0 [NVidia]</span></li><li class="li2">&nbsp;</li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Master</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pvolume-joined pswitch pswitch-joined</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Mono</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 64</span></li><li class="li2"><span class="de1"> &nbsp;Mono: Playback 32 [<span class="nu0">50%</span>] [-32.00dB] [on]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Headphone</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pswitch</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Mono:</span></li><li class="li2"><span class="de1"> &nbsp;Front Left: Playback [on]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Playback [on]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">PCM</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li2"><span class="de1"> &nbsp;Limits: Playback 0 - 255</span></li><li class="li1"><span class="de1"> &nbsp;Mono:</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Playback 178 [<span class="nu0">70%</span>] [-15.40dB]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Playback 178 [<span class="nu0">70%</span>] [-15.40dB]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Front</span>',0</span></li><li class="li2"><span class="de1"> &nbsp;Capabilities: pvolume pswitch</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 64</span></li><li class="li1"><span class="de1"> &nbsp;Mono:</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Playback 32 [<span class="nu0">50%</span>] [-32.00dB] [on]</span></li><li class="li2"><span class="de1"> &nbsp;Front Right: Playback 32 [<span class="nu0">50%</span>] [-32.00dB] [on]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Front Mic</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pswitch</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 31</span></li><li class="li2"><span class="de1"> &nbsp;Mono:</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Playback 17 [<span class="nu0">55%</span>] [-9.00dB] [on]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Playback 17 [<span class="nu0">55%</span>] [-9.00dB] [on]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Surround</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pswitch</span></li><li class="li2"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 64</span></li><li class="li1"><span class="de1"> &nbsp;Mono:</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Playback 64 [<span class="nu0">100%</span>] [0.00dB] [on]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Playback 64 [<span class="nu0">100%</span>] [0.00dB] [on]</span></li><li class="li2"><span class="de1">Simple mixer control '<span class="st0">Center</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pvolume-joined pswitch pswitch-joined</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Mono</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 64</span></li><li class="li1"><span class="de1"> &nbsp;Mono: Playback 64 [<span class="nu0">100%</span>] [0.00dB] [on]</span></li><li class="li2"><span class="de1">Simple mixer control '<span class="st0">LFE</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pvolume-joined pswitch pswitch-joined</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Mono</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 64</span></li><li class="li1"><span class="de1"> &nbsp;Mono: Playback 64 [<span class="nu0">100%</span>] [0.00dB] [on]</span></li><li class="li2"><span class="de1">Simple mixer control '<span class="st0">Line</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pswitch</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 31</span></li><li class="li1"><span class="de1"> &nbsp;Mono:</span></li><li class="li2"><span class="de1"> &nbsp;Front Left: Playback 21 [<span class="nu0">68%</span>] [-3.00dB] [on]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Playback 21 [<span class="nu0">68%</span>] [-3.00dB] [on]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">CD</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pswitch</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li2"><span class="de1"> &nbsp;Limits: Playback 0 - 31</span></li><li class="li1"><span class="de1"> &nbsp;Mono:</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Playback 21 [<span class="nu0">68%</span>] [-3.00dB] [on]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Playback 21 [<span class="nu0">68%</span>] [-3.00dB] [on]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Mic</span>',0</span></li><li class="li2"><span class="de1"> &nbsp;Capabilities: pvolume pswitch</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 31</span></li><li class="li1"><span class="de1"> &nbsp;Mono:</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Playback 21 [<span class="nu0">68%</span>] [-3.00dB] [on]</span></li><li class="li2"><span class="de1"> &nbsp;Front Right: Playback 21 [<span class="nu0">68%</span>] [-3.00dB] [on]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">PC Speaker</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: pvolume pswitch</span></li><li class="li1"><span class="de1"> &nbsp;Playback channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Playback 0 - 31</span></li><li class="li2"><span class="de1"> &nbsp;Mono:</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Playback 20 [<span class="nu0">65%</span>] [-4.50dB] [off]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Playback 20 [<span class="nu0">65%</span>] [-4.50dB] [off]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Capture</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: cvolume cswitch</span></li><li class="li2"><span class="de1"> &nbsp;Capture channels: Front Left - Front Right</span></li><li class="li1"><span class="de1"> &nbsp;Limits: Capture 0 - 31</span></li><li class="li1"><span class="de1"> &nbsp;Front Left: Capture 0 [<span class="nu0">0%</span>] [-13.50dB] [off]</span></li><li class="li1"><span class="de1"> &nbsp;Front Right: Capture 0 [<span class="nu0">0%</span>] [-13.50dB] [off]</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Channel Mode</span>',0</span></li><li class="li2"><span class="de1"> &nbsp;Capabilities: enum</span></li><li class="li1"><span class="de1"> &nbsp;Items: '2ch' '6ch'</span></li><li class="li1"><span class="de1"> &nbsp;Item0: '6ch'</span></li><li class="li1"><span class="de1">Simple mixer control '<span class="st0">Input Source</span>',0</span></li><li class="li1"><span class="de1"> &nbsp;Capabilities: cenum</span></li><li class="li2"><span class="de1"> &nbsp;Items: 'Mic' 'Front Mic' 'Line' 'CD'</span></li><li class="li1"><span class="de1"> &nbsp;Item0: 'CD'</span></li><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">Alsactl output</span></li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">-------------</span></li><li class="li1">&nbsp;</li><li class="li1"><a href="javascript:showColl(2)" id="textcoll2">(following section hidden - click to display)</a></li></ol><ol id="sectcoll2" style="display:none;counter-reset: item 442;margin-top:-1em"><li class="li1"><span class="de1">state.NVidia {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.1 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 64'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -6400</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 0</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Front Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 32</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 32</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.2 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Front Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.3 {</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 64'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -6400</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 0</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Surround Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 64</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 64</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.4 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Surround Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.5 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 64'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -6400</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 0</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Center Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value 64</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.6 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 64'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -6400</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 0</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'LFE Playback Volume'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value 64</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.7 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Center Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.8 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'LFE Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.9 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Headphone Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 true</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.10 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 31'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -3450</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 1200</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'CD Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 21</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 21</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.11 {</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'CD Playback Switch'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.12 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 31'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -3450</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 1200</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Line Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 21</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 21</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.13 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Line Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.14 {</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 31'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -3450</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 1200</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Mic Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 21</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 21</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.15 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Mic Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.16 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 31'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -3450</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 1200</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Front Mic Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 17</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 17</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.17 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Front Mic Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 true</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.18 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 31'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -3450</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 1200</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'PC Speaker Playback Volume'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 20</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 20</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.19 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'PC Speaker Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 false</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 false</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.20 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type ENUMERATED</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.item.0 '2ch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.item.1 '6ch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Channel Mode'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value '6ch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.21 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 31'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -1350</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 3300</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Capture Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 0</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 0</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.22 {</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Capture Switch'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 false</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 false</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.23 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type ENUMERATED</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.item.0 Mic</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.item.1 'Front Mic'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.item.2 Line</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.item.3 CD</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Input Source'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value CD</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.24 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 64'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -6400</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 0</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Master Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value 32</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.25 {</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type BOOLEAN</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 1</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'Master Playback Switch'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value true</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp control.26 {</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.access 'read write user'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.type INTEGER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.count 2</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.range '0 - 255'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.tlv '0000000100000008ffffec1400000014'</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmin -5100</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp comment.dbmax 0</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp iface MIXER</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp name 'PCM Playback Volume'</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.0 178</span></li><li class="li2"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp value.1 178</span></li><li class="li1"><span class="de1">&nbsp; &nbsp; &nbsp; &nbsp }</span></li><li class="li1"><span class="de1">}</span></li><li class="li1">(end collapsed section)</li></ol><ol style="counter-reset: item 713;margin-top:-1em"><li class="li1">&nbsp;</li><li class="li1">&nbsp;</li><li class="li2"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">All Loaded Modules</span></li><li class="li1"><span class="de1" style="color:brown;font-weight:bold;font-family:monospace">------------------</span></li><li class="li1">&nbsp;</li><li class="li1"><span class="de1">Module</span></li><li class="li1"><span class="de1">xt_tcpudp</span></li><li class="li2"><span class="de1">xt_pkttype</span></li><li class="li1"><span class="de1">ipt_LOG</span></li><li class="li1"><span class="de1">xt_limit</span></li><li class="li1"><span class="de1">snd_pcm_oss</span></li><li class="li1"><span class="de1">snd_mixer_oss</span></li><li class="li2"><span class="de1">snd_seq</span></li><li class="li1"><span class="de1">snd_seq_device</span></li><li class="li1"><span class="de1">af_packet</span></li><li class="li1"><span class="de1">ipt_REJECT</span></li><li class="li1"><span class="de1">xt_state</span></li><li class="li2"><span class="de1">iptable_mangle</span></li><li class="li1"><span class="de1">iptable_nat</span></li><li class="li1"><span class="de1">nf_nat</span></li><li class="li1"><span class="de1">iptable_filter</span></li><li class="li1"><span class="de1">nf_conntrack_ipv4</span></li><li class="li2"><span class="de1">nf_conntrack</span></li><li class="li1"><span class="de1">nfnetlink</span></li><li class="li1"><span class="de1">ip_tables</span></li><li class="li1"><span class="de1">ip6_tables</span></li><li class="li1"><span class="de1">x_tables</span></li><li class="li2"><span class="de1">cpufreq_conservative</span></li><li class="li1"><span class="de1">cpufreq_userspace</span></li><li class="li1"><span class="de1">cpufreq_powersave</span></li><li class="li1"><span class="de1">powernow_k8</span></li><li class="li1"><span class="de1">apparmor</span></li><li class="li2"><span class="de1">loop</span></li><li class="li1"><span class="de1">dm_mod</span></li><li class="li1"><span class="de1">snd_hda_intel</span></li><li class="li1"><span class="de1">snd_pcm</span></li><li class="li1"><span class="de1">snd_timer</span></li><li class="li2"><span class="de1">snd_page_alloc</span></li><li class="li1"><span class="de1">snd_hwdep</span></li><li class="li1"><span class="de1">k8temp</span></li><li class="li1"><span class="de1">sr_mod</span></li><li class="li1"><span class="de1">cdrom</span></li><li class="li2"><span class="de1">floppy</span></li><li class="li1"><span class="de1">hwmon</span></li><li class="li1"><span class="de1">button</span></li><li class="li1"><span class="de1">snd</span></li><li class="li1"><span class="de1">soundcore</span></li><li class="li2"><span class="de1">rtc_cmos</span></li><li class="li1"><span class="de1">rtc_core</span></li><li class="li1"><span class="de1">rtc_lib</span></li><li class="li1"><span class="de1">parport_pc</span></li><li class="li1"><span class="de1">parport</span></li><li class="li2"><span class="de1">forcedeth</span></li><li class="li1"><span class="de1">i2c_nforce2</span></li><li class="li1"><span class="de1">i2c_core</span></li><li class="li1"><span class="de1">sg</span></li><li class="li1"><span class="de1">sd_mod</span></li><li class="li2"><span class="de1">ohci_hcd</span></li><li class="li1"><span class="de1">ehci_hcd</span></li><li class="li1"><span class="de1">usbcore</span></li><li class="li1"><span class="de1">edd</span></li><li class="li1"><span class="de1">ext3</span></li><li class="li2"><span class="de1">mbcache</span></li><li class="li1"><span class="de1">jbd</span></li><li class="li1"><span class="de1">fan</span></li><li class="li1"><span class="de1">sata_nv</span></li><li class="li1"><span class="de1">pata_amd</span></li><li class="li2"><span class="de1">libata</span></li><li class="li1"><span class="de1">scsi_mod</span></li><li class="li1"><span class="de1">thermal</span></li><li class="li1"><span class="de1">processor</span></li></div><h3 style="border-bottom:none;border-top:1px solid black">Total Paste Views: 1 &mdash; <a href="http://pastebin.ca/trackback.php/1048637">Trackback</a> (0) &mdash; <a href="http://pastebin.ca/1048637">PermaLink</a> &mdash; <a href="/remove.php?id=1048637">Remove Paste</a></h3><div style="margin:0px;margin-bottom:1em;width:100%;padding:0px;height:10px;background:#a3a3d3"><img src="http://static.pastebin.ca.tbcdn.com/imgs/corners/br-a3a3d3-dddddd.png" style="float:right" alt=""/><img src="http://static.pastebin.ca.tbcdn.com/imgs/corners/bl-a3a3d3-dddddd.png" style="float:left" alt=""/></div></div></div><div id="idsec1" class="section"><div class="first" ondblclick="javascript:showHideDiv('idsec1-collapse',this,'5050b4')"><h2 class="first"><img src="http://static.pastebin.ca.tbcdn.com/imgs/svg.php/arrow-up-12-5050b4.png" style="width:12px;height:12px;float:right;margin-bottom:0.25em;margin-top:0.25em;padding:2px" onclick="javascript:showHideDiv('idsec1-collapse',this,'5050b4')" alt="Show/Hide" /><script type="text/javascript">showhideobj['idsec1'] = 'block';</script>Update the Post</h2></div><div id="idsec1-collapse"><p>Either update this post and resubmit it with changes, or <a href="index.php?a=n">make a new post</a>.</p><p>You may also <a href="/cmt.php?bin_id=1048637">comment on this post</a>.</p>		<form method="post" action="/index.php" class="pasteform" id="form-id2243742">
+        <fieldset><legend>update paste below</legend>
+		<div style="text-align: center">
+			<textarea rows="20" cols="80" id="pastearea-id2243742" name="content" class="pastecontent">!!################################
+!!ALSA Information Script v 0.4.48
+!!################################
+
+!!Script ran on: Mon Jun 16 09:22:47 PDT 2008
+
+
+!!Linux Distribution
+!!------------------
+
+Welcome to openSUSE 10.3 (X86-64) - Kernel \r (\l). LSB_VERSION=&quot;core-2.0-noarch:core-3.0-noarch:core-2.0-x86_64:core-3.0-x86_64&quot; openSUSE 10.3 (X86-64)
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.22.17-0.1-default
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         x86_64
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.17rc1
+Library version:    1.0.16
+Utilities version:  1.0.17rc1
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xfe028000 irq 22
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:05.0 Audio device: nVidia Corporation MCP61 High Definition Audio (rev a2)
+
+
+!!Advanced information - PCI Vendor/Device/Susbsystem ID's
+!!--------------------------------------------------------
+
+00:05.0 Class 0403: 10de:03f0 (rev a2)
+	Subsystem: 1019:2151
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-hda-intel: enable=1 index=0 model=3stack-6ch
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+enable_msi : 0
+id : &lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;
+index : 0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+model : 3stack-6ch,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;,&lt;NULL&gt;
+position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+power_save : 0
+power_save_controller : Y
+probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Realtek ALC662 rev1
+Address: 0
+Vendor Id: 0x10ec0662
+Subsystem Id: 0x10192151
+Revision Id: 0x100101
+No Modem Function Group found
+Default PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=2, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0
+Node 0x02 [Audio Output] wcaps 0x1d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x03 [Audio Output] wcaps 0x1d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x20 0x20]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x04 [Audio Output] wcaps 0x1d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x20 0x20]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x05 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x06 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0x1e]: 16 20 24 32
+    formats [0x1]: PCM
+Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x08 [Audio Input] wcaps 0x10011b: Stereo Amp-In
+  Amp-In caps: ofs=0x09, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x89 0x89]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0x6]: 16 20
+    formats [0x1]: PCM
+  Connection: 1
+     0x23
+Node 0x09 [Audio Input] wcaps 0x10011b: Stereo Amp-In
+  Amp-In caps: ofs=0x09, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x80 0x80]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0x6]: 16 20
+    formats [0x1]: PCM
+  Connection: 1
+     0x22
+Node 0x0a [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x15 0x15] [0x11 0x11] [0x15 0x15] [0x80 0x80] [0x15 0x15] [0x94 0x94] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 9
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16
+Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x02 0x0b
+Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x03 0x0b
+Node 0x0e [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x04 0x0b
+Node 0x0f [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x10 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x11 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x12 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x081003c: IN OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x01014010: [Jack] Line Out at Ext Rear
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0c
+Node 0x15 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0810034: IN OUT EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0d
+Node 0x16 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0834: IN OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0e
+Node 0x17 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x18 [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x081734: IN OUT Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x01a19840: [Jack] Mic at Ext Rear
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x4, Sequence = 0x0
+  Pin-ctls: 0x40: OUT VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0e
+Node 0x19 [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x08173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x02a19c50: [Jack] Mic at Ext Front
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x5, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Connection: 2
+     0x0c* 0x0e
+Node 0x1a [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0834: IN OUT Detect
+  Pin Default 0x0181304f: [Jack] Line In at Ext Rear
+    Conn = 1/8, Color = Blue
+    DefAssociation = 0x4, Sequence = 0xf
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0d
+Node 0x1b [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x08173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x02214c20: [Jack] HP Out at Ext Front
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x2, Sequence = 0x0
+  Pin-ctls: 0xc0: OUT HP VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Connection: 2
+     0x0c* 0x0e
+Node 0x1c [Pin Complex] wcaps 0x400001: Stereo
+  Pincap 0x0820: IN
+  Pin Default 0x593301f0: [N/A] CD at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+Node 0x1d [Pin Complex] wcaps 0x400000: Mono
+  Pincap 0x0820: IN
+  Pin Default 0x4004c601: [N/A] Line Out at Ext N/A
+    Conn = RCA, Color = UNKNOWN
+    DefAssociation = 0x0, Sequence = 0x1
+  Pin-ctls: 0x20: IN
+Node 0x1e [Pin Complex] wcaps 0x400300: Mono Digital
+  Pincap 0x0810: OUT
+  Pin Default 0x014b7130: [Jack] SPDIF Out at Ext Rear
+    Conn = Comb, Color = Yellow
+    DefAssociation = 0x3, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Connection: 1
+     0x06
+Node 0x1f [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono
+  Processing caps: benign=0, ncoeff=12
+Node 0x21 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x0b
+Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00] [0x00 0x00] [0x80 0x80] [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x0b
+Node 0x24 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x25 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x26 [Vendor Defined Widget] wcaps 0xf00000: Mono
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw----  1 root audio 116, 6 2008-06-15 21:25 /dev/snd/controlC0
+crw-rw----  1 root audio 116, 5 2008-06-15 21:25 /dev/snd/hwC0D0
+crw-rw----  1 root audio 116, 4 2008-06-15 21:25 /dev/snd/pcmC0D0c
+crw-rw----  1 root audio 116, 3 2008-06-15 21:25 /dev/snd/pcmC0D0p
+crw-rw----  1 root audio 116, 7 2008-06-15 21:26 /dev/snd/seq
+crw-rw----  1 root audio 116, 2 2008-06-15 21:25 /dev/snd/timer
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: ALC662 Analog [ALC662 Analog]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: ALC662 Analog [ALC662 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [NVidia]
+
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 32 [50%] [-32.00dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pswitch
+  Playback channels: Front Left - Front Right
+  Mono:
+  Front Left: Playback [on]
+  Front Right: Playback [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 178 [70%] [-15.40dB]
+  Front Right: Playback 178 [70%] [-15.40dB]
+Simple mixer control 'Front',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 32 [50%] [-32.00dB] [on]
+  Front Right: Playback 32 [50%] [-32.00dB] [on]
+Simple mixer control 'Front Mic',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 17 [55%] [-9.00dB] [on]
+  Front Right: Playback 17 [55%] [-9.00dB] [on]
+Simple mixer control 'Surround',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Center',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'LFE',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Line',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 21 [68%] [-3.00dB] [on]
+  Front Right: Playback 21 [68%] [-3.00dB] [on]
+Simple mixer control 'CD',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 21 [68%] [-3.00dB] [on]
+  Front Right: Playback 21 [68%] [-3.00dB] [on]
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 21 [68%] [-3.00dB] [on]
+  Front Right: Playback 21 [68%] [-3.00dB] [on]
+Simple mixer control 'PC Speaker',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 20 [65%] [-4.50dB] [off]
+  Front Right: Playback 20 [65%] [-4.50dB] [off]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 0 [0%] [-13.50dB] [off]
+  Front Right: Capture 0 [0%] [-13.50dB] [off]
+Simple mixer control 'Channel Mode',0
+  Capabilities: enum
+  Items: '2ch' '6ch'
+  Item0: '6ch'
+Simple mixer control 'Input Source',0
+  Capabilities: cenum
+  Items: 'Mic' 'Front Mic' 'Line' 'CD'
+  Item0: 'CD'
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.NVidia {
+	control.1 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Front Playback Volume'
+		value.0 32
+		value.1 32
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Front Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Surround Playback Volume'
+		value.0 64
+		value.1 64
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Surround Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Center Playback Volume'
+		value 64
+	}
+	control.6 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'LFE Playback Volume'
+		value 64
+	}
+	control.7 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Center Playback Switch'
+		value true
+	}
+	control.8 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'LFE Playback Switch'
+		value true
+	}
+	control.9 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.10 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'CD Playback Volume'
+		value.0 21
+		value.1 21
+	}
+	control.11 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'CD Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.12 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Line Playback Volume'
+		value.0 21
+		value.1 21
+	}
+	control.13 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Line Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.14 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Mic Playback Volume'
+		value.0 21
+		value.1 21
+	}
+	control.15 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Mic Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.16 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Front Mic Playback Volume'
+		value.0 17
+		value.1 17
+	}
+	control.17 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Front Mic Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.18 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'PC Speaker Playback Volume'
+		value.0 20
+		value.1 20
+	}
+	control.19 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'PC Speaker Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.20 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 '2ch'
+		comment.item.1 '6ch'
+		iface MIXER
+		name 'Channel Mode'
+		value '6ch'
+	}
+	control.21 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -1350
+		comment.dbmax 3300
+		iface MIXER
+		name 'Capture Volume'
+		value.0 0
+		value.1 0
+	}
+	control.22 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Capture Switch'
+		value.0 false
+		value.1 false
+	}
+	control.23 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Mic
+		comment.item.1 'Front Mic'
+		comment.item.2 Line
+		comment.item.3 CD
+		iface MIXER
+		name 'Input Source'
+		value CD
+	}
+	control.24 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Master Playback Volume'
+		value 32
+	}
+	control.25 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+	}
+	control.26 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 255'
+		comment.tlv '0000000100000008ffffec1400000014'
+		comment.dbmin -5100
+		comment.dbmax 0
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 178
+		value.1 178
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+xt_tcpudp
+xt_pkttype
+ipt_LOG
+xt_limit
+snd_pcm_oss
+snd_mixer_oss
+snd_seq
+snd_seq_device
+af_packet
+ipt_REJECT
+xt_state
+iptable_mangle
+iptable_nat
+nf_nat
+iptable_filter
+nf_conntrack_ipv4
+nf_conntrack
+nfnetlink
+ip_tables
+ip6_tables
+x_tables
+cpufreq_conservative
+cpufreq_userspace
+cpufreq_powersave
+powernow_k8
+apparmor
+loop
+dm_mod
+snd_hda_intel
+snd_pcm
+snd_timer
+snd_page_alloc
+snd_hwdep
+k8temp
+sr_mod
+cdrom
+floppy
+hwmon
+button
+snd
+soundcore
+rtc_cmos
+rtc_core
+rtc_lib
+parport_pc
+parport
+forcedeth
+i2c_nforce2
+i2c_core
+sg
+sd_mod
+ohci_hcd
+ehci_hcd
+usbcore
+edd
+ext3
+mbcache
+jbd
+fan
+sata_nv
+pata_amd
+libata
+scsi_mod
+thermal
+processor</textarea>
+		<div style="float:right">
+		<span style="color:red">All posts expire in 30 days by default now.</span> <input type="submit" name="s" value="Submit Post" id="submit-id2243742" class="submit" /> <input type="reset" value="Reset Form" id="reset-id2243742" class="reset" />
+		</div>
+		</div>
+		<fieldset style="clear:right">
+		<legend>details of the post (optional)</legend>
+		<p class="note">
+		<b>Note:</b> Only the paste content is required, though the following information can be useful to others.</p>
+		<div id="detail-id2243742" class="detail">
+<input type="hidden" name="postkey" value="dbf92bc9ef8d5b8cebf5f24541b34ea75cbb6037" /><input type="hidden" name="postkeysig" value="EaaI6rwEGAklap95yV6o9j+ixqNNxmeQoAqjwBBEoqU=" />        <input type="hidden" name="ltree_path" value="1048637" />
+		<label for="name-id2243742">Name / Title:</label><input type="text" id="name-id2243742" name="name" size="20" class="general" value="randall"/> <input class="general" type="checkbox" name="save" value="1" /> Save name / title?<br />
+			<label for="description-id2243742">Description / Question:</label><textarea class="general" id="description-id2243742" name="description" rows="4" cols="40"></textarea><br />
+		<label for="tags-id2243742">Tags:</label><input type="text" id="tags-id2243742" name="tags" size="30" class="general" value=""/> <i>(space separated, optional)</i><br />
+		<label for="type-id2243742">Content Type:</label><select id="type-id2243742" name="type" class="general">
+<option value="22">ASP</option>
+<option value="18">Action Script</option>
+<option value="19">Ada Source</option>
+<option value="20">Apache Configuration</option>
+<option value="21">Assembly (NASM)</option>
+<option value="2">Asterisk Configuration</option>
+<option value="23">BASH Script</option>
+<option value="3">C Source</option>
+<option value="9">C# Source</option>
+<option value="4">C++ Source</option>
+<option value="24">CSS</option>
+<option value="25">Delphi Source</option>
+<option value="34">Diff / Patch</option>
+<option value="26">HTML 4.0 Strict</option>
+<option value="7">Java Source</option>
+<option value="27">JavaScript</option>
+<option value="28">LISP Source</option>
+<option value="29">Lua Source</option>
+<option value="30">Microprocessor ASM</option>
+<option value="31">Objective C</option>
+<option value="5">PHP Source</option>
+<option value="14">PL/I Source</option>
+<option value="12">Pascal Source</option>
+<option value="6">Perl Source</option>
+<option value="11">Python Source</option>
+<option value="1">Raw</option>
+<option value="10">Ruby Source</option>
+<option value="16">SQL Statement</option>
+<option value="17">Scheme Source</option>
+<option value="33" selected="selected">Script Log</option>
+<option value="32">Visual Basic .NET</option>
+<option value="8">Visual Basic Source</option>
+<option value="15">XML Document</option>
+<option value="13">mIRC Script</option>
+		</select><br />
+		<label for="expire-id2243742">Expire this post in:</label><select id="expire-id2243742" name="expiry" class="general">
+	<option value="" selected="selected">Never</option><option value="5 minutes">5 minutes</option><option value="10 minutes">10 minutes</option><option value="15 minutes">15 minutes</option><option value="30 minutes">30 minutes</option><option value="45 minutes">45 minutes</option><option value="1 hour">1 hour</option><option value="2 hours">2 hours</option><option value="4 hours">4 hours</option><option value="8 hours">8 hours</option><option value="12 hours">12 hours</option><option value="1 day">1 day</option><option value="2 days">2 days</option><option value="3 days">3 days</option><option value="1 week">1 week</option><option value="2 weeks">2 weeks</option><option value="3 weeks">3 weeks</option><option value="1 month" selected="selected">1 month</option><option value="2 months">2 months</option><option value="3 months">3 months</option><option value="4 months">4 months</option><option value="5 months">5 months</option><option value="6 months">6 months</option><option value="1 year">1 year</option>		</select> <!--<input type="checkbox" name="nmsaveexp" value="1" /> Save expiry to be the default?--><br />
+				<input style="display:inline;margin-left:12.5em;vertical-align:middle" type="checkbox" id="encrypt-id2243742" name="encrypt" value="true" onchange="document.getElementById('encpw-id2243742').style.visibility=(this.checked?'visible':'hidden');" /><label for="encrypt-id2243742" class="checkbox">Encrypt this paste.</label><span style="visibility:hidden" id="encpw-id2243742"> <label for="encryptpw-id2243742" class="checkbox">Password:</label> <input style="border:1px solid black" type="text" name="encryptpw" id="encryptpw-id2243742" size="20" /></span><br />
+				<div style="clear:left"><input type="submit" name="s" value="Submit Post" id="submit2-id2243742" class="submit" style="margin-left: 12em" /> <input type="reset" value="Reset Form" id="reset2-id2243742" class="reset" />
+		</div></div>
+		</fieldset>
+		</fieldset>
+		</form>
+				<p class="warn">Please note that information posted here will not expire by default. If you want it to expire, please set the expiry time above. If it is set to expire, web search engines will not be allowed to index it prior to it expiring. Items that are not marked to expire will be indexable by search engines. Be careful with your passwords. All illegal activities will be reported and any information will be handed over to the authorities, so be good.</p>
+<div style="margin:0px;margin-bottom:1em;width:100%;padding:0px;height:10px;background:#ffffff"><img src="http://static.pastebin.ca.tbcdn.com/imgs/corners/br-ffffff-dddddd.png" style="float:right" alt=""/><img src="http://static.pastebin.ca.tbcdn.com/imgs/corners/bl-ffffff-dddddd.png" style="float:left" alt=""/></div></div></div>    </div>
+<a href="http://pastebin.ca/structural.php" style="display: none;">worth-right</a>
+<div style="display: none;"><a href="http://pastebin.ca/structural.php">worth-right</a></div>
+<a href="http://pastebin.ca/structural.php"><span style="display: none;">worth-right</span></a>
+<a href="http://blog.slepp.ca/mouldspellbound.php" style="display: none;">fantasy-obligation</a>
+	</div></div><div id="footer">
+<div style="float:right;margin-right:1em;">
+<div class="w3cbutton"><a href="http://validator.w3.org/check?uri=referer"><span class="w3c">W3C</span><span class="w3ctext">XHTML</span></a></div>
+<div class="w3cbutton"><a href="http://jigsaw.w3.org/css-validator/"><span class="w3c">W3C</span><span class="w3ctext">CSS</span></a></div>
+</div>		 services provided and written by <a href="http://blog.slepp.ca/">Stephen Olesen</a>
+	 </div>
+	 <!-- 3.975; cacheStore (1c/0e/19), cachePrint(1c/0e/19) -->
+<script type="text/javascript"><!--
+document.write('<scr' + 'ipt type="text/javascript" src="');
+document.write('http://www.pstats.com/scripts/stats.asp?id=3812&loc=');
+document.write(escape(document.location));
+document.write('&ref=' + escape(document.referrer));
+document.write('&res=' + screen.width + 'x' + screen.height);
+document.write('&type=hidden">');
+document.write('</scr' + 'ipt>');
+// --></script>
+<noscript><div style="float:left"><a href="http://www.pstats.com"><img src="http://www.pstats.com/scripts/stats.asp?id=3812" alt="" style="border:none" /></a></div></noscript>
+     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-449785-1";urchinTracker();</script>
+	 </body>
+	</html>
+  	

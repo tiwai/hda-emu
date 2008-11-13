@@ -1,0 +1,201 @@
+			HD-AUDIO EMULATOR
+			=================
+
+GENERAL
+-------
+
+hda-emu ("HD-Audio EMUlator", or "Horribly Destructive And
+Embarrassingly Malfunctional Unit") is a program written for making
+test and debug of ALSA HD-audio driver eaiser.  The source tree
+contains three things: the HD-audio controller/codec emulation codes,
+the codec parser codes taken from the kernel HD-audio driver tree, 
+and a collection of codec proc files.
+
+The tarball already contains the recent version of HD-audio driver
+codes in kernel directory.  You can copy your version of
+sound/pci/hda/*.[ch] onto kernel directory for testing your drivers
+codes.  Eventually you'd need to edit kernel/Makefile.am and
+include/codec_config.h appropriately.
+
+The wrapper of kernel functions can be found in include directory.
+There are several cheats and tricks there.  Many codes are replaced
+with other normal functions.
+
+The build is as usual -- configure and make.  No special requirement,
+as far as I know.
+
+
+GETTING STARTED
+---------------
+
+Start hda-emu program with a codec proc file to emulate.
+
+	% hda-emu my-proc-file
+
+The program will skip other lines than proc contents, so you can pass
+alsa-info.sh output, too.  If the file contains multiple codecs, you
+can specify the codec index via -i option.  As default, the first
+codec is used.
+
+	% hda-emu -i 1 alsa-info.txt
+
+For testing, just pick up one file found in codecs subdirectory.
+
+As default, the program is pretty verbose.  When you start it up,
+you'll see a bunch of messages like:
+
+	% hda-emu codecs/stac9200-dell-d820-laptop
+
+# Parsing..
+hda_codec: Unknown model for STAC9200, using BIOS defaults
+hda_codec: pin nid 08 bios pin config 40c003fa
+...
+
+The emulator prints all logs of snd_printdd() and snd_printd() in the
+default log level in addition to its own messages.  To suppress the
+driver log messages, pass -l option with an appropriate log level.
+The level 0 will suppress all messages except for errors.
+The level 1 will show snd_printd() and snd_printdd() messages as well
+as basic messages of hda-emu itself.
+The level 2 will show each codec verbs in addition to messages shown
+via the level 1.
+
+The program has a stupid dumb command shell, and ask you a command
+after initializing and showing the messages.
+
+	# Building controls...
+	CTRL: add: Master Playback Volume:0
+	...
+	# Building PCMs...
+	> 
+
+At this point, you can give a command.  For example, type "help" or
+"h" and enter,
+
+	> help
+	Available commands: list get set dump jack option help verb pm \
+	init tip clear reconfig quit
+	Run "help CMD" for details
+
+No surprise, huh?
+
+The basic commands are described in the next sections.
+
+
+BASIC COMMANDS
+--------------
+
+* list
+
+  List the control (mixer) elements created by the driver.
+
+	> list
+	1: Master Playback Volume:0 (1)
+	2: Master Playback Switch:0 (1)
+	3: Input Source:0 (1)
+	4: Capture Volume:0 (1)
+	...
+
+  The first number is the control element numid.  This number is used
+  in get and set commands to specify the element. 
+  Then the control element name follows.  The number after colon (:)
+  shows the element index.  When multiple elements with the same name
+  exists, there can be more than zero there. 
+  The last number in parentheses is the number of multi-elements.
+  When this is more than 1, it means that there are multiple elements.
+
+* get
+
+ Get the control element information.  Pass the numid of the element
+ to see.
+
+	> get 1
+	1 Master Playback Volume:0
+	MIN/MAX: 0/31,  VAL: [0] [0]
+
+  In this case, the element 1, "Master Playback Volume", takes an
+  integer value between 0 and 31, and its current values are 0 and 0
+  (usually for left and right channels).
+
+* set
+
+  Set the control element value.  Pass the numid and the value(s).
+
+	> set 1 10 4
+
+  When the log level is more than 1, you'll see the codec verbs such
+  as
+
+	send: NID=0xb, VERB=0x3a0(set_amp_gain_mute), PARM=0xa
+	send: NID=0xb, VERB=0x390(set_amp_gain_mute), PARM=0x84
+
+* dump
+
+  Dump the codec proc output.  This is identical with proc file
+  contents.
+
+	> dump
+	Codec: SigmaTel STAC9200
+	Address: 0
+	Vendor Id: 0x83847690
+	Subsystem Id: 0x102801cc
+	...
+
+* jack
+
+  Get / set the jack plug state.  Call with a widget numid.
+
+	> jack 0x0d
+	Jack state [0xd] = 0
+
+  To emulate the jack plug / unplug, set the value in the second
+  argument, either 1 or 0.  With the loglevel > 1, you'll see the
+  codec verbs handled in the unsol_event handler.
+
+	> jack 0x0d 1
+	send: NID=0xd, VERB=0xf09(get_pin_sense), PARM=0x0
+	receive: 0x80000000
+	send: NID=0xd, VERB=0x707(set_pin_ctl), PARM=0xc0
+	...
+
+* verb
+
+  Execute a verb.  Use as you like.
+
+	> verb 0x0d 0xf07 0x00
+	Command response:: 0xc0
+
+* quit
+
+  Quit the shell.
+
+
+LOG FILE
+--------
+
+The messages can be saved to a file by starting with -o option.
+When -q option is given, the program doesn't echo the messages to
+stdout but outputs only to the log file.  It's useful for automating
+test.  The shell command can be fed from stdin, so you can write a
+command sequence in a file and redirect it to hda-emu.
+
+
+MODEL OPTION
+------------
+
+If you need to give a certain "model" module option to the driver,
+e.g. if you need to debug the behavior of the driver with
+model=laptop, pass it via -m option to hda-emu.  Also, the PCI SSID
+can be overridden by -p option.
+
+
+AUTHOR
+------
+
+Takashi Iwai <tiwai@suse.de>
+
+
+LICENSE
+-------
+
+GPL v2.  See COPYING file.
