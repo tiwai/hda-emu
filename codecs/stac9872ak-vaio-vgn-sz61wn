@@ -1,0 +1,575 @@
+upload=true&script=true&cardinfo=
+!!################################
+!!ALSA Information Script v 0.4.51
+!!################################
+
+!!Script ran on: Fri Nov 14 12:29:31 CET 2008
+
+
+!!Linux Distribution
+!!------------------
+
+Welcome to openSUSE 11.1 Beta 5 - Kernel \r (\l). openSUSE 11.1 Beta 5 (i586)
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.27.5-2-pae
+Operating System:  GNU/Linux
+Architecture:      i686
+Processor:         i686
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.17
+Library version:    
+Utilities version:  1.0.18
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [Intel          ]: HDA-Intel - HDA Intel
+                      HDA Intel at 0xfc500000 irq 21
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:1b.0 Audio device: Intel Corporation 82801H (ICH8 Family) HD Audio Controller (rev 03)
+09:04.2 Mass storage controller: Texas Instruments 5-in-1 Multimedia Card Reader (SD/MMC/MS/MS PRO/xD)
+
+
+!!Advanced information - PCI Vendor/Device/Susbsystem ID's
+!!--------------------------------------------------------
+
+00:1b.0 0403: 8086:284b (rev 03)
+	Subsystem: 104d:9008
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-hda-intel: model=vaio
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+enable_msi : 0
+id : <NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+model : vaio,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+power_save : 0
+power_save_controller : Y
+probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: SigmaTel STAC9872AK
+Address: 0
+Vendor Id: 0x83847662
+Subsystem Id: 0x104d1e00
+Revision Id: 0x100201
+No Modem Function Group found
+Default PCM:
+    rates [0x7e0]: 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: ofs=0x00, nsteps=0x0f, stepsize=0x05, mute=1
+Default Amp-Out caps: ofs=0x7f, nsteps=0x7f, stepsize=0x02, mute=1
+GPIO: io=5, o=0, i=0, unsolicited=1, wake=1
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0
+  IO[2]: enable=0, dir=0, wake=0, sticky=0, data=0
+  IO[3]: enable=0, dir=0, wake=0, sticky=0, data=0
+  IO[4]: enable=0, dir=0, wake=0, sticky=0, data=0
+Node 0x02 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
+  Amp-Out caps: N/A
+  Amp-Out vals:  [0x58 0x58]
+  Converter: stream=0, channel=0
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+Node 0x03 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
+  Amp-Out caps: N/A
+  Amp-Out vals:  [0xff 0xff]
+  Converter: stream=0, channel=0
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+Node 0x04 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
+  Amp-Out caps: N/A
+  Amp-Out vals:  [0xff 0xff]
+  Converter: stream=0, channel=0
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+Node 0x05 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
+  Amp-Out caps: N/A
+  Amp-Out vals:  [0x58 0x58]
+  Converter: stream=0, channel=0
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+Node 0x06 [Audio Input] wcaps 0x1d0541: Stereo
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+  Connection: 1
+     0x07
+  Processing caps: benign=0, ncoeff=0
+Node 0x07 [Audio Selector] wcaps 0x300903: Stereo Amp-In R/L
+  Amp-In caps: N/A
+  Amp-In vals:  [0x00 0x00]
+  Connection: 1
+     0x0e
+Node 0x08 [Audio Input] wcaps 0x1d0541: Stereo
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+  Connection: 1
+     0x09
+  Processing caps: benign=0, ncoeff=0
+Node 0x09 [Audio Selector] wcaps 0x300903: Stereo Amp-In R/L
+  Amp-In caps: N/A
+  Amp-In vals:  [0x0d 0x0d]
+  Connection: 1
+     0x15
+Node 0x0a [Pin Complex] wcaps 0x400181: Stereo
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x03211020: [Jack] HP Out at Ext Left
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x2, Sequence = 0x0
+  Pin-ctls: 0x80: HP VREF_HIZ
+  Unsolicited: tag=30, enabled=1
+  Connection: 1
+     0x02
+Node 0x0b [Pin Complex] wcaps 0x400181: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x04
+Node 0x0c [Pin Complex] wcaps 0x400181: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x03
+Node 0x0d [Pin Complex] wcaps 0x400181: Stereo
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x03a15030: [Jack] Mic at Ext Left
+    Conn = 1/8, Color = Red
+    DefAssociation = 0x3, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x02
+Node 0x0e [Pin Complex] wcaps 0x400081: Stereo
+  Pincap 0x00000024: IN Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+Node 0x0f [Pin Complex] wcaps 0x400181: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x90170110: [Fixed] Speaker at Int N/A
+    Conn = Analog, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x05
+Node 0x10 [Audio Output] wcaps 0x40211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x3e0]: 44100 48000 88200 96000 176400
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Delay: 4 samples
+Node 0x11 [Pin Complex] wcaps 0x400301: Stereo Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Connection: 2
+     0x10* 0x09
+Node 0x12 [Audio Input] wcaps 0x140311: Stereo Digital
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Delay: 4 samples
+  Connection: 1
+     0x13
+Node 0x13 [Pin Complex] wcaps 0x440381: Stereo Digital
+  Pincap 0x00000034: IN OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Delay: 4 samples
+  Connection: 1
+     0x18
+Node 0x14 [Pin Complex] wcaps 0x400001: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x90a7013e: [Fixed] Mic at Int N/A
+    Conn = Analog, Color = Unknown
+    DefAssociation = 0x3, Sequence = 0xe
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+Node 0x15 [Audio Selector] wcaps 0x30010d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x04, stepsize=0x27, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Connection: 4
+     0x0a 0x0d* 0x14 0x02
+Node 0x16 [Beep Generator Widget] wcaps 0x70000c: Mono Amp-Out
+  Amp-Out caps: ofs=0x03, nsteps=0x03, stepsize=0x17, mute=0
+  Amp-Out vals:  [0x00]
+Node 0x17 [Volume Knob Widget] wcaps 0x600000: Mono
+  Volume-Knob: delta=1, steps=127, direct=0, val=127
+  Connection: 4
+     0x02* 0x03 0x04 0x05
+Node 0x18 [Audio Output] wcaps 0x40201: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  Delay: 4 samples
+Codec: Conexant ID 2c06
+Address: 1
+Vendor Id: 0x14f12c06
+Subsystem Id: 0x104d1700
+Revision Id: 0x100000
+Modem Function Group: 0x2
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw----+ 1 root audio 116, 7 Nov 14  2008 /dev/snd/controlC0
+crw-rw----+ 1 root audio 116, 6 Nov 14  2008 /dev/snd/hwC0D0
+crw-rw----+ 1 root audio 116, 5 Nov 14  2008 /dev/snd/hwC0D1
+crw-rw----+ 1 root audio 116, 4 Nov 14 12:28 /dev/snd/pcmC0D0c
+crw-rw----+ 1 root audio 116, 3 Nov 14 12:28 /dev/snd/pcmC0D0p
+crw-rw----+ 1 root audio 116, 8 Nov 14 12:21 /dev/snd/seq
+crw-rw----+ 1 root audio 116, 2 Nov 14  2008 /dev/snd/timer
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: Intel [HDA Intel], device 0: STAC92xx Analog [STAC92xx Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: Intel [HDA Intel], device 0: STAC92xx Analog [STAC92xx Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [Intel]
+
+Card hw:0 'Intel'/'HDA Intel at 0xfc500000 irq 21'
+  Mixer name	: 'SigmaTel STAC9872AK'
+  Components	: 'HDA:83847662 HDA:14f12c06'
+  Controls      : 7
+  Simple ctrls  : 6
+Simple mixer control 'Master',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 127
+  Mono:
+  Front Left: Playback 88 [69%] [-29.25dB] [on]
+  Front Right: Playback 88 [69%] [-29.25dB] [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume cswitch cswitch-joined cswitch-exclusive
+  Capture exclusive group: 0
+  Playback channels: Front Left - Front Right
+  Capture channels: Mono
+  Limits: Playback 0 - 255
+  Mono: Capture [off]
+  Front Left: Playback 243 [95%] [-2.40dB]
+  Front Right: Playback 243 [95%] [-2.40dB]
+Simple mixer control 'Mic Jack',0
+  Capabilities: cswitch cswitch-joined cswitch-exclusive
+  Capture exclusive group: 0
+  Capture channels: Mono
+  Mono: Capture [on]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 15
+  Front Left: Capture 13 [87%] [19.50dB] [on]
+  Front Right: Capture 13 [87%] [19.50dB] [on]
+Simple mixer control 'Digital',0
+  Capabilities: cvolume
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 120
+  Front Left: Capture 0 [0%] [-30.00dB]
+  Front Right: Capture 0 [0%] [-30.00dB]
+Simple mixer control 'Internal Mic',0
+  Capabilities: cswitch cswitch-joined cswitch-exclusive
+  Capture exclusive group: 0
+  Capture channels: Mono
+  Mono: Capture [off]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.Intel {
+	control.1 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 127'
+		comment.dbmin -9525
+		comment.dbmax 0
+		iface MIXER
+		name 'Master Playback Volume'
+		value.0 88
+		value.1 88
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Master Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 15'
+		comment.dbmin 0
+		comment.dbmax 2250
+		iface MIXER
+		name 'Capture Volume'
+		value.0 13
+		value.1 13
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 'Mic Jack'
+		comment.item.1 'Internal Mic'
+		comment.item.2 PCM
+		iface MIXER
+		name 'Capture Source'
+		value 'Mic Jack'
+	}
+	control.6 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 255'
+		comment.tlv '0000000100000008ffffec1400000014'
+		comment.dbmin -5100
+		comment.dbmax 0
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 243
+		value.1 243
+	}
+	control.7 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 120'
+		comment.tlv '0000000100000008fffff44800000032'
+		comment.dbmin -3000
+		comment.dbmax 3000
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 0
+		value.1 0
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+ip6t_LOG
+xt_tcpudp
+xt_pkttype
+ipt_LOG
+xt_limit
+binfmt_misc
+snd_pcm_oss
+snd_mixer_oss
+snd_seq
+snd_seq_device
+i915
+drm
+ip6t_REJECT
+nf_conntrack_ipv6
+ip6table_raw
+xt_NOTRACK
+ipt_REJECT
+xt_state
+iptable_raw
+iptable_filter
+ip6table_mangle
+nf_conntrack_netbios_ns
+cpufreq_conservative
+cpufreq_userspace
+nf_conntrack_ipv4
+cpufreq_powersave
+nf_conntrack
+acpi_cpufreq
+ip_tables
+speedstep_lib
+ip6table_filter
+ip6_tables
+x_tables
+ipv6
+fuse
+loop
+dm_mod
+arc4
+ecb
+crypto_blkcipher
+mspro_block
+tifm_ms
+memstick
+iwl3945
+tifm_sd
+pcmcia
+rfkill
+snd_hda_intel
+mmc_core
+uvcvideo
+snd_pcm
+mac80211
+video
+snd_timer
+rtc_cmos
+yenta_socket
+tifm_7xx1
+compat_ioctl32
+usbhid
+snd_page_alloc
+rsrc_nonstatic
+led_class
+ohci1394
+ide_cd_mod
+usb_storage
+i2c_i801
+hid
+intel_agp
+button
+battery
+ac
+snd_hwdep
+iTCO_wdt
+output
+rtc_core
+pcmcia_core
+tifm_core
+sony_laptop
+videodev
+ieee1394
+snd
+agpgart
+sg
+cdrom
+cfg80211
+iTCO_vendor_support
+rtc_lib
+v4l1_compat
+pcspkr
+i2c_core
+joydev
+soundcore
+ff_memless
+sky2
+sd_mod
+crc_t10dif
+ehci_hcd
+uhci_hcd
+usbcore
+edd
+ext3
+mbcache
+jbd
+fan
+ide_pci_generic
+ata_generic
+ata_piix
+libata
+scsi_mod
+dock
+piix
+ide_core
+thermal
+processor
+thermal_sys
+hwmon
+
+
