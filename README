@@ -158,6 +158,34 @@ BASIC COMMANDS
 	send: NID=0xd, VERB=0x707(set_pin_ctl), PARM=0xc0
 	...
 
+* PCM
+
+  List the registered PCM streams or test the PCM stream.
+  When no argument is passed, hda-emu lists the all registered PCM
+  streams.  For example,
+
+	> PCM
+	0: STAC92xx Analog:0 (audio), play=1, capt=2
+	1: STAC92xx Digital:1 (SPDIF), play=1, capt=0
+
+  where the first number indicates the stream ID number.
+
+  For testing a PCM stream, pass the ID number to the first argument,
+  and the stream direction, either playback or capture (or 0, 1).
+  Also, pass the sample rate (default = 48000), channels (default =
+  2), and format bits (default = 16) if you want to test with
+  different values.  Then hda-emu does a single-shot PCM test: open,
+  prepare, cleanup and close.
+
+	> PCM 0 p 48000 2 16
+	Open PCM STAC92xx Analog for play
+	send: NID=0x21, VERB=0xf00(get_parameters), PARM=0xa(PCM)
+	receive: 0xe07e0
+	...
+	Prepare PCM, rate=48000, channels=2, format=16 bits
+	PCM format_val = 0x11
+	...
+
 * verb
 
   Execute a verb.  Use as you like.

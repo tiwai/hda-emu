@@ -209,9 +209,12 @@ static void issue_unsol(int caddr, int res)
 	snd_hda_queue_unsol_event(bus, res, caddr);
 }
 
+static void reset_pcm(void);
+
 void hda_codec_reset(void)
 {
 	snd_hda_codec_reset(_codec);
+	reset_pcm();
 }
 
 int hda_codec_reconfig(void)
@@ -234,8 +237,112 @@ int hda_codec_reconfig(void)
 }
 
 /*
+ * PCM
  */
 
+#define MAX_PCM_STREAMS		16
+
+static int num_pcm_streams;
+static struct hda_pcm pcm_streams[MAX_PCM_STREAMS];
+
+/* get a string corresponding to the given HDA_PCM_TYPE_XXX */
+static const char *get_pcm_type_name(int type)
+{
+	const char *names[] = {
+		[HDA_PCM_TYPE_AUDIO] = "audio",
+		[HDA_PCM_TYPE_SPDIF] = "SPDIF",
+		[HDA_PCM_TYPE_HDMI] = "HDMI",
+		[HDA_PCM_TYPE_MODEM] = "modem",
+	};
+	if (type >= HDA_PCM_TYPE_AUDIO && type <= HDA_PCM_TYPE_MODEM)
+		return names[type];
+	else
+		return "unknown";
+}
+
+/* list registered PCM streams, called from hda-ctlsh.c */
+void hda_list_pcms(void)
+{
+	int i;
+
+	for (i = 0; i < num_pcm_streams; i++) {
+		struct hda_pcm *p = &pcm_streams[i];
+		hda_log(HDA_LOG_INFO, "%d: %s:%d (%s), play=%d, capt=%d\n",
+			i, p->name, p->device,
+			get_pcm_type_name(p->pcm_type),
+			p->stream[0].substreams,
+			p->stream[1].substreams);
+	}
+}
+
+/* get the appropriate ALSA SNDRV_PCM_FORMAT_* from the format bits */
+static int get_alsa_format(int bits)
+{
+	if (bits <= 8)
+		return SNDRV_PCM_FORMAT_U8;
+	else if (bits <= 16)
+		return SNDRV_PCM_FORMAT_S16_LE;
+	else
+		return SNDRV_PCM_FORMAT_S32_LE;
+}
+
+/* test the given PCM stream, called from hda-ctlsh.c */
+void hda_test_pcm(int id, int dir, int rate, int channels, int format)
+{
+	static struct snd_pcm_substream dummy_substream;
+	static struct snd_pcm_runtime dummy_runtime;
+	struct snd_pcm_substream *substream = &dummy_substream;
+	struct snd_pcm_runtime *runtime = &dummy_runtime;
+	struct hda_pcm_stream *hinfo;
+	unsigned int format_val;
+	int err;
+
+	if (id < 0 || id >= num_pcm_streams) {
+		hda_log(HDA_LOG_ERR, "Invalid PCM id %d\n", id);
+		return;
+	}
+
+	memset(substream, 0, sizeof(*substream));
+	memset(runtime, 0, sizeof(*runtime));
+	substream->runtime = runtime;
+	runtime->rate = rate;
+	runtime->format = get_alsa_format(format);
+	runtime->channels = channels;
+
+	hinfo = &pcm_streams[id].stream[dir];
+	hda_log(HDA_LOG_INFO, "Open PCM %s for %s\n",
+		pcm_streams[id].name,
+		(dir ? "capt" : "play"));
+	snd_hda_power_up(_codec);
+	err = hinfo->ops.open(hinfo, _codec, substream);
+	if (err < 0) {
+		hda_log(HDA_LOG_INFO, "Open error = %d\n", err);
+		snd_hda_power_down(_codec);
+		return;
+	}
+	
+	hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
+		"format=%d bits\n",
+		rate, channels, format);
+	format_val = snd_hda_calc_stream_format(rate, channels,
+						get_alsa_format(format),
+						format);
+	if (!format_val) {
+		snd_hda_power_down(_codec);
+		return;
+	}
+	hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
+	err = hinfo->ops.prepare(hinfo, _codec, 0, format_val, substream);
+
+	hda_log(HDA_LOG_INFO, "PCM Clean up\n");
+	hinfo->ops.cleanup(hinfo, _codec, substream);
+
+	hda_log(HDA_LOG_INFO, "Close PCM\n");
+	hinfo->ops.close(hinfo, _codec, substream);
+	snd_hda_power_down(_codec);
+}
+
+/* attach_pcm callback -- register the stream */
 static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		      struct hda_pcm *cpcm)
 {
@@ -244,8 +351,24 @@ static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		cpcm->device, cpcm->name,
 		cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams,
 		cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams);
+	if (num_pcm_streams >= MAX_PCM_STREAMS) {
+		hda_log(HDA_LOG_ERR, "Too many streams\n");
+		return 0;
+	}
+	pcm_streams[num_pcm_streams++] = *cpcm;
 	return 0;
 }
+
+/* clear the all registered PCM streams */
+static void reset_pcm(void)
+{
+	memset(pcm_streams, 0, sizeof(pcm_streams));
+	num_pcm_streams = 0;
+}
+
+/*
+ * power management
+ */
 
 static void pm_notify(struct hda_bus *bus)
 {
@@ -351,27 +474,12 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	_codec = codec;
-	hda_log(HDA_LOG_INFO, "# Initializing..\n");
-	if (codec->patch_ops.init) {
-		if (codec->patch_ops.init(codec) < 0) {
-			hda_log(HDA_LOG_ERR, "codec init error\n");
-			return 1;
-		}
-	}
-	hda_log(HDA_LOG_INFO, "# Building controls...\n");
-	if (codec->patch_ops.build_controls){
-		if (codec->patch_ops.build_controls(codec) < 0) {
-			hda_log(HDA_LOG_ERR, "codec build_controls error\n");
-			return 1;
-		}
-	}
+
+	hda_log(HDA_LOG_INFO, "# Init and building controls...\n");
+	snd_hda_codec_build_controls(codec);
+
 	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
-	if (codec->patch_ops.build_pcms) {
-		if (codec->patch_ops.build_pcms(codec) < 0) {
-			hda_log(HDA_LOG_ERR, "cannot create PCMs\n");
-			return 1;
-		}
-	}
+	snd_hda_build_pcms(bus);
 
 	/* power-down after init phase */
 	snd_hda_power_down(codec);

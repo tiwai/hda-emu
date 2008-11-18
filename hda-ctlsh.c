@@ -77,6 +77,8 @@ static struct usage_table usage_str[] = {
 	  "Show help texts" },
 	{ "verb", "verb nid cmd parameter",
 	  "Execute a verb" },
+	{ "PCM", "PCM [pcm-id dir [rate [channels [format-bits]]]]",
+	  "List PCM streams or test the given PCM stream" },
 	{ "pm", "pm",
 	  "Test suspend/resume cycle" },
 	{ "init", "init nid cmd parameter",
@@ -310,7 +312,7 @@ static void set_jack(char *line)
 		usage("jack");
 		return;
 	}
-	nid = strtol(p, NULL, 0);
+	nid = strtoul(p, NULL, 0);
 	p = gettoken(&line);
 	if (!p) {
 		hda_log_jack_state(nid);
@@ -334,7 +336,7 @@ static void run_verb(char *line)
 			usage("verb");
 			return;
 		}
-		parm[i] = strtol(p, NULL, 0);
+		parm[i] = strtoul(p, NULL, 0);
 	}
 	hda_exec_verb(parm[0], parm[1], parm[2]);
 }
@@ -346,6 +348,50 @@ static void test_pm(char *line)
 	hda_log(HDA_LOG_INFO, "** RESUMING **\n");
 	hda_test_resume();
 	hda_log(HDA_LOG_INFO, "** TEST_PM DONE **\n");
+}
+
+static void test_pcm(char *line)
+{
+	char *id;
+	int stream, dir, rate = 48000, channels = 2, format = 16;
+
+	id = gettoken(&line);
+	if (!id) {
+		hda_list_pcms();
+		return;
+	}
+	stream = strtoul(id, NULL, 0);
+
+	id = gettoken(&line);
+	if (!id) {
+		hda_log(HDA_LOG_ERR, "No stream direction is given\n");
+		return;
+	}
+	switch (*id) {
+	case 'p':
+	case 'P':
+		dir = 0;
+		break;
+	case 'c':
+	case 'C':
+		dir = 1;
+		break;
+	default:
+		dir = strtoul(id, NULL, 0);
+		break;
+	}
+
+	id = gettoken(&line);
+	if (id) {
+		rate = strtoul(id, NULL, 0);
+		id = gettoken(&line);
+		if (id) {
+			channels = strtoul(id, NULL, 0);
+			id = gettoken(&line);
+			format = strtoul(id, NULL, 0);
+		}
+	}
+	hda_test_pcm(stream, dir, rate, channels, format);
 }
 
 static void add_init_verb(char *line)
@@ -409,6 +455,9 @@ int cmd_loop(FILE *fp)
 			break;
 		case 'v':
 			run_verb(buf);
+			break;
+		case 'P':
+			test_pcm(buf);
 			break;
 		case 'p':
 			test_pm(buf);

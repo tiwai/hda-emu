@@ -23,4 +23,7 @@ void hda_exec_verb(int nid, int verb, int parm);
 void hda_codec_reset(void);
 int hda_codec_reconfig(void);
 
+void hda_list_pcms(void);
+void hda_test_pcm(int stream, int dir, int rate, int channels, int format);
+
 #endif /* __HDA_LOG_H */
