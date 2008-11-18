@@ -1,3 +1,14 @@
+* version 0.0.3:
+
+Takashi Iwai (6):
+      Add Vaio VGN sz61 wn alsa-info
+      Add thinkpad T61p alsa-info
+      Add alsa-info for HP DV5-1004nr with IDT 91HD71B7x
+      Add a hack to correct the wrong pincap value of old proc outputs
+      Add PCM command to list and simulate PCM streams
+      Add kernel/hda_intel.c and kernel/hda_hwdep.c to .gitignore
+      Update kernel codes
+
 * version 0.0.2:
 
 Takashi Iwai (5):
