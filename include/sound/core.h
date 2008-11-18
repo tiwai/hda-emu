@@ -2,6 +2,7 @@
 #define __SOUND_CORE_H
 
 #include "wrapper.h"
+#include <linux/slab.h>
 
 #define snd_printk	hda_log_printk
 #define snd_printd	hda_log_printk

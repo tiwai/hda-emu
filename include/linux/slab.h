@@ -24,4 +24,13 @@ static inline size_t strlcpy(char *dest, const char *src, size_t size)
 	return ret;
 }
 
+static inline void *kmemdup(const void *src, size_t size, int gfp)
+{
+	void *dst = malloc(size);
+	if (!dst)
+		return NULL;
+	memcpy(dst, src, size);
+	return dst;
+}
+
 #endif /* __LINUX_SLAB_H */

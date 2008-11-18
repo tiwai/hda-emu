@@ -18,8 +18,10 @@
 #define CONFIG_SND_HDA_CODEC_SI3054
 #define CONFIG_SND_HDA_CODEC_ATIHDMI
 #define CONFIG_SND_HDA_CODEC_CONEXANT
+#define CONFIG_SND_HDA_CODEC_INTELHDMI
 #define CONFIG_SND_HDA_CODEC_VIA
 #define CONFIG_SND_HDA_CODEC_CA0110
+#define CONFIG_SND_HDA_ELD
 
 /* define below if you have the latest sound-unstable codes in kernel subdir */
 #define HAVE_CODEC_RECONFIG
