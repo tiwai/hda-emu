@@ -228,7 +228,14 @@ static int parse_node_items(const char *buf)
 	} else if ((p = strmatch(buf, "  Pin-ctls: "))) {
 		node->pinctl = strtoul(p, NULL, 0);
 	} else if ((p = strmatch(buf, "  Pincap "))) {
-		node->pincap = strtoul(p, NULL, 0);
+		const char *end;
+		/* a special hack to avoid the old bug */
+		if (strmatch(p, "0x08") &&
+		    ((end = strchr(p, ':'))) &&
+		    (size_t)(end - p) != 10)
+			node->pincap = strtoul(p + 4, NULL, 16);
+		else
+			node->pincap = strtoul(p, NULL, 0);
 	} else if ((p = strmatch(buf, "  Pin Default "))) {
 		node->pin_default = strtoul(p, NULL, 0);
 	} else if ((p = strmatch(buf, "  Unsolicited: "))) {
