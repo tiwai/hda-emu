@@ -217,10 +217,14 @@ model=laptop, pass it via -m option to hda-emu.  Also, the PCI SSID
 can be overridden by -p option.
 
 
-AUTHOR
-------
+DOWNLOAD
+--------
 
-Takashi Iwai <tiwai@suse.de>
+The package tarballs are found at
+	ftp://ftp.kernel.org/pub/linux/kernel/people/tiwai/misc/
+
+The git tree is at
+	git://git.kernel.org/pub/scm/linux/kernel/git/tiwai/hda-emu.git
 
 
 LICENSE
