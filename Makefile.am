@@ -6,6 +6,6 @@ hda_emu_LDADD = kernel/libhda.a
 
 INCLUDES = -I$(top_srcdir)/include
 
-EXTRA_DIST = README codecs/*
+EXTRA_DIST = README AUTHORS codecs/*
 
 AUTOMAKE_OPTIONS = foreign
