@@ -331,11 +331,46 @@ static int parse_node_pcm(const char *buf)
 
 static int parse_gpio(const char *buf)
 {
+	unsigned int gpio_io, gpio_o, gpio_i, gpio_unsol, gpio_wake;
+	struct xhda_node *node = current_node ? current_node : &codec->afg;
+
+	while (*buf && isspace(*buf))
+		buf++;
+	if (sscanf(buf, "io=%d, o=%d, i=%d, unsolicited=%d, wake=%d",
+		   &gpio_io, &gpio_o, &gpio_i, &gpio_unsol, &gpio_wake) != 5) {
+		/* an invalid line; skip */
+		return 0;
+	}
+	node->gpio_cap = gpio_io |
+		(gpio_o << 8) |
+		(gpio_i << 16) |
+		(gpio_unsol << 30) |
+		(gpio_wake << 31);
+	parse_mode = PARSE_GPIO;
 	return 0;
 }
 
 static int parse_gpio_items(const char *buf)
 {
+	struct xhda_node *node = current_node ? current_node : &codec->afg;
+	unsigned int i, enable, dir, wake, sticky, data;
+	unsigned int unsol = 0;
+
+	if (sscanf(buf, "  IO[%d]: enable=%d, dir=%d, wake=%d, sticky=%d, data=%d, unsol=%d",
+		   &i, &enable, &dir, &wake, &sticky, &data, &unsol) != 7) {
+		if (sscanf(buf, "  IO[%d]: enable=%d, dir=%d, wake=%d, sticky=%d, data=%d",
+			   &i, &enable, &dir, &wake, &sticky, &data) != 6) {
+			/* an invalid line; abort */
+			parse_mode = PARSE_NODE;
+			return 0;
+		}
+	}
+	node->gpio_mask |= (enable << i);
+	node->gpio_dir |= (dir << i);
+	node->gpio_wake |= (wake << i);
+	node->gpio_sticky |= (sticky << i);
+	node->gpio_data |= (data << i);
+	node->gpio_unsol |= (unsol << i);
 	return 0;
 }
 

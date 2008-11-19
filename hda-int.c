@@ -694,7 +694,7 @@ static int par_proc_cap(struct xhda_codec *codec, struct xhda_node *node,
 static int par_gpio_cap(struct xhda_codec *codec, struct xhda_node *node,
 			unsigned int cmd)
 {
-	return 0; /* FIXME */
+	return node->gpio_cap;
 }
 
 static int par_amp_out_cap(struct xhda_codec *codec, struct xhda_node *node,
