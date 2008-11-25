@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <sys/stat.h>
 
 struct snd_ctl_elem_info;
 struct snd_info_entry;
@@ -13,10 +14,22 @@ struct snd_info_buffer {
 	FILE *fp;
 };
 
+struct snd_info_entry_text {
+	void (*read)(struct snd_info_entry *entry,
+		     struct snd_info_buffer *buffer);
+	void (*write)(struct snd_info_entry *entry,
+		      struct snd_info_buffer *buffer);
+};
+
 typedef void (*snd_info_proc_t)(struct snd_info_entry *entry,
 				struct snd_info_buffer *buf);
 
 struct snd_info_entry {
+	unsigned int mode;
+	union {
+		struct snd_info_entry_text text;
+		/* struct snd_info_entry_ops *ops; */
+	} c;
 	void *private_data;
 	snd_info_proc_t func;
 };
@@ -46,6 +59,12 @@ static void snd_info_set_text_ops(struct snd_info_entry *entry,
 {
 	entry->private_data = private_data;
 	entry->func = func;
+}
+
+static int snd_info_get_line(struct snd_info_buffer *buffer, char *line,
+			     int len)
+{
+	return 1; /* EOF */
 }
 
 #endif /* __SOUND_INFO_H */
