@@ -290,9 +290,13 @@ static int parse_pcm_items(const char *buf, struct xhda_pcm_info *pcm)
 		buf++;
 	if ((p = strmatch(buf, "rates [")))
 		pcm->rates = strtoul(p, NULL, 0);
-	else if ((p = strmatch(buf, "bits [")))
+	else if ((p = strmatch(buf, "bits ["))) {
 		pcm->bits = strtoul(p, NULL, 0);
-	else if ((p = strmatch(buf, "formats [")))
+		if (pcm->bits >= 0x1000) {
+			/* workaround a temporary bug */
+			pcm->bits >>= 16;
+		}
+	} else if ((p = strmatch(buf, "formats [")))
 		pcm->formats = strtoul(p, NULL, 0);
 	else
 		return 1;
