@@ -461,5 +461,8 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 			return err;
 		}
 	}
+
+	add_codec_extensions(codec);
+
 	return 0;
 }

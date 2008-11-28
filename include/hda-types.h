@@ -65,6 +65,12 @@ struct xhda_verb_table {
 	const char *name;
 };
 
+struct xhda_value_cache {
+	unsigned int verb;
+	unsigned int val;
+	struct xhda_value_cache *next;
+};
+
 struct xhda_codec {
 	unsigned int addr;
 	unsigned int vendor_id;
@@ -75,9 +81,11 @@ struct xhda_codec {
 	unsigned int rc;
 	struct xhda_verb_table *extended_verbs;
 	struct xhda_verb_table *extended_parameters;
+	struct xhda_value_cache *value_cache;
 };
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int idx);
+void add_codec_extensions(struct xhda_codec *codec);
 
 int hda_cmd(struct xhda_codec *codec, unsigned int cmd);
 int hda_get_jack_state(struct xhda_codec *codec, int nid);
