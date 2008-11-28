@@ -1,3 +1,27 @@
+* version 0.0.4:
+
+Takashi Iwai (20):
+      Add alsa-info for Dell Inspiron m4300
+      Handle GPIO bits
+      Update kernel codes
+      Add Dell D830 laptop alsa-info with IDT92HD71bxx
+      Add AUTHORS file, download section in README
+      Add missing AUTHORS to Makefile.am
+      Add alsa-info for Dell Studio 15 laptop
+      Add ASUS P5QL-EM mobo alsa-info
+      Add a workaround for buggy PCM bits proc read
+      Add alsa-info for MSI 7260 mobo and Mac Mini Core-Duo
+      Add more info wrappers
+      Sync'ed with the latest kernel codes
+      Updated Dell Precision M4300 alsa-info
+      Changed power_save option handling
+      Sync with the kernel tree
+      Add alsa-info of Gateway laptop with STAC9250
+      Add alsa-info of Sony VAIO VGN-SR19XN with ALC262 codec
+      Fix amp-cap override
+      Add codec-specific extended verbs and parameters
+      Add IDT/STAC specific verbs
+
 * version 0.0.3:
 
 Takashi Iwai (6):
