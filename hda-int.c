@@ -652,15 +652,27 @@ static int par_pin_cap(struct xhda_codec *codec, struct xhda_node *node,
 	return node->pincap;
 }
 
+static int par_amp_cap(struct xhda_amp_caps *node_cap,
+		       struct xhda_amp_caps *afg_cap)
+{
+	if (node_cap->override)
+		return node_cap->ofs |
+			(node_cap->nsteps << 8) |
+			(node_cap->stepsize << 16) |
+			(node_cap->mute << 31);
+	else
+		return afg_cap->ofs |
+			(afg_cap->nsteps << 8) |
+			(afg_cap->stepsize << 16) |
+			(afg_cap->mute << 31);
+}
+
 static int par_amp_in_cap(struct xhda_codec *codec, struct xhda_node *node,
 			  unsigned int cmd)
 {
 	if (!node)
 		return 0;
-	return node->amp_in_caps.ofs |
-		(node->amp_in_caps.nsteps << 8) |
-		(node->amp_in_caps.stepsize << 16) |
-		(node->amp_in_caps.mute << 31);
+	return par_amp_cap(&node->amp_in_caps, &codec->afg.amp_in_caps);
 }
 
 static int par_connlist_len(struct xhda_codec *codec, struct xhda_node *node,
@@ -702,10 +714,7 @@ static int par_amp_out_cap(struct xhda_codec *codec, struct xhda_node *node,
 {
 	if (!node)
 		return 0;
-	return node->amp_out_caps.ofs |
-		(node->amp_out_caps.nsteps << 8) |
-		(node->amp_out_caps.stepsize << 16) |
-		(node->amp_out_caps.mute << 31);
+	return par_amp_cap(&node->amp_out_caps, &codec->afg.amp_out_caps);
 }
 
 static int par_vol_knb_cap(struct xhda_codec *codec, struct xhda_node *node,

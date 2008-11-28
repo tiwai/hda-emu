@@ -6,6 +6,7 @@ struct xhda_amp_caps {
 	int nsteps;
 	int stepsize;
 	int mute;
+	int override;
 };
 
 #define HDA_MAX_CONNECTIONS		32

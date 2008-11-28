@@ -134,6 +134,7 @@ static int parse_amp_caps(const char *buf, struct xhda_amp_caps *caps)
 		hda_log(HDA_LOG_ERR, "  bad line: %s\n", buf);
 		return -EINVAL;
 	}
+	caps->override = 1;
 	return 0;
 }
 
