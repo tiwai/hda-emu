@@ -102,10 +102,10 @@ static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 
 	hda_log(HDA_LOG_VERB,
 		"send: NID=0x%x, VERB=0x%x(%s), PARM=0x%x",
-		nid, verb, get_verb_name(cmd), parm);
+		nid, verb, get_verb_name(&proc, cmd), parm);
 	if (verb == 0xf00)
 		hda_log(HDA_LOG_VERB, "(%s)",
-			get_parameter_name(cmd));
+			get_parameter_name(&proc, cmd));
 	hda_log(HDA_LOG_VERB, "\n");
 
 	err = hda_cmd(&proc, cmd);

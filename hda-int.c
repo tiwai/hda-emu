@@ -61,15 +61,8 @@
 /*
  */
 
-struct verb_table {
-	unsigned int verb;
-	int (*func)(struct xhda_codec *codec, struct xhda_node *node,
-		    unsigned int cmd);
-	const char *name;
-};
-
-static const struct verb_table *
-find_verb(unsigned int verb, const struct verb_table *tbl)
+static const struct xhda_verb_table *
+find_verb(unsigned int verb, const struct xhda_verb_table *tbl)
 {
 	for (; tbl->verb || tbl->func; tbl++)
 		if (tbl->verb == verb)
@@ -723,7 +716,7 @@ static int par_vol_knb_cap(struct xhda_codec *codec, struct xhda_node *node,
 	return 0; /* FIXME */
 }
 
-static struct verb_table par_tbl[] = {
+static struct xhda_verb_table par_tbl[] = {
 	{ 0x00, par_vendor_id, "vendor id" },
 	{ 0x01, par_subsystem_id, "subsystem_id"  },
 	{ 0x02, par_revision_id, "revision_id" },
@@ -744,13 +737,23 @@ static struct verb_table par_tbl[] = {
 	{}
 };
 
+static const struct xhda_verb_table *
+find_matching_param(struct xhda_codec *codec, unsigned int parm)
+{
+	const struct xhda_verb_table *tbl;
+	tbl = find_verb(parm, par_tbl);
+	if (!tbl && codec->extended_parameters)
+		tbl = find_verb(parm, codec->extended_parameters);
+	return tbl;
+}
+
 static int get_parameters(struct xhda_codec *codec, struct xhda_node *node,
 			  unsigned int cmd)
 {
-	const struct verb_table *tbl;
+	const struct xhda_verb_table *tbl;
 	unsigned int par;
 
-	tbl = find_verb(cmd & 0xff, par_tbl);
+	tbl = find_matching_param(codec, cmd & 0xff);
 	if (tbl && tbl->func)
 		return tbl->func(codec, node, cmd);
 	return 0;
@@ -760,7 +763,7 @@ static int get_parameters(struct xhda_codec *codec, struct xhda_node *node,
 /*
  */
 
-static struct verb_table verb_class[] = {
+static struct xhda_verb_table verb_class[] = {
 	{ 2, set_stream_format, "set_stream_format" },
 	{ 3, set_amp_gain_mute, "set_amp_gain_mute" },
 	{ 4, set_proc_coef, "set_proc_coef" },
@@ -772,7 +775,7 @@ static struct verb_table verb_class[] = {
 	{}
 };
 
-static struct verb_table verb_tbl[] = {
+static struct xhda_verb_table verb_tbl[] = {
 	{ 0x701, set_connect_sel, "set_connect_sel" },
 	{ 0x703, set_proc_state, "set_proc_state" },
 	{ 0x704, set_sdi_select, "set_sdi_select" },
@@ -822,6 +825,19 @@ static struct verb_table verb_tbl[] = {
 	{}
 };
 
+static const struct xhda_verb_table *
+find_matching_verb(struct xhda_codec *codec, unsigned int verb)
+{
+	const struct xhda_verb_table *tbl;
+	tbl = find_verb((verb >> 8) & 0xf, verb_class);
+	if (!tbl) {
+		tbl = find_verb(verb, verb_tbl);
+		if (!tbl && codec->extended_verbs)
+			tbl = find_verb(verb, codec->extended_verbs);
+	}
+	return tbl;
+}
+
 static struct xhda_node *find_node(struct xhda_codec *codec, unsigned int nid)
 {
 	struct xhda_node *node;
@@ -834,17 +850,14 @@ static struct xhda_node *find_node(struct xhda_codec *codec, unsigned int nid)
 
 int hda_cmd(struct xhda_codec *codec, unsigned int cmd)
 {
-	const struct verb_table *tbl;
+	const struct xhda_verb_table *tbl;
 	struct xhda_node *node;
 	unsigned int nid = (cmd >> 20) & 0x7f;
 	unsigned int verb = (cmd >> 8) & 0xfff;
 
-	tbl = find_verb((verb >> 8) & 0xf, verb_class);
-	if (!tbl) {
-		tbl = find_verb(verb, verb_tbl);
-		if (!tbl)
-			return -ENXIO;
-	}
+	tbl = find_matching_verb(codec, verb);
+	if (!tbl)
+		return -ENXIO;
 	if (!tbl->func)
 		return 0;
 	if (!nid)
@@ -875,23 +888,19 @@ int hda_set_jack_state(struct xhda_codec *codec, int nid, int val)
 	return node->unsol;
 }
 
-const char *get_verb_name(unsigned int cmd)
+const char *get_verb_name(struct xhda_codec *codec, unsigned int cmd)
 {
 	unsigned int verb = (cmd >> 8) & 0xfff;
-	const struct verb_table *tbl;
+	const struct xhda_verb_table *tbl;
 
-	tbl = find_verb((verb >> 8) & 0xf, verb_class);
-	if (!tbl) {
-		tbl = find_verb(verb, verb_tbl);
-		if (!tbl)
-			return "unknown";
-	}
-	return tbl->name;
+	tbl = find_matching_verb(codec, verb);
+	return (tbl && tbl->name) ? tbl->name : "unknown";
 }
 
-const char *get_parameter_name(unsigned int cmd)
+const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd)
 {
-	const struct verb_table *tbl;
-	tbl = find_verb(cmd & 0xff, par_tbl);
-	return tbl ? tbl->name : "unknown";
+	const struct xhda_verb_table *tbl;
+
+	tbl = find_matching_param(codec, cmd & 0xff);
+	return (tbl && tbl->name) ? tbl->name : "unknown";
 }

@@ -56,6 +56,15 @@ struct xhda_node {
 	struct xhda_node *next;
 };
 
+struct xhda_codec;
+
+struct xhda_verb_table {
+	unsigned int verb;
+	int (*func)(struct xhda_codec *codec, struct xhda_node *node,
+		    unsigned int cmd);
+	const char *name;
+};
+
 struct xhda_codec {
 	unsigned int addr;
 	unsigned int vendor_id;
@@ -64,6 +73,8 @@ struct xhda_codec {
 	unsigned int num_widgets;
 	struct xhda_node afg;
 	unsigned int rc;
+	struct xhda_verb_table *extended_verbs;
+	struct xhda_verb_table *extended_parameters;
 };
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int idx);
@@ -72,7 +83,7 @@ int hda_cmd(struct xhda_codec *codec, unsigned int cmd);
 int hda_get_jack_state(struct xhda_codec *codec, int nid);
 int hda_set_jack_state(struct xhda_codec *codec, int nid, int val);
 
-const char *get_verb_name(unsigned int cmd);
-const char *get_parameter_name(unsigned int cmd);
+const char *get_verb_name(struct xhda_codec *codec, unsigned int cmd);
+const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd);
 
 #endif /* __HDA_TYPES_H */
