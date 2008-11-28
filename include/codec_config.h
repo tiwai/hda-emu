@@ -10,6 +10,7 @@
 #define CONFIG_SND_HDA_GENERIC
 #define CONFIG_SND_HDA_HWDEP
 #define CONFIG_SND_HDA_INPUT_BEEP
+#undef CONFIG_SND_HDA_JACK	/* unsupported */
 
 #define CONFIG_SND_HDA_CODEC_REALTEK
 #define CONFIG_SND_HDA_CODEC_CMEDIA
@@ -22,6 +23,7 @@
 #define CONFIG_SND_HDA_CODEC_VIA
 #define CONFIG_SND_HDA_CODEC_CA0110
 #define CONFIG_SND_HDA_ELD
+#define CONFIG_SND_HDA_RECONFIG
 
-/* define below if you have the latest sound-unstable codes in kernel subdir */
-#define HAVE_CODEC_RECONFIG
+/* define below if power_save option is found in kernel/hda_codec. */
+#undef HDA_OLD_POWER_SAVE

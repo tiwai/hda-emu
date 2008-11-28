@@ -42,13 +42,6 @@ typedef int8_t __s8;
 
 #define PAGE_SIZE	4096
 
-/* export as XXX_parameter */
-#define module_param(a,b,c) b *a##_parameter = &a
-#define module_param_array(a,b,c,d)
-#define MODULE_PARM_DESC(a,b)
-
-#define EXPORT_SYMBOL(x)
-
 #define __user
 #define __bitwise
 
@@ -89,12 +82,8 @@ typedef int pm_message_t;
 
 typedef int spinlock_t;
 
-#define BITS_PER_LONG		(sizeof(long) * 8)
-#define BIT(nr)			(1UL << (nr))
-#define BIT_MASK(nr)		(1UL << ((nr) % BITS_PER_LONG))
-#define BIT_WORD(nr)		((nr) / BITS_PER_LONG)
-#define BITS_PER_BYTE		8
-
 #include <linux/workqueue.h>
+#include <linux/bitmap.h>
+#include <linux/module.h>
 
 #endif /* __HDA_WRAPPER_H */

@@ -143,6 +143,33 @@ void hda_exec_verb(int nid, int verb, int parm)
 }
 
 /*
+ * power_save module option handling
+ */
+#ifdef HDA_OLD_POWER_SAVE
+extern int *power_save_parameter; /* defined in kerenl/hda_codec.c */
+#else
+static int power_save;
+#endif
+
+int hda_get_power_save(void)
+{
+#ifdef HDA_OLD_POWER_SAVE
+	return *power_save_parameter;
+#else
+	return power_save;
+#endif
+}
+
+void hda_set_power_save(int val)
+{
+#ifdef HDA_OLD_POWER_SAVE
+	*power_save_parameter = val;
+#else
+	power_save = val;
+#endif
+}
+
+/*
  */
 
 void hda_log_dump_proc(void)
@@ -391,6 +418,8 @@ static void usage(void)
 	fprintf(stderr, "  -q             don't echo but only to log file\n");
 }
 
+#include "kernel/init_hooks.h"
+
 int main(int argc, char **argv)
 {
 	int c;
@@ -459,10 +488,15 @@ int main(int argc, char **argv)
 
 	temp.pci = &mypci;
 	temp.modelname = opt_model;
+#ifndef OLD_POWER_SAVE
+	temp.power_save = &power_save;
+#endif
 	temp.ops.command = cmd_send;
 	temp.ops.get_response = resp_get;
 	temp.ops.attach_pcm = attach_pcm;
 	temp.ops.pm_notify = pm_notify;
+
+	gather_codec_hooks();
 
 	if (snd_hda_bus_new(&card, &temp, &bus) < 0) {
 		hda_log(HDA_LOG_ERR, "cannot create snd_hda_bus\n");

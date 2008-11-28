@@ -26,4 +26,7 @@ int hda_codec_reconfig(void);
 void hda_list_pcms(void);
 void hda_test_pcm(int stream, int dir, int rate, int channels, int format);
 
+int hda_get_power_save(void);
+void hda_set_power_save(int val);
+
 #endif /* __HDA_LOG_H */

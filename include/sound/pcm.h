@@ -3,6 +3,8 @@
 #ifndef __SOUND_PCM_H
 #define __SOUND_PCM_H
 
+#define SNDRV_PCM_DEVICES	8
+
 struct snd_pcm;
 struct snd_pcm_str;
 struct snd_pcm_substream;

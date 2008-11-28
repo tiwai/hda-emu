@@ -284,22 +284,13 @@ static void handle_module_option(char *line)
 		char *p = gettoken(&line);
 		if (!p)
 			hda_log(HDA_LOG_INFO, "Power-save = %d\n",
-				*power_save_parameter);
+				hda_get_power_save());
 		else
-			*power_save_parameter = atoi(p);
+			hda_set_power_save(atoi(p));
 	} else {
 		hda_log(HDA_LOG_INFO, "Available options: power_save\n");
 	}
 	return;
-}
-
-static void set_power_save(char *line)
-{
-	extern int *power_save_parameter; /* defined in kerenl/hda_codec.c */
-	char *p;
-	int val;
-	
-	*power_save_parameter = val;
 }
 
 static void set_jack(char *line)
