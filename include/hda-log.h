@@ -12,7 +12,7 @@ void hda_log(int level, const char *fmt, ...);
 void hda_log_echo(int level, const char *fmt, ...);
 #define hda_log_printk(fmt, args...) hda_log(HDA_LOG_INFO, fmt, ##args)
 
-void hda_log_dump_proc(void);
+void hda_log_dump_proc(const char *file);
 void hda_log_jack_state(int nid);
 void hda_log_set_jack(int nid, int val);
 

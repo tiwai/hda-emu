@@ -194,18 +194,30 @@ void hda_set_power_save(int val)
 /*
  */
 
-void hda_log_dump_proc(void)
+void hda_log_dump_proc(const char *file)
 {
 	struct snd_info_buffer buf;
+	FILE *fp;
 	int saved_level = log_level;
 	if (!card.proc)
 		return;
 
-	buf.fp = logfp;
+	if (file) {
+		fp = fopen(file, "w");
+		if (!fp) {
+			hda_log(HDA_LOG_ERR,
+				"Cannot open dump file %s\n", file);
+			return;
+		}
+		buf.fp = fp;
+	} else
+		buf.fp = logfp;
 	/* don't show verbs */
 	log_level = HDA_LOG_INFO;
 	card.proc->func(card.proc, &buf);
 	log_level = saved_level;
+	if (file)
+		fclose(fp);
 }
 
 void hda_log_jack_state(int nid)

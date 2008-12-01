@@ -141,6 +141,9 @@ BASIC COMMANDS
 	Subsystem Id: 0x102801cc
 	...
 
+  When a file name is given as the argument, output to the specified
+  file.
+
 * jack
 
   Get / set the jack plug state.  Call with a widget numid.
