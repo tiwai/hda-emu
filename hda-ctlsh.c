@@ -81,6 +81,7 @@ static struct usage_table usage_str[] = {
 	  "List PCM streams or test the given PCM stream" },
 	{ "pm", "pm",
 	  "Test suspend/resume cycle" },
+#ifdef CONFIG_SND_HDA_RECONFIG
 	{ "init", "init nid cmd parameter",
 	  "Add an extra initialization verb (hda-reconfig feature)" },
 	{ "tip", "tip string",
@@ -89,6 +90,7 @@ static struct usage_table usage_str[] = {
 	  "Clear mixers and init-verbs (hda-reconfig feature)" },
 	{ "reconfig", "reconfig",
 	  "Re-configure codec parsing (hda-reconfig feature)" },
+#endif
 	{ "quit", "quit",
 	  "Quit the program" },
 	{ }
@@ -385,6 +387,7 @@ static void test_pcm(char *line)
 	hda_test_pcm(stream, dir, rate, channels, format);
 }
 
+#ifdef CONFIG_SND_HDA_RECONFIG
 static void add_init_verb(char *line)
 {
 	hda_log(HDA_LOG_INFO, "** not implemented yet **\n");
@@ -405,6 +408,7 @@ static int reconfig_codec(void)
 {
 	hda_codec_reconfig();
 }
+#endif
 
 /*
  */
@@ -453,6 +457,7 @@ int cmd_loop(FILE *fp)
 		case 'p':
 			test_pm(buf);
 			break;
+#ifdef CONFIG_SND_HDA_RECONFIG
 		case 'i':
 			add_init_verb(buf);
 			break;
@@ -465,6 +470,7 @@ int cmd_loop(FILE *fp)
 		case 'r':
 			reconfig_codec();
 			break;
+#endif
 		case 'h':
 			usage(gettoken(&buf));
 			break;

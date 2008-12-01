@@ -236,6 +236,8 @@ static void issue_unsol(int caddr, int res)
 	snd_hda_queue_unsol_event(bus, res, caddr);
 }
 
+#ifdef CONFIG_SND_HDA_RECONFIG
+
 static void reset_pcm(void);
 
 void hda_codec_reset(void)
@@ -262,6 +264,8 @@ int hda_codec_reconfig(void)
 		return err;
 	return 0;
 }
+
+#endif /* CONFIG_SND_HDA_RECONFIG */
 
 /*
  * PCM
@@ -386,12 +390,14 @@ static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 	return 0;
 }
 
+#ifdef CONFIG_SND_HDA_RECONFIG
 /* clear the all registered PCM streams */
 static void reset_pcm(void)
 {
 	memset(pcm_streams, 0, sizeof(pcm_streams));
 	num_pcm_streams = 0;
 }
+#endif
 
 /*
  * power management
