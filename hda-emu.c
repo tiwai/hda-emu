@@ -124,6 +124,28 @@ static unsigned int resp_get(struct hda_bus *bus)
 	return proc.rc;
 }
 
+#ifdef OLD_HDA_CMD
+static int old_cmd_send(struct hda_codec *codec, hda_nid_t nid,
+			int direct, unsigned int verb,
+			unsigned int para)
+{
+	u32 val;
+
+	val = (u32)(codec->addr & 0x0f) << 28;
+	val |= (u32)direct << 27;
+	val |= (u32)nid << 20;
+	val |= verb << 8;
+	val |= para;
+
+	return cmd_send(codec->bus,  val);
+}
+
+static unsigned int old_resp_get(struct hda_codec *codec)
+{
+	return resp_get(codec->bus);
+}
+#endif
+
 void hda_exec_verb(int nid, int verb, int parm)
 {
 	u32 val;
@@ -408,6 +430,13 @@ static void pm_notify(struct hda_bus *bus)
 	hda_log(HDA_LOG_INFO, "PM-Notified\n");
 }
 
+#ifdef OLD_HDA_CMD
+static void old_pm_notify(struct hda_codec *codec)
+{
+	pm_notify(codec->bus);
+}
+#endif
+
 
 /*
  */
@@ -497,11 +526,16 @@ int main(int argc, char **argv)
 #ifndef OLD_POWER_SAVE
 	temp.power_save = &power_save;
 #endif
+#ifdef OLD_HDA_CMD
+	temp.ops.command = old_cmd_send;
+	temp.ops.get_response = old_resp_get;
+	temp.ops.pm_notify = old_pm_notify;
+#else
 	temp.ops.command = cmd_send;
 	temp.ops.get_response = resp_get;
 	temp.ops.attach_pcm = attach_pcm;
 	temp.ops.pm_notify = pm_notify;
-
+#endif
 	gather_codec_hooks();
 
 	if (snd_hda_bus_new(&card, &temp, &bus) < 0) {
@@ -516,7 +550,11 @@ int main(int argc, char **argv)
 	_codec = codec;
 
 	hda_log(HDA_LOG_INFO, "# Init and building controls...\n");
+#ifdef CONFIG_SND_HDA_RECONFIG
 	snd_hda_codec_build_controls(codec);
+#else
+	snd_hda_build_controls(codec->bus);
+#endif
 
 	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
 	snd_hda_build_pcms(bus);
