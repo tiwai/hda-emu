@@ -615,8 +615,6 @@ struct hda_bus {
 	/* unsolicited event queue */
 	struct hda_bus_unsolicited *unsol;
 
-	struct snd_info_entry *proc;
-
 	/* assigned PCMs */
 	DECLARE_BITMAP(pcm_dev_bits, SNDRV_PCM_DEVICES);
 
@@ -642,6 +640,16 @@ struct hda_codec_preset {
 	int (*patch)(struct hda_codec *codec);
 };
 	
+struct hda_codec_preset_list {
+	const struct hda_codec_preset *preset;
+	struct module *owner;
+	struct list_head list;
+};
+
+/* initial hook */
+int snd_hda_add_codec_preset(struct hda_codec_preset_list *preset);
+int snd_hda_delete_codec_preset(struct hda_codec_preset_list *preset);
+
 /* ops set by the preset patch */
 struct hda_codec_ops {
 	int (*build_controls)(struct hda_codec *codec);
@@ -735,6 +743,7 @@ struct hda_codec {
 
 	/* detected preset */
 	const struct hda_codec_preset *preset;
+	struct module *owner;
 	const char *name;	/* codec name */
 	const char *modelname;	/* model name for preset */
 
@@ -784,6 +793,10 @@ struct hda_codec {
 	int power_count;	/* current (global) power refcount */
 	struct delayed_work power_work; /* delayed task for powerdown */
 #endif
+
+	/* codec-specific additional proc output */
+	void (*proc_widget_hook)(struct snd_info_buffer *buffer,
+				 struct hda_codec *codec, hda_nid_t nid);
 };
 
 /* direction */
@@ -892,6 +905,21 @@ void snd_hda_power_down(struct hda_codec *codec);
 static inline void snd_hda_power_up(struct hda_codec *codec) {}
 static inline void snd_hda_power_down(struct hda_codec *codec) {}
 #define snd_hda_codec_needs_resume(codec) 1
+#endif
+
+/*
+ * Codec modularization
+ */
+
+/* Export symbols only for communication with codec drivers;
+ * When built in kernel, all HD-audio drivers are supposed to be statically
+ * linked to the kernel.  Thus, the symbols don't have to (or shouldn't) be
+ * exported unless it's built as a module.
+ */
+#ifdef MODULE
+#define EXPORT_SYMBOL_HDA(sym) EXPORT_SYMBOL_GPL(sym)
+#else
+#define EXPORT_SYMBOL_HDA(sym)
 #endif
 
 #endif /* __SOUND_HDA_CODEC_H */

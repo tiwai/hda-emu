@@ -27,7 +27,6 @@
 #include <sound/core.h>
 #include "hda_codec.h"
 #include "hda_local.h"
-#include "hda_patch.h"
 
 struct ad198x_spec {
 	struct snd_kcontrol_new *mixers[5];
@@ -3902,6 +3901,7 @@ static const char *ad1884a_models[AD1884A_MODELS] = {
 static struct snd_pci_quirk ad1884a_cfg_tbl[] = {
 	SND_PCI_QUIRK(0x103c, 0x3030, "HP", AD1884A_MOBILE),
 	SND_PCI_QUIRK(0x103c, 0x3056, "HP", AD1884A_MOBILE),
+	SND_PCI_QUIRK(0x103c, 0x30e6, "HP 6730b", AD1884A_LAPTOP),
 	SND_PCI_QUIRK(0x103c, 0x30e7, "HP EliteBook 8530p", AD1884A_LAPTOP),
 	SND_PCI_QUIRK(0x103c, 0x3614, "HP 6730s", AD1884A_LAPTOP),
 	SND_PCI_QUIRK(0x17aa, 0x20ac, "Thinkpad X300", AD1884A_THINKPAD),
@@ -4308,7 +4308,7 @@ static int patch_ad1882(struct hda_codec *codec)
 /*
  * patch entries
  */
-struct hda_codec_preset snd_hda_preset_analog[] = {
+static struct hda_codec_preset snd_hda_preset_analog[] = {
 	{ .id = 0x11d4184a, .name = "AD1884A", .patch = patch_ad1884a },
 	{ .id = 0x11d41882, .name = "AD1882", .patch = patch_ad1882 },
 	{ .id = 0x11d41883, .name = "AD1883", .patch = patch_ad1884a },
@@ -4326,3 +4326,26 @@ struct hda_codec_preset snd_hda_preset_analog[] = {
 	{ .id = 0x11d4989b, .name = "AD1989B", .patch = patch_ad1988 },
 	{} /* terminator */
 };
+
+MODULE_ALIAS("snd-hda-codec-id:11d4*");
+
+MODULE_LICENSE("GPL");
+MODULE_DESCRIPTION("Analog Devices HD-audio codec");
+
+static struct hda_codec_preset_list analog_list = {
+	.preset = snd_hda_preset_analog,
+	.owner = THIS_MODULE,
+};
+
+static int __init patch_analog_init(void)
+{
+	return snd_hda_add_codec_preset(&analog_list);
+}
+
+static void __exit patch_analog_exit(void)
+{
+	snd_hda_delete_codec_preset(&analog_list);
+}
+
+module_init(patch_analog_init)
+module_exit(patch_analog_exit)
