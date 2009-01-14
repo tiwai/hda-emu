@@ -32,10 +32,13 @@ ln -s $hdadir/hda_generic.c kernel
 ln -s $hdadir/hda_proc.c kernel
 
 AC_DEFUN([CHECK_FILE], [
+  AC_MSG_CHECKING(for file $1)
   if test -f $hdadir/$1; then
+    AC_MSG_RESULT(yes)
     ln -s $hdadir/$1 kernel
     AC_DEFINE($2)
   else
+    AC_MSG_RESULT(no, creating dummy file)
     touch kernel/$1
   fi
 ])
@@ -44,9 +47,11 @@ AC_DEFUN([CHECK_CODEC], [
   AC_MSG_CHECKING(for codec $1)
   varname=CONFIG_SND_HDA_CODEC_$2
   if test -f $hdadir/patch_$1.c; then
+    AC_MSG_RESULT(yes)
     ln -s $hdadir/patch_$1.c kernel
     AC_DEFINE($varname)
   else
+    AC_MSG_RESULT(no, creating dummy file)
     touch kernel/patch_$1.c
   fi
 ])
@@ -123,6 +128,24 @@ CFLAGS=$ac_save_CFLAGS
 if test "$OLD_HDA_CODEC_NEW" = "1"; then
   AC_DEFINE(OLD_HDA_CODEC_NEW)
 fi
+
+AC_MSG_CHECKING(for hda-reconfigure)
+if grep -q snd_hda_codec_configure kernel/hda_local.h; then
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
+else
+  AC_MSG_RESULT(no)
+fi
+
+echo "Generating kernel/init_hooks.h..."
+rm -f kernel/init_hooks.h
+cat kernel/patch_*.c | grep '^module_init(' | \
+    sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' > kernel/init_hooks.h
+echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
+cat kernel/patch_*.c | grep '^module_init(' | \
+    sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
+echo '}' >> kernel/init_hooks.h
+
 
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 
