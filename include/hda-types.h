@@ -1,6 +1,8 @@
 #ifndef __HDA_TYPES_H
 #define __HDA_TYPES_H
 
+#include <stdio.h>
+
 struct xhda_amp_caps {
 	int ofs;
 	int nsteps;

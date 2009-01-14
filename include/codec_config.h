@@ -24,8 +24,3 @@
 #define CONFIG_SND_HDA_CODEC_CA0110
 #define CONFIG_SND_HDA_ELD
 #define CONFIG_SND_HDA_RECONFIG
-
-/* define below if power_save option is found in kernel/hda_codec. */
-#undef OLD_POWER_SAVE
-/* old-style hda_intel.c callbacks (2.6.27 or earlier) */
-#undef OLD_HDA_CMD

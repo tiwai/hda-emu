@@ -469,7 +469,7 @@ static void usage(void)
 
 int main(int argc, char **argv)
 {
-	int c;
+	int c, err;
 	FILE *fp;
 	int idx = 0;
 	int pci_subvendor = 0;
@@ -555,7 +555,12 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	if (snd_hda_codec_new(bus, proc.addr, 1, &codec)) {
+#ifdef OLD_HDA_CODEC_NEW
+	err = snd_hda_codec_new(bus, proc.addr, &codec);
+#else
+	err = snd_hda_codec_new(bus, proc.addr, 1, &codec);
+#endif
+	if (err) {
 		hda_log(HDA_LOG_ERR, "cannot create codec\n");
 		return 1;
 	}
