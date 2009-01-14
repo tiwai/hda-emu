@@ -1,6 +1,10 @@
 #ifndef __LINUX_WORKQUEUE_H
 #define __LINUX_WORKQUEUE_H
 
+struct workqueue_struct {
+	int dummy;
+};
+
 struct work_struct {
 	void (*func)(struct work_struct *);
 };
@@ -24,5 +28,11 @@ static inline void flush_scheduled_work(void)
 		__work_pending = NULL;
 	}
 }
+
+#define create_workqueue(x)	(struct workqueue_struct *)1 /* dummy */
+#define destroy_workqueue(x)	do {} while (0)
+#define queue_work(q,x)		schedule_work(x)
+#define queue_delayed_work(q,x,d) schedule_delayed_work(x,d)
+#define flush_workqueue(q)	flush_scheduled_work()
 
 #endif /* __LINUX_WORKQUEUE_H */
