@@ -555,7 +555,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	if (snd_hda_codec_new(bus, proc.addr, &codec)) {
+	if (snd_hda_codec_new(bus, proc.addr, 1, &codec)) {
 		hda_log(HDA_LOG_ERR, "cannot create codec\n");
 		return 1;
 	}
