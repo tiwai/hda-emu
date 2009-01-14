@@ -1,3 +1,24 @@
+* version 0.1.0:
+
+Takashi Iwai (17):
+      Add ifdef CONFIG_SND_HDA_RECONFIG
+      Add the build flag for 2.6.27 or older kernel framework
+      Add dump command argument to specify the output file
+      Add ALC888 ASUS M2R-FVM alsa-info
+      Updated kernel codes
+      Add Intel desktop alsa-info
+      Update kernel codes
+      Add alsa-info of Dell Inspiron Mini 9
+      Fix the file permission (set +x wrongly)
+      Add alsa-info of Panasonic CF-74 toughbook with STAC9200 codec
+      Add more wrappers for workqueue
+      Update to the latest sound.git (as of 2.6.29-rc1)
+      Check build flags at configure
+      Don't include HD-audio kernel codes in the tree
+      Check hda-reconfig at configure
+      Don't force --with-hdadir configure option
+      Fix missing AC_DEFINE() in case no --with-hdadir is given
+
 * version 0.0.4:
 
 Takashi Iwai (20):
