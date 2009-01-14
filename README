@@ -11,12 +11,16 @@ contains three things: the HD-audio controller/codec emulation codes,
 the build stub for codec parser codes in the kernel HD-audio driver
 tree, and a collection of codec proc files.
 
-First off, you need to prepare the recent kernel-tree code as the
-codec-parser codes.  Pass the directory of HD-audio driver, typically
+The package already contains the recent codes of HD-audio kernel
+driver.  If you want to emulate other versions of codes, prepare the
+kernel-tree, and pass the directory of HD-audio driver, typically
 $LINUX/sound/pci/hda, to --with-hdadir option of configure script.
 For example, if you have linux-2.6.28 kernel in /somewhere/linux-2.6.28,
 
 	% ./configure --with-hdadir=/somewhere/linux-2.6.28/sound/pci/hda
+
+Then it'll copy (symlink) the files from the given directory into
+kernel subdirectory.
 
 The wrapper of kernel functions can be found in include directory.
 There are several cheats and tricks there.  Many codes are replaced

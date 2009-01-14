@@ -18,9 +18,8 @@ AC_ARG_WITH(hdadir,
     [path where HD-audio kernel files are stored]),
   hdadir="$withval", hdadir="")
 
-if test -z "$hdadir"; then
-  AC_ERROR([No HD-audio directory is defined; please use --with-hdadir])
-fi
+if test -n "$hdadir"; then
+
 test -d "$hdadir" || \
   AC_ERROR([Invalid HD-audio directory: $hdadir])
 
@@ -71,6 +70,24 @@ CHECK_FILE(hda_patch.h, HDA_PATCH_H)
 CHECK_FILE(hda_beep.c, CONFIG_SND_HDA_INPUT_BEEP)
 CHECK_FILE(hda_beep.h, CONFIG_SND_HDA_INPUT_BEEP)
 CHECK_FILE(hda_eld.c, CONFIG_SND_HDA_ELD)
+
+echo "Generating kernel/init_hooks.h..."
+rm -f kernel/init_hooks.h
+cat kernel/patch_*.c | grep '^module_init(' | \
+    sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' > kernel/init_hooks.h
+echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
+cat kernel/patch_*.c | grep '^module_init(' | \
+    sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
+echo '}' >> kernel/init_hooks.h
+
+else
+dnl check existing kernel codes
+
+if ! test -f kernel/hda_codec.c; then
+  AC_ERROR([No HD-audio driver codes present in kernel directory; initialize via --with-hdadir])
+fi
+
+fi
 
 AC_MSG_CHECKING(for old power_save option)
 OLD_POWER_SAVE=
@@ -136,15 +153,6 @@ if grep -q snd_hda_codec_configure kernel/hda_local.h; then
 else
   AC_MSG_RESULT(no)
 fi
-
-echo "Generating kernel/init_hooks.h..."
-rm -f kernel/init_hooks.h
-cat kernel/patch_*.c | grep '^module_init(' | \
-    sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' > kernel/init_hooks.h
-echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
-cat kernel/patch_*.c | grep '^module_init(' | \
-    sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
-echo '}' >> kernel/init_hooks.h
 
 
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
