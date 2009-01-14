@@ -30,28 +30,55 @@ ln -s $hdadir/hda_local.h kernel
 ln -s $hdadir/hda_generic.c kernel
 ln -s $hdadir/hda_proc.c kernel
 
+else
+dnl check existing kernel codes
+
+if ! test -f kernel/hda_codec.c; then
+  AC_ERROR([No HD-audio driver codes present in kernel directory; initialize via --with-hdadir])
+fi
+
+fi
+
 AC_DEFUN([CHECK_FILE], [
   AC_MSG_CHECKING(for file $1)
-  if test -f $hdadir/$1; then
-    AC_MSG_RESULT(yes)
-    ln -s $hdadir/$1 kernel
-    AC_DEFINE($2)
+  if test -n "$hdadir"; then
+    if test -f $hdadir/$1; then
+      AC_MSG_RESULT(yes)
+      ln -s $hdadir/$1 kernel
+      AC_DEFINE($2)
+    else
+      AC_MSG_RESULT(no, creating dummy file)
+      touch kernel/$1
+    fi
   else
-    AC_MSG_RESULT(no, creating dummy file)
-    touch kernel/$1
+    if test -s kernel/$1; then
+      AC_MSG_RESULT(yes)
+      AC_DEFINE($2)
+    else
+      AC_MSG_RESULT(no)
+    fi
   fi
 ])
 
 AC_DEFUN([CHECK_CODEC], [
   AC_MSG_CHECKING(for codec $1)
   varname=CONFIG_SND_HDA_CODEC_$2
-  if test -f $hdadir/patch_$1.c; then
-    AC_MSG_RESULT(yes)
-    ln -s $hdadir/patch_$1.c kernel
-    AC_DEFINE($varname)
+  if test -n "$hdadir"; then
+    if test -f $hdadir/patch_$1.c; then
+      AC_MSG_RESULT(yes)
+      ln -s $hdadir/patch_$1.c kernel
+      AC_DEFINE($varname)
+    else
+      AC_MSG_RESULT(no, creating dummy file)
+      touch kernel/patch_$1.c
+    fi
   else
-    AC_MSG_RESULT(no, creating dummy file)
-    touch kernel/patch_$1.c
+    if test -s kernel/patch_$1.c; then
+      AC_MSG_RESULT(yes)
+      AC_DEFINE($varname)
+    else
+      AC_MSG_RESULT(no)
+    fi
   fi
 ])
 
@@ -79,15 +106,6 @@ echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
 cat kernel/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
 echo '}' >> kernel/init_hooks.h
-
-else
-dnl check existing kernel codes
-
-if ! test -f kernel/hda_codec.c; then
-  AC_ERROR([No HD-audio driver codes present in kernel directory; initialize via --with-hdadir])
-fi
-
-fi
 
 AC_MSG_CHECKING(for old power_save option)
 OLD_POWER_SAVE=
