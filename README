@@ -8,14 +8,15 @@ hda-emu ("HD-Audio EMUlator", or "Horribly Destructive And
 Embarrassingly Malfunctional Unit") is a program written for making
 test and debug of ALSA HD-audio driver eaiser.  The source tree
 contains three things: the HD-audio controller/codec emulation codes,
-the codec parser codes taken from the kernel HD-audio driver tree, 
-and a collection of codec proc files.
+the build stub for codec parser codes in the kernel HD-audio driver
+tree, and a collection of codec proc files.
 
-The tarball already contains the recent version of HD-audio driver
-codes in kernel directory.  You can copy your version of
-sound/pci/hda/*.[ch] onto kernel directory for testing your drivers
-codes.  Eventually you'd need to edit kernel/Makefile.am and
-include/codec_config.h appropriately.
+First off, you need to prepare the recent kernel-tree code as the
+codec-parser codes.  Pass the directory of HD-audio driver, typically
+$LINUX/sound/pci/hda, to --with-hdadir option of configure script.
+For example, if you have linux-2.6.28 kernel in /somewhere/linux-2.6.28,
+
+	% ./configure --with-hdadir=/somewhere/linux-2.6.28/sound/pci/hda
 
 The wrapper of kernel functions can be found in include directory.
 There are several cheats and tricks there.  Many codes are replaced

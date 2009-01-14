@@ -13,6 +13,60 @@ WFLAGS="-W -Wimplicit -Wstrict-prototypes -Wextra -Wno-sign-compare -Wno-sign-co
 OPTFLAGS="-O2 -g"
 CFLAGS="$CFLAGS $OPTFLAGS $WFLAGS"
 
+AC_ARG_WITH(hdadir,
+  AS_HELP_STRING([--with-hdadir=dir],
+    [path where HD-audio kernel files are stored]),
+  hdadir="$withval", hdadir="")
+
+if test -z "$hdadir"; then
+  AC_ERROR([No HD-audio directory is defined; please use --with-hdadir])
+fi
+test -d "$hdadir" || \
+  AC_ERROR([Invalid HD-audio directory: $hdadir])
+
+rm -f kernel/hda_*.h kernel/hda_*.c kernel/patch_*.c
+ln -s $hdadir/hda_codec.c kernel
+ln -s $hdadir/hda_codec.h kernel
+ln -s $hdadir/hda_local.h kernel
+ln -s $hdadir/hda_generic.c kernel
+ln -s $hdadir/hda_proc.c kernel
+
+AC_DEFUN([CHECK_FILE], [
+  if test -f $hdadir/$1; then
+    ln -s $hdadir/$1 kernel
+    AC_DEFINE($2)
+  else
+    touch kernel/$1
+  fi
+])
+
+AC_DEFUN([CHECK_CODEC], [
+  AC_MSG_CHECKING(for codec $1)
+  varname=CONFIG_SND_HDA_CODEC_$2
+  if test -f $hdadir/patch_$1.c; then
+    ln -s $hdadir/patch_$1.c kernel
+    AC_DEFINE($varname)
+  else
+    touch kernel/patch_$1.c
+  fi
+])
+
+CHECK_CODEC(analog, ANALOG)
+CHECK_CODEC(atihdmi, ATIHDMI)
+CHECK_CODEC(cmedia, CMEDIA)
+CHECK_CODEC(conexant, CONEXANT)
+CHECK_CODEC(intelhdmi, INTELHDMI)
+CHECK_CODEC(nvhdmi, NVHDMI)
+CHECK_CODEC(realtek, REALTEK)
+CHECK_CODEC(sigmatel, IDT)
+CHECK_CODEC(si3054, SI3054)
+CHECK_CODEC(via, VIA)
+
+CHECK_FILE(hda_patch.h, HDA_PATCH_H)
+CHECK_FILE(hda_beep.c, CONFIG_SND_HDA_INPUT_BEEP)
+CHECK_FILE(hda_beep.h, CONFIG_SND_HDA_INPUT_BEEP)
+CHECK_FILE(hda_eld.c, CONFIG_SND_HDA_ELD)
+
 AC_MSG_CHECKING(for old power_save option)
 OLD_POWER_SAVE=
 if grep -q '^static int power_save' kernel/hda_codec.c; then

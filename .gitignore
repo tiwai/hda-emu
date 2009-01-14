@@ -18,6 +18,4 @@ install-sh
 libtool
 ltmain.sh
 missing
-kernel/hda_intel.c
-kernel/hda_hwdep.c
-kernel/init_hooks.h
+kernel/*.[ch]
