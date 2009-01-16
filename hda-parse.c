@@ -83,6 +83,8 @@ static struct xhda_node *create_node(unsigned int nid, unsigned int wcaps)
 	return node;
 }
 
+static int parse_codec_recursive(const char *buffer);
+
 static int parse_node(const char *buf)
 {
 	int nid, wcaps;
@@ -309,8 +311,10 @@ static int parse_default_pcm_items(const char *buf)
 	int err = parse_pcm_items(buf, &codec->afg.pcm);
 	if (err < 0)
 		return err;
-	if (err > 0)
+	if (err > 0) {
 		parse_mode = PARSE_ROOT;
+		return parse_codec_recursive(buf);
+	}
 	return 0;
 }
 
@@ -329,8 +333,10 @@ static int parse_node_pcm(const char *buf)
 	int err = parse_pcm_items(buf, &current_node->pcm);
 	if (err < 0)
 		return err;
-	if (err > 0)
+	if (err > 0) {
 		parse_mode = PARSE_NODE;
+		return parse_codec_recursive(buf);
+	}
 	return 0;
 }
 
@@ -367,7 +373,7 @@ static int parse_gpio_items(const char *buf)
 			   &i, &enable, &dir, &wake, &sticky, &data) != 6) {
 			/* an invalid line; abort */
 			parse_mode = PARSE_NODE;
-			return 0;
+			return parse_codec_recursive(buf);
 		}
 	}
 	node->gpio_mask |= (enable << i);
@@ -408,6 +414,25 @@ static int parse_root(const char *buffer)
 	return 0; /* ignore */
 }
 
+static int parse_codec_recursive(const char *buffer)
+{
+	switch (parse_mode) {
+	case PARSE_ROOT:
+		return parse_root(buffer);
+	case PARSE_DEFAULT_PCM:
+		return parse_default_pcm_items(buffer);
+	case PARSE_GPIO:
+		return parse_gpio_items(buffer);
+	case PARSE_NODE:
+		return parse_node_items(buffer);
+	case PARSE_NODE_PCM:
+		return parse_node_pcm(buffer);
+	case PARSE_NODE_CONNECTIONS:
+		return parse_node_connections(buffer);
+	}
+	return 0;
+}
+	
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 {
 	char buffer[256];
@@ -436,26 +461,7 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 			current_node = NULL;
 			parse_mode = PARSE_ROOT;
 		}
-		switch (parse_mode) {
-		case PARSE_ROOT:
-			err = parse_root(buffer);
-			break;
-		case PARSE_DEFAULT_PCM:
-			err = parse_default_pcm_items(buffer);
-			break;
-		case PARSE_GPIO:
-			err = parse_gpio_items(buffer);
-			break;
-		case PARSE_NODE:
-			err = parse_node_items(buffer);
-			break;
-		case PARSE_NODE_PCM:
-			err = parse_node_pcm(buffer);
-			break;
-		case PARSE_NODE_CONNECTIONS:
-			err = parse_node_connections(buffer);
-			break;
-		}
+		err = parse_codec_recursive(buffer);
 		if (err < 0) {
 			hda_log(HDA_LOG_ERR, "ERROR %d\n", err);
 			return err;
