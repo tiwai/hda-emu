@@ -57,6 +57,20 @@
 #define AC_WCAP_TYPE			(0xf<<20)
 #define AC_WCAP_TYPE_SHIFT		20
 
+/*
+ * widget types
+ */
+enum {
+	AC_WID_AUD_OUT,		/* Audio Out */
+	AC_WID_AUD_IN,		/* Audio In */
+	AC_WID_AUD_MIX,		/* Audio Mixer */
+	AC_WID_AUD_SEL,		/* Audio Selector */
+	AC_WID_PIN,		/* Pin Complex */
+	AC_WID_POWER,		/* Power */
+	AC_WID_VOL_KNB,		/* Volume Knob */
+	AC_WID_BEEP,		/* Beep Generator */
+	AC_WID_VENDOR = 0x0f	/* Vendor specific */
+};
 
 /*
  */
@@ -167,7 +181,7 @@ static int get_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 			     unsigned int cmd)
 {
 	unsigned int ampval;
-	unsigned int idx;
+	unsigned int idx, type;
 
 	if (!node)
 		return 0;
@@ -181,8 +195,10 @@ static int get_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 		if (!(node->wcaps & AC_WCAP_IN_AMP))
 			hda_log(HDA_LOG_ERR, "no input-amp for node 0x%x\n",
 				node->nid);
-		idx = (ampval & AC_AMP_SET_INDEX) >> AC_AMP_SET_INDEX_SHIFT;
-		if (idx >= node->num_nodes) {
+		type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
+		idx = ampval & 0x1f;
+		if ((type == AC_WID_PIN && idx != 0) ||
+		    (type != AC_WID_PIN && idx >= node->num_nodes)) {
 			hda_log(HDA_LOG_ERR,
 				"invalid amp index %d (conns=%d)\n", idx,
 				node->num_nodes);
