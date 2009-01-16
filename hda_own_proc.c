@@ -122,7 +122,7 @@ static void snd_print_pcm_bits(int pcm, char *buf, int buflen)
 
 static void print_pcm_rates(struct snd_info_buffer *buffer, unsigned int pcm)
 {
-	char buf[SND_PRINT_RATES_ADVISED_BUFSIZE];
+	char buf[80];
 
 	pcm &= AC_SUPPCM_RATES;
 	snd_iprintf(buffer, "    rates [0x%x]:", pcm);
@@ -132,7 +132,7 @@ static void print_pcm_rates(struct snd_info_buffer *buffer, unsigned int pcm)
 
 static void print_pcm_bits(struct snd_info_buffer *buffer, unsigned int pcm)
 {
-	char buf[SND_PRINT_BITS_ADVISED_BUFSIZE];
+	char buf[16];
 
 	snd_iprintf(buffer, "    bits [0x%x]:", (pcm >> 16) & 0xff);
 	snd_print_pcm_bits(pcm, buf, sizeof(buf));
@@ -194,6 +194,68 @@ static const char *get_jack_color(u32 cfg)
 		return names[cfg];
 	else
 		return "UNKNOWN";
+}
+
+#ifndef AC_PINCAP_HDMI
+#define AC_PINCAP_HDMI			(1<<7)	/* HDMI pin */
+#endif
+#ifndef AC_WCAP_CHAN_CNT_EXT
+#define AC_WCAP_CHAN_CNT_EXT		(7<<13)	/* channel count ext */
+#endif
+#ifndef AC_WCAP_CP_CAPS
+#define AC_WCAP_CP_CAPS			(1<<12) /* content protection */
+#endif
+
+#define snd_hda_get_jack_location _snd_hda_get_jack_location
+
+static const char *snd_hda_get_jack_location(u32 cfg)
+{
+	static char *bases[7] = {
+		"N/A", "Rear", "Front", "Left", "Right", "Top", "Bottom",
+	};
+	static unsigned char specials_idx[] = {
+		0x07, 0x08,
+		0x17, 0x18, 0x19,
+		0x37, 0x38
+	};
+	static char *specials[] = {
+		"Rear Panel", "Drive Bar",
+		"Riser", "HDMI", "ATAPI",
+		"Mobile-In", "Mobile-Out"
+	};
+	int i;
+	cfg = (cfg & AC_DEFCFG_LOCATION) >> AC_DEFCFG_LOCATION_SHIFT;
+	if ((cfg & 0x0f) < 7)
+		return bases[cfg & 0x0f];
+	for (i = 0; i < ARRAY_SIZE(specials_idx); i++) {
+		if (cfg == specials_idx[i])
+			return specials[i];
+	}
+	return "UNKNOWN";
+}
+
+#define snd_hda_get_jack_connectivity _snd_hda_get_jack_connectivity
+
+static const char *snd_hda_get_jack_connectivity(u32 cfg)
+{
+	static char *jack_locations[4] = { "Ext", "Int", "Sep", "Oth" };
+
+	return jack_locations[(cfg >> (AC_DEFCFG_LOCATION_SHIFT + 4)) & 3];
+}
+
+#define snd_hda_get_jack_type _snd_hda_get_jack_type
+
+static const char *snd_hda_get_jack_type(u32 cfg)
+{
+	static char *jack_types[16] = {
+		"Line Out", "Speaker", "HP Out", "CD",
+		"SPDIF Out", "Digital Out", "Modem Line", "Modem Hand",
+		"Line In", "Aux", "Mic", "Telephony",
+		"SPDIF In", "Digitial In", "Reserved", "Other"
+	};
+
+	return jack_types[(cfg & AC_DEFCFG_DEVICE)
+				>> AC_DEFCFG_DEVICE_SHIFT];
 }
 
 static void print_pin_caps(struct snd_info_buffer *buffer,
@@ -494,8 +556,14 @@ static void print_codec_info(struct snd_info_entry *entry,
 	hda_nid_t nid;
 	int i, nodes;
 
+#ifdef CONFIG_SND_HDA_RECONFIG
 	snd_iprintf(buffer, "Codec: %s\n",
 		    codec->name ? codec->name : "Not Set");
+#else
+	char buf[32];
+	snd_hda_get_codec_name(codec, buf, sizeof(buf));
+	snd_iprintf(buffer, "Codec: %s\n", buf);
+#endif
 	snd_iprintf(buffer, "Address: %d\n", codec->addr);
 	snd_iprintf(buffer, "Vendor Id: 0x%x\n", codec->vendor_id);
 	snd_iprintf(buffer, "Subsystem Id: 0x%x\n", codec->subsystem_id);
@@ -524,9 +592,10 @@ static void print_codec_info(struct snd_info_entry *entry,
 	}
 
 	print_gpio(buffer, codec, codec->afg);
+#ifdef CONFIG_SND_HDA_RECONFIG
 	if (codec->proc_widget_hook)
 		codec->proc_widget_hook(buffer, codec, codec->afg);
-
+#endif
 	for (i = 0; i < nodes; i++, nid++) {
 		unsigned int wid_caps =
 			snd_hda_param_read(codec, nid,
@@ -627,9 +696,10 @@ static void print_codec_info(struct snd_info_entry *entry,
 
 		if (wid_caps & AC_WCAP_PROC_WID)
 			print_proc_caps(buffer, codec, nid);
-
+#ifdef CONFIG_SND_HDA_RECONFIG
 		if (codec->proc_widget_hook)
 			codec->proc_widget_hook(buffer, codec, nid);
+#endif
 	}
 	snd_hda_power_down(codec);
 }

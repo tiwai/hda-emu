@@ -112,15 +112,10 @@ echo "Generating kernel/init_hooks.h..."
 rm -f kernel/init_hooks.h
 cat kernel/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' > kernel/init_hooks.h
-if test -s kernel/init_hooks.h; then
-  echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
-  cat kernel/patch_*.c | grep '^module_init(' | \
+echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
+cat kernel/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
-  echo '}' >> kernel/init_hooks.h
-else
-  cat kernel/patch_*.c | grep '^struct hda_codec_preset .*\[\]' | \
-    sed -e's/^\(.*\) =.*;/extern \1;/g_init_\1(void);/g' > kernel/init_hooks.h
-fi
+echo '}' >> kernel/init_hooks.h
 
 AC_MSG_CHECKING(for old power_save option)
 OLD_POWER_SAVE=
