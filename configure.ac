@@ -64,12 +64,11 @@ AC_DEFUN([CHECK_FILE], [
 
 AC_DEFUN([CHECK_CODEC], [
   AC_MSG_CHECKING(for codec $1)
-  varname=CONFIG_SND_HDA_CODEC_$2
   if test -n "$hdadir"; then
     if test -f $hdadir/patch_$1.c; then
       AC_MSG_RESULT(yes)
       ln -s $hdadir/patch_$1.c kernel
-      AC_DEFINE($varname)
+      AC_DEFINE($2)
     else
       AC_MSG_RESULT(no, creating dummy file)
       touch kernel/patch_$1.c
@@ -77,23 +76,23 @@ AC_DEFUN([CHECK_CODEC], [
   else
     if test -s kernel/patch_$1.c; then
       AC_MSG_RESULT(yes)
-      AC_DEFINE($varname)
+      AC_DEFINE($2)
     else
       AC_MSG_RESULT(no)
     fi
   fi
 ])
 
-CHECK_CODEC(analog, ANALOG)
-CHECK_CODEC(atihdmi, ATIHDMI)
-CHECK_CODEC(cmedia, CMEDIA)
-CHECK_CODEC(conexant, CONEXANT)
-CHECK_CODEC(intelhdmi, INTELHDMI)
-CHECK_CODEC(nvhdmi, NVHDMI)
-CHECK_CODEC(realtek, REALTEK)
-CHECK_CODEC(sigmatel, IDT)
-CHECK_CODEC(si3054, SI3054)
-CHECK_CODEC(via, VIA)
+CHECK_CODEC(analog, CONFIG_SND_HDA_CODEC_ANALOG)
+CHECK_CODEC(atihdmi, CONFIG_SND_HDA_CODEC_ATIHDMI)
+CHECK_CODEC(cmedia, CONFIG_SND_HDA_CODEC_CMEDIA)
+CHECK_CODEC(conexant, CONFIG_SND_HDA_CODEC_CONEXANT)
+CHECK_CODEC(intelhdmi, CONFIG_SND_HDA_CODEC_INTELHDMI)
+CHECK_CODEC(nvhdmi, CONFIG_SND_HDA_CODEC_NVHDMI)
+CHECK_CODEC(realtek, CONFIG_SND_HDA_CODEC_REALTEK)
+CHECK_CODEC(sigmatel, CONFIG_SND_HDA_CODEC_SIGMATEL)
+CHECK_CODEC(si3054, CONFIG_SND_HDA_CODEC_SI3054)
+CHECK_CODEC(via, CONFIG_SND_HDA_CODEC_VIA)
 
 CHECK_FILE(hda_patch.h, HDA_PATCH_H)
 CHECK_FILE(hda_beep.c, CONFIG_SND_HDA_INPUT_BEEP)
