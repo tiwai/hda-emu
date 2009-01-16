@@ -1,3 +1,14 @@
+* version 0.1.2:
+	
+Takashi Iwai (6):
+      Fix the check of amp value for pin widgets
+      Change dump command to show only the given NID
+      Fix wrong line-breaks in ad1984a-lenovo-thinkpad-x300
+      Make default color output
+      Add descriptions of colored output and dump NID
+      Fix codec-proc parse of connections
+
+	
 * version 0.1.1:
 	
 Takashi Iwai (8):
