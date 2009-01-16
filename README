@@ -146,8 +146,19 @@ BASIC COMMANDS
 	Subsystem Id: 0x102801cc
 	...
 
-  When a file name is given as the argument, output to the specified
-  file.
+  If you would like to show only a certain widget, you can pass the
+  widget NID as the argument.
+
+	> dump 0x10
+	Node 0x10 [Pin Complex] wcaps 0x400181: Stereo
+	  Pincap 0x081737: IN OUT
+	  Pin Default 0x01a19021: [Jack] Mic at Ext Rear
+	    Conn = 1/8, Color = Pink
+	  Pin-ctls: 0x20: IN
+	  Connection: 1
+
+  Also, you can pass a file name to the second argument if you want
+  to save the dump to the specifid file.
 
 * jack
 
@@ -223,6 +234,15 @@ If you need to give a certain "model" module option to the driver,
 e.g. if you need to debug the behavior of the driver with
 model=laptop, pass it via -m option to hda-emu.  Also, the PCI SSID
 can be overridden by -p option.
+
+
+COLORED OUTPUT
+--------------
+
+As default, hda-emu outputs the lines in color using ANSI escape
+sequences.  The escape sequences will be stripped in the log files,
+though.  You can toggle color/non-color behavior via -C and -M
+options, respectively.
 
 
 DOWNLOAD
