@@ -22,6 +22,8 @@ if test -n "$hdadir"; then
 
 test -d "$hdadir" || \
   AC_ERROR([Invalid HD-audio directory: $hdadir])
+test -f "$hdadir/hda_codec.c" || \
+  AC_ERROR([Invalid HD-audio directory: $hdadir])
 
 rm -f kernel/hda_*.h kernel/hda_*.c kernel/patch_*.c
 ln -s $hdadir/hda_codec.c kernel
