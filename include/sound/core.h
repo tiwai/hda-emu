@@ -87,11 +87,8 @@ struct snd_pci_quirk {
 #define SND_PCI_QUIRK(vend,dev,xname,val) \
 	{_SND_PCI_QUIRK_ID(vend, dev), .value = (val), .name = (xname)}
 
-static inline const struct snd_pci_quirk *
-snd_pci_quirk_lookup(struct pci_dev *pci, const struct snd_pci_quirk *list)
-{
-	return NULL;
-}
+const struct snd_pci_quirk *
+snd_pci_quirk_lookup(struct pci_dev *pci, const struct snd_pci_quirk *list);
 
 #define snd_component_add(x,y)
 
