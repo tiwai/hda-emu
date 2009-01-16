@@ -1,3 +1,15 @@
+* version 0.1.1:
+	
+Takashi Iwai (8):
+      Check the validity of the given HD-audio directory
+      Add -C option for color outputs
+      Check validity of amp and connect verbs
+      Add Gateway MX6293b alsa-info with STAC9250
+      Add Dell Optiplex 755 alsa-info with AD1984A
+      Add another HP dv5 alsa-info
+      Add another Thinkpad T61 alsa-info with AD1984
+      Check amp value rantes
+
 * version 0.1.0:
 
 Takashi Iwai (17):
