@@ -45,7 +45,7 @@ extern int cmd_loop(FILE *fp);
 static int log_level = HDA_LOG_VERB;
 static FILE *logfp;
 static int no_log_echo;
-static int log_color;
+static int log_color = 1;
 
 static void set_color(int level)
 {
@@ -552,7 +552,8 @@ static void usage(void)
 	fprintf(stderr, "  -m model       specifies model option string\n");
 	fprintf(stderr, "  -o file        log to the given file\n");
 	fprintf(stderr, "  -q             don't echo but only to log file\n");
-	fprintf(stderr, "  -C             print messages in color\n");
+	fprintf(stderr, "  -C             print messages in color (default)\n");
+	fprintf(stderr, "  -M             no color print\n");
 }
 
 #include "kernel/init_hooks.h"
@@ -569,7 +570,7 @@ int main(int argc, char **argv)
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
 
-	while ((c = getopt(argc, argv, "l:i:p:m:do:qC")) != -1) {
+	while ((c = getopt(argc, argv, "l:i:p:m:do:qCM")) != -1) {
 		switch (c) {
 		case 'l':
 			log_level = atoi(optarg);
@@ -595,6 +596,9 @@ int main(int argc, char **argv)
 			break;
 		case 'C':
 			log_color = 1;
+			break;
+		case 'M':
+			log_color = 0;
 			break;
 		default:
 			usage();
