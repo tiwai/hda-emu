@@ -30,7 +30,16 @@ ln -s $hdadir/hda_codec.c kernel
 ln -s $hdadir/hda_codec.h kernel
 ln -s $hdadir/hda_local.h kernel
 ln -s $hdadir/hda_generic.c kernel
-ln -s $hdadir/hda_proc.c kernel
+
+AC_ARG_ENABLE(own-proc,
+  AS_HELP_STRING([--enable-own-proc],
+    [use own proc-file output function]),
+  own_proc="$enableval", own_proc="no")
+if test "$own_proc" = "yes"; then
+  ln -s ../hda_own_proc.c kernel/hda_proc.c
+else
+  ln -s $hdadir/hda_proc.c kernel
+fi
 
 else
 dnl check existing kernel codes
@@ -103,10 +112,15 @@ echo "Generating kernel/init_hooks.h..."
 rm -f kernel/init_hooks.h
 cat kernel/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' > kernel/init_hooks.h
-echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
-cat kernel/patch_*.c | grep '^module_init(' | \
+if test -s kernel/init_hooks.h; then
+  echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
+  cat kernel/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
-echo '}' >> kernel/init_hooks.h
+  echo '}' >> kernel/init_hooks.h
+else
+  cat kernel/patch_*.c | grep '^struct hda_codec_preset .*\[\]' | \
+    sed -e's/^\(.*\) =.*;/extern \1;/g_init_\1(void);/g' > kernel/init_hooks.h
+fi
 
 AC_MSG_CHECKING(for old power_save option)
 OLD_POWER_SAVE=
