@@ -221,11 +221,70 @@ void hda_set_power_save(int val)
 /*
  */
 
-void hda_log_dump_proc(const char *file)
+struct snd_info_buffer {
+	FILE *fp;
+	unsigned int nid;
+	int printing;
+	int processing;
+};
+
+extern void (*snd_iprintf_dumper)(struct snd_info_buffer *buf,
+				  const char *fmt, va_list ap);
+
+static void log_dump_proc_file(struct snd_info_buffer *buf,
+			       const char *fmt, va_list ap)
+{
+	char line[512];
+	int node, in_process;
+	char *p;
+
+	if (!buf->nid) {
+		vfprintf(buf->fp, fmt, ap);
+		return;
+	}
+	vsnprintf(line, sizeof(line), fmt, ap);
+	if (buf->processing) {
+		if (buf->printing == 1)
+			fputs(line, buf->fp);
+		p = strchr(line, '\n');
+		if (p && !p[1])
+			buf->processing = 0;
+		return;
+	}
+	in_process = buf->processing;
+	p = strchr(line, '\n');
+	if (p && !p[1])
+		buf->processing = 0;
+	else
+		buf->processing = 1;
+	if (in_process) {
+		if (buf->printing == 1)
+			fputs(line, buf->fp);
+		return;
+	}
+	switch (buf->printing) {
+	case 0:
+		if (sscanf(line, "Node 0x%02x ", &node) == 1 &&
+		    node == buf->nid) {
+			fputs(line, buf->fp);
+			buf->printing = 1;
+		}
+		break;
+	case 1:
+		if (*line == ' ')
+			fputs(line, buf->fp);
+		else
+			buf->printing = 2;
+		break;
+	}
+}
+
+void hda_log_dump_proc(unsigned int nid, const char *file)
 {
 	struct snd_info_buffer buf;
 	FILE *fp;
 	int saved_level = log_level;
+
 	if (!card.proc)
 		return;
 
@@ -239,8 +298,11 @@ void hda_log_dump_proc(const char *file)
 		buf.fp = fp;
 	} else
 		buf.fp = logfp;
+	buf.nid = nid;
+	buf.printing = 0;
 	/* don't show verbs */
 	log_level = HDA_LOG_KERN;
+	snd_iprintf_dumper = log_dump_proc_file;
 	card.proc->func(card.proc, &buf);
 	log_level = saved_level;
 	if (file)

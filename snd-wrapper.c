@@ -49,3 +49,18 @@ int snd_hda_hwdep_add_sysfs(struct hda_codec *codec)
 {
 	return 0;
 }
+
+/*
+ */
+void (*snd_iprintf_dumper)(struct snd_info_buffer *buf,
+			   const char *fmt, va_list ap);
+
+void snd_iprintf(struct snd_info_buffer *buf, const char *fmt, ...)
+{
+	va_list ap;
+	if (!snd_iprintf_dumper)
+		return;
+	va_start(ap, fmt);
+	snd_iprintf_dumper(buf, fmt, ap);
+	va_end(ap);
+}

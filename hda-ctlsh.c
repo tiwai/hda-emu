@@ -67,8 +67,8 @@ static struct usage_table usage_str[] = {
 	  "Get the contents of the given control element" },
 	{ "set", "set numid val [val2]",
 	  "Set the contents of the given control element" },
-	{ "dump", "dump [filename]",
-	  "Dump codec contents in the proc file format" },
+	{ "dump", "dump [nid [filename]]",
+	  "Dump codec contents in the proc file format; nid = 0 means all widgets " },
 	{ "jack", "jack numid [val]",
 	  "Get jack state or set jack state; val = 0 or 1" },
 	{ "option", "option variable [val]",
@@ -274,7 +274,15 @@ static void set_element(char *line)
 
 static void dump_proc(char *line)
 {
-	hda_log_dump_proc(gettoken(&line));
+	unsigned int nid = 0;
+	char *p, *file = NULL;
+
+	p = gettoken(&line);
+	if (p) {
+		nid = strtoul(p, NULL, 0);
+		file = gettoken(&line);
+	}
+	hda_log_dump_proc(nid, file);
 }
 
 static void handle_module_option(char *line)

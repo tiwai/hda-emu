@@ -10,9 +10,7 @@
 
 struct snd_ctl_elem_info;
 struct snd_info_entry;
-struct snd_info_buffer {
-	FILE *fp;
-};
+struct snd_info_buffer;
 
 struct snd_info_entry_text {
 	void (*read)(struct snd_info_entry *entry,
@@ -34,14 +32,7 @@ struct snd_info_entry {
 	snd_info_proc_t func;
 };
 
-static inline void snd_iprintf(struct snd_info_buffer *buf,
-			       const char *fmt, ...)
-{
-	va_list ap;
-	va_start(ap, fmt);
-	vfprintf(buf->fp, fmt, ap);
-	va_end(ap);
-}
+extern void snd_iprintf(struct snd_info_buffer *buf, const char *fmt, ...);
 
 static inline int snd_card_proc_new(struct snd_card *card, const char *name,
 				    struct snd_info_entry **entryp)
