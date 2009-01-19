@@ -333,18 +333,23 @@ static void set_jack(char *line)
 
 static void run_verb(char *line)
 {
-	char *p;
-	int i, parm[3];
+	char *parm[3];
+	unsigned int verb, val;
+	int i;
 
 	for (i = 0; i < 3; i++) {
-		p = gettoken(&line);
-		if (!p) {
+		parm[i] = gettoken(&line);
+		if (!parm[i]) {
 			usage("verb");
 			return;
 		}
-		parm[i] = strtoul(p, NULL, 0);
 	}
-	hda_exec_verb(parm[0], parm[1], parm[2]);
+	if (hda_encode_verb_parm(parm[1], parm[2], &verb, &val) < 0) {
+		hda_log(HDA_LOG_ERR, "Invalid verb/parameter %s/%s\n",
+			parm[1], parm[2]);
+		return;
+	}
+	hda_exec_verb(strtoul(parm[0], NULL, 0), verb, val);
 }
 
 static void test_pm(char *line)

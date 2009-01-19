@@ -2,6 +2,8 @@
 *.o
 *.a
 hda-emu
+hda-decode-verb
+hda-encode-verb
 .deps
 INSTALL
 Makefile

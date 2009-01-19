@@ -8,10 +8,17 @@ enum {
 	HDA_LOG_VERB,
 };
 
-int hda_log_init(const char *file);
+/* flags */
+#define HDA_LOG_FLAG_NO_ECHO	(1 << 0)
+#define HDA_LOG_FLAG_COLOR	(1 << 1)
+
+int hda_log_init(const char *file, unsigned int flags);
 void hda_log(int level, const char *fmt, ...);
 void hda_log_echo(int level, const char *fmt, ...);
 #define hda_log_printk(fmt, args...) hda_log(HDA_LOG_KERN, fmt, ##args)
+
+int hda_log_level_set(int level);
+FILE *hda_get_logfp(void);
 
 void hda_log_dump_proc(unsigned int nid, const char *file);
 void hda_log_jack_state(int nid);
@@ -29,5 +36,12 @@ void hda_test_pcm(int stream, int dir, int rate, int channels, int format);
 
 int hda_get_power_save(void);
 void hda_set_power_save(int val);
+
+struct xhda_codec;
+
+unsigned int hda_decode_verb_parm(struct xhda_codec *codec,
+				  unsigned int verb, unsigned int parm);
+int hda_encode_verb_parm(const char *verb, const char *parm,
+			 unsigned int *verb_ret, unsigned int *parm_ret);
 
 #endif /* __HDA_LOG_H */

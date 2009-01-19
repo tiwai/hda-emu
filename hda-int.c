@@ -22,7 +22,9 @@
 
 #include <stdio.h>
 #include <errno.h>
+#include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 #include "hda-types.h"
 #include "hda-log.h"
 
@@ -808,7 +810,7 @@ find_matching_param(struct xhda_codec *codec, unsigned int parm)
 {
 	const struct xhda_verb_table *tbl;
 	tbl = find_verb(parm, par_tbl);
-	if (!tbl && codec->extended_parameters)
+	if (!tbl && codec && codec->extended_parameters)
 		tbl = find_verb(parm, codec->extended_parameters);
 	return tbl;
 }
@@ -898,7 +900,7 @@ find_matching_verb(struct xhda_codec *codec, unsigned int verb)
 	tbl = find_verb((verb >> 8) & 0xf, verb_class);
 	if (!tbl) {
 		tbl = find_verb(verb, verb_tbl);
-		if (!tbl && codec->extended_verbs)
+		if (!tbl && codec && codec->extended_verbs)
 			tbl = find_verb(verb, codec->extended_verbs);
 	}
 	return tbl;
@@ -970,3 +972,104 @@ const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd)
 	tbl = find_matching_param(codec, cmd & 0xff);
 	return (tbl && tbl->name) ? tbl->name : "unknown";
 }
+
+/*
+ * for hda-decode-verb
+ */
+
+unsigned int hda_decode_verb_parm(struct xhda_codec *codec,
+				  unsigned int verb, unsigned int parm)
+{
+	const struct xhda_verb_table *tbl;
+
+	hda_log(HDA_LOG_INFO, "raw value: verb = 0x%x, parm = 0x%x\n",
+		verb, parm);
+	hda_log(HDA_LOG_INFO, "verbname = %s\n",
+		get_verb_name(codec, verb << 8));
+	if ((verb >> 8) == 0x03) { /* set_amp_gain_mute */
+		unsigned int ampval = verb & 0xff;
+		ampval = (ampval << 8) | parm;
+		hda_log(HDA_LOG_INFO, "amp raw val = 0x%x\n", ampval);
+		hda_log(HDA_LOG_INFO, "%s%s%s%sidx=%d, mute=%d, val=%d\n",
+			((ampval >> 15) & 1) ? "output, " : "",
+			((ampval >> 14) & 1) ? "input, " : "",
+			((ampval >> 13) & 1) ? "left, " : "",
+			((ampval >> 12) & 1) ? "right, " : "",
+			(ampval >> 8) & 0xf,
+			(ampval >> 7) & 1,
+			ampval & 0x7f);
+	}
+
+	if ((verb >> 8) == 0x0b) { /* get_amp_gain_mute */
+		unsigned int ampval = verb & 0xff;
+		ampval = (ampval << 8) | parm;
+		hda_log(HDA_LOG_INFO, "amp raw val = 0x%x\n", ampval);
+		hda_log(HDA_LOG_INFO, "%s, %s, idx=%d\n",
+			((ampval >> 15) & 1) ? "output" : "input",
+			((ampval >> 13) & 1) ? "left" : "right",
+			ampval & 0xff);
+	}
+
+	if (verb == 0xf00) {
+		hda_log(HDA_LOG_INFO,
+			"parameter = %s\n", get_parameter_name(codec, parm));
+	}
+	return 0;
+}
+
+static int strmatch(const char *a, const char *b)
+{
+	for (; *a && *b; a++, b++) {
+		if (toupper(*a) != toupper(*b))
+			return 0;
+	}
+	return 1;
+}
+
+/*
+ * for hda-encode-verb
+ */
+
+static const struct xhda_verb_table *
+lookup_verb_name(const char *name, const struct xhda_verb_table *tbl)
+{
+	for (; tbl->verb || tbl->func; tbl++) {
+		if (strmatch(name, tbl->name))
+			return tbl;
+	}
+	return NULL;
+}
+
+int hda_encode_verb_parm(const char *verb, const char *parm,
+			 unsigned int *verb_ret, unsigned int *parm_ret)
+{
+	int i;
+	const struct xhda_verb_table *tbl;
+
+	tbl = lookup_verb_name(verb, verb_class);
+	if (tbl)
+		*verb_ret = tbl->verb << 8;
+	else {
+		tbl = lookup_verb_name(verb, verb_tbl);
+		if (tbl)
+			*verb_ret = tbl->verb;
+		else {
+			errno = 0;
+			*verb_ret = strtoul(verb, NULL, 0);
+			if (errno)
+				return -errno;
+		}
+	}
+
+	tbl = lookup_verb_name(parm, par_tbl);
+	if (tbl)
+		*parm_ret = tbl->verb;
+	else {
+		errno = 0;
+		*parm_ret = strtoul(parm, NULL, 0);
+		if (errno)
+			return -errno;
+	}
+	return 0;
+}
+

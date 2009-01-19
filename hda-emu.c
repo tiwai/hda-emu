@@ -39,81 +39,7 @@
 extern int cmd_loop(FILE *fp);
 
 /*
- * logging
- */
-
-static int log_level = HDA_LOG_VERB;
-static FILE *logfp;
-static int no_log_echo;
-static int log_color = 1;
-
-static void set_color(int level)
-{
-	static char *color_seq[] = {
-		[HDA_LOG_ERR] = "31;1", /* bold red */
-		[HDA_LOG_KERN] = "32", /* green */
-		[HDA_LOG_INFO] = "9", /* normal */
-		[HDA_LOG_VERB] = "34", /* blue */
-	};
-	if (!log_color)
-		return;
-	if (level < 0)
-		level = 0;
-	else if (level > HDA_LOG_VERB)
-		level = HDA_LOG_VERB;
-	printf("\x1b[%sm", color_seq[level]);
-}
-
-static void reset_color(void)
-{
-	printf("\x1b[0m");
-}
-
-void hda_log(int level, const char *fmt, ...)
-{
-	va_list ap, ap2;
-
-	if (level > log_level)
-		return;
-
-	if (logfp == stdout)
-		set_color(level);
-	va_start(ap, fmt);
-	va_copy(ap2, ap);
-	vfprintf(logfp, fmt, ap);
-	if (!no_log_echo && logfp != stdout)
-		vprintf(fmt, ap2);
-	va_end(ap);
-	if (logfp == stdout)
-		reset_color();
-}
-
-void hda_log_echo(int level, const char *fmt, ...)
-{
-	va_list ap;
-
-	if (no_log_echo || logfp == stdout || level > log_level)
-		return;
-	va_start(ap, fmt);
-	vfprintf(logfp, fmt, ap);
-	va_end(ap);
-}
-
-int hda_log_init(const char *file)
-{
-	if (!file || !strcmp(file, "-") || !strcmp(file, "stdout"))
-		logfp = stdout;
-	else {
-		logfp = fopen(file, "w");
-		if (!logfp) {
-			fprintf(stderr, "cannot open log file %s\n", file);
-			exit(1);
-		}
-	}
-	return 0;
-}
-
-/*
+ * proc dump log
  */
 
 static struct snd_card card;
@@ -283,7 +209,7 @@ void hda_log_dump_proc(unsigned int nid, const char *file)
 {
 	struct snd_info_buffer buf;
 	FILE *fp;
-	int saved_level = log_level;
+	int saved_level;
 
 	if (!card.proc)
 		return;
@@ -297,14 +223,14 @@ void hda_log_dump_proc(unsigned int nid, const char *file)
 		}
 		buf.fp = fp;
 	} else
-		buf.fp = logfp;
+		buf.fp = hda_get_logfp();
 	buf.nid = nid;
 	buf.printing = 0;
 	/* don't show verbs */
-	log_level = HDA_LOG_KERN;
+	saved_level = hda_log_level_set(HDA_LOG_KERN);
 	snd_iprintf_dumper = log_dump_proc_file;
 	card.proc->func(card.proc, &buf);
-	log_level = saved_level;
+	hda_log_level_set(saved_level);
 	if (file)
 		fclose(fp);
 }
@@ -567,13 +493,14 @@ int main(int argc, char **argv)
 	int pci_subdevice = 0;
 	char *opt_model = NULL;
 	char *logfile = NULL;
+	unsigned int log_flags = HDA_LOG_FLAG_COLOR;
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
 
 	while ((c = getopt(argc, argv, "l:i:p:m:do:qCM")) != -1) {
 		switch (c) {
 		case 'l':
-			log_level = atoi(optarg);
+			hda_log_level_set(atoi(optarg));
 			break;
 		case 'i':
 			idx = atoi(optarg);
@@ -592,13 +519,13 @@ int main(int argc, char **argv)
 			logfile = optarg;
 			break;
 		case 'q':
-			no_log_echo = 1;
+			log_flags |= HDA_LOG_FLAG_NO_ECHO;
 			break;
 		case 'C':
-			log_color = 1;
+			log_flags |= HDA_LOG_FLAG_COLOR;
 			break;
 		case 'M':
-			log_color = 0;
+			log_flags &= ~HDA_LOG_FLAG_COLOR;
 			break;
 		default:
 			usage();
@@ -617,7 +544,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	hda_log_init(logfile);
+	hda_log_init(logfile, log_flags);
 
 	hda_log(HDA_LOG_INFO, "# Parsing..\n");
 	if (parse_codec_proc(fp, &proc, idx) < 0) {
