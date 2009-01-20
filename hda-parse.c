@@ -151,7 +151,7 @@ static int parse_amp_vals(const char *buf, struct xhda_amp_vals *vals)
 		/* new format */
 		do {
 			int v1, v2;
-			if (sscanf(buf, "[%02x %02x]", &v1, &v2) != 2)
+			if (sscanf(buf, "[0x%02x 0x%02x]", &v1, &v2) != 2)
 				break;
 			vals->vals[n][0] = v1;
 			vals->vals[n][1] = v2;
