@@ -29,8 +29,7 @@
 
 static int log_level = HDA_LOG_VERB;
 static FILE *logfp;
-static int no_log_echo;
-static int log_color = 1;
+static int log_flags = HDA_LOG_FLAG_COLOR;
 
 static void set_color(int level)
 {
@@ -40,7 +39,7 @@ static void set_color(int level)
 		[HDA_LOG_INFO] = "9", /* normal */
 		[HDA_LOG_VERB] = "34", /* blue */
 	};
-	if (!log_color)
+	if (!(log_flags & HDA_LOG_FLAG_COLOR))
 		return;
 	if (level < 0)
 		level = 0;
@@ -51,6 +50,8 @@ static void set_color(int level)
 
 static void reset_color(void)
 {
+	if (!(log_flags & HDA_LOG_FLAG_COLOR))
+		return;
 	printf("\x1b[0m");
 }
 
@@ -66,7 +67,7 @@ void hda_log(int level, const char *fmt, ...)
 	va_start(ap, fmt);
 	va_copy(ap2, ap);
 	vfprintf(logfp, fmt, ap);
-	if (!no_log_echo && logfp != stdout)
+	if (!(log_flags & HDA_LOG_FLAG_NO_ECHO) && logfp != stdout)
 		vprintf(fmt, ap2);
 	va_end(ap);
 	if (logfp == stdout)
@@ -77,7 +78,8 @@ void hda_log_echo(int level, const char *fmt, ...)
 {
 	va_list ap;
 
-	if (no_log_echo || logfp == stdout || level > log_level)
+	if ((log_flags & HDA_LOG_FLAG_NO_ECHO) || logfp == stdout ||
+	    level > log_level)
 		return;
 	va_start(ap, fmt);
 	vfprintf(logfp, fmt, ap);
@@ -96,14 +98,7 @@ int hda_log_init(const char *file, unsigned int flags)
 		}
 	}
 
-	if (flags & HDA_LOG_FLAG_NO_ECHO)
-		no_log_echo = 1;
-	else
-		no_log_echo = 0;
-	if (flags & HDA_LOG_FLAG_COLOR)
-		log_color = 1;
-	else
-		log_color = 0;
+	log_flags = flags;
 	return 0;
 }
 
