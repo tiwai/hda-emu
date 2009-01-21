@@ -98,8 +98,12 @@ int hda_log_init(const char *file, unsigned int flags)
 
 	if (flags & HDA_LOG_FLAG_NO_ECHO)
 		no_log_echo = 1;
+	else
+		no_log_echo = 0;
 	if (flags & HDA_LOG_FLAG_COLOR)
 		log_color = 1;
+	else
+		log_color = 0;
 	return 0;
 }
 
