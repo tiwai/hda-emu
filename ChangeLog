@@ -1,3 +1,18 @@
+* version 0.2.0:
+	
+Takashi Iwai (11):
+      Fix build for older kernels
+      Add PCI SSID check
+      Add --enable-own-proc configure option
+      Fix build for older kernel again
+      Add hda-decode-verb and hda-encode-verb programs
+      Add Dell D830 alsa-info with STAC9205
+      Fix parse of default amp values in proc output
+      Fix -M option
+      A bit clean up regarding handling of hda-log flags
+      Add VAIO VGN-AR71S alsa-info with multiple codecs
+      Fix Makefile.am for hda-encode-verb
+
 * version 0.1.2:
 	
 Takashi Iwai (6):
