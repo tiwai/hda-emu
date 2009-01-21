@@ -249,8 +249,15 @@ static void issue_unsol(int caddr, int res);
 void hda_log_set_jack(int nid, int val)
 {
 	int err = hda_set_jack_state(&proc, nid, val);
-	if (err > 0 && (err & (1 << 7)))
-		issue_unsol(proc.addr, err);
+	if (!err)
+		hda_log_issue_unsol(nid);
+}
+
+void hda_log_issue_unsol(int nid)
+{
+	int val = hda_get_unsol_state(&proc, nid);
+	if (val & (1 << 7))
+		issue_unsol(proc.addr, val);
 }
 
 /*

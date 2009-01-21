@@ -92,6 +92,7 @@ void add_codec_extensions(struct xhda_codec *codec);
 int hda_cmd(struct xhda_codec *codec, unsigned int cmd);
 int hda_get_jack_state(struct xhda_codec *codec, int nid);
 int hda_set_jack_state(struct xhda_codec *codec, int nid, int val);
+int hda_get_unsol_state(struct xhda_codec *codec, int nid);
 
 const char *get_verb_name(struct xhda_codec *codec, unsigned int cmd);
 const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd);

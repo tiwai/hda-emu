@@ -23,6 +23,7 @@ FILE *hda_get_logfp(void);
 void hda_log_dump_proc(unsigned int nid, const char *file);
 void hda_log_jack_state(int nid);
 void hda_log_set_jack(int nid, int val);
+void hda_log_issue_unsol(int nid);
 
 void hda_test_suspend(void);
 void hda_test_resume(void);
