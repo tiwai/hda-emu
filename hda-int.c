@@ -952,7 +952,11 @@ int hda_set_jack_state(struct xhda_codec *codec, int nid, int val)
 	struct xhda_node *node = find_node(codec, nid);
 	if (!node)
 		return -1;
-	node->jack_state = !!val;
+	val = !!val;
+	if (node->jack_state != val) {
+		node->jack_state = val;
+		return 1;
+	}
 	return 0;
 }
 
@@ -961,7 +965,7 @@ int hda_get_unsol_state(struct xhda_codec *codec, int nid)
 	struct xhda_node *node = find_node(codec, nid);
 	if (!node)
 		return 0;
-	node->unsol;
+	return node->unsol;
 }
 
 const char *get_verb_name(struct xhda_codec *codec, unsigned int cmd)
