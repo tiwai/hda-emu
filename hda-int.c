@@ -138,7 +138,7 @@ static int set_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 			     unsigned int cmd)
 {
 	unsigned int ampval;
-	unsigned int idx;
+	unsigned int idx, type;
 
 	if (!node)
 		return 0;
@@ -158,7 +158,9 @@ static int set_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 		if (!(node->wcaps & AC_WCAP_IN_AMP))
 			hda_log(HDA_LOG_ERR, "no input-amp for node 0x%x\n",
 				node->nid);
-		if (idx >= node->num_nodes) {
+		type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
+		if ((type == AC_WID_PIN && idx != 0) ||
+		    (type != AC_WID_PIN && idx >= node->num_nodes)) {
 			hda_log(HDA_LOG_ERR,
 				"invalid amp index %d (conns=%d)\n", idx,
 				node->num_nodes);
