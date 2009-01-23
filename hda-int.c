@@ -106,7 +106,8 @@ static int get_stream_format(struct xhda_codec *codec, struct xhda_node *node,
 	return node->stream_format;
 }
 
-static int set_amp(struct xhda_amp_vals *vals, unsigned int idx,
+static int set_amp(struct xhda_node *node,
+		   struct xhda_amp_vals *vals, unsigned int idx,
 		   unsigned int ampcap, unsigned int ampval)
 {
 	unsigned int nsteps = (ampcap >> 8) & 0xff;
@@ -114,12 +115,13 @@ static int set_amp(struct xhda_amp_vals *vals, unsigned int idx,
 
 	ampval &= 0xff;
 	if ((ampval & ~0x80) > nsteps) {
-		hda_log(HDA_LOG_ERR, "invalid amp value 0x%x (nsteps = 0x%x)\n",
-			ampval, nsteps);
+		hda_log(HDA_LOG_ERR, "invalid amp value 0x%x (nsteps = 0x%x), NID=0x%x\n",
+			ampval, nsteps, node->nid);
 		ampval = (ampval & 0x80) | (nsteps - 1);
 	}
 	if ((ampval & 0x80) && !has_mute) {
-		hda_log(HDA_LOG_ERR, "turn on non-existing mute\n");
+		hda_log(HDA_LOG_ERR, "turn on non-existing mute, NODE=0x%x\n",
+			node->nid);
 		ampval &= ~0x80;
 	}
 	if (ampval & AC_AMP_SET_LEFT)
@@ -151,7 +153,8 @@ static int set_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 		if (idx)
 			hda_log(HDA_LOG_ERR,
 				"invalid amp index %d for output\n", idx);
-		set_amp(&node->amp_out_vals, 0, par_amp_out_cap(codec, node, 0),
+		set_amp(node, &node->amp_out_vals, 0,
+			par_amp_out_cap(codec, node, 0),
 			ampval);
 	}
 	if (ampval & AC_AMP_SET_INPUT) {
@@ -166,7 +169,8 @@ static int set_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 				node->num_nodes);
 			idx = 0;
 		}
-		set_amp(&node->amp_in_vals, idx, par_amp_in_cap(codec, node, 0),
+		set_amp(node, &node->amp_in_vals, idx,
+			par_amp_in_cap(codec, node, 0),
 			ampval);
 	}
 	return 0;
