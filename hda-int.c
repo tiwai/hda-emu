@@ -222,8 +222,8 @@ static int set_connect_sel(struct xhda_codec *codec, struct xhda_node *node,
 	sel = cmd & 0xff;
 	if (sel >= node->num_nodes)
 		hda_log(HDA_LOG_ERR,
-			"invalid connection index %d (conns=%d)\n",
-			sel, node->num_nodes);
+			"invalid connection index %d (conns=%d), NID=0x%x\n",
+			sel, node->num_nodes, node->nid);
 	else
 		node->curr_conn = sel;
 	return 0;
