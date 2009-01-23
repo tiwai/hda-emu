@@ -84,6 +84,9 @@ struct xhda_codec {
 	struct xhda_verb_table *extended_verbs;
 	struct xhda_verb_table *extended_parameters;
 	struct xhda_value_cache *value_cache;
+	unsigned short pci_vendor, pci_device;
+	unsigned short pci_subvendor, pci_subdevice;
+	unsigned short pci_revision;
 };
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int idx);
