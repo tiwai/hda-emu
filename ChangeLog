@@ -1,3 +1,8 @@
+* version 0.2.2:
+
+Takashi Iwai (1):
+      Fix set_amp() regression
+
 * version 0.2.1:
 	
 Takashi Iwai (10):
