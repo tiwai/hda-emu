@@ -108,12 +108,13 @@ static int get_stream_format(struct xhda_codec *codec, struct xhda_node *node,
 
 static int set_amp(struct xhda_node *node,
 		   struct xhda_amp_vals *vals, unsigned int idx,
-		   unsigned int ampcap, unsigned int ampval)
+		   unsigned int ampcap, unsigned int val)
 {
 	unsigned int nsteps = (ampcap >> 8) & 0xff;
 	unsigned int has_mute = (ampcap >> 31) & 1;
+	unsigned int ampval;
 
-	ampval &= 0xff;
+	ampval = val & 0xff;
 	if ((ampval & ~0x80) > nsteps) {
 		hda_log(HDA_LOG_ERR, "invalid amp value 0x%x (nsteps = 0x%x), NID=0x%x\n",
 			ampval, nsteps, node->nid);
@@ -124,9 +125,9 @@ static int set_amp(struct xhda_node *node,
 			node->nid);
 		ampval &= ~0x80;
 	}
-	if (ampval & AC_AMP_SET_LEFT)
+	if (val & AC_AMP_SET_LEFT)
 		vals->vals[idx][0] = ampval;
-	if (ampval & AC_AMP_SET_RIGHT)
+	if (val & AC_AMP_SET_RIGHT)
 		vals->vals[idx][1] = ampval;
 	return 0;
 }
