@@ -20,4 +20,4 @@ hda-encode-verb: hda-decode-verb
 
 install-exec-hook: hda-encode-verb
 	rm -f $(DESTDIR)$(bindir)/$<
-	(cd $(DESTDIR)$(bindir) && $(LN_S) $< hda-decode-verb)
+	(cd $(DESTDIR)$(bindir) && $(LN_S) hda-decode-verb $<)
