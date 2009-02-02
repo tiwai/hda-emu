@@ -220,10 +220,17 @@ static int get_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 static int set_connect_sel(struct xhda_codec *codec, struct xhda_node *node,
 			   unsigned int cmd)
 {
+	unsigned int wid_type;
 	unsigned int sel;
 
 	if (!node)
 		return 0;
+	wid_type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
+	if (wid_type == AC_WID_AUD_MIX || wid_type == AC_WID_VOL_KNB) {
+		hda_log(HDA_LOG_ERR, "invalid connect select for node 0x%x\n",
+			node->nid);
+		return 0;
+	}
 	sel = cmd & 0xff;
 	if (sel >= node->num_nodes)
 		hda_log(HDA_LOG_ERR,
