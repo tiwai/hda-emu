@@ -71,6 +71,8 @@ static struct usage_table usage_str[] = {
 	  "Dump codec contents in the proc file format; nid = 0 means all widgets " },
 	{ "jack", "jack numid [val]",
 	  "Get jack state or set jack state; val = 0 or 1" },
+	{ "unsol", "unsol numid",
+	  "Issue an unsolicited event" },
 	{ "option", "option variable [val]",
 	  "Get/set module option value" },
 	{ "help", "help [command]",
@@ -331,6 +333,20 @@ static void set_jack(char *line)
 	hda_log_set_jack(nid, val);
 }
 
+static void issue_unsol(char *line)
+{
+	char *p;
+	int nid;
+
+	p = gettoken(&line);
+	if (!p) {
+		usage("unsol");
+		return;
+	}
+	nid = strtoul(p, NULL, 0);
+	hda_log_issue_unsol(nid);
+}
+
 static void run_verb(char *line)
 {
 	char *parm[3];
@@ -465,6 +481,9 @@ int cmd_loop(FILE *fp)
 			break;
 		case 'j':
 			set_jack(buf);
+			break;
+		case 'u':
+			issue_unsol(buf);
 			break;
 		case 'v':
 			run_verb(buf);

@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 AC_INIT(hda-emu.c)
-AM_INIT_AUTOMAKE(hda-emu, 0.2.0)
+AM_INIT_AUTOMAKE(hda-emu, 0.2.2)
 
 AC_PROG_CC
 AC_PROG_CPP

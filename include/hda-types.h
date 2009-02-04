@@ -84,6 +84,9 @@ struct xhda_codec {
 	struct xhda_verb_table *extended_verbs;
 	struct xhda_verb_table *extended_parameters;
 	struct xhda_value_cache *value_cache;
+	unsigned short pci_vendor, pci_device;
+	unsigned short pci_subvendor, pci_subdevice;
+	unsigned short pci_revision;
 };
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int idx);
@@ -92,6 +95,7 @@ void add_codec_extensions(struct xhda_codec *codec);
 int hda_cmd(struct xhda_codec *codec, unsigned int cmd);
 int hda_get_jack_state(struct xhda_codec *codec, int nid);
 int hda_set_jack_state(struct xhda_codec *codec, int nid, int val);
+int hda_get_unsol_state(struct xhda_codec *codec, int nid);
 
 const char *get_verb_name(struct xhda_codec *codec, unsigned int cmd);
 const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd);

@@ -1,3 +1,22 @@
+* version 0.2.2:
+
+Takashi Iwai (1):
+      Fix set_amp() regression
+
+* version 0.2.1:
+	
+Takashi Iwai (10):
+      Add unsol command
+      Add alsa-info of Gateway T1616 with STAC9205 codec
+      Add alsa-info of HP Mini 1000 with IDT92HD75* codec
+      Merge branch 'master' of git+ssh://master.kernel.org/pub/scm/linux/kernel/git/tiwai/hda-emu
+      Fix breakage of unsol event handling
+      Add missing definition of PCI_VENDOR_ID_DFI
+      Fix bogus error at setting input-AMP for pin widgets
+      Show the NID in connection-select error messages
+      Show widget NID in more error messages
+      Parse PCI ID/SSID in alsa-info output
+	
 * version 0.2.0:
 	
 Takashi Iwai (11):

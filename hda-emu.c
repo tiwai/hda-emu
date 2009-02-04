@@ -44,7 +44,6 @@ extern int cmd_loop(FILE *fp);
 
 static struct snd_card card;
 static struct xhda_codec proc;
-static struct pci_dev mypci;
 
 static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 {
@@ -249,8 +248,15 @@ static void issue_unsol(int caddr, int res);
 void hda_log_set_jack(int nid, int val)
 {
 	int err = hda_set_jack_state(&proc, nid, val);
-	if (err > 0 && (err & (1 << 7)))
-		issue_unsol(proc.addr, err);
+	if (err > 0)
+		hda_log_issue_unsol(nid);
+}
+
+void hda_log_issue_unsol(int nid)
+{
+	int val = hda_get_unsol_state(&proc, nid);
+	if (val & (1 << 7))
+		issue_unsol(proc.addr, val);
 }
 
 /*
@@ -494,6 +500,7 @@ int main(int argc, char **argv)
 	char *opt_model = NULL;
 	char *logfile = NULL;
 	unsigned int log_flags = HDA_LOG_FLAG_COLOR;
+	struct pci_dev mypci;
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
 
@@ -552,13 +559,25 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	mypci.subsystem_vendor = pci_subvendor;
-	mypci.subsystem_device = pci_subdevice;
+	mypci.vendor = proc.pci_vendor;
+	mypci.device = proc.pci_device;
+	mypci.subsystem_vendor = proc.pci_subvendor;
+	mypci.subsystem_device = proc.pci_subdevice;
+	mypci.revision = proc.pci_revision;
+	/* override PCI SSID */
+	if (pci_subvendor || pci_subdevice) {
+		mypci.subsystem_vendor = pci_subvendor;
+		mypci.subsystem_device = pci_subdevice;
+		hda_log(HDA_LOG_INFO, "Using PCI SSID %04x:%04x\n",
+			pci_subvendor, pci_subdevice);
+	}
 
 	memset(&temp, 0, sizeof(temp));
 
 	temp.pci = &mypci;
 	temp.modelname = opt_model;
+	if (opt_model)
+		hda_log(HDA_LOG_INFO, "Using model option '%s'\n", opt_model);
 #ifndef OLD_POWER_SAVE
 	temp.power_save = &power_save;
 #endif
