@@ -30,6 +30,7 @@ static inline void flush_scheduled_work(void)
 }
 
 #define create_workqueue(x)	(struct workqueue_struct *)1 /* dummy */
+#define create_singlethread_workqueue(x)	create_workqueue(x)
 #define destroy_workqueue(x)	do {} while (0)
 #define queue_work(q,x)		schedule_work(x)
 #define queue_delayed_work(q,x,d) schedule_delayed_work(x,d)
