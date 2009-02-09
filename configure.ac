@@ -182,6 +182,17 @@ else
   AC_MSG_RESULT(no)
 fi
 
+AC_MSG_CHECKING(for new quirk list)
+NEW_QUIRK_LIST=
+if grep -q SND_PCI_QUIRK_MASK kernel/patch_sigmatel.c; then
+  AC_MSG_RESULT(yes)
+  NEW_QUIRK_LIST=1
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$NEW_QUIRK_LIST" = "1"; then
+  AC_DEFINE(NEW_QUIRK_LIST)
+fi
 
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 

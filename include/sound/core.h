@@ -74,6 +74,31 @@ int snd_device_free(struct snd_card *card, void *device_data)
 #include <linux/mutex.h>
 #include <linux/pci.h>
 
+/* PCI quirk list helper */
+#ifdef NEW_QUIRK_LIST
+
+struct snd_pci_quirk {
+	unsigned short subvendor;	/* PCI subvendor ID */
+	unsigned short subdevice;	/* PCI subdevice ID */
+	unsigned short subdevice_mask;	/* bitmask to match */
+	int value;			/* value */
+	const char *name;		/* name of the device (optional) */
+};
+
+#define _SND_PCI_QUIRK_ID_MASK(vend, mask, dev)	\
+	.subvendor = (vend), .subdevice = (dev), .subdevice_mask = (mask)
+#define _SND_PCI_QUIRK_ID(vend, dev) \
+	_SND_PCI_QUIRK_ID_MASK(vend, 0xffff, dev)
+#define SND_PCI_QUIRK_ID(vend,dev) {_SND_PCI_QUIRK_ID(vend, dev)}
+#define SND_PCI_QUIRK(vend,dev,xname,val) \
+	{_SND_PCI_QUIRK_ID(vend, dev), .value = (val)}
+#define SND_PCI_QUIRK_MASK(vend, mask, dev, xname, val)			\
+	{_SND_PCI_QUIRK_ID_MASK(vend, mask, dev), .value = (val)}
+#define SND_PCI_QUIRK_VENDOR(vend, xname, val)			\
+	{_SND_PCI_QUIRK_ID_MASK(vend, 0, 0), .value = (val)}
+
+#else /* !NEW_QUIRK_LIST */
+
 struct snd_pci_quirk {
 	unsigned short subvendor;	/* PCI subvendor ID */
 	unsigned short subdevice;	/* PCI subdevice ID */
@@ -86,6 +111,8 @@ struct snd_pci_quirk {
 #define SND_PCI_QUIRK_ID(vend,dev) {_SND_PCI_QUIRK_ID(vend, dev)}
 #define SND_PCI_QUIRK(vend,dev,xname,val) \
 	{_SND_PCI_QUIRK_ID(vend, dev), .value = (val), .name = (xname)}
+
+#endif /* NEW_QUIRK_LIST */
 
 const struct snd_pci_quirk *
 snd_pci_quirk_lookup(struct pci_dev *pci, const struct snd_pci_quirk *list);
