@@ -1,3 +1,19 @@
+* version 0.2.3:
+	
+Takashi Iwai (12):
+      Add alsa-info of HP dv4
+      Fix symlink of hda-encode-verb
+      Don't show the selection for volume knob widgets in proc output
+      Show errors when issuing invalid set-connect-select
+      Added alsa-info for FSC Amilo Xi2550
+      Add create_singlethread_workq() wrapper
+      Add alsa-info of ASUS M3A-H / HDMI with ALC1200
+      Add more alsa-info and codec procs
+      Renamed to ad1981-hp-nx7300
+      Add HP dc7700p alsa-info with ALC262 codec
+      Add the check of new quirk list
+      Fix build with very old 2.6 kernel
+
 * version 0.2.2:
 
 Takashi Iwai (1):
