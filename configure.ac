@@ -13,6 +13,13 @@ WFLAGS="-W -Wimplicit -Wstrict-prototypes -Wextra -Wno-sign-compare -Wno-sign-co
 OPTFLAGS="-O2 -g"
 CFLAGS="$CFLAGS $OPTFLAGS $WFLAGS"
 
+AC_ARG_ENABLE(old-workq,
+  AS_HELP_STRING([--enable-old-workq], [use old workqueue API]),
+  old_workq="$enableval", old_workq="no")
+if test "$old_workq" = "yes"; then
+  AC_DEFINE(OLD_WORKQUEUE)
+fi
+
 AC_ARG_WITH(hdadir,
   AS_HELP_STRING([--with-hdadir=dir],
     [path where HD-audio kernel files are stored]),
@@ -36,6 +43,7 @@ AC_ARG_ENABLE(own-proc,
     [use own proc-file output function]),
   own_proc="$enableval", own_proc="no")
 if test "$own_proc" = "yes"; then
+  rm -f kernel/hda_proc.c
   ln -s ../hda_own_proc.c kernel/hda_proc.c
 else
   ln -s $hdadir/hda_proc.c kernel
@@ -66,7 +74,8 @@ AC_DEFUN([CHECK_FILE], [
       AC_MSG_RESULT(yes)
       AC_DEFINE($2)
     else
-      AC_MSG_RESULT(no)
+      AC_MSG_RESULT(no, creating dummy file)
+      touch kernel/$1
     fi
   fi
 ])
@@ -87,7 +96,8 @@ AC_DEFUN([CHECK_CODEC], [
       AC_MSG_RESULT(yes)
       AC_DEFINE($2)
     else
-      AC_MSG_RESULT(no)
+      AC_MSG_RESULT(no, creating dummy file)
+      touch kernel/patch_$1.c
     fi
   fi
 ])
@@ -117,6 +127,20 @@ cat kernel/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
 echo '}' >> kernel/init_hooks.h
 
+AC_MSG_CHECKING(for presence of power_save option)
+HAVE_POWER_SAVE=
+if grep -q 'snd_hda_power_up' kernel/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_POWER_SAVE=1
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_POWER_SAVE" = "1"; then
+  AC_DEFINE(HAVE_POWER_SAVE)
+  AC_DEFINE(CONFIG_SND_HDA_POWER_SAVE)
+fi
+
+if test "$HAVE_POWER_SAVE" = "1"; then
 AC_MSG_CHECKING(for old power_save option)
 OLD_POWER_SAVE=
 if grep -q '^static int power_save' kernel/hda_codec.c; then
@@ -128,6 +152,7 @@ fi
 if test "$OLD_POWER_SAVE" = "1"; then
   AC_DEFINE(OLD_POWER_SAVE)
 fi
+fi
 
 AC_MSG_CHECKING(for old bus callbacks)
 ac_save_CFLAGS="$CFLAGS"
@@ -136,6 +161,7 @@ OLD_HDA_CMD=
 AC_TRY_COMPILE([
 #include "hda-types.h"
 #include "hda-log.h"
+#include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
 #include "kernel/hda_codec.h"
@@ -159,6 +185,7 @@ OLD_HDA_CODEC_NEW=
 AC_TRY_COMPILE([
 #include "hda-types.h"
 #include "hda-log.h"
+#include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
 #include "kernel/hda_codec.h"
@@ -172,6 +199,30 @@ AC_TRY_COMPILE([
 CFLAGS=$ac_save_CFLAGS
 if test "$OLD_HDA_CODEC_NEW" = "1"; then
   AC_DEFINE(OLD_HDA_CODEC_NEW)
+fi
+
+AC_MSG_CHECKING(for new HDA PCM)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+OLD_HDA_PCM=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "kernel/hda_codec.h"
+],[
+  struct hda_pcm pcm;
+  pcm.pcm_type = 0;
+],
+  [AC_MSG_RESULT(yes)],
+  [AC_MSG_RESULT(no);OLD_HDA_PCM="1"],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$OLD_HDA_PCM" = "1"; then
+  AC_DEFINE(OLD_HDA_PCM)
 fi
 
 AC_MSG_CHECKING(for hda-reconfigure)

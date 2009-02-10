@@ -1,4 +1,10 @@
 /*
+ * some cheats for old kernels
+ */
+#include <sound/driver.h>
+
+
+/*
  * Universal Interface for Intel High Definition Audio Codec
  * 
  * Generic proc interface
@@ -25,6 +31,13 @@
 #include <sound/core.h>
 #include "hda_codec.h"
 #include "hda_local.h"
+
+#include "hda-missing-const.h"
+#ifndef HAVE_POWER_SAVE
+#define snd_hda_power_up(x)
+#define snd_hda_power_down(x)
+#endif
+
 
 static const char *get_wid_type_name(unsigned int wid_value)
 {

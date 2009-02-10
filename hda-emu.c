@@ -31,10 +31,16 @@
 #include "hda-types.h"
 #include "hda-log.h"
 
+#include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
 #include "kernel/hda_codec.h"
 #include "kernel/hda_local.h"
+
+#ifndef HAVE_POWER_SAVE
+#define snd_hda_power_up(x)
+#define snd_hda_power_down(x)
+#endif
 
 extern int cmd_loop(FILE *fp);
 
@@ -331,6 +337,7 @@ int hda_codec_reconfig(void)
 static int num_pcm_streams;
 static struct hda_pcm pcm_streams[MAX_PCM_STREAMS];
 
+#ifndef OLD_HDA_PCM
 /* get a string corresponding to the given HDA_PCM_TYPE_XXX */
 static const char *get_pcm_type_name(int type)
 {
@@ -345,6 +352,7 @@ static const char *get_pcm_type_name(int type)
 	else
 		return "unknown";
 }
+#endif
 
 /* list registered PCM streams, called from hda-ctlsh.c */
 void hda_list_pcms(void)
@@ -353,11 +361,18 @@ void hda_list_pcms(void)
 
 	for (i = 0; i < num_pcm_streams; i++) {
 		struct hda_pcm *p = &pcm_streams[i];
+#ifdef OLD_HDA_PCM
+		hda_log(HDA_LOG_INFO, "%d: %s, play=%d, capt=%d\n",
+			i, p->name,
+			p->stream[0].substreams,
+			p->stream[1].substreams);
+#else
 		hda_log(HDA_LOG_INFO, "%d: %s:%d (%s), play=%d, capt=%d\n",
 			i, p->name, p->device,
 			get_pcm_type_name(p->pcm_type),
 			p->stream[0].substreams,
 			p->stream[1].substreams);
+#endif
 	}
 }
 
@@ -432,11 +447,19 @@ void hda_test_pcm(int id, int dir, int rate, int channels, int format)
 static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		      struct hda_pcm *cpcm)
 {
+#ifdef OLD_HDA_PCM
 	hda_log(HDA_LOG_INFO,
-		"Attach PCM dev %d, name %s, play #%d, capture #%d\n",
-		cpcm->device, cpcm->name,
+		"Attach PCM name %s, play #%d, capture #%d\n",
+		cpcm->name,
 		cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams,
 		cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams);
+#else
+	hda_log(HDA_LOG_INFO,
+		"Attach PCM dev %d, name %s, type %s, play #%d, capture #%d\n",
+		cpcm->device, cpcm->name, get_pcm_type_name(cpcm->pcm_type),
+		cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams,
+		cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams);
+#endif
 	if (num_pcm_streams >= MAX_PCM_STREAMS) {
 		hda_log(HDA_LOG_ERR, "Too many streams\n");
 		return 0;
@@ -578,13 +601,17 @@ int main(int argc, char **argv)
 	temp.modelname = opt_model;
 	if (opt_model)
 		hda_log(HDA_LOG_INFO, "Using model option '%s'\n", opt_model);
+#ifdef HAVE_POWER_SAVE
 #ifndef OLD_POWER_SAVE
 	temp.power_save = &power_save;
+#endif
 #endif
 #ifdef OLD_HDA_CMD
 	temp.ops.command = old_cmd_send;
 	temp.ops.get_response = old_resp_get;
+#ifdef HAVE_POWER_SAVE
 	temp.ops.pm_notify = old_pm_notify;
+#endif
 #else
 	temp.ops.command = cmd_send;
 	temp.ops.get_response = resp_get;

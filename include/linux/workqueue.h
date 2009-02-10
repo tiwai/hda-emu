@@ -6,7 +6,12 @@ struct workqueue_struct {
 };
 
 struct work_struct {
+#ifdef OLD_WORKQUEUE
+	void (*func)(void *data);
+	void *work_data;
+#else
 	void (*func)(struct work_struct *);
+#endif
 };
 
 struct delayed_work {
@@ -15,8 +20,13 @@ struct delayed_work {
 
 extern struct delayed_work *__work_pending;
 
+#ifdef OLD_WORKQUEUE
+#define INIT_WORK(x,y,z) ((x)->func = (y), (x)->work_data = (z))
+#define schedule_work(x) (x)->func((x)->work_data)
+#else
 #define INIT_WORK(x,y) ((x)->func = (y))
 #define schedule_work(x) (x)->func(x)
+#endif
 #define INIT_DELAYED_WORK(x,y) ((x)->work.func = (y))
 #define schedule_delayed_work(x,y) (__work_pending = (x))
 #define cancel_delayed_work(x) do {} while (0)

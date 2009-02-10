@@ -2,6 +2,7 @@
 #define __SOUND_CONTROL_H
 
 #define snd_kcontrol_chip(kcontrol) ((kcontrol)->private_data)
+#define _snd_kcontrol_chip(kcontrol) ((kcontrol)->private_data)
 
 struct snd_kcontrol;
 typedef int (snd_kcontrol_info_t) (struct snd_kcontrol * kcontrol, struct snd_ctl_elem_info * uinfo);
@@ -123,5 +124,8 @@ int snd_ctl_add_slave(struct snd_kcontrol *master, struct snd_kcontrol *slave);
 #define SNDRV_CTL_NAME_IEC958_PRO_MASK			"Pro Mask"
 #define SNDRV_CTL_NAME_IEC958_PCM_STREAM		"PCM Stream"
 #define SNDRV_CTL_NAME_IEC958(expl,direction,what)	"IEC958 " expl SNDRV_CTL_NAME_##direction SNDRV_CTL_NAME_IEC958_##what
+
+#define snd_ctl_elem_read(card,ctl) 0
+#define snd_ctl_elem_write(card,file,ctl) 0
 
 #endif /* __SOUND_CONTROL_H */

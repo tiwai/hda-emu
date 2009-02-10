@@ -119,4 +119,12 @@ snd_pci_quirk_lookup(struct pci_dev *pci, const struct snd_pci_quirk *list);
 
 #define snd_component_add(x,y)
 
+/*
+ * for old kernels
+ */
+#define down(x)	mutex_lock(x)
+#define up(x)	mutex_unlock(x)
+struct semaphore { int x; };
+#define init_MUTEX(x) do {} while (0)
+
 #endif /* __SOUND_CORE_H */

@@ -67,6 +67,10 @@ static inline int list_empty(const struct list_head *head)
 	for (pos = (head)->next; pos != (head); \
         	pos = pos->next)
 
+#define list_for_each_safe(pos, n, head) \
+	for (pos = (head)->next, n = pos->next; pos != (head); \
+		pos = n, n = pos->next)
+
 #define list_for_each_entry(pos, head, member)				\
 	for (pos = list_entry((head)->next, typeof(*pos), member);	\
 	     &pos->member != (head); 	\
