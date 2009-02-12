@@ -477,6 +477,30 @@ static void reset_pcm(void)
 }
 #endif
 
+#ifdef OLD_HDA_CMD
+static int azx_pcm_create(struct hda_codec *codec)
+{
+	int c, err;
+
+	/* create audio PCMs */
+	for (c = 0; c < codec->num_pcms; c++) {
+		if (codec->pcm_info[c].is_modem)
+			continue; /* create later */
+		err = attach_pcm(codec->bus, codec, &codec->pcm_info[c]);
+		if (err < 0)
+			return err;
+	}
+	for (c = 0; c < codec->num_pcms; c++) {
+		if (!codec->pcm_info[c].is_modem)
+			continue; /* already created */
+		err = attach_pcm(codec->bus, codec, &codec->pcm_info[c]);
+		if (err < 0)
+			return err;
+	}
+	return 0;
+}
+#endif
+
 /*
  * power management
  */
@@ -645,6 +669,9 @@ int main(int argc, char **argv)
 
 	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
 	snd_hda_build_pcms(bus);
+#ifdef OLD_HDA_CMD
+	azx_pcm_create(codec);
+#endif
 
 	/* power-down after init phase */
 	snd_hda_power_down(codec);
