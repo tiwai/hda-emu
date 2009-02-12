@@ -484,15 +484,6 @@ static int azx_pcm_create(struct hda_codec *codec)
 
 	/* create audio PCMs */
 	for (c = 0; c < codec->num_pcms; c++) {
-		if (codec->pcm_info[c].is_modem)
-			continue; /* create later */
-		err = attach_pcm(codec->bus, codec, &codec->pcm_info[c]);
-		if (err < 0)
-			return err;
-	}
-	for (c = 0; c < codec->num_pcms; c++) {
-		if (!codec->pcm_info[c].is_modem)
-			continue; /* already created */
 		err = attach_pcm(codec->bus, codec, &codec->pcm_info[c]);
 		if (err < 0)
 			return err;
