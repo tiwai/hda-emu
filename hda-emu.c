@@ -388,7 +388,8 @@ static int get_alsa_format(int bits)
 }
 
 /* test the given PCM stream, called from hda-ctlsh.c */
-void hda_test_pcm(int id, int dir, int rate, int channels, int format)
+void hda_test_pcm(int id, int subid,
+		  int dir, int rate, int channels, int format)
 {
 	static struct snd_pcm_substream dummy_substream;
 	static struct snd_pcm_runtime dummy_runtime;
@@ -403,8 +404,24 @@ void hda_test_pcm(int id, int dir, int rate, int channels, int format)
 		return;
 	}
 
+	if (!pcm_streams[id].stream[dir].substreams) {
+		hda_log(HDA_LOG_INFO, "No substream in PCM %s for %s\n",
+			pcm_streams[id].name,
+			(dir ? "capt" : "play"));
+		return;
+	}
+	if (subid < 0 || subid >= pcm_streams[id].stream[dir].substreams) {
+		hda_log(HDA_LOG_INFO,
+			"Invalid substream %d for PCM %s for %s\n",
+			pcm_streams[id].name,
+			(dir ? "capt" : "play"));
+		return;
+	}
+
 	memset(substream, 0, sizeof(*substream));
 	memset(runtime, 0, sizeof(*runtime));
+	substream->stream = dir;
+	substream->number = subid;
 	substream->runtime = runtime;
 	runtime->rate = rate;
 	runtime->format = get_alsa_format(format);

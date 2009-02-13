@@ -368,6 +368,14 @@ static void run_verb(char *line)
 	hda_exec_verb(strtoul(parm[0], NULL, 0), verb, val);
 }
 
+static int get_pcm_substream(char *id)
+{
+	id = strchr(id, ':');
+	if (!id)
+		return 0;
+	return strtoul(id + 1, NULL, 0);
+}
+
 static void test_pm(char *line)
 {
 	hda_log(HDA_LOG_INFO, "** SUSPENDING **\n");
@@ -381,6 +389,7 @@ static void test_pcm(char *line)
 {
 	char *id;
 	int stream, dir, rate = 48000, channels = 2, format = 16;
+	int substream = 0;
 
 	id = gettoken(&line);
 	if (!id) {
@@ -398,13 +407,19 @@ static void test_pcm(char *line)
 	case 'p':
 	case 'P':
 		dir = 0;
+		substream = get_pcm_substream(id);
 		break;
 	case 'c':
 	case 'C':
 		dir = 1;
+		substream = get_pcm_substream(id);
 		break;
 	default:
 		dir = strtoul(id, NULL, 0);
+		if (dir != 0 || dir != 1) {
+			hda_log(HDA_LOG_ERR, "Invalid direction %s\n", id);
+			return;
+		}
 		break;
 	}
 
@@ -418,7 +433,7 @@ static void test_pcm(char *line)
 			format = strtoul(id, NULL, 0);
 		}
 	}
-	hda_test_pcm(stream, dir, rate, channels, format);
+	hda_test_pcm(stream, substream, dir, rate, channels, format);
 }
 
 #ifdef CONFIG_SND_HDA_RECONFIG
