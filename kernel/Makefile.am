@@ -8,7 +8,8 @@ PATCHES = \
 	patch_realtek.c \
 	patch_si3054.c \
 	patch_sigmatel.c \
-	patch_via.c
+	patch_via.c \
+	patch_ca0110.c
 
 noinst_LIBRARIES = libhda.a
 libhda_a_SOURCES = hda_codec.c hda_generic.c hda_proc.c \
