@@ -81,8 +81,7 @@ typedef int pm_message_t;
 #define PCI_VENDOR_ID_DFI		0x15bd
 #define PCI_VENDOR_ID_INTEL		0x8086
 
-typedef int spinlock_t;
-
+#include <linux/spinlock.h>
 #include <linux/workqueue.h>
 #include <linux/bitmap.h>
 #include <linux/module.h>
