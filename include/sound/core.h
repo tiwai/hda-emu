@@ -3,6 +3,7 @@
 
 #include "wrapper.h"
 #include <linux/slab.h>
+#include <linux/list.h>
 
 #define snd_printk	hda_log_printk
 #define snd_printd	hda_log_printk
@@ -27,6 +28,9 @@ struct snd_card {
 	char components[80];		/* card components delimited with
 								space */
 	struct snd_info_entry *proc;
+
+	int shutdown;
+	struct list_head ctl_files;
 };
 
 struct snd_device {

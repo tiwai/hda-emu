@@ -66,6 +66,7 @@ struct snd_pcm_substream {
 };
 
 struct snd_pcm_str {
+	unsigned int substream_opened;
 };
 
 struct snd_pcm {

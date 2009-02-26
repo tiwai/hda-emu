@@ -48,7 +48,9 @@ extern int cmd_loop(FILE *fp);
  * proc dump log
  */
 
-static struct snd_card card;
+static struct snd_card card = {
+	.ctl_files = LIST_HEAD_INIT(card.ctl_files),
+};
 static struct xhda_codec proc;
 
 static int cmd_send(struct hda_bus *bus, unsigned int cmd)
