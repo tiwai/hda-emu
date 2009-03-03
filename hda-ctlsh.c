@@ -437,6 +437,16 @@ static void test_pcm(char *line)
 }
 
 #ifdef CONFIG_SND_HDA_RECONFIG
+const char *snd_hda_get_hint(struct hda_codec *codec, const char *key)
+{
+	return NULL;
+}
+
+int snd_hda_get_bool_hint(struct hda_codec *codec, const char *key)
+{
+	return -ENOENT;
+}
+
 static void add_init_verb(char *line)
 {
 	hda_log(HDA_LOG_INFO, "** not implemented yet **\n");
