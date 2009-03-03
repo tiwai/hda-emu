@@ -76,12 +76,11 @@ typedef int pm_message_t;
 
 #define BUILD_BUG_ON(x) do {} while (0)
 
-#define PCI_VENDOR_ID_DELL		0x1028
-#define PCI_VENDOR_ID_HP		0x103c
-#define PCI_VENDOR_ID_DFI		0x15bd
-#define PCI_VENDOR_ID_INTEL		0x8086
+#define simple_strtoul	strtoul
+#define simple_strtol	strtol
 
 #include <linux/spinlock.h>
+#include <linux/pci_ids.h>
 #include <linux/workqueue.h>
 #include <linux/bitmap.h>
 #include <linux/module.h>
