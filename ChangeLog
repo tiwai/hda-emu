@@ -1,3 +1,27 @@
+* version 0.2.4:
+
+Takashi Iwai (20):
+      Fix PCM creation of old kernels
+      No need to check is_modem for PCM creation
+      Add alsa-info of Acer AX1700-UE700A desktop
+      Add error check for invalid PCM parameters
+      Add patch_ca0110.c (from unstable tree)
+      Add alsa-info of SB X-Fi Extereme
+      Add alsa-info of ASUS A7K with ALC660-VD codec
+      Add alsa-info for Acer X3200
+      Add spinlock wrappers
+      Fix build with the recent driver code
+      Add alsa-info of Dell E6400 with docking station
+      Add Toshiba X200 alsa-info (after probe_only=1)
+      Move PCI ids to linux/pci_ids.h
+      Add snd_hda_codec_*hint() functions
+      Add HP dv6736 alsa-info with Conexant 5051 codec
+      Add IDT 92HD83x alsa-infos
+      Add Dell E6500 alsa-info
+      Add HP dv2000 alsa-info with Conexant 5047
+      Add AD1882 ref implementation alsa-info
+      Add alsa-info of Sony VAIO VGN-NR21E with ALC262 codec
+
 * version 0.2.3:
 	
 Takashi Iwai (12):
