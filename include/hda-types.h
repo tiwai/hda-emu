@@ -87,6 +87,8 @@ struct xhda_codec {
 	unsigned short pci_vendor, pci_device;
 	unsigned short pci_subvendor, pci_subdevice;
 	unsigned short pci_revision;
+	/* flags */
+	unsigned int pin_amp_workaround:1; /* pin out-amp can take index */
 };
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int idx);

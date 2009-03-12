@@ -190,4 +190,13 @@ void add_codec_extensions(struct xhda_codec *codec)
 			break;
 		}
 	}
+
+	/* other quirks */
+	switch (codec->vendor_id) {
+	case 0x14f15045:
+	case 0x14f15047:
+	case 0x14f15051:
+		codec->pin_amp_workaround = 1;
+		break;
+	}
 }

@@ -147,14 +147,27 @@ static int set_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 		return 0;
 	ampval = cmd & 0xffff;
 	idx = (ampval & AC_AMP_SET_INDEX) >> AC_AMP_SET_INDEX_SHIFT;
+	type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
 	if (ampval & AC_AMP_SET_OUTPUT) {
 		if (!(node->wcaps & AC_WCAP_OUT_AMP))
 			hda_log(HDA_LOG_ERR, "no output-amp for node 0x%x\n",
 				node->nid);
-		if (idx)
-			hda_log(HDA_LOG_ERR,
-				"invalid amp index %d for output\n", idx);
-		set_amp(node, &node->amp_out_vals, 0,
+		if (idx) {
+			if (type != AC_WID_PIN ||
+			    !codec->pin_amp_workaround) {
+				hda_log(HDA_LOG_ERR,
+					"invalid amp index %d for output\n",
+					idx);
+				idx = 0;
+			} else if (idx >= node->num_nodes) {
+				hda_log(HDA_LOG_ERR,
+					"invalid pin out-amp index %d "
+					"(conns=%d)\n",
+					idx, node->num_nodes);
+				idx = 0;
+			}
+		}
+		set_amp(node, &node->amp_out_vals, idx,
 			par_amp_out_cap(codec, node, 0),
 			ampval);
 	}
@@ -195,17 +208,32 @@ static int get_amp_gain_mute(struct xhda_codec *codec, struct xhda_node *node,
 	if (!node)
 		return 0;
 	ampval = cmd & 0xffff;
+	idx = ampval & 0x1f;
+	type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
 	if (ampval & AC_AMP_GET_OUTPUT) {
 		if (!(node->wcaps & AC_WCAP_OUT_AMP))
 			hda_log(HDA_LOG_ERR, "no output-amp for node 0x%x\n",
 				node->nid);
-		return get_amp(&node->amp_out_vals, 0, ampval);
+		if (idx) {
+			if (type != AC_WID_PIN ||
+			    !codec->pin_amp_workaround) {
+				hda_log(HDA_LOG_ERR,
+					"invalid amp index %d for output\n",
+					idx);
+				idx = 0;
+			} else if (idx >= node->num_nodes) {
+				hda_log(HDA_LOG_ERR,
+					"invalid pin out-amp index %d "
+					"(conns=%d)\n",
+					idx, node->num_nodes);
+				idx = 0;
+			}
+		}
+		return get_amp(&node->amp_out_vals, idx, ampval);
 	} else {
 		if (!(node->wcaps & AC_WCAP_IN_AMP))
 			hda_log(HDA_LOG_ERR, "no input-amp for node 0x%x\n",
 				node->nid);
-		type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
-		idx = ampval & 0x1f;
 		if ((type == AC_WID_PIN && idx != 0) ||
 		    (type != AC_WID_PIN && idx >= node->num_nodes)) {
 			hda_log(HDA_LOG_ERR,
