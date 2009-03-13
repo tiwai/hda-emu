@@ -313,19 +313,20 @@ int hda_codec_reconfig(void)
 {
 	int err;
 
+	snd_hda_power_up(_codec);
 	snd_hda_codec_reset(_codec);
 	err = snd_hda_codec_configure(_codec);
 	if (err < 0)
-		return err;
+		goto error;
 	/* rebuild PCMs */
 	err = snd_hda_build_pcms(bus);
 	if (err < 0)
-		return err;
+		goto error;
 	/* rebuild mixers */
 	err = snd_hda_codec_build_controls(_codec);
-	if (err < 0)
-		return err;
-	return 0;
+ error:
+	snd_hda_power_down(_codec);
+	return err;
 }
 
 #endif /* CONFIG_SND_HDA_RECONFIG */
