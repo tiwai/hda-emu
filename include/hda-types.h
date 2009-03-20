@@ -11,10 +11,10 @@ struct xhda_amp_caps {
 	int override;
 };
 
-#define HDA_MAX_CONNECTIONS		32
+#define HDA_MAX_NUM_CONNS		32
 
 struct xhda_amp_vals {
-	unsigned char vals[HDA_MAX_CONNECTIONS][2];
+	unsigned char vals[HDA_MAX_NUM_CONNS][2];
 };
 
 struct xhda_pcm_info {
@@ -42,7 +42,7 @@ struct xhda_node {
 	struct xhda_amp_vals amp_out_vals;
 	unsigned int num_nodes;
 	unsigned int curr_conn;
-	unsigned int node[HDA_MAX_CONNECTIONS];
+	unsigned int node[HDA_MAX_NUM_CONNS];
 	int power_setting, power_current;
 	int coef_benign, coef_num;
 	unsigned int dig_conv, dig_category;
