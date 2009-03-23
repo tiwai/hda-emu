@@ -270,5 +270,29 @@ if test "$HDA_CODEC_PIN_AMP_WORKAROUND" = "1"; then
   AC_DEFINE(HDA_CODEC_PIN_AMP_WORKAROUND)
 fi
 
+AC_MSG_CHECKING(for hda_codec.function_id)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+HDA_CODEC_FUNCTION_ID=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "kernel/hda_codec.h"
+],[
+  struct hda_codec codec;
+  codec.function_id = 1;
+],
+  [AC_MSG_RESULT(yes); HDA_CODEC_FUNCTION_ID="1"],
+  [AC_MSG_RESULT(no)],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$HDA_CODEC_FUNCTION_ID" = "1"; then
+  AC_DEFINE(HDA_CODEC_FUNCTION_ID)
+fi
+
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 

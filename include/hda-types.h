@@ -75,6 +75,7 @@ struct xhda_value_cache {
 
 struct xhda_codec {
 	unsigned int addr;
+	unsigned int function_id;
 	unsigned int vendor_id;
 	unsigned int subsystem_id;
 	unsigned int revision_id;

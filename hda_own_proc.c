@@ -581,8 +581,11 @@ static void print_codec_info(struct snd_info_entry *entry,
 	snd_iprintf(buffer, "Codec: %s\n", buf);
 #endif
 	snd_iprintf(buffer, "Address: %d\n", codec->addr);
-	snd_iprintf(buffer, "Vendor Id: 0x%x\n", codec->vendor_id);
-	snd_iprintf(buffer, "Subsystem Id: 0x%x\n", codec->subsystem_id);
+#ifdef HDA_CODEC_FUNCTION_ID
+	snd_iprintf(buffer, "Function Id: 0x%x\n", codec->function_id);
+#endif
+	snd_iprintf(buffer, "Vendor Id: 0x%08x\n", codec->vendor_id);
+	snd_iprintf(buffer, "Subsystem Id: 0x%08x\n", codec->subsystem_id);
 	snd_iprintf(buffer, "Revision Id: 0x%x\n", codec->revision_id);
 
 	if (codec->mfg)
