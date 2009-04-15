@@ -60,12 +60,37 @@ static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 	unsigned int parm = cmd & 0xff;
 	int err;
 
-	hda_log(HDA_LOG_VERB,
-		"send: NID=0x%x, VERB=0x%x(%s), PARM=0x%x",
-		nid, verb, get_verb_name(&proc, cmd), parm);
-	if (verb == 0xf00)
-		hda_log(HDA_LOG_VERB, "(%s)",
-			get_parameter_name(&proc, cmd));
+	hda_log(HDA_LOG_VERB, "send: NID=0x%x, VERB=0x%x", nid, verb);
+	switch (verb & 0xf00) {
+	case AC_VERB_GET_AMP_GAIN_MUTE:
+		hda_log(HDA_LOG_VERB,
+			"(%s,%s:%s#%d), PARM=0x%x",
+			get_verb_name(&proc, cmd),
+			(verb & (1 << 7) ? "O" : "I"),
+			(verb & (1 << 5) ? "L" : "R"),
+			verb & 0x0f,
+			parm);
+		break;
+	case AC_VERB_SET_AMP_GAIN_MUTE:
+		hda_log(HDA_LOG_VERB,
+			"(%s,%s%s:%s%s#%d), PARM=0x%x",
+			get_verb_name(&proc, cmd),
+			(verb & (1 << 7) ? "O" : ""),
+			(verb & (1 << 6) ? "I" : ""),
+			(verb & (1 << 5) ? "L" : ""),
+			(verb & (1 << 4) ? "R" : ""),
+			verb & 0x0f,
+			parm);
+		break;
+	default:
+		hda_log(HDA_LOG_VERB,
+			"(%s), PARM=0x%x",
+			get_verb_name(&proc, cmd), parm);
+		if (verb == 0xf00)
+			hda_log(HDA_LOG_VERB, "(%s)",
+				get_parameter_name(&proc, cmd));
+		break;
+	}
 	hda_log(HDA_LOG_VERB, "\n");
 
 	err = hda_cmd(&proc, cmd);
