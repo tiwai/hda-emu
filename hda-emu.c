@@ -415,6 +415,22 @@ static int get_alsa_format(int bits)
 		return SNDRV_PCM_FORMAT_S32_LE;
 }
 
+static  char *fmt_names[64] = {
+	"S8", "U8", "S16_LE", "S16_BE", "U16_LE", "U16_BE", "S24_LE", "S24_BE",
+	"U24_LE", "U24_BE", "S32_LE", "S32_BE", "U32_LE", "U32_BE",
+	"FLOAT_LE", "FLOAT_BE", "FLOAT64_LE", "FLOAT64_BE",
+	"IEC958_LE", "IEC958_BE", "MU_LAW", "A_LAW", "IMA_ADPCM", "MPEG" "GSM",
+	NULL, NULL, NULL, NULL, NULL, NULL, "SPECIAL",
+	"S24_3LE", "S24_3BE", "U24_3LE", "U24_3BE"
+	"S24_3LE", "S20_3BE", "U20_3LE", "U20_3BE",
+	"S18_3LE", "S18_3BE", "U18_3LE", "U18_3BE",
+};
+
+static int rate_consts[] = {
+	5512, 8000, 11025, 16000, 22050, 32000, 44100, 48000, 64000,
+	88200, 96000, 176400, 192000,
+};
+
 /* test the given PCM stream, called from hda-ctlsh.c */
 void hda_test_pcm(int id, int subid,
 		  int dir, int rate, int channels, int format)
@@ -425,7 +441,7 @@ void hda_test_pcm(int id, int subid,
 	struct snd_pcm_runtime *runtime = &dummy_runtime;
 	struct hda_pcm_stream *hinfo;
 	unsigned int format_val;
-	int err;
+	int i, err;
 
 	if (id < 0 || id >= num_pcm_streams) {
 		hda_log(HDA_LOG_ERR, "Invalid PCM id %d\n", id);
@@ -456,6 +472,12 @@ void hda_test_pcm(int id, int subid,
 	runtime->channels = channels;
 
 	hinfo = &pcm_streams[id].stream[dir];
+
+	runtime->hw.channels_min = hinfo->channels_min;
+	runtime->hw.channels_max = hinfo->channels_max;
+	runtime->hw.formats = hinfo->formats;
+	runtime->hw.rates = hinfo->rates;
+
 	hda_log(HDA_LOG_INFO, "Open PCM %s for %s\n",
 		pcm_streams[id].name,
 		(dir ? "capt" : "play"));
@@ -467,6 +489,25 @@ void hda_test_pcm(int id, int subid,
 		return;
 	}
 	
+	hda_log(HDA_LOG_INFO, "Available PCM parameters:\n");
+	hda_log(HDA_LOG_INFO, "  channels: %d/%d\n",
+		runtime->hw.channels_min,
+		runtime->hw.channels_max);
+	hda_log(HDA_LOG_INFO, "  formats:");
+	for (i = 0; i < ARRAY_SIZE(fmt_names); i++) {
+		if (runtime->hw.formats & (1ULL << i)) {
+			if (fmt_names[i])
+				hda_log(HDA_LOG_INFO, " %s", fmt_names[i]);
+			else
+				hda_log(HDA_LOG_INFO, " Uknown#%d", i);
+		}
+	}
+	hda_log(HDA_LOG_INFO, "\n  rates:");
+	for (i = 0; i < ARRAY_SIZE(rate_consts); i++) {
+		if (runtime->hw.rates & (1UL << i))
+			hda_log(HDA_LOG_INFO, " %d", rate_consts[i]);
+	}
+	hda_log(HDA_LOG_INFO, "\n");
 	hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
 		"format=%d bits\n",
 		rate, channels, format);
