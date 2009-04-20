@@ -712,10 +712,11 @@ static int par_node_count(struct xhda_codec *codec, struct xhda_node *node,
 static int par_function_type(struct xhda_codec *codec, struct xhda_node *node,
 			     unsigned int cmd)
 {
-	if (node && node->nid == 0x01) {
-		if (codec->function_id)
-			return codec->function_id;
-		return 0x01; /* FIXME */
+	if (node) {
+		if (!codec->function_id && node->nid == 0x01)
+			return 0x01; /* FIXME */
+		if (node->nid == codec->afg.nid)
+			return codec->function_id ? codec->function_id : 0x01;
 	}
 	return 0;
 }
