@@ -1,3 +1,31 @@
+* version 0.2.5:
+
+Takashi Iwai (24):
+      Add workaround for Conexant-specific amp handling for pin widgets
+      Add alsa-info of Dell Vostro 1500 with STAC9205
+      Add alsa-info of Dell Vostro 1400 with STAC9228
+      Add power-up/down control in hwdep reconfig
+      Add alsa-info of Acer AspireOne D150X with ALC272 codec
+      Add alsa-info of HP laptop with IDT 92HD71x
+      Fix proc outputs
+      Add check of hda_codec.pin_amp_workaround field to configure script
+      Fix conflict of definition of HDA_MAX_CONNECTIONS
+      Fix HTML junk texts from alc662-ECS-mobo.txt
+      Add function-id parse and proc output
+      Add alsa-info of Acer Ferrari 5000 laptop with ALC883
+      Update alc262-hp-xw6400
+      Show get/set amp details in command echoes
+      Add alsa-info for Macbook 5,1 with ALC889A
+      Add alsa-info of Acer 5920G with ALC1200
+      Add alsa-info of MacBook Pro 2.1 with STAC9221
+      Fix codec/stac9221-macbook-pro-21 file
+      Add alsa-info of Toshiba M305D S4830 with Conexant 5051 (CX20561) codec
+      Add alsa-info of Medion MD96970 / WIM2220 laptop
+      Fix handling of FG type again
+      Show available PCM parameters at PCM command
+      Add alsa-info of Packard Bell RS65 laptop
+      Add alsa-info of MSI GX720-061 with ALC1200
+
 * version 0.2.4:
 
 Takashi Iwai (20):
