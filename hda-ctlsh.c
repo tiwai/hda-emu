@@ -430,7 +430,8 @@ static void test_pcm(char *line)
 		if (id) {
 			channels = strtoul(id, NULL, 0);
 			id = gettoken(&line);
-			format = strtoul(id, NULL, 0);
+			if (id)
+				format = strtoul(id, NULL, 0);
 		}
 	}
 	hda_test_pcm(stream, substream, dir, rate, channels, format);
