@@ -354,6 +354,37 @@ int hda_codec_reconfig(void)
 	return err;
 }
 
+#ifdef HAVE_USER_PINCFGS
+static void show_pincfgs(struct snd_array *list)
+{
+	int i;
+	for (i = 0; i < list->used; i++) {
+		struct hda_pincfg *pin = snd_array_elem(list, i);
+		hda_log(HDA_LOG_INFO, "0x%02x 0x%08x\n", pin->nid, pin->cfg);
+	}
+}
+
+void hda_log_show_driver_pin_configs(void)
+{
+	show_pincfgs(&_codec->driver_pins);
+}
+
+void hda_log_show_init_pin_configs(void)
+{
+	show_pincfgs(&_codec->init_pins);
+}
+
+void hda_log_show_user_pin_configs(void)
+{
+	show_pincfgs(&_codec->user_pins);
+}
+
+void hda_log_set_user_pin_configs(unsigned int nid, unsigned int cfg)
+{
+	snd_hda_add_pincfg(_codec, &_codec->user_pins, nid, cfg);
+}
+#endif /* HAVE_USER_PINCFGS */
+
 #endif /* CONFIG_SND_HDA_RECONFIG */
 
 /*

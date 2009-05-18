@@ -79,7 +79,7 @@ At this point, you can give a command.  For example, type "help" or
 
 	> help
 	Available commands: list get set dump jack option help verb pm \
-	init tip clear reconfig quit
+	init fs quit
 	Run "help CMD" for details
 
 No surprise, huh?

@@ -229,9 +229,21 @@ fi
 AC_MSG_CHECKING(for hda-reconfigure)
 if grep -q snd_hda_codec_configure kernel/hda_local.h; then
   AC_MSG_RESULT(yes)
+  HAVE_RECONFIG=yes
   AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
 else
   AC_MSG_RESULT(no)
+  HAVE_RECONFIG=no
+fi
+
+if test "$HAVE_RECONFIG" = "yes"; then
+   AC_MSG_CHECKING(for user pin configs)
+   if grep -q user_pins kernel/hda_codec.h; then
+      AC_MSG_RESULT(yes)
+      AC_DEFINE(HAVE_USER_PINCFGS)
+   else
+      AC_MSG_RESULT(no)
+   fi
 fi
 
 AC_MSG_CHECKING(for new quirk list)

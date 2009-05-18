@@ -46,4 +46,11 @@ unsigned int hda_decode_verb_parm(struct xhda_codec *codec,
 int hda_encode_verb_parm(const char *verb, const char *parm,
 			 unsigned int *verb_ret, unsigned int *parm_ret);
 
+#ifdef HAVE_USER_PINCFGS
+void hda_log_show_driver_pin_configs(void);
+void hda_log_show_init_pin_configs(void);
+void hda_log_show_user_pin_configs(void);
+void hda_log_set_user_pin_configs(unsigned int nid, unsigned int cfg);
+#endif /* HAVE_USER_PINCFGS */
+
 #endif /* __HDA_LOG_H */

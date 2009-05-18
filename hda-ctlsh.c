@@ -84,14 +84,8 @@ static struct usage_table usage_str[] = {
 	{ "pm", "pm",
 	  "Test suspend/resume cycle" },
 #ifdef CONFIG_SND_HDA_RECONFIG
-	{ "init", "init nid cmd parameter",
-	  "Add an extra initialization verb (hda-reconfig feature)" },
-	{ "tip", "tip string",
-	  "Give a hint string (hda-reconfig feature)" },
-	{ "clear", "clear",
-	  "Clear mixers and init-verbs (hda-reconfig feature)" },
-	{ "reconfig", "reconfig",
-	  "Re-configure codec parsing (hda-reconfig feature)" },
+	{ "fs", "fs {get|set|list} file args...",
+	  "Read or write sysfs files" },
 #endif
 	{ "quit", "quit",
 	  "Quit the program" },
@@ -438,6 +432,8 @@ static void test_pcm(char *line)
 }
 
 #ifdef CONFIG_SND_HDA_RECONFIG
+struct hda_codec;
+
 const char *snd_hda_get_hint(struct hda_codec *codec, const char *key)
 {
 	return NULL;
@@ -448,25 +444,161 @@ int snd_hda_get_bool_hint(struct hda_codec *codec, const char *key)
 	return -ENOENT;
 }
 
-static void add_init_verb(char *line)
+#ifdef HAVE_USER_PINCFGS
+static void get_drv_pincfgs(void)
 {
-	hda_log(HDA_LOG_INFO, "** not implemented yet **\n");
+	hda_log_show_driver_pin_configs();
 }
 
-static void add_hint_string(char *line)
+static void get_init_pincfgs(void)
 {
-	hda_log(HDA_LOG_INFO, "** not implemented yet **\n");
+	hda_log_show_init_pin_configs();
 }
 
-static void clear_codec(void)
+static void get_user_pincfgs(void)
+{
+	hda_log_show_user_pin_configs();
+}
+
+static void set_user_pincfgs(char *line)
+{
+	char *token;
+	unsigned int nid, val;
+	token = gettoken(&line);
+	if (!token)
+		goto error;
+	nid = strtoul(token, NULL, 0);
+	token = gettoken(&line);
+	if (!val)
+		goto error;
+	val = strtoul(token, NULL, 0);
+	hda_log_set_user_pin_configs(nid, val);
+	return;
+ error:
+	hda_log(HDA_LOG_ERR, "Specify NID and PINCFG values\n");
+	return;
+}
+#endif /* HAVE_USER_PINCFGS */
+
+static void get_not_yet(void)
+{
+	hda_log(HDA_LOG_ERR, "Not implemented yet\n");
+}
+
+static void set_not_yet(char *line)
+{
+	hda_log(HDA_LOG_ERR, "Not implemented yet\n");
+}
+
+static void clear_codec(char *line)
 {
 	hda_codec_reset();
 	/* clear internal list */
 }
 
-static int reconfig_codec(void)
+static void reconfig_codec(char *line)
 {
 	hda_codec_reconfig();
+}
+
+#define get_hints		get_not_yet
+#define set_hints		set_not_yet
+#define get_vendor_id		get_not_yet
+#define set_vendor_id		set_not_yet
+#define get_subsystem_id	get_not_yet
+#define set_subsystem_id	set_not_yet
+#define get_revision_id		get_not_yet
+#define set_revision_id		set_not_yet
+
+struct sysfs_entry {
+	const char *name;
+	void (*get)(void);
+	void (*set)(char *line);
+};
+
+static struct sysfs_entry sysfs_entries[] = {
+#ifdef HAVE_USER_PINCFGS
+	{ "driver_pin_configs", get_drv_pincfgs, NULL },
+	{ "init_pin_configs", get_init_pincfgs, NULL },
+	{ "user_pin_configs", get_user_pincfgs, set_user_pincfgs },
+#endif
+	{ "hints", get_hints, set_hints },
+	{ "vendor_id", get_vendor_id, set_vendor_id },
+	{ "subsystem_id", get_subsystem_id, set_subsystem_id },
+	{ "revision_id", get_revision_id, set_revision_id },
+	{ "clear", NULL, clear_codec },
+	{ "reconfig", NULL, reconfig_codec },
+	{ },
+};
+
+static struct sysfs_entry *find_sysfs_entry(char *file)
+{
+	struct sysfs_entry *s;
+	for (s = sysfs_entries; s->name; s++)
+		if (!strcmp(s->name, file))
+			return s;
+	hda_log(HDA_LOG_INFO, "No such a file: %s\n", file);
+	return NULL;
+}
+
+static void get_sysfs(char *file)
+{
+	struct sysfs_entry *s;
+	s = find_sysfs_entry(file);
+	if (!s)
+		return;
+	if (!s->get) {
+		hda_log(HDA_LOG_INFO, "%s has no read premission\n", file);
+		return;
+	}
+	s->get();
+}
+
+static void set_sysfs(char *file, char *line)
+{
+	struct sysfs_entry *s;
+	s = find_sysfs_entry(file);
+	if (!s)
+		return;
+	if (!s->set) {
+		hda_log(HDA_LOG_INFO, "%s has no write permission\n", file);
+		return;
+	}
+	s->set(line);
+}
+
+static void list_sysfs(void)
+{
+	struct sysfs_entry *s;
+	hda_log(HDA_LOG_INFO, "Available sysfs entries:\n");
+	for (s = sysfs_entries; s->name; s++)
+		hda_log(HDA_LOG_INFO, "  %s (%s%c)\n",
+			s->name, (s->get ? "R" : ""), (s->set ? "W" : ""));
+}
+
+static void handle_sysfs(char *line)
+{
+	char *cmd;
+
+	cmd = gettoken(&line);
+	if (!cmd)
+		goto error;
+	if (*cmd == 'l')
+		list_sysfs();
+	else if (*cmd == 'g' || *cmd == 's') {
+		char *file;
+		file = gettoken(&line);
+		if (!file)
+			goto error;
+		if (*cmd == 'g')
+			get_sysfs(file);
+		else
+			set_sysfs(file, line);
+	}
+	return;
+ error:
+	usage("fs");
+	return;
 }
 #endif
 
@@ -521,17 +653,8 @@ int cmd_loop(FILE *fp)
 			test_pm(buf);
 			break;
 #ifdef CONFIG_SND_HDA_RECONFIG
-		case 'i':
-			add_init_verb(buf);
-			break;
-		case 't':
-			add_hint_string(buf);
-			break;
-		case 'c':
-			clear_codec();
-			break;
-		case 'r':
-			reconfig_codec();
+		case 'f':
+			handle_sysfs(buf);
 			break;
 #endif
 		case 'h':
