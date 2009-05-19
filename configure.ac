@@ -306,5 +306,17 @@ if test "$HDA_CODEC_FUNCTION_ID" = "1"; then
   AC_DEFINE(HDA_CODEC_FUNCTION_ID)
 fi
 
+AC_MSG_CHECKING(for snd_ctl_boolean_mono_info definition)
+HAVE_BOOLEAN_INFO
+if grep -q snd_ctl_boolean_mono_info kernel/hda_local.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_BOOLEAN_INFO=1
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_BOOLEAN_INFO" = "1"; then
+  AC_DEFINE(HAVE_BOOLEAN_INFO)
+fi
+
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 

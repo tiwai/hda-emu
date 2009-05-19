@@ -124,6 +124,7 @@ struct snd_kcontrol *snd_ctl_find_id(struct snd_card *card,
 	return NULL;
 }
 
+#ifndef HAVE_BOOLEAN_INFO
 int snd_ctl_boolean_mono_info(struct snd_kcontrol *kcontrol,
 			      struct snd_ctl_elem_info *uinfo)
 {
@@ -143,3 +144,4 @@ int snd_ctl_boolean_stereo_info(struct snd_kcontrol *kcontrol,
 	uinfo->value.integer.max = 1;
 	return 0;
 }
+#endif
