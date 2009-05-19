@@ -54,6 +54,27 @@ static char *gettoken(char **bufp)
 	return token;
 }
 
+static int getint(char **bufp, int *val)
+{
+	char *token = gettoken(bufp);
+	if (!token)
+		return -ENOENT;
+	*val = strtoul(token, NULL, 0);
+	return 0;
+}
+
+static int getbool(char **bufp, int *val)
+{
+	char *token = gettoken(bufp);
+	if (!token)
+		return -ENOENT;
+	if (*token == '1' || !strcmp(token, "on"))
+		*val = 1;
+	else
+		*val = 0;
+	return 0;
+}
+
 struct usage_table {
 	const char *cmd;
 	const char *line;
@@ -136,17 +157,16 @@ static void get_element(char *line)
 	struct snd_kcontrol *kctl;
 	struct snd_ctl_elem_info uinfo;
 	struct snd_ctl_elem_value uval;
-	char *p;
+	int numid;
 	int i, err;
 
-	p = gettoken(&line);
-	if (!p) {
+	if (getint(&line, &numid)) {
 		usage("get");
 		return;
 	}
-	kctl = snd_ctl_find_numid(NULL, atoi(p));
+	kctl = snd_ctl_find_numid(NULL, numid);
 	if (!kctl) {
-		hda_log(HDA_LOG_INFO, "No element %s\n", p);
+		hda_log(HDA_LOG_INFO, "No element %d\n", numid);
 		return;
 	}
 	
@@ -154,7 +174,7 @@ static void get_element(char *line)
 	uinfo.id = kctl->id;
 	err = kctl->info(kctl, &uinfo);
 	if (err < 0) {
-		hda_log(HDA_LOG_INFO, "Error in info for %s\n", p);
+		hda_log(HDA_LOG_INFO, "Error in info for %numid\n", numid);
 		return;
 	}
 
@@ -162,7 +182,7 @@ static void get_element(char *line)
 	uval.id = kctl->id;
 	err = kctl->get(kctl, &uval);
 	if (err < 0) {
-		hda_log(HDA_LOG_INFO, "Error in get for %s\n", p);
+		hda_log(HDA_LOG_INFO, "Error in get for %d\n", numid);
 		return;
 	}
 
@@ -204,16 +224,13 @@ static void set_element(char *line)
 	struct snd_kcontrol *kctl;
 	struct snd_ctl_elem_info uinfo;
 	struct snd_ctl_elem_value uval;
-	char *p;
 	unsigned int numid;
 	int i, err;
 
-	p = gettoken(&line);
-	if (!p) {
+	if (getint(&line, &numid)) {
 		usage("set");
 		return;
 	}
-	numid = atoi(p);
 	kctl = snd_ctl_find_numid(NULL, numid);
 	if (!kctl) {
 		hda_log(HDA_LOG_INFO, "No element %d\n", numid);
@@ -246,18 +263,18 @@ static void set_element(char *line)
 	memset(&uval, 0, sizeof(uval));
 	uval.id = kctl->id;
 	for (i = 0; i < uinfo.count; i++) {
-		p = gettoken(&line);
-		if (!p) {
+		int val;
+		if (getint(&line, &val)) {
 			hda_log(HDA_LOG_INFO, "No value #%d is given\n", i);
 			return;
 		}
 		switch (uinfo.type) {
 		case SNDRV_CTL_ELEM_TYPE_INTEGER:
 		case SNDRV_CTL_ELEM_TYPE_BOOLEAN:
-			uval.value.integer.value[i] = atoi(p);
+			uval.value.integer.value[i] = val;
 			break;
 		case SNDRV_CTL_ELEM_TYPE_ENUMERATED:
-			uval.value.enumerated.item[i] = atoi(p);
+			uval.value.enumerated.item[i] = val;
 			break;
 		}
 	}
@@ -271,13 +288,10 @@ static void set_element(char *line)
 static void dump_proc(char *line)
 {
 	unsigned int nid = 0;
-	char *p, *file = NULL;
+	char *file = NULL;
 
-	p = gettoken(&line);
-	if (p) {
-		nid = strtoul(p, NULL, 0);
+	if (!getint(&line, &nid))
 		file = gettoken(&line);
-	}
 	hda_log_dump_proc(nid, file);
 }
 
@@ -306,24 +320,16 @@ static void handle_module_option(char *line)
 
 static void set_jack(char *line)
 {
-	char *p;
 	int nid, val;
 
-	p = gettoken(&line);
-	if (!p) {
+	if (getint(&line, &nid)) {
 		usage("jack");
 		return;
 	}
-	nid = strtoul(p, NULL, 0);
-	p = gettoken(&line);
-	if (!p) {
+	if (!getbool(&line, &val)) {
 		hda_log_jack_state(nid);
 		return;
 	}
-	if (*p == '1' || !strcmp(p, "on"))
-		val = 1;
-	else
-		val = 0;
 	hda_log_set_jack(nid, val);
 }
 
@@ -385,12 +391,10 @@ static void test_pcm(char *line)
 	int stream, dir, rate = 48000, channels = 2, format = 16;
 	int substream = 0;
 
-	id = gettoken(&line);
-	if (!id) {
+	if (getint(&line, &stream)) {
 		hda_list_pcms();
 		return;
 	}
-	stream = strtoul(id, NULL, 0);
 
 	id = gettoken(&line);
 	if (!id) {
@@ -417,17 +421,9 @@ static void test_pcm(char *line)
 		break;
 	}
 
-	id = gettoken(&line);
-	if (id) {
-		rate = strtoul(id, NULL, 0);
-		id = gettoken(&line);
-		if (id) {
-			channels = strtoul(id, NULL, 0);
-			id = gettoken(&line);
-			if (id)
-				format = strtoul(id, NULL, 0);
-		}
-	}
+	if (!getint(&line, &rate) &&
+	    !getint(&line, &channels))
+		getint(&line, &format);
 	hda_test_pcm(stream, substream, dir, rate, channels, format);
 }
 
@@ -462,16 +458,9 @@ static void get_user_pincfgs(void)
 
 static void set_user_pincfgs(char *line)
 {
-	char *token;
 	unsigned int nid, val;
-	token = gettoken(&line);
-	if (!token)
+	if (getint(&line, &nid) || getint(&line, &val))
 		goto error;
-	nid = strtoul(token, NULL, 0);
-	token = gettoken(&line);
-	if (!val)
-		goto error;
-	val = strtoul(token, NULL, 0);
 	hda_log_set_user_pin_configs(nid, val);
 	return;
  error:
@@ -534,9 +523,19 @@ static struct sysfs_entry sysfs_entries[] = {
 static struct sysfs_entry *find_sysfs_entry(char *file)
 {
 	struct sysfs_entry *s;
-	for (s = sysfs_entries; s->name; s++)
+	struct sysfs_entry *matched = NULL;
+	int num_matches = 0;
+
+	for (s = sysfs_entries; s->name; s++) {
 		if (!strcmp(s->name, file))
 			return s;
+		if (!strncmp(s->name, file, strlen(file))) {
+			matched = s;
+			num_matches++;
+		}
+	}
+	if (num_matches == 1)
+		return matched;
 	hda_log(HDA_LOG_INFO, "No such a file: %s\n", file);
 	return NULL;
 }
@@ -572,7 +571,7 @@ static void list_sysfs(void)
 	struct sysfs_entry *s;
 	hda_log(HDA_LOG_INFO, "Available sysfs entries:\n");
 	for (s = sysfs_entries; s->name; s++)
-		hda_log(HDA_LOG_INFO, "  %s (%s%c)\n",
+		hda_log(HDA_LOG_INFO, "  %s (%s%s)\n",
 			s->name, (s->get ? "R" : ""), (s->set ? "W" : ""));
 }
 
