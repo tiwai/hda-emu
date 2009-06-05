@@ -751,7 +751,9 @@ int main(int argc, char **argv)
 #else
 	temp.ops.command = cmd_send;
 	temp.ops.get_response = resp_get;
+#ifdef HAVE_HDA_ATTACH_PCM
 	temp.ops.attach_pcm = attach_pcm;
+#endif
 	temp.ops.pm_notify = pm_notify;
 #endif
 	gather_codec_hooks();
