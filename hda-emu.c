@@ -299,7 +299,11 @@ static struct hda_bus *bus;
 
 void hda_test_suspend(void)
 {
+#ifdef HAVE_HDA_SUSPEND_PMSG
 	snd_hda_suspend(bus, PMSG_SUSPEND);
+#else
+	snd_hda_suspend(bus);
+#endif
 }
 
 void hda_test_resume(void)

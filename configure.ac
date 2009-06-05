@@ -318,5 +318,28 @@ if test "$HAVE_BOOLEAN_INFO" = "1"; then
   AC_DEFINE(HAVE_BOOLEAN_INFO)
 fi
 
+AC_MSG_CHECKING(for snd_hda_suspend with pmsg)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+HAVE_HDA_SUSPEND_PMSG=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "kernel/hda_codec.h"
+],[
+  snd_hda_suspend(NULL);
+],
+  [AC_MSG_RESULT(no)],
+  [AC_MSG_RESULT(yes); HAVE_HDA_SUSPEND_PMSG="1"],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$HAVE_HDA_SUSPEND_PMSG" = "1"; then
+  AC_DEFINE(HAVE_HDA_SUSPEND_PMSG)
+fi
+
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 
