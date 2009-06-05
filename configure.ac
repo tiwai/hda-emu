@@ -179,6 +179,30 @@ if test "$OLD_HDA_CMD" = "1"; then
   AC_DEFINE(OLD_HDA_CMD)
 fi
 
+AC_MSG_CHECKING(for attach_pcm bus ops)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+HAVE_HDA_ATTACH_PCM=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "kernel/hda_codec.h"
+],[
+  extern struct hda_bus_ops *ops;
+  ops->attach_pcm(NULL, NULL, NULL);
+],
+  [AC_MSG_RESULT(yes); HAVE_HDA_ATTACH_PCM="1"],
+  [AC_MSG_RESULT(no)],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$HAVE_HDA_ATTACH_PCM" = "1"; then
+  AC_DEFINE(HAVE_HDA_ATTACH_PCM)
+fi
+
 AC_MSG_CHECKING(for old snd_hda_codec_new)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"
@@ -307,7 +331,7 @@ if test "$HDA_CODEC_FUNCTION_ID" = "1"; then
 fi
 
 AC_MSG_CHECKING(for snd_ctl_boolean_mono_info definition)
-HAVE_BOOLEAN_INFO
+HAVE_BOOLEAN_INFO=
 if grep -q snd_ctl_boolean_mono_info kernel/hda_local.h; then
   AC_MSG_RESULT(yes)
   HAVE_BOOLEAN_INFO=1

@@ -598,7 +598,7 @@ static void reset_pcm(void)
 }
 #endif
 
-#ifdef OLD_HDA_CMD
+#ifdef HAVE_HDA_ATTACH_PCM
 static int azx_pcm_create(struct hda_codec *codec)
 {
 	int c, err;
@@ -781,7 +781,7 @@ int main(int argc, char **argv)
 
 	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
 	snd_hda_build_pcms(bus);
-#ifdef OLD_HDA_CMD
+#ifdef HAVE_HDA_ATTACH_PCM
 	azx_pcm_create(codec);
 #endif
 
