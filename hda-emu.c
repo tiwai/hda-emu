@@ -424,6 +424,8 @@ void hda_list_pcms(void)
 
 	for (i = 0; i < num_pcm_streams; i++) {
 		struct hda_pcm *p = &pcm_streams[i];
+		if (!p->stream[0].substreams && !p->stream[1].substreams)
+			continue;
 #ifdef OLD_HDA_PCM
 		hda_log(HDA_LOG_INFO, "%d: %s, play=%d, capt=%d\n",
 			i, p->name,
@@ -480,6 +482,11 @@ void hda_test_pcm(int id, int subid,
 
 	if (id < 0 || id >= num_pcm_streams) {
 		hda_log(HDA_LOG_ERR, "Invalid PCM id %d\n", id);
+		return;
+	}
+	if (!pcm_streams[id].stream[0].substreams &&
+	    !pcm_streams[id].stream[1].substreams) {
+		hda_log(HDA_LOG_ERR, "Empty PCM for id %d\n", id);
 		return;
 	}
 
@@ -568,24 +575,29 @@ void hda_test_pcm(int id, int subid,
 static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		      struct hda_pcm *cpcm)
 {
+	if (cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams ||
+	    cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams) {
 #ifdef OLD_HDA_PCM
-	hda_log(HDA_LOG_INFO,
-		"Attach PCM name %s, play #%d, capture #%d\n",
-		cpcm->name,
-		cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams,
-		cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams);
+		hda_log(HDA_LOG_INFO,
+			"Attach PCM name %s, play #%d, capture #%d\n",
+			cpcm->name,
+			cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams,
+			cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams);
 #else
-	hda_log(HDA_LOG_INFO,
-		"Attach PCM dev %d, name %s, type %s, play #%d, capture #%d\n",
-		cpcm->device, cpcm->name, get_pcm_type_name(cpcm->pcm_type),
-		cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams,
-		cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams);
+		cpcm->device = num_pcm_streams;
+		hda_log(HDA_LOG_INFO,
+			"Attach PCM dev %d, name %s, type %s, play #%d, capture #%d\n",
+			cpcm->device, cpcm->name, get_pcm_type_name(cpcm->pcm_type),
+			cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams,
+			cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams);
 #endif
-	if (num_pcm_streams >= MAX_PCM_STREAMS) {
-		hda_log(HDA_LOG_ERR, "Too many streams\n");
-		return 0;
+		if (num_pcm_streams >= MAX_PCM_STREAMS) {
+			hda_log(HDA_LOG_ERR, "Too many streams\n");
+			return 0;
+		}
+		pcm_streams[num_pcm_streams] = *cpcm;
 	}
-	pcm_streams[num_pcm_streams++] = *cpcm;
+	num_pcm_streams++;
 	return 0;
 }
 
@@ -598,7 +610,7 @@ static void reset_pcm(void)
 }
 #endif
 
-#ifdef HAVE_HDA_ATTACH_PCM
+#ifndef HAVE_HDA_ATTACH_PCM
 static int azx_pcm_create(struct hda_codec *codec)
 {
 	int c, err;
@@ -783,7 +795,7 @@ int main(int argc, char **argv)
 
 	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
 	snd_hda_build_pcms(bus);
-#ifdef HAVE_HDA_ATTACH_PCM
+#ifndef HAVE_HDA_ATTACH_PCM
 	azx_pcm_create(codec);
 #endif
 
