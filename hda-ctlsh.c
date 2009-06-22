@@ -172,6 +172,8 @@ static void get_element(char *line)
 	
 	memset(&uinfo, 0, sizeof(uinfo));
 	uinfo.id = kctl->id;
+	uinfo.id.numid = numid;
+	uinfo.id.index = snd_ctl_get_ioffnum(kctl, &uinfo.id);
 	err = kctl->info(kctl, &uinfo);
 	if (err < 0) {
 		hda_log(HDA_LOG_INFO, "Error in info for %numid\n", numid);
@@ -179,7 +181,7 @@ static void get_element(char *line)
 	}
 
 	memset(&uval, 0, sizeof(uval));
-	uval.id = kctl->id;
+	uval.id = uinfo.id;
 	err = kctl->get(kctl, &uval);
 	if (err < 0) {
 		hda_log(HDA_LOG_INFO, "Error in get for %d\n", numid);
@@ -244,6 +246,8 @@ static void set_element(char *line)
 
 	memset(&uinfo, 0, sizeof(uinfo));
 	uinfo.id = kctl->id;
+	uinfo.id.numid = numid;
+	uinfo.id.index = snd_ctl_get_ioffnum(kctl, &uinfo.id);
 	err = kctl->info(kctl, &uinfo);
 	if (err < 0) {
 		hda_log(HDA_LOG_INFO, "Error in info for %d\n", numid);
@@ -261,7 +265,7 @@ static void set_element(char *line)
 	}
 
 	memset(&uval, 0, sizeof(uval));
-	uval.id = kctl->id;
+	uval.id = uinfo.id;
 	for (i = 0; i < uinfo.count; i++) {
 		int val;
 		if (getint(&line, &val)) {
