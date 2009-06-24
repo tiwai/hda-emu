@@ -330,7 +330,7 @@ static void set_jack(char *line)
 		usage("jack");
 		return;
 	}
-	if (!getbool(&line, &val)) {
+	if (getbool(&line, &val)) {
 		hda_log_jack_state(nid);
 		return;
 	}
