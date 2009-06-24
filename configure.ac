@@ -226,6 +226,21 @@ if test "$OLD_HDA_CODEC_NEW" = "1"; then
   AC_DEFINE(OLD_HDA_CODEC_NEW)
 fi
 
+HAVE_HDA_PATCH_LOADER=
+if test "$OLD_HDA_CODEC_NEW" = "1"; then
+AC_MSG_CHECKING(for hda-patch)
+if grep -q snd_hda_load_patch kernel/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_HDA_PATCH_LOADER=yes
+  AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
+else
+  AC_MSG_RESULT(no)
+fi
+fi
+if test "$HAVE_HDA_PATCH_LOADER" = "yes"; then
+  AC_DEFINE(HAVE_HDA_PATCH_LOADER)
+fi
+
 AC_MSG_CHECKING(for new HDA PCM)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"

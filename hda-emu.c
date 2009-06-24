@@ -786,6 +786,10 @@ int main(int argc, char **argv)
 	}
 	_codec = codec;
 
+#ifdef HAVE_HDA_PATCH_LOADER
+	snd_hda_codec_configure(codec);
+#endif
+
 	hda_log(HDA_LOG_INFO, "# Init and building controls...\n");
 #ifdef CONFIG_SND_HDA_RECONFIG
 	snd_hda_codec_build_controls(codec);
