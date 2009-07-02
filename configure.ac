@@ -37,6 +37,11 @@ ln -s $hdadir/hda_codec.c kernel
 ln -s $hdadir/hda_codec.h kernel
 ln -s $hdadir/hda_local.h kernel
 ln -s $hdadir/hda_generic.c kernel
+if test -f $hdadir/hda_jack.c; then
+  ln -s $hdadir/hda_jack.c kernel
+else
+  touch kernel/hda_jack.c
+fi
 
 AC_ARG_ENABLE(own-proc,
   AS_HELP_STRING([--enable-own-proc],
@@ -379,6 +384,18 @@ AC_TRY_COMPILE([
 CFLAGS=$ac_save_CFLAGS
 if test "$HAVE_HDA_SUSPEND_PMSG" = "1"; then
   AC_DEFINE(HAVE_HDA_SUSPEND_PMSG)
+fi
+
+HAVE_SND_HDA_JACK=
+AC_MSG_CHECKING(for snd_hda_jack_xxx)
+if grep -q snd_hda_jack_free kernel/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_SND_HDA_JACK=yes
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_SND_HDA_JACK" = "yes"; then
+  AC_DEFINE(HAVE_SND_HDA_JACK)
 fi
 
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)

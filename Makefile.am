@@ -10,7 +10,7 @@ hda_encode_verb_SOURCES =
 
 INCLUDES = -I$(top_srcdir)/include
 
-EXTRA_DIST = README AUTHORS codecs/*
+EXTRA_DIST = README AUTHORS codecs/* jackctl.c
 
 AUTOMAKE_OPTIONS = foreign
 
