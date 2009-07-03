@@ -38,7 +38,8 @@ struct snd_kcontrol *snd_ctl_new1(const struct snd_kcontrol_new *knew,
 	kctl->id.device = knew->device;
 	kctl->id.subdevice = knew->subdevice;
 	kctl->id.index = knew->index;
-	strcpy(kctl->id.name, knew->name);
+	if (knew->name)
+		strcpy(kctl->id.name, knew->name);
 	kctl->count = knew->count ? knew->count : 1;
 	kctl->vd[0].access = knew->access ?
 		knew->access : SNDRV_CTL_ELEM_ACCESS_READWRITE;
