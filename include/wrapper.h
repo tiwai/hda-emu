@@ -79,6 +79,14 @@ typedef int pm_message_t;
 #define simple_strtoul	strtoul
 #define simple_strtol	strtol
 
+#define DEBUG_MALLOC	1
+
+#ifdef DEBUG_MALLOC
+void *__hda_malloc(size_t size, const char *file, int line);
+void __hda_free(void *ptr, const char *file, int line);
+void *__hda_strdup(const char *str, const char *file, int line);
+#endif
+
 #include <linux/spinlock.h>
 #include <linux/pci_ids.h>
 #include <linux/workqueue.h>

@@ -23,7 +23,10 @@
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
+#include <assert.h>
 #include "kernel/hda_codec.h"
+#include "hda-types.h"
+#include "hda-log.h"
 
 int snd_pcm_format_width(int format)
 {
@@ -89,3 +92,60 @@ snd_pci_quirk_lookup(struct pci_dev *pci, const struct snd_pci_quirk *list)
 	}
 	return NULL;
 }
+
+/* malloc debug */
+#ifdef DEBUG_MALLOC
+struct __hda_malloc_elem {
+	void *ptr;
+	const char *file;
+	int line;
+	struct list_head list;
+};
+
+static LIST_HEAD(malloc_list);
+
+void *__hda_malloc(size_t size, const char *file, int line)
+{
+	struct __hda_malloc_elem *elem = malloc(sizeof(*elem));
+	if (!elem)
+		return NULL;
+	elem->ptr = calloc(1, size);
+	if (!elem->ptr) {
+		free(elem);
+		return NULL;
+	}
+	elem->file = file;
+	elem->line = line;
+	list_add_tail(&elem->list, &malloc_list);
+	return elem->ptr;
+}
+
+void __hda_free(void *ptr, const char *file, int line)
+{
+	struct __hda_malloc_elem *elem;
+
+	if (!ptr)
+		return;
+
+	list_for_each_entry(elem, &malloc_list, list) {
+		if (elem->ptr == ptr) {
+			list_del(&elem->list);
+			free(elem->ptr);
+			free(elem);
+			return;
+		}
+	}
+	hda_log(HDA_LOG_ERR, "Untracked malloc freed in %s:%d\n",
+		file, line);
+	assert(0);
+}
+
+void *__hda_strdup(const char *str, const char *file, int line)
+{
+	char *dest = __hda_malloc(strlen(str) + 1, file, line);
+	if (!dest)
+		return NULL;
+	strcpy(dest, str);
+	return dest;
+}
+#endif /* DEBUG_MALLOC */

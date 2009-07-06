@@ -7,11 +7,19 @@ typedef unsigned int gfp_t;
 #define GFP_KERNEL	0
 #define GFP_ATOMIC	0
 
+#ifdef DEBUG_MALLOC
+#define kmalloc(size,gfp)	__hda_malloc(size, __FILE__, __LINE__)
+#define kzalloc(size,gfp)	kmalloc(size, gfp)
+#define kcalloc(elem,size,gfp)	kmalloc((elem)*(size), gfp)
+#define kfree(ptr)		__hda_free((void*)(ptr), __FILE__, __LINE__)
+#define kstrdup(str,x)		__hda_strdup(str, __FILE__, __LINE__)
+#else
 #define kmalloc(size,gfp)	malloc(size)
 #define kzalloc(size,gfp)	calloc(1,size)
 #define kcalloc(elem,size,gfp)	calloc(elem,size)
 #define kfree(ptr)		free((void*)(ptr))
 #define kstrdup(str,x)		strdup(str)
+#endif
 
 static inline size_t strlcpy(char *dest, const char *src, size_t size)
 {
