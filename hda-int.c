@@ -59,6 +59,32 @@
 #define AC_WCAP_TYPE			(0xf<<20)
 #define AC_WCAP_TYPE_SHIFT		20
 
+/* Pin widget capabilies */
+#define AC_PINCAP_IMP_SENSE		(1<<0)	/* impedance sense capable */
+#define AC_PINCAP_TRIG_REQ		(1<<1)	/* trigger required */
+#define AC_PINCAP_PRES_DETECT		(1<<2)	/* presence detect capable */
+#define AC_PINCAP_HP_DRV		(1<<3)	/* headphone drive capable */
+#define AC_PINCAP_OUT			(1<<4)	/* output capable */
+#define AC_PINCAP_IN			(1<<5)	/* input capable */
+#define AC_PINCAP_BALANCE		(1<<6)	/* balanced I/O capable */
+/* Note: This LR_SWAP pincap is defined in the Realtek ALC883 specification,
+ *       but is marked reserved in the Intel HDA specification.
+ */
+#define AC_PINCAP_LR_SWAP		(1<<7)	/* L/R swap */
+/* Note: The same bit as LR_SWAP is newly defined as HDMI capability
+ *       in HD-audio specification
+ */
+#define AC_PINCAP_HDMI			(1<<7)	/* HDMI pin */
+#define AC_PINCAP_VREF			(0x37<<8)
+#define AC_PINCAP_VREF_SHIFT		8
+#define AC_PINCAP_EAPD			(1<<16)	/* EAPD capable */
+/* Vref status (used in pin cap) */
+#define AC_PINCAP_VREF_HIZ		(1<<0)	/* Hi-Z */
+#define AC_PINCAP_VREF_50		(1<<1)	/* 50% */
+#define AC_PINCAP_VREF_GRD		(1<<2)	/* ground */
+#define AC_PINCAP_VREF_80		(1<<4)	/* 80% */
+#define AC_PINCAP_VREF_100		(1<<5)	/* 100% */
+
 /*
  * widget types
  */
@@ -412,6 +438,9 @@ static int set_eapd_btl(struct xhda_codec *codec, struct xhda_node *node,
 	if (!node)
 		return 0;
 	node->eapd = cmd & 0xff;
+	if ((cmd & 0x02) && !(node->pincap & AC_PINCAP_EAPD))
+		hda_log(HDA_LOG_ERR, "EAPD command to non-capable pin 0x%x\n",
+			node->nid);
 	return 0;
 }
 
