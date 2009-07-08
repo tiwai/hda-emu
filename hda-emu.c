@@ -575,6 +575,8 @@ void hda_test_pcm(int id, int subid,
 static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		      struct hda_pcm *cpcm)
 {
+	static struct snd_pcm dummy_pcm;
+
 	if (cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams ||
 	    cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams) {
 #ifdef OLD_HDA_PCM
@@ -596,6 +598,7 @@ static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 			return 0;
 		}
 		pcm_streams[num_pcm_streams] = *cpcm;
+		cpcm->pcm = &dummy_pcm; /* just non-NULL */
 	}
 	num_pcm_streams++;
 	return 0;
