@@ -9,7 +9,10 @@ AC_DISABLE_SHARED
 AM_PROG_LIBTOOL
 AC_HEADER_STDC
 
-WFLAGS="-W -Wimplicit -Wstrict-prototypes -Wextra -Wno-sign-compare -Wno-sign-conversion -Wno-missing-field-initializers -Wno-unused"
+WFLAGS="-Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security"
+WFLAGS="$WFLAGS -Wdeclaration-after-statement"
+WFLAGS="$WFLAGS -Wno-pointer-sign"
+WFLAGS="$WFLAGS -fwrapv"
 OPTFLAGS="-O2 -g"
 CFLAGS="$CFLAGS $OPTFLAGS $WFLAGS"
 
