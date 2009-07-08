@@ -44,7 +44,7 @@ static inline int snd_card_proc_new(struct snd_card *card, const char *name,
 	return 0;
 }
 
-static void snd_info_set_text_ops(struct snd_info_entry *entry,
+static inline void snd_info_set_text_ops(struct snd_info_entry *entry,
 				  void *private_data,
 				  snd_info_proc_t func)
 {
@@ -52,7 +52,7 @@ static void snd_info_set_text_ops(struct snd_info_entry *entry,
 	entry->func = func;
 }
 
-static int snd_info_get_line(struct snd_info_buffer *buffer, char *line,
+static inline int snd_info_get_line(struct snd_info_buffer *buffer, char *line,
 			     int len)
 {
 	return 1; /* EOF */

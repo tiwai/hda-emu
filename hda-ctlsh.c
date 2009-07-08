@@ -309,7 +309,6 @@ static void handle_module_option(char *line)
 		return;
 	}
 	if (!strcmp(opt, "power_save")) {
-		extern int *power_save_parameter;
 		char *p = gettoken(&line);
 		if (!p)
 			hda_log(HDA_LOG_INFO, "Power-save = %d\n",

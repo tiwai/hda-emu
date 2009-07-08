@@ -7,9 +7,9 @@ struct mutex {
 	int dummy;
 };
 
-#define mutex_init(x)
-#define mutex_lock(x)
-#define mutex_unlock(x)
+#define mutex_init(x)	do { (void)(x); } while (0)
+#define mutex_lock(x)	do { (void)(x); } while (0)
+#define mutex_unlock(x)	do { (void)(x); } while (0)
 
 #define DEFINE_MUTEX(x) struct mutex x
 
