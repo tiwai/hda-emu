@@ -598,7 +598,9 @@ static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 			return 0;
 		}
 		pcm_streams[num_pcm_streams] = *cpcm;
+#ifdef HAVE_HDA_ATTACH_PCM
 		cpcm->pcm = &dummy_pcm; /* just non-NULL */
+#endif
 	}
 	num_pcm_streams++;
 	return 0;
