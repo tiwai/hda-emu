@@ -212,6 +212,32 @@ if test "$HAVE_HDA_ATTACH_PCM" = "1"; then
   AC_DEFINE(HAVE_HDA_ATTACH_PCM)
 fi
 
+if test "$HAVE_HDA_ATTACH_PCM" = "1"; then
+AC_MSG_CHECKING(for get_response with caddr)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+HAVE_GET_RESPONSE_WITH_CADDR=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "kernel/hda_codec.h"
+],[
+  extern struct hda_bus_ops *ops;
+  ops->get_response(NULL, 1);
+],
+  [AC_MSG_RESULT(yes); HAVE_GET_RESPONSE_WITH_CADDR="1"],
+  [AC_MSG_RESULT(no)],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$HAVE_GET_RESPONSE_WITH_CADDR" = "1"; then
+  AC_DEFINE(HAVE_GET_RESPONSE_WITH_CADDR)
+fi
+fi # HAVE_HDA_ATTACH_PCM=1
+
 AC_MSG_CHECKING(for old snd_hda_codec_new)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"

@@ -103,11 +103,19 @@ static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 	return 0;
 }
 
+#ifdef HAVE_GET_RESPONSE_WITH_CADDR
+static unsigned int resp_get_caddr(struct hda_bus *bus, unsigned int caddr)
+{
+	hda_log(HDA_LOG_VERB, "receive: 0x%x\n", proc.rc);
+	return proc.rc;
+}
+#else
 static unsigned int resp_get(struct hda_bus *bus)
 {
 	hda_log(HDA_LOG_VERB, "receive: 0x%x\n", proc.rc);
 	return proc.rc;
 }
+#endif
 
 #ifdef OLD_HDA_CMD
 static int old_cmd_send(struct hda_codec *codec, hda_nid_t nid,
@@ -765,14 +773,18 @@ int main(int argc, char **argv)
 #ifdef HAVE_POWER_SAVE
 	temp.ops.pm_notify = old_pm_notify;
 #endif
-#else
+#else /* !OLD_HDA_CMD */
 	temp.ops.command = cmd_send;
+#ifdef HAVE_GET_RESPONSE_WITH_CADDR
+	temp.ops.get_response = resp_get_caddr;
+#else
 	temp.ops.get_response = resp_get;
+#endif
 #ifdef HAVE_HDA_ATTACH_PCM
 	temp.ops.attach_pcm = attach_pcm;
 #endif
 	temp.ops.pm_notify = pm_notify;
-#endif
+#endif /* OLD_HDA_CMD */
 	gather_codec_hooks();
 
 	if (snd_hda_bus_new(&card, &temp, &bus) < 0) {
