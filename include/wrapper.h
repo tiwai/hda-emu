@@ -65,7 +65,7 @@ typedef int pm_message_t;
 #define offsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER)
 #endif
 
-#define put_user(a,b)	0
+#define put_user(a,b)	({*(b) = (a); 0;})
 
 #define jiffies		0
 #define time_after_eq(a,b)	1

@@ -31,6 +31,7 @@
 
 #include <sound/core.h>
 #include <sound/control.h>
+#include <sound/tlv.h>
 
 struct delayed_work *__work_pending;
 
@@ -152,6 +153,48 @@ static char *get_enum_name(struct snd_kcontrol *kctl, int item)
 	return uinfo.value.enumerated.name;
 }
 
+static void show_db_info(struct snd_kcontrol *kctl,
+			 struct snd_ctl_elem_info *uinfo,
+			 struct snd_ctl_elem_value *uval)
+{
+	unsigned int _tlv[64];
+	const unsigned int *tlv;
+	int i, err;
+	int mindb, maxdb, step;
+
+	if (kctl->vd[0].access & SNDRV_CTL_ELEM_ACCESS_TLV_CALLBACK) {
+		err = kctl->tlv.c(kctl, 0, sizeof(_tlv), _tlv);
+		if (err < 0)
+			return;
+		tlv = _tlv;
+	} else {
+		tlv = kctl->tlv.p;
+	}
+	if (!tlv)
+		return;
+
+	if (*tlv != SNDRV_CTL_TLVT_DB_SCALE)
+		return;
+	mindb = tlv[2];
+	step = tlv[3] & 0xffff;
+	maxdb = mindb +
+		(uinfo->value.integer.max - uinfo->value.integer.min) * step;
+	hda_log(HDA_LOG_INFO, "\ndB min/max: %d.%02d/%d.%02d, ",
+		mindb / 100, mindb % 100,
+		maxdb / 100, maxdb % 100);
+
+	for (i = 0; i < uinfo->count; i++) {
+		int curv, curdb;
+		curv = uval->value.integer.value[i];
+		if (curv < uinfo->value.integer.min)
+			curv = uinfo->value.integer.min;
+		else if (curv > uinfo->value.integer.max)
+			curv = uinfo->value.integer.max;
+		curdb = mindb + step * (curv - uinfo->value.integer.min);
+		hda_log(HDA_LOG_INFO, " [%d.%02ddB]", curdb / 100, curdb % 100);
+	}
+}
+
 static void get_element(char *line)
 {
 	struct snd_kcontrol *kctl;
@@ -199,6 +242,9 @@ static void get_element(char *line)
 		for (i = 0; i < uinfo.count; i++)
 			hda_log(HDA_LOG_INFO, " [%ld]",
 				uval.value.integer.value[i]);
+		if (uinfo.type == SNDRV_CTL_ELEM_TYPE_INTEGER &&
+		    (kctl->vd[0].access & SNDRV_CTL_ELEM_ACCESS_TLV_READ))
+			show_db_info(kctl, &uinfo, &uval);
 		hda_log(HDA_LOG_INFO, "\n");
 		break;
 	case SNDRV_CTL_ELEM_TYPE_ENUMERATED:
