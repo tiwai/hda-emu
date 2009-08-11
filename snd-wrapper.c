@@ -69,6 +69,9 @@ void snd_iprintf(struct snd_info_buffer *buf, const char *fmt, ...)
 	va_end(ap);
 }
 
+/* there is a compat wrapper in the latest SLE11 kernel */
+#ifndef snd_pci_quirk_lookup
+
 /*
  * quirk lookup
  */
@@ -92,6 +95,8 @@ snd_pci_quirk_lookup(struct pci_dev *pci, const struct snd_pci_quirk *list)
 	}
 	return NULL;
 }
+
+#endif /* snd_pci_quirk_lookup */
 
 /* malloc debug */
 #ifdef DEBUG_MALLOC
