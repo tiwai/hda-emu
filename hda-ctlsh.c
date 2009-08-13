@@ -153,6 +153,18 @@ static char *get_enum_name(struct snd_kcontrol *kctl, int item)
 	return uinfo.value.enumerated.name;
 }
 
+static void db_string(int db, char *str, int len)
+{
+	const char *pfx;
+	if (db < 0) {
+		pfx = "-";
+		db = -db;
+	} else {
+		pfx = "";
+	}
+	snprintf(str, len, "%s%d.%02d", pfx, db / 100, db % 100);
+}
+
 static void show_db_info(struct snd_kcontrol *kctl,
 			 struct snd_ctl_elem_info *uinfo,
 			 struct snd_ctl_elem_value *uval)
@@ -161,6 +173,7 @@ static void show_db_info(struct snd_kcontrol *kctl,
 	const unsigned int *tlv;
 	int i, err;
 	int mindb, maxdb, step;
+	char db1[8], db2[8];
 
 	if (kctl->vd[0].access & SNDRV_CTL_ELEM_ACCESS_TLV_CALLBACK) {
 		err = kctl->tlv.c(kctl, 0, sizeof(_tlv), _tlv);
@@ -179,9 +192,9 @@ static void show_db_info(struct snd_kcontrol *kctl,
 	step = tlv[3] & 0xffff;
 	maxdb = mindb +
 		(uinfo->value.integer.max - uinfo->value.integer.min) * step;
-	hda_log(HDA_LOG_INFO, "\ndB min/max: %d.%02d/%d.%02d, ",
-		mindb / 100, mindb % 100,
-		maxdb / 100, maxdb % 100);
+	db_string(mindb, db1, sizeof(db1));
+	db_string(maxdb, db1, sizeof(db1));
+	hda_log(HDA_LOG_INFO, "\ndB min/max: %sdB,%sdB ", db1, db2);
 
 	for (i = 0; i < uinfo->count; i++) {
 		int curv, curdb;
@@ -191,7 +204,8 @@ static void show_db_info(struct snd_kcontrol *kctl,
 		else if (curv > uinfo->value.integer.max)
 			curv = uinfo->value.integer.max;
 		curdb = mindb + step * (curv - uinfo->value.integer.min);
-		hda_log(HDA_LOG_INFO, " [%d.%02ddB]", curdb / 100, curdb % 100);
+		db_string(curdb, db1, sizeof(db1));
+		hda_log(HDA_LOG_INFO, " [%sdB]", db1);
 	}
 }
 
