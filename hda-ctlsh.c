@@ -193,7 +193,7 @@ static void show_db_info(struct snd_kcontrol *kctl,
 	maxdb = mindb +
 		(uinfo->value.integer.max - uinfo->value.integer.min) * step;
 	db_string(mindb, db1, sizeof(db1));
-	db_string(maxdb, db1, sizeof(db1));
+	db_string(maxdb, db2, sizeof(db2));
 	hda_log(HDA_LOG_INFO, "\ndB min/max: %sdB,%sdB ", db1, db2);
 
 	for (i = 0; i < uinfo->count; i++) {
