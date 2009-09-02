@@ -1,5 +1,67 @@
 * version 0.2.5:
 
+Takashi Iwai (58):
+      Add alsa-info of Benq S32 with ALC262 codec
+      Add alsa-info of Acer Aspire 6935G
+      Add alsa-info of Samsung Q45 laptop with ALC262 codec
+      Add alsa-info of ASUS M4N78 mobo with VT1708S codec
+      Add alsa-info of Mac Mini Core2 Duo with STAC9221 A codec
+      Rename codec/z71v-josh to alc880-z71v
+      Add alsa-info for Acer Aspire 6935 with ALC889
+      Fix segfault with PCM
+      Better sysfs handling
+      Add alsa-info of Dell Inspiron 1501 with STAC9200 codec
+      Add alsa-info of Intel DG965WH with STAC9271D codec
+      Check snd_ctl_boolean_*_info() definitions
+      Small fixes in ctlsh
+      Add a couple of new alsa-info outputs
+      Check the second argument of snd_hda_suspend()
+      Check attach_pcm bus ops
+      Yet more fix for attach_pcm check
+      Add some alsa-info files...
+      Fix handling to get/set elements with multiple indices
+      Add alsa-info for Sony VAIO Z21MN with ALC262 codec
+      Fix PCM creation
+      Fix jack command
+      Update samsung P50 codec info
+      FIx the build for recent change of snd_hda_codec_new()
+      Add alsa-info for Lenovo S10E with ALC269 codec
+      Add build stub for patch_cirrus.c
+      Add alsa-info of Macbook Pro (Mid 2009) with CS4206 codec
+      Build fix with the new snd_hda_jack_*() in hda_jack.c
+      Fix segfault with NULL name in snd_ctl_new1
+      Add alsa-info of ASUS eeePC 1000 with ALC269
+      Add kmalloc tracking
+      Add alsa-info of ASUS X5DIJ laptop with VIA VT1708S
+      Check EAPD pin cap at setting EAPD
+      Change compile options to follow the kernel standard
+      Fix misc compile warnings
+      Assign a dummy PCM instance at attaching the stream
+      Fix build with older drivers (hda_pcm.pcm field)
+      Add alsa-info for WySE R50 with ALC268
+      Add alsa-info of ASUS A6T laptop with ALC660
+      Add alsa-info of Dell Studio 1555 with IDT92HD73*
+      Add alsa-info of Fujitsu Lifebook E8110 with ALC262
+      Add alsa-info of HP dv7
+      Add alsa-info of Toshiba Satellite A135 with ALC861-VD
+      Add alsa-info of Dell Precision M4400 with IDT92HD71B7X
+      Support for the new get_response op with caddr
+      Add support of dB range in volume controls
+      Add alsa-info of Acer Timeline 3810T with ALC269
+      Add alsa-info of Dell Latitude 2110 with ALC272 codec
+      Add Samsung N130 alsa-info with ALC269
+      Add alsa-info of HP Compaq CQ40-304TU with IDT92HD71Bx
+      Add a workaround for SLE11 kernel with snd_pci_quirk wrapper
+      Add STAC92xx specific verbs
+      Fix dB expression
+      Fix max dB display
+      Add alsa-info of Dell Vostro 1710 with ALC268
+      Add alsa-info of MacBook Pro 4.1 with ALC889A codec
+      Add alsa-info of Alienware M17x with IDT92HD73* codec
+      Add alsa-info of HP 2530p with AD1984A codec
+
+* version 0.2.5:
+
 Takashi Iwai (24):
       Add workaround for Conexant-specific amp handling for pin widgets
       Add alsa-info of Dell Vostro 1500 with STAC9205
