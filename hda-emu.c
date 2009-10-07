@@ -670,6 +670,7 @@ static void usage(void)
 	fprintf(stderr, "  -q             don't echo but only to log file\n");
 	fprintf(stderr, "  -C             print messages in color (default)\n");
 	fprintf(stderr, "  -M             no color print\n");
+	fprintf(stderr, "  -a             issues assert at codec errors\n");
 }
 
 #include "kernel/init_hooks.h"
@@ -688,8 +689,11 @@ int main(int argc, char **argv)
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
 
-	while ((c = getopt(argc, argv, "l:i:p:m:do:qCM")) != -1) {
+	while ((c = getopt(argc, argv, "al:i:p:m:do:qCM")) != -1) {
 		switch (c) {
+		case 'a':
+			hda_log_assert_on_error = 1;
+			break;
 		case 'l':
 			hda_log_level_set(atoi(optarg));
 			break;

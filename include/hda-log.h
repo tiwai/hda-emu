@@ -17,6 +17,8 @@ void hda_log(int level, const char *fmt, ...);
 void hda_log_echo(int level, const char *fmt, ...);
 #define hda_log_printk(fmt, args...) hda_log(HDA_LOG_KERN, fmt, ##args)
 
+extern int hda_log_assert_on_error;
+
 int hda_log_level_set(int level);
 FILE *hda_get_logfp(void);
 

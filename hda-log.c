@@ -24,12 +24,15 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "hda-types.h"
 #include "hda-log.h"
 
 static int log_level = HDA_LOG_VERB;
 static FILE *logfp;
 static int log_flags = HDA_LOG_FLAG_COLOR;
+
+int hda_log_assert_on_error;
 
 static void set_color(int level)
 {
@@ -72,6 +75,8 @@ void hda_log(int level, const char *fmt, ...)
 	va_end(ap);
 	if (logfp == stdout)
 		reset_color();
+	if (level == HDA_LOG_ERR && hda_log_assert_on_error)
+		assert(0);
 }
 
 void hda_log_echo(int level, const char *fmt, ...)
@@ -84,6 +89,8 @@ void hda_log_echo(int level, const char *fmt, ...)
 	va_start(ap, fmt);
 	vfprintf(logfp, fmt, ap);
 	va_end(ap);
+	if (level == HDA_LOG_ERR && hda_log_assert_on_error)
+		assert(0);
 }
 
 int hda_log_init(const char *file, unsigned int flags)
