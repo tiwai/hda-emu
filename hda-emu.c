@@ -517,6 +517,7 @@ void hda_test_pcm(int id, int subid,
 	substream->stream = dir;
 	substream->number = subid;
 	substream->runtime = runtime;
+	substream->ref_count = 1;
 	runtime->rate = rate;
 	runtime->format = get_alsa_format(format);
 	runtime->channels = channels;
@@ -574,6 +575,7 @@ void hda_test_pcm(int id, int subid,
 	hda_log(HDA_LOG_INFO, "PCM Clean up\n");
 	hinfo->ops.cleanup(hinfo, _codec, substream);
 
+	substream->ref_count = 0;
 	hda_log(HDA_LOG_INFO, "Close PCM\n");
 	hinfo->ops.close(hinfo, _codec, substream);
 	snd_hda_power_down(_codec);

@@ -63,6 +63,7 @@ struct snd_pcm_substream {
 	/* -- runtime information -- */
 	struct snd_pcm_runtime *runtime;
 	void *file;
+	int ref_count;
 };
 
 struct snd_pcm_str {

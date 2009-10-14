@@ -45,5 +45,6 @@ static inline void flush_scheduled_work(void)
 #define queue_work(q,x)		schedule_work(x)
 #define queue_delayed_work(q,x,d) schedule_delayed_work(x,d)
 #define flush_workqueue(q)	flush_scheduled_work()
+#define delayed_work_pending(q)	0
 
 #endif /* __LINUX_WORKQUEUE_H */
