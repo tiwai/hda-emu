@@ -341,7 +341,7 @@ static int set_power_state(struct xhda_codec *codec, struct xhda_node *node,
 	if (!node)
 		return 0;
 	if (node->nid != 0x01 &&
-	    (!node->wcaps & AC_WCAP_POWER))
+	    !(node->wcaps & AC_WCAP_POWER))
 		return 0;
 	node->power_setting = cmd & 0x0f;
 	node->power_current = node->power_setting;
