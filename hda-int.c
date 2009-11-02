@@ -415,8 +415,10 @@ static int set_unsol_enable(struct xhda_codec *codec, struct xhda_node *node,
 static int get_unsol_resp(struct xhda_codec *codec, struct xhda_node *node,
 			  unsigned int cmd)
 {
-	if (!node)
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid unsol widget");
 		return 0;
+	}
 	return node->unsol;
 }
 
@@ -429,14 +431,20 @@ static int exec_pin_sense(struct xhda_codec *codec, struct xhda_node *node,
 static int get_pin_sense(struct xhda_codec *codec, struct xhda_node *node,
 			  unsigned int cmd)
 {
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid pin node\n");
+		return 0;
+	}
 	return node->jack_state ? (1 << 31) : 0;
 }
 
 static int set_eapd_btl(struct xhda_codec *codec, struct xhda_node *node,
 			unsigned int cmd)
 {
-	if (!node)
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid EAPD node\n");
 		return 0;
+	}
 	node->eapd = cmd & 0xff;
 	if ((cmd & 0x02) && !(node->pincap & AC_PINCAP_EAPD))
 		hda_log(HDA_LOG_ERR, "EAPD command to non-capable pin 0x%x\n",
@@ -447,16 +455,20 @@ static int set_eapd_btl(struct xhda_codec *codec, struct xhda_node *node,
 static int get_eapd_btl(struct xhda_codec *codec, struct xhda_node *node,
 			unsigned int cmd)
 {
-	if (!node)
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid EAPD node\n");
 		return 0;
+	}
 	return node->eapd;
 }
 
 static int set_digi_cvt_1(struct xhda_codec *codec, struct xhda_node *node,
 			  unsigned int cmd)
 {
-	if (!node)
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid DIGI1 node\n");
 		return 0;
+	}
 	node->dig_conv = cmd & 0xff;
 	return 0;
 }
@@ -464,8 +476,10 @@ static int set_digi_cvt_1(struct xhda_codec *codec, struct xhda_node *node,
 static int set_digi_cvt_2(struct xhda_codec *codec, struct xhda_node *node,
 			  unsigned int cmd)
 {
-	if (!node)
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid DIGI2 node\n");
 		return 0;
+	}
 	node->dig_category = cmd & 0xff;
 	return 0;
 }
@@ -473,8 +487,10 @@ static int set_digi_cvt_2(struct xhda_codec *codec, struct xhda_node *node,
 static int get_digi_cvt(struct xhda_codec *codec, struct xhda_node *node,
 			unsigned int cmd)
 {
-	if (!node)
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid DIGI node\n");
 		return 0;
+	}
 	return (node->dig_category << 8) | node->dig_conv;
 }
 
