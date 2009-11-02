@@ -910,7 +910,6 @@ static int get_parameters(struct xhda_codec *codec, struct xhda_node *node,
 			  unsigned int cmd)
 {
 	const struct xhda_verb_table *tbl;
-	unsigned int par;
 
 	tbl = find_matching_param(codec, cmd & 0xff);
 	if (tbl && tbl->func)
@@ -1083,8 +1082,6 @@ const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd)
 unsigned int hda_decode_verb_parm(struct xhda_codec *codec,
 				  unsigned int verb, unsigned int parm)
 {
-	const struct xhda_verb_table *tbl;
-
 	hda_log(HDA_LOG_INFO, "raw value: verb = 0x%x, parm = 0x%x\n",
 		verb, parm);
 	hda_log(HDA_LOG_INFO, "verbname = %s\n",
@@ -1146,7 +1143,6 @@ lookup_verb_name(const char *name, const struct xhda_verb_table *tbl)
 int hda_encode_verb_parm(const char *verb, const char *parm,
 			 unsigned int *verb_ret, unsigned int *parm_ret)
 {
-	int i;
 	const struct xhda_verb_table *tbl;
 
 	tbl = lookup_verb_name(verb, verb_class);
