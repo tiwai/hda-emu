@@ -40,6 +40,10 @@ typedef uint8_t __u8;
 typedef int8_t s8;
 typedef int8_t __s8;
 
+typedef _Bool bool;
+#define true 1
+#define false 0
+
 #define PAGE_SIZE	4096
 
 #define __user

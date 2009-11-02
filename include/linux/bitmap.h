@@ -28,4 +28,11 @@ static inline int test_bit(unsigned int nr, unsigned long *addr)
 	return (addr[BIT_WORD(nr)] & BIT_MASK(nr)) != 0;
 }
 
+static inline int test_and_set_bit(unsigned int nr, unsigned long *addr)
+{
+	int oldval = test_bit(nr, addr);
+	set_bit(nr, addr);
+	return oldval;
+}
+
 #endif
