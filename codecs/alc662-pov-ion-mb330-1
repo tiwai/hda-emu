@@ -1,0 +1,1206 @@
+upload=true&script=true&cardinfo=
+!!################################
+!!ALSA Information Script v 0.4.58
+!!################################
+
+!!Script ran on: Fri Oct 30 13:06:31 UTC 2009
+
+
+!!Linux Distribution
+!!------------------
+
+Welcome to openSUSE 11.2 "Emerald" Milestone 7 - Kernel \r (\l). openSUSE 11.2 Milestone 7 (i586)
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      Point of View
+Product Name:      ION-MB330-1
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.31-8-default
+Operating System:  GNU/Linux
+Architecture:      i686
+Processor:         i686
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.20
+Library version:    1.0.21a
+Utilities version:  1.0.21
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+No sound servers found.
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xfad78000 irq 20
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:08.0 Audio device: nVidia Corporation MCP79 High Definition Audio (rev b1)
+01:05.0 Multimedia controller: Philips Semiconductors SAA7146 (rev 01)
+
+
+!!Advanced information - PCI Vendor/Device/Susbsystem ID's
+!!--------------------------------------------------------
+
+00:08.0 0403: 10de:0ac0 (rev b1)
+	Subsystem: 10de:cb84
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : 0
+	id : <NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : <NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+	patch : <NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+	single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Realtek ALC662 rev1
+Address: 0
+Function Id: 0x1
+Vendor Id: 0x10ec0662
+Subsystem Id: 0x10ec0000
+Revision Id: 0x100101
+No Modem Function Group found
+Default PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=2, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x02 [Audio Output] wcaps 0x1d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x03 [Audio Output] wcaps 0x1d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x04 [Audio Output] wcaps 0x1d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x05 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x06 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0x1e]: 16 20 24 32
+    formats [0x1]: PCM
+Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x08 [Audio Input] wcaps 0x10011b: Stereo Amp-In
+  Amp-In caps: ofs=0x09, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x80 0x80]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0x6]: 16 20
+    formats [0x1]: PCM
+  Connection: 1
+     0x23
+Node 0x09 [Audio Input] wcaps 0x10011b: Stereo Amp-In
+  Amp-In caps: ofs=0x09, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x00 0x00]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0x6]: 16 20
+    formats [0x1]: PCM
+  Connection: 1
+     0x22
+Node 0x0a [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 9
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16
+Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x02 0x0b
+Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x03 0x0b
+Node 0x0e [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x04 0x0b
+Node 0x0f [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x10 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x11 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x12 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001003c: IN OUT HP EAPD Detect
+  EAPD 0x0:
+  Pin Default 0x01214010: [Jack] HP Out at Ext Rear
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0c
+Node 0x15 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00010034: IN OUT EAPD Detect
+  EAPD 0x0:
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0d
+Node 0x16 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00000034: IN OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0e
+Node 0x17 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x18 [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00001734: IN OUT Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x01a19c30: [Jack] Mic at Ext Rear
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x3, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0e
+Node 0x19 [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x02a19931: [Jack] Mic at Ext Front
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x3, Sequence = 0x1
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Connection: 2
+     0x0c* 0x0e
+Node 0x1a [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00000034: IN OUT Detect
+  Pin Default 0x0181343f: [Jack] Line In at Ext Rear
+    Conn = 1/8, Color = Blue
+    DefAssociation = 0x3, Sequence = 0xf
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0d
+Node 0x1b [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x02214110: [Jack] HP Out at Ext Front
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0xc0: OUT HP VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Connection: 2
+     0x0c* 0x0e
+Node 0x1c [Pin Complex] wcaps 0x400001: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x593301f0: [N/A] CD at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+Node 0x1d [Pin Complex] wcaps 0x400000: Mono
+  Pincap 0x00000020: IN
+  Pin Default 0x4004c601: [N/A] Line Out at Ext N/A
+    Conn = RCA, Color = UNKNOWN
+    DefAssociation = 0x0, Sequence = 0x1
+  Pin-ctls: 0x20: IN
+Node 0x1e [Pin Complex] wcaps 0x400300: Mono Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x014b6120: [Jack] SPDIF Out at Ext Rear
+    Conn = Comb, Color = Orange
+    DefAssociation = 0x2, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Connection: 1
+     0x06
+Node 0x1f [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono
+  Processing caps: benign=0, ncoeff=12
+  Processing Coefficient: 0x00
+  Coefficient Index: 0x06
+Node 0x21 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x0b
+Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x0b
+Node 0x24 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x25 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x26 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Codec: Nvidia MCP7A HDMI
+Address: 3
+Function Id: 0x1
+Vendor Id: 0x10de0007
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x05 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x18560110: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x04
+Node 0x06 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x07 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560121: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x1
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x06
+Node 0x08 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x09 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560122: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x2
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x08
+Node 0x0a [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x0b [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560123: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x3
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0a
+Node 0x0c [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x0d [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560124: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x4
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0c
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw---- 1 root audio 116, 9 Oct 30 05:31 /dev/snd/controlC0
+crw-rw---- 1 root audio 116, 8 Oct 30 05:31 /dev/snd/hwC0D0
+crw-rw---- 1 root audio 116, 7 Oct 30 05:31 /dev/snd/hwC0D3
+crw-rw---- 1 root audio 116, 6 Oct 30 05:31 /dev/snd/pcmC0D0c
+crw-rw---- 1 root audio 116, 5 Oct 30 05:31 /dev/snd/pcmC0D0p
+crw-rw---- 1 root audio 116, 4 Oct 30 05:31 /dev/snd/pcmC0D1p
+crw-rw---- 1 root audio 116, 3 Oct 30 06:18 /dev/snd/pcmC0D3p
+crw-rw---- 1 root audio 116, 2 Oct 30 05:31 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  60 Oct 30 05:31 .
+drwxr-xr-x 3 root root 220 Oct 30 05:31 ..
+lrwxrwxrwx 1 root root  12 Oct 30 05:31 pci-0000:00:08.0 -> ../controlC0
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: ALC662 rev1 Analog [ALC662 rev1 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 1: ALC662 rev1 Digital [ALC662 rev1 Digital]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 3: NVIDIA HDMI [NVIDIA HDMI]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: ALC662 rev1 Analog [ALC662 rev1 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [NVidia]
+
+Card hw:0 'NVidia'/'HDA NVidia at 0xfad78000 irq 20'
+  Mixer name	: 'Nvidia MCP7A HDMI'
+  Components	: 'HDA:10ec0662,10ec0000,00100101 HDA:10de0007,10de0101,00100100'
+  Controls      : 31
+  Simple ctrls  : 16
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pswitch
+  Playback channels: Front Left - Front Right
+  Mono:
+  Front Left: Playback [on]
+  Front Right: Playback [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Front',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Front Mic',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Front Mic Boost',0
+  Capabilities: volume
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 0 [0%]
+  Front Right: 0 [0%]
+Simple mixer control 'Surround',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Line',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Mic Boost',0
+  Capabilities: volume
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 0 [0%]
+  Front Right: 0 [0%]
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958 Default PCM',0
+  Capabilities: pswitch pswitch-joined
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',1
+  Capabilities: pswitch pswitch-joined
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'Beep',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 0 [0%] [-13.50dB] [on]
+  Front Right: Capture 0 [0%] [-13.50dB] [on]
+Simple mixer control 'Capture',1
+  Capabilities: cvolume cswitch
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 0 [0%] [-13.50dB] [off]
+  Front Right: Capture 0 [0%] [-13.50dB] [off]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.NVidia {
+	control.1 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Front Playback Volume'
+		value.0 64
+		value.1 64
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Front Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Surround Playback Volume'
+		value.0 64
+		value.1 64
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Surround Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.6 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Mic Playback Volume'
+		value.0 0
+		value.1 0
+	}
+	control.7 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Mic Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.8 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Front Mic Playback Volume'
+		value.0 0
+		value.1 0
+	}
+	control.9 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Front Mic Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.10 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Line Playback Volume'
+		value.0 0
+		value.1 0
+	}
+	control.11 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Line Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.12 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 3'
+		comment.dbmin 0
+		comment.dbmax 3000
+		iface MIXER
+		name 'Mic Boost'
+		value.0 0
+		value.1 0
+	}
+	control.13 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 3'
+		comment.dbmin 0
+		comment.dbmax 3000
+		iface MIXER
+		name 'Front Mic Boost'
+		value.0 0
+		value.1 0
+	}
+	control.14 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
+	}
+	control.15 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Capture Switch'
+		index 1
+		value.0 false
+		value.1 false
+	}
+	control.16 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -1350
+		comment.dbmax 3300
+		iface MIXER
+		name 'Capture Volume'
+		value.0 0
+		value.1 0
+	}
+	control.17 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -1350
+		comment.dbmax 3300
+		iface MIXER
+		name 'Capture Volume'
+		index 1
+		value.0 0
+		value.1 0
+	}
+	control.18 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.19 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.20 {
+		comment.access 'read write'
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.21 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+	}
+	control.22 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Default PCM Playback Switch'
+		value true
+	}
+	control.23 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Beep Playback Volume'
+		value.0 0
+		value.1 0
+	}
+	control.24 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Beep Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.25 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Master Playback Volume'
+		value 64
+	}
+	control.26 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+	}
+	control.27 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 1
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.28 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 1
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.29 {
+		comment.access 'read write'
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 1
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.30 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 1
+		value true
+	}
+	control.31 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 255'
+		comment.tlv '0000000100000008ffffec1400000014'
+		comment.dbmin -5100
+		comment.dbmax 0
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+snd_hda_codec_nvhdmi
+snd_hda_codec_realtek
+snd_hda_intel
+snd_hda_codec
+snd_hwdep
+snd_pcm
+snd_timer
+snd
+soundcore
+snd_page_alloc
+ipv6
+af_packet
+uinput
+lirc_serial
+lirc_dev
+loop
+tda10023
+budget_av
+saa7146_vv
+videodev
+v4l1_compat
+videobuf_dma_sg
+videobuf_core
+budget_core
+dvb_core
+saa7146
+ttpci_eeprom
+i2c_nforce2
+nvidia
+i2c_core
+thermal
+shpchp
+wmi
+processor
+thermal_sys
+serio_raw
+sg
+pci_hotplug
+pcspkr
+r8169
+button
+hwmon
+ohci_hcd
+rtc_cmos
+rtc_core
+rtc_lib
+ehci_hcd
+ata_piix
+ahci
+libata
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x14 0x01214010
+0x15 0x411111f0
+0x16 0x411111f0
+0x18 0x01a19c30
+0x19 0x02a19931
+0x1a 0x0181343f
+0x1b 0x02214110
+0x1c 0x593301f0
+0x1d 0x4004c601
+0x1e 0x014b6120
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC0D3/init_pin_configs:
+0x05 0x18560110
+0x07 0x58560121
+0x09 0x58560122
+0x0b 0x58560123
+0x0d 0x58560124
+
+/sys/class/sound/hwC0D3/driver_pin_configs:
+
+/sys/class/sound/hwC0D3/user_pin_configs:
+
+/sys/class/sound/hwC0D3/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+[   23.234486] NVRM: loading NVIDIA UNIX x86 Kernel Module  185.18.36  Fri Aug 14 17:18:04 PDT 2009
+[   23.735815] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[   23.738051] ACPI: PCI Interrupt Link [LAZA] enabled at IRQ 20
+[   23.738181] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[   23.738447] HDA Intel 0000:00:08.0: setting latency timer to 64
+[   23.782153] Linux video capture interface: v2.00
+--
+[   24.325459] budget-av: ci interface initialised.
+[   24.593031] hda_codec: ALC662 rev1: BIOS auto-probing.
+[   24.593157] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[   24.593175] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[   24.593191] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[   24.593206] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[   24.593219] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[   24.593233] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[   24.817038] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[   24.817058] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[   24.817232] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input3
+[   26.274659] loop: module loaded
+--
+[ 3543.247076] lirc_serial: ignoring spike: 1 1 4aea0c08 4aea0c08 cf209 cf1d7
+[ 4610.468760] HDA Intel 0000:00:08.0: PCI INT A disabled
+[ 5030.419374] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[ 5030.419435] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[ 5030.419560] HDA Intel 0000:00:08.0: setting latency timer to 64
+[ 5031.205535] hda_codec: ALC662 rev1: BIOS auto-probing.
+[ 5031.205567] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[ 5031.205584] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[ 5031.205600] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[ 5031.205616] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[ 5031.205629] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[ 5031.205643] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[ 5031.428031] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[ 5031.428050] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[ 5031.428246] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input5
+[ 5102.135717] budget-av: cam inserted A
+--
+[ 7879.228329] saa7146 (0) vpeirq: used 1 times >80% of buffer (171080 bytes now)
+[ 8077.481483] HDA Intel 0000:00:08.0: PCI INT A disabled
+[ 8176.876607] saa7146 (0) vpeirq: used 1 times >80% of buffer (169952 bytes now)
+[ 8234.056604] saa7146 (0) vpeirq: used 1 times >80% of buffer (166380 bytes now)
+[ 8292.854841] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[ 8292.854902] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[ 8292.855024] HDA Intel 0000:00:08.0: setting latency timer to 64
+[ 8293.645543] hda_codec: ALC662 rev1: BIOS auto-probing.
+[ 8293.645576] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[ 8293.645594] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[ 8293.645610] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[ 8293.645625] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[ 8293.645638] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[ 8293.645652] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[ 8293.868046] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[ 8293.868066] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[ 8293.868250] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input6
+[ 8633.129937] saa7146 (0) vpeirq: used 1 times >80% of buffer (165816 bytes now)
+[ 8670.332519] sd_espeak[11023]: segfault at ec125e80 ip b7bb16d0 sp ec125e80 error 7 in libasound.so.2.0.0[b7b44000+d1000]
+[ 8700.040477] sd_espeak[11074]: segfault at c0592e80 ip b7cda6d0 sp c0592e80 error 7 in libasound.so.2.0.0[b7c6d000+d1000]
+[ 8754.241062] sd_espeak[11120]: segfault at c0efee80 ip b7cd66d0 sp c0efee80 error 7 in libasound.so.2.0.0[b7c69000+d1000]
+[ 9069.513510] HDA Intel 0000:00:08.0: PCI INT A disabled
+[ 9073.446030] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[ 9073.446092] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[ 9073.446418] HDA Intel 0000:00:08.0: setting latency timer to 64
+[ 9074.208038] hda_codec: ALC662 rev1: BIOS auto-probing.
+[ 9074.208071] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[ 9074.208089] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[ 9074.208109] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[ 9074.208125] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[ 9074.208138] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[ 9074.208151] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[ 9074.433040] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[ 9074.433060] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[ 9074.433248] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input7
+[ 9283.512517] saa7146 (0) vpeirq: used 1 times >80% of buffer (155852 bytes now)
+[11243.808450] saa7146 (0) vpeirq: used 1 times >80% of buffer (165628 bytes now)
+[11351.430121] HDA Intel 0000:00:08.0: PCI INT A disabled
+[11357.205321] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[11357.205371] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[11357.205574] HDA Intel 0000:00:08.0: setting latency timer to 64
+[11357.964141] hda_codec: ALC662 rev1: BIOS auto-probing.
+[11357.964172] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[11357.964189] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[11357.964205] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[11357.964221] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[11357.964234] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[11357.964247] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[11358.188035] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[11358.188054] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[11358.188234] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input8
+[11441.038834] budget-av: cam inserted A
+--
+[11521.467965] saa7146 (0) vpeirq: used 1 times >80% of buffer (156792 bytes now)
+[12251.237556] HDA Intel 0000:00:08.0: PCI INT A disabled
+[12285.290509] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[12285.290570] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[12285.290716] HDA Intel 0000:00:08.0: setting latency timer to 64
+[12286.100537] hda_codec: ALC662 rev1: BIOS auto-probing.
+[12286.100569] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[12286.100587] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[12286.100603] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[12286.100619] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[12286.100632] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[12286.100645] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[12286.336540] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[12286.336560] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[12286.336753] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input9
+[12649.797587] HDA Intel 0000:00:08.0: PCI INT A disabled
+[12652.201847] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[12652.201907] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[12652.202082] HDA Intel 0000:00:08.0: setting latency timer to 64
+[12652.960041] hda_codec: ALC662 rev1: BIOS auto-probing.
+[12652.960076] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[12652.960097] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[12652.960113] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[12652.960129] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[12652.960142] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[12652.960155] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[12653.184051] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[12653.184072] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[12653.184255] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input10
+[13006.595574] lirc_serial: ignoring spike: 1 1 4aea3100 4aea3100 3011c 300e7
+--
+[14550.983311] saa7146 (0) vpeirq: used 1 times >80% of buffer (164876 bytes now)
+[15529.728475] sd_espeak[18543]: segfault at bc03d4c0 ip b7bb96d0 sp bc03d4c0 error 6 in libasound.so.2.0.0[b7b4c000+d1000]
+[15623.892643] sd_espeak[18665]: segfault at bc0084c0 ip b7b846d0 sp bc0084c0 error 6 in libasound.so.2.0.0[b7b17000+d1000]
+[15901.755363] vdr-sxfe[18914]: segfault at 58 ip 08050ff2 sp b1c74280 error 4 in vdr-sxfe[8048000+1c000]
+[16127.992495] HDA Intel 0000:00:08.0: PCI INT A disabled
+[16129.881074] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[16129.881125] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[16129.881231] HDA Intel 0000:00:08.0: setting latency timer to 64
+[16130.649036] hda_codec: ALC662 rev1: BIOS auto-probing.
+[16130.649070] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[16130.649089] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[16130.649109] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[16130.649125] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[16130.649138] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[16130.649152] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[16130.897059] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[16130.897079] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[16130.897267] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input11
+[16155.866236] saa7146 (0) vpeirq: used 1 times >80% of buffer (156040 bytes now)
+--
+[16535.118091] saa7146 (0) vpeirq: used 1 times >80% of buffer (162996 bytes now)
+[16904.586060] HDA Intel 0000:00:08.0: PCI INT A disabled
+[17343.999047] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[17343.999109] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[17343.999541] HDA Intel 0000:00:08.0: setting latency timer to 64
+[17344.849040] hda_codec: ALC662 rev1: BIOS auto-probing.
+[17344.849075] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[17344.849096] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[17344.849114] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[17344.849130] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[17344.849143] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[17344.849156] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[17345.076054] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[17345.076075] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[17345.076264] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input12
+[18843.800772] saa7146 (0) vpeirq: used 1 times >80% of buffer (159800 bytes now)
+[18877.956711] saa7146 (0) vpeirq: used 1 times >80% of buffer (160552 bytes now)
+[19334.761516] HDA Intel 0000:00:08.0: PCI INT A disabled
+[19344.522500] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[19344.522556] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[19344.522903] HDA Intel 0000:00:08.0: setting latency timer to 64
+[19345.288043] hda_codec: ALC662 rev1: BIOS auto-probing.
+[19345.288076] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[19345.288093] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[19345.288114] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[19345.288129] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[19345.288143] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[19345.288156] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[19345.520053] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[19345.520074] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[19345.520269] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input13
+[24280.699071] saa7146 (0) vpeirq: used 1 times >80% of buffer (161304 bytes now)
+--
+[24983.822248] lirc_serial: 0 1 4aea5fc6 4aea5fc8 65682 a75f3
+[27949.557631] HDA Intel 0000:00:08.0: PCI INT A disabled
+[28108.643907] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[28108.643969] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[28108.644172] HDA Intel 0000:00:08.0: setting latency timer to 64
+[28109.441561] hda_codec: ALC662 rev1: BIOS auto-probing.
+[28109.441594] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[28109.441612] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[28109.441628] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[28109.441644] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[28109.441657] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[28109.441670] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[28109.665542] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[28109.665562] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[28109.665764] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input14
+[28155.624686] HDA Intel 0000:00:08.0: PCI INT A disabled
+[28162.482517] HDA Intel 0000:00:08.0: power state changed by ACPI to D0
+[28162.482582] HDA Intel 0000:00:08.0: PCI INT A -> Link[LAZA] -> GSI 20 (level, low) -> IRQ 20
+[28162.482818] HDA Intel 0000:00:08.0: setting latency timer to 64
+[28163.373036] hda_codec: ALC662 rev1: BIOS auto-probing.
+[28163.373071] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3881: autoconfig: line_outs=2 (0x14/0x1b/0x0/0x0/0x0)
+[28163.373090] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3885:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[28163.373110] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3889:    hp_outs=0 (0x1b/0x1b/0x0/0x0/0x0)
+[28163.373125] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3890:    mono: mono_out=0x0
+[28163.373138] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3893:    dig-out=0x1e/0x0
+[28163.373152] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/hda_codec.c:3901:    inputs: mic=0x18, fmic=0x19, line=0x1a, fline=0x0, cd=0x0, aux=0x0
+[28163.605042] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1282: realtek: No valid SSID, checking pincfg 0x4004c601 for NID 0x1d
+[28163.605063] ALSA /usr/src/packages/BUILD/kernel-default-2.6.31/linux-2.6.31/sound/pci/hda/patch_realtek.c:1298: realtek: Enabling init ASM_ID=0xc601 CODEC_ID=10ec0662
+[28163.605252] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:08.0/input/input15
+[30521.773048] saa7146 (0) vpeirq: used 1 times >80% of buffer (166944 bytes now)
+
+
