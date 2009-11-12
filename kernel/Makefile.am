@@ -14,7 +14,8 @@ PATCHES = \
 
 noinst_LIBRARIES = libhda.a
 libhda_a_SOURCES = hda_codec.c hda_generic.c hda_proc.c \
-	 hda_beep.c hda_eld.c jackctl.c \
+	 hda_beep.c hda_eld.c \
+	 jackctl.c misc_wrapper.c \
 	 $(PATCHES)
 noinst_HEADERS = hda_codec.h hda_local.h hda_beep.h hda_patch.h \
 	init_hooks.h
@@ -25,3 +26,6 @@ INCLUDES = -I$(top_srcdir)/include
 
 jackctl.c: ../jackctl.c
 	ln -s ../jackctl.c
+
+misc_wrapper.c: ../misc_wrapper.c
+	ln -s ../misc_wrapper.c
