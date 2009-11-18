@@ -91,10 +91,11 @@ void __hda_free(void *ptr, const char *file, int line);
 void *__hda_strdup(const char *str, const char *file, int line);
 #endif
 
-#include <linux/spinlock.h>
-#include <linux/pci_ids.h>
-#include <linux/workqueue.h>
-#include <linux/bitmap.h>
-#include <linux/module.h>
+#include "linux/spinlock.h"
+#include "linux/pci_ids.h"
+#include "linux/workqueue.h"
+#include "linux/bitmap.h"
+#include "linux/module.h"
+#include "linux/log2.h"
 
 #endif /* __HDA_WRAPPER_H */
