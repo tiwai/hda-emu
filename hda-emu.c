@@ -36,6 +36,7 @@
 #include <sound/pcm.h>
 #include "kernel/hda_codec.h"
 #include "kernel/hda_local.h"
+#include "kernel/hda_beep.h"
 
 #ifndef HAVE_POWER_SAVE
 #define snd_hda_power_up(x)
@@ -807,6 +808,9 @@ int main(int argc, char **argv)
 		hda_log(HDA_LOG_ERR, "cannot create codec\n");
 		return 1;
 	}
+#ifdef HDA_BEEP_MODE_ON
+	codec->beep_mode = HDA_BEEP_MODE_ON;
+#endif
 	_codec = codec;
 
 #ifdef HAVE_HDA_PATCH_LOADER
