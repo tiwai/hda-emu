@@ -392,7 +392,7 @@ static int parse_root(const char *buffer)
 	if ((p = strmatch(buffer, "Address: "))) {
 		codec->addr = strtoul(p, NULL, 0);
 	} else if ((p = strmatch(buffer, "Function Id: "))) {
-		codec->function_id = strtoul(p, NULL, 0);
+		/*codec->function_id = strtoul(p, NULL, 0);*/
 		return 0;
 	} else if ((p = strmatch(buffer, "Vendor Id: "))) {
 		codec->vendor_id = strtoul(p, NULL, 0);
