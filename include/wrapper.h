@@ -83,6 +83,18 @@ typedef int pm_message_t;
 #define simple_strtoul	strtoul
 #define simple_strtol	strtol
 
+static inline int strict_strtoul(const char *str, unsigned int base, unsigned long *val)
+{
+	*val = strtoul(str, NULL, base);
+	return 0;
+}
+
+static inline int strict_strtol(const char *str, unsigned int base, long *val)
+{
+	*val = strtol(str, NULL, base);
+	return 0;
+}
+
 #define DEBUG_MALLOC	1
 
 #ifdef DEBUG_MALLOC
