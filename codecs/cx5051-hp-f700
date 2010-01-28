@@ -1,0 +1,604 @@
+upload=true&script=true&cardinfo=
+!!################################
+!!ALSA Information Script v 0.4.58
+!!################################
+
+!!Script ran on: Tue Jan 26 23:18:36 UTC 2010
+
+
+!!Linux Distribution
+!!------------------
+
+Fedora release 11 (Leonidas) Fedora release 11 (Leonidas) Fedora release 11 (Leonidas) Fedora release 11 (Leonidas)
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      Hewlett-Packard
+Product Name:      Compaq Presario F700 Notebook PC  
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.30.10-105.fc11.x86_64
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         x86_64
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.22.1
+Library version:    1.0.22
+Utilities version:  1.0.21
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+aRts:
+      Installed - Yes (/usr/bin/artsd)
+      Running - No
+
+Jack:
+      Installed - Yes (/usr/bin/jackd)
+      Running - No
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xf6480000 irq 21
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:07.0 Audio device: nVidia Corporation MCP67 High Definition Audio (rev a1)
+
+
+!!Advanced information - PCI Vendor/Device/Susbsystem ID's
+!!--------------------------------------------------------
+
+00:07.0 0403: 10de:055c (rev a1)
+	Subsystem: 103c:30ea
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 32,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 1,1,1,1,1,1,1,1
+	enable : Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : <NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+	index : -1,-1,-1,-1,-1,-1,-1,-1
+	model : <NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+	patch : <NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+	position_fix : 0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : N,N,N,N,N,N,N,N
+	single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Conexant CX20561 (Hermosa)
+Address: 0
+Function Id: 0x2
+Vendor Id: 0x14f15051
+Subsystem Id: 0x103c30ea
+Revision Id: 0x100000
+Modem Function Group: 0x2
+Default PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=4, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[2]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[3]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x10 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
+  Control: name="Master Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Device: name="CONEXANT Analog", type="Audio", device=0
+  Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x11 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
+  Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x4a 0x4a]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x12 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+Node 0x13 [Beep Generator Widget] wcaps 0x70000c: Mono Amp-Out
+  Amp-Out caps: ofs=0x03, nsteps=0x03, stepsize=0x17, mute=0
+  Amp-Out vals:  [0x00]
+Node 0x14 [Audio Input] wcaps 0x100d1b: Stereo Amp-In R/L
+  Control: name="Mic Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Mic Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Device: name="CONEXANT Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x4a, nsteps=0x50, stepsize=0x03, mute=0
+  Amp-In vals:  [0x4a 0x4a] [0x00 0x00]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x1d 0x17*
+Node 0x15 [Audio Input] wcaps 0x100d1b: Stereo Amp-In R/L
+  Amp-In caps: ofs=0x4a, nsteps=0x50, stepsize=0x03, mute=0
+  Amp-In vals:  [0x4a 0x4a]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x18
+Node 0x16 [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x0000001c: OUT HP Detect
+  Pin Default 0x02211030: [Jack] HP Out at Ext Front
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x3, Sequence = 0x0
+  Pin-ctls: 0xc0: OUT HP
+  Unsolicited: tag=37, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10* 0x11
+Node 0x17 [Pin Complex] wcaps 0x40048b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x04, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00001224: IN Detect
+    Vref caps: 50 80
+  Pin Default 0x02a19020: [Jack] Mic at Ext Front
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x2, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=38, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x18 [Pin Complex] wcaps 0x40048b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x04, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00001224: IN Detect
+    Vref caps: 50 80
+  Pin Default 0x400001f0: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00: VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x19 [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x400001f0: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10 0x11*
+Node 0x1a [Pin Complex] wcaps 0x400501: Stereo
+  Pincap 0x00010010: OUT EAPD
+  EAPD 0x2: EAPD
+  Pin Default 0x95170110: [Fixed] Speaker at Int Top
+    Conn = Analog, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10* 0x11
+Node 0x1b [Pin Complex] wcaps 0x400500: Mono
+  Pincap 0x00010010: OUT EAPD
+  EAPD 0x2: EAPD
+  Pin Default 0x400001f0: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10* 0x11
+Node 0x1c [Pin Complex] wcaps 0x400701: Stereo Digital
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Control: name="IEC958 Default PCM Playback Switch", index=0, device=0
+  Device: name="Conexant Digital", type="SPDIF", device=1
+  Pincap 0x00000010: OUT
+  Pin Default 0x224511f0: [Jack] SPDIF Out at Sep Front
+    Conn = Optical, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x12
+Node 0x1d [Pin Complex] wcaps 0x40040b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x04, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00000020: IN
+  Pin Default 0x400001f0: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x1e [Vendor Defined Widget] wcaps 0xf00000: Mono
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw----+ 1 root audio 116,  0 Jan 26 18:10 /dev/snd/controlC0
+crw-rw----+ 1 root audio 116,  4 Jan 26 18:10 /dev/snd/hwC0D0
+crw-rw----+ 1 root audio 116, 24 Jan 26 18:12 /dev/snd/pcmC0D0c
+crw-rw----+ 1 root audio 116, 16 Jan 26 18:12 /dev/snd/pcmC0D0p
+crw-rw----+ 1 root audio 116, 17 Jan 26 18:10 /dev/snd/pcmC0D1p
+crw-rw----+ 1 root audio 116,  1 Jan 26 18:10 /dev/snd/seq
+crw-rw----+ 1 root audio 116, 33 Jan 26 18:10 /dev/snd/timer
+
+
+!!ALSA configuration files
+!!------------------------
+
+!!System wide config file (/etc/asound.conf)
+
+#
+# Place your global alsa-lib configuration here...
+#
+
+@hooks [
+	{
+		func load
+		files [
+			"/etc/alsa/pulse-default.conf"
+		]
+		errors false
+	}
+]
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: CONEXANT Analog [CONEXANT Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 1: Conexant Digital [Conexant Digital]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: CONEXANT Analog [CONEXANT Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [NVidia]
+
+Card hw:0 'NVidia'/'HDA NVidia at 0xf6480000 irq 21'
+  Mixer name	: 'Conexant CX20561 (Hermosa)'
+  Components	: 'HDA:14f15051,103c30ea,00100000'
+  Controls      : 11
+  Simple ctrls  : 6
+Simple mixer control 'Master',0
+  Capabilities: pvolume pswitch pswitch-joined penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 74
+  Mono:
+  Front Left: Playback 0 [0%] [-74.00dB] [on]
+  Front Right: Playback 0 [0%] [-74.00dB] [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Mic',0
+  Capabilities: volume pswitch penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 80
+  Front Left: 0 [0%] [-74.00dB] Playback [on]
+  Front Right: 0 [0%] [-74.00dB] Playback [on]
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958 Default PCM',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'Digital',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 120
+  Front Left: Capture 120 [100%] [30.00dB]
+  Front Right: Capture 120 [100%] [30.00dB]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.NVidia {
+	control.1 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 80'
+		comment.dbmin -7400
+		comment.dbmax 600
+		iface MIXER
+		name 'Mic Volume'
+		value.0 0
+		value.1 0
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Mic Switch'
+		value.0 true
+		value.1 true
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 74'
+		comment.dbmin -7400
+		comment.dbmax 0
+		iface MIXER
+		name 'Master Playback Volume'
+		value.0 0
+		value.1 0
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+	}
+	control.5 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.6 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.7 {
+		comment.access 'read write'
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.8 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+	}
+	control.9 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Default PCM Playback Switch'
+		value true
+	}
+	control.10 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 255'
+		comment.tlv '0000000100000008ffffec1400000014'
+		comment.dbmin -5100
+		comment.dbmax 0
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+	}
+	control.11 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 120'
+		comment.tlv '0000000100000008fffff44800000032'
+		comment.dbmin -3000
+		comment.dbmax 3000
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 120
+		value.1 120
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+cryptd
+aes_x86_64
+aes_generic
+fuse
+rfkill_input
+snd_pcm_oss
+snd_mixer_oss
+sunrpc
+ip6t_REJECT
+nf_conntrack_ipv6
+ip6table_filter
+ip6_tables
+ipv6
+cpufreq_ondemand
+powernow_k8
+freq_table
+nls_utf8
+ext2
+dm_multipath
+twofish_x86_64
+twofish_common
+cbc
+dm_crypt
+uinput
+arc4
+ecb
+snd_hda_codec_conexant
+snd_hda_intel
+snd_hda_codec
+snd_hwdep
+b43
+snd_seq
+snd_seq_device
+snd_pcm
+rfkill
+mac80211
+snd_timer
+snd
+cfg80211
+sdhci_pci
+soundcore
+sdhci
+k8temp
+input_polldev
+nvidia
+pcspkr
+forcedeth
+snd_page_alloc
+mmc_core
+ricoh_mmc
+joydev
+ssb
+i2c_nforce2
+hwmon
+pata_amd
+wmi
+video
+output
+ata_generic
+pata_acpi
+nouveau
+drm
+i2c_algo_bit
+i2c_core
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x16 0x02211030
+0x17 0x02a19020
+0x18 0x400001f0
+0x19 0x400001f0
+0x1a 0x95170110
+0x1b 0x400001f0
+0x1c 0x224511f0
+0x1d 0x400001f0
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+  alloc kstat_irqs on cpu 0 node 0
+HDA Intel 0000:00:07.0: PCI INT A -> Link[LAZA] -> GSI 21 (level, low) -> IRQ 21
+HDA Intel 0000:00:07.0: setting latency timer to 64
+input: HDA NVidia Mic as /devices/pci0000:00/0000:00:07.0/sound/card0/input10
+input: HDA NVidia Headphone as /devices/pci0000:00/0000:00:07.0/sound/card0/input11
+name_count maxed, losing inode data: dev=00:05, inode=4428
+
+
