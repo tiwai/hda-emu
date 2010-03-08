@@ -127,6 +127,7 @@ CHECK_FILE(hda_patch.h, HDA_PATCH_H)
 CHECK_FILE(hda_beep.c, CONFIG_SND_HDA_INPUT_BEEP)
 CHECK_FILE(hda_beep.h, CONFIG_SND_HDA_INPUT_BEEP)
 CHECK_FILE(hda_eld.c, CONFIG_SND_HDA_ELD)
+CHECK_FILE(patch_hdmi.c, CONFIG_SND_HDA_HDMI)
 
 echo "Generating kernel/init_hooks.h..."
 rm -f kernel/init_hooks.h

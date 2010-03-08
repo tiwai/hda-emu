@@ -22,6 +22,7 @@
 #define KERN_INFO
 #define KERN_WARNING
 #define KERN_ERR
+#define KERN_NOTICE
 
 typedef uint64_t u64;
 typedef uint64_t __u64;
