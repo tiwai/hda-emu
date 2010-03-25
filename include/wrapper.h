@@ -18,11 +18,11 @@
 #include "hda-log.h"
 /* #define printk	printf */
 #define printk	hda_log_printk
-#define KERN_DEBUG
-#define KERN_INFO
-#define KERN_WARNING
-#define KERN_ERR
-#define KERN_NOTICE
+#define KERN_DEBUG	"<7>"
+#define KERN_INFO	"<6>"
+#define KERN_NOTICE	"<5>"
+#define KERN_WARNING	"<4>"
+#define KERN_ERR	"<3>"
 
 typedef uint64_t u64;
 typedef uint64_t __u64;

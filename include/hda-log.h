@@ -3,6 +3,7 @@
 
 enum {
 	HDA_LOG_ERR,
+	HDA_LOG_WARN,
 	HDA_LOG_KERN,
 	HDA_LOG_INFO,
 	HDA_LOG_VERB,
@@ -14,8 +15,8 @@ enum {
 
 int hda_log_init(const char *file, unsigned int flags);
 void hda_log(int level, const char *fmt, ...);
+void hda_log_printk(const char *fmt, ...);
 void hda_log_echo(int level, const char *fmt, ...);
-#define hda_log_printk(fmt, args...) hda_log(HDA_LOG_KERN, fmt, ##args)
 
 extern int hda_log_assert_on_error;
 

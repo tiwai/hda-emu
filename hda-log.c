@@ -24,6 +24,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <assert.h>
 #include "hda-types.h"
 #include "hda-log.h"
@@ -38,6 +39,7 @@ static void set_color(int level)
 {
 	static char *color_seq[] = {
 		[HDA_LOG_ERR] = "31;1", /* bold red */
+		[HDA_LOG_WARN] = "31", /* red */
 		[HDA_LOG_KERN] = "32", /* green */
 		[HDA_LOG_INFO] = "9", /* normal */
 		[HDA_LOG_VERB] = "34", /* blue */
@@ -58,25 +60,52 @@ static void reset_color(void)
 	printf("\x1b[0m");
 }
 
-void hda_log(int level, const char *fmt, ...)
+static void _hda_log(int level, const char *fmt, va_list ap)
 {
-	va_list ap, ap2;
+	va_list ap2;
 
 	if (level > log_level)
 		return;
 
 	if (logfp == stdout)
 		set_color(level);
-	va_start(ap, fmt);
 	va_copy(ap2, ap);
 	vfprintf(logfp, fmt, ap);
 	if (!(log_flags & HDA_LOG_FLAG_NO_ECHO) && logfp != stdout)
 		vprintf(fmt, ap2);
-	va_end(ap);
+	va_end(ap2);
 	if (logfp == stdout)
 		reset_color();
 	if (level == HDA_LOG_ERR && hda_log_assert_on_error)
 		assert(0);
+}
+
+void hda_log(int level, const char *fmt, ...)
+{
+	va_list ap;
+	va_start(ap, fmt);
+	_hda_log(level, fmt, ap);
+	va_end(ap);
+}
+
+void hda_log_printk(const char *fmt, ...)
+{
+	va_list ap;
+	int level = 7;
+
+	va_start(ap, fmt);
+	if (fmt[0] == '<' && isdigit(fmt[1]) && fmt[2] == '>') {
+		level = fmt[1] - '0';
+		fmt += 3;
+	}
+	if (level >= 5)
+		level = HDA_LOG_KERN;
+	else if (level == 4)
+		level = HDA_LOG_WARN;
+	else
+		level = HDA_LOG_ERR;
+	_hda_log(level, fmt, ap);
+	va_end(ap);
 }
 
 void hda_log_echo(int level, const char *fmt, ...)
