@@ -437,7 +437,7 @@ static int parse_codec_recursive(const char *buffer)
 }
 	
 /* check the extra information from alsa-info output */
-static int check_alsa_info(char *line)
+static void check_alsa_info(char *line)
 {
 	int dummy, classid, vendor, id, rev;
 
