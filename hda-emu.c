@@ -486,6 +486,7 @@ void hda_test_pcm(int id, int subid,
 	struct snd_pcm_substream *substream = &dummy_substream;
 	struct snd_pcm_runtime *runtime = &dummy_runtime;
 	struct hda_pcm_stream *hinfo;
+	struct snd_pcm_str pstr;
 	unsigned int format_val;
 	int i, err;
 
@@ -519,6 +520,8 @@ void hda_test_pcm(int id, int subid,
 	substream->number = subid;
 	substream->runtime = runtime;
 	substream->ref_count = 1;
+	pstr.substream_opened = 1;
+	substream->pstr = &pstr;
 	runtime->rate = rate;
 	runtime->format = get_alsa_format(format);
 	runtime->channels = channels;

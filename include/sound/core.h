@@ -95,11 +95,12 @@ struct snd_pci_quirk {
 	_SND_PCI_QUIRK_ID_MASK(vend, 0xffff, dev)
 #define SND_PCI_QUIRK_ID(vend,dev) {_SND_PCI_QUIRK_ID(vend, dev)}
 #define SND_PCI_QUIRK(vend,dev,xname,val) \
-	{_SND_PCI_QUIRK_ID(vend, dev), .value = (val)}
-#define SND_PCI_QUIRK_MASK(vend, mask, dev, xname, val)			\
-	{_SND_PCI_QUIRK_ID_MASK(vend, mask, dev), .value = (val)}
+	{_SND_PCI_QUIRK_ID(vend, dev), .value = (val), .name = (xname)}
 #define SND_PCI_QUIRK_VENDOR(vend, xname, val)			\
-	{_SND_PCI_QUIRK_ID_MASK(vend, 0, 0), .value = (val)}
+	{_SND_PCI_QUIRK_ID_MASK(vend, 0, 0), .value = (val), .name = (xname)}
+#define SND_PCI_QUIRK_MASK(vend, mask, dev, xname, val)			\
+	{_SND_PCI_QUIRK_ID_MASK(vend, mask, dev),			\
+			.value = (val), .name = (xname)}
 
 #else /* !NEW_QUIRK_LIST */
 
