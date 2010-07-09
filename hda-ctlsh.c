@@ -233,7 +233,7 @@ static void get_element(char *line)
 	uinfo.id.index = snd_ctl_get_ioffnum(kctl, &uinfo.id);
 	err = kctl->info(kctl, &uinfo);
 	if (err < 0) {
-		hda_log(HDA_LOG_INFO, "Error in info for %numid\n", numid);
+		hda_log(HDA_LOG_INFO, "Error in info for %d\n", numid);
 		return;
 	}
 
