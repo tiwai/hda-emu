@@ -574,7 +574,7 @@ void hda_test_pcm(int id, int subid,
 		return;
 	}
 	hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
-	err = hinfo->ops.prepare(hinfo, _codec, 0, format_val, substream);
+	err = hinfo->ops.prepare(hinfo, _codec, 1, format_val, substream);
 
 	hda_log(HDA_LOG_INFO, "PCM Clean up\n");
 	hinfo->ops.cleanup(hinfo, _codec, substream);
