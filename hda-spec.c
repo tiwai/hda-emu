@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 #include "hda-types.h"
 #include "hda-log.h"
 
