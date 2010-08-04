@@ -568,7 +568,11 @@ void hda_test_pcm(int id, int subid,
 		rate, channels, format);
 	format_val = snd_hda_calc_stream_format(rate, channels,
 						get_alsa_format(format),
-						format);
+						format
+#ifdef STREAM_FORMAT_WITH_SPDIF
+						, _codec->spdif_ctls
+#endif
+						);
 	if (!format_val) {
 		snd_hda_power_down(_codec);
 		return;
