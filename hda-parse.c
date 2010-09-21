@@ -465,7 +465,7 @@ static void check_alsa_info(char *line)
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 {
-	char buffer[256];
+	char buffer[256], *p;
 	int curidx = -1;
 	int err = 0;
 
@@ -484,6 +484,12 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 			curidx++;
 			if (curidx == codec_index)
 				parse_mode = PARSE_ROOT;
+			p = strrchr(buffer, '\n');
+			if (p)
+				*p = 0;
+			codec->parsed_name = strdup(buffer + strlen("Codec: "));
+			if (!codec->parsed_name)
+				return -ENOMEM;
 		} else if (strmatch(buffer, "Codec: "))
 			break;
 		if (!isspace(*buffer) &&

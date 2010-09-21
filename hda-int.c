@@ -1075,6 +1075,25 @@ const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd)
 	return (tbl && tbl->name) ? tbl->name : "unknown";
 }
 
+void hda_set_proc_coef(struct xhda_codec *codec, int nid, int idx, int val)
+{
+	struct xhda_node *node = find_node(codec, nid);
+	struct xhda_coef_table *tbl;
+	if (!node) {
+		hda_log(HDA_LOG_ERR, "Invalid NID 0x%x for proc\n", nid);
+		return;
+	}
+	tbl = find_proc_coef(node, idx);
+	if (!tbl) {
+		tbl = create_proc_coef(node, idx);
+		if (!tbl)
+			return;
+	}
+	tbl->value = val;
+	hda_log(HDA_LOG_INFO, "Set static coef idx 0x%x val 0x%x for NID 0x%x\n",
+		tbl->idx, tbl->value, nid);
+}
+
 /*
  * for hda-decode-verb
  */

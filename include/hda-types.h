@@ -74,6 +74,7 @@ struct xhda_value_cache {
 };
 
 struct xhda_codec {
+	char *parsed_name;
 	unsigned int addr;
 	unsigned int function_id;
 	unsigned int vendor_id;
@@ -94,6 +95,7 @@ struct xhda_codec {
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int idx);
 void add_codec_extensions(struct xhda_codec *codec);
+void hda_set_proc_coef(struct xhda_codec *codec, int nid, int idx, int val);
 
 int hda_cmd(struct xhda_codec *codec, unsigned int cmd);
 int hda_get_jack_state(struct xhda_codec *codec, int nid);
