@@ -15,24 +15,23 @@ enum snd_jack_types {
 };
 
 struct snd_jack {
+	/*struct input_dev *input_dev;*/
+	int registered;
 	int type;
+	const char *id;
+	char name[100];
+	unsigned int key[6];   /* Keep in sync with definitions above */
+	void *private_data;
+	void (*private_free)(struct snd_jack *);
 };
-
-static inline int snd_jack_new(struct snd_card *card, const char *id, int type,
-			       struct snd_jack **jack)
-{
-	return 0;
-}
 
 struct device;
 
-static inline void snd_jack_set_parent(struct snd_jack *jack,
-				       struct device *parent)
-{
-}
+int snd_jack_new(struct snd_card *card, const char *id, int type,
+		 struct snd_jack **jack);
 
-static inline void snd_jack_report(struct snd_jack *jack, int status)
-{
-}
+void snd_jack_set_parent(struct snd_jack *jack, struct device *parent);
+
+void snd_jack_report(struct snd_jack *jack, int status);
 
 #endif

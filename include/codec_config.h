@@ -8,4 +8,4 @@
 
 #define CONFIG_SND_HDA_GENERIC
 #define CONFIG_SND_HDA_HWDEP
-#undef CONFIG_SND_HDA_JACK	/* unsupported */
+#define CONFIG_SND_HDA_INPUT_JACK

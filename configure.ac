@@ -129,6 +129,8 @@ CHECK_FILE(hda_beep.h, CONFIG_SND_HDA_INPUT_BEEP)
 CHECK_FILE(hda_eld.c, CONFIG_SND_HDA_ELD)
 CHECK_FILE(patch_hdmi.c, CONFIG_SND_HDA_HDMI)
 
+AM_CONDITIONAL(UNIFIED_HDMI, grep -q module_init kernel/patch_hdmi.c)
+
 echo "Generating kernel/init_hooks.h..."
 rm -f kernel/init_hooks.h
 cat kernel/patch_*.c | grep '^module_init(' | \

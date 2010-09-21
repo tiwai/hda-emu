@@ -154,3 +154,32 @@ void *__hda_strdup(const char *str, const char *file, int line)
 	return dest;
 }
 #endif /* DEBUG_MALLOC */
+
+/* jack API */
+#include <sound/jack.h>
+int snd_jack_new(struct snd_card *card, const char *id, int type,
+		 struct snd_jack **jack)
+{
+	struct snd_jack *jp;
+
+	jp = calloc(1, sizeof(*jp));
+	if (!jp)
+		return -ENOMEM;
+	jp->id = strdup(id);
+	if (!jp->id)
+		return -ENOMEM;
+	jp->type = type;
+	hda_log(HDA_LOG_INFO, "JACK created %s, type %d\n", id, type);
+	*jack = jp;
+	return 0;
+}
+
+void snd_jack_set_parent(struct snd_jack *jack, struct device *parent)
+{
+	/* NOP */
+}
+
+void snd_jack_report(struct snd_jack *jack, int status)
+{
+	hda_log(HDA_LOG_INFO, "JACK report %s, status %d\n", jack->id, status);
+}
