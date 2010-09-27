@@ -247,6 +247,8 @@ void add_codec_extensions(struct xhda_codec *codec)
 	}
 
 	/* Realtek specific COEF */
+	if (!codec->parsed_name)
+		return;
 	if (!strcmp(codec->parsed_name, "Realtek ALC259"))
 		hda_set_proc_coef(codec, 0x20, 0x00, 0x17);
 	else if (!strcmp(codec->parsed_name, "Realtek ALC271X"))
