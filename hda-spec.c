@@ -250,8 +250,18 @@ void add_codec_extensions(struct xhda_codec *codec)
 	if (!codec->parsed_name)
 		return;
 	if (!strcmp(codec->parsed_name, "Realtek ALC259"))
-		hda_set_proc_coef(codec, 0x20, 0x00, 0x17);
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x2017);
+	else if (!strcmp(codec->parsed_name, "Realtek ALC258"))
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x3010);
 	else if (!strcmp(codec->parsed_name, "Realtek ALC271X"))
-		hda_set_proc_coef(codec, 0x20, 0x00, 0x18);
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x3010);
+	else if (!strcmp(codec->parsed_name, "Realtek ALC269VB"))
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x10);
+	else if (!strcmp(codec->parsed_name, "Realtek ALC887-VD"))
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x30);
+	else if (!strcmp(codec->parsed_name, "Realtek ALC888-VD"))
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x30);
+	else if (!strcmp(codec->parsed_name, "Realtek ALC661"))
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x8020);
 
 }
