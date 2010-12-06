@@ -4,6 +4,8 @@
 hda-emu
 hda-decode-verb
 hda-encode-verb
+hda-decode-pincfg
+hda-encode-pincfg
 .deps
 INSTALL
 Makefile
