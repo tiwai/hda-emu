@@ -30,7 +30,8 @@ extern struct delayed_work *__work_pending;
 #define INIT_DELAYED_WORK(x,y) ((x)->work.func = (y))
 #define schedule_delayed_work(x,y) (__work_pending = (x))
 #define cancel_delayed_work(x) do {} while (0)
-#define cancel_work_sync(x) do {} while (0)
+static inline bool cancel_work_sync(struct work_struct *x) { return 0; }
+static inline bool cancel_delayed_work_sync(struct delayed_work *x) { return 0; }
 static inline void flush_scheduled_work(void)
 {
 	if (__work_pending) {
