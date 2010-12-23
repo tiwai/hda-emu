@@ -62,7 +62,7 @@ void snd_ctl_free_one(struct snd_kcontrol *kctl)
 int snd_ctl_add(struct snd_card *card, struct snd_kcontrol *kctl)
 {
 	if (snd_ctl_find_id(card, &kctl->id)) {
-		hda_log(HDA_LOG_INFO, "Control element %s:%d already exists!\n",
+		hda_log(HDA_LOG_ERR, "Control element %s:%d already exists!\n",
 			kctl->id.name, kctl->id.index);
 		return -EBUSY;
 	}
