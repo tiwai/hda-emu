@@ -144,7 +144,11 @@ static inline int strict_strtol(const char *str, unsigned int base, long *val)
 	return 0;
 }
 
-#define DEBUG_MALLOC	1
+/* XXX: this is just a workaround */
+static inline char *strlcat(char *dst, const char *src, size_t n)
+{
+	return strncat(dst, src, n);
+}
 
 #ifdef DEBUG_MALLOC
 void *__hda_malloc(size_t size, const char *file, int line);
