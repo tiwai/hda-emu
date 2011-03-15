@@ -1,0 +1,1143 @@
+upload=true&script=true&cardinfo=
+!!################################
+!!ALSA Information Script v 0.4.58
+!!################################
+
+!!Script ran on: Tue Mar 15 08:51:41 UTC 2011
+
+
+!!Linux Distribution
+!!------------------
+
+Welcome to openSUSE 11.3 "Teal" - Kernel \r (\l). openSUSE 11.3 (x86_64) LSB_VERSION="core-2.0-noarch:core-3.2-noarch:core-4.0-noarch:core-2.0-x86_64:core-3.2-x86_64:core-4.0-x86_64"
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      To Be Filled By O.E.M.
+Product Name:      To Be Filled By O.E.M.
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.34.7-0.7-desktop
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         x86_64
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.24-git20110313
+Library version:    
+Utilities version:  1.0.24.2
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+ESound Daemon:
+      Installed - Yes (/usr/bin/esd)
+      Running - No
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xfbff8000 irq 22
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:05.0 Audio device: nVidia Corporation MCP61 High Definition Audio (rev a2)
+
+
+!!Advanced information - PCI Vendor/Device/Susbsystem ID's
+!!--------------------------------------------------------
+
+00:05.0 0403: 10de:03f0 (rev a2)
+	Subsystem: 1849:0397
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-hda-intel: model=auto
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : auto,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: VIA VT1708S
+Address: 0
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x11064397
+Subsystem Id: 0x18490397
+Revision Id: 0x100000
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=1, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x10 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Front Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Device: name="VT1708S Analog", type="Audio", device=0
+  Amp-Out caps: ofs=0x2a, nsteps=0x2a, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x16 0x16]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x11 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Surround Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x2a, nsteps=0x2a, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x12 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x13 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Capture Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Device: name="VT1708S Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x13 0x13]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x17
+Node 0x14 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Volume", index=1, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Capture Switch", index=1, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x12 0x12]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x1e
+Node 0x15 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x16 [Audio Mixer] wcaps 0x20050b: Stereo Amp-In
+  Control: name="Master Front Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Master Front Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Rear Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Rear Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Front Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=3, ofs=0
+  Control: name="Front Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=3, ofs=0
+  Control: name="Line Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Control: name="Line Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Control: name="CD Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="CD Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x13 0x13] [0x00 0x00] [0x90 0x90] [0x92 0x92] [0x80 0x80] [0x97 0x97] [0x97 0x97]
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 7
+     0x10 0x1f 0x1a 0x1b 0x1e 0x1d 0x25
+Node 0x17 [Audio Selector] wcaps 0x300501: Stereo
+  Control: name="Input Source", index=0, device=0
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 6
+     0x1f* 0x1a 0x1b 0x1e 0x1d 0x16
+Node 0x18 [Audio Selector] wcaps 0x30050d: Stereo Amp-Out
+  Control: name="Surround Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x11
+Node 0x19 [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x410110f0: [N/A] Line Out at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D3, actual=D3
+  Connection: 1
+     0x18
+Node 0x1a [Pin Complex] wcaps 0x400581: Stereo
+  Control: name="Mic Boost Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Smart 5.1", index=0, device=0
+  Pincap 0x00002334: IN OUT Detect
+    Vref caps: HIZ 50 100
+  Pin Default 0x01a19036: [Jack] Mic at Ext Rear
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x3, Sequence = 0x6
+  Pin-ctls: 0x21: IN VREF_50
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x26
+Node 0x1b [Pin Complex] wcaps 0x400581: Stereo
+  Control: name="Independent HP", index=0, device=0
+  Pincap 0x00002334: IN OUT Detect
+    Vref caps: HIZ 50 100
+  Pin Default 0x0181303e: [Jack] Line In at Ext Rear
+    Conn = 1/8, Color = Blue
+    DefAssociation = 0x3, Sequence = 0xe
+  Pin-ctls: 0x40: OUT VREF_HIZ
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x18
+Node 0x1c [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Front Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001001c: OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x01014010: [Jack] Line Out at Ext Rear
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D3, actual=D3
+  Connection: 1
+     0x16
+Node 0x1d [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Headphone Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Independent HP", index=0, device=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000233c: IN OUT HP Detect
+    Vref caps: HIZ 50 100
+  Pin Default 0x0221401f: [Jack] HP Out at Ext Front
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0xf
+  Pin-ctls: 0xc0: OUT HP VREF_HIZ
+  Unsolicited: tag=05, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x16 0x25*
+Node 0x1e [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Front Mic Boost Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000233c: IN OUT HP Detect
+    Vref caps: HIZ 50 100
+  Pin Default 0x02a19038: [Jack] Mic at Ext Front
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x3, Sequence = 0x8
+  Pin-ctls: 0x21: IN VREF_50
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x16* 0x25
+Node 0x1f [Pin Complex] wcaps 0x400401: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x90370137: [Fixed] CD at Int N/A
+    Conn = Analog, Color = Unknown
+    DefAssociation = 0x3, Sequence = 0x7
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x20 [Pin Complex] wcaps 0x400701: Stereo Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x474410f0: [N/A] SPDIF Out at Ext Rear Panel
+    Conn = RCA, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x12
+Node 0x21 [Pin Complex] wcaps 0x400701: Stereo Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x585600f0: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x15
+Node 0x22 [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x410160f0: [N/A] Line Out at Ext Rear
+    Conn = 1/8, Color = Orange
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D3, actual=D3
+  Connection: 1
+     0x26
+Node 0x23 [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x410120f0: [N/A] Line Out at Ext Rear
+    Conn = 1/8, Color = Grey
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3
+  Power: setting=D3, actual=D3
+  Connection: 1
+     0x27
+Node 0x24 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Center Playback Volume", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Control: name="LFE Playback Volume", index=0, device=0
+    ControlAmp: chs=2, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x2a, nsteps=0x2a, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x25 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Headphone Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x2a, nsteps=0x2a, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x19 0x19]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+Node 0x26 [Audio Selector] wcaps 0x30050d: Stereo Amp-Out
+  Control: name="Center Playback Switch", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Control: name="LFE Playback Switch", index=0, device=0
+    ControlAmp: chs=2, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x24
+Node 0x27 [Audio Selector] wcaps 0x30050d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Power states:  D0 D1 D2 D3
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x25
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw----+ 1 root audio 116,  5 Mar 15 09:12 /dev/snd/controlC0
+crw-rw----+ 1 root audio 116,  4 Mar 15 09:12 /dev/snd/hwC0D0
+crw-rw----+ 1 root audio 116,  3 Mar 15 09:12 /dev/snd/pcmC0D0c
+crw-rw----+ 1 root audio 116,  2 Mar 15 09:13 /dev/snd/pcmC0D0p
+crw-rw----+ 1 root audio 116,  1 Mar 15 09:13 /dev/snd/seq
+crw-rw----+ 1 root audio 116, 33 Mar 15 09:12 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  60 Mar 15 09:12 .
+drwxr-xr-x 3 root root 180 Mar 15 09:12 ..
+lrwxrwxrwx 1 root root  12 Mar 15 09:12 pci-0000:00:05.0 -> ../controlC0
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: VT1708S Analog [VT1708S Analog]
+  Subdevices: 2/2
+  Subdevice #0: subdevice #0
+  Subdevice #1: subdevice #1
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 0: VT1708S Analog [VT1708S Analog]
+  Subdevices: 2/2
+  Subdevice #0: subdevice #0
+  Subdevice #1: subdevice #1
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [NVidia]
+
+Card hw:0 'NVidia'/'HDA NVidia at 0xfbff8000 irq 22'
+  Mixer name	: 'VIA VT1708S'
+  Components	: 'HDA:11064397,18490397,00100000'
+  Controls      : 31
+  Simple ctrls  : 19
+Simple mixer control 'Master Front',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 19 [61%] [-6.00dB] [on]
+  Front Right: Playback 19 [61%] [-6.00dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 42
+  Mono:
+  Front Left: Playback 25 [60%] [-25.50dB] [on]
+  Front Right: Playback 25 [60%] [-25.50dB] [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 124 [49%] [-26.20dB]
+  Front Right: Playback 124 [49%] [-26.20dB]
+Simple mixer control 'Front',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 42
+  Mono:
+  Front Left: Playback 22 [52%] [-30.00dB] [on]
+  Front Right: Playback 22 [52%] [-30.00dB] [on]
+Simple mixer control 'Front Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 18 [58%] [-7.50dB] [off]
+  Front Right: Playback 18 [58%] [-7.50dB] [off]
+Simple mixer control 'Front Mic Boost',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 3
+  Front Left: Capture 2 [67%] [20.50dB]
+  Front Right: Capture 2 [67%] [20.50dB]
+Simple mixer control 'Surround',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 42
+  Mono:
+  Front Left: Playback 0 [0%] [-63.00dB] [on]
+  Front Right: Playback 0 [0%] [-63.00dB] [on]
+Simple mixer control 'Center',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 42
+  Mono: Playback 0 [0%] [-63.00dB] [on]
+Simple mixer control 'LFE',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 42
+  Mono: Playback 0 [0%] [-63.00dB] [on]
+Simple mixer control 'Line',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 16 [52%] [-10.50dB] [off]
+  Front Right: Playback 16 [52%] [-10.50dB] [off]
+Simple mixer control 'CD',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 19 [61%] [-6.00dB] [on]
+  Front Right: Playback 19 [61%] [-6.00dB] [on]
+Simple mixer control 'Mic Boost',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 3
+  Front Left: Capture 1 [33%] [10.25dB]
+  Front Right: Capture 1 [33%] [10.25dB]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 19 [61%] [12.00dB] [on]
+  Front Right: Capture 19 [61%] [12.00dB] [on]
+Simple mixer control 'Capture',1
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 18 [58%] [10.50dB] [on]
+  Front Right: Capture 18 [58%] [10.50dB] [on]
+Simple mixer control 'Digital',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 120
+  Front Left: Capture 72 [60%] [6.00dB]
+  Front Right: Capture 72 [60%] [6.00dB]
+Simple mixer control 'Independent HP',0
+  Capabilities: enum
+  Items: 'OFF' 'ON'
+  Item0: 'ON'
+Simple mixer control 'Input Source',0
+  Capabilities: cenum
+  Items: 'Stereo Mixer' 'Rear Mic' 'Front Mic' 'Line' 'CD'
+  Item0: 'CD'
+Simple mixer control 'Rear Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [on]
+  Front Right: Playback 0 [0%] [-34.50dB] [on]
+Simple mixer control 'Smart 5.1',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.NVidia {
+	control.1 {
+		iface MIXER
+		name 'Master Front Playback Volume'
+		value.0 19
+		value.1 19
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -600
+			dbvalue.1 -600
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'Master Front Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'Front Playback Volume'
+		value.0 22
+		value.1 22
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 42'
+			dbmin -6300
+			dbmax 0
+			dbvalue.0 -3000
+			dbvalue.1 -3000
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'Front Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'Surround Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 42'
+			dbmin -6300
+			dbmax 0
+			dbvalue.0 -6300
+			dbvalue.1 -6300
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'Surround Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'Center Playback Volume'
+		value 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 42'
+			dbmin -6300
+			dbmax 0
+			dbvalue.0 -6300
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'LFE Playback Volume'
+		value 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 42'
+			dbmin -6300
+			dbmax 0
+			dbvalue.0 -6300
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'Center Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'LFE Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'Headphone Playback Volume'
+		value.0 25
+		value.1 25
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 42'
+			dbmin -6300
+			dbmax 0
+			dbvalue.0 -2550
+			dbvalue.1 -2550
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'Rear Mic Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -3450
+			dbvalue.1 -3450
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'Rear Mic Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'Front Mic Playback Volume'
+		value.0 18
+		value.1 18
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -750
+			dbvalue.1 -750
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'Front Mic Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.17 {
+		iface MIXER
+		name 'Line Playback Volume'
+		value.0 16
+		value.1 16
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -1050
+			dbvalue.1 -1050
+		}
+	}
+	control.18 {
+		iface MIXER
+		name 'Line Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.19 {
+		iface MIXER
+		name 'CD Playback Volume'
+		value.0 19
+		value.1 19
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -600
+			dbvalue.1 -600
+		}
+	}
+	control.20 {
+		iface MIXER
+		name 'CD Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.21 {
+		iface MIXER
+		name 'Independent HP'
+		value ON
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 OFF
+			item.1 ON
+		}
+	}
+	control.22 {
+		iface MIXER
+		name 'Smart 5.1'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.23 {
+		iface MIXER
+		name 'Capture Volume'
+		value.0 19
+		value.1 19
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -1650
+			dbmax 3000
+			dbvalue.0 1200
+			dbvalue.1 1200
+		}
+	}
+	control.24 {
+		iface MIXER
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.25 {
+		iface MIXER
+		name 'Capture Volume'
+		index 1
+		value.0 18
+		value.1 18
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -1650
+			dbmax 3000
+			dbvalue.0 1050
+			dbvalue.1 1050
+		}
+	}
+	control.26 {
+		iface MIXER
+		name 'Capture Switch'
+		index 1
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.27 {
+		iface MIXER
+		name 'Mic Boost Capture Volume'
+		value.0 1
+		value.1 1
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3075
+			dbvalue.0 1025
+			dbvalue.1 1025
+		}
+	}
+	control.28 {
+		iface MIXER
+		name 'Front Mic Boost Capture Volume'
+		value.0 2
+		value.1 2
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3075
+			dbvalue.0 2050
+			dbvalue.1 2050
+		}
+	}
+	control.29 {
+		iface MIXER
+		name 'Input Source'
+		value CD
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'Stereo Mixer'
+			item.1 'Rear Mic'
+			item.2 'Front Mic'
+			item.3 Line
+			item.4 CD
+		}
+	}
+	control.30 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 124
+		value.1 124
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 -2620
+			dbvalue.1 -2620
+		}
+	}
+	control.31 {
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 72
+		value.1 72
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 120'
+			tlv '0000000100000008fffff44800000032'
+			dbmin -3000
+			dbmax 3000
+			dbvalue.0 600
+			dbvalue.1 600
+		}
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+ip6t_LOG
+xt_tcpudp
+xt_pkttype
+ipt_LOG
+xt_limit
+vboxnetadp
+vboxnetflt
+autofs4
+vboxdrv
+snd_pcm_oss
+snd_mixer_oss
+snd_seq
+snd_seq_device
+edd
+nvidia
+af_packet
+cpufreq_conservative
+cpufreq_userspace
+cpufreq_powersave
+powernow_k8
+mperf
+ip6t_REJECT
+nf_conntrack_ipv6
+ip6table_raw
+xt_NOTRACK
+ipt_REJECT
+xt_state
+iptable_raw
+iptable_filter
+ip6table_mangle
+nf_conntrack_netbios_ns
+nf_conntrack_ipv4
+nf_conntrack
+nf_defrag_ipv4
+ip_tables
+ip6table_filter
+ip6_tables
+x_tables
+vfat
+fat
+loop
+dm_mod
+snd_hda_codec_via
+snd_hda_intel
+snd_hda_codec
+ppdev
+snd_hwdep
+parport_pc
+snd_pcm
+parport
+sg
+snd_timer
+sr_mod
+cdrom
+edac_core
+snd
+soundcore
+pcspkr
+snd_page_alloc
+k10temp
+edac_mce_amd
+forcedeth
+i2c_nforce2
+button
+ext4
+jbd2
+crc16
+sd_mod
+fan
+processor
+ata_generic
+pata_amd
+thermal
+thermal_sys
+sata_nv
+libata
+scsi_mod
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x19 0x410110f0
+0x1a 0x01a19036
+0x1b 0x0181303e
+0x1c 0x01014010
+0x1d 0x0221401f
+0x1e 0x02a19038
+0x1f 0x90370137
+0x20 0x474410f0
+0x21 0x585600f0
+0x22 0x410160f0
+0x23 0x410120f0
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+[   10.532330] ACPI: PCI Interrupt Link [LAZA] enabled at IRQ 22
+[   10.532336] HDA Intel 0000:00:05.0: PCI INT B -> Link[LAZA] -> GSI 22 (level, low) -> IRQ 22
+[   10.532339] hda_intel: Disable MSI for Nvidia chipset
+[   10.532369] HDA Intel 0000:00:05.0: setting latency timer to 64
+[   10.729092] ALSA hda_codec.c:4634: autoconfig: line_outs=1 (0x1c/0x0/0x0/0x0/0x0)
+[   10.729097] ALSA hda_codec.c:4638:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[   10.729100] ALSA hda_codec.c:4642:    hp_outs=1 (0x1d/0x0/0x0/0x0/0x0)
+[   10.729102] ALSA hda_codec.c:4643:    mono: mono_out=0x0
+[   10.729104] ALSA hda_codec.c:4647:    inputs:
+[   10.729105] ALSA hda_codec.c:4653: 
+[   11.617240] Adding 2103292k swap on /dev/sda1.  Priority:-1 extents:1 across:2103292k 
+
+
