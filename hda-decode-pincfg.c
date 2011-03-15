@@ -54,6 +54,7 @@ static void usage(int mode)
 			"    -a val   Specifies port default association\n"
 			"    -s val   Specifies port sequence\n"
 			"    -m val   Specifies port misc value\n"
+			"    -b val   Specifies pincfg value to base on\n"
 			);
 	}
 	exit(1);
@@ -291,15 +292,20 @@ static unsigned int encode(const char *jack,
 			   const char *location,
 			   const char *connection,
 			   const char *color,
-			   int assoc, int seq, int misc)
+			   int assoc, int seq, int misc, int base)
 {
-	unsigned int caps = 0;
+	unsigned int caps = base;
 
-	caps |= parse_jack_port(jack) << AC_DEFCFG_PORT_CONN_SHIFT;
-	caps |= parse_jack_type(type) << AC_DEFCFG_DEVICE_SHIFT;
-	caps |= parse_jack_location(location) << AC_DEFCFG_LOCATION_SHIFT;
-	caps |= parse_jack_connection(connection) << AC_DEFCFG_CONN_TYPE_SHIFT;
-	caps |= parse_jack_color(color) << AC_DEFCFG_COLOR_SHIFT;
+	if (jack)
+		caps |= parse_jack_port(jack) << AC_DEFCFG_PORT_CONN_SHIFT;
+	if (type)
+		caps |= parse_jack_type(type) << AC_DEFCFG_DEVICE_SHIFT;
+	if (location)
+		caps |= parse_jack_location(location) << AC_DEFCFG_LOCATION_SHIFT;
+	if (connection)
+		caps |= parse_jack_connection(connection) << AC_DEFCFG_CONN_TYPE_SHIFT;
+	if (color)
+		caps |= parse_jack_color(color) << AC_DEFCFG_COLOR_SHIFT;
 	caps |= (misc << AC_DEFCFG_MISC_SHIFT) & AC_DEFCFG_MISC;
 	caps |= (assoc << AC_DEFCFG_ASSOC_SHIFT) & AC_DEFCFG_DEF_ASSOC;
 	caps |= seq & AC_DEFCFG_SEQUENCE;
@@ -310,12 +316,12 @@ int main(int argc, char **argv)
 {
 	int mode = DECODE;
 	int c;
-	const char *jack = "Jack";
-	const char *type = "Line Out";
-	const char *location = "Ext Left";
-	const char *connection = "1/8";
-	const char *color = "Unknown";
-	int assoc = 0, seq = 0, misc = 0;
+	const char *jack = NULL;
+	const char *type = NULL;
+	const char *location = NULL;
+	const char *connection = NULL;
+	const char *color = NULL;
+	int assoc = 0, seq = 0, misc = 0, base = 0;
 	unsigned int val;
 
 	hda_log_init(NULL, 0);
@@ -324,7 +330,7 @@ int main(int argc, char **argv)
 	if (strstr(argv[0], "hda-encode-pincfg"))
 		mode = ENCODE;
 
-	while ((c = getopt(argc, argv, "dej:t:l:c:C:a:s:m:")) != -1) {
+	while ((c = getopt(argc, argv, "dej:t:l:c:C:a:s:m:b:h")) != -1) {
 		switch (c) {
 		case 'd':
 			mode = DECODE;
@@ -356,6 +362,10 @@ int main(int argc, char **argv)
 		case 'm':
 			misc = strtoul(optarg, NULL, 0);
 			break;
+		case 'b':
+			base = strtoul(optarg, NULL, 0);
+			break;
+		case 'h':
 		default:
 			usage(mode);
 		}
@@ -368,7 +378,20 @@ int main(int argc, char **argv)
 		decode(strtoul(argv[optind], NULL, 0));
 		break;
 	case ENCODE:
-		val = encode(jack, type, location, connection, color, assoc, seq, misc);
+		if (!base) {
+			if (!jack)
+				jack = "Jack";
+			if (!type)
+				type = "Line Out";
+			if (!location)
+				location = "Ext Left";
+			if (!connection)
+				connection = "1/8";
+			if (!color)
+				color = "Unknown";
+		}
+		val = encode(jack, type, location, connection, color,
+			     assoc, seq, misc, base);
 		hda_log(HDA_LOG_INFO, "Pin config value = 0x%x\n", val);
 		decode(val);
 		break;
