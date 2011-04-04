@@ -13,7 +13,7 @@ WFLAGS="-Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -f
 WFLAGS="$WFLAGS -Wdeclaration-after-statement"
 WFLAGS="$WFLAGS -Wno-pointer-sign"
 WFLAGS="$WFLAGS -fwrapv"
-OPTFLAGS="-O2 -g"
+OPTFLAGS="-O0 -g"
 CFLAGS="$CFLAGS $OPTFLAGS $WFLAGS"
 
 AC_ARG_ENABLE(old-workq,
