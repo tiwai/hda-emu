@@ -27,6 +27,7 @@
 #include <stdlib.h>
 #include <getopt.h>
 #include <errno.h>
+#include <signal.h>
 
 #include "hda-types.h"
 #include "hda-log.h"
@@ -719,7 +720,7 @@ static void usage(void)
 	fprintf(stderr, "  -q             don't echo but only to log file\n");
 	fprintf(stderr, "  -C             print messages in color (default)\n");
 	fprintf(stderr, "  -M             no color print\n");
-	fprintf(stderr, "  -a             issues assert at codec errors\n");
+	fprintf(stderr, "  -a             issues SIGTRAP at codec errors\n");
 	fprintf(stderr, "  -P pincfg      initialize pin-configuration from sysfs entry\n");
 }
 
@@ -743,7 +744,7 @@ int main(int argc, char **argv)
 	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMP:")) != -1) {
 		switch (c) {
 		case 'a':
-			hda_log_assert_on_error = 1;
+			hda_log_trap_on_error = 1;
 			break;
 		case 'l':
 			hda_log_level_set(atoi(optarg));
@@ -794,6 +795,9 @@ int main(int argc, char **argv)
 	}
 
 	hda_log_init(logfile, log_flags);
+
+	/* ignore SIGTRAP as default; gdb will override anyway... */
+	signal(SIGTRAP, SIG_IGN);
 
 	hda_log(HDA_LOG_INFO, "# Parsing..\n");
 	if (parse_codec_proc(fp, &proc, idx) < 0) {
