@@ -73,6 +73,18 @@ struct xhda_value_cache {
 	struct xhda_value_cache *next;
 };
 
+
+struct xhda_sysfs_value {
+	int val[3];
+	struct xhda_sysfs_value *next;
+};
+
+struct xhda_sysfs_list {
+	char *id;
+	struct xhda_sysfs_list *next;
+	struct xhda_sysfs_value *entry;
+};
+
 struct xhda_codec {
 	char *parsed_name;
 	unsigned int addr;
@@ -91,6 +103,8 @@ struct xhda_codec {
 	unsigned short pci_revision;
 	/* flags */
 	unsigned int pin_amp_workaround:1; /* pin out-amp can take index */
+	/* sysfs lists */
+	struct xhda_sysfs_list *sysfs_list;
 };
 
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int idx);

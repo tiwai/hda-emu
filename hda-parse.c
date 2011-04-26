@@ -37,6 +37,9 @@ enum {
 	PARSE_NODE,
 	PARSE_NODE_PCM,
 	PARSE_NODE_CONNECTIONS,
+	/* post-codec */
+	PARSE_POST,
+	PARSE_SYSFS,
 };
 
 static struct xhda_codec *codec;
@@ -463,6 +466,72 @@ static void check_alsa_info(char *line)
 	}
 }
 
+static int add_sysfs_list(struct xhda_codec *codec, int *vals)
+{
+	struct xhda_sysfs_value *item = malloc(sizeof(*item));
+	struct xhda_sysfs_value *p;
+
+	if (!item)
+		return -ENOMEM;
+	memcpy(item->val, vals, sizeof(item->val));
+	item->next = NULL;
+	if (!codec->sysfs_list->entry)
+		codec->sysfs_list->entry = item;
+	else {
+		for (p = codec->sysfs_list->entry; p->next; p = p->next)
+			;
+		p->next = item;
+	}
+	return 0;
+}
+
+static int do_parse_sysfs(struct xhda_codec *codec, char *buffer)
+{
+	if (strmatch(buffer, "!!--"))
+		return 0;
+	if (strmatch(buffer, "/sys/class/sound/hwC")) {
+		char *p;
+		struct xhda_sysfs_list *sys;
+
+		sys = malloc(sizeof(*sys));
+		if (!sys) {
+			hda_log(HDA_LOG_ERR, "Cannot allocate\n");
+			return -ENOMEM;
+		}
+		sys->id = strdup(buffer + strlen("/sys/class/sound/"));
+		p = strchr(sys->id, ':');
+		if (p)
+			*p = 0;
+		hda_log(HDA_LOG_INFO, "Adding sysfs entry %s\n", sys->id);
+		sys->next = codec->sysfs_list;
+		sys->entry = NULL;
+		codec->sysfs_list = sys;
+		return 0;
+	}
+	if (isdigit(*buffer)) {
+		char *p;
+		int val[3];
+		if (!codec->sysfs_list)
+			return 0;
+		p = strchr(codec->sysfs_list->id, '/');
+		if (!p)
+			return 0;
+		if (!strcmp(p + 1, "init_verbs")) {
+			if (sscanf(buffer, "%i %i %i", &val[0], &val[1], &val[2]) != 3)
+				return 0;
+		} else {
+			if (sscanf(buffer, "%i %i", &val[0], &val[1]) != 2)
+				return 0;
+			val[2] = 0;
+		}
+		add_sysfs_list(codec, val);
+		return 0;
+	}
+	if (!*buffer || isspace(*buffer))
+		return 0;
+	return 1; /* no more data */
+}
+
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 {
 	char buffer[256], *p;
@@ -490,11 +559,29 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 			codec->parsed_name = strdup(buffer + strlen("Codec: "));
 			if (!codec->parsed_name)
 				return -ENOMEM;
-		} else if (strmatch(buffer, "Codec: "))
-			break;
-		if (!isspace(*buffer) &&
-		    (*buffer < 'A' || *buffer >= 'Z'))
-			break; /* no more lines */
+		} else if (strmatch(buffer, "Codec: ")) {
+			parse_mode = PARSE_POST;
+			continue;
+		}
+
+		if (parse_mode < PARSE_POST) {
+			if (!isspace(*buffer) &&
+			    (*buffer < 'A' || *buffer >= 'Z')) {
+				/* no more lines */
+				parse_mode = PARSE_POST;
+			}
+		}
+		if (parse_mode == PARSE_POST) {
+			if (strmatch(buffer, "!!Sysfs Files"))
+				parse_mode = PARSE_SYSFS;
+			continue;
+		}
+		if (parse_mode == PARSE_SYSFS) {
+			if (do_parse_sysfs(codec, buffer) > 0)
+				parse_mode = PARSE_POST;
+			continue;
+		}
+
 		if (parse_mode > PARSE_ROOT && *buffer != ' ') {
 			current_node = NULL;
 			parse_mode = PARSE_ROOT;

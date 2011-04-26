@@ -563,8 +563,8 @@ void hda_test_pcm(int id, int subid,
 			hda_log(HDA_LOG_INFO, " %d", rate_consts[i]);
 	}
 	hda_log(HDA_LOG_INFO, "\n");
-	if ((channels < runtime->hw.channels_min) ||
-	    (channels > runtime->hw.channels_max))
+	if (channels < runtime->hw.channels_min ||
+	    channels > runtime->hw.channels_max)
 		hda_log(HDA_LOG_ERR, "Channels count (%d) not available for %s\n", 
 			channels, (dir ? "capture" : "playback"));	
 	hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
@@ -670,6 +670,41 @@ static void old_pm_notify(struct hda_codec *codec)
 
 
 /*
+ * pin-config override
+ */
+
+static void set_pincfg(struct xhda_codec *codec, int nid, int val)
+{
+	struct xhda_node *node;
+
+	for (node = &codec->afg; node; node = node->next) {
+		if (node->nid == nid) {
+			node->pin_default = val;
+			hda_log(HDA_LOG_INFO, "  Pin 0x%02x to 0x%08x\n",
+				nid, val);
+			return;
+		}
+	}
+}
+
+static int override_pincfg(struct xhda_codec *codec, char *pincfg)
+{
+	struct xhda_sysfs_list *sys;
+
+	for (sys = codec->sysfs_list; sys; sys = sys->next) {
+		if (!strcmp(sys->id, pincfg)) {
+			struct xhda_sysfs_value *val;
+			hda_log(HDA_LOG_INFO, "Overriding pin-configs via %s\n", pincfg);
+			for (val = sys->entry; val; val = val->next)
+				set_pincfg(codec, val->val[0], val->val[1]);
+			return 0;
+		}
+	}
+	hda_log(HDA_LOG_ERR, "Cannot find init pincfg %s\n", pincfg);
+	return -EINVAL;
+}
+
+/*
  */
 static void usage(void)
 {
@@ -685,6 +720,7 @@ static void usage(void)
 	fprintf(stderr, "  -C             print messages in color (default)\n");
 	fprintf(stderr, "  -M             no color print\n");
 	fprintf(stderr, "  -a             issues assert at codec errors\n");
+	fprintf(stderr, "  -P pincfg      initialize pin-configuration from sysfs entry\n");
 }
 
 #include "kernel/init_hooks.h"
@@ -702,8 +738,9 @@ int main(int argc, char **argv)
 	struct pci_dev mypci;
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
+	char *init_pincfg = NULL;
 
-	while ((c = getopt(argc, argv, "al:i:p:m:do:qCM")) != -1) {
+	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMP:")) != -1) {
 		switch (c) {
 		case 'a':
 			hda_log_assert_on_error = 1;
@@ -736,6 +773,9 @@ int main(int argc, char **argv)
 		case 'M':
 			log_flags &= ~HDA_LOG_FLAG_COLOR;
 			break;
+		case 'P':
+			init_pincfg = optarg;
+			break;
 		default:
 			usage();
 			return 1;
@@ -759,6 +799,11 @@ int main(int argc, char **argv)
 	if (parse_codec_proc(fp, &proc, idx) < 0) {
 		hda_log(HDA_LOG_INFO, "error at reading proc\n");
 		return 1;
+	}
+
+	if (init_pincfg) {
+		if (override_pincfg(&proc, init_pincfg) < 0)
+			return 1;
 	}
 
 	mypci.vendor = proc.pci_vendor;
