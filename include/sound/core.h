@@ -9,7 +9,13 @@
 #define snd_printd	hda_log_printk
 #define snd_printdd	hda_log_printk
 #define snd_assert(x,y)
-#define snd_BUG_ON(x)   0
+static inline int _snd_BUG_ON(int cond, const char *func, int line)
+{
+	if (cond)
+		printk(KERN_ERR "XXX BUG in %s:%d\n", func, line);
+	return cond;
+}
+#define snd_BUG_ON(cond)	_snd_BUG_ON(cond, __func__, __LINE__)
 
 #include "asound.h"
 #include "codec_config.h"

@@ -221,7 +221,11 @@ typedef int snd_pcm_hw_param_t;
 #define SNDRV_PCM_STREAM_PLAYBACK	0
 #define SNDRV_PCM_STREAM_CAPTURE	1
 
-#define snd_pcm_hw_constraint_step(a,b,c,d)	0
+static inline int snd_pcm_hw_constraint_step(struct snd_pcm_runtime *runtime,
+					     int b, int parm, int val)
+{
+	return 0;
+}
 
 struct snd_pcm_hw_constraint_list {
 	unsigned int count;
