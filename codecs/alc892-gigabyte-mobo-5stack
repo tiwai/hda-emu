@@ -1,0 +1,2056 @@
+
+!!################################
+!!ALSA Information Script v 0.4.60
+!!################################
+
+!!Script ran on: Sun Apr 24 07:27:19 UTC 2011
+
+
+!!Linux Distribution
+!!------------------
+
+Slackware 13.37.0
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      Gigabyte Technology Co., Ltd.
+Product Name:      GA-MA78LMT-US2H
+Product Version:    
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.37.6
+Operating System:  GNU/Linux
+Architecture:      i686
+Processor:         AMD Phenom(tm) II X4 B55 Processor
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.24-5.16rc5
+Library version:    1.0.24.1
+Utilities version:  1.0.24.2
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+ESound Daemon:
+      Installed - Yes (/usr/bin/esd)
+      Running - No
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [SB             ]: HDA-Intel - HDA ATI SB
+                      HDA ATI SB at 0xfe024000 irq 16
+ 1 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xfbffc000 irq 19
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:14.2 Audio device: ATI Technologies Inc SBx00 Azalia (Intel HDA)
+01:00.1 Audio device: nVidia Corporation GF104 High Definition Audio Controller (rev a1)
+
+
+!!Advanced information - PCI Vendor/Device/Subsystem ID's
+!!--------------------------------------------------------
+
+00:14.2 0403: 1002:4383
+	Subsystem: 1458:a002
+--
+01:00.1 0403: 10de:0beb (rev a1)
+	Subsystem: 1458:3501
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 32,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : 0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 32,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : 0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Realtek ALC892
+Address: 0
+AFG Function Id: 0x1 (unsol 1)
+Vendor Id: 0x10ec0892
+Subsystem Id: 0x1458a102
+Revision Id: 0x100302
+No Modem Function Group found
+Default PCM:
+    rates [0x5f0]: 32000 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=2, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x02 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Front Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Device: name="ALC892 Analog", type="Audio", device=0
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x28 0x28]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x03 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Surround Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x34 0x34]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x04 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Center Playback Volume", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Control: name="LFE Playback Volume", index=0, device=0
+    ControlAmp: chs=2, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x34 0x34]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x05 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x06 [Audio Output] wcaps 0x611: Stereo Digital
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Control: name="IEC958 Default PCM Playback Switch", index=0, device=0
+  Device: name="ALC892 Digital", type="SPDIF", device=1
+  Converter: stream=5, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5f0]: 32000 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x08 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Switch", index=1, device=0
+  Control: name="Capture Volume", index=1, device=0
+  Amp-In caps: ofs=0x10, nsteps=0x2e, stepsize=0x03, mute=1
+  Amp-In vals:  [0x90 0x90]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x23
+Node 0x09 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Switch", index=0, device=0
+  Control: name="Capture Volume", index=0, device=0
+  Device: name="ALC892 Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x10, nsteps=0x2e, stepsize=0x03, mute=1
+  Amp-In vals:  [0x1c 0x1c]
+  Converter: stream=1, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x22
+Node 0x0a [Audio Input] wcaps 0x100711: Stereo Digital
+  Control: name="IEC958 Capture Switch", index=0, device=0
+  Control: name="IEC958 Capture Default", index=0, device=0
+  Device: name="ALC892 Digital", type="SPDIF", device=1
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x1f
+Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="CD Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Control: name="CD Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Control: name="Line Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Control: name="Line Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Control: name="Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Front Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Front Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x17 0x17] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x17
+Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Front Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x02 0x0b
+Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Surround Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x03 0x0b
+Node 0x0e [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Center Playback Switch", index=0, device=0
+    ControlAmp: chs=1, dir=In, idx=0, ofs=0
+  Control: name="LFE Playback Switch", index=0, device=0
+    ControlAmp: chs=2, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x04 0x0b
+Node 0x0f [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80]
+  Connection: 2
+     0x05 0x0b
+Node 0x10 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5f0]: 32000 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x11 [Pin Complex] wcaps 0x400781: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x99430140: [Fixed] SPDIF Out at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x4, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x10
+Node 0x12 [Pin Complex] wcaps 0x400401: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x14 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000003e: IN OUT HP Detect Trigger
+  Pin Default 0x01014410: [Jack] Line Out at Ext Rear
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0c
+Node 0x15 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00000036: IN OUT Detect Trigger
+  Pin Default 0x01011412: [Jack] Line Out at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x1, Sequence = 0x2
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0d
+Node 0x16 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00000036: IN OUT Detect Trigger
+  Pin Default 0x01016411: [Jack] Line Out at Ext Rear
+    Conn = 1/8, Color = Orange
+    DefAssociation = 0x1, Sequence = 0x1
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0e
+Node 0x17 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00000036: IN OUT Detect Trigger
+  Pin Default 0x01012414: [Jack] Line Out at Ext Rear
+    Conn = 1/8, Color = Grey
+    DefAssociation = 0x1, Sequence = 0x4
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0f
+Node 0x18 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00003736: IN OUT Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x01a19c50: [Jack] Mic at Ext Rear
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x5, Sequence = 0x0
+  Pin-ctls: 0x40: OUT VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c 0x0d 0x0e* 0x0f 0x26
+Node 0x19 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000373e: IN OUT HP Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x02a19c60: [Jack] Mic at Ext Front
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x6, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c* 0x0d 0x0e 0x0f 0x26
+Node 0x1a [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00003736: IN OUT Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x0181345f: [Jack] Line In at Ext Rear
+    Conn = 1/8, Color = Blue
+    DefAssociation = 0x5, Sequence = 0xf
+  Pin-ctls: 0x40: OUT VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c 0x0d* 0x0e 0x0f 0x26
+Node 0x1b [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Control: name="Headphone Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000373e: IN OUT HP Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x02214c20: [Jack] HP Out at Ext Front
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x2, Sequence = 0x0
+  Pin-ctls: 0xc0: OUT HP VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c* 0x0d 0x0e 0x0f 0x26
+Node 0x1c [Pin Complex] wcaps 0x400481: Stereo
+  Pincap 0x00000024: IN Detect
+  Pin Default 0x593301f0: [N/A] CD at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1d [Pin Complex] wcaps 0x400400: Mono
+  Pincap 0x00000020: IN
+  Pin Default 0x4005e601: [N/A] Line Out at Ext N/A
+    Conn = Optical, Color = White
+    DefAssociation = 0x0, Sequence = 0x1
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1e [Pin Complex] wcaps 0x400781: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x014b6130: [Jack] SPDIF Out at Ext Rear
+    Conn = Comb, Color = Orange
+    DefAssociation = 0x3, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x06
+Node 0x1f [Pin Complex] wcaps 0x400681: Stereo Digital
+  Pincap 0x00000024: IN Detect
+  Pin Default 0x01cb7170: [Jack] SPDIF In at Ext Rear
+    Conn = Comb, Color = Yellow
+    DefAssociation = 0x7, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono
+  Processing caps: benign=0, ncoeff=24
+Node 0x21 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Input Source", index=0, device=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 12
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x17 0x0b 0x12
+Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Input Source", index=1, device=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 11
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x17 0x0b
+Node 0x24 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x25 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x26 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80]
+  Connection: 2
+     0x25 0x0b
+Codec: Nvidia GPU 12 HDMI/DP
+Address: 0
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0012
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Device: name="HDMI 0", type="HDMI", device=3
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=05, enabled=1
+  Connection: 1
+     0x04
+Codec: Nvidia GPU 12 HDMI/DP
+Address: 1
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0012
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Control: name="IEC958 Playback Con Mask", index=1, device=0
+  Control: name="IEC958 Playback Pro Mask", index=1, device=0
+  Control: name="IEC958 Playback Default", index=1, device=0
+  Control: name="IEC958 Playback Switch", index=1, device=0
+  Device: name="HDMI 0", type="HDMI", device=7
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=05, enabled=1
+  Connection: 1
+     0x04
+Codec: Nvidia GPU 12 HDMI/DP
+Address: 2
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0012
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Control: name="IEC958 Playback Con Mask", index=2, device=0
+  Control: name="IEC958 Playback Pro Mask", index=2, device=0
+  Control: name="IEC958 Playback Default", index=2, device=0
+  Control: name="IEC958 Playback Switch", index=2, device=0
+  Device: name="HDMI 0", type="HDMI", device=8
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=05, enabled=1
+  Connection: 1
+     0x04
+Codec: Nvidia GPU 12 HDMI/DP
+Address: 3
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0012
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Control: name="IEC958 Playback Con Mask", index=3, device=0
+  Control: name="IEC958 Playback Pro Mask", index=3, device=0
+  Control: name="IEC958 Playback Default", index=3, device=0
+  Control: name="IEC958 Playback Switch", index=3, device=0
+  Device: name="HDMI 0", type="HDMI", device=9
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=05, enabled=1
+  Connection: 1
+     0x04
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw---- 1 root audio 116,  7 Apr 24 09:26 /dev/snd/controlC0
+crw-rw---- 1 root audio 116, 16 Apr 24 09:26 /dev/snd/controlC1
+crw-rw---- 1 root audio 116,  6 Apr 24 09:26 /dev/snd/hwC0D0
+crw-rw---- 1 root audio 116, 15 Apr 24 09:26 /dev/snd/hwC1D0
+crw-rw---- 1 root audio 116, 14 Apr 24 09:26 /dev/snd/hwC1D1
+crw-rw---- 1 root audio 116, 13 Apr 24 09:26 /dev/snd/hwC1D2
+crw-rw---- 1 root audio 116, 12 Apr 24 09:26 /dev/snd/hwC1D3
+crw-rw---- 1 root audio 116,  5 Apr 24 09:26 /dev/snd/pcmC0D0c
+crw-rw---- 1 root audio 116,  4 Apr 24 09:28 /dev/snd/pcmC0D0p
+crw-rw---- 1 root audio 116,  3 Apr 24 09:26 /dev/snd/pcmC0D1c
+crw-rw---- 1 root audio 116,  2 Apr 24 09:26 /dev/snd/pcmC0D1p
+crw-rw---- 1 root audio 116, 11 Apr 24 09:26 /dev/snd/pcmC1D3p
+crw-rw---- 1 root audio 116, 10 Apr 24 09:26 /dev/snd/pcmC1D7p
+crw-rw---- 1 root audio 116,  9 Apr 24 09:26 /dev/snd/pcmC1D8p
+crw-rw---- 1 root audio 116,  8 Apr 24 09:26 /dev/snd/pcmC1D9p
+crw-rw---- 1 root audio 116,  1 Apr 24 09:41 /dev/snd/seq
+crw-rw---- 1 root audio 116, 33 Apr 24 09:26 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  80 Apr 24 09:26 .
+drwxr-xr-x 3 root root 400 Apr 24 09:41 ..
+lrwxrwxrwx 1 root root  12 Apr 24 09:26 pci-0000:00:14.2 -> ../controlC0
+lrwxrwxrwx 1 root root  12 Apr 24 09:26 pci-0000:01:00.1 -> ../controlC1
+
+
+!!ALSA configuration files
+!!------------------------
+
+!!User specific config file (~/.asoundrc)
+
+pcm.HDA-Intel {
+     type hw
+     card 0
+            }
+ctl.HDA-Intel {
+     type hw
+     card 0
+            }
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: SB [HDA ATI SB], device 0: ALC892 Analog [ALC892 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: SB [HDA ATI SB], device 1: ALC892 Digital [ALC892 Digital]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 7: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 8: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 9: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: SB [HDA ATI SB], device 0: ALC892 Analog [ALC892 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: SB [HDA ATI SB], device 1: ALC892 Digital [ALC892 Digital]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [SB]
+
+Card hw:0 'SB'/'HDA ATI SB at 0xfe024000 irq 16'
+  Mixer name	: 'Realtek ALC892'
+  Components	: 'HDA:10ec0892,1458a102,00100302'
+  Controls      : 35
+  Simple ctrls  : 19
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 52 [81%] [-12.00dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pswitch penum
+  Playback channels: Front Left - Front Right
+  Mono:
+  Front Left: Playback [on]
+  Front Right: Playback [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Front',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 52 [81%] [-12.00dB] [on]
+  Front Right: Playback 52 [81%] [-12.00dB] [on]
+Simple mixer control 'Front Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Surround',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Center',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'LFE',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Line',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'CD',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 23 [74%] [0.00dB] [on]
+  Front Right: Playback 23 [74%] [0.00dB] [on]
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined cswitch cswitch-joined penum
+  Playback channels: Mono
+  Capture channels: Mono
+  Mono: Playback [off] Capture [off]
+Simple mixer control 'IEC958 Default PCM',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 46
+  Front Left: Capture 28 [61%] [12.00dB] [on]
+  Front Right: Capture 28 [61%] [12.00dB] [on]
+Simple mixer control 'Capture',1
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 46
+  Front Left: Capture 16 [35%] [0.00dB] [off]
+  Front Right: Capture 16 [35%] [0.00dB] [off]
+Simple mixer control 'Channel Mode',0
+  Capabilities: enum
+  Items: '2ch' '6ch'
+  Item0: '6ch'
+Simple mixer control 'Digital',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 120
+  Front Left: Capture 60 [50%] [0.00dB]
+  Front Right: Capture 60 [50%] [0.00dB]
+Simple mixer control 'Input Source',0
+  Capabilities: cenum
+  Items: 'Mic' 'Front Mic' 'Line' 'CD'
+  Item0: 'Mic'
+Simple mixer control 'Input Source',1
+  Capabilities: cenum
+  Items: 'Mic' 'Front Mic' 'Line' 'CD'
+  Item0: 'Mic'
+
+!!-------Mixer controls for card 1 [NVidia]
+
+Card hw:1 'NVidia'/'HDA NVidia at 0xfbffc000 irq 19'
+  Mixer name	: 'Nvidia GPU 12 HDMI/DP'
+  Components	: 'HDA:10de0012,10de0101,00100100'
+  Controls      : 16
+  Simple ctrls  : 4
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [off]
+Simple mixer control 'IEC958',1
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [off]
+Simple mixer control 'IEC958',2
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [off]
+Simple mixer control 'IEC958',3
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [off]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.SB {
+	control.1 {
+		iface MIXER
+		name 'Front Playback Volume'
+		value.0 52
+		value.1 52
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 64'
+			dbmin -6400
+			dbmax 0
+			dbvalue.0 -1200
+			dbvalue.1 -1200
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'Front Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'Surround Playback Volume'
+		value.0 64
+		value.1 64
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 64'
+			dbmin -6400
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'Surround Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'Center Playback Volume'
+		value 64
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 64'
+			dbmin -6400
+			dbmax 0
+			dbvalue.0 0
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'LFE Playback Volume'
+		value 64
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 64'
+			dbmin -6400
+			dbmax 0
+			dbvalue.0 0
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'Center Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'LFE Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'CD Playback Volume'
+		value.0 23
+		value.1 23
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'CD Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'Line Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -3450
+			dbvalue.1 -3450
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'Line Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'Mic Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -3450
+			dbvalue.1 -3450
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'Mic Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'Front Mic Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -3450
+			dbvalue.1 -3450
+		}
+	}
+	control.17 {
+		iface MIXER
+		name 'Front Mic Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.18 {
+		iface MIXER
+		name 'Channel Mode'
+		value '6ch'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 '2ch'
+			item.1 '6ch'
+		}
+	}
+	control.19 {
+		iface MIXER
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.20 {
+		iface MIXER
+		name 'Capture Switch'
+		index 1
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.21 {
+		iface MIXER
+		name 'Capture Volume'
+		value.0 28
+		value.1 28
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 46'
+			dbmin -1600
+			dbmax 3000
+			dbvalue.0 1200
+			dbvalue.1 1200
+		}
+	}
+	control.22 {
+		iface MIXER
+		name 'Capture Volume'
+		index 1
+		value.0 16
+		value.1 16
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 46'
+			dbmin -1600
+			dbmax 3000
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.23 {
+		iface MIXER
+		name 'Input Source'
+		value Mic
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Mic
+			item.1 'Front Mic'
+			item.2 Line
+			item.3 CD
+		}
+	}
+	control.24 {
+		iface MIXER
+		name 'Input Source'
+		index 1
+		value Mic
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Mic
+			item.1 'Front Mic'
+			item.2 Line
+			item.3 CD
+		}
+	}
+	control.25 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.26 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.27 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.28 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.29 {
+		iface MIXER
+		name 'IEC958 Default PCM Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.30 {
+		iface MIXER
+		name 'IEC958 Capture Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.31 {
+		iface MIXER
+		name 'IEC958 Capture Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.32 {
+		iface MIXER
+		name 'Master Playback Volume'
+		value 52
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 64'
+			dbmin -6400
+			dbmax 0
+			dbvalue.0 -1200
+		}
+	}
+	control.33 {
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.34 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.35 {
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 60
+		value.1 60
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 120'
+			tlv '0000000100000008fffff44800000032'
+			dbmin -3000
+			dbmax 3000
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+}
+state.NVidia {
+	control.1 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 1
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 1
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 1
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 1
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 2
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 2
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 2
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 2
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 3
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 3
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 3
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 3
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+snd_seq_dummy
+snd_seq_oss
+snd_seq_midi_event
+snd_seq
+snd_seq_device
+snd_pcm_oss
+snd_mixer_oss
+snd_hda_codec_hdmi
+snd_hda_codec_realtek
+snd_hda_intel
+snd_hda_codec
+snd_hwdep
+snd_pcm
+snd_timer
+snd
+soundcore
+it87
+hwmon_vid
+ipv6
+lp
+fuse
+nvidia
+r8169
+mii
+hid_a4tech
+agpgart
+ppdev
+processor
+i2c_piix4
+snd_page_alloc
+thermal_sys
+usbhid
+serio_raw
+sg
+parport_pc
+i2c_core
+k10temp
+wmi
+shpchp
+rtc_cmos
+rtc_core
+hid
+evdev
+parport
+hwmon
+rtc_lib
+button
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x11 0x99430140
+0x12 0x411111f0
+0x14 0x01014410
+0x15 0x01011412
+0x16 0x01016411
+0x17 0x01012414
+0x18 0x01a19c50
+0x19 0x02a19c60
+0x1a 0x0181345f
+0x1b 0x02214c20
+0x1c 0x593301f0
+0x1d 0x4005e601
+0x1e 0x014b6130
+0x1f 0x01cb7170
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC1D0/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D0/driver_pin_configs:
+
+/sys/class/sound/hwC1D0/user_pin_configs:
+
+/sys/class/sound/hwC1D0/init_verbs:
+
+/sys/class/sound/hwC1D1/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D1/driver_pin_configs:
+
+/sys/class/sound/hwC1D1/user_pin_configs:
+
+/sys/class/sound/hwC1D1/init_verbs:
+
+/sys/class/sound/hwC1D2/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D2/driver_pin_configs:
+
+/sys/class/sound/hwC1D2/user_pin_configs:
+
+/sys/class/sound/hwC1D2/init_verbs:
+
+/sys/class/sound/hwC1D3/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D3/driver_pin_configs:
+
+/sys/class/sound/hwC1D3/user_pin_configs:
+
+/sys/class/sound/hwC1D3/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+el 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22634.931741] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22634.931743] hda_intel: Disable MSI for Nvidia chipset
+[22634.931769] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22635.296262] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22635.296578] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22635.362396] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22635.381326] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22635.381329] hda_intel: Disable MSI for Nvidia chipset
+[22635.381353] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22642.679452] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22642.679719] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22642.683552] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22642.700768] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22642.700770] hda_intel: Disable MSI for Nvidia chipset
+[22642.700791] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22643.061578] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22643.061901] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22643.126814] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22643.146346] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22643.146349] hda_intel: Disable MSI for Nvidia chipset
+[22643.146373] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22654.438480] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22654.438749] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22654.443583] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22654.458745] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22654.458748] hda_intel: Disable MSI for Nvidia chipset
+[22654.458768] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22654.821657] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22654.822417] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22654.888105] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22654.907367] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22654.907369] hda_intel: Disable MSI for Nvidia chipset
+[22654.907394] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22668.633447] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22668.633716] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22668.638427] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22668.652701] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22668.652703] hda_intel: Disable MSI for Nvidia chipset
+[22668.652724] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22669.017895] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22669.018521] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22669.083844] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22669.102411] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22669.102414] hda_intel: Disable MSI for Nvidia chipset
+[22669.102438] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22677.505450] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22677.505714] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22677.512628] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22677.526763] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22677.526765] hda_intel: Disable MSI for Nvidia chipset
+[22677.526786] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22677.887808] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22677.888523] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22677.953364] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22677.972389] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22677.972391] hda_intel: Disable MSI for Nvidia chipset
+[22677.972416] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22691.907464] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22691.907730] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22691.912449] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22691.926692] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22691.926694] hda_intel: Disable MSI for Nvidia chipset
+[22691.926708] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22692.287849] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22692.289562] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22692.354147] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22692.373317] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22692.373319] hda_intel: Disable MSI for Nvidia chipset
+[22692.373344] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22695.761438] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22695.761715] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22695.766314] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22695.780841] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22695.780843] hda_intel: Disable MSI for Nvidia chipset
+[22695.780864] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22696.144902] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22696.145270] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22696.211422] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22696.230364] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22696.230366] hda_intel: Disable MSI for Nvidia chipset
+[22696.230391] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22708.262458] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22708.262733] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22708.268005] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22708.284752] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22708.284753] hda_intel: Disable MSI for Nvidia chipset
+[22708.284767] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22708.648056] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22708.648673] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22708.713504] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22708.732352] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22708.732354] hda_intel: Disable MSI for Nvidia chipset
+[22708.732377] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22747.108418] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22747.108684] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22747.113866] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22747.129942] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22747.129945] hda_intel: Disable MSI for Nvidia chipset
+[22747.129967] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22747.492125] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22747.492542] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22747.569764] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22747.588254] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22747.588256] hda_intel: Disable MSI for Nvidia chipset
+[22747.588281] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22759.305477] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22759.305739] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22759.309995] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22759.324772] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22759.324774] hda_intel: Disable MSI for Nvidia chipset
+[22759.324795] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22759.685760] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22759.686294] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22759.751742] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22759.770333] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22759.770336] hda_intel: Disable MSI for Nvidia chipset
+[22759.770360] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22771.804463] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22771.804731] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22771.811207] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22771.826763] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22771.826766] hda_intel: Disable MSI for Nvidia chipset
+[22771.826792] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22772.190481] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22772.191215] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22772.256123] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22772.275349] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22772.275352] hda_intel: Disable MSI for Nvidia chipset
+[22772.275376] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22784.293440] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22784.293720] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22784.298760] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22784.312752] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22784.312754] hda_intel: Disable MSI for Nvidia chipset
+[22784.312774] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22784.675810] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22784.676535] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22784.741146] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22784.760265] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22784.760267] hda_intel: Disable MSI for Nvidia chipset
+[22784.760292] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22793.736455] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22793.736724] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22793.741526] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22793.759705] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22793.759707] hda_intel: Disable MSI for Nvidia chipset
+[22793.759720] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22794.121045] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22794.123601] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22794.187742] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22794.206301] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22794.206304] hda_intel: Disable MSI for Nvidia chipset
+[22794.206328] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22805.395485] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22805.395756] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22805.400688] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22805.414709] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22805.414711] hda_intel: Disable MSI for Nvidia chipset
+[22805.414731] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22805.777759] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22805.778893] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22805.844476] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22805.864366] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22805.864369] hda_intel: Disable MSI for Nvidia chipset
+[22805.864393] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22816.538447] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22816.538717] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22816.543670] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22816.558708] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22816.558710] hda_intel: Disable MSI for Nvidia chipset
+[22816.558730] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22816.922158] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22816.922486] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22816.987926] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22817.006429] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22817.006432] hda_intel: Disable MSI for Nvidia chipset
+[22817.006457] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22827.917474] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22827.917740] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22827.922585] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22827.936751] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22827.936753] hda_intel: Disable MSI for Nvidia chipset
+[22827.936767] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22828.298894] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22828.299638] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22828.364411] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22828.383329] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22828.383332] hda_intel: Disable MSI for Nvidia chipset
+[22828.383356] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22836.269440] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22836.269724] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22836.274348] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22836.288769] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22836.288771] hda_intel: Disable MSI for Nvidia chipset
+[22836.288791] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22836.649894] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22836.651101] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22836.715895] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22836.735323] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22836.735326] hda_intel: Disable MSI for Nvidia chipset
+[22836.735350] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22852.442500] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22852.443135] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22852.449157] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22852.464742] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22852.464744] hda_intel: Disable MSI for Nvidia chipset
+[22852.464765] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22852.828072] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22852.828732] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22852.893016] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22852.912405] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22852.912408] hda_intel: Disable MSI for Nvidia chipset
+[22852.912431] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22862.266454] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22862.266723] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22862.271577] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22862.288731] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22862.288733] hda_intel: Disable MSI for Nvidia chipset
+[22862.288746] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22862.650330] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22862.650857] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22862.716329] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22862.735427] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22862.735430] hda_intel: Disable MSI for Nvidia chipset
+[22862.735454] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22883.357456] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22883.357720] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22883.363012] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22883.377815] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22883.377817] hda_intel: Disable MSI for Nvidia chipset
+[22883.377830] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22883.741420] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22883.742472] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22883.807135] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22883.826334] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22883.826337] hda_intel: Disable MSI for Nvidia chipset
+[22883.826361] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22896.360459] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22896.360723] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22896.365659] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22896.380801] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22896.380803] hda_intel: Disable MSI for Nvidia chipset
+[22896.380823] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22896.741256] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22896.742793] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22896.807328] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22896.826326] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22896.826329] hda_intel: Disable MSI for Nvidia chipset
+[22896.826354] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22919.202430] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22919.202699] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22919.207637] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22919.222844] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22919.222847] hda_intel: Disable MSI for Nvidia chipset
+[22919.222868] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22919.586683] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22919.587907] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22919.652880] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22919.671235] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22919.671238] hda_intel: Disable MSI for Nvidia chipset
+[22919.671268] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22929.648434] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22929.648705] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22929.653333] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22929.667765] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22929.667768] hda_intel: Disable MSI for Nvidia chipset
+[22929.667788] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22930.030477] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22930.031276] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22930.096991] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22930.116297] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22930.116300] hda_intel: Disable MSI for Nvidia chipset
+[22930.116324] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22940.360464] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22940.360734] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22940.365372] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22940.379738] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22940.379741] hda_intel: Disable MSI for Nvidia chipset
+[22940.379761] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22940.740261] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22940.741062] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22940.806720] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22940.825365] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22940.825368] hda_intel: Disable MSI for Nvidia chipset
+[22940.825392] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22950.366453] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22950.366729] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22950.372547] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22950.387726] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22950.387728] hda_intel: Disable MSI for Nvidia chipset
+[22950.387749] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22950.751057] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22950.752333] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22950.817025] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22950.836367] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22950.836369] hda_intel: Disable MSI for Nvidia chipset
+[22950.836393] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22994.904452] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22994.904721] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22994.909036] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22994.924787] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22994.924789] hda_intel: Disable MSI for Nvidia chipset
+[22994.924810] HDA Intel 0000:01:00.1: setting latency timer to 64
+[22995.286827] HDA Intel 0000:01:00.1: PCI INT B disabled
+[22995.287715] HDA Intel 0000:00:14.2: PCI INT A disabled
+[22995.352115] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[22995.371265] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[22995.371267] hda_intel: Disable MSI for Nvidia chipset
+[22995.371292] HDA Intel 0000:01:00.1: setting latency timer to 64
+[50458.411413] ata1.00: configured for UDMA/133
+--
+[50459.020070] EXT4-fs (sda8): re-mounted. Opts: barrier=1,data=ordered,commit=0
+[52712.204025] HDA Intel 0000:01:00.1: PCI INT B disabled
+[52802.030345] HDA Intel 0000:00:14.2: PCI INT A disabled
+[52910.775157] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[52910.790770] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[52910.790772] hda_intel: Disable MSI for Nvidia chipset
+[52910.790794] HDA Intel 0000:01:00.1: setting latency timer to 64
+[52911.154963] HDA Intel 0000:01:00.1: PCI INT B disabled
+[52911.155328] HDA Intel 0000:00:14.2: PCI INT A disabled
+[52911.221937] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[52911.240321] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[52911.240323] hda_intel: Disable MSI for Nvidia chipset
+[52911.240348] HDA Intel 0000:01:00.1: setting latency timer to 64
+[52952.514382] HDA Intel 0000:01:00.1: PCI INT B disabled
+[52952.514655] HDA Intel 0000:00:14.2: PCI INT A disabled
+[52952.521208] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[52952.541378] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input14
+[52952.541466] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[52952.541468] hda_intel: Disable MSI for Nvidia chipset
+[52952.541489] HDA Intel 0000:01:00.1: setting latency timer to 64
+[52952.906265] HDA Intel 0000:01:00.1: PCI INT B disabled
+[52952.908218] HDA Intel 0000:00:14.2: PCI INT A disabled
+[52952.973759] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[52952.996854] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input15
+[52952.996940] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[52952.996942] hda_intel: Disable MSI for Nvidia chipset
+[52952.996967] HDA Intel 0000:01:00.1: setting latency timer to 64
+[52972.982053] ata1.00: configured for UDMA/133
+--
+[52973.260620] EXT4-fs (sda8): re-mounted. Opts: barrier=1,data=ordered,commit=0
+[53019.327141] hda-intel: IRQ timing workaround is activated for card #0. Suggest a bigger bdl_pos_adj.
+[53348.207039] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53415.365570] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53419.502538] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53419.520862] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input16
+[53419.520945] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53419.520947] hda_intel: Disable MSI for Nvidia chipset
+[53419.520969] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53419.884366] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53419.887255] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53419.953269] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53419.976412] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input17
+[53419.976502] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53419.976504] hda_intel: Disable MSI for Nvidia chipset
+[53419.976528] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53436.040278] hda-intel: IRQ timing workaround is activated for card #0. Suggest a bigger bdl_pos_adj.
+[53532.314846] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53532.319326] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53532.322562] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53532.340773] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input18
+[53532.340855] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53532.340856] hda_intel: Disable MSI for Nvidia chipset
+[53532.340877] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53532.704481] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53532.707550] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53532.772993] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53532.796348] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input19
+[53532.796430] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53532.796432] hda_intel: Disable MSI for Nvidia chipset
+[53532.796457] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53553.281749] hda-intel: IRQ timing workaround is activated for card #0. Suggest a bigger bdl_pos_adj.
+[53600.773694] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53600.776241] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53600.780908] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53600.798978] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input20
+[53600.799061] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53600.799063] hda_intel: Disable MSI for Nvidia chipset
+[53600.799083] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53601.162767] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53601.165555] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53601.231391] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53601.254362] input: HDA ATI SB Headphone as /devices/pci0000:00/0000:00:14.2/sound/card0/input21
+[53601.254444] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53601.254446] hda_intel: Disable MSI for Nvidia chipset
+[53601.254470] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53658.013998] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53658.017214] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53658.021819] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53658.037743] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53658.037746] hda_intel: Disable MSI for Nvidia chipset
+[53658.037766] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53658.404796] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53658.406433] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53658.473311] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53658.492430] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53658.492433] hda_intel: Disable MSI for Nvidia chipset
+[53658.492457] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53712.311743] hda-intel: IRQ timing workaround is activated for card #0. Suggest a bigger bdl_pos_adj.
+[53908.437340] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53908.437610] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53908.444198] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53908.458747] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53908.458749] hda_intel: Disable MSI for Nvidia chipset
+[53908.458763] HDA Intel 0000:01:00.1: setting latency timer to 64
+[53908.823833] HDA Intel 0000:01:00.1: PCI INT B disabled
+[53908.824491] HDA Intel 0000:00:14.2: PCI INT A disabled
+[53908.891611] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[53908.910316] HDA Intel 0000:01:00.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[53908.910318] hda_intel: Disable MSI for Nvidia chipset
+[53908.910342] HDA Intel 0000:01:00.1: setting latency timer to 64
+[54029.896670] ata1.00: configured for UDMA/133
+
+
