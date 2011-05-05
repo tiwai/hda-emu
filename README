@@ -212,6 +212,30 @@ BASIC COMMANDS
 	> verb 0x0d 0xf07 0x00
 	Command response:: 0xc0
 
+* unsol
+
+  Issue an unsolicited event.  Pass the NID to issue an event.
+  The tag is automatically obtained from the current widget status.
+
+* pm
+
+  Simulate suspend/resume cycle.
+
+* option
+
+  Change the module option dynamically.
+  Currently, only power_save option can be changed by this command.
+
+* fs
+
+  Access to sysfs file entry.  This command takes a sub-command,
+  either of "get", "set" and "list".  Not all sysfs files are
+  available yet.
+
+  "fs list" shows the available sysfs file entries.
+  Both "fs get" and "fs set" are available only for some entries like
+  clear and reconfig.
+
 * quit
 
   Quit the shell.
@@ -243,6 +267,39 @@ As default, hda-emu outputs the lines in color using ANSI escape
 sequences.  The escape sequences will be stripped in the log files,
 though.  You can toggle color/non-color behavior via -C and -M
 options, respectively.
+
+
+INITIAL PIN-CONFIGURATION
+-------------------------
+
+As default, hda-emu takes the default pin-configurations as set in the
+given codec proc file (or the proc file content in the given
+alsa-info.sh output).  But the codec proc file might contain the
+status that is already overwritten by the driver or changed by user,
+which isn't identical with the real initial state.
+
+When the pin-config sysfs file is available, hda-emu can read it and
+initialize the pin defaults accordingly via -P option.  When the input
+file is a recent alsa-info.sh output containing sysfs file entries,
+pass like "-P hwC0D0/init_pin_configs".  Then hda-emu will initialize
+the pin-default contents found in hwC0D0/init_pin_configs sysfs file.
+
+You can also pass an external file name to -P option instead of the
+sysfs files in the input file.  The file must contain a pair of
+register and pin-config value in each line just like in *_pin_configs
+sysfs files.
+
+
+DEBUGGING DRIVER WITH GDB
+-------------------------
+
+It's often useful to debug the driver behavior via gdb.  When you pass
+-a option to hda-emu, it'll send SIGTRAP when the error is from the
+driver; i.e. when printk(KERN_ERR ...) is issued.  Then gdb will trap
+it and you can see the code path and invesitage there.
+
+The -a option doesn't affect operations when hda-emu isn't invoked in
+gdb or such, as SIGTRAP is ignored as default in hda-emu.
 
 
 DOWNLOAD
