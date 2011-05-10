@@ -453,5 +453,17 @@ if test "$STREAM_FORMAT_WITH_SPDIF" = "1"; then
   AC_DEFINE(STREAM_FORMAT_WITH_SPDIF)
 fi
 
+HAVE_COMMON_PREPARE=
+AC_MSG_CHECKING(for common snd_hda_codec_prepare/cleanup)
+if grep -q snd_hda_codec_prepare kernel/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_COMMON_PREPARE=yes
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_COMMON_PREAPRE" = "yes"; then
+  AC_DEFINE(HAVE_COMMON_PREPARE)
+fi
+
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 

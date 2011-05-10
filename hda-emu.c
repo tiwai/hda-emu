@@ -582,11 +582,18 @@ void hda_test_pcm(int id, int subid,
 		snd_hda_power_down(_codec);
 		return;
 	}
+#ifdef HAVE_COMMON_PREPARE
+	hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
+	err = snd_hda_codec_prepare(_codec, hinfo, subid,
+				    format_val, substream);
+	hda_log(HDA_LOG_INFO, "PCM Clean up\n");
+	snd_hda_codec_cleanup(_codec, hinfo, substream);
+#else
 	hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
 	err = hinfo->ops.prepare(hinfo, _codec, 1, format_val, substream);
-
 	hda_log(HDA_LOG_INFO, "PCM Clean up\n");
 	hinfo->ops.cleanup(hinfo, _codec, substream);
+#endif
 
 	substream->ref_count = 0;
 	hda_log(HDA_LOG_INFO, "Close PCM\n");
