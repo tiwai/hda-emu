@@ -55,6 +55,8 @@ static struct snd_card card = {
 };
 static struct xhda_codec proc;
 
+static int ignore_invalid_ftype;
+
 static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 {
 	unsigned int nid = (cmd >> 20) & 0x7f;
@@ -97,9 +99,11 @@ static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 
 	err = hda_cmd(&proc, cmd);
 	if (err < 0) {
-		hda_log(HDA_LOG_ERR, "invalid command: "
-			"NID=0x%x, verb=0x%x, parm=0x%x\n",
-			nid, verb, parm);
+		if (verb != AC_VERB_PARAMETERS || parm != AC_PAR_FUNCTION_TYPE ||
+		    !ignore_invalid_ftype)
+			hda_log(HDA_LOG_ERR, "invalid command: "
+				"NID=0x%x, verb=0x%x, parm=0x%x\n",
+				nid, verb, parm);
 		return err;
 	}
 	return 0;
@@ -882,11 +886,13 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
+	ignore_invalid_ftype = 1;
 #ifdef OLD_HDA_CODEC_NEW
 	err = snd_hda_codec_new(bus, proc.addr, &codec);
 #else
 	err = snd_hda_codec_new(bus, proc.addr, 1, &codec);
 #endif
+	ignore_invalid_ftype = 0;
 	if (err) {
 		hda_log(HDA_LOG_ERR, "cannot create codec\n");
 		return 1;
