@@ -77,7 +77,8 @@ static void _hda_log(int level, const char *fmt, va_list ap)
 	va_end(ap2);
 	if (logfp == stdout)
 		reset_color();
-	if (level == HDA_LOG_ERR && hda_log_trap_on_error)
+	if ((level == HDA_LOG_ERR || level == HDA_LOG_WARN) &&
+	    hda_log_trap_on_error)
 		raise(SIGTRAP);
 }
 
