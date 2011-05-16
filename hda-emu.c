@@ -483,7 +483,7 @@ static int rate_consts[] = {
 };
 
 /* test the given PCM stream, called from hda-ctlsh.c */
-void hda_test_pcm(int id, int subid,
+void hda_test_pcm(int id, int op, int subid,
 		  int dir, int rate, int channels, int format)
 {
 	static struct snd_pcm_substream dummy_substream;
@@ -538,71 +538,76 @@ void hda_test_pcm(int id, int subid,
 	runtime->hw.formats = hinfo->formats;
 	runtime->hw.rates = hinfo->rates;
 
-	hda_log(HDA_LOG_INFO, "Open PCM %s for %s\n",
-		pcm_streams[id].name,
-		(dir ? "capt" : "play"));
-	snd_hda_power_up(_codec);
-	err = hinfo->ops.open(hinfo, _codec, substream);
-	if (err < 0) {
-		hda_log(HDA_LOG_INFO, "Open error = %d\n", err);
-		snd_hda_power_down(_codec);
-		return;
-	}
-	
-	hda_log(HDA_LOG_INFO, "Available PCM parameters:\n");
-	hda_log(HDA_LOG_INFO, "  channels: %d/%d\n",
-		runtime->hw.channels_min,
-		runtime->hw.channels_max);
-	hda_log(HDA_LOG_INFO, "  formats:");
-	for (i = 0; i < ARRAY_SIZE(fmt_names); i++) {
-		if (runtime->hw.formats & (1ULL << i)) {
-			if (fmt_names[i])
-				hda_log(HDA_LOG_INFO, " %s", fmt_names[i]);
-			else
-				hda_log(HDA_LOG_INFO, " Uknown#%d", i);
+	if (op != PCM_TEST_END) {
+		hda_log(HDA_LOG_INFO, "Open PCM %s for %s\n",
+			pcm_streams[id].name,
+			(dir ? "capt" : "play"));
+		snd_hda_power_up(_codec);
+		err = hinfo->ops.open(hinfo, _codec, substream);
+		if (err < 0) {
+			hda_log(HDA_LOG_INFO, "Open error = %d\n", err);
+			snd_hda_power_down(_codec);
+			return;
 		}
-	}
-	hda_log(HDA_LOG_INFO, "\n  rates:");
-	for (i = 0; i < ARRAY_SIZE(rate_consts); i++) {
-		if (runtime->hw.rates & (1UL << i))
-			hda_log(HDA_LOG_INFO, " %d", rate_consts[i]);
-	}
-	hda_log(HDA_LOG_INFO, "\n");
-	if (channels < runtime->hw.channels_min ||
-	    channels > runtime->hw.channels_max)
-		hda_log(HDA_LOG_ERR, "Channels count (%d) not available for %s\n", 
-			channels, (dir ? "capture" : "playback"));	
-	hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
-		"format=%d bits\n",
-		rate, channels, format);
-	format_val = snd_hda_calc_stream_format(rate, channels,
-						get_alsa_format(format),
-						format
+	
+		hda_log(HDA_LOG_INFO, "Available PCM parameters:\n");
+		hda_log(HDA_LOG_INFO, "  channels: %d/%d\n",
+			runtime->hw.channels_min,
+			runtime->hw.channels_max);
+		hda_log(HDA_LOG_INFO, "  formats:");
+		for (i = 0; i < ARRAY_SIZE(fmt_names); i++) {
+			if (runtime->hw.formats & (1ULL << i)) {
+				if (fmt_names[i])
+					hda_log(HDA_LOG_INFO, " %s", fmt_names[i]);
+				else
+					hda_log(HDA_LOG_INFO, " Uknown#%d", i);
+			}
+		}
+		hda_log(HDA_LOG_INFO, "\n  rates:");
+		for (i = 0; i < ARRAY_SIZE(rate_consts); i++) {
+			if (runtime->hw.rates & (1UL << i))
+				hda_log(HDA_LOG_INFO, " %d", rate_consts[i]);
+		}
+		hda_log(HDA_LOG_INFO, "\n");
+		if (channels < runtime->hw.channels_min ||
+		    channels > runtime->hw.channels_max)
+			hda_log(HDA_LOG_ERR, "Channels count (%d) not available for %s\n", 
+				channels, (dir ? "capture" : "playback"));	
+		hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
+			"format=%d bits\n",
+			rate, channels, format);
+		format_val = snd_hda_calc_stream_format(rate, channels,
+							get_alsa_format(format),
+							format
 #ifdef STREAM_FORMAT_WITH_SPDIF
-						, _codec->spdif_ctls
+							, _codec->spdif_ctls
 #endif
-						);
-	if (!format_val) {
-		snd_hda_power_down(_codec);
-		return;
-	}
+							);
+		if (!format_val) {
+			snd_hda_power_down(_codec);
+			return;
+		}
+		hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
 #ifdef HAVE_COMMON_PREPARE
-	hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
-	err = snd_hda_codec_prepare(_codec, hinfo, subid,
-				    format_val, substream);
-	hda_log(HDA_LOG_INFO, "PCM Clean up\n");
-	snd_hda_codec_cleanup(_codec, hinfo, substream);
+		err = snd_hda_codec_prepare(_codec, hinfo, subid,
+					    format_val, substream);
 #else
-	hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
-	err = hinfo->ops.prepare(hinfo, _codec, 1, format_val, substream);
-	hda_log(HDA_LOG_INFO, "PCM Clean up\n");
-	hinfo->ops.cleanup(hinfo, _codec, substream);
+		err = hinfo->ops.prepare(hinfo, _codec, 1, format_val, substream);
 #endif
+	}
 
-	substream->ref_count = 0;
-	hda_log(HDA_LOG_INFO, "Close PCM\n");
-	hinfo->ops.close(hinfo, _codec, substream);
-	snd_hda_power_down(_codec);
+	if (op != PCM_TEST_START) {
+		hda_log(HDA_LOG_INFO, "PCM Clean up\n");
+#ifdef HAVE_COMMON_PREPARE
+		snd_hda_codec_cleanup(_codec, hinfo, substream);
+#else
+		hinfo->ops.cleanup(hinfo, _codec, substream);
+#endif
+		substream->ref_count = 0;
+		hda_log(HDA_LOG_INFO, "Close PCM\n");
+		hinfo->ops.close(hinfo, _codec, substream);
+		snd_hda_power_down(_codec);
+	}
 }
 
 /* attach_pcm callback -- register the stream */

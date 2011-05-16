@@ -36,7 +36,14 @@ void hda_codec_reset(void);
 int hda_codec_reconfig(void);
 
 void hda_list_pcms(void);
-void hda_test_pcm(int stream, int substream,
+
+enum {
+	PCM_TEST_ALL,
+	PCM_TEST_START,
+	PCM_TEST_END,
+};
+
+void hda_test_pcm(int stream, int op, int substream,
 		  int dir, int rate, int channels, int format);
 
 int hda_get_power_save(void);

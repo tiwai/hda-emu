@@ -101,7 +101,7 @@ static struct usage_table usage_str[] = {
 	  "Show help texts" },
 	{ "verb", "verb nid cmd parameter",
 	  "Execute a verb" },
-	{ "PCM", "PCM [pcm-id dir [rate [channels [format-bits]]]]",
+	{ "PCM", "PCM [-s|-e] [pcm-id dir [rate [channels [format-bits]]]]",
 	  "List PCM streams or test the given PCM stream" },
 	{ "pm", "pm",
 	  "Test suspend/resume cycle" },
@@ -453,10 +453,34 @@ static void test_pcm(char *line)
 	char *id;
 	int stream, dir, rate = 48000, channels = 2, format = 16;
 	int substream = 0;
+	int op = PCM_TEST_ALL;
+	char *token;
 
-	if (getint(&line, &stream)) {
+	token = gettoken(&line);
+	if (!token) {
 		hda_list_pcms();
 		return;
+	}
+	if (*token == '-') {
+		/* option */
+		switch (token[1]) {
+		case 's':
+			op = PCM_TEST_START;
+			break;
+		case 'e':
+			op = PCM_TEST_END;
+			break;
+		default:
+			hda_log(HDA_LOG_ERR, "Invalid PCM option\n");
+			usage("PCM");
+			return;
+		}
+		if (getint(&line, &stream)) {
+			usage("PCM");
+			return;
+		}
+	} else {
+		stream = strtoul(token, NULL, 0);
 	}
 
 	id = gettoken(&line);
@@ -487,7 +511,7 @@ static void test_pcm(char *line)
 	if (!getint(&line, &rate) &&
 	    !getint(&line, &channels))
 		getint(&line, &format);
-	hda_test_pcm(stream, substream, dir, rate, channels, format);
+	hda_test_pcm(stream, op, substream, dir, rate, channels, format);
 }
 
 #ifdef CONFIG_SND_HDA_RECONFIG
