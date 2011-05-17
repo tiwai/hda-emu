@@ -988,6 +988,10 @@ int main(int argc, char **argv)
 #endif
 	_codec = codec;
 
+#ifdef HAVE_USER_PINCFGS
+	snd_array_init(&codec->user_pins, sizeof(struct hda_pincfg), 16);
+#endif
+
 #ifdef HAVE_HDA_PATCH_LOADER
 	snd_hda_codec_configure(codec);
 #endif
