@@ -47,7 +47,7 @@
 extern int cmd_loop(FILE *fp);
 
 /*
- * proc dump log
+ * interface to kernel 
  */
 
 static struct snd_card card = {
@@ -191,6 +191,7 @@ void hda_set_power_save(int val)
 }
 
 /*
+ * proc dump
  */
 
 struct snd_info_buffer {
@@ -281,6 +282,28 @@ void hda_log_dump_proc(unsigned int nid, const char *file)
 		fclose(fp);
 }
 
+/*
+ * show available jacks
+ */
+void hda_log_list_jacks(void)
+{
+	struct xhda_node *node;
+	unsigned int type, conn;
+
+	for (node = proc.afg.next; node; node = node->next) {
+		type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
+		if (type != AC_WID_PIN)
+			continue;
+		conn = (node->pin_default & AC_DEFCFG_PORT_CONN) >> AC_DEFCFG_PORT_CONN_SHIFT;
+		if (conn == AC_JACK_PORT_NONE)
+			continue;
+		hda_log_dump_proc(node->nid, NULL);
+	}
+}
+
+/*
+ * show jack state of the given NID
+ */
 void hda_log_jack_state(int nid)
 {
 	int state = hda_get_jack_state(&proc, nid);
@@ -290,6 +313,9 @@ void hda_log_jack_state(int nid)
 		hda_log(HDA_LOG_INFO, "Jack state [0x%x] = %d\n", nid, state);
 }
 
+/*
+ * change the jack state of the given NID
+ */
 static void issue_unsol(int caddr, int res);
 
 void hda_log_set_jack(int nid, int val)
@@ -307,6 +333,7 @@ void hda_log_issue_unsol(int nid)
 }
 
 /*
+ * suspend/resume simulation
  */
 
 static struct hda_bus *bus;
@@ -326,6 +353,7 @@ void hda_test_resume(void)
 }
 
 /*
+ * unsol even handling
  */
 
 static struct hda_codec *_codec;
@@ -344,6 +372,9 @@ static void issue_unsol(int caddr, int res)
 
 #ifdef CONFIG_SND_HDA_RECONFIG
 
+/*
+ * sysfs reset simulation
+ */
 static void reset_pcm(void);
 
 void hda_codec_reset(void)
@@ -352,6 +383,9 @@ void hda_codec_reset(void)
 	reset_pcm();
 }
 
+/*
+ * sysfs reconfig simulation
+ */
 int hda_codec_reconfig(void)
 {
 	int err;
@@ -373,6 +407,9 @@ int hda_codec_reconfig(void)
 }
 
 #ifdef HAVE_USER_PINCFGS
+/*
+ * sysfs pin_configs simulations
+ */
 static void show_pincfgs(struct snd_array *list)
 {
 	int i;

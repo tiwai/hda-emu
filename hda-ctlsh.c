@@ -386,7 +386,7 @@ static void set_jack(char *line)
 	int nid, val;
 
 	if (getint(&line, &nid)) {
-		usage("jack");
+		hda_log_list_jacks();
 		return;
 	}
 	if (getbool(&line, &val)) {
