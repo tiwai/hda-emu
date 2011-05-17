@@ -285,10 +285,44 @@ void hda_log_dump_proc(unsigned int nid, const char *file)
 /*
  * show available jacks
  */
+static const char *_get_jack_location(u32 cfg)
+{
+	static char *bases[7] = {
+		"N/A", "Rear", "Front", "Left", "Right", "Top", "Bottom",
+	};
+	static unsigned char specials_idx[] = {
+		0x07, 0x08,
+		0x17, 0x18, 0x19,
+		0x37, 0x38
+	};
+	static char *specials[] = {
+		"Rear Panel", "Drive Bar",
+		"Riser", "HDMI", "ATAPI",
+		"Mobile-In", "Mobile-Out"
+	};
+	int i;
+	cfg = (cfg & AC_DEFCFG_LOCATION) >> AC_DEFCFG_LOCATION_SHIFT;
+	if ((cfg & 0x0f) < 7)
+		return bases[cfg & 0x0f];
+	for (i = 0; i < ARRAY_SIZE(specials_idx); i++) {
+		if (cfg == specials_idx[i])
+			return specials[i];
+	}
+	return "UNKNOWN";
+}
+
 void hda_log_list_jacks(void)
 {
 	struct xhda_node *node;
 	unsigned int type, conn;
+	static char *jack_conns[4] = { "Jack", "N/A", "Fixed", "Both" };
+	static char *jack_types[16] = {
+		"Line Out", "Speaker", "HP Out", "CD",
+		"SPDIF Out", "Digital Out", "Modem Line", "Modem Hand",
+		"Line In", "Aux", "Mic", "Telephony",
+		"SPDIF In", "Digitial In", "Reserved", "Other"
+	};
+	static char *jack_locations[4] = { "Ext", "Int", "Sep", "Oth" };
 
 	for (node = proc.afg.next; node; node = node->next) {
 		type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
@@ -297,7 +331,17 @@ void hda_log_list_jacks(void)
 		conn = (node->pin_default & AC_DEFCFG_PORT_CONN) >> AC_DEFCFG_PORT_CONN_SHIFT;
 		if (conn == AC_JACK_PORT_NONE)
 			continue;
-		hda_log_dump_proc(node->nid, NULL);
+		/* if (!(node->pincap & AC_PINCAP_PRES_DETECT))
+		   continue;*/
+		hda_log(HDA_LOG_INFO,
+			"NID 0x%02x: cfg 0x%08x: [%s] %s at %s %s\n",
+			node->nid, node->pin_default,
+			jack_conns[(node->pin_default & AC_DEFCFG_PORT_CONN)
+				   >> AC_DEFCFG_PORT_CONN_SHIFT],
+			jack_types[(node->pin_default & AC_DEFCFG_DEVICE)
+				   >> AC_DEFCFG_DEVICE_SHIFT],
+			jack_locations[(node->pin_default >> (AC_DEFCFG_LOCATION_SHIFT + 4)) & 3],
+			_get_jack_location(node->pin_default));
 	}
 }
 
