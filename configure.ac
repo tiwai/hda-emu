@@ -304,7 +304,7 @@ if test "$OLD_HDA_PCM" = "1"; then
 fi
 
 AC_MSG_CHECKING(for hda-reconfigure)
-if grep -q snd_hda_codec_configure kernel/hda_local.h; then
+if grep -q snd_hda_codec_configure kernel/hda_*.h; then
   AC_MSG_RESULT(yes)
   HAVE_RECONFIG=yes
   AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
