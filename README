@@ -162,7 +162,16 @@ BASIC COMMANDS
 
 * jack
 
-  Get / set the jack plug state.  Call with a widget numid.
+  Get / set the jack plug state.  When invoked without arguments,
+  it lists the active pin NIDs.
+
+	> jack
+	NID 0x0d: cfg 0x032110f0: [Jack] HP Out at Ext Left
+	NID 0x0f: cfg 0x03a110f0: [Jack] Mic at Ext Left
+	NID 0x10: cfg 0x921701f0: [Fixed] Speaker at Int Front
+	NID 0x11: cfg 0x95a601f0: [Fixed] Mic at Int Top
+
+  When called with a widget numid, it shows the current jack state.
 
 	> jack 0x0d
 	Jack state [0xd] = 0
@@ -205,6 +214,15 @@ BASIC COMMANDS
 	PCM format_val = 0x11
 	...
 
+  A PCM substream can be specified as a style of "a:b".  For example,
+  passing 1:2 for the first argument means that the stream id 1, the
+  substream id 2.  This is useful to check when the driver supports
+  the multiple-substreams.
+  
+  As default, PCM command simulates from open to close.  When -s
+  option is passed after "PCM", it operates only the open/prepare.
+  When -e option is passed, it operates only the close procedure.
+
 * verb
 
   Execute a verb.  Use as you like.
@@ -233,8 +251,6 @@ BASIC COMMANDS
   available yet.
 
   "fs list" shows the available sysfs file entries.
-  Both "fs get" and "fs set" are available only for some entries like
-  clear and reconfig.
 
 * quit
 
