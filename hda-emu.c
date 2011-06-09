@@ -574,6 +574,7 @@ void hda_test_pcm(int id, int op, int subid,
 	struct hda_pcm_stream *hinfo;
 	struct snd_pcm_str pstr;
 	unsigned int format_val;
+	unsigned int ctls = 0;
 	int i, err;
 
 	if (id < 0 || id >= num_pcm_streams) {
@@ -619,6 +620,16 @@ void hda_test_pcm(int id, int op, int subid,
 	runtime->hw.formats = hinfo->formats;
 	runtime->hw.rates = hinfo->rates;
 
+#ifdef INDIVIDUAL_SPDIF_CTLS
+	{
+		struct hda_spdif_out *spdif;
+		spdif = snd_hda_spdif_out_of_nid(_codec, hinfo->nid);
+		ctls = spdif ? spdif->ctls : 0;
+	}
+#elif defined(STREAM_FORMAT_WITH_SPDIF)
+	ctls = _codec->spdif_ctls;
+#endif
+
 	if (op != PCM_TEST_END) {
 		hda_log(HDA_LOG_INFO, "Open PCM %s for %s\n",
 			pcm_streams[id].name,
@@ -660,8 +671,8 @@ void hda_test_pcm(int id, int op, int subid,
 		format_val = snd_hda_calc_stream_format(rate, channels,
 							get_alsa_format(format),
 							format
-#ifdef STREAM_FORMAT_WITH_SPDIF
-							, _codec->spdif_ctls
+#if defined(INDIVIDUAL_SPDIF_CTLS) || defined(STREAM_FORMAT_WITH_SPDIF)
+							, ctls
 #endif
 							);
 		if (!format_val) {

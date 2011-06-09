@@ -430,6 +430,30 @@ if test "$HAVE_SND_HDA_JACK" = "yes"; then
   AC_DEFINE(HAVE_SND_HDA_JACK)
 fi
 
+AC_MSG_CHECKING(for invidual spdif ctls)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+INDIVIDUALSPDIF_CTLS=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "kernel/hda_codec.h"
+],[
+  struct hda_spdif_out *spdif = snd_hda_spdif_out_of_nid(0, 0);
+],
+  [AC_MSG_RESULT(yes); INDIVIDUAL_SPDIF_CTLS="1"],
+  [AC_MSG_RESULT(no)],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$INDIVIDUAL_SPDIF_CTLS" = "1"; then
+  AC_DEFINE(INDIVIDUAL_SPDIF_CTLS)
+fi
+
+if test "$INDIVIDUAL_SPDIF_CTLS" != "1"; then
 AC_MSG_CHECKING(for new snd_hda_calc_stream_format)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"
@@ -451,6 +475,7 @@ AC_TRY_COMPILE([
 CFLAGS=$ac_save_CFLAGS
 if test "$STREAM_FORMAT_WITH_SPDIF" = "1"; then
   AC_DEFINE(STREAM_FORMAT_WITH_SPDIF)
+fi
 fi
 
 HAVE_COMMON_PREPARE=
