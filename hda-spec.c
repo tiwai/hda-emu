@@ -167,6 +167,44 @@ static struct xhda_verb_table stac9205_verbs[] = {
 	{ } /* terminator */
 };
 
+static struct xhda_verb_table vt1702_verbs[] = {
+	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ } /* terminator */
+};
+
+static struct xhda_verb_table vt1708b_verbs[] = {
+	{ 0xf70, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ } /* terminator */
+};
+
+static struct xhda_verb_table vt1708s_verbs[] = {
+	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ } /* terminator */
+};
+
+static struct xhda_verb_table vt1716s_verbs[] = {
+	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ } /* terminator */
+};
+
+static struct xhda_verb_table vt1718s_verbs[] = {
+	{ 0xfb2, get_cached_verb, "via_enagle_gain" }, /* undocumented */
+	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ 0xf88, get_cached_verb, "via_enable_boost" }, /* undocumented */
+	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ } /* terminator */
+};
+
+static struct xhda_verb_table vt2002p_verbs[] = {
+	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ 0xf93, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ } /* terminator */
+};
+
 /*
  */
 
@@ -221,6 +259,61 @@ static struct verb_ext_list extensions[] = {
 	{ .id = 0x838476a5, .verbs = stac9205_verbs },
 	{ .id = 0x838476a6, .verbs = stac9205_verbs },
 	{ .id = 0x838476a7, .verbs = stac9205_verbs },
+
+	{ .id = 0x11061708, .verbs = vt1708b_verbs },
+	{ .id = 0x11061709, .verbs = vt1708b_verbs },
+	{ .id = 0x1106170a, .verbs = vt1708b_verbs },
+	{ .id = 0x1106170b, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e710, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e711, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e712, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e713, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e714, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e715, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e716, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e717, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e720, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e721, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e722, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e723, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e724, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e725, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e726, .verbs = vt1708b_verbs },
+	{ .id = 0x1106e727, .verbs = vt1708b_verbs },
+
+	{ .id = 0x11060397, .verbs = vt1708s_verbs },
+	{ .id = 0x11061397, .verbs = vt1708s_verbs },
+	{ .id = 0x11062397, .verbs = vt1708s_verbs },
+	{ .id = 0x11063397, .verbs = vt1708s_verbs },
+	{ .id = 0x11064397, .verbs = vt1708s_verbs },
+	{ .id = 0x11065397, .verbs = vt1708s_verbs },
+	{ .id = 0x11066397, .verbs = vt1708s_verbs },
+	{ .id = 0x11067397, .verbs = vt1708s_verbs },
+
+	{ .id = 0x11060398, .verbs = vt1702_verbs },
+	{ .id = 0x11061398, .verbs = vt1702_verbs },
+	{ .id = 0x11062398, .verbs = vt1702_verbs },
+	{ .id = 0x11063398, .verbs = vt1702_verbs },
+	{ .id = 0x11064398, .verbs = vt1702_verbs },
+	{ .id = 0x11065398, .verbs = vt1702_verbs },
+	{ .id = 0x11066398, .verbs = vt1702_verbs },
+	{ .id = 0x11067398, .verbs = vt1702_verbs },
+
+	{ .id = 0x11060428, .verbs = vt1718s_verbs },
+	{ .id = 0x11064428, .verbs = vt1718s_verbs },
+	{ .id = 0x11060441, .verbs = vt1718s_verbs },
+	{ .id = 0x11064441, .verbs = vt1718s_verbs },
+
+	{ .id = 0x11060433, .verbs = vt1716s_verbs },
+	{ .id = 0x1106a721, .verbs = vt1716s_verbs },
+
+	{ .id = 0x11060438, .verbs = vt2002p_verbs },
+	{ .id = 0x11064438, .verbs = vt2002p_verbs },
+	{ .id = 0x11060448, .verbs = vt2002p_verbs },
+
+	{ .id = 0x11060440, .verbs = vt1708s_verbs },
+	{ .id = 0x11060446, .verbs = vt2002p_verbs },
+	{ .id = 0x11068446, .verbs = vt2002p_verbs },
 
 	{ }
 };
