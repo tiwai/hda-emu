@@ -174,6 +174,8 @@ static struct xhda_verb_table stac9205_verbs[] = {
 static struct xhda_verb_table vt1702_verbs[] = {
 	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
 	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ 0xf82, get_cached_verb, "via_gpio_ctrl" }, /* undocumented */
+	{ 0xf88, get_cached_verb, "via_mixer_ctrl" }, /* undocumented */
 	{ } /* terminator */
 };
 
@@ -186,26 +188,37 @@ static struct xhda_verb_table vt1708b_verbs[] = {
 static struct xhda_verb_table vt1708s_verbs[] = {
 	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
 	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ 0xf88, get_cached_verb, "via_mixer_ctrl" }, /* undocumented */
+	{ 0xf98, get_cached_verb, "via_boost_ctrl" }, /* undocumented */
 	{ } /* terminator */
 };
 
 static struct xhda_verb_table vt1716s_verbs[] = {
 	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
 	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
+	{ 0xf88, get_cached_verb, "via_mixer_ctrl" }, /* undocumented */
+	{ 0xf8a, get_cached_verb, "via_boost_ctrl" }, /* undocumented */
+	{ 0xf90, get_cached_verb, "via_mono_ctrl" }, /* undocumented */
 	{ } /* terminator */
 };
 
 static struct xhda_verb_table vt1718s_verbs[] = {
 	{ 0xfb2, get_cached_verb, "via_enagle_gain" }, /* undocumented */
 	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
-	{ 0xf88, get_cached_verb, "via_enable_boost" }, /* undocumented */
+	{ 0xf88, get_cached_verb, "via_boost_ctrl" }, /* undocumented */
 	{ 0xf73, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ 0xfb2, get_cached_verb, "via_mw_gain" }, /* undocumented */
 	{ } /* terminator */
 };
 
 static struct xhda_verb_table vt2002p_verbs[] = {
 	{ 0xf81, get_cached_verb, "via_analog_loopback" }, /* undocumented */
 	{ 0xf93, get_cached_verb, "via_low_current" }, /* undocumented */
+	{ 0xfb9, get_cached_verb, "via_boost_ctrl" }, /* undocumented */
+	{ 0xfb8, get_cached_verb, "via_loop_ctrl" }, /* undocumented */
+	{ 0xfe0, get_cached_verb, "via_classd_ctrl1" }, /* undocumented */
+	{ 0xfe2, get_cached_verb, "via_classd_ctrl2" }, /* undocumented */
+	{ 0xfe9, get_cached_verb, "via_classd_ctrl3" }, /* undocumented */
 	{ } /* terminator */
 };
 
