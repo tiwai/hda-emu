@@ -7,6 +7,7 @@ PATCHES = \
 	patch_sigmatel.c \
 	patch_via.c \
 	patch_ca0110.c \
+	patch_ca0132.c \
 	patch_cirrus.c
 
 if UNIFIED_HDMI
