@@ -454,6 +454,7 @@ static void test_pcm(char *line)
 	int stream, dir, rate = 48000, channels = 2, format = 16;
 	int substream = 0;
 	int op = PCM_TEST_ALL;
+	char *stream_token;
 	char *token;
 
 	token = gettoken(&line);
@@ -475,14 +476,13 @@ static void test_pcm(char *line)
 			usage("PCM");
 			return;
 		}
-		if (getint(&line, &stream)) {
-			usage("PCM");
-			return;
-		}
-	} else {
-		stream = strtoul(token, NULL, 0);
+		token = gettoken(&line);
 	}
-
+	stream_token = token;
+	if (!stream_token) {
+		usage("PCM");
+		return;
+	}
 	id = gettoken(&line);
 	if (!id) {
 		hda_log(HDA_LOG_ERR, "No stream direction is given\n");
@@ -492,12 +492,10 @@ static void test_pcm(char *line)
 	case 'p':
 	case 'P':
 		dir = 0;
-		substream = get_pcm_substream(id);
 		break;
 	case 'c':
 	case 'C':
 		dir = 1;
-		substream = get_pcm_substream(id);
 		break;
 	default:
 		dir = strtoul(id, NULL, 0);
@@ -507,6 +505,8 @@ static void test_pcm(char *line)
 		}
 		break;
 	}
+	stream = strtoul(stream_token, NULL, 0);
+	substream = get_pcm_substream(stream_token);
 
 	if (!getint(&line, &rate) &&
 	    !getint(&line, &channels))
