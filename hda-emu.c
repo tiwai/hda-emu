@@ -914,7 +914,7 @@ int main(int argc, char **argv)
 
 	fp = fopen(argv[optind], "r");
 	if (!fp) {
-		fprintf(stderr, "cannot open %s\n", argv[1]);
+		fprintf(stderr, "cannot open %s\n", argv[optind]);
 		return 1;
 	}
 
