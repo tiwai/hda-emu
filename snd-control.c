@@ -146,3 +146,34 @@ int snd_ctl_boolean_stereo_info(struct snd_kcontrol *kcontrol,
 	return 0;
 }
 #endif
+
+int snd_ctl_activate_id(struct snd_card *card, struct snd_ctl_elem_id *id,
+			int active)
+{
+	struct snd_kcontrol *kctl;
+	unsigned int index_offset;
+	int ret;
+
+	kctl = snd_ctl_find_id(card, id);
+	if (!kctl)
+		return -ENOENT;
+	index_offset = snd_ctl_get_ioff(kctl, &kctl->id);
+	ret = 0;
+	if (active) {
+		if (!(kctl->vd[0].access & SNDRV_CTL_ELEM_ACCESS_INACTIVE))
+			goto unlock;
+		kctl->vd[0].access &= ~SNDRV_CTL_ELEM_ACCESS_INACTIVE;
+	} else {
+		if (kctl->vd[0].access & SNDRV_CTL_ELEM_ACCESS_INACTIVE)
+			goto unlock;
+		kctl->vd[0].access |= SNDRV_CTL_ELEM_ACCESS_INACTIVE;
+	}
+	ret = 1;
+ unlock:
+	if (ret > 0) {
+		hda_log(HDA_LOG_INFO, "Control element %s:%d acvite changed to %s\n",
+			kctl->id.name, kctl->id.index,
+			(kctl->vd[0].access & SNDRV_CTL_ELEM_ACCESS_INACTIVE) ? "inactive" : "active");
+	}
+	return ret;
+}
