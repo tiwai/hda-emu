@@ -12,10 +12,12 @@ AM_PROG_LIBTOOL
 AC_HEADER_STDC
 
 WFLAGS="-Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security"
+WFLAGS="$WFLAGS -fno-delete-null-pointer-checks"
 WFLAGS="$WFLAGS -Wdeclaration-after-statement"
 WFLAGS="$WFLAGS -Wno-pointer-sign"
 WFLAGS="$WFLAGS -fwrapv"
-OPTFLAGS="-O0 -g"
+WFLAGS="$WFLAGS -fno-asynchronous-unwind-tables"
+OPTFLAGS="-O -g"
 CFLAGS="$CFLAGS $OPTFLAGS $WFLAGS"
 
 AC_ARG_ENABLE(old-workq,
