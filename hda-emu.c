@@ -596,7 +596,7 @@ void hda_test_pcm(int id, int op, int subid,
 	if (subid < 0 || subid >= pcm_streams[id].stream[dir].substreams) {
 		hda_log(HDA_LOG_INFO,
 			"Invalid substream %d for PCM %s for %s\n",
-			pcm_streams[id].name,
+			subid, pcm_streams[id].name,
 			(dir ? "capt" : "play"));
 		return;
 	}
