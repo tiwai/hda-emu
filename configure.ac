@@ -39,7 +39,7 @@ test -d "$hdadir" || \
 test -f "$hdadir/hda_codec.c" || \
   AC_ERROR([Invalid HD-audio directory: $hdadir])
 
-rm -f kernel/hda_*.h kernel/hda_*.c kernel/patch_*.c
+rm -f kernel/hda_*.h kernel/hda_*.c kernel/patch_*.c kernel/*_quirks.c
 ln -s $hdadir/hda_codec.c kernel
 ln -s $hdadir/hda_codec.h kernel
 ln -s $hdadir/hda_local.h kernel
@@ -49,6 +49,9 @@ if test -f $hdadir/hda_jack.c; then
 else
   touch kernel/hda_jack.c
 fi
+for i in $hdadir/*_quirks.c; do
+  test -f $i && ln -s $i kernel
+done
 
 AC_ARG_ENABLE(own-proc,
   AS_HELP_STRING([--enable-own-proc],
