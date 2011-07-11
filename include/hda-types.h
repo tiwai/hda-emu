@@ -119,4 +119,22 @@ int hda_get_unsol_state(struct xhda_codec *codec, int nid);
 const char *get_verb_name(struct xhda_codec *codec, unsigned int cmd);
 const char *get_parameter_name(struct xhda_codec *codec, unsigned int cmd);
 
+#define MAX_ROUTE_DEPTH		10
+
+struct xhda_route_list {
+	int num_nodes;
+	struct xhda_node *node[MAX_ROUTE_DEPTH + 1];
+	struct xhda_route_list *next;
+};
+
+struct xhda_route_list *
+hda_routes_connected_to(struct xhda_codec *codec, int nid, int show_all);
+struct xhda_route_list *
+hda_routes_connected_from(struct xhda_codec *codec, int nid, int show_all);
+void hda_free_route_lists(struct xhda_route_list *list);
+
+void hda_show_routes(int nid, int show_all);
+
+void *xalloc(size_t size);
+
 #endif /* __HDA_TYPES_H */

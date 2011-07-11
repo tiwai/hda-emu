@@ -151,3 +151,13 @@ FILE *hda_get_logfp(void)
 {
 	return logfp;
 }
+
+void *xalloc(size_t size)
+{
+	void *p = calloc(1, size);
+	if (!p) {
+		hda_log(HDA_LOG_ERR, "No memory left\n");
+		exit(1);
+	}
+	return p;
+}

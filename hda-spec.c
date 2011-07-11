@@ -54,11 +54,7 @@ static int set_verb_val(struct xhda_codec *codec, unsigned int verb,
 			val->val = (val->val & ~mask) | cmd;
 			return 0;
 		}
-	val = calloc(1, sizeof(*val));
-	if (!val) {
-		hda_log(HDA_LOG_ERR, "No memory left\n");
-		return -ENOMEM;
-	}
+	val = xalloc(sizeof(*val));
 	val->verb = verb;
 	val->val = cmd;
 	val->next = codec->value_cache;

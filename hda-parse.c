@@ -59,11 +59,7 @@ static struct xhda_node *create_node(unsigned int nid, unsigned int wcaps)
 	struct xhda_node *node;
 	struct xhda_node **prevp;
 
-	node = calloc(1, sizeof(*node));
-	if (!node) {
-		hda_log(HDA_LOG_ERR, "No memory left\n");
-		return NULL;
-	}
+	node = xalloc(sizeof(*node));
 	node->nid = nid;
 	node->wcaps = wcaps;
 
@@ -468,11 +464,9 @@ static void check_alsa_info(char *line)
 
 static int add_sysfs_list(struct xhda_codec *codec, int *vals)
 {
-	struct xhda_sysfs_value *item = malloc(sizeof(*item));
+	struct xhda_sysfs_value *item = xalloc(sizeof(*item));
 	struct xhda_sysfs_value *p;
 
-	if (!item)
-		return -ENOMEM;
 	memcpy(item->val, vals, sizeof(item->val));
 	item->next = NULL;
 	if (!codec->sysfs_list->entry)
@@ -493,11 +487,7 @@ static int do_parse_sysfs(struct xhda_codec *codec, char *buffer)
 		char *p;
 		struct xhda_sysfs_list *sys;
 
-		sys = malloc(sizeof(*sys));
-		if (!sys) {
-			hda_log(HDA_LOG_ERR, "Cannot allocate\n");
-			return -ENOMEM;
-		}
+		sys = xalloc(sizeof(*sys));
 		sys->id = strdup(buffer + strlen("/sys/class/sound/"));
 		p = strchr(sys->id, ':');
 		if (p)

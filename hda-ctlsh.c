@@ -95,6 +95,8 @@ static struct usage_table usage_str[] = {
 	  "Get jack state or set jack state; val = 0 or 1" },
 	{ "unsol", "unsol numid",
 	  "Issue an unsolicited event" },
+	{ "route", "route [-a] numid",
+	  "Show routes via the given widget; with -a, it shows unconnected routes, too" },
 	{ "option", "option variable [val]",
 	  "Get/set module option value" },
 	{ "help", "help [command]",
@@ -409,6 +411,35 @@ static void issue_unsol(char *line)
 	nid = strtoul(p, NULL, 0);
 	hda_log_issue_unsol(nid);
 }
+
+static void show_routes(char *line)
+{
+	int numid;
+	int show_all = 0;
+	char *token;
+
+	token = gettoken(&line);
+	if (!token) {
+		usage("route");
+		return;
+	}
+	if (*token == '-') {
+		/* option */
+		switch (token[1]) {
+		case 'a':
+			show_all = 1;
+			break;
+		default:
+			hda_log(HDA_LOG_ERR, "Invalid route option\n");
+			usage("route");
+			return;
+		}
+		token = gettoken(&line);
+	}
+	numid = strtoul(token, NULL, 0);
+	hda_show_routes(numid, show_all);
+}
+
 
 static void run_verb(char *line)
 {
@@ -737,6 +768,9 @@ int cmd_loop(FILE *fp)
 			break;
 		case 'p':
 			test_pm(buf);
+			break;
+		case 'r':
+			show_routes(buf);
 			break;
 #ifdef CONFIG_SND_HDA_RECONFIG
 		case 'f':

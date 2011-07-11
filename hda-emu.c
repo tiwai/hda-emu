@@ -779,6 +779,74 @@ static void old_pm_notify(struct hda_codec *codec)
 
 
 /*
+ * routings
+ */
+static int node_type(struct xhda_node *node)
+{
+	return ((node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT) & 0xf;
+}
+
+static const char *get_node_type_string(struct xhda_node *node)
+{
+	static char *names[16] = {
+		[AC_WID_AUD_OUT] = "Out",
+		[AC_WID_AUD_IN] = "In ",
+		[AC_WID_AUD_MIX] = "Mix",
+		[AC_WID_AUD_SEL] = "Sel",
+		[AC_WID_PIN] = "Pin",
+		[AC_WID_POWER] = "Pow",
+		[AC_WID_VOL_KNB] = "Knb",
+		[AC_WID_BEEP] = "Bep",
+		[AC_WID_VENDOR] = "Vdr",
+	};
+	int type = node_type(node);
+	return names[type] ? names[type] : "\?\?\?";
+}
+
+static void show_route_lists(struct xhda_route_list *list)
+{
+	int i;
+	for (; list; list = list->next) {
+		hda_nid_t prev_nid = 0;
+		for (i = 0; i < list->num_nodes; i++) {
+			struct xhda_node *node = list->node[i];
+			if (i > 0) {
+				const char *path;
+				if (node_type(node) == AC_WID_AUD_MIX)
+					path = " -- ";
+				else if (node->node[node->curr_conn] == prev_nid)
+					path = " -> ";
+				else
+					path = " -x ";
+				hda_log(HDA_LOG_INFO, "%s", path);
+			}
+			hda_log(HDA_LOG_INFO, "%s[%02x]",
+				get_node_type_string(node), node->nid);
+			prev_nid = node->nid;
+		}
+		hda_log(HDA_LOG_INFO, "\n");
+	}
+}
+
+void hda_show_routes(int nid, int show_all)
+{
+	struct xhda_route_list *list;
+	int had_list = 0;
+
+	list = hda_routes_connected_to(&proc, nid, show_all);
+	show_route_lists(list);
+	had_list = list != NULL;
+	hda_free_route_lists(list);
+
+	list = hda_routes_connected_from(&proc, nid, show_all);
+	if (list && had_list)
+		hda_log(HDA_LOG_INFO, "\n");
+	show_route_lists(list);
+	hda_free_route_lists(list);
+}
+
+
+/*
  * pin-config override
  */
 
