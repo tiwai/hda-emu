@@ -357,9 +357,65 @@ static struct verb_ext_list extensions[] = {
 	{ }
 };
 
+/*
+ * fixups
+ */
+
+static struct xhda_node *find_node(struct xhda_codec *codec, unsigned int nid)
+{
+	struct xhda_node *node;
+
+	for (node = &codec->afg; node; node = node->next)
+		if (node->nid == nid)
+			return node;
+	return NULL;
+}
+
+static void fixup_via_mixer(struct xhda_codec *codec)
+{
+	int i;
+	struct xhda_node *node = find_node(codec, 0x21);
+
+	if (!node)
+		return;
+	for (i = 0; i < node->num_nodes; i++) {
+		if (node->node[i] == 0x08)
+			return;
+	}
+	node->node[node->num_nodes++] = 0x08;
+}
+
+struct fixup_list {
+	unsigned int vendor_id;
+	void (*func)(struct xhda_codec *);
+};
+
+static struct fixup_list fixups[] = {
+	{ 0x11060428, fixup_via_mixer },
+	{ 0x11064428, fixup_via_mixer },
+	{ 0x11060438, fixup_via_mixer },
+	{ 0x11064438, fixup_via_mixer },
+	{ 0x11060448, fixup_via_mixer },
+	{ }
+};
+
+static void apply_fixups(struct xhda_codec *codec)
+{
+	struct fixup_list *p;
+
+	for (p = fixups; p->vendor_id; p++) {
+		if (p->vendor_id == codec->vendor_id) {
+			p->func(codec);
+			return;
+		}
+	}
+}
+
 void add_codec_extensions(struct xhda_codec *codec)
 {
 	struct verb_ext_list *v;
+
+	apply_fixups(codec);
 
 	for (v = extensions; v->id; v++) {
 		if (v->id == codec->vendor_id) {
