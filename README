@@ -235,9 +235,13 @@ BASIC COMMANDS
 	Pin[28] -- Mix[21] -- Mix[1b] -> Pin[28]
 	...
 
+  When -i option is passed, it shows also the routes from/to inactive
+  pins.
+
   As default, it shows only the active (i.e. currently connected)
   routes.  When option -a is passed before the widget NID, it shows
-  all routes even though the connection isn't active.
+  all routes even though the connection isn't active.  (-a option
+  includes -i option implicitly.)
 
 	> route -a 0x28
 	Pin[2c] -- Mix[21] -- Mix[1b] -> Pin[28]
