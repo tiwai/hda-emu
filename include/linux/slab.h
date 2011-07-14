@@ -11,12 +11,14 @@ typedef unsigned int gfp_t;
 #define kmalloc(size,gfp)	__hda_malloc(size, __FILE__, __LINE__)
 #define kzalloc(size,gfp)	kmalloc(size, gfp)
 #define kcalloc(elem,size,gfp)	kmalloc((elem)*(size), gfp)
+#define krealloc(ptr,size,gfp)	__hda_realloc(ptr, size, __FILE__, __LINE__)
 #define kfree(ptr)		__hda_free((void*)(ptr), __FILE__, __LINE__)
 #define kstrdup(str,x)		__hda_strdup(str, __FILE__, __LINE__)
 #else
 #define kmalloc(size,gfp)	malloc(size)
 #define kzalloc(size,gfp)	calloc(1,size)
 #define kcalloc(elem,size,gfp)	calloc(elem,size)
+#define krealloc(ptr,size,gfp)	realloc(ptr, size)
 #define kfree(ptr)		free((void*)(ptr))
 #define kstrdup(str,x)		strdup(str)
 #endif

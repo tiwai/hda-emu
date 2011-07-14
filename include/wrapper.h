@@ -153,6 +153,7 @@ static inline char *strlcat(char *dst, const char *src, size_t n)
 #ifdef DEBUG_MALLOC
 void *__hda_malloc(size_t size, const char *file, int line);
 void __hda_free(void *ptr, const char *file, int line);
+void *__hda_realloc(const void *p, size_t new_size, const char *file, int line);
 void *__hda_strdup(const char *str, const char *file, int line);
 #endif
 

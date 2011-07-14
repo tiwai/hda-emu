@@ -20,6 +20,13 @@ WFLAGS="$WFLAGS -fno-asynchronous-unwind-tables"
 OPTFLAGS="-O -g"
 CFLAGS="$CFLAGS $OPTFLAGS $WFLAGS"
 
+AC_ARG_ENABLE(debug-malloc,
+  AS_HELP_STRING([--enable-debug-malloc], [turn on malloc-debug code]),
+  debug_malloc="$enableval", debug_malloc="no")
+if test "$debug_malloc" = "yes"; then
+  AC_DEFINE(DEBUG_MALLOC)
+fi
+
 AC_ARG_ENABLE(old-workq,
   AS_HELP_STRING([--enable-old-workq], [use old workqueue API]),
   old_workq="$enableval", old_workq="no")

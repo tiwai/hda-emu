@@ -145,6 +145,30 @@ void __hda_free(void *ptr, const char *file, int line)
 	assert(0);
 }
 
+void *__hda_realloc(const void *p, size_t new_size, const char *file, int line)
+{
+	struct __hda_malloc_elem *elem;
+
+	if (!p)
+		return __hda_malloc(new_size, file, line);
+	if (!new_size) {
+		__hda_free((void *)p, file, line);
+		return NULL;
+	}
+
+	list_for_each_entry(elem, &malloc_list, list) {
+		if (elem->ptr == p) {
+			void *nptr = realloc((void *)p, new_size);
+			if (nptr)
+				elem->ptr = nptr;
+			return nptr;
+		}
+	}
+	hda_log(HDA_LOG_ERR, "Untracked malloc realloced in %s:%d\n",
+		file, line);
+	return __hda_malloc(new_size, file, line);
+}
+
 void *__hda_strdup(const char *str, const char *file, int line)
 {
 	char *dest = __hda_malloc(strlen(str) + 1, file, line);
