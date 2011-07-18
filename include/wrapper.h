@@ -157,6 +157,19 @@ void *__hda_realloc(const void *p, size_t new_size, const char *file, int line);
 void *__hda_strdup(const char *str, const char *file, int line);
 #endif
 
+/*
+ * lock debug
+ */
+enum {
+	MYLOCK_UNINIT,
+	MYLOCK_UNLOCKED,
+	MYLOCK_LOCKED,
+};
+
+void mylock_init(int *lock);
+void mylock_lock(int *lock, const char *file, int line);
+void mylock_unlock(int *lock, const char *file, int line);
+
 #include "linux/spinlock.h"
 #include "linux/pci_ids.h"
 #include "linux/workqueue.h"

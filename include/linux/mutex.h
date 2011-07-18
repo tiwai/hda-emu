@@ -4,13 +4,13 @@
 #include "wrapper.h"
 
 struct mutex {
-	int dummy;
+	int lock;
 };
 
-#define mutex_init(x)	do { (void)(x); } while (0)
-#define mutex_lock(x)	do { (void)(x); } while (0)
-#define mutex_unlock(x)	do { (void)(x); } while (0)
+#define mutex_init(x)	mylock_init(&(x)->lock)
+#define mutex_lock(x)	mylock_lock(&(x)->lock, __FILE__, __LINE__)
+#define mutex_unlock(x)	mylock_unlock(&(x)->lock, __FILE__, __LINE__)
 
-#define DEFINE_MUTEX(x) struct mutex x
+#define DEFINE_MUTEX(x) struct mutex x = { .lock = MYLOCK_UNLOCKED }
 
 #endif /* __LINUX_MUTEX_H */

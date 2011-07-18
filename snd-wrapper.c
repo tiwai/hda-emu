@@ -207,3 +207,53 @@ void snd_jack_report(struct snd_jack *jack, int status)
 {
 	hda_log(HDA_LOG_INFO, "JACK report %s, status %d\n", jack->id, status);
 }
+
+/*
+ * lock
+ */
+void mylock_init(int *lock)
+{
+	*lock = MYLOCK_UNLOCKED;
+}
+
+void mylock_lock(int *lock, const char *file, int line)
+{
+	switch (*lock) {
+	case MYLOCK_UNINIT:
+		hda_log(HDA_LOG_ERR, "Locking uninitialized at %s:%d\n",
+			file, line);
+		break;
+	case MYLOCK_UNLOCKED:
+		*lock = MYLOCK_LOCKED;
+		break;
+	case MYLOCK_LOCKED:
+		hda_log(HDA_LOG_ERR, "Double-lock detected at %s:%d\n",
+			file, line);
+		break;
+	default:
+		hda_log(HDA_LOG_ERR, "Unknown lock state %d! at %s:%d\n",
+			*lock, file, line);
+		break;
+	}
+}
+
+void mylock_unlock(int *lock, const char *file, int line)
+{
+	switch (*lock) {
+	case MYLOCK_UNINIT:
+		hda_log(HDA_LOG_ERR, "Unlocking uninitialized at %s:%d\n",
+			file, line);
+		break;
+	case MYLOCK_UNLOCKED:
+		hda_log(HDA_LOG_ERR, "Double-unlock detected at %s:%d\n",
+			file, line);
+		break;
+	case MYLOCK_LOCKED:
+		*lock = MYLOCK_UNLOCKED;
+		break;
+	default:
+		hda_log(HDA_LOG_ERR, "Unknown lock state %d! at %s:%d\n",
+			*lock, file, line);
+		break;
+	}
+}

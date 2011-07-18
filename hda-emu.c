@@ -52,6 +52,7 @@ extern int cmd_loop(FILE *fp);
 
 static struct snd_card card = {
 	.ctl_files = LIST_HEAD_INIT(card.ctl_files),
+	.files_lock = MYLOCK_UNLOCKED,
 };
 static struct xhda_codec proc;
 

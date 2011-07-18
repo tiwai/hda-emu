@@ -37,6 +37,7 @@ struct snd_card {
 
 	int shutdown;
 	struct list_head ctl_files;
+	spinlock_t files_lock;
 };
 
 struct snd_device {
