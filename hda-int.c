@@ -1251,7 +1251,8 @@ routes_connected_to(struct xhda_codec *codec, struct xhda_node *node,
 			route[depth + 1] = src;
 			nlist = create_route(route, depth + 2, 1);
 			nlist->next = list;
-			return nlist;
+			list = nlist;
+			continue;
 		}
 		list = routes_connected_to(codec, src, depth + 1, route,
 					   show_all, show_inactive, list);
@@ -1306,7 +1307,8 @@ routes_connected_from(struct xhda_codec *codec, struct xhda_node *node,
 				route[depth + 1] = dest;
 				nlist = create_route(route, depth + 2, 0);
 				nlist->next = list;
-				return nlist;
+				list = nlist;
+				continue;
 			}
 			list = routes_connected_from(codec, dest, depth + 1,
 						     route, show_all,
