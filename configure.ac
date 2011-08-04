@@ -56,6 +56,11 @@ if test -f $hdadir/hda_jack.c; then
 else
   touch kernel/hda_jack.c
 fi
+if test -f $hdadir/hda_trace.h; then
+  ln -s $hdadir/hda_trace.h kernel
+else
+  touch kernel/hda_trace.h
+fi
 for i in $hdadir/*_quirks.c; do
   test -f $i && ln -s $i kernel
 done
