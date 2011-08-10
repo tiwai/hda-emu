@@ -25,6 +25,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <errno.h>
+#ifdef HAVE_LIBREADLINE
+#include <readline/readline.h>
+#include <readline/history.h>
+#endif
 
 #include "hda-types.h"
 #include "hda-log.h"
@@ -729,20 +733,44 @@ static void handle_sysfs(char *line)
 /*
  */
 
+#ifndef HAVE_LIBREADLINE
+static FILE *rl_instream;
+static FILE *rl_outstream;
+
+static char *readline(const char *prompt)
+{
+	char line[256], *buf;
+	fprintf(stderr, "%s", prompt);
+	buf = fgets(line, sizeof(line), rl_instream);
+	if (!buf)
+		return NULL;
+	return strdup(buf);
+}
+
+#define add_history(l)
+
+#endif
+
 int cmd_loop(FILE *fp)
 {
-	char line[256];
+	char *line;
 	char *buf, *p;
 
+	if (fp)
+		rl_instream = fp;
+	rl_outstream = stderr;
 	for (;;) {
-		fprintf(stderr, "> ");
-		buf = fgets(line, sizeof(line), fp);
-		if (!buf)
+		line = readline("> ");
+		if (!line)
 			break;
+		if (line && *line)
+			add_history(line);
+		buf = line;
 		hda_log_echo(HDA_LOG_INFO, "> %s", buf);
 		p = gettoken(&buf);
 		if (!p) {
 			usage(NULL);
+			free(line);
 			continue;
 		}
 		switch (*p) {
@@ -794,6 +822,7 @@ int cmd_loop(FILE *fp)
 			break;
 		}
 		flush_scheduled_work();
+		free(line);
 	}
 	return 0;
 }

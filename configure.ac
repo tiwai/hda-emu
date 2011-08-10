@@ -20,6 +20,18 @@ WFLAGS="$WFLAGS -fno-asynchronous-unwind-tables"
 OPTFLAGS="-O -g"
 CFLAGS="$CFLAGS $OPTFLAGS $WFLAGS"
 
+AC_ARG_ENABLE([readline],
+  AS_HELP_STRING([--enable-readline], [turn on readline support]),
+  readline="$enableval", readline="yes")
+if test "$readline" = "yes"; then
+  AC_CHECK_LIB([readline], [main], [HAVE_LIBREADLINE="yes"])
+  if test "$HAVE_LIBREADLINE" = "yes"; then
+    LIBREADLINE="-lreadline -lncurses"
+    AC_DEFINE([HAVE_LIBREADLINE], [1], [Define if you have libreadline])
+  fi
+fi
+AC_SUBST(LIBREADLINE)
+
 AC_ARG_ENABLE(debug-malloc,
   AS_HELP_STRING([--enable-debug-malloc], [turn on malloc-debug code]),
   debug_malloc="$enableval", debug_malloc="no")
