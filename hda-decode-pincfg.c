@@ -296,18 +296,31 @@ static unsigned int encode(const char *jack,
 {
 	unsigned int caps = base;
 
-	if (jack)
+	if (jack) {
+		caps &= ~AC_DEFCFG_PORT_CONN;
 		caps |= parse_jack_port(jack) << AC_DEFCFG_PORT_CONN_SHIFT;
-	if (type)
+	}
+	if (type) {
+		caps &= ~AC_DEFCFG_DEVICE;
 		caps |= parse_jack_type(type) << AC_DEFCFG_DEVICE_SHIFT;
-	if (location)
+	}
+	if (location) {
+		caps &= ~AC_DEFCFG_LOCATION;
 		caps |= parse_jack_location(location) << AC_DEFCFG_LOCATION_SHIFT;
-	if (connection)
+	}
+	if (connection) {
+		caps &= ~AC_DEFCFG_CONN_TYPE;
 		caps |= parse_jack_connection(connection) << AC_DEFCFG_CONN_TYPE_SHIFT;
-	if (color)
+	}
+	if (color) {
+		caps &= ~AC_DEFCFG_COLOR;
 		caps |= parse_jack_color(color) << AC_DEFCFG_COLOR_SHIFT;
+	}
+	caps &= ~AC_DEFCFG_MISC;
 	caps |= (misc << AC_DEFCFG_MISC_SHIFT) & AC_DEFCFG_MISC;
+	caps &= ~AC_DEFCFG_DEF_ASSOC;
 	caps |= (assoc << AC_DEFCFG_ASSOC_SHIFT) & AC_DEFCFG_DEF_ASSOC;
+	caps &= ~AC_DEFCFG_SEQUENCE;
 	caps |= seq & AC_DEFCFG_SEQUENCE;
 	return caps;
 }	
