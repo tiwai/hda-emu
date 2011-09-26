@@ -1076,17 +1076,17 @@ int main(int argc, char **argv)
 	snd_hda_codec_configure(codec);
 #endif
 
+	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
+	snd_hda_build_pcms(bus);
+#ifndef HAVE_HDA_ATTACH_PCM
+	azx_pcm_create(codec);
+#endif
+
 	hda_log(HDA_LOG_INFO, "# Init and building controls...\n");
 #ifdef CONFIG_SND_HDA_RECONFIG
 	snd_hda_codec_build_controls(codec);
 #else
 	snd_hda_build_controls(codec->bus);
-#endif
-
-	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
-	snd_hda_build_pcms(bus);
-#ifndef HAVE_HDA_ATTACH_PCM
-	azx_pcm_create(codec);
 #endif
 
 	/* power-down after init phase */
