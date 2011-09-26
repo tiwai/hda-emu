@@ -1,0 +1,2265 @@
+
+!!################################
+!!ALSA Information Script v 0.4.60
+!!################################
+
+!!Script ran on: Thu Mar 24 07:11:18 UTC 2011
+
+
+!!Linux Distribution
+!!------------------
+
+Ubuntu 10.10 \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 10.10"
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      ASUSTeK Computer Inc.        
+Product Name:      M51Va               
+Product Version:   1.0       
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.35-28-generic
+Operating System:  GNU/Linux
+Architecture:      i686
+Processor:         unknown
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.24
+Library version:    1.0.23
+Utilities version:  1.0.23
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+Pulseaudio:
+      Installed - Yes (/usr/bin/pulseaudio)
+      Running - Yes
+
+ESound Daemon:
+      Installed - Yes (/usr/bin/esd)
+      Running - No
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [Intel          ]: HDA-Intel - HDA Intel
+                      HDA Intel at 0xfdef8000 irq 49
+ 1 [HDMI           ]: HDA-Intel - HDA ATI HDMI
+                      HDA ATI HDMI at 0xfdfec000 irq 51
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:1b.0 Audio device: Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 03)
+01:00.1 Audio device: ATI Technologies Inc RV635 Audio device [Radeon HD 3600 Series]
+
+
+!!Advanced information - PCI Vendor/Device/Subsystem ID's
+!!--------------------------------------------------------
+
+00:1b.0 0403: 8086:293e (rev 03)
+	Subsystem: 1043:1878
+--
+01:00.1 0403: 1002:aa20
+	Subsystem: 1002:aa20
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-atiixp-modem: index=-2
+snd-intel8x0m: index=-2
+snd-via82xx-modem: index=-2
+snd-usb-audio: index=-2
+snd-usb-caiaq: index=-2
+snd-usb-ua101: index=-2
+snd-usb-us122l: index=-2
+snd-usb-usx2y: index=-2
+snd-cmipci: mpu_port=0x330 fm_port=0x388
+snd-pcsp: index=-2
+snd-usb-audio: index=-2
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Realtek ALC663
+Address: 0
+AFG Function Id: 0x1 (unsol 1)
+Vendor Id: 0x10ec0663
+Subsystem Id: 0x10431878
+Revision Id: 0x100001
+No Modem Function Group found
+Default PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=2, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x02 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Device: name="ALC663 Analog", type="Audio", device=0
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x03 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x04 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=5, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x05 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x06 [Audio Output] wcaps 0x611: Stereo Digital
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Control: name="IEC958 Default PCM Playback Switch", index=0, device=0
+  Device: name="ALC663 Digital", type="SPDIF", device=1
+  Converter: stream=5, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x08 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Switch", index=1, device=0
+  Control: name="Capture Volume", index=1, device=0
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x8b 0x8b]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x23
+Node 0x09 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Switch", index=0, device=0
+  Control: name="Capture Volume", index=0, device=0
+  Device: name="ALC663 Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x1f 0x1f]
+  Converter: stream=1, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x22
+Node 0x0a [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Beep Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Control: name="Beep Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x1f 0x1f] [0x97 0x97] [0x97 0x97] [0x97 0x97] [0x97 0x97] [0x97 0x97] [0x97 0x97] [0x97 0x97]
+  Connection: 8
+     0x18 0x19 0x1a 0x1b 0x1d 0x14 0x15 0x16
+Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x02 0x0b
+Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x03 0x0b
+Node 0x0e [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x04 0x0b
+Node 0x0f [Audio Mixer] wcaps 0x20010a: Mono Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00] [0x80]
+  Connection: 2
+     0x02 0x0b
+Node 0x10 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x11 [Pin Complex] wcaps 0x400700: Mono Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x10
+Node 0x12 [Pin Complex] wcaps 0x400401: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x99a30940: [Fixed] Mic at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x4, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x13 [Pin Complex] wcaps 0x400401: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x14 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001003c: IN OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x99130110: [Fixed] Speaker at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x0c* 0x0d
+Node 0x15 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001003c: IN OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x0c* 0x0d
+Node 0x16 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00000034: IN OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0e
+Node 0x17 [Pin Complex] wcaps 0x40050c: Mono Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80]
+  Pincap 0x00000010: OUT
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0f
+Node 0x18 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00001734: IN OUT Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x01a19830: [Jack] Mic at Ext Rear
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x3, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=08, enabled=1
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0e
+Node 0x19 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x0c* 0x0d 0x0e
+Node 0x1a [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00001734: IN OUT Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0d
+Node 0x1b [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0xc0: OUT HP VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x0c* 0x0d 0x0e
+Node 0x1c [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x1d [Pin Complex] wcaps 0x400400: Mono
+  Pincap 0x00000020: IN
+  Pin Default 0x40168a2d: [N/A] Speaker at Ext N/A
+    Conn = Digital, Color = Purple
+    DefAssociation = 0x2, Sequence = 0xd
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1e [Pin Complex] wcaps 0x400780: Mono Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x99430120: [Fixed] SPDIF Out at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x06
+Node 0x1f [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono
+  Processing caps: benign=0, ncoeff=17
+Node 0x21 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000001c: OUT HP Detect
+  Pin Default 0x0121401f: [Jack] HP Out at Ext Rear
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0xf
+  Pin-ctls: 0xc0: OUT HP
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x0c 0x0d* 0x0e
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x00 0x00]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1d 0x14 0x15 0x16 0x0b 0x12
+Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1d 0x14 0x15 0x16 0x0b 0x13
+Codec: Motorola Si3054
+Address: 1
+MFG Function Id: 0x2 (unsol 1)
+Vendor Id: 0x10573055
+Subsystem Id: 0x10431316
+Revision Id: 0x100700
+Modem Function Group: 0x1
+Codec: ATI R6xx HDMI
+Address: 0
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x1002aa01
+Subsystem Id: 0x00aa0100
+Revision Id: 0x100000
+No Modem Function Group found
+Default PCM:
+    rates [0x40]: 48000
+    bits [0x2]: 16
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x02 [Audio Output] wcaps 0x201: Stereo Digital
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Device: name="HDMI 0", type="HDMI", device=3
+  Converter: stream=1, channel=0
+  Digital: Enabled GenLevel
+  Digital category: 0x2
+Node 0x03 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000094: OUT Detect HDMI
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=03, enabled=1
+  Connection: 1
+     0x02
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw----  1 root audio 116,  9 Mar 24 08:09 /dev/snd/controlC0
+crw-rw----  1 root audio 116, 12 Mar 24 08:09 /dev/snd/controlC1
+crw-rw----  1 root audio 116,  8 Mar 24 08:09 /dev/snd/hwC0D0
+crw-rw----  1 root audio 116,  7 Mar 24 08:09 /dev/snd/hwC0D1
+crw-rw----  1 root audio 116, 11 Mar 24 08:09 /dev/snd/hwC1D0
+crw-rw----  1 root audio 116,  6 Mar 24 08:10 /dev/snd/pcmC0D0c
+crw-rw----  1 root audio 116,  5 Mar 24 08:10 /dev/snd/pcmC0D0p
+crw-rw----  1 root audio 116,  4 Mar 24 08:10 /dev/snd/pcmC0D1p
+crw-rw----  1 root audio 116,  3 Mar 24 08:09 /dev/snd/pcmC0D6c
+crw-rw----  1 root audio 116,  2 Mar 24 08:09 /dev/snd/pcmC0D6p
+crw-rw----  1 root audio 116, 10 Mar 24 08:10 /dev/snd/pcmC1D3p
+crw-rw----  1 root audio 116,  1 Mar 24 08:09 /dev/snd/seq
+crw-rw----  1 root audio 116, 33 Mar 24 08:09 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  80 Mar 24 08:09 .
+drwxr-xr-x 3 root root 320 Mar 24 08:09 ..
+lrwxrwxrwx 1 root root  12 Mar 24 08:09 pci-0000:00:1b.0 -> ../controlC0
+lrwxrwxrwx 1 root root  12 Mar 24 08:09 pci-0000:01:00.1 -> ../controlC1
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: Intel [HDA Intel], device 0: ALC663 Analog [ALC663 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: Intel [HDA Intel], device 1: ALC663 Digital [ALC663 Digital]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: Intel [HDA Intel], device 6: Si3054 Modem [Si3054 Modem]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: HDMI [HDA ATI HDMI], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: Intel [HDA Intel], device 0: ALC663 Analog [ALC663 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: Intel [HDA Intel], device 6: Si3054 Modem [Si3054 Modem]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [Intel]
+
+Card hw:0 'Intel'/'HDA Intel at 0xfdef8000 irq 49'
+  Mixer name	: 'Realtek ALC663'
+  Components	: 'HDA:10ec0663,10431878,00100001 HDA:10573055,10431316,00100700'
+  Controls      : 18
+  Simple ctrls  : 10
+Simple mixer control 'Master',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [12.00dB] [on]
+  Front Right: Playback 31 [100%] [12.00dB] [on]
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958 Default PCM',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'Beep',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 23 [74%] [0.00dB] [off]
+  Front Right: Playback 23 [74%] [0.00dB] [off]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 31 [100%] [30.00dB] [on]
+  Front Right: Capture 31 [100%] [30.00dB] [on]
+Simple mixer control 'Capture',1
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 11 [35%] [0.00dB] [off]
+  Front Right: Capture 11 [35%] [0.00dB] [off]
+Simple mixer control 'Caller ID',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [off]
+Simple mixer control 'Off-hook',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [off]
+
+!!-------Mixer controls for card 1 [HDMI]
+
+Card hw:1 'HDMI'/'HDA ATI HDMI at 0xfdfec000 irq 51'
+  Mixer name	: 'ATI R6xx HDMI'
+  Components	: 'HDA:1002aa01,00aa0100,00100000'
+  Controls      : 4
+  Simple ctrls  : 1
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.Intel {
+	control.1 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Master Playback Volume'
+		value.0 64
+		value.1 64
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Master Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Mic Playback Volume'
+		value.0 31
+		value.1 31
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Mic Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
+	}
+	control.6 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Capture Switch'
+		index 1
+		value.0 false
+		value.1 false
+	}
+	control.7 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -1650
+		comment.dbmax 3000
+		iface MIXER
+		name 'Capture Volume'
+		value.0 31
+		value.1 31
+	}
+	control.8 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -1650
+		comment.dbmax 3000
+		iface MIXER
+		name 'Capture Volume'
+		index 1
+		value.0 11
+		value.1 11
+	}
+	control.9 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.10 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.11 {
+		comment.access 'read write'
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.12 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+	}
+	control.13 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Default PCM Playback Switch'
+		value true
+	}
+	control.14 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Beep Playback Volume'
+		value.0 23
+		value.1 23
+	}
+	control.15 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Beep Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.16 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Off-hook Switch'
+		value false
+	}
+	control.17 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Caller ID Switch'
+		value false
+	}
+	control.18 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 255'
+		comment.tlv '0000000100000008ffffec1400000014'
+		comment.dbmin -5100
+		comment.dbmax 0
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+	}
+}
+state.HDMI {
+	control.1 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.2 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0482000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+aes_i586
+aes_generic
+parport_pc
+ppdev
+rfcomm
+sco
+binfmt_misc
+bnep
+l2cap
+snd_hda_codec_hdmi
+snd_hda_codec_si3054
+snd_hda_codec_realtek
+radeon
+snd_hda_intel
+snd_hda_codec
+joydev
+snd_hwdep
+snd_pcm
+snd_seq_midi
+snd_rawmidi
+snd_seq_midi_event
+ttm
+drm_kms_helper
+uvcvideo
+arc4
+snd_seq
+drm
+iwlagn
+snd_timer
+iwlcore
+snd_seq_device
+mac80211
+intel_agp
+psmouse
+r852
+sm_common
+btusb
+agpgart
+video
+serio_raw
+videodev
+asus_laptop
+v4l1_compat
+nand
+cfg80211
+nand_ids
+nand_ecc
+lp
+mtd
+sparse_keymap
+snd
+i2c_algo_bit
+output
+soundcore
+bluetooth
+snd_page_alloc
+parport
+usbhid
+hid
+sdhci_pci
+firewire_ohci
+firewire_core
+sdhci
+led_class
+crc_itu_t
+r8169
+mii
+ahci
+libahci
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x11 0x411111f0
+0x12 0x99a30940
+0x13 0x411111f0
+0x14 0x99130110
+0x15 0x411111f0
+0x16 0x411111f0
+0x17 0x411111f0
+0x18 0x01a19830
+0x19 0x411111f0
+0x1a 0x411111f0
+0x1b 0x411111f0
+0x1d 0x40168a2d
+0x1e 0x99430120
+0x21 0x0121401f
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC0D1/init_pin_configs:
+
+/sys/class/sound/hwC0D1/driver_pin_configs:
+
+/sys/class/sound/hwC0D1/user_pin_configs:
+
+/sys/class/sound/hwC0D1/init_verbs:
+
+/sys/class/sound/hwC1D0/init_pin_configs:
+0x03 0x18560010
+
+/sys/class/sound/hwC1D0/driver_pin_configs:
+
+/sys/class/sound/hwC1D0/user_pin_configs:
+
+/sys/class/sound/hwC1D0/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+[   13.411527]   alloc kstat_irqs on node -1
+[   13.411533] HDA Intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[   13.411579]   alloc irq_desc for 49 on node -1
+[   13.411580]   alloc kstat_irqs on node -1
+[   13.411591] HDA Intel 0000:00:1b.0: irq 49 for MSI/MSI-X
+[   13.411620] HDA Intel 0000:00:1b.0: setting latency timer to 64
+[   13.411626] ALSA hda_intel.c:2565: chipset global capabilities = 0x4401
+[   13.441039] ALSA hda_intel.c:914: codec_mask = 0x3
+[   13.441119] ALSA hda_intel.c:1357: codec #0 probed OK
+[   13.441163] ALSA hda_intel.c:1357: codec #1 probed OK
+[   13.446645] [drm] radeon defaulting to kernel modesetting.
+--
+[   13.604187] EXT4-fs (sda5): re-mounted. Opts: errors=remount-ro,user_xattr
+[   13.689798] ALSA patch_realtek.c:1458: SKU: Nid=0x1d sku_cfg=0x40168a2d
+[   13.689802] ALSA patch_realtek.c:1460: SKU: port_connectivity=0x1
+[   13.689805] ALSA patch_realtek.c:1461: SKU: enable_pcbeep=0x1
+[   13.689807] ALSA patch_realtek.c:1462: SKU: check_sum=0x00000006
+[   13.689810] ALSA patch_realtek.c:1463: SKU: customization=0x0000008a
+[   13.689812] ALSA patch_realtek.c:1464: SKU: external_amp=0x5
+[   13.689815] ALSA patch_realtek.c:1465: SKU: platform_type=0x1
+[   13.689817] ALSA patch_realtek.c:1466: SKU: swap=0x0
+[   13.689820] ALSA patch_realtek.c:1467: SKU: override=0x1
+[   13.690001] ALSA hda_codec.c:3727: hda_codec: model 'm51va' is selected for config 1043:1878 (ASUS M51VA)
+[   13.690057] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:1b.0/input/input9
+[   13.735330] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[   13.753621] [drm] ring test succeeded in 1 usecs
+--
+[   13.754040] [drm] Connector 3:
+[   13.754041] [drm]   HDMI-A
+[   13.754042] [drm]   HPD1
+--
+[   15.035172] [drm] Initialized radeon 2.5.0 20080528 for 0000:01:00.0 on minor 0
+[   15.035222] HDA Intel 0000:01:00.1: PCI INT B -> GSI 17 (level, low) -> IRQ 17
+[   15.035278]   alloc irq_desc for 51 on node -1
+[   15.035280]   alloc kstat_irqs on node -1
+[   15.035291] HDA Intel 0000:01:00.1: irq 51 for MSI/MSI-X
+[   15.035318] HDA Intel 0000:01:00.1: setting latency timer to 64
+[   15.035322] ALSA hda_intel.c:2565: chipset global capabilities = 0x1001
+[   15.049033] ALSA hda_intel.c:914: codec_mask = 0x1
+[   15.050341] ALSA hda_intel.c:1357: codec #0 probed OK
+[   15.085894] HDMI: sink_present = 1, eld_valid = 1
+[   15.085909] ALSA hda_eld.c:352: HDMI: ELD buf size is 0, force 128
+[   15.085923] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 0
+[   15.085937] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 1
+[   15.085951] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 2
+[   15.085964] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 3
+[   15.085978] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 4
+[   15.085991] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 5
+[   15.086005] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 6
+[   15.086018] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 7
+[   15.086032] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 8
+[   15.086045] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 9
+[   15.086060] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 10
+[   15.086073] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 11
+[   15.086087] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 12
+[   15.086100] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 13
+[   15.086114] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 14
+[   15.086127] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 15
+[   15.086141] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 16
+[   15.086155] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 17
+[   15.086168] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 18
+[   15.086182] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 19
+[   15.086196] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 20
+[   15.086209] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 21
+[   15.086223] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 22
+[   15.086236] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 23
+[   15.086250] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 24
+[   15.086263] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 25
+[   15.086277] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 26
+[   15.086290] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 27
+[   15.086304] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 28
+[   15.086318] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 29
+[   15.086331] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 30
+[   15.086345] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 31
+[   15.086358] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 32
+[   15.086372] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 33
+[   15.086405] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 34
+[   15.086419] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 35
+[   15.086442] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 36
+[   15.086462] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 37
+[   15.086486] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 38
+[   15.086501] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 39
+[   15.086524] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 40
+[   15.086539] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 41
+[   15.086563] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 42
+[   15.086577] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 43
+[   15.086591] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 44
+[   15.086604] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 45
+[   15.086618] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 46
+[   15.086637] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 47
+[   15.086650] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 48
+[   15.086664] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 49
+[   15.086677] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 50
+[   15.086691] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 51
+[   15.086704] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 52
+[   15.086718] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 53
+[   15.086731] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 54
+[   15.086745] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 55
+[   15.086758] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 56
+[   15.086772] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 57
+[   15.086785] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 58
+[   15.086799] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 59
+[   15.086812] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 60
+[   15.086826] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 61
+[   15.086840] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 62
+[   15.086853] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 63
+[   15.086867] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 64
+[   15.086880] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 65
+[   15.086894] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 66
+[   15.086907] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 67
+[   15.086921] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 68
+[   15.086934] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 69
+[   15.086948] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 70
+[   15.086961] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 71
+[   15.086975] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 72
+[   15.086988] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 73
+[   15.087002] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 74
+[   15.087015] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 75
+[   15.087029] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 76
+[   15.087042] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 77
+[   15.087056] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 78
+[   15.087069] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 79
+[   15.087083] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 80
+[   15.087096] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 81
+[   15.087110] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 82
+[   15.087123] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 83
+[   15.087137] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 84
+[   15.087150] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 85
+[   15.087164] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 86
+[   15.087177] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 87
+[   15.087191] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 88
+[   15.087204] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 89
+[   15.087218] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 90
+[   15.087231] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 91
+[   15.087245] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 92
+[   15.087258] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 93
+[   15.087272] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 94
+[   15.087285] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 95
+[   15.087299] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 96
+[   15.087312] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 97
+[   15.087326] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 98
+[   15.087340] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 99
+[   15.087353] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 100
+[   15.087367] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 101
+[   15.087380] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 102
+[   15.087394] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 103
+[   15.087407] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 104
+[   15.087421] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 105
+[   15.087434] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 106
+[   15.087448] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 107
+[   15.087462] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 108
+[   15.087475] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 109
+[   15.087488] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 110
+[   15.087502] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 111
+[   15.087516] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 112
+[   15.087529] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 113
+[   15.087543] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 114
+[   15.087556] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 115
+[   15.087570] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 116
+[   15.087583] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 117
+[   15.087597] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 118
+[   15.087610] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 119
+[   15.087624] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 120
+[   15.087637] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 121
+[   15.087651] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 122
+[   15.087664] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 123
+[   15.087678] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 124
+[   15.087691] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 125
+[   15.087705] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 126
+[   15.087719] ALSA hda_eld.c:161: HDMI: invalid ELD data byte 127
+[   15.087721] ALSA hda_eld.c:267: HDMI: Unknown ELD version 0
+[   15.147000] Bluetooth: L2CAP ver 2.14
+--
+[   16.517389] EXT4-fs (sda5): re-mounted. Opts: errors=remount-ro,user_xattr,commit=0
+[   17.169965] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3c00, format=0x11
+[   17.169998] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   17.170021] HDMI: ASP channel 0 => slot 0
+[   17.170034] HDMI: ASP channel 0 => slot 0
+[   17.170046] HDMI: ASP channel 0 => slot 0
+[   17.170059] HDMI: ASP channel 0 => slot 0
+[   17.170071] HDMI: ASP channel 0 => slot 0
+[   17.170084] HDMI: ASP channel 0 => slot 0
+[   17.170096] HDMI: ASP channel 0 => slot 0
+[   17.170109] HDMI: ASP channel 0 => slot 0
+[   17.170123] HDMI: ELD buf size is 0
+[   17.170136] HDMI: DIP GP[0] buf size is 0
+[   17.170148] HDMI: DIP GP[1] buf size is 0
+[   17.170161] HDMI: DIP GP[2] buf size is 0
+[   17.170173] HDMI: DIP GP[3] buf size is 0
+[   17.170186] HDMI: DIP GP[4] buf size is 0
+[   17.170198] HDMI: DIP GP[5] buf size is 0
+[   17.170211] HDMI: DIP GP[6] buf size is 0
+[   17.170223] HDMI: DIP GP[7] buf size is 0
+[   17.170240] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   17.177099] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3c00, format=0x11
+[   17.177128] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   17.177151] HDMI: ASP channel 0 => slot 0
+[   17.177163] HDMI: ASP channel 0 => slot 0
+[   17.177176] HDMI: ASP channel 0 => slot 0
+[   17.177188] HDMI: ASP channel 0 => slot 0
+[   17.177201] HDMI: ASP channel 0 => slot 0
+[   17.177213] HDMI: ASP channel 0 => slot 0
+[   17.177226] HDMI: ASP channel 0 => slot 0
+[   17.177238] HDMI: ASP channel 0 => slot 0
+[   17.177252] HDMI: ELD buf size is 0
+[   17.177265] HDMI: DIP GP[0] buf size is 0
+[   17.177277] HDMI: DIP GP[1] buf size is 0
+[   17.177290] HDMI: DIP GP[2] buf size is 0
+[   17.177302] HDMI: DIP GP[3] buf size is 0
+[   17.177315] HDMI: DIP GP[4] buf size is 0
+[   17.177327] HDMI: DIP GP[5] buf size is 0
+[   17.177340] HDMI: DIP GP[6] buf size is 0
+[   17.177352] HDMI: DIP GP[7] buf size is 0
+[   17.177368] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   17.178350] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.178372] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.180468] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x11
+[   17.180497] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   17.180520] HDMI: ASP channel 0 => slot 0
+[   17.180533] HDMI: ASP channel 0 => slot 0
+[   17.180545] HDMI: ASP channel 0 => slot 0
+[   17.180558] HDMI: ASP channel 0 => slot 0
+[   17.180570] HDMI: ASP channel 0 => slot 0
+[   17.180583] HDMI: ASP channel 0 => slot 0
+[   17.180595] HDMI: ASP channel 0 => slot 0
+[   17.180608] HDMI: ASP channel 0 => slot 0
+[   17.180621] HDMI: ELD buf size is 0
+[   17.180634] HDMI: DIP GP[0] buf size is 0
+[   17.180646] HDMI: DIP GP[1] buf size is 0
+[   17.180659] HDMI: DIP GP[2] buf size is 0
+[   17.180672] HDMI: DIP GP[3] buf size is 0
+[   17.180684] HDMI: DIP GP[4] buf size is 0
+[   17.180697] HDMI: DIP GP[5] buf size is 0
+[   17.180709] HDMI: DIP GP[6] buf size is 0
+[   17.180722] HDMI: DIP GP[7] buf size is 0
+[   17.180737] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   17.180751] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x11
+[   17.180780] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   17.180802] HDMI: ASP channel 0 => slot 0
+[   17.180815] HDMI: ASP channel 0 => slot 0
+[   17.180827] HDMI: ASP channel 0 => slot 0
+[   17.180840] HDMI: ASP channel 0 => slot 0
+[   17.180852] HDMI: ASP channel 0 => slot 0
+[   17.180865] HDMI: ASP channel 0 => slot 0
+[   17.180877] HDMI: ASP channel 0 => slot 0
+[   17.180890] HDMI: ASP channel 0 => slot 0
+[   17.180903] HDMI: ELD buf size is 0
+[   17.180916] HDMI: DIP GP[0] buf size is 0
+[   17.180928] HDMI: DIP GP[1] buf size is 0
+[   17.180941] HDMI: DIP GP[2] buf size is 0
+[   17.180953] HDMI: DIP GP[3] buf size is 0
+[   17.180966] HDMI: DIP GP[4] buf size is 0
+[   17.180978] HDMI: DIP GP[5] buf size is 0
+[   17.180991] HDMI: DIP GP[6] buf size is 0
+[   17.181013] HDMI: DIP GP[7] buf size is 0
+[   17.181028] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   17.187835] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.187838] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.187841] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.187981] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.187984] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.187986] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.188223] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.188226] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.188229] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.188547] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.188557] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.188560] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.188710] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.188713] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.188716] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.188859] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.188862] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.188865] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.189066] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.189069] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.189072] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.189364] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.189367] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.189369] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.189510] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.189512] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.189515] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.189651] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.189653] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.189656] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.189846] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.189849] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.189851] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.190135] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.190138] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.190140] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.190281] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.190283] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.190286] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.190422] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.190425] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.190427] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.190616] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.190619] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.190622] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.190905] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.190908] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.190910] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.191060] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.191063] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.191065] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.191202] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.191205] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.191207] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.191397] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.191400] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.191403] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.191686] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.191689] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.191692] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.192125] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.192138] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   17.196027] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   17.204066] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   17.212034] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   17.221039] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.221052] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   17.221057] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   17.221060] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   17.221063] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   17.221261] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.221418] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.221624] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.221924] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.222346] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.222355] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   17.229060] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.229068] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   17.229084] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.229095] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.229716] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.229719] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.229722] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.229724] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.229736] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.229739] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.229741] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.230062] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.230066] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.230068] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.230384] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.230388] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.230390] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.230804] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.230808] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.230810] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.231334] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.231337] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.231340] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.231662] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.231665] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.231668] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.231985] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.231988] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.231991] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.232405] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.232409] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.232412] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.232936] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.232940] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.232942] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.233282] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.233286] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.233288] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.233608] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.233611] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.233614] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.234026] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.234029] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.234032] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.234555] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.234558] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.234561] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.234881] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.234884] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.234887] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.235216] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.235219] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.235222] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.235636] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.235639] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.235642] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.236164] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.236167] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.236170] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.236490] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.236494] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.236496] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.236814] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.236817] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.236820] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.237246] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.237250] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.237252] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.237774] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.237777] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.237780] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.238072] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.238075] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.238078] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.238362] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.238365] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.238367] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.238665] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.238668] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.238671] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.238973] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.238976] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.238979] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.239265] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.239269] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.239271] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.239554] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.239557] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.239560] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.239856] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.239860] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.239862] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.240163] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.240166] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.240169] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.240457] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.240460] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.240463] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.240746] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.240749] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.240752] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.241910] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.241914] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.241916] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.242224] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.242228] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.242230] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.242519] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.242522] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.242525] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.242810] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.242813] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.242816] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.243115] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.243118] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.243121] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.243425] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.243428] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.243431] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.243719] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.243722] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.243725] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.244017] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.244021] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.244023] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.244322] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.244325] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.244328] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.244630] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.244633] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.244636] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.244922] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.244926] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.244928] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.245230] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.245233] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.245236] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.245533] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.245536] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.245539] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.245840] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.245843] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.245846] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.246135] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.246139] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.246141] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.246427] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.246430] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.246433] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.246730] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.246733] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.246736] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.247037] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.247041] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.247043] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.247332] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.247335] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.247338] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.247620] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.247624] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.247626] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.247923] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.247926] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.247929] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.248231] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.248234] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.248237] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.248525] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.248528] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.248531] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.248813] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.248816] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.248819] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.249140] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.249144] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.249146] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.249448] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.249451] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.249454] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.249739] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.249743] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.249745] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.250029] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.250032] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.250035] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.250333] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.250336] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.250338] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.250640] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.250643] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.250646] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.250966] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.250969] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.250972] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.251288] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.251291] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.251294] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.251708] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.251712] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.251714] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.252237] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.252240] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.252243] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.252564] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.252567] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.252570] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.252887] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.252890] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.252893] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.253328] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.253332] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.253334] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.253857] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.253860] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.253863] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.254184] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.254187] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.254190] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.254507] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.254510] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.254513] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.254928] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.254931] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.254934] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.255456] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.255459] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.255462] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.255784] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.255787] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.255790] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.256108] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.256111] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.256114] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.256547] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.256551] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.256553] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.257012] hda-intel: IRQ timing workaround is activated for card #1. Suggest a bigger bdl_pos_adj.
+[   17.258210] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.258213] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.258216] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.258542] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.258545] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.258548] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.258868] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.258871] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.258874] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.259289] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.259292] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.259295] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.259821] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.259824] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.259827] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.260151] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.260154] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.260157] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.260476] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.260479] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.260482] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.260897] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.260901] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.260903] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.261466] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.261469] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.261472] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.261794] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.261797] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.261800] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.262116] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.262119] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.262122] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.262562] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.262565] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.262568] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.263092] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.263096] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.263099] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.263420] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.263423] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.263426] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.263743] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.263746] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.263749] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.264163] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.264167] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.264169] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.264692] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.264695] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.264698] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.265048] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.265052] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.265055] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.265373] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.265376] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.265379] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.265792] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.265796] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.265798] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.266331] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.266334] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.266337] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.266659] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.266662] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.266665] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.266982] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.266985] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.266988] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.267402] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.267405] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.267408] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.267931] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   17.267934] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   17.267937] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   17.268388] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.268399] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x4011
+[   17.268488] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.268498] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x4011
+[   17.268668] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.268813] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.269044] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.269343] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.269757] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.269765] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   17.269780] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.269787] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   17.269799] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.269808] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.270385] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.270409] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.270812] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.271208] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.271662] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.272215] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.272624] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.273034] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.273486] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.274037] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.274438] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.274833] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.275286] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.275836] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.276237] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.276633] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.277304] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.277857] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.278258] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.278655] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.279107] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.279660] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   17.281433] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.281575] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.281774] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.282072] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.282483] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.282491] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   17.282506] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   17.282513] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   17.282527] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.282538] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   17.284670] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   17.284681] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   17.284749] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   17.284752] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   17.284755] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   17.284770] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   17.284779] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   17.284787] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   17.284791] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   17.284794] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   17.295285] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   17.295293] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   17.295308] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   17.295316] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   18.185719] EXT4-fs (sda5): re-mounted. Opts: errors=remount-ro,user_xattr,commit=0
+[   22.320816] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   22.320830] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   22.321317] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   22.321347] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   23.761264] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   23.761268] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   23.761271] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   23.761274] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   23.761287] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   23.761289] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   23.761292] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.492849] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3c00, format=0x11
+[   26.492882] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   26.492910] HDMI: ASP channel 0 => slot 0
+[   26.492923] HDMI: ASP channel 0 => slot 0
+[   26.492936] HDMI: ASP channel 0 => slot 0
+[   26.492948] HDMI: ASP channel 0 => slot 0
+[   26.492961] HDMI: ASP channel 0 => slot 0
+[   26.492973] HDMI: ASP channel 0 => slot 0
+[   26.492986] HDMI: ASP channel 0 => slot 0
+[   26.493024] HDMI: ASP channel 0 => slot 0
+[   26.493039] HDMI: ELD buf size is 0
+[   26.493058] HDMI: DIP GP[0] buf size is 0
+[   26.493071] HDMI: DIP GP[1] buf size is 0
+[   26.493083] HDMI: DIP GP[2] buf size is 0
+[   26.493096] HDMI: DIP GP[3] buf size is 0
+[   26.493108] HDMI: DIP GP[4] buf size is 0
+[   26.493121] HDMI: DIP GP[5] buf size is 0
+[   26.493134] HDMI: DIP GP[6] buf size is 0
+[   26.493146] HDMI: DIP GP[7] buf size is 0
+[   26.493164] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   26.493180] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3c00, format=0x11
+[   26.493208] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   26.493233] HDMI: ASP channel 0 => slot 0
+[   26.493246] HDMI: ASP channel 0 => slot 0
+[   26.493259] HDMI: ASP channel 0 => slot 0
+[   26.493272] HDMI: ASP channel 0 => slot 0
+[   26.493285] HDMI: ASP channel 0 => slot 0
+[   26.493298] HDMI: ASP channel 0 => slot 0
+[   26.493311] HDMI: ASP channel 0 => slot 0
+[   26.493324] HDMI: ASP channel 0 => slot 0
+[   26.493338] HDMI: ELD buf size is 0
+[   26.493351] HDMI: DIP GP[0] buf size is 0
+[   26.493363] HDMI: DIP GP[1] buf size is 0
+[   26.493376] HDMI: DIP GP[2] buf size is 0
+[   26.493388] HDMI: DIP GP[3] buf size is 0
+[   26.493401] HDMI: DIP GP[4] buf size is 0
+[   26.493414] HDMI: DIP GP[5] buf size is 0
+[   26.493427] HDMI: DIP GP[6] buf size is 0
+[   26.493440] HDMI: DIP GP[7] buf size is 0
+[   26.493457] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   26.494462] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.494487] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.496603] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x11
+[   26.496633] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   26.496657] HDMI: ASP channel 0 => slot 0
+[   26.496669] HDMI: ASP channel 0 => slot 0
+[   26.496682] HDMI: ASP channel 0 => slot 0
+[   26.496694] HDMI: ASP channel 0 => slot 0
+[   26.496707] HDMI: ASP channel 0 => slot 0
+[   26.496719] HDMI: ASP channel 0 => slot 0
+[   26.496732] HDMI: ASP channel 0 => slot 0
+[   26.496745] HDMI: ASP channel 0 => slot 0
+[   26.496758] HDMI: ELD buf size is 0
+[   26.496771] HDMI: DIP GP[0] buf size is 0
+[   26.496783] HDMI: DIP GP[1] buf size is 0
+[   26.496796] HDMI: DIP GP[2] buf size is 0
+[   26.496808] HDMI: DIP GP[3] buf size is 0
+[   26.496821] HDMI: DIP GP[4] buf size is 0
+[   26.496833] HDMI: DIP GP[5] buf size is 0
+[   26.496846] HDMI: DIP GP[6] buf size is 0
+[   26.496858] HDMI: DIP GP[7] buf size is 0
+[   26.496879] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   26.496893] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x11
+[   26.496922] ALSA patch_hdmi.c:675: hdmi_setup_audio_infoframe: cvt=2 pin=3 channels=2
+[   26.496949] HDMI: ASP channel 0 => slot 0
+[   26.496962] HDMI: ASP channel 0 => slot 0
+[   26.496974] HDMI: ASP channel 0 => slot 0
+[   26.496987] HDMI: ASP channel 0 => slot 0
+[   26.496999] HDMI: ASP channel 0 => slot 0
+[   26.497013] HDMI: ASP channel 0 => slot 0
+[   26.497026] HDMI: ASP channel 0 => slot 0
+[   26.497038] HDMI: ASP channel 0 => slot 0
+[   26.497052] HDMI: ELD buf size is 0
+[   26.497065] HDMI: DIP GP[0] buf size is 0
+[   26.497078] HDMI: DIP GP[1] buf size is 0
+[   26.497091] HDMI: DIP GP[2] buf size is 0
+[   26.497104] HDMI: DIP GP[3] buf size is 0
+[   26.497117] HDMI: DIP GP[4] buf size is 0
+[   26.497130] HDMI: DIP GP[5] buf size is 0
+[   26.497143] HDMI: DIP GP[6] buf size is 0
+[   26.497156] HDMI: DIP GP[7] buf size is 0
+[   26.497173] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x1, channel=0, format=0x11
+[   26.602366] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.602371] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.602373] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.602526] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.602529] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.602532] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.602754] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.602757] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.602760] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.603067] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.603070] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.603072] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.603226] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.603229] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.603232] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.603380] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.603383] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.603385] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.603588] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.603591] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.603594] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.603899] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.603902] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.603905] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.604086] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.604089] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.604092] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.604240] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.604243] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.604246] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.604450] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.604453] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.604455] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.604757] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.604760] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.604763] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.604913] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.604916] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.604919] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.605066] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.605069] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.605072] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.605276] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.605279] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.605282] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.605585] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.605588] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.605591] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.605741] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.605744] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.605747] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.605894] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.605897] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.605900] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.606130] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.606133] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.606136] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.606441] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.606444] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.606447] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.606891] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.606905] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   26.606910] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   26.606914] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   26.606917] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   26.606932] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.606942] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   26.606946] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   26.606950] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   26.606953] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   26.607115] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.607262] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.607465] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.607766] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.608205] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.608214] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   26.608228] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.608236] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   26.608251] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.608261] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.608855] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.608858] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.608861] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.608864] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.608875] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.608877] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.608880] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.609203] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.609206] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.609209] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.609543] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.609546] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.609549] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.609975] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.609978] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.609981] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.610513] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.610516] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.610519] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.610851] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.610854] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.610857] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.611184] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.611187] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.611190] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.611614] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.611618] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.611620] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.612258] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.612261] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.612264] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.612597] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.612600] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.612603] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.612930] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.612933] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.612936] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.613361] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.613364] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.613367] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.613897] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.613900] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.613903] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.614234] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.614237] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.614240] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.614568] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.614571] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.614574] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.614998] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.615001] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.615004] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.615535] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.615538] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.615541] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.615872] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.615875] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.615878] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.616225] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.616229] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.616231] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.616655] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.616658] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.616661] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.617194] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.617197] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.617200] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.617499] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.617502] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.617505] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.617801] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.617804] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.617807] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.618115] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.618119] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.618121] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.618435] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.618438] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.618440] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.618739] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.618742] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.618744] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.619038] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.619042] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.619044] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.619351] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.619354] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.619357] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.619670] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.619673] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.619676] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.619972] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.619975] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.619978] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.620297] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.620301] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.620303] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.620609] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.620612] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.620615] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.620925] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.620928] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.620931] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.621227] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.621230] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.621233] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.621526] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.621529] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.621532] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.621836] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.621839] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.621842] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.622151] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.622154] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.622157] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.622453] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.622456] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.622459] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.622753] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.622756] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.622759] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.623064] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.623067] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.623070] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.623379] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.623382] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.623385] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.623685] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.623688] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.623691] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.623984] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.623987] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.623990] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.624922] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.624925] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.624928] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.625240] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.625244] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.625246] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.625544] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.625547] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.625550] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.625843] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.625846] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.625849] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.626157] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.626160] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.626162] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.626474] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.626478] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.626480] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.626777] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.626781] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.626783] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.627078] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.627081] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.627083] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.627389] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.627392] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.627395] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.627709] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.627712] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.627714] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.628043] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.628046] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.628049] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.628342] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.628345] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.628348] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.628655] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.628658] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.628661] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.628971] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.628974] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.628977] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.629274] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.629278] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.629280] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.629575] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.629578] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.629581] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.629888] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.629891] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.629894] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.630205] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.630208] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.630211] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.630543] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.630547] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.630549] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.630876] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.630879] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.630882] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.631306] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.631309] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.631312] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.631847] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.631850] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.631853] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.632226] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.632229] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.632232] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.632559] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.632562] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.632565] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.632989] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.632992] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.632995] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.633527] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.633530] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.633533] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.633863] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.633866] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.633869] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.634195] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.634198] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.634201] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.634624] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.634627] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.634630] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.635160] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.635163] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.635166] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.635497] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.635500] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.635503] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.635829] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.635833] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.635835] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.636289] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.636292] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.636295] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.636828] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.636831] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.636834] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.637165] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.637169] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.637171] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.637498] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.637502] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.637504] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.637927] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.637930] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.637933] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.638465] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.638468] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.638471] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.638828] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.638831] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.638834] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.639157] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.639160] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.639163] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.639585] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.639589] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.639591] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.640138] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.640141] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.640144] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.640475] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.640478] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.640481] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.640808] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.640811] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.640814] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.641238] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.641241] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.641244] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.641782] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.641786] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.641788] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.642120] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.642123] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.642126] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.642451] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.642454] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.642457] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.642880] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.642883] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.642886] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.643418] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.643421] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.643424] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.643754] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.643757] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.643760] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.644108] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.644112] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.644114] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.644538] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.644541] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.644544] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.645077] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.645080] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.645083] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.645414] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.645417] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.645420] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.645747] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.645751] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.645753] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.646176] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.646179] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.646182] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.646713] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   26.646716] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   26.646719] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   26.647184] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.647197] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x4011
+[   26.647276] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.647285] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x4011
+[   26.647459] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.647608] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.647814] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.648140] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.648561] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.648569] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   26.648584] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.648591] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   26.648604] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.648616] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.649203] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.649234] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.649644] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.650051] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.650513] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.651073] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.651482] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.651886] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.653654] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.654215] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.654644] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.655052] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.655515] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.656116] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.656528] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.656935] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.657396] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.657957] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.658367] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.658773] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.659235] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.659795] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   26.661640] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.661789] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.661992] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.662296] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.662720] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.662728] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   26.662742] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x3700, format=0x4011
+[   26.662750] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   26.662764] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.662780] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   26.680804] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   26.680815] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   26.680875] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   26.680879] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   26.680882] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   26.680897] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   26.680910] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x6, stream=0x5, channel=0, format=0x4011
+[   26.680915] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x2, stream=0x5, channel=0, format=0x4011
+[   26.680918] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x3, stream=0x5, channel=0, format=0x4011
+[   26.680921] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x4, stream=0x5, channel=0, format=0x4011
+[   26.694791] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   26.694799] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   26.694814] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   26.694822] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   32.023398] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   32.023416] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   32.024290] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   32.024352] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   37.164294] wlan0: authenticate with 00:16:a6:13:9b:30 (try 1)
+--
+[   37.848151] padlock: VIA PadLock not detected.
+[   40.725689] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   40.725693] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   40.725696] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   40.725698] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x6
+[   40.725722] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x2
+[   40.725725] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x3
+[   40.725727] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x4
+[   47.392012] wlan0: no IPv6 routers present
+[   53.794131] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   53.794142] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   53.794158] ALSA hda_intel.c:1682: azx_pcm_prepare: bufsize=0x10000, format=0x4011
+[   53.794166] ALSA hda_codec.c:1228: hda_codec_setup_stream: NID=0x9, stream=0x1, channel=0, format=0x4011
+[   81.218210] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+[   81.218259] ALSA hda_codec.c:1291: hda_codec_cleanup_stream: NID=0x9
+
+
