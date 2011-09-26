@@ -1,0 +1,1553 @@
+
+!!################################
+!!ALSA Information Script v 0.4.60
+!!################################
+
+!!Script ran on: Sat May 14 00:37:36 UTC 2011
+
+
+!!Linux Distribution
+!!------------------
+
+Ubuntu 11.04 \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 11.04"
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      Acer, inc.
+Product Name:      Aspire 6530      
+Product Version:   Not Applicable
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    2.6.38-8-generic
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         x86_64
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.23
+Library version:    1.0.24.1
+Utilities version:  1.0.24.2
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+Pulseaudio:
+      Installed - Yes (/usr/bin/pulseaudio)
+      Running - Yes
+
+ESound Daemon:
+      Installed - Yes (/usr/bin/esd)
+      Running - No
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [SB             ]: HDA-Intel - HDA ATI SB
+                      HDA ATI SB at 0xf0000000 irq 16
+ 1 [HDMI           ]: HDA-Intel - HDA ATI HDMI
+                      HDA ATI HDMI at 0xcfdec000 irq 19
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:14.2 Audio device: ATI Technologies Inc SBx00 Azalia (Intel HDA)
+01:05.1 Audio device: ATI Technologies Inc RS780 Azalia controller
+
+
+!!Advanced information - PCI Vendor/Device/Subsystem ID's
+!!--------------------------------------------------------
+
+00:14.2 0403: 1002:4383
+	Subsystem: 1025:0166
+--
+01:05.1 0403: 1002:960f
+	Subsystem: 1002:9612
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-atiixp-modem: index=-2
+snd-intel8x0m: index=-2
+snd-via82xx-modem: index=-2
+snd-usb-audio: index=-2
+snd-usb-caiaq: index=-2
+snd-usb-ua101: index=-2
+snd-usb-us122l: index=-2
+snd-usb-usx2y: index=-2
+snd-cmipci: mpu_port=0x330 fm_port=0x388
+snd-pcsp: index=-2
+snd-usb-audio: index=-2
+snd-hda-intel: model=3stack-6ch
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 32,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : 3stack-6ch,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 1
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 32,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : 3stack-6ch,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 1
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Realtek ALC888
+Address: 0
+AFG Function Id: 0x1 (unsol 1)
+Vendor Id: 0x10ec0888
+Subsystem Id: 0x10250166
+Revision Id: 0x100202
+No Modem Function Group found
+Default PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=2, o=0, i=0, unsolicited=1, wake=1
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x02 [Audio Output] wcaps 0x411: Stereo
+  Device: name="ALC888 Analog", type="Audio", device=0
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x03 [Audio Output] wcaps 0x411: Stereo
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x04 [Audio Output] wcaps 0x411: Stereo
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x05 [Audio Output] wcaps 0x411: Stereo
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x06 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x08 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Switch", index=0, device=0
+  Control: name="Capture Volume", index=0, device=0
+  Device: name="ALC888 Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x94 0x94]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x23
+Node 0x09 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Switch", index=1, device=0
+  Control: name="Capture Volume", index=1, device=0
+  Device: name="ALC888 Analog", type="Audio", device=2
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x80 0x80]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x22
+Node 0x0a [Audio Input] wcaps 0x100711: Stereo Digital
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x1f
+Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="CD Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Control: name="CD Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Control: name="Line Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Control: name="Line Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Control: name="Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Front Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Front Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Beep Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=5, ofs=0
+  Control: name="Beep Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=5, ofs=0
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x9f 0x9f] [0x9f 0x9f] [0x1f 0x1f] [0x80 0x80] [0x16 0x16] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x17
+Node 0x0c [Audio Mixer] wcaps 0x20010f: Stereo Amp-In Amp-Out
+  Control: name="Front Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80]
+  Amp-Out caps: ofs=0x1f, nsteps=0x1f, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x1c 0x1c]
+  Connection: 2
+     0x02 0x0b
+Node 0x0d [Audio Mixer] wcaps 0x20010f: Stereo Amp-In Amp-Out
+  Control: name="Surround Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80]
+  Amp-Out caps: ofs=0x1f, nsteps=0x1f, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x1c 0x1c]
+  Connection: 2
+     0x03 0x0b
+Node 0x0e [Audio Mixer] wcaps 0x20010f: Stereo Amp-In Amp-Out
+  Control: name="Center Playback Volume", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Control: name="LFE Playback Volume", index=0, device=0
+    ControlAmp: chs=2, dir=Out, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80]
+  Amp-Out caps: ofs=0x1f, nsteps=0x1f, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x1c 0x1c]
+  Connection: 2
+     0x04 0x0b
+Node 0x0f [Audio Mixer] wcaps 0x20010f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80]
+  Amp-Out caps: ofs=0x1f, nsteps=0x1f, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Connection: 2
+     0x05 0x0b
+Node 0x10 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x11 [Pin Complex] wcaps 0x400780: Mono Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x10
+Node 0x12 [Pin Complex] wcaps 0x400401: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x99a30940: [Fixed] Mic at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x4, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x14 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001003e: IN OUT HP EAPD Detect Trigger
+  EAPD 0x0:
+  Pin Default 0x99130110: [Fixed] Speaker at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c* 0x0d 0x0e 0x0f 0x26
+Node 0x15 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001003e: IN OUT HP EAPD Detect Trigger
+  EAPD 0x0:
+  Pin Default 0x0321101f: [Jack] HP Out at Ext Left
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x1, Sequence = 0xf
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c 0x0d* 0x0e 0x0f 0x26
+Node 0x16 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00000036: IN OUT Detect Trigger
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c 0x0d 0x0e* 0x0f 0x26
+Node 0x17 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00000036: IN OUT Detect Trigger
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c 0x0d 0x0e 0x0f* 0x26
+Node 0x18 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Control: name="Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x03 0x03]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000373e: IN OUT HP Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x03a19c30: [Jack] Mic at Ext Left
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x3, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c* 0x0d 0x0e 0x0f 0x26
+Node 0x19 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Control: name="Front Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x03 0x03]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000373e: IN OUT HP Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c* 0x0d 0x0e 0x0f 0x26
+Node 0x1a [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000373e: IN OUT HP Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x0381343f: [Jack] Line In at Ext Left
+    Conn = 1/8, Color = Blue
+    DefAssociation = 0x3, Sequence = 0xf
+  Pin-ctls: 0x20: IN VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c* 0x0d 0x0e 0x0f 0x26
+Node 0x1b [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Control: name="Headphone Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000373e: IN OUT HP Detect Trigger
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0xc0: OUT HP VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x0c* 0x0d 0x0e 0x0f 0x26
+Node 0x1c [Pin Complex] wcaps 0x400481: Stereo
+  Pincap 0x00000024: IN Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1d [Pin Complex] wcaps 0x400400: Mono
+  Pincap 0x00000020: IN
+  Pin Default 0x4016852d: [N/A] Speaker at Ext N/A
+    Conn = Digital, Color = Purple
+    DefAssociation = 0x2, Sequence = 0xd
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1e [Pin Complex] wcaps 0x400780: Mono Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x03451120: [Jack] SPDIF Out at Ext Left
+    Conn = Optical, Color = Black
+    DefAssociation = 0x2, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x06
+Node 0x1f [Pin Complex] wcaps 0x400680: Mono Digital
+  Pincap 0x00000024: IN Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono
+  Processing caps: benign=0, ncoeff=25
+Node 0x21 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Input Source", index=1, device=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 12
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x17 0x0b 0x12
+Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Input Source", index=0, device=0
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 11
+     0x18 0x19 0x1a 0x1b 0x1c 0x1d 0x14 0x15 0x16 0x17 0x0b
+Node 0x24 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x25 [Audio Output] wcaps 0x411: Stereo
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x26 [Audio Mixer] wcaps 0x20010f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80]
+  Amp-Out caps: ofs=0x1f, nsteps=0x1f, stepsize=0x05, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Connection: 2
+     0x25 0x0b
+Codec: LSI ID 1040
+Address: 1
+MFG Function Id: 0x2 (unsol 1)
+Vendor Id: 0x11c11040
+Subsystem Id: 0x10250166
+Revision Id: 0x100200
+Modem Function Group: 0x1
+Codec: ATI RS690/780 HDMI
+Address: 0
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x1002791a
+Subsystem Id: 0x00791a00
+Revision Id: 0x100000
+No Modem Function Group found
+Default PCM:
+    rates [0x40]: 48000
+    bits [0x2]: 16
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x02 [Audio Output] wcaps 0x201: Stereo Digital
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Device: name="HDMI 0", type="HDMI", device=3
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+Node 0x03 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000094: OUT Detect HDMI
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x02
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw----  1 root audio 116,  7 May 12 11:01 /dev/snd/controlC0
+crw-rw----  1 root audio 116, 10 May 12 11:01 /dev/snd/controlC1
+crw-rw----  1 root audio 116,  6 May 12 11:01 /dev/snd/hwC0D0
+crw-rw----  1 root audio 116,  5 May 12 11:01 /dev/snd/hwC0D1
+crw-rw----  1 root audio 116,  9 May 12 11:01 /dev/snd/hwC1D0
+crw-rw----  1 root audio 116,  4 May 13 16:27 /dev/snd/pcmC0D0c
+crw-rw----  1 root audio 116,  3 May 13 16:27 /dev/snd/pcmC0D0p
+crw-rw----  1 root audio 116,  2 May 12 11:01 /dev/snd/pcmC0D2c
+crw-rw----  1 root audio 116,  8 May 12 11:01 /dev/snd/pcmC1D3p
+crw-rw----  1 root audio 116,  1 May 12 11:01 /dev/snd/seq
+crw-rw----  1 root audio 116, 33 May 12 11:01 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  80 May 12 11:01 .
+drwxr-xr-x 3 root root 280 May 12 11:01 ..
+lrwxrwxrwx 1 root root  12 May 12 11:01 pci-0000:00:14.2 -> ../controlC0
+lrwxrwxrwx 1 root root  12 May 12 11:01 pci-0000:01:05.1 -> ../controlC1
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: SB [HDA ATI SB], device 0: ALC888 Analog [ALC888 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: HDMI [HDA ATI HDMI], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: SB [HDA ATI SB], device 0: ALC888 Analog [ALC888 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: SB [HDA ATI SB], device 2: ALC888 Analog [ALC888 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [SB]
+
+Card hw:0 'SB'/'HDA ATI SB at 0xf0000000 irq 16'
+  Mixer name	: 'Realtek ALC888'
+  Components	: 'HDA:10ec0888,10250166,00100202 HDA:11c11040,10250166,00100200'
+  Controls      : 31
+  Simple ctrls  : 19
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 31
+  Mono: Playback 28 [90%] [-4.50dB] [off]
+Simple mixer control 'Headphone',0
+  Capabilities: pswitch penum
+  Playback channels: Front Left - Front Right
+  Mono:
+  Front Left: Playback [off]
+  Front Right: Playback [off]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 252 [99%] [0.60dB]
+  Front Right: Playback 252 [99%] [0.60dB]
+Simple mixer control 'Front',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [0.00dB] [off]
+  Front Right: Playback 31 [100%] [0.00dB] [off]
+Simple mixer control 'Front Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [12.00dB] [off]
+  Front Right: Playback 31 [100%] [12.00dB] [off]
+Simple mixer control 'Front Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 3 [100%] [30.00dB]
+  Front Right: 3 [100%] [30.00dB]
+Simple mixer control 'Surround',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [0.00dB] [off]
+  Front Right: Playback 31 [100%] [0.00dB] [off]
+Simple mixer control 'Center',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 31
+  Mono: Playback 31 [100%] [0.00dB] [off]
+Simple mixer control 'LFE',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 31
+  Mono: Playback 31 [100%] [0.00dB] [off]
+Simple mixer control 'Line',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [12.00dB] [on]
+  Front Right: Playback 31 [100%] [12.00dB] [on]
+Simple mixer control 'CD',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 22 [71%] [-1.50dB] [on]
+  Front Right: Playback 22 [71%] [-1.50dB] [on]
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [12.00dB] [off]
+  Front Right: Playback 31 [100%] [12.00dB] [off]
+Simple mixer control 'Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 3 [100%] [30.00dB]
+  Front Right: 3 [100%] [30.00dB]
+Simple mixer control 'Beep',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 20 [65%] [13.50dB] [off]
+  Front Right: Capture 20 [65%] [13.50dB] [off]
+Simple mixer control 'Capture',1
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 0 [0%] [-16.50dB] [off]
+  Front Right: Capture 0 [0%] [-16.50dB] [off]
+Simple mixer control 'Channel Mode',0
+  Capabilities: enum
+  Items: '2ch' '4ch' '6ch'
+  Item0: '2ch'
+Simple mixer control 'Input Source',0
+  Capabilities: cenum
+  Items: 'Mic' 'Front Mic' 'Line' 'CD'
+  Item0: 'Front Mic'
+Simple mixer control 'Input Source',1
+  Capabilities: cenum
+  Items: 'Mic' 'Front Mic' 'Line' 'CD'
+  Item0: 'Mic'
+
+!!-------Mixer controls for card 1 [HDMI]
+
+Card hw:1 'HDMI'/'HDA ATI HDMI at 0xcfdec000 irq 19'
+  Mixer name	: 'ATI RS690/780 HDMI'
+  Components	: 'HDA:1002791a,00791a00,00100000'
+  Controls      : 4
+  Simple ctrls  : 1
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.SB {
+	control.1 {
+		iface MIXER
+		name 'Front Playback Volume'
+		value.0 31
+		value.1 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -4650
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'Front Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'Surround Playback Volume'
+		value.0 31
+		value.1 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -4650
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'Surround Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'Center Playback Volume'
+		value 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 31'
+			dbmin -4650
+			dbmax 0
+			dbvalue.0 0
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'LFE Playback Volume'
+		value 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 31'
+			dbmin -4650
+			dbmax 0
+			dbvalue.0 0
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'Center Playback Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'LFE Playback Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'CD Playback Volume'
+		value.0 22
+		value.1 22
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -150
+			dbvalue.1 -150
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'CD Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'Line Playback Volume'
+		value.0 31
+		value.1 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 1200
+			dbvalue.1 1200
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'Line Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'Mic Playback Volume'
+		value.0 31
+		value.1 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 1200
+			dbvalue.1 1200
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'Mic Boost Volume'
+		value.0 3
+		value.1 3
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3000
+			dbvalue.0 3000
+			dbvalue.1 3000
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'Mic Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.17 {
+		iface MIXER
+		name 'Front Mic Playback Volume'
+		value.0 31
+		value.1 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 1200
+			dbvalue.1 1200
+		}
+	}
+	control.18 {
+		iface MIXER
+		name 'Front Mic Boost Volume'
+		value.0 3
+		value.1 3
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3000
+			dbvalue.0 3000
+			dbvalue.1 3000
+		}
+	}
+	control.19 {
+		iface MIXER
+		name 'Front Mic Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.20 {
+		iface MIXER
+		name 'Channel Mode'
+		value '2ch'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 '2ch'
+			item.1 '4ch'
+			item.2 '6ch'
+		}
+	}
+	control.21 {
+		iface MIXER
+		name 'Capture Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.22 {
+		iface MIXER
+		name 'Capture Switch'
+		index 1
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.23 {
+		iface MIXER
+		name 'Capture Volume'
+		value.0 20
+		value.1 20
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -1650
+			dbmax 3000
+			dbvalue.0 1350
+			dbvalue.1 1350
+		}
+	}
+	control.24 {
+		iface MIXER
+		name 'Capture Volume'
+		index 1
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -1650
+			dbmax 3000
+			dbvalue.0 -1650
+			dbvalue.1 -1650
+		}
+	}
+	control.25 {
+		iface MIXER
+		name 'Input Source'
+		value 'Front Mic'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Mic
+			item.1 'Front Mic'
+			item.2 Line
+			item.3 CD
+		}
+	}
+	control.26 {
+		iface MIXER
+		name 'Input Source'
+		index 1
+		value Mic
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Mic
+			item.1 'Front Mic'
+			item.2 Line
+			item.3 CD
+		}
+	}
+	control.27 {
+		iface MIXER
+		name 'Beep Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -3450
+			dbvalue.1 -3450
+		}
+	}
+	control.28 {
+		iface MIXER
+		name 'Beep Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.29 {
+		iface MIXER
+		name 'Master Playback Volume'
+		value 28
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 31'
+			dbmin -4650
+			dbmax 0
+			dbvalue.0 -450
+		}
+	}
+	control.30 {
+		iface MIXER
+		name 'Master Playback Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.31 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 252
+		value.1 252
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 -60
+			dbvalue.1 -60
+		}
+	}
+}
+state.HDMI {
+	control.1 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+usbhid
+hid
+parport_pc
+ppdev
+vesafb
+arc4
+snd_hda_codec_hdmi
+binfmt_misc
+snd_hda_codec_realtek
+ath9k
+snd_hda_intel
+joydev
+fglrx
+mac80211
+snd_hda_codec
+snd_hwdep
+snd_pcm
+snd_seq_midi
+snd_rawmidi
+snd_seq_midi_event
+snd_seq
+ath9k_common
+snd_timer
+ath9k_hw
+snd_seq_device
+uvcvideo
+videodev
+snd
+ath
+v4l2_compat_ioctl32
+soundcore
+psmouse
+cfg80211
+snd_page_alloc
+shpchp
+serio_raw
+k10temp
+sp5100_tco
+i2c_piix4
+video
+lp
+parport
+usb_storage
+uas
+ahci
+libahci
+atl1e
+pata_atiixp
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x11 0x411111f0
+0x12 0x99a30940
+0x14 0x99130110
+0x15 0x0321101f
+0x16 0x411111f0
+0x17 0x411111f0
+0x18 0x03a19c30
+0x19 0x411111f0
+0x1a 0x0381343f
+0x1b 0x411111f0
+0x1c 0x411111f0
+0x1d 0x4016852d
+0x1e 0x03451120
+0x1f 0x411111f0
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC0D1/init_pin_configs:
+
+/sys/class/sound/hwC0D1/driver_pin_configs:
+
+/sys/class/sound/hwC0D1/user_pin_configs:
+
+/sys/class/sound/hwC0D1/init_verbs:
+
+/sys/class/sound/hwC1D0/init_pin_configs:
+0x03 0x18560010
+
+/sys/class/sound/hwC1D0/driver_pin_configs:
+
+/sys/class/sound/hwC1D0/user_pin_configs:
+
+/sys/class/sound/hwC1D0/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+[   24.037408] input: SynPS/2 Synaptics TouchPad as /devices/platform/i8042/serio4/input/input7
+[   24.209649] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[   24.233556] ath9k 0000:08:00.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+--
+[   24.264640] [fglrx] module loaded - fglrx 8.84.60 [Mar 24 2011] with 1 minors
+[   24.421235] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[   24.421284] HDA Intel 0000:01:05.1: setting latency timer to 64
+[   24.668841] ath: EEPROM regdomain: 0x65
+--
+[   27.367336] [fglrx] Reserved FB block: Unshared offset:fffb000, size:5000 
+[   30.947716] hda-intel: IRQ timing workaround is activated for card #1. Suggest a bigger bdl_pos_adj.
+[   32.360057] EXT4-fs (sda6): re-mounted. Opts: errors=remount-ro,commit=600
+--
+[  369.830278] sd 2:0:0:0: [sda] Synchronizing SCSI cache
+[  369.882747] HDA Intel 0000:01:05.1: PCI INT B disabled
+[  369.882823] ACPI handle has no context!
+--
+[  369.942829] sd 2:0:0:0: [sda] Stopping disk
+[  370.100135] HDA Intel 0000:00:14.2: PCI INT A disabled
+[  370.120070] PM: suspend of drv:HDA Intel dev:0000:00:14.2 complete after 236.759 msecs
+[  370.458824] PM: suspend of drv:sd dev:2:0:0:0 complete after 628.554 msecs
+--
+[  371.040103] ehci_hcd 0000:00:13.2: restoring config space at offset 0x1 (was 0x2b00000, writing 0x2b00013)
+[  371.040205] HDA Intel 0000:00:14.2: restoring config space at offset 0xf (was 0x10a, writing 0xa)
+[  371.040229] HDA Intel 0000:00:14.2: restoring config space at offset 0x1 (was 0x4100006, writing 0x4100002)
+[  371.040388] fglrx_pci 0000:01:05.0: restoring config space at offset 0x1 (was 0x100007, writing 0x100003)
+[  371.040407] HDA Intel 0000:01:05.1: restoring config space at offset 0xf (was 0x2ff, writing 0x20b)
+[  371.040420] HDA Intel 0000:01:05.1: restoring config space at offset 0x4 (was 0x0, writing 0xcfdec000)
+[  371.040424] HDA Intel 0000:01:05.1: restoring config space at offset 0x3 (was 0x800000, writing 0x800008)
+[  371.040429] HDA Intel 0000:01:05.1: restoring config space at offset 0x1 (was 0x100000, writing 0x100003)
+[  371.040461] ath9k 0000:08:00.0: restoring config space at offset 0xf (was 0x1ff, writing 0x10b)
+--
+[  371.041755] ehci_hcd 0000:00:13.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[  371.041819] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[  371.041907] fglrx_pci 0000:01:05.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[  371.041912] fglrx_pci 0000:01:05.0: setting latency timer to 64
+[  371.042836] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[  371.042841] HDA Intel 0000:01:05.1: setting latency timer to 64
+[  371.045034] [fglrx] Power up the ASIC
+--
+[ 7552.840275] sd 2:0:0:0: [sda] Synchronizing SCSI cache
+[ 7552.892372] HDA Intel 0000:01:05.1: PCI INT B disabled
+[ 7552.892446] ACPI handle has no context!
+--
+[ 7552.926885] fglrx_pci 0000:01:05.0: PCI INT A disabled
+[ 7553.000491] HDA Intel 0000:00:14.2: PCI INT A disabled
+[ 7553.020055] PM: suspend of drv:HDA Intel dev:0000:00:14.2 complete after 127.109 msecs
+[ 7553.420740] PM: suspend of drv:sd dev:2:0:0:0 complete after 580.473 msecs
+--
+[ 7554.020113] ehci_hcd 0000:00:13.2: restoring config space at offset 0x1 (was 0x2b00000, writing 0x2b00013)
+[ 7554.020216] HDA Intel 0000:00:14.2: restoring config space at offset 0xf (was 0x10a, writing 0xa)
+[ 7554.020240] HDA Intel 0000:00:14.2: restoring config space at offset 0x1 (was 0x4100006, writing 0x4100002)
+[ 7554.020398] fglrx_pci 0000:01:05.0: restoring config space at offset 0x1 (was 0x100007, writing 0x100003)
+[ 7554.020418] HDA Intel 0000:01:05.1: restoring config space at offset 0xf (was 0x2ff, writing 0x20b)
+[ 7554.020430] HDA Intel 0000:01:05.1: restoring config space at offset 0x4 (was 0x0, writing 0xcfdec000)
+[ 7554.020435] HDA Intel 0000:01:05.1: restoring config space at offset 0x3 (was 0x800000, writing 0x800008)
+[ 7554.020440] HDA Intel 0000:01:05.1: restoring config space at offset 0x1 (was 0x100000, writing 0x100003)
+[ 7554.020472] ath9k 0000:08:00.0: restoring config space at offset 0xf (was 0x1ff, writing 0x10b)
+--
+[ 7554.021857] ehci_hcd 0000:00:13.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[ 7554.021919] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[ 7554.022008] fglrx_pci 0000:01:05.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[ 7554.022012] fglrx_pci 0000:01:05.0: setting latency timer to 64
+[ 7554.023179] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[ 7554.023184] HDA Intel 0000:01:05.1: setting latency timer to 64
+[ 7554.025107] [fglrx] Power up the ASIC
+--
+[ 8026.370314] sd 2:0:0:0: [sda] Synchronizing SCSI cache
+[ 8026.423264] HDA Intel 0000:01:05.1: PCI INT B disabled
+[ 8026.423333] ACPI handle has no context!
+--
+[ 8026.457983] fglrx_pci 0000:01:05.0: PCI INT A disabled
+[ 8026.550474] HDA Intel 0000:00:14.2: PCI INT A disabled
+[ 8026.570065] PM: suspend of drv:HDA Intel dev:0000:00:14.2 complete after 129.921 msecs
+[ 8026.951167] PM: suspend of drv:sd dev:2:0:0:0 complete after 580.857 msecs
+--
+[ 8027.540097] ehci_hcd 0000:00:13.2: restoring config space at offset 0x1 (was 0x2b00000, writing 0x2b00013)
+[ 8027.540199] HDA Intel 0000:00:14.2: restoring config space at offset 0xf (was 0x10a, writing 0xa)
+[ 8027.540223] HDA Intel 0000:00:14.2: restoring config space at offset 0x1 (was 0x4100006, writing 0x4100002)
+[ 8027.540382] fglrx_pci 0000:01:05.0: restoring config space at offset 0x1 (was 0x100007, writing 0x100003)
+[ 8027.540402] HDA Intel 0000:01:05.1: restoring config space at offset 0xf (was 0x2ff, writing 0x20b)
+[ 8027.540414] HDA Intel 0000:01:05.1: restoring config space at offset 0x4 (was 0x0, writing 0xcfdec000)
+[ 8027.540419] HDA Intel 0000:01:05.1: restoring config space at offset 0x3 (was 0x800000, writing 0x800008)
+[ 8027.540424] HDA Intel 0000:01:05.1: restoring config space at offset 0x1 (was 0x100000, writing 0x100003)
+[ 8027.540456] ath9k 0000:08:00.0: restoring config space at offset 0xf (was 0x1ff, writing 0x10b)
+--
+[ 8027.541773] ehci_hcd 0000:00:13.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[ 8027.541836] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[ 8027.541926] fglrx_pci 0000:01:05.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[ 8027.541931] fglrx_pci 0000:01:05.0: setting latency timer to 64
+[ 8027.543103] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[ 8027.543108] HDA Intel 0000:01:05.1: setting latency timer to 64
+[ 8027.545026] [fglrx] Power up the ASIC
+--
+[ 8239.979005] ACPI handle has no context!
+[ 8239.979043] HDA Intel 0000:01:05.1: PCI INT B disabled
+[ 8239.979077] ACPI handle has no context!
+--
+[ 8240.013761] fglrx_pci 0000:01:05.0: PCI INT A disabled
+[ 8240.080519] HDA Intel 0000:00:14.2: PCI INT A disabled
+[ 8240.100074] PM: suspend of drv:HDA Intel dev:0000:00:14.2 complete after 120.705 msecs
+[ 8240.465139] PM: suspend of drv:sd dev:2:0:0:0 complete after 544.901 msecs
+--
+[ 8241.050108] ehci_hcd 0000:00:13.2: restoring config space at offset 0x1 (was 0x2b00000, writing 0x2b00013)
+[ 8241.050211] HDA Intel 0000:00:14.2: restoring config space at offset 0xf (was 0x10a, writing 0xa)
+[ 8241.050235] HDA Intel 0000:00:14.2: restoring config space at offset 0x1 (was 0x4100006, writing 0x4100002)
+[ 8241.050393] fglrx_pci 0000:01:05.0: restoring config space at offset 0x1 (was 0x100007, writing 0x100003)
+[ 8241.050413] HDA Intel 0000:01:05.1: restoring config space at offset 0xf (was 0x2ff, writing 0x20b)
+[ 8241.050425] HDA Intel 0000:01:05.1: restoring config space at offset 0x4 (was 0x0, writing 0xcfdec000)
+[ 8241.050430] HDA Intel 0000:01:05.1: restoring config space at offset 0x3 (was 0x800000, writing 0x800008)
+[ 8241.050435] HDA Intel 0000:01:05.1: restoring config space at offset 0x1 (was 0x100000, writing 0x100003)
+[ 8241.050467] ath9k 0000:08:00.0: restoring config space at offset 0xf (was 0x1ff, writing 0x10b)
+--
+[ 8241.051776] ehci_hcd 0000:00:13.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[ 8241.051838] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[ 8241.051928] fglrx_pci 0000:01:05.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[ 8241.051932] fglrx_pci 0000:01:05.0: setting latency timer to 64
+[ 8241.053053] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[ 8241.053058] HDA Intel 0000:01:05.1: setting latency timer to 64
+[ 8241.055023] [fglrx] Power up the ASIC
+--
+[10954.552597] ACPI handle has no context!
+[10954.552636] HDA Intel 0000:01:05.1: PCI INT B disabled
+[10954.552671] ACPI handle has no context!
+--
+[10954.586846] fglrx_pci 0000:01:05.0: PCI INT A disabled
+[10954.680497] HDA Intel 0000:00:14.2: PCI INT A disabled
+[10954.700056] PM: suspend of drv:HDA Intel dev:0000:00:14.2 complete after 129.782 msecs
+[10955.057707] PM: suspend of drv:sd dev:2:0:0:0 complete after 557.470 msecs
+--
+[10955.640102] ehci_hcd 0000:00:13.2: restoring config space at offset 0x1 (was 0x2b00000, writing 0x2b00013)
+[10955.640204] HDA Intel 0000:00:14.2: restoring config space at offset 0xf (was 0x10a, writing 0xa)
+[10955.640228] HDA Intel 0000:00:14.2: restoring config space at offset 0x1 (was 0x4100006, writing 0x4100002)
+[10955.640387] fglrx_pci 0000:01:05.0: restoring config space at offset 0x1 (was 0x100007, writing 0x100003)
+[10955.640406] HDA Intel 0000:01:05.1: restoring config space at offset 0xf (was 0x2ff, writing 0x20b)
+[10955.640419] HDA Intel 0000:01:05.1: restoring config space at offset 0x4 (was 0x0, writing 0xcfdec000)
+[10955.640423] HDA Intel 0000:01:05.1: restoring config space at offset 0x3 (was 0x800000, writing 0x800008)
+[10955.640429] HDA Intel 0000:01:05.1: restoring config space at offset 0x1 (was 0x100000, writing 0x100003)
+[10955.640460] ath9k 0000:08:00.0: restoring config space at offset 0xf (was 0x1ff, writing 0x10b)
+--
+[10955.641763] ehci_hcd 0000:00:13.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[10955.641826] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[10955.641916] fglrx_pci 0000:01:05.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[10955.641920] fglrx_pci 0000:01:05.0: setting latency timer to 64
+[10955.643100] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[10955.643105] HDA Intel 0000:01:05.1: setting latency timer to 64
+[10955.645016] [fglrx] Power up the ASIC
+--
+[12661.426712] ACPI handle has no context!
+[12661.426773] HDA Intel 0000:01:05.1: PCI INT B disabled
+[12661.426797] ACPI handle has no context!
+--
+[12661.461547] fglrx_pci 0000:01:05.0: PCI INT A disabled
+[12661.540533] HDA Intel 0000:00:14.2: PCI INT A disabled
+[12661.560069] PM: suspend of drv:HDA Intel dev:0000:00:14.2 complete after 129.994 msecs
+[12661.888539] PM: suspend of drv:sd dev:2:0:0:0 complete after 508.245 msecs
+--
+[12662.470101] ehci_hcd 0000:00:13.2: restoring config space at offset 0x1 (was 0x2b00000, writing 0x2b00013)
+[12662.470202] HDA Intel 0000:00:14.2: restoring config space at offset 0xf (was 0x10a, writing 0xa)
+[12662.470225] HDA Intel 0000:00:14.2: restoring config space at offset 0x1 (was 0x4100006, writing 0x4100002)
+[12662.470383] fglrx_pci 0000:01:05.0: restoring config space at offset 0x1 (was 0x100007, writing 0x100003)
+[12662.470402] HDA Intel 0000:01:05.1: restoring config space at offset 0xf (was 0x2ff, writing 0x20b)
+[12662.470415] HDA Intel 0000:01:05.1: restoring config space at offset 0x4 (was 0x0, writing 0xcfdec000)
+[12662.470419] HDA Intel 0000:01:05.1: restoring config space at offset 0x3 (was 0x800000, writing 0x800008)
+[12662.470424] HDA Intel 0000:01:05.1: restoring config space at offset 0x1 (was 0x100000, writing 0x100003)
+[12662.470456] ath9k 0000:08:00.0: restoring config space at offset 0xf (was 0x1ff, writing 0x10b)
+--
+[12662.471877] ehci_hcd 0000:00:13.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[12662.472000] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[12662.472006] HDA Intel 0000:01:05.1: setting latency timer to 64
+[12662.472068] ATL1E 0000:09:00.0: PCI INT A -> GSI 17 (level, low) -> IRQ 17
+--
+[12662.483401] [fglrx] Preparing resume fglrx in kernel.
+[12662.490089] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[12662.520326] [fglrx] Resuming fglrx in kernel completed.
+[12662.520517] [fglrx] IRQ 18 Enabled
+[12662.575503] PM: resume of drv:HDA Intel dev:0000:00:14.2 complete after 103.611 msecs
+[12662.610061] PM: resume of drv:usb dev:usb4 complete after 137.602 msecs
+--
+[15872.196254] sd 2:0:0:0: [sda] Stopping disk
+[15872.212511] HDA Intel 0000:01:05.1: PCI INT B disabled
+[15872.212582] ACPI handle has no context!
+--
+[15872.710061] PM: suspend of drv:ahci dev:0000:00:11.0 complete after 479.736 msecs
+[15875.240010] hda-intel: azx_get_response timeout, switching to polling mode: last cmd=0x01170700
+[15876.250009] hda_intel: azx_get_response timeout, switching to single_cmd mode: last cmd=0x01170700
+[15876.361206] HDA Intel 0000:00:14.2: PCI INT A disabled
+[15876.380067] PM: suspend of drv:HDA Intel dev:0000:00:14.2 complete after 4166.992 msecs
+[15876.380086] PM: suspend of drv: dev:pci0000:00 complete after 4132.850 msecs
+--
+[15876.950102] ehci_hcd 0000:00:13.2: restoring config space at offset 0x1 (was 0x2b00000, writing 0x2b00013)
+[15876.950204] HDA Intel 0000:00:14.2: restoring config space at offset 0xf (was 0x10a, writing 0xa)
+[15876.950228] HDA Intel 0000:00:14.2: restoring config space at offset 0x1 (was 0x4100006, writing 0x4100002)
+[15876.950386] fglrx_pci 0000:01:05.0: restoring config space at offset 0x1 (was 0x100007, writing 0x100003)
+[15876.950406] HDA Intel 0000:01:05.1: restoring config space at offset 0xf (was 0x2ff, writing 0x20b)
+[15876.950418] HDA Intel 0000:01:05.1: restoring config space at offset 0x4 (was 0x0, writing 0xcfdec000)
+[15876.950422] HDA Intel 0000:01:05.1: restoring config space at offset 0x3 (was 0x800000, writing 0x800008)
+[15876.950428] HDA Intel 0000:01:05.1: restoring config space at offset 0x1 (was 0x100000, writing 0x100003)
+[15876.950459] ath9k 0000:08:00.0: restoring config space at offset 0xf (was 0x1ff, writing 0x10b)
+--
+[15876.951864] ehci_hcd 0000:00:13.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[15876.951925] HDA Intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[15876.952000] HDA Intel 0000:01:05.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[15876.952009] HDA Intel 0000:01:05.1: setting latency timer to 64
+[15876.952015] fglrx_pci 0000:01:05.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+
+
