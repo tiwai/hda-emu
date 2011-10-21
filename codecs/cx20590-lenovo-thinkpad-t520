@@ -1,0 +1,1764 @@
+
+!!################################
+!!ALSA Information Script v 0.4.60
+!!################################
+
+!!Script ran on: Tue Oct 18 08:34:37 UTC 2011
+
+
+!!Linux Distribution
+!!------------------
+
+Debian GNU/Linux wheezy/sid \n \l
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      LENOVO
+Product Name:      42404JG
+Product Version:   ThinkPad T520
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    3.0.6 
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         unknown
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.24
+Library version:    1.0.24.1
+Utilities version:  1.0.24.2
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+snd_hda_intel
+thinkpad_acpi
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+No sound servers found.
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [PCH            ]: HDA-Intel - HDA Intel PCH
+                      HDA Intel PCH at 0xf5320000 irq 45
+ 1 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xf3000000 irq 17
+29 [ThinkPadEC     ]: ThinkPad EC - ThinkPad Console Audio Control
+                      ThinkPad Console Audio Control at EC reg 0x30, fw unknown
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:1b.0 Audio device: Intel Corporation 6 Series/C200 Series Chipset Family High Definition Audio Controller (rev 04)
+01:00.1 Audio device: nVidia Corporation HDMI Audio stub (rev a1)
+
+
+!!Advanced information - PCI Vendor/Device/Subsystem ID's
+!!--------------------------------------------------------
+
+00:1b.0 0403: 8086:1c20 (rev 04)
+	Subsystem: 17aa:21cf
+--
+01:00.1 0403: 10de:0e08 (rev a1)
+	Subsystem: 17aa:21cf
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-atiixp-modem: index=-2
+snd-intel8x0m: index=-2
+snd-via82xx-modem: index=-2
+snd-pcsp: index=-2
+snd-usb-audio: index=-2
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+!!Module: snd_hda_intel
+	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+
+!!Module: thinkpad_acpi
+	brightness_enable : 2
+	brightness_mode : 4
+	enable : Y
+	experimental : 0
+	fan_control : N
+	force_load : N
+	hotkey_report_mode : 0
+	id : ThinkPadEC
+	index : -536870912
+	volume_capabilities : 0
+	volume_control : N
+	volume_mode : 3
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Conexant CX20590
+Address: 0
+AFG Function Id: 0x1 (unsol 1)
+Vendor Id: 0x14f1506e
+Subsystem Id: 0x17aa21cf
+Revision Id: 0x100002
+No Modem Function Group found
+Default PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=4, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[2]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[3]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x10 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
+  Control: name="Speaker Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Speaker Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Device: name="CONEXANT Analog", type="Audio", device=0
+  Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
+  Amp-Out vals:  [0x3c 0x3c]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+Node 0x11 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
+  Control: name="Headphone Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Headphone Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
+  Amp-Out vals:  [0x3c 0x3c]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+Node 0x12 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+Node 0x13 [Beep Generator Widget] wcaps 0x70000c: Mono Amp-Out
+  Control: name="Beep Playback Volume", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Control: name="Beep Playback Switch", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x07, nsteps=0x07, stepsize=0x0f, mute=0
+  Amp-Out vals:  [0x00]
+Node 0x14 [Audio Input] wcaps 0x100d1b: Stereo Amp-In R/L
+  Control: name="Mic Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Mic Capture Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Internal Mic Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Control: name="Internal Mic Capture Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=2, ofs=0
+  Device: name="CONEXANT Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x4a, nsteps=0x50, stepsize=0x03, mute=1
+  Amp-In vals:  [0x50 0x50] [0x4a 0x4a] [0xd0 0xd0] [0x4a 0x4a]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 4
+     0x17 0x18 0x23* 0x24
+Node 0x15 [Audio Input] wcaps 0x100d1b: Stereo Amp-In R/L
+  Amp-In caps: ofs=0x4a, nsteps=0x50, stepsize=0x03, mute=1
+  Amp-In vals:  [0x80 0x80] [0x4a 0x4a] [0x4a 0x4a] [0x4a 0x4a]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 4
+     0x17* 0x18 0x23 0x24
+Node 0x16 [Audio Input] wcaps 0x100d1b: Stereo Amp-In R/L
+  Amp-In caps: ofs=0x4a, nsteps=0x50, stepsize=0x03, mute=1
+  Amp-In vals:  [0x80 0x80] [0x4a 0x4a] [0x4a 0x4a] [0x4a 0x4a]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 4
+     0x17* 0x18 0x23 0x24
+Node 0x17 [Audio Selector] wcaps 0x30050d: Stereo Amp-Out
+  Control: name="Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x04, stepsize=0x27, mute=0
+  Amp-Out vals:  [0x04 0x04]
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 4
+     0x1a* 0x1b 0x1d 0x1e
+Node 0x18 [Audio Selector] wcaps 0x30050d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x04, stepsize=0x27, mute=0
+  Amp-Out vals:  [0x00 0x00]
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 4
+     0x1a* 0x1b 0x1d 0x1e
+Node 0x19 [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x0000001c: OUT HP Detect
+  Pin Default 0x04211040: [Jack] HP Out at Ext Right
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x4, Sequence = 0x0
+  Pin-ctls: 0xc0: OUT HP
+  Unsolicited: tag=37, enabled=1
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10 0x11*
+Node 0x1a [Pin Complex] wcaps 0x400481: Stereo
+  Pincap 0x00001324: IN Detect
+    Vref caps: HIZ 50 80
+  Pin Default 0x61a19050: [N/A] Mic at Sep Rear
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x5, Sequence = 0x0
+  Pin-ctls: 0x00: VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+Node 0x1b [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x00011334: IN OUT EAPD Detect
+    Vref caps: HIZ 50 80
+  EAPD 0x2: EAPD
+  Pin Default 0x04a11060: [Jack] Mic at Ext Right
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x6, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=38, enabled=1
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10* 0x11
+Node 0x1c [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x6121401f: [N/A] HP Out at Sep Rear
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0xf
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10* 0x11
+Node 0x1d [Pin Complex] wcaps 0x400581: Stereo
+  Pincap 0x00010034: IN OUT EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x40f001f0: [N/A] Other at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10* 0x11
+Node 0x1e [Pin Complex] wcaps 0x400481: Stereo
+  Pincap 0x00000024: IN Detect
+  Pin Default 0x40f001f0: [N/A] Other at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+Node 0x1f [Pin Complex] wcaps 0x400501: Stereo
+  Pincap 0x00000010: OUT
+  Pin Default 0x90170110: [Fixed] Speaker at Int N/A
+    Conn = Analog, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10* 0x11
+Node 0x20 [Pin Complex] wcaps 0x400781: Stereo Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x40f001f0: [N/A] Other at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x12
+Node 0x21 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x160]: 44100 48000 96000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+Node 0x22 [Pin Complex] wcaps 0x400781: Stereo Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x40f001f0: [N/A] Other at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x21
+Node 0x23 [Pin Complex] wcaps 0x40040b: Stereo Amp-In
+  Control: name="Internal Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x04, stepsize=0x2f, mute=0
+  Amp-In vals:  [0x02 0x02]
+  Pincap 0x00000020: IN
+  Pin Default 0x90a60170: [Fixed] Mic at Int N/A
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x7, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+Node 0x24 [Audio Mixer] wcaps 0x20050b: Stereo Amp-In
+  Amp-In caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Power states:  D0 D1 D2 D3 D3cold EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x10 0x11
+Node 0x25 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Codec: Conexant ID 2c06
+Address: 1
+MFG Function Id: 0x2 (unsol 1)
+Vendor Id: 0x14f12c06
+Subsystem Id: 0x17aa2122
+Revision Id: 0x100000
+Modem Function Group: 0x2
+Codec: Nvidia GPU 1c HDMI/DP
+Address: 0
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de001c
+Subsystem Id: 0x17aa21cf
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x585600f0: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Connection: 2
+     0x08* 0x09
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x185600f0: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=05, enabled=1
+  Connection: 2
+     0x08* 0x09
+Node 0x06 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Control: name="IEC958 Playback Con Mask", index=1, device=0
+  Control: name="IEC958 Playback Pro Mask", index=1, device=0
+  Control: name="IEC958 Playback Default", index=1, device=0
+  Control: name="IEC958 Playback Switch", index=1, device=0
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x185600f0: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=06, enabled=1
+  Connection: 2
+     0x08* 0x09
+Node 0x07 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Control: name="IEC958 Playback Con Mask", index=2, device=0
+  Control: name="IEC958 Playback Pro Mask", index=2, device=0
+  Control: name="IEC958 Playback Default", index=2, device=0
+  Control: name="IEC958 Playback Switch", index=2, device=0
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x185600f0: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=07, enabled=1
+  Connection: 2
+     0x08* 0x09
+Node 0x08 [Audio Output] wcaps 0x62b1: 8-Channels Digital Stripe
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x09 [Audio Output] wcaps 0x62b1: 8-Channels Digital Stripe
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw---- 1 root audio 116,  7 Oct 17 21:59 /dev/snd/controlC0
+crw-rw---- 1 root audio 116, 12 Oct 17 21:59 /dev/snd/controlC1
+crw-rw---- 1 root audio 116,  2 Oct 17 21:59 /dev/snd/controlC29
+crw-rw---- 1 root audio 116,  6 Oct 17 21:59 /dev/snd/hwC0D0
+crw-rw---- 1 root audio 116,  5 Oct 17 21:59 /dev/snd/hwC0D1
+crw-rw---- 1 root audio 116, 11 Oct 17 21:59 /dev/snd/hwC1D0
+crw-rw---- 1 root audio 116,  4 Oct 18 10:32 /dev/snd/pcmC0D0c
+crw-rw---- 1 root audio 116,  3 Oct 18 10:32 /dev/snd/pcmC0D0p
+crw-rw---- 1 root audio 116, 10 Oct 17 21:59 /dev/snd/pcmC1D3p
+crw-rw---- 1 root audio 116,  9 Oct 17 21:59 /dev/snd/pcmC1D7p
+crw-rw---- 1 root audio 116,  8 Oct 17 21:59 /dev/snd/pcmC1D8p
+crw-rw---- 1 root audio 116,  1 Oct 17 21:59 /dev/snd/seq
+crw-rw---- 1 root audio 116, 33 Oct 17 21:59 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root 100 Oct 17 21:59 .
+drwxr-xr-x 3 root root 320 Oct 17 21:59 ..
+lrwxrwxrwx 1 root root  12 Oct 17 21:59 pci-0000:00:1b.0 -> ../controlC0
+lrwxrwxrwx 1 root root  12 Oct 17 21:59 pci-0000:01:00.1 -> ../controlC1
+lrwxrwxrwx 1 root root  13 Oct 17 21:59 platform-thinkpad_acpi -> ../controlC29
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: PCH [HDA Intel PCH], device 0: CONEXANT Analog [CONEXANT Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 7: HDMI 1 [HDMI 1]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 8: HDMI 2 [HDMI 2]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: PCH [HDA Intel PCH], device 0: CONEXANT Analog [CONEXANT Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [PCH]
+
+Card hw:0 'PCH'/'HDA Intel PCH at 0xf5320000 irq 45'
+  Mixer name	: 'Conexant CX20590'
+  Components	: 'HDA:14f1506e,17aa21cf,00100002 HDA:14f12c06,17aa2122,00100000'
+  Controls      : 17
+  Simple ctrls  : 11
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 74
+  Mono: Playback 60 [81%] [-14.00dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 74
+  Mono:
+  Front Left: Playback 74 [100%] [0.00dB] [on]
+  Front Right: Playback 74 [100%] [0.00dB] [on]
+Simple mixer control 'Speaker',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 74
+  Mono:
+  Front Left: Playback 74 [100%] [0.00dB] [on]
+  Front Right: Playback 74 [100%] [0.00dB] [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Mic',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 80
+  Front Left: Capture 80 [100%] [6.00dB] [on]
+  Front Right: Capture 80 [100%] [6.00dB] [on]
+Simple mixer control 'Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 4
+  Front Left: 4 [100%] [40.00dB]
+  Front Right: 4 [100%] [40.00dB]
+Simple mixer control 'Beep',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 7
+  Mono: Playback 1 [14%] [-24.00dB] [on]
+Simple mixer control 'Auto-Mute Mode',0
+  Capabilities: enum
+  Items: 'Disabled' 'Enabled'
+  Item0: 'Enabled'
+Simple mixer control 'Digital',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 120
+  Front Left: Capture 31 [26%] [-14.50dB]
+  Front Right: Capture 31 [26%] [-14.50dB]
+Simple mixer control 'Internal Mic',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 80
+  Front Left: Capture 80 [100%] [6.00dB] [off]
+  Front Right: Capture 80 [100%] [6.00dB] [off]
+Simple mixer control 'Internal Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 4
+  Front Left: 2 [50%] [24.00dB]
+  Front Right: 2 [50%] [24.00dB]
+
+!!-------Mixer controls for card 1 [NVidia]
+
+Card hw:1 'NVidia'/'HDA NVidia at 0xf3000000 irq 17'
+  Mixer name	: 'Nvidia GPU 1c HDMI/DP'
+  Components	: 'HDA:10de001c,17aa21cf,00100100'
+  Controls      : 12
+  Simple ctrls  : 3
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',1
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',2
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+
+!!-------Mixer controls for card 29 [ThinkPadEC]
+
+Card hw:29 'ThinkPadEC'/'ThinkPad Console Audio Control at EC reg 0x30, fw unknown'
+  Mixer name	: 'ThinkPad EC (unknown)'
+  Components	: ''
+  Controls      : 1
+  Simple ctrls  : 1
+Simple mixer control 'Console',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.PCH {
+	control.1 {
+		iface MIXER
+		name 'Speaker Playback Volume'
+		value.0 74
+		value.1 74
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 74'
+			dbmin -7400
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'Speaker Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'Headphone Playback Volume'
+		value.0 74
+		value.1 74
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 74'
+			dbmin -7400
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'Auto-Mute Mode'
+		value Enabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'Mic Boost Volume'
+		value.0 4
+		value.1 4
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 4'
+			dbmin 0
+			dbmax 4000
+			dbvalue.0 4000
+			dbvalue.1 4000
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'Mic Capture Volume'
+		value.0 80
+		value.1 80
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 80'
+			dbmin -7400
+			dbmax 600
+			dbvalue.0 600
+			dbvalue.1 600
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'Mic Capture Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'Internal Mic Boost Volume'
+		value.0 2
+		value.1 2
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 4'
+			dbmin 0
+			dbmax 4800
+			dbvalue.0 2400
+			dbvalue.1 2400
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'Internal Mic Capture Volume'
+		value.0 80
+		value.1 80
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 80'
+			dbmin -7400
+			dbmax 600
+			dbvalue.0 600
+			dbvalue.1 600
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'Internal Mic Capture Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'Master Playback Volume'
+		value 60
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 74'
+			dbmin -7400
+			dbmax 0
+			dbvalue.0 -1400
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'Beep Playback Volume'
+		value 1
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+			dbmin -2800
+			dbmax 0
+			dbvalue.0 -2400
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'Beep Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.17 {
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 31
+		value.1 31
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 120'
+			tlv '0000000100000008fffff44800000032'
+			dbmin -3000
+			dbmax 3000
+			dbvalue.0 -1450
+			dbvalue.1 -1450
+		}
+	}
+}
+state.NVidia {
+	control.1 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 1
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 1
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 1
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 1
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 2
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 2
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 2
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 2
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+}
+state.ThinkPadEC {
+	control.1 {
+		iface MIXER
+		name 'Console Playback Switch'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+pci_stub
+vboxpci
+vboxnetadp
+vboxnetflt
+vboxdrv
+bnep
+rfcomm
+cpufreq_userspace
+cpufreq_stats
+cpufreq_powersave
+parport_pc
+cpufreq_conservative
+ppdev
+lp
+parport
+ipx
+p8022
+psnap
+llc
+p8023
+acpi_cpufreq
+mperf
+hdaps
+thinkpad_ec
+uinput
+microcode
+deflate
+zlib_deflate
+ctr
+twofish_generic
+twofish_x86_64
+twofish_common
+camellia
+serpent
+blowfish
+cast5
+des_generic
+xcbc
+rmd160
+sha512_generic
+crypto_null
+af_key
+fuse
+nfsd
+nfs
+lockd
+fscache
+auth_rpcgss
+nfs_acl
+sunrpc
+ipv6
+nls_cp852
+vfat
+fat
+coretemp
+loop
+firewire_sbp2
+rc_avermedia_m135a
+mxl5005s
+af9013
+ir_lirc_codec
+lirc_dev
+ir_sony_decoder
+ir_jvc_decoder
+dvb_usb_af9015
+ir_rc6_decoder
+dvb_usb
+ir_rc5_decoder
+dvb_core
+ir_nec_decoder
+rc_core
+btusb
+bluetooth
+snd_hda_codec_hdmi
+uvcvideo
+videodev
+v4l2_compat_ioctl32
+nvidia
+snd_hda_codec_conexant
+snd_hda_intel
+snd_hda_codec
+snd_hwdep
+arc4
+snd_pcm_oss
+snd_mixer_oss
+snd_pcm
+thinkpad_acpi
+snd_seq_dummy
+snd_seq_oss
+snd_seq_midi
+snd_rawmidi
+snd_seq_midi_event
+sg
+snd_seq
+sr_mod
+cdrom
+iwlagn
+snd_timer
+evdev
+snd_seq_device
+mac80211
+firmware_class
+snd
+cfg80211
+psmouse
+firewire_ohci
+sdhci_pci
+serio_raw
+firewire_core
+sdhci
+i2c_i801
+intel_agp
+soundcore
+mmc_core
+crc_itu_t
+snd_page_alloc
+e1000e
+rfkill
+mei
+nvram
+i2c_core
+intel_gtt
+ac
+wmi
+battery
+rtc_cmos
+button
+video
+processor
+raid10
+raid456
+async_raid6_recov
+async_pq
+raid6_pq
+async_xor
+xor
+async_memcpy
+async_tx
+raid1
+raid0
+multipath
+linear
+md_mod
+usbhid
+hid
+ehci_hcd
+thermal
+thermal_sys
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x19 0x04211040
+0x1a 0x61a19050
+0x1b 0x04a11060
+0x1c 0x6121401f
+0x1d 0x40f001f0
+0x1e 0x40f001f0
+0x1f 0x90170110
+0x20 0x40f001f0
+0x22 0x40f001f0
+0x23 0x90a60170
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC0D1/init_pin_configs:
+0x73 0x016a10f0
+
+/sys/class/sound/hwC0D1/driver_pin_configs:
+
+/sys/class/sound/hwC0D1/user_pin_configs:
+
+/sys/class/sound/hwC0D1/init_verbs:
+
+/sys/class/sound/hwC1D0/init_pin_configs:
+0x04 0x585600f0
+0x05 0x185600f0
+0x06 0x185600f0
+0x07 0x185600f0
+
+/sys/class/sound/hwC1D0/driver_pin_configs:
+
+/sys/class/sound/hwC1D0/user_pin_configs:
+
+/sys/class/sound/hwC1D0/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+el=0, format=0x11
+[44859.125090] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.125098] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.133047] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.133067] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.141074] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.151378] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.151387] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.153420] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.153439] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.153448] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.155411] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.155420] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.157430] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.157447] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.157455] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.159406] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.159415] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.161331] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.161349] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.161357] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.163088] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.163097] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.164859] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.164876] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.164884] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.167396] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.167406] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.169402] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.169419] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.169427] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.171369] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.171378] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.173461] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.173478] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.173486] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.175717] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.175725] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.177824] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.177841] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.177849] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.179461] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.179468] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.181513] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.181529] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.181536] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.183749] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.183756] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.185804] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.185820] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.185828] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.187618] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.187625] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.189660] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.189677] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.189685] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.191634] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.191641] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.193702] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.193719] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.193727] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.195545] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.195552] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.197440] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.197457] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.197465] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.199416] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.199423] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.201256] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.201274] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.201282] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.203015] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.203021] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.204834] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.204851] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.216614] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.216632] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.220286] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.220303] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.223940] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.223957] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.227297] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.227313] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.231190] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.231210] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.234809] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.234826] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.238443] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.238460] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.241753] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.241770] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.245316] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.245333] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.249225] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.249242] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.252468] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.252484] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.255984] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.256001] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.259265] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.259281] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.262685] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.262708] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.262719] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.264602] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.264609] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.266572] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.266589] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.266597] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.268388] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.268395] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.270305] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.270326] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.270337] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.272362] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.272369] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.274190] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.274207] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.274215] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.275816] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.275823] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.277694] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.277710] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.277718] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.279707] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.279714] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.281572] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.281589] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.281597] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.283368] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.283375] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.285169] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.285185] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.285193] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.287405] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.287413] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.289292] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.289309] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.289317] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.290879] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.290886] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.292589] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.292606] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.292613] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.294731] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.294741] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.296534] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.296551] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.296559] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.298370] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.298377] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.300122] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.300139] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.300147] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.301886] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.301894] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.304087] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.304104] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.304112] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.305964] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.305971] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.307720] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.307737] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.307745] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.309397] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.309404] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.311638] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.311655] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.311662] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.313330] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.313336] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.315158] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.315173] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.318998] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.319014] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.322526] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.322542] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.326241] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.326261] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.329778] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.329794] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.333117] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.333134] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.337074] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.337091] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.340495] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.340512] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.344249] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.344266] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.347813] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.347830] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.351775] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.351792] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.355025] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.355040] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.358916] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.358933] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.362234] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.362250] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.365607] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.365624] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.368046] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.368064] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44859.368072] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44859.372482] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44859.372490] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44859.587057] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x1000, format=0x4031
+[44859.587076] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44859.594818] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44859.594835] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44859.604596] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x800, format=0x4011
+[44859.604614] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4011
+[44880.352121] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.352141] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.361763] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.361782] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.365403] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.365420] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.369016] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.369033] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.372442] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.372459] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.375796] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.375813] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.379325] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.379341] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.382925] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.382942] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.386414] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.386432] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.390099] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.390115] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.394213] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.394229] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.397449] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.397465] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.401023] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.401040] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.404357] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.404374] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44880.426574] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44880.426592] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44904.010932] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44904.010952] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44904.013197] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44904.013217] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44904.013225] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44904.017505] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44904.017513] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44907.810818] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44907.810838] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44907.812904] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44907.812922] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44907.812930] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44907.816963] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44907.816971] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44909.873905] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x4031
+[44909.873928] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44909.880184] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x31
+[44909.880206] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44909.888517] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x831
+[44909.888540] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x831
+[44909.898242] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x4031
+[44909.898265] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44909.904253] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x31
+[44909.904276] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44909.912556] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x831
+[44909.912578] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x831
+[44909.922140] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44909.922160] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44909.922168] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44909.923856] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x4000, format=0x31
+[44909.923871] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44909.933031] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44909.933040] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44912.000688] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44912.000708] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44912.000717] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44912.002316] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x4000, format=0x31
+[44912.002333] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44912.003564] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44912.003571] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44913.638434] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44913.638454] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44913.638463] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44913.640191] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x4000, format=0x31
+[44913.640207] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44913.641435] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44913.641442] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44915.795670] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44915.795691] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44915.795700] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44915.797443] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x4000, format=0x31
+[44915.797460] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44915.798694] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44915.798701] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.303044] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.303065] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.303074] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.305189] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.305196] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.307027] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.307044] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.307052] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.309058] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.309065] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.310840] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.310857] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.310864] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.312805] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.312815] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.314596] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.314612] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.314620] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.316194] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.316201] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.318146] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.318163] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.318170] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.319752] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.319759] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.321708] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.321725] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.321733] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.323518] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.323525] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.325502] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.325519] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.325527] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.327305] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.327312] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.329219] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.329236] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.329244] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.330821] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.330828] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.332593] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.332615] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.332626] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.334671] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.334678] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.336405] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.336421] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.336429] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.338415] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.338423] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.340191] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.340208] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.340216] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.341932] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.341939] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.343706] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.343723] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.343731] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.345698] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.345705] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.347581] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.347597] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.347605] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.349360] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.349366] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.351095] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.351112] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.351120] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.352813] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44918.352820] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44918.355149] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x4031
+[44918.355169] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44918.360990] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x31
+[44918.361008] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44918.369661] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x831
+[44918.369683] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x831
+[44918.379631] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44918.379651] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44918.379660] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44918.381400] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44918.381417] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44918.442226] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44918.442244] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44927.279006] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44927.279016] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44929.208547] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44929.208568] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44929.208577] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44929.210064] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x4000, format=0x31
+[44929.210080] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44929.215825] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44929.215837] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.743428] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.743449] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.743458] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.745460] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.745467] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.747260] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.747277] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.747285] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.749162] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.749169] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.750963] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.750980] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.750988] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.752928] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.752935] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.754723] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.754740] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.754748] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.756340] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.756347] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.758190] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.758208] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.758216] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.759899] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.759906] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.761744] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.761760] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.761768] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.763560] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.763566] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.765404] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.765421] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.765429] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.767222] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.767229] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.769115] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.769132] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.769139] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.770717] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.770724] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.772548] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.772564] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.772572] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.774358] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.774365] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.776138] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.776154] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.776162] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.777936] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.777943] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.779711] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.779727] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.779734] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.781370] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.781376] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.783133] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.783149] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.783156] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.784970] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.784976] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.786735] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.786751] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.786759] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.788319] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.788326] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.790076] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.790092] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.790100] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.791648] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44930.791655] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44930.794090] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x4031
+[44930.794110] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44930.800865] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x31
+[44930.800882] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x31
+[44930.809400] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x200000, format=0x831
+[44930.809423] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x831
+[44930.819447] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44930.819467] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44930.819476] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44930.821104] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44930.821120] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44930.881696] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44930.881714] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44936.171492] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44936.171501] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44938.845560] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44938.845580] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44938.845589] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44938.847109] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44938.847125] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44938.900396] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44938.900414] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44945.727119] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44945.727131] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44950.103157] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44950.103177] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44950.103186] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44950.104767] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44950.104783] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44950.157949] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[44950.157967] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44952.294498] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44952.294507] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44959.774922] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x8a00, format=0x4031
+[44959.774941] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44959.825481] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x8a00, format=0x4031
+[44959.825499] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44964.496696] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44964.496717] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[44964.496726] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[44968.448033] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[44968.448042] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[44993.091921] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x8a00, format=0x4031
+[44993.091945] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[44993.142516] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x8a00, format=0x4031
+[44993.142534] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[45076.311982] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x8a00, format=0x4031
+[45076.312001] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[45076.362517] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x8a00, format=0x4031
+[45076.362536] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[45089.688497] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[45089.688518] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x10, stream=0x5, channel=0, format=0x31
+[45089.688526] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x11, stream=0x5, channel=0, format=0x31
+[45089.690058] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[45089.690074] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[45089.743172] ALSA sound/pci/hda/hda_intel.c:1732 azx_pcm_prepare: bufsize=0x9380, format=0x4031
+[45089.743189] ALSA sound/pci/hda/hda_codec.c:1404 hda_codec_setup_stream: NID=0x14, stream=0x1, channel=0, format=0x4031
+[45105.487333] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x10
+[45105.487342] ALSA sound/pci/hda/hda_codec.c:1467 hda_codec_cleanup_stream: NID=0x11
+[45173.801593] generic-usb 0003:0458:003A.0001: can't reset device, 0000:00:1a.0-1.5.1/input0, status -71
+
+
