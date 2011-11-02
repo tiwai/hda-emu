@@ -121,7 +121,8 @@ typedef int pm_message_t;
 #define put_user(a,b)	({*(b) = (a); 0;})
 
 #define jiffies		0
-#define time_after_eq(a,b)	1
+static inline bool time_after_eq(unsigned long a, unsigned long b)
+{ return 1; }
 
 #define BUG_ON(x) do { \
 	if (x) { fprintf(stderr, "ERROR!\n"); } \
