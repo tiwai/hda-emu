@@ -925,6 +925,27 @@ static void usage(void)
 
 #include "kernel/init_hooks.h"
 
+static FILE *popen_var(const char *v1, const char *v2, const char *type)
+{
+	char tmp[4096];
+	snprintf(tmp, sizeof(tmp), "%s %s", v1, v2);
+	return popen(tmp, type);
+}
+
+static FILE *file_open(const char *fname, const char *type)
+{
+	const char *p;
+
+	p = strrchr(fname, '.');
+	if (p) {
+		if (!strcmp(p, ".bz2"))
+			return popen_var("bzcat", fname, type);
+		if (!strcmp(p, ".gz"))
+			return popen_var("zcat", fname, type);
+	}
+	return fopen(fname, type);
+}
+
 int main(int argc, char **argv)
 {
 	int c, err;
@@ -987,7 +1008,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	fp = fopen(argv[optind], "r");
+	fp = file_open(argv[optind], "r");
 	if (!fp) {
 		fprintf(stderr, "cannot open %s\n", argv[optind]);
 		return 1;
