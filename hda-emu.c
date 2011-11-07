@@ -87,6 +87,12 @@ static int cmd_send(struct hda_bus *bus, unsigned int cmd)
 			verb & 0x0f,
 			parm);
 		break;
+	case AC_VERB_SET_PROC_COEF:
+	case AC_VERB_SET_COEF_INDEX:
+		hda_log(HDA_LOG_VERB,
+			"(%s), PARM=0x%x",
+			get_verb_name(&proc, cmd), (verb & 0xff) << 8 | parm);
+		break;
 	default:
 		hda_log(HDA_LOG_VERB,
 			"(%s), PARM=0x%x",
