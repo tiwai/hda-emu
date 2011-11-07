@@ -28,6 +28,7 @@
 #include <getopt.h>
 #include <errno.h>
 #include <signal.h>
+#include <unistd.h>
 
 #include "hda-types.h"
 #include "hda-log.h"
@@ -932,18 +933,21 @@ static FILE *popen_var(const char *v1, const char *v2, const char *type)
 	return popen(tmp, type);
 }
 
-static FILE *file_open(const char *fname, const char *type)
+static FILE *file_open(const char *fname)
 {
 	const char *p;
+
+	if (access(fname, R_OK))
+		return NULL;
 
 	p = strrchr(fname, '.');
 	if (p) {
 		if (!strcmp(p, ".bz2"))
-			return popen_var("bzcat", fname, type);
+			return popen_var("bzcat", fname, "r");
 		if (!strcmp(p, ".gz"))
-			return popen_var("zcat", fname, type);
+			return popen_var("zcat", fname, "r");
 	}
-	return fopen(fname, type);
+	return fopen(fname, "r");
 }
 
 int main(int argc, char **argv)
@@ -1008,7 +1012,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	fp = file_open(argv[optind], "r");
+	fp = file_open(argv[optind]);
 	if (!fp) {
 		fprintf(stderr, "cannot open %s\n", argv[optind]);
 		return 1;
