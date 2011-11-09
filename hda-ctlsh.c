@@ -100,7 +100,7 @@ static struct usage_table usage_str[] = {
 	{ "unsol", "unsol numid",
 	  "Issue an unsolicited event" },
 	{ "route", "route [-opts] numid",
-	  "Show routes via the given widget; -a = show all, -i = show inactive pins too" },
+	  "Show routes via the given widget; -a = show all, -x = show inactive pins too, -i|-o = set direction" },
 	{ "option", "option variable [val]",
 	  "Get/set module option value" },
 	{ "help", "help [command]",
@@ -419,8 +419,7 @@ static void issue_unsol(char *line)
 static void show_routes(char *line)
 {
 	int numid;
-	int show_all = 0;
-	int show_inactive = 0;
+	unsigned int flags = SHOW_DIR_IN | SHOW_DIR_OUT;
 	char *token;
 
 	for (;;) {
@@ -433,11 +432,18 @@ static void show_routes(char *line)
 			/* option */
 			switch (token[1]) {
 			case 'a':
-				show_all = 1;
-				show_inactive = 1;
+				flags |= SHOW_ALL | SHOW_INACTIVE;
+				break;
+			case 'x':
+				flags |= SHOW_INACTIVE;
 				break;
 			case 'i':
-				show_inactive = 1;
+				flags &= ~SHOW_DIR_OUT;
+				flags |= SHOW_DIR_IN;
+				break;
+			case 'o':
+				flags &= ~SHOW_DIR_IN;
+				flags |= SHOW_DIR_OUT;
 				break;
 			default:
 				hda_log(HDA_LOG_ERR, "Invalid route option\n");
@@ -448,7 +454,7 @@ static void show_routes(char *line)
 			break;
 	}
 	numid = strtoul(token, NULL, 0);
-	hda_show_routes(numid, show_all, show_inactive);
+	hda_show_routes(numid, flags);
 }
 
 

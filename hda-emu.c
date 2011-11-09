@@ -836,21 +836,25 @@ static void show_route_lists(struct xhda_route_list *list)
 	}
 }
 
-void hda_show_routes(int nid, int show_all, int show_inactive)
+void hda_show_routes(int nid, unsigned flags)
 {
 	struct xhda_route_list *list;
 	int had_list = 0;
 
-	list = hda_routes_connected_to(&proc, nid, show_all, show_inactive);
-	show_route_lists(list);
-	had_list = list != NULL;
-	hda_free_route_lists(list);
+	if (flags & SHOW_DIR_IN) {
+		list = hda_routes_connected_to(&proc, nid, flags);
+		show_route_lists(list);
+		had_list = list != NULL;
+		hda_free_route_lists(list);
+	}
 
-	list = hda_routes_connected_from(&proc, nid, show_all, show_inactive);
-	if (list && had_list)
-		hda_log(HDA_LOG_INFO, "\n");
-	show_route_lists(list);
-	hda_free_route_lists(list);
+	if (flags & SHOW_DIR_OUT) {
+		list = hda_routes_connected_from(&proc, nid, flags);
+		if (list && had_list)
+			hda_log(HDA_LOG_INFO, "\n");
+		show_route_lists(list);
+		hda_free_route_lists(list);
+	}
 }
 
 

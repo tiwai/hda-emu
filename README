@@ -235,7 +235,7 @@ BASIC COMMANDS
 	Pin[28] -- Mix[21] -- Mix[1b] -> Pin[28]
 	...
 
-  When -i option is passed, it shows also the routes from/to inactive
+  When -x option is passed, it shows also the routes from/to inactive
   pins.
 
   As default, it shows only the active (i.e. currently connected)
@@ -252,6 +252,11 @@ BASIC COMMANDS
 	Pin[28] -- Mix[21] -- Mix[1c] -> Pin[29]
 	Pin[28] -- Mix[21] -- Mix[1b] -> Pin[28]
 	...
+
+  The options -i and -o specify the direction of connection.  When -i
+  is passed, it shows only the routes ended to the given NID. When -o
+  is passed, shows only the routes starting from the given NID.  As
+  default, both routes are shown.
 
 * pm
 

@@ -1221,9 +1221,8 @@ static int is_active_pin(struct xhda_node *node, unsigned int ctl_bit)
 
 static struct xhda_route_list *
 routes_connected_to(struct xhda_codec *codec, struct xhda_node *node,
-		    int depth, struct xhda_node **route, int show_all,
-		    int show_inactive,
-		    struct xhda_route_list *list)
+		    int depth, struct xhda_node **route,
+		    unsigned int flags, struct xhda_route_list *list)
 {
 	int i, type;
 
@@ -1235,7 +1234,7 @@ routes_connected_to(struct xhda_codec *codec, struct xhda_node *node,
 		struct xhda_node *src;
 		int src_type;
 
-		if (!show_all && type != AC_WID_AUD_MIX &&
+		if (!(flags & SHOW_ALL) && type != AC_WID_AUD_MIX &&
 		    i != node->curr_conn)
 			continue;
 
@@ -1245,7 +1244,8 @@ routes_connected_to(struct xhda_codec *codec, struct xhda_node *node,
 		src_type = (src->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
 		if (src_type == AC_WID_AUD_OUT || src_type == AC_WID_PIN) {
 			struct xhda_route_list *nlist;
-			if (src_type == AC_WID_PIN && !show_inactive &&
+			if (src_type == AC_WID_PIN &&
+			    !(flags & SHOW_INACTIVE) &&
 			    !is_active_pin(src, 1 << 5)) /* IN_EN */
 				continue;
 			route[depth + 1] = src;
@@ -1255,14 +1255,13 @@ routes_connected_to(struct xhda_codec *codec, struct xhda_node *node,
 			continue;
 		}
 		list = routes_connected_to(codec, src, depth + 1, route,
-					   show_all, show_inactive, list);
+					   flags, list);
 	}
 	return list;
 }
 
 struct xhda_route_list *
-hda_routes_connected_to(struct xhda_codec *codec, int nid, int show_all,
-			int show_inactive)
+hda_routes_connected_to(struct xhda_codec *codec, int nid, unsigned int flags)
 {
 	struct xhda_node *route[MAX_ROUTE_DEPTH + 1];
 	struct xhda_node *node;
@@ -1270,15 +1269,13 @@ hda_routes_connected_to(struct xhda_codec *codec, int nid, int show_all,
 	node = find_node(codec, nid);
 	if (!node)
 		return NULL;
-	return routes_connected_to(codec, node, 0, route, show_all,
-				   show_inactive, NULL);
+	return routes_connected_to(codec, node, 0, route, flags, NULL);
 }
 
 static struct xhda_route_list *
 routes_connected_from(struct xhda_codec *codec, struct xhda_node *node,
-		      int depth, struct xhda_node **route, int show_all,
-		      int show_inactive,
-		      struct xhda_route_list *list)
+		      int depth, struct xhda_node **route,
+		      unsigned int flags, struct xhda_route_list *list)
 {
 	int i, type;
 	struct xhda_node *dest;
@@ -1294,14 +1291,15 @@ routes_connected_from(struct xhda_codec *codec, struct xhda_node *node,
 		for (i = 0; i < dest->num_nodes; i++) {
 			if (dest->node[i] != node->nid)
 				continue;
-			if (!show_all && type != AC_WID_AUD_MIX &&
+			if (!(flags & SHOW_ALL) && type != AC_WID_AUD_MIX &&
 			    i != dest->curr_conn)
 				continue;
 
 			route[depth + 1] = dest;
 			if (type == AC_WID_AUD_IN || type == AC_WID_PIN) {
 				struct xhda_route_list *nlist;
-				if (type == AC_WID_PIN && !show_inactive &&
+				if (type == AC_WID_PIN &&
+				    !(flags & SHOW_INACTIVE) &&
 				    !is_active_pin(dest, 1 << 6)) /* OUT_EN */
 					continue;
 				route[depth + 1] = dest;
@@ -1311,16 +1309,14 @@ routes_connected_from(struct xhda_codec *codec, struct xhda_node *node,
 				continue;
 			}
 			list = routes_connected_from(codec, dest, depth + 1,
-						     route, show_all,
-						     show_inactive, list);
+						     route, flags, list);
 		}
 	}
 	return list;
 }
 
 struct xhda_route_list *
-hda_routes_connected_from(struct xhda_codec *codec, int nid, int show_all,
-			  int show_inactive)
+hda_routes_connected_from(struct xhda_codec *codec, int nid, unsigned int flags)
 {
 	struct xhda_node *route[MAX_ROUTE_DEPTH + 1];
 	struct xhda_node *node;
@@ -1328,8 +1324,7 @@ hda_routes_connected_from(struct xhda_codec *codec, int nid, int show_all,
 	node = find_node(codec, nid);
 	if (!node)
 		return NULL;
-	return routes_connected_from(codec, node, 0, route, show_all,
-				     show_inactive, NULL);
+	return routes_connected_from(codec, node, 0, route, flags, NULL);
 }
 
 void hda_free_route_lists(struct xhda_route_list *list)

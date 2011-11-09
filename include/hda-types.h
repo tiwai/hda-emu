@@ -128,14 +128,17 @@ struct xhda_route_list {
 };
 
 struct xhda_route_list *
-hda_routes_connected_to(struct xhda_codec *codec, int nid, int show_all,
-			int show_inactive);
+hda_routes_connected_to(struct xhda_codec *codec, int nid, unsigned int flags);
 struct xhda_route_list *
-hda_routes_connected_from(struct xhda_codec *codec, int nid, int show_all,
-			  int show_inactive);
+hda_routes_connected_from(struct xhda_codec *codec, int nid, unsigned int flags);
 void hda_free_route_lists(struct xhda_route_list *list);
 
-void hda_show_routes(int nid, int show_all, int only_active_jacks);
+#define SHOW_DIR_IN	(1 << 0)
+#define SHOW_DIR_OUT	(1 << 1)
+#define SHOW_INACTIVE	(1 << 2)
+#define SHOW_ALL	(1 << 3)
+
+void hda_show_routes(int nid, unsigned int flags);
 
 void *xalloc(size_t size);
 
