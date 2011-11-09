@@ -55,8 +55,11 @@ struct snd_kcontrol *snd_ctl_new1(const struct snd_kcontrol_new *knew,
 
 void snd_ctl_free_one(struct snd_kcontrol *kctl)
 {
-	list_del(&kctl->list);
-	free(kctl);
+	if (kctl) {
+		if (kctl->private_free)
+			kctl->private_free(kctl);
+		free(kctl);
+	}
 }
 
 int snd_ctl_add(struct snd_card *card, struct snd_kcontrol *kctl)
@@ -78,6 +81,7 @@ int snd_ctl_remove(struct snd_card *card, struct snd_kcontrol *kctl)
 {
 	hda_log(HDA_LOG_INFO, "CTRL: remove: %s:%d\n",
 		kctl->id.name, kctl->id.index);
+	list_del(&kctl->list);
 	snd_ctl_free_one(kctl);
 	return 0;
 }
