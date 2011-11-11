@@ -28,8 +28,5 @@ noinst_HEADERS = hda_codec.h hda_local.h hda_beep.h hda_patch.h \
 
 INCLUDES = -I$(top_srcdir)/include
 
-jackctl.c: ../jackctl.c
-	ln -s ../jackctl.c
-
 misc_wrapper.c: ../misc_wrapper.c
 	ln -s ../misc_wrapper.c
