@@ -181,3 +181,15 @@ int snd_ctl_activate_id(struct snd_card *card, struct snd_ctl_elem_id *id,
 	}
 	return ret;
 }
+
+void snd_ctl_notify(struct snd_card *card, unsigned int mask,
+		    struct snd_ctl_elem_id *id)
+{
+	struct snd_kcontrol *kctl;
+	
+	kctl = snd_ctl_find_id(card, id);
+	if (!kctl)
+		return;
+	hda_log(HDA_LOG_INFO, "CTL Notify: %s:%d, mask=%d\n",
+		kctl->id.name, kctl->id.index, mask);
+}

@@ -63,16 +63,13 @@ ln -s $hdadir/hda_codec.c kernel
 ln -s $hdadir/hda_codec.h kernel
 ln -s $hdadir/hda_local.h kernel
 ln -s $hdadir/hda_generic.c kernel
-if test -f $hdadir/hda_jack.c; then
-  ln -s $hdadir/hda_jack.c kernel
-else
-  touch kernel/hda_jack.c
-fi
-if test -f $hdadir/hda_trace.h; then
-  ln -s $hdadir/hda_trace.h kernel
-else
-  touch kernel/hda_trace.h
-fi
+for i in hda_jack.c hda_jack.h hda_trace.h; do
+  if test -f $hdadir/$i; then
+    ln -s $hdadir/$i kernel
+  else
+    touch kernel/$i
+  fi
+done
 for i in $hdadir/*_quirks.c; do
   test -f $i && ln -s $i kernel
 done

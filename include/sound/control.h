@@ -52,7 +52,7 @@ struct snd_kcontrol {
 
 #define snd_kcontrol(n) list_entry(n, struct snd_kcontrol, list)
 
-#define snd_ctl_notify(card,mask,id)
+void snd_ctl_notify(struct snd_card * card, unsigned int mask, struct snd_ctl_elem_id * id);
 
 struct snd_kcontrol *snd_ctl_new1(const struct snd_kcontrol_new * kcontrolnew, void * private_data);
 void snd_ctl_free_one(struct snd_kcontrol * kcontrol);
@@ -156,6 +156,14 @@ snd_ctl_add_slave_uncached(struct snd_kcontrol *master,
 {
 	return _snd_ctl_add_slave(master, slave, SND_CTL_SLAVE_NEED_UPDATE);
 }
+
+/*
+ * Helper functions for jack-detection controls
+ */
+struct snd_kcontrol *
+snd_kctl_jack_new(const char *name, int idx, void *private_data);
+void snd_kctl_jack_report(struct snd_card *card,
+			  struct snd_kcontrol *kctl, bool status);
 
 /*
  */

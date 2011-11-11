@@ -143,3 +143,24 @@ struct snd_ctl_tlv {
         unsigned int tlv[0];	/* first TLV */
 };
 
+enum sndrv_ctl_event_type {
+	SNDRV_CTL_EVENT_ELEM = 0,
+	SNDRV_CTL_EVENT_LAST = SNDRV_CTL_EVENT_ELEM,
+};
+
+#define SNDRV_CTL_EVENT_MASK_VALUE	(1<<0)	/* element value was changed */
+#define SNDRV_CTL_EVENT_MASK_INFO	(1<<1)	/* element info was changed */
+#define SNDRV_CTL_EVENT_MASK_ADD	(1<<2)	/* element was added */
+#define SNDRV_CTL_EVENT_MASK_TLV	(1<<3)	/* element TLV tree was changed */
+#define SNDRV_CTL_EVENT_MASK_REMOVE	(~0U)	/* element was removed */
+
+struct snd_ctl_event {
+	int type;	/* event type - SNDRV_CTL_EVENT_* */
+	union {
+		struct {
+			unsigned int mask;
+			struct snd_ctl_elem_id id;
+		} elem;
+		unsigned char data8[60];
+	} data;
+};
