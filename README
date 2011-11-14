@@ -371,6 +371,10 @@ sysfs files in the input file.  The file must contain a pair of
 register and pin-config value in each line just like in *_pin_configs
 sysfs files.
 
+If you want to debug a certain jack-plug state at the initial time,
+pass the pin NID to turn on via -j option.  When nothing is set, all
+pins are assumed to be unplugged at the start up.
+
 
 DEBUGGING DRIVER WITH GDB
 -------------------------

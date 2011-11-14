@@ -862,17 +862,24 @@ void hda_show_routes(int nid, unsigned flags)
  * pin-config override
  */
 
-static void set_pincfg(struct xhda_codec *codec, int nid, int val)
+static struct xhda_node *find_node(struct xhda_codec *codec, int nid)
 {
 	struct xhda_node *node;
 
 	for (node = &codec->afg; node; node = node->next) {
-		if (node->nid == nid) {
-			node->pin_default = val;
-			hda_log(HDA_LOG_INFO, "  Pin 0x%02x to 0x%08x\n",
-				nid, val);
-			return;
-		}
+		if (node->nid == nid)
+			return node;
+	}
+	return NULL;
+}
+
+static void set_pincfg(struct xhda_codec *codec, int nid, int val)
+{
+	struct xhda_node *node = find_node(codec, nid);
+	if (node) {
+		node->pin_default = val;
+		hda_log(HDA_LOG_INFO, "  Pin 0x%02x to 0x%08x\n", nid, val);
+		return;
 	}
 }
 
@@ -926,6 +933,7 @@ static void usage(void)
 	fprintf(stderr, "  -M             no color print\n");
 	fprintf(stderr, "  -a             issues SIGTRAP at codec errors\n");
 	fprintf(stderr, "  -P pincfg      initialize pin-configuration from sysfs entry\n");
+	fprintf(stderr, "  -j NID         turn on the initial jack-state of the given pin\n");
 }
 
 #include "kernel/init_hooks.h"
@@ -968,8 +976,10 @@ int main(int argc, char **argv)
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
 	char *init_pincfg = NULL;
+	int num_active_jacks = 0;
+	unsigned int active_jacks[16];
 
-	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMP:")) != -1) {
+	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMP:j:")) != -1) {
 		switch (c) {
 		case 'a':
 			hda_log_trap_on_error = 1;
@@ -1005,6 +1015,14 @@ int main(int argc, char **argv)
 		case 'P':
 			init_pincfg = optarg;
 			break;
+		case 'j':
+			if (num_active_jacks >= ARRAY_SIZE(active_jacks)) {
+				fprintf(stderr, "Too many -j options given\n");
+				return 1;
+			}
+			active_jacks[num_active_jacks++] =
+				strtoul(optarg, NULL, 0);
+			break;
 		default:
 			usage();
 			return 1;
@@ -1036,6 +1054,15 @@ int main(int argc, char **argv)
 	if (init_pincfg) {
 		if (override_pincfg(&proc, init_pincfg) < 0)
 			return 1;
+	}
+	if (num_active_jacks) {
+		int i;
+		for (i = 0; i < num_active_jacks; i++) {
+			struct xhda_node *node;
+			node = find_node(&proc, active_jacks[i]);
+			if (node)
+				node->jack_state = 1;
+		}
 	}
 
 	mypci.vendor = proc.pci_vendor;
