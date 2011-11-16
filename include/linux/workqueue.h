@@ -48,4 +48,9 @@ static inline void flush_scheduled_work(void)
 #define flush_workqueue(q)	flush_scheduled_work()
 #define delayed_work_pending(q)	0
 
+static inline struct delayed_work *to_delayed_work(struct work_struct *work)
+{
+	return container_of(work, struct delayed_work, work);
+}
+
 #endif /* __LINUX_WORKQUEUE_H */
