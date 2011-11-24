@@ -122,6 +122,8 @@ struct snd_kcontrol *snd_ctl_find_id(struct snd_card *card,
 
 	list_for_each_entry(kctl, &snd_ctl_list_head, list) {
 		if (kctl->id.iface == id->iface &&
+		    kctl->id.device == id->device &&
+		    kctl->id.subdevice == id->subdevice &&
 		    kctl->id.index == id->index &&
 		    !strcmp(kctl->id.name, id->name))
 			return kctl;
