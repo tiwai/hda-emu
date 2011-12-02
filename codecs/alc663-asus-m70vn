@@ -1,0 +1,1504 @@
+upload=true&script=true&cardinfo=
+!!################################
+!!ALSA Information Script v 0.4.58
+!!################################
+
+!!Script ran on: Fri Dec  2 13:15:11 UTC 2011
+
+
+!!Linux Distribution
+!!------------------
+
+Welcome to openSUSE 11.3 "Teal" - Kernel \r (\l). openSUSE 11.3 (x86_64) LSB_VERSION="core-2.0-noarch:core-3.2-noarch:core-4.0-noarch:core-2.0-x86_64:core-3.2-x86_64:core-4.0-x86_64"
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      ASUSTeK Computer Inc.        
+Product Name:      M70Vn               
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    3.2.0-rc3-12-desktop+
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         x86_64
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.24
+Library version:    
+Utilities version:  1.0.23
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+Pulseaudio:
+      Installed - Yes (/usr/bin/pulseaudio)
+      Running - No
+
+ESound Daemon:
+      Installed - Yes (/usr/bin/esd)
+      Running - No
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [Intel          ]: HDA-Intel - HDA Intel
+                      HDA Intel at 0xf7ff8000 irq 42
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:1b.0 Audio device: Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 03)
+
+
+!!Advanced information - PCI Vendor/Device/Susbsystem ID's
+!!--------------------------------------------------------
+
+00:1b.0 0403: 8086:293e (rev 03)
+	Subsystem: 1043:11c3
+
+
+!!Loaded sound module options
+!!--------------------------
+
+!!Module: snd_hda_intel
+	align_buffer_size : N
+	bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	power_save : 0
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+	snoop : Y
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Realtek ALC663
+Address: 0
+AFG Function Id: 0x1 (unsol 1)
+Vendor Id: 0x10ec0663
+Subsystem Id: 0x104311c3
+Revision Id: 0x100001
+No Modem Function Group found
+Default PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=2, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x02 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Headphone Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Device: name="ALC663 Analog", type="Audio", device=0
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x25 0x25]
+  Converter: stream=8, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x03 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Headphone Playback Volume", index=1, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=8, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x04 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
+  Amp-Out vals:  [0x40 0x40]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x05 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x06 [Audio Output] wcaps 0x611: Stereo Digital
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Control: name="IEC958 Default PCM Playback Switch", index=0, device=0
+  Device: name="ALC663 Digital", type="SPDIF", device=1
+  Converter: stream=8, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x08 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Switch", index=0, device=0
+  Control: name="Capture Volume", index=0, device=0
+  Device: name="ALC663 Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x9f 0x9f]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x23
+Node 0x09 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Amp-In caps: ofs=0x0b, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x80 0x80]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x22
+Node 0x0a [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Internal Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Internal Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Beep Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Control: name="Beep Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x1f 0x1f] [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x1f 0x1f] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 8
+     0x18 0x19 0x1a 0x1b 0x1d 0x14 0x15 0x16
+Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x02 0x0b
+Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x03 0x0b
+Node 0x0e [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x80 0x80]
+  Connection: 2
+     0x04 0x0b
+Node 0x0f [Audio Mixer] wcaps 0x20010a: Mono Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00] [0x80]
+  Connection: 2
+     0x02 0x0b
+Node 0x10 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x11 [Pin Complex] wcaps 0x400700: Mono Digital
+  Pincap 0x00000010: OUT
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x10
+Node 0x12 [Pin Complex] wcaps 0x400401: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x13 [Pin Complex] wcaps 0x400401: Stereo
+  Pincap 0x00000020: IN
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x14 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Speaker Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001003c: IN OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x99130110: [Fixed] Speaker at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x0c* 0x0d
+Node 0x15 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Headphone Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0001003c: IN OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x0121441f: [Jack] HP Out at Ext Rear
+    Conn = 1/8, Color = Green
+    DefAssociation = 0x1, Sequence = 0xf
+  Pin-ctls: 0xc0: OUT HP
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x0c* 0x0d
+Node 0x16 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00000034: IN OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0e
+Node 0x17 [Pin Complex] wcaps 0x40050c: Mono Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80]
+  Pincap 0x00000010: OUT
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0f
+Node 0x18 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Control: name="Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00001734: IN OUT Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x01a19840: [Jack] Mic at Ext Rear
+    Conn = 1/8, Color = Pink
+    DefAssociation = 0x4, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=08, enabled=1
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0e
+Node 0x19 [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Control: name="Internal Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x99a3094f: [Fixed] Mic at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x4, Sequence = 0xf
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x0c* 0x0d 0x0e
+Node 0x1a [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x00001734: IN OUT Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0d
+Node 0x1b [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000173c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x0c* 0x0d 0x0e
+Node 0x1c [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x1d [Pin Complex] wcaps 0x400400: Mono
+  Pincap 0x00000020: IN
+  Pin Default 0x598301f0: [N/A] Line In at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1e [Pin Complex] wcaps 0x400780: Mono Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x99430130: [Fixed] SPDIF Out at Int ATAPI
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x3, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x06
+Node 0x1f [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono
+  Processing caps: benign=0, ncoeff=17
+Node 0x21 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Headphone Playback Switch", index=1, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000001c: OUT HP Detect
+  Pin Default 0x01211420: [Jack] HP Out at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x2, Sequence = 0x0
+  Pin-ctls: 0xc0: OUT HP
+  Unsolicited: tag=04, enabled=1
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x0c 0x0d* 0x0e
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1d 0x14 0x15 0x16 0x0b 0x12
+Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x00 0x00] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 10
+     0x18 0x19 0x1a 0x1b 0x1d 0x14 0x15 0x16 0x0b 0x13
+Codec: Nvidia MCP77/78 HDMI
+Address: 2
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0006
+Subsystem Id: 0x10de0101
+Revision Id: 0x100000
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x211: Stereo Digital
+  Control: name="IEC958 Playback Con Mask", index=1, device=0
+  Control: name="IEC958 Playback Pro Mask", index=1, device=0
+  Control: name="IEC958 Playback Default", index=1, device=0
+  Control: name="IEC958 Playback Switch", index=1, device=0
+  Device: name="HDMI 0", type="HDMI", device=3
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x05 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x18560110: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x04
+Node 0x06 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x07 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560121: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x1
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x06
+Node 0x08 [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x09 [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560122: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x2
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x08
+Node 0x0a [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x0b [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560123: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x3
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0a
+Node 0x0c [Audio Output] wcaps 0x211: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  PCM:
+    rates [0xc0]: 48000 88200
+    bits [0xf]: 8 16 20 24
+    formats [0x1]: PCM
+Node 0x0d [Pin Complex] wcaps 0x400381: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x58560124: [N/A] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x2, Sequence = 0x4
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Connection: 1
+     0x0c
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw----+ 1 root audio 116,  8 Nov 30 22:51 /dev/snd/controlC0
+crw-rw----+ 1 root audio 116,  7 Nov 30 22:51 /dev/snd/hwC0D0
+crw-rw----+ 1 root audio 116,  6 Nov 30 22:51 /dev/snd/hwC0D2
+crw-rw----+ 1 root audio 116,  5 Nov 30 22:51 /dev/snd/pcmC0D0c
+crw-rw----+ 1 root audio 116,  4 Dec  2 14:10 /dev/snd/pcmC0D0p
+crw-rw----+ 1 root audio 116,  3 Nov 30 22:51 /dev/snd/pcmC0D1p
+crw-rw----+ 1 root audio 116,  2 Nov 30 22:51 /dev/snd/pcmC0D3p
+crw-rw----+ 1 root audio 116,  1 Nov 30 22:54 /dev/snd/seq
+crw-rw----+ 1 root audio 116, 33 Nov 30 22:51 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  60 Nov 30 22:51 .
+drwxr-xr-x 3 root root 240 Nov 30 22:51 ..
+lrwxrwxrwx 1 root root  12 Nov 30 22:51 pci-0000:00:1b.0 -> ../controlC0
+
+
+!!Aplay/Arecord output
+!!------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: Intel [HDA Intel], device 0: ALC663 Analog [ALC663 Analog]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0
+card 0: Intel [HDA Intel], device 1: ALC663 Digital [ALC663 Digital]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: Intel [HDA Intel], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: Intel [HDA Intel], device 0: ALC663 Analog [ALC663 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [Intel]
+
+Card hw:0 'Intel'/'HDA Intel at 0xf7ff8000 irq 42'
+  Mixer name	: 'Nvidia MCP77/78 HDMI'
+  Components	: 'HDA:10ec0663,104311c3,00100001 HDA:10de0006,10de0101,00100000'
+  Controls      : 29
+  Simple ctrls  : 16
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 37 [58%] [-27.00dB] [on]
+  Front Right: Playback 37 [58%] [-27.00dB] [on]
+Simple mixer control 'Headphone',1
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Speaker',0
+  Capabilities: pswitch penum
+  Playback channels: Front Left - Front Right
+  Mono:
+  Front Left: Playback [on]
+  Front Right: Playback [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [12.00dB] [on]
+  Front Right: Playback 31 [100%] [12.00dB] [on]
+Simple mixer control 'Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 0 [0%] [0.00dB]
+  Front Right: 0 [0%] [0.00dB]
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958 Default PCM',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',1
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'Beep',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 31 [100%] [12.00dB] [on]
+  Front Right: Playback 31 [100%] [12.00dB] [on]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 31
+  Front Left: Capture 31 [100%] [30.00dB] [off]
+  Front Right: Capture 31 [100%] [30.00dB] [off]
+Simple mixer control 'Auto-Mute Mode',0
+  Capabilities: enum
+  Items: 'Disabled' 'Enabled'
+  Item0: 'Enabled'
+Simple mixer control 'Digital',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 120
+  Front Left: Capture 120 [100%] [30.00dB]
+  Front Right: Capture 120 [100%] [30.00dB]
+Simple mixer control 'Internal Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [on]
+  Front Right: Playback 0 [0%] [-34.50dB] [on]
+Simple mixer control 'Internal Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 0 [0%] [0.00dB]
+  Front Right: 0 [0%] [0.00dB]
+
+
+!!Alsactl output
+!!-------------
+
+--startcollapse--
+state.Intel {
+	control.1 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Headphone Playback Volume'
+		value.0 37
+		value.1 37
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Headphone Playback Volume'
+		index 1
+		value.0 64
+		value.1 64
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Headphone Playback Switch'
+		index 1
+		value.0 true
+		value.1 true
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Speaker Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.6 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Mic Playback Volume'
+		value.0 31
+		value.1 31
+	}
+	control.7 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Mic Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.8 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Internal Mic Playback Volume'
+		value.0 0
+		value.1 0
+	}
+	control.9 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Internal Mic Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.10 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Disabled
+		comment.item.1 Enabled
+		iface MIXER
+		name 'Auto-Mute Mode'
+		value Enabled
+	}
+	control.11 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 3'
+		comment.dbmin 0
+		comment.dbmax 3000
+		iface MIXER
+		name 'Mic Boost Volume'
+		value.0 0
+		value.1 0
+	}
+	control.12 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 3'
+		comment.dbmin 0
+		comment.dbmax 3000
+		iface MIXER
+		name 'Internal Mic Boost Volume'
+		value.0 0
+		value.1 0
+	}
+	control.13 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Capture Switch'
+		value.0 false
+		value.1 false
+	}
+	control.14 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -1650
+		comment.dbmax 3000
+		iface MIXER
+		name 'Capture Volume'
+		value.0 31
+		value.1 31
+	}
+	control.15 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.16 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.17 {
+		comment.access 'read write'
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.18 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+	}
+	control.19 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Default PCM Playback Switch'
+		value true
+	}
+	control.20 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 31'
+		comment.dbmin -3450
+		comment.dbmax 1200
+		iface MIXER
+		name 'Beep Playback Volume'
+		value.0 31
+		value.1 31
+	}
+	control.21 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Beep Playback Switch'
+		value.0 true
+		value.1 true
+	}
+	control.22 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 64'
+		comment.dbmin -6400
+		comment.dbmax 0
+		iface MIXER
+		name 'Master Playback Volume'
+		value 64
+	}
+	control.23 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+	}
+	control.24 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 1
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.25 {
+		comment.access read
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 1
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.26 {
+		comment.access 'read write'
+		comment.type IEC958
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 1
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+	}
+	control.27 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 1
+		value true
+	}
+	control.28 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 255'
+		comment.tlv '0000000100000008ffffec1400000014'
+		comment.dbmin -5100
+		comment.dbmax 0
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+	}
+	control.29 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 120'
+		comment.tlv '0000000100000008fffff44800000032'
+		comment.dbmin -3000
+		comment.dbmax 3000
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 120
+		value.1 120
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+nls_iso8859_1
+nls_cp437
+vfat
+fat
+cdc_wdm
+cdc_acm
+cdc_ether
+usbnet
+tun
+microtek
+cryptd
+aes_x86_64
+aes_generic
+autofs4
+ppp_deflate
+zlib_deflate
+bsd_comp
+ppp_async
+crc_ccitt
+ppp_generic
+slhc
+snd_pcm_oss
+snd_mixer_oss
+snd_seq
+snd_seq_device
+af_packet
+nfsd
+lockd
+nfs_acl
+auth_rpcgss
+sunrpc
+exportfs
+cpufreq_conservative
+cpufreq_userspace
+cpufreq_powersave
+fuse
+loop
+dm_mod
+option
+usb_wwan
+usbserial
+arc4
+iwlwifi
+mac80211
+snd_hda_codec_hdmi
+snd_hda_codec_realtek
+snd_hda_intel
+snd_hda_codec
+sdhci_pci
+snd_hwdep
+snd_pcm
+sdhci
+btusb
+cfg80211
+uvcvideo
+snd_timer
+videodev
+snd
+r852
+usb_storage
+bluetooth
+r592
+mmc_core
+firewire_ohci
+sm_common
+soundcore
+sr_mod
+nand
+firewire_core
+r8169
+nand_ids
+mtd
+uas
+asus_laptop
+media
+cdrom
+memstick
+sg
+serio_raw
+nand_ecc
+iTCO_wdt
+sparse_keymap
+snd_page_alloc
+pcspkr
+iTCO_vendor_support
+v4l2_compat_ioctl32
+input_polldev
+joydev
+rfkill
+uinput
+crc_itu_t
+ext4
+jbd2
+crc16
+nouveau
+ttm
+drm_kms_helper
+drm
+i2c_algo_bit
+mxm_wmi
+sd_mod
+wmi
+intel_agp
+intel_gtt
+edd
+ahci
+libahci
+libata
+scsi_mod
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x11 0x411111f0
+0x12 0x411111f0
+0x13 0x411111f0
+0x14 0x99130110
+0x15 0x0121441f
+0x16 0x411111f0
+0x17 0x411111f0
+0x18 0x01a19840
+0x19 0x99a3094f
+0x1a 0x411111f0
+0x1b 0x411111f0
+0x1d 0x598301f0
+0x1e 0x99430130
+0x21 0x01211420
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC0D2/init_pin_configs:
+0x05 0x18560110
+0x07 0x58560121
+0x09 0x58560122
+0x0b 0x58560123
+0x0d 0x58560124
+
+/sys/class/sound/hwC0D2/driver_pin_configs:
+
+/sys/class/sound/hwC0D2/user_pin_configs:
+
+/sys/class/sound/hwC0D2/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!------------------
+
+ NID=0x3
+[ 7256.542305] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[ 7257.077949] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[ 7257.077963] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[ 7257.077968] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[ 7257.077971] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[ 7264.697933] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[ 7264.697938] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[ 7264.697941] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[ 7271.523957] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[ 7271.523972] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[ 7271.523977] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[ 7271.523980] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[ 7271.525054] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[ 7271.525056] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[ 7271.525058] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[ 7271.525772] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[ 7271.525783] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[ 7271.525788] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[ 7271.525790] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[ 7271.525970] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[ 7271.525972] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[ 7271.525974] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[ 7271.856002] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[ 7271.856029] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[ 7271.856034] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[ 7271.856037] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[ 7533.082485] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[ 7533.082489] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[ 7533.082491] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[11964.297893] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[11964.297910] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[11964.297915] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[11964.297918] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[11966.452087] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[11966.452090] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[11966.452093] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[21771.992457] keyboard: can't emulate rawmode for keycode 240
+[21771.992484] keyboard: can't emulate rawmode for keycode 240
+[21772.304703] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[21772.304719] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[21772.304724] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[21772.304727] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[21774.494921] keyboard: can't emulate rawmode for keycode 240
+[21774.494948] keyboard: can't emulate rawmode for keycode 240
+[21777.360225] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[21777.360229] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[21777.360231] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[23767.349754] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[23767.349772] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[23767.349778] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[23767.349781] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[23769.440061] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[23769.440066] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[23769.440069] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[29432.913775] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[29432.913790] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[29432.913795] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[29432.913798] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[29697.469417] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[29697.469426] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[29697.469433] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[34072.218664] cdrom: This disc doesn't have any tracks I recognize!
+--
+[34072.255512] Buffer I/O error on device sr0, logical block 0
+[34584.554780] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[34584.554794] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[34584.554799] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[34584.554801] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[34584.768172] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[34584.768182] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[34584.768189] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[37562.548879] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[37562.548893] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[37562.548898] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[37562.548901] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[37910.708464] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[37910.708468] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[37910.708470] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[39635.031933] usb usb2: usb wakeup-resume
+--
+[43217.766183] ehci_hcd 0000:00:1d.7: suspend root hub
+[44361.544554] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[44361.544568] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[44361.544573] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[44361.544576] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[44363.634869] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[44363.634874] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[44363.634876] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[45311.986489] npviewer.bin[3407]: segfault at 218 ip 00000000f5f363a6 sp 00000000ff98ff48 error 6 in libflashplayer.so[f5cb8000+bc4000]
+[54634.896702] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[54634.896718] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[54634.896724] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[54634.896727] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[54636.986905] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[54636.986909] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[54636.986911] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[59896.662948] wlan0: deauthenticating from 00:1c:4a:44:0f:8c by local choice (reason=3)
+--
+[59901.850777] Hardware name: M70Vn               
+[59901.850778] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[59901.850834] Pid: 15094, comm: kworker/u:13 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[59901.902074] ehci_hcd 0000:00:1a.7: PCI INT C disabled
+[59902.154565] snd_hda_intel 0000:00:1b.0: PCI INT A disabled
+[59903.747472] [drm] nouveau 0000:01:00.0: And we're gone!
+--
+[59903.780108] Hardware name: M70Vn               
+[59903.780111] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[59903.780191] Pid: 15081, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[59904.684574] ehci_hcd 0000:00:1a.7: PME# disabled
+[59904.684609] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x8)
+[59904.684615] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100006, writing 0x100002)
+[59904.684646] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x20100, writing 0x2010a)
+--
+[59904.685806] Hardware name: M70Vn               
+[59904.685807] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[59904.685864] Pid: 15081, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[59904.686342] usb usb5: root hub lost power or was reset
+[59904.686355] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[59904.686361] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[59904.686375] uhci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+--
+[59904.686421] usb usb6: root hub lost power or was reset
+[59904.686425] snd_hda_intel 0000:00:1b.0: irq 42 for MSI/MSI-X
+[59904.686433] uhci_hcd 0000:00:1d.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+--
+[59904.686451] uhci_hcd 0000:00:1d.1: Performing full reset
+[59904.686462] ALSA sound/pci/hda/hda_intel.c:1163 Clearing TCSEL
+[59904.686474] usb usb7: root hub lost power or was reset
+--
+[59904.689021] Hardware name: M70Vn               
+[59904.689023] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[59904.689063] Pid: 15086, comm: kworker/u:5 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[60179.570210] Hardware name: M70Vn               
+[60179.570212] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[60179.570282] Pid: 15156, comm: kworker/u:61 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[60179.678625] sd 4:0:0:0: [sdb] Stopping disk
+[60179.872562] snd_hda_intel 0000:00:1b.0: PCI INT A disabled
+[60181.465824] [drm] nouveau 0000:01:00.0: And we're gone!
+--
+[60181.498127] Hardware name: M70Vn               
+[60181.498129] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[60181.498208] Pid: 16166, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[60182.399571] ehci_hcd 0000:00:1a.7: PME# disabled
+[60182.399607] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x8)
+[60182.399613] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100006, writing 0x100002)
+[60182.399644] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x20100, writing 0x2010a)
+--
+[60182.400806] Hardware name: M70Vn               
+[60182.400807] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[60182.400864] Pid: 16166, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[60182.401345] usb usb5: root hub lost power or was reset
+[60182.401359] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[60182.401365] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[60182.401379] uhci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+--
+[60182.401425] usb usb6: root hub lost power or was reset
+[60182.401428] snd_hda_intel 0000:00:1b.0: irq 42 for MSI/MSI-X
+[60182.401436] uhci_hcd 0000:00:1d.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+--
+[60182.401455] uhci_hcd 0000:00:1d.1: Performing full reset
+[60182.401465] ALSA sound/pci/hda/hda_intel.c:1163 Clearing TCSEL
+[60182.401478] usb usb7: root hub lost power or was reset
+--
+[60182.404020] Hardware name: M70Vn               
+[60182.404021] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[60182.404062] Pid: 15139, comm: kworker/u:44 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[63711.534063] Hardware name: M70Vn               
+[63711.534064] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[63711.534121] Pid: 17736, comm: kworker/u:13 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[63711.586070] ehci_hcd 0000:00:1a.7: PCI INT C disabled
+[63711.838551] snd_hda_intel 0000:00:1b.0: PCI INT A disabled
+[63713.427022] [drm] nouveau 0000:01:00.0: And we're gone!
+--
+[63713.460129] Hardware name: M70Vn               
+[63713.460131] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[63713.460210] Pid: 17723, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[63714.361498] ehci_hcd 0000:00:1a.7: PME# disabled
+[63714.361533] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x8)
+[63714.361539] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100006, writing 0x100002)
+[63714.361571] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x20100, writing 0x2010a)
+--
+[63714.362747] Hardware name: M70Vn               
+[63714.362749] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[63714.362807] Pid: 17723, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[63714.363601] Hardware name: M70Vn               
+[63714.363602] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core
+[63714.363628] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[63714.363630]  firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media
+[63714.363635] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[63714.363636]  cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+--
+[63714.363679]  [<ffffffff81065bb9>] process_one_work+0x129/0x4a0
+[63714.363681] snd_hda_intel 0000:00:1b.0: irq 42 for MSI/MSI-X
+[63714.363683]  [<ffffffff81065888>] ? manage_workers+0x1e8/0x240
+--
+[63714.363709] sdhci-pci 0000:07:01.1: Will use DMA mode even though HW doesn't fully claim to support it.
+[63714.363711] ALSA sound/pci/hda/hda_intel.c:1163 Clearing TCSEL
+[63714.363751] ahci 0000:00:1f.2: setting latency timer to 64
+--
+[63727.704202] ehci_hcd 0000:00:1a.7: suspend root hub
+[63728.029121] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[63728.029137] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[63728.029258] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[63728.029377] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[63731.463589] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[63731.463593] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[63731.463595] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[63732.391778] wlan0: authenticate with 00:19:cb:c4:7d:30 (try 1)
+--
+[64503.075575] Hardware name: M70Vn               
+[64503.075576] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[64503.075633] Pid: 19496, comm: kworker/u:10 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[64503.127048] ehci_hcd 0000:00:1a.7: PCI INT C disabled
+[64503.380522] snd_hda_intel 0000:00:1b.0: PCI INT A disabled
+[64504.980669] [drm] nouveau 0000:01:00.0: And we're gone!
+--
+[64505.013056] Hardware name: M70Vn               
+[64505.013058] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[64505.013136] Pid: 19483, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[64505.912574] ehci_hcd 0000:00:1a.7: PME# disabled
+[64505.912610] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x8)
+[64505.912616] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100006, writing 0x100002)
+[64505.912647] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x20100, writing 0x2010a)
+--
+[64505.913812] Hardware name: M70Vn               
+[64505.913813] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[64505.913870] Pid: 19483, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[64505.914399] ehci_hcd 0000:00:1a.7: setting latency timer to 64
+[64505.914406] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[64505.914413] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[64505.914431] uhci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+--
+[64505.914451] uhci_hcd 0000:00:1d.0: Performing full reset
+[64505.914473] snd_hda_intel 0000:00:1b.0: irq 42 for MSI/MSI-X
+[64505.914476] usb usb6: root hub lost power or was reset
+--
+[64505.914505] uhci_hcd 0000:00:1d.1: Performing full reset
+[64505.914512] ALSA sound/pci/hda/hda_intel.c:1163 Clearing TCSEL
+[64505.914528] usb usb7: root hub lost power or was reset
+--
+[64505.917020] Hardware name: M70Vn               
+[64505.917021] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[64505.917062] Pid: 17784, comm: kworker/u:45 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[67178.035289] Hardware name: M70Vn               
+[67178.035291] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[67178.035348] Pid: 25374, comm: kworker/u:10 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[67178.178074] ehci_hcd 0000:00:1a.7: PCI INT C disabled
+[67178.340564] snd_hda_intel 0000:00:1b.0: PCI INT A disabled
+[67179.933514] [drm] nouveau 0000:01:00.0: And we're gone!
+--
+[67179.966130] Hardware name: M70Vn               
+[67179.966133] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[67179.966212] Pid: 25361, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[67180.861573] ehci_hcd 0000:00:1a.7: PME# disabled
+[67180.861609] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x8)
+[67180.861615] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100006, writing 0x100002)
+[67180.861646] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x20100, writing 0x2010a)
+--
+[67180.862804] Hardware name: M70Vn               
+[67180.862805] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[67180.862862] Pid: 25361, comm: s2ram Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[67180.863392] ehci_hcd 0000:00:1a.7: setting latency timer to 64
+[67180.863402] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[67180.863408] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[67180.863426] uhci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+--
+[67180.863446] uhci_hcd 0000:00:1d.0: Performing full reset
+[67180.863472] snd_hda_intel 0000:00:1b.0: irq 42 for MSI/MSI-X
+[67180.863473] usb usb6: root hub lost power or was reset
+--
+[67180.863502] uhci_hcd 0000:00:1d.1: Performing full reset
+[67180.863510] ALSA sound/pci/hda/hda_intel.c:1163 Clearing TCSEL
+[67180.863526] usb usb7: root hub lost power or was reset
+--
+[67180.866062] Hardware name: M70Vn               
+[67180.866063] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat cdc_wdm cdc_acm cdc_ether usbnet tun microtek cryptd aes_x86_64 aes_generic autofs4 ppp_deflate zlib_deflate bsd_comp ppp_async crc_ccitt ppp_generic slhc snd_pcm_oss snd_mixer_oss snd_seq snd_seq_device af_packet nfsd lockd nfs_acl auth_rpcgss sunrpc exportfs cpufreq_conservative cpufreq_userspace cpufreq_powersave fuse loop dm_mod option usb_wwan usbserial arc4 iwlwifi mac80211 snd_hda_codec_hdmi snd_hda_codec_realtek snd_hda_intel snd_hda_codec sdhci_pci snd_hwdep snd_pcm sdhci btusb cfg80211 uvcvideo snd_timer videodev snd r852 usb_storage bluetooth r592 mmc_core firewire_ohci sm_common soundcore sr_mod nand firewire_core r8169 nand_ids mtd uas asus_laptop media cdrom memstick sg serio_raw nand_ecc iTCO_wdt sparse_keymap snd_page_alloc pcspkr iTCO_vendor_support v4l2_compat_ioctl32 input_polldev joydev rfkill uinput crc_itu_t ext4 jbd2 crc16 nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi sd_mod wmi intel_agp intel_gtt edd ahci libahci libata scsi_mod
+[67180.866104] Pid: 25365, comm: kworker/u:1 Tainted: G        W    3.2.0-rc3-12-desktop+ #68
+--
+[67194.456491] r8169 0000:06:00.0: eth0: link up
+[67195.604852] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[67195.604867] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[67195.604986] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[67195.605107] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[67198.228711] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[67198.228715] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[67198.228717] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[74308.965997] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[74308.966032] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[74308.966037] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[74308.966040] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[74311.056237] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[74311.056241] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[74311.056243] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[77835.089858] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[77835.089873] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[77835.089879] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[77835.089882] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+[77837.180077] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x2
+[77837.180080] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x3
+[77837.180083] ALSA sound/pci/hda/hda_codec.c:1476 hda_codec_cleanup_stream: NID=0x6
+[81243.125951] ALSA sound/pci/hda/hda_intel.c:1843 azx_pcm_prepare: bufsize=0x20000, format=0x31
+[81243.125965] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x6, stream=0x8, channel=0, format=0x31
+[81243.125970] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x2, stream=0x8, channel=0, format=0x31
+[81243.125973] ALSA sound/pci/hda/hda_codec.c:1413 hda_codec_setup_stream: NID=0x3, stream=0x8, channel=0, format=0x31
+
+
