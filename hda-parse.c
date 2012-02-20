@@ -412,6 +412,8 @@ static int parse_root(const char *buffer)
 		return parse_gpio(p);
 	} else if (strmatch(buffer, "Node ")) {
 		return parse_node(buffer);
+	} else if (strmatch(buffer, "Modem Function Group: ")) {
+		return -EBADFD; /* ignore this codec unless specified */
 	}
 	return 0; /* ignore */
 }
@@ -541,7 +543,7 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 				continue;
 			}
 			curidx++;
-			if (curidx == codec_index)
+			if (codec_index < 0 || curidx == codec_index)
 				parse_mode = PARSE_ROOT;
 			p = strrchr(buffer, '\n');
 			if (p)
@@ -578,6 +580,13 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 		}
 		err = parse_codec_recursive(buffer);
 		if (err < 0) {
+			if (err == -EBADFD && codec_index < 0) {
+				hda_log(HDA_LOG_INFO, "Codec %d is a modem codec, skipping\n", curidx);
+				parse_mode = PARSE_START;
+				free(codec->parsed_name);
+				codec->parsed_name = NULL;
+				continue;
+			}
 			hda_log(HDA_LOG_ERR, "ERROR %d\n", err);
 			return err;
 		}

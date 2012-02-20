@@ -966,7 +966,7 @@ int main(int argc, char **argv)
 {
 	int c, err;
 	FILE *fp;
-	int idx = 0;
+	int idx = -1;
 	int pci_subvendor = 0;
 	int pci_subdevice = 0;
 	char *opt_model = NULL;
