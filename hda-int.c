@@ -760,6 +760,8 @@ static int par_function_type(struct xhda_codec *codec, struct xhda_node *node,
 			return 0x01; /* FIXME */
 		if (node->nid == codec->afg.nid)
 			return codec->function_id ? codec->function_id : 0x01;
+		if (node->nid == codec->mfg_nid)
+			return codec->modem_function_id ? codec->modem_function_id : 0x02;
 	}
 	return 0;
 }

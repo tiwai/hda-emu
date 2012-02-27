@@ -94,6 +94,8 @@ struct xhda_codec {
 	unsigned int revision_id;
 	unsigned int num_widgets;
 	struct xhda_node afg;
+	unsigned int modem_function_id;
+	unsigned int mfg_nid;
 	unsigned int rc;
 	struct xhda_verb_table *extended_verbs;
 	struct xhda_verb_table *extended_parameters;

@@ -391,7 +391,15 @@ static int parse_root(const char *buffer)
 	if ((p = strmatch(buffer, "Address: "))) {
 		codec->addr = strtoul(p, NULL, 0);
 	} else if ((p = strmatch(buffer, "Function Id: "))) {
-		/*codec->function_id = strtoul(p, NULL, 0);*/
+		unsigned int id;
+		id = strtoul(p, NULL, 0);
+		if (strmatch(buffer, "AFG Function Id: ")) {
+			if (id != 1)
+				hda_log(HDA_LOG_WARN, "AFG ID != 1 (%d)\n", id);
+			codec->function_id = id;
+		}
+		if (strmatch(buffer, "MFG Function Id: "))
+			codec->modem_function_id = id;
 		return 0;
 	} else if ((p = strmatch(buffer, "Vendor Id: "))) {
 		codec->vendor_id = strtoul(p, NULL, 0);
@@ -411,9 +419,13 @@ static int parse_root(const char *buffer)
 	} else if ((p = strmatch(buffer, "GPIO: "))) {
 		return parse_gpio(p);
 	} else if (strmatch(buffer, "Node ")) {
+		if ((codec->mfg_nid || codec->modem_function_id) &&
+		    codec->function_id)
+			return -EBADFD; /* ignore this codec unless specified */
 		return parse_node(buffer);
-	} else if (strmatch(buffer, "Modem Function Group: ")) {
-		return -EBADFD; /* ignore this codec unless specified */
+	} else if ((p = strmatch(buffer, "Modem Function Group: "))) {
+		codec->mfg_nid = strtoul(p, NULL, 0);
+		return 0;
 	}
 	return 0; /* ignore */
 }
@@ -585,6 +597,8 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 				parse_mode = PARSE_START;
 				free(codec->parsed_name);
 				codec->parsed_name = NULL;
+				codec->function_id = 0;
+				codec->modem_function_id = 0;
 				continue;
 			}
 			hda_log(HDA_LOG_ERR, "ERROR %d\n", err);
