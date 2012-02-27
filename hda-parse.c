@@ -397,9 +397,10 @@ static int parse_root(const char *buffer)
 			if (id != 1)
 				hda_log(HDA_LOG_WARN, "AFG ID != 1 (%d)\n", id);
 			codec->function_id = id;
-		}
-		if (strmatch(buffer, "MFG Function Id: "))
+		} else if (strmatch(buffer, "MFG Function Id: "))
 			codec->modem_function_id = id;
+		else
+			codec->function_id = 0x01; /* workaround for old bug */
 		return 0;
 	} else if ((p = strmatch(buffer, "Vendor Id: "))) {
 		codec->vendor_id = strtoul(p, NULL, 0);
@@ -419,12 +420,11 @@ static int parse_root(const char *buffer)
 	} else if ((p = strmatch(buffer, "GPIO: "))) {
 		return parse_gpio(p);
 	} else if (strmatch(buffer, "Node ")) {
-		if ((codec->mfg_nid || codec->modem_function_id) &&
-		    codec->function_id)
-			return -EBADFD; /* ignore this codec unless specified */
 		return parse_node(buffer);
 	} else if ((p = strmatch(buffer, "Modem Function Group: "))) {
-		codec->mfg_nid = strtoul(p, NULL, 0);
+		codec->mfg.nid = strtoul(p, NULL, 0);
+		if (!codec->function_id)
+			return -EBADFD;
 		return 0;
 	}
 	return 0; /* ignore */
@@ -536,6 +536,16 @@ static int do_parse_sysfs(struct xhda_codec *codec, char *buffer)
 	return 1; /* no more data */
 }
 
+static void clear_codec(struct xhda_codec *codec)
+{
+	free(codec->parsed_name);
+	codec->parsed_name = NULL;
+	codec->function_id = 0;
+	codec->modem_function_id = 0;
+	codec->mfg.nid = 0;
+	codec->num_widgets = 1;
+}
+
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 {
 	char buffer[256], *p;
@@ -549,6 +559,7 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 	codec->num_widgets = 1;
 	codec->afg.nid = 0x01;
 	while (fgets(buffer, sizeof(buffer), fp)) {
+	again:
 		if (parse_mode == PARSE_START) {
 			if (!strmatch(buffer, "Codec: ")) {
 				check_alsa_info(buffer);
@@ -564,6 +575,13 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 			if (!codec->parsed_name)
 				return -ENOMEM;
 		} else if (strmatch(buffer, "Codec: ")) {
+			if (codec->mfg.nid &&
+			    codec->num_widgets <= codec->mfg.nid) {
+				hda_log(HDA_LOG_INFO, "Codec %d is a modem codec, skipping\n", curidx);
+				parse_mode = PARSE_START;
+				clear_codec(codec);
+				goto again;
+			}
 			parse_mode = PARSE_POST;
 			continue;
 		}
@@ -595,10 +613,7 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 			if (err == -EBADFD && codec_index < 0) {
 				hda_log(HDA_LOG_INFO, "Codec %d is a modem codec, skipping\n", curidx);
 				parse_mode = PARSE_START;
-				free(codec->parsed_name);
-				codec->parsed_name = NULL;
-				codec->function_id = 0;
-				codec->modem_function_id = 0;
+				clear_codec(codec);
 				continue;
 			}
 			hda_log(HDA_LOG_ERR, "ERROR %d\n", err);

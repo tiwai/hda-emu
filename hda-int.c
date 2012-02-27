@@ -760,7 +760,7 @@ static int par_function_type(struct xhda_codec *codec, struct xhda_node *node,
 			return 0x01; /* FIXME */
 		if (node->nid == codec->afg.nid)
 			return codec->function_id ? codec->function_id : 0x01;
-		if (node->nid == codec->mfg_nid)
+		if (node->nid == codec->mfg.nid)
 			return codec->modem_function_id ? codec->modem_function_id : 0x02;
 	}
 	return 0;
@@ -1003,6 +1003,11 @@ static struct xhda_node *find_node(struct xhda_codec *codec, unsigned int nid)
 	for (node = &codec->afg; node; node = node->next)
 		if (node->nid == nid)
 			return node;
+	if (codec->mfg.nid) {
+		for (node = &codec->mfg; node; node = node->next)
+			if (node->nid == nid)
+				return node;
+	}
 	return NULL;
 }
 
