@@ -384,6 +384,17 @@ static int parse_gpio_items(const char *buf)
 	return 0;
 }
 
+static int in_modem_whitelist(struct xhda_codec *codec)
+{
+	switch (codec->vendor_id) {
+	case 0x14f15045:
+	case 0x14f15047:
+	case 0x14f15051:
+		return 1;
+	}
+	return 0;
+}
+
 static int parse_root(const char *buffer)
 {
 	const char *p;
@@ -423,7 +434,7 @@ static int parse_root(const char *buffer)
 		return parse_node(buffer);
 	} else if ((p = strmatch(buffer, "Modem Function Group: "))) {
 		codec->mfg.nid = strtoul(p, NULL, 0);
-		if (!codec->function_id)
+		if (!codec->function_id && !in_modem_whitelist(codec))
 			return -EBADFD;
 		return 0;
 	}
@@ -576,7 +587,8 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 				return -ENOMEM;
 		} else if (strmatch(buffer, "Codec: ")) {
 			if (codec->mfg.nid &&
-			    codec->num_widgets <= codec->mfg.nid) {
+			    codec->num_widgets <= codec->mfg.nid &&
+			    !in_modem_whitelist(codec)) {
 				hda_log(HDA_LOG_INFO, "Codec %d is a modem codec, skipping\n", curidx);
 				parse_mode = PARSE_START;
 				clear_codec(codec);
