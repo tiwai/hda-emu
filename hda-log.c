@@ -42,8 +42,8 @@ static void set_color(int level)
 		[HDA_LOG_ERR] = "31;1", /* bold red */
 		[HDA_LOG_WARN] = "31", /* red */
 		[HDA_LOG_KERN] = "32", /* green */
-		[HDA_LOG_INFO] = "9", /* normal */
-		[HDA_LOG_VERB] = "34", /* blue */
+		[HDA_LOG_INFO] = "0", /* normal */
+		[HDA_LOG_VERB] = "36", /* blue */
 	};
 	if (!(log_flags & HDA_LOG_FLAG_COLOR))
 		return;
