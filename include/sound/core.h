@@ -5,9 +5,17 @@
 #include <linux/slab.h>
 #include <linux/list.h>
 
+enum {
+	SND_PR_ALWAYS,
+	SND_PR_DEBUG,
+	SND_PR_VERBOSE,
+};
+
 #define snd_printk	hda_log_printk
 #define snd_printd	hda_log_printk
 #define snd_printdd	hda_log_printk
+#define _snd_printd(level, fmt, args...) hda_log_printk(fmt, ##args)
+
 #define snd_assert(x,y)
 static inline int _snd_BUG_ON(int cond, const char *func, int line)
 {
