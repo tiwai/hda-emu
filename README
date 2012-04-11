@@ -6,7 +6,7 @@ GENERAL
 
 hda-emu ("HD-Audio EMUlator", or "Horribly Destructive And
 Embarrassingly Malfunctional Unit") is a program written for making
-test and debug of ALSA HD-audio driver eaiser.  The source tree
+test and debug of ALSA HD-audio driver easier.  The source tree
 contains three things: the HD-audio controller/codec emulation codes,
 the build stub for codec parser codes in the kernel HD-audio driver
 tree, and a collection of codec proc files.
@@ -65,7 +65,7 @@ as basic messages of hda-emu itself.
 The level 2 will show each codec verbs in addition to messages shown
 via the level 1.
 
-The program has a stupid dumb command shell, and ask you a command
+The program has a stupid dumb command shell, and will ask you a command
 after initializing and showing the messages.
 
 	# Building controls...
@@ -111,8 +111,8 @@ BASIC COMMANDS
 
 * get
 
- Get the control element information.  Pass the numid of the element
- to see.
+  Get the control element information.  Pass the numid of the element
+  to see.
 
 	> get 1
 	1 Master Playback Volume:0
@@ -280,8 +280,8 @@ ADVANCED COMMANDS
 * unsol
 
   Issue an arbitrary unsolicited event.  Pass the NID to issue an
-  event.
-  The tag is automatically obtained from the current widget status.
+  event.  The tag is automatically obtained from the current widget
+  status.
 
 * option
 
