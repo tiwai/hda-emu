@@ -217,19 +217,25 @@ static int parse_node_digital(const char *buf, struct xhda_node *node)
 static int parse_node_items(const char *buf)
 {
 	struct xhda_node *node = current_node;
+	const char *head = buf;
 	const char *p;
 
-	if ((p = strmatch(buf, "  Amp-In caps: "))) {
+	if (*head == ' ') {
+		int i;
+		for (i = 0; i < 2 && *head == ' '; i++)
+			head++;
+	}
+	if ((p = strmatch(head, "Amp-In caps: "))) {
 		return parse_amp_caps(p, &node->amp_in_caps);
-	} else if ((p = strmatch(buf, "  Amp-Out caps: "))) {
+	} else if ((p = strmatch(head, "Amp-Out caps: "))) {
 		return parse_amp_caps(p, &node->amp_out_caps);
-	} else if ((p = strmatch(buf, "  Amp-In vals: "))) {
+	} else if ((p = strmatch(head, "Amp-In vals: "))) {
 		return parse_amp_vals(p, &node->amp_in_vals);
-	} else if ((p = strmatch(buf, "  Amp-Out vals: "))) {
+	} else if ((p = strmatch(head, "Amp-Out vals: "))) {
 		return parse_amp_vals(p, &node->amp_out_vals);
-	} else if ((p = strmatch(buf, "  Pin-ctls: "))) {
+	} else if ((p = strmatch(head, "Pin-ctls: "))) {
 		node->pinctl = strtoul(p, NULL, 0);
-	} else if ((p = strmatch(buf, "  Pincap "))) {
+	} else if ((p = strmatch(head, "Pincap "))) {
 		const char *end;
 		/* a special hack to avoid the old bug */
 		if (strmatch(p, "0x08") &&
@@ -238,25 +244,25 @@ static int parse_node_items(const char *buf)
 			node->pincap = strtoul(p + 4, NULL, 16);
 		else
 			node->pincap = strtoul(p, NULL, 0);
-	} else if ((p = strmatch(buf, "  Pin Default "))) {
+	} else if ((p = strmatch(head, "Pin Default "))) {
 		node->pin_default = strtoul(p, NULL, 0);
-	} else if ((p = strmatch(buf, "  Unsolicited: "))) {
+	} else if ((p = strmatch(head, "Unsolicited: "))) {
 		/* not yet */
-	} else if ((p = strmatch(buf, "  Power: "))) {
+	} else if ((p = strmatch(head, "Power: "))) {
 		sscanf(p, "setting=D%d, actual=D%d",
 		       &node->power_setting, &node->power_current);
-	} else if ((p = strmatch(buf, "  Processing caps: "))) {
+	} else if ((p = strmatch(head, "Processing caps: "))) {
 		sscanf(p, "benign=%d, ncoeff=%d",
 		       &node->coef_benign, &node->coef_num);
-	} else if ((p = strmatch(buf, "  Digital:"))) {
+	} else if ((p = strmatch(head, "Digital:"))) {
 		return parse_node_digital(p, node);
-	} else if ((p = strmatch(buf, "  Digital category: "))) {
+	} else if ((p = strmatch(head, "Digital category: "))) {
 		node->dig_category = strtoul(p, NULL, 0);
-	} else if ((p = strmatch(buf, "  PCM:"))) {
+	} else if ((p = strmatch(head, "PCM:"))) {
 		if (*p == ' ')
 			return parse_old_pcm_info(p + 1, &node->pcm);
 		parse_mode = PARSE_NODE_PCM;
-	} else if ((p = strmatch(buf, "  Connection: "))) {
+	} else if ((p = strmatch(head, "Connection: "))) {
 		node->num_nodes = strtoul(p, NULL, 0);
 		if (node->num_nodes)
 			parse_mode = PARSE_NODE_CONNECTIONS;
