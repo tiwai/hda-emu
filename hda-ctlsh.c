@@ -743,14 +743,14 @@ static void handle_sysfs(char *line)
 
 /* Line completion functions */
 
-char *command_generator(const char *text, int state)
+static char *command_generator(const char *text, int state)
 {
 	static int index, len;
 	const char *name;
 
 	if (!state) {
 		index = 0;
-		len = strlen (text);
+		len = strlen(text);
 	}
 
 	/* Return the next name which partially matches from command list. */
@@ -763,17 +763,17 @@ char *command_generator(const char *text, int state)
 	return NULL;
 }
 
-char **ctlsh_completion(const char *text, int start, int end)
+static char **ctlsh_completion(const char *text, int start, int end)
 {
 	char **matches = NULL;
 
 	if (start == 0)
-		matches = rl_completion_matches (text, command_generator);
+		matches = rl_completion_matches(text, command_generator);
 
 	return matches;
 }
 
-void init_completion(void)
+static void init_completion(void)
 {
 	rl_attempted_completion_function = ctlsh_completion;
 }
