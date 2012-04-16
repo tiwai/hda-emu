@@ -739,7 +739,47 @@ static void handle_sysfs(char *line)
 /*
  */
 
-#ifndef HAVE_LIBREADLINE
+#ifdef HAVE_LIBREADLINE
+
+/* Line completion functions */
+
+char *command_generator(const char *text, int state)
+{
+	static int index, len;
+	const char *name;
+
+	if (!state) {
+		index = 0;
+		len = strlen (text);
+	}
+
+	/* Return the next name which partially matches from command list. */
+	while ((name = usage_str[index].cmd) != NULL) {
+		index++;
+		if (strncmp(name, text, len) == 0)
+			return strdup(name);
+	}
+
+	return NULL;
+}
+
+char **ctlsh_completion(const char *text, int start, int end)
+{
+	char **matches = NULL;
+
+	if (start == 0)
+		matches = rl_completion_matches (text, command_generator);
+
+	return matches;
+}
+
+void init_completion(void)
+{
+	rl_attempted_completion_function = ctlsh_completion;
+}
+
+#else
+
 static FILE *rl_instream;
 static FILE *rl_outstream;
 
@@ -754,8 +794,9 @@ static char *readline(const char *prompt)
 }
 
 #define add_history(l)
+#define init_completion()
 
-#endif
+#endif /* HAVE_LIBREADLINE */
 
 int cmd_loop(FILE *fp)
 {
@@ -765,6 +806,9 @@ int cmd_loop(FILE *fp)
 	if (fp)
 		rl_instream = fp;
 	rl_outstream = stderr;
+
+	init_completion();
+
 	for (;;) {
 		line = readline("> ");
 		if (!line)
