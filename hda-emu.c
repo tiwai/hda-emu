@@ -175,7 +175,7 @@ void hda_exec_verb(int nid, int verb, int parm)
  * power_save module option handling
  */
 #ifdef HDA_OLD_POWER_SAVE
-extern int *power_save_parameter; /* defined in kerenl/hda_codec.c */
+extern int *power_save_parameter; /* defined in kernel/hda_codec.c */
 #else
 static int power_save;
 #endif

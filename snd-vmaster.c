@@ -44,7 +44,7 @@ struct link_master {
 /*
  * link slave - this contains a slave control element
  *
- * It fakes the control callbacsk with additional attenuation by the
+ * It fakes the control callbacks with additional attenuation by the
  * master control.  A slave may have either one or two channels.
  */
 
@@ -343,7 +343,7 @@ static void master_free(struct snd_kcontrol *kcontrol)
 	struct link_master *master = snd_kcontrol_chip(kcontrol);
 	struct link_slave *slave, *n;
 
-	/* free all slave links and retore the original slave kctls */
+	/* free all slave links and restore the original slave kctls */
 	list_for_each_entry_safe(slave, n, &master->slaves, list) {
 		struct snd_kcontrol *sctl = slave->kctl;
 		struct list_head olist = sctl->list;
@@ -362,7 +362,7 @@ static void master_free(struct snd_kcontrol *kcontrol)
  * @name: name string of the control element to create
  * @tlv: optional TLV int array for dB information
  *
- * Creates a virtual matster control with the given name string.
+ * Creates a virtual master control with the given name string.
  * Returns the created control element, or NULL for errors (ENOMEM).
  *
  * After creating a vmaster element, you can add the slave controls

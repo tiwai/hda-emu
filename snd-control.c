@@ -177,7 +177,7 @@ int snd_ctl_activate_id(struct snd_card *card, struct snd_ctl_elem_id *id,
 	ret = 1;
  unlock:
 	if (ret > 0) {
-		hda_log(HDA_LOG_INFO, "Control element %s:%d acvite changed to %s\n",
+		hda_log(HDA_LOG_INFO, "Control element %s:%d active changed to %s\n",
 			kctl->id.name, kctl->id.index,
 			(kctl->vd[0].access & SNDRV_CTL_ELEM_ACCESS_INACTIVE) ? "inactive" : "active");
 	}
