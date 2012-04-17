@@ -37,6 +37,8 @@
 #include <sound/control.h>
 #include <sound/tlv.h>
 
+static void usage(char *);
+
 struct delayed_work *__work_pending;
 
 extern struct list_head snd_ctl_list_head;
@@ -78,64 +80,6 @@ static int getbool(char **bufp, int *val)
 	else
 		*val = 0;
 	return 0;
-}
-
-struct usage_table {
-	const char *cmd;
-	const char *line;
-	const char *desc;
-};
-	
-static struct usage_table usage_str[] = {
-	{ "list", "list",
-	  "Show all control elements" },
-	{ "get", "get numid",
-	  "Get the contents of the given control element" },
-	{ "set", "set numid val [val2]",
-	  "Set the contents of the given control element" },
-	{ "dump", "dump [nid [filename]]",
-	  "Dump codec contents in the proc file format; nid = 0 means all widgets " },
-	{ "jack", "jack numid [val]",
-	  "Get jack state or set jack state; val = 0 or 1" },
-	{ "unsol", "unsol numid",
-	  "Issue an unsolicited event" },
-	{ "route", "route [-opts] numid",
-	  "Show routes via the given widget; -a = show all, -x = show inactive pins too, -i|-o = set direction" },
-	{ "option", "option variable [val]",
-	  "Get/set module option value" },
-	{ "help", "help [command]",
-	  "Show help texts" },
-	{ "verb", "verb nid cmd parameter",
-	  "Execute a verb" },
-	{ "PCM", "PCM [-s|-e] [pcm-id dir [rate [channels [format-bits]]]]",
-	  "List PCM streams or test the given PCM stream" },
-	{ "pm", "pm",
-	  "Test suspend/resume cycle" },
-#ifdef CONFIG_SND_HDA_RECONFIG
-	{ "fs", "fs {get|set|list} file args...",
-	  "Read or write sysfs files" },
-#endif
-	{ "quit", "quit",
-	  "Quit the program" },
-	{ }
-};
-
-static void usage(const char *cmd)
-{
-	struct usage_table *tbl;
-
-	for (tbl = usage_str; tbl->cmd; tbl++) {
-		if (cmd && !strcmp(cmd, tbl->cmd)) {
-			hda_log(HDA_LOG_INFO, "Usage: %s\n", tbl->line);
-			hda_log(HDA_LOG_INFO, "%s\n", tbl->desc);
-			return;
-		}
-	}
-	hda_log(HDA_LOG_INFO, "Available commands:");
-	for (tbl = usage_str; tbl->cmd; tbl++)
-		hda_log(HDA_LOG_INFO, " %s", tbl->cmd);
-	hda_log(HDA_LOG_INFO, "\n");
-	hda_log(HDA_LOG_INFO, "Run \"help CMD\" for details\n");
 }
 
 static void show_elements(char *line)
@@ -457,7 +401,6 @@ static void show_routes(char *line)
 	hda_show_routes(numid, flags);
 }
 
-
 static void run_verb(char *line)
 {
 	char *parm[3];
@@ -560,6 +503,11 @@ static void test_pcm(char *line)
 	    !getint(&line, &channels))
 		getint(&line, &format);
 	hda_test_pcm(stream, op, substream, dir, rate, channels, format);
+}
+
+static void help(char *buf)
+{
+	usage(gettoken(&buf));
 }
 
 #ifdef CONFIG_SND_HDA_RECONFIG
@@ -739,6 +687,79 @@ static void handle_sysfs(char *line)
 /*
  */
 
+struct usage_table {
+	const char *cmd;
+	const char *line;
+	const char *desc;
+	void (*handler)(char *);
+};
+	
+static struct usage_table usage_str[] = {
+	{ "list", "list",
+	  "Show all control elements",
+	  show_elements },
+	{ "get", "get numid",
+	  "Get the contents of the given control element",
+	  get_element },
+	{ "set", "set numid val [val2]",
+	  "Set the contents of the given control element",
+	  set_element },
+	{ "dump", "dump [nid [filename]]",
+	  "Dump codec contents in the proc file format; nid = 0 means all widgets",
+	  dump_proc },
+	{ "jack", "jack numid [val]",
+	  "Get jack state or set jack state; val = 0 or 1",
+	  set_jack },
+	{ "unsol", "unsol numid",
+	  "Issue an unsolicited event",
+	  issue_unsol },
+	{ "route", "route [-opts] numid",
+	  "Show routes via the given widget; -a = show all, -x = show inactive pins too, -i|-o = set direction",
+	  show_routes },
+	{ "option", "option variable [val]",
+	  "Get/set module option value",
+	  handle_module_option },
+	{ "help", "help [command]",
+	  "Show help texts",
+	  help },
+	{ "verb", "verb nid cmd parameter",
+	  "Execute a verb",
+	  run_verb },
+	{ "PCM", "PCM [-s|-e] [pcm-id dir [rate [channels [format-bits]]]]",
+	  "List PCM streams or test the given PCM stream",
+	  test_pcm },
+	{ "pm", "pm",
+	  "Test suspend/resume cycle",
+	  test_pm },
+#ifdef CONFIG_SND_HDA_RECONFIG
+	{ "fs", "fs {get|set|list} file args...",
+	  "Read or write sysfs files",
+	  handle_sysfs },
+#endif
+	{ "quit", "quit",
+	  "Quit the program",
+	  NULL },
+	{ }
+};
+
+static void usage(char *cmd)
+{
+	struct usage_table *tbl;
+
+	for (tbl = usage_str; tbl->cmd; tbl++) {
+		if (cmd && !strcmp(cmd, tbl->cmd)) {
+			hda_log(HDA_LOG_INFO, "Usage: %s\n", tbl->line);
+			hda_log(HDA_LOG_INFO, "%s\n", tbl->desc);
+			return;
+		}
+	}
+	hda_log(HDA_LOG_INFO, "Available commands:");
+	for (tbl = usage_str; tbl->cmd; tbl++)
+		hda_log(HDA_LOG_INFO, " %s", tbl->cmd);
+	hda_log(HDA_LOG_INFO, "\n");
+	hda_log(HDA_LOG_INFO, "Run \"help CMD\" for details\n");
+}
+
 #ifdef HAVE_LIBREADLINE
 
 /* Line completion functions */
@@ -798,10 +819,30 @@ static char *readline(const char *prompt)
 
 #endif /* HAVE_LIBREADLINE */
 
+static struct usage_table *cmd_match(char *p)
+{
+	struct usage_table *tbl, *match = NULL;
+	int len, num_matches = 0;
+
+	len = strlen(p);
+	for (tbl = usage_str; tbl->cmd; tbl++) {
+		if (strncmp(p, tbl->cmd, len) == 0) {
+			num_matches++;
+			match = tbl;
+		}
+	}
+
+	if (num_matches == 1)
+		return match;
+
+	return NULL;
+}
+
 int cmd_loop(FILE *fp)
 {
 	char *line;
 	char *buf, *p;
+	struct usage_table *tbl;
 
 	if (fp)
 		rl_instream = fp;
@@ -823,54 +864,15 @@ int cmd_loop(FILE *fp)
 			free(line);
 			continue;
 		}
-		switch (*p) {
-		case 'l':
-			show_elements(buf);
-			break;
-		case 'g':
-			get_element(buf);
-			break;
-		case 's':
-			set_element(buf);
-			break;
-		case 'd':
-			dump_proc(buf);
-			break;
-		case 'o':
-			handle_module_option(buf);
-			break;
-		case 'j':
-			set_jack(buf);
-			break;
-		case 'u':
-			issue_unsol(buf);
-			break;
-		case 'v':
-			run_verb(buf);
-			break;
-		case 'P':
-			test_pcm(buf);
-			break;
-		case 'p':
-			test_pm(buf);
-			break;
-		case 'r':
-			show_routes(buf);
-			break;
-#ifdef CONFIG_SND_HDA_RECONFIG
-		case 'f':
-			handle_sysfs(buf);
-			break;
-#endif
-		case 'h':
-			usage(gettoken(&buf));
-			break;
-		case 'q':
-			return 0;
-		default:
+
+		tbl = cmd_match(p);
+		if (tbl == NULL)
 			usage(NULL);
-			break;
-		}
+		else if (!strcmp(tbl->cmd, "quit"))
+			return 0;
+		else
+			tbl->handler(buf);
+
 		flush_scheduled_work();
 		free(line);
 	}
