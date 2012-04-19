@@ -85,6 +85,20 @@
 #define AC_PINCAP_VREF_80		(1<<4)	/* 80% */
 #define AC_PINCAP_VREF_100		(1<<5)	/* 100% */
 
+/* Pin widget control - 8bit */
+#define AC_PINCTL_EPT			(0x3<<0)
+#define AC_PINCTL_EPT_NATIVE		0
+#define AC_PINCTL_EPT_HBR		3
+#define AC_PINCTL_VREFEN		(0x7<<0)
+#define AC_PINCTL_VREF_HIZ		0	/* Hi-Z */
+#define AC_PINCTL_VREF_50		1	/* 50% */
+#define AC_PINCTL_VREF_GRD		2	/* ground */
+#define AC_PINCTL_VREF_80		4	/* 80% */
+#define AC_PINCTL_VREF_100		5	/* 100% */
+#define AC_PINCTL_IN_EN			(1<<5)
+#define AC_PINCTL_OUT_EN		(1<<6)
+#define AC_PINCTL_HP_EN			(1<<7)
+
 /*
  * widget types
  */
@@ -392,6 +406,57 @@ static int set_pin_ctl(struct xhda_codec *codec, struct xhda_node *node,
 	if (!node)
 		return 0;
 	node->pinctl = cmd & 0xff;
+
+	/* sanity checks */
+	if ((node->pinctl & AC_PINCTL_OUT_EN) &&
+	    !(node->pincap & AC_PINCAP_OUT))
+		hda_log(HDA_LOG_ERR,
+			"setting OUT_EN to pin 0x%x without caps\n",
+			node->nid);
+	if ((node->pinctl & AC_PINCTL_HP_EN) &&
+	    !(node->pincap & AC_PINCAP_HP_DRV))
+		hda_log(HDA_LOG_ERR,
+			"setting HP_EN to pin 0x%x without caps\n",
+			node->nid);
+	if ((node->pinctl & AC_PINCTL_IN_EN) &&
+	    !(node->pincap & AC_PINCAP_IN))
+		hda_log(HDA_LOG_ERR,
+			"setting IN_EN to pin 0x%x without caps\n",
+			node->nid);
+	if (node->pinctl & AC_PINCTL_IN_EN) {
+		unsigned int cap;
+		const char *vref;
+		switch (node->pinctl & AC_PINCTL_VREFEN) {
+		case AC_PINCTL_VREF_HIZ:
+			cap = AC_PINCAP_VREF_HIZ;
+			vref = "HIZ";
+			break;
+		case AC_PINCTL_VREF_50:
+			cap = AC_PINCAP_VREF_50;
+			vref = "50";
+			break;
+		case AC_PINCTL_VREF_GRD:
+			cap = AC_PINCAP_VREF_GRD;
+			vref = "GRD";
+			break;
+		case AC_PINCTL_VREF_80:
+			cap = AC_PINCAP_VREF_80;
+			vref = "80";
+			break;
+		case AC_PINCTL_VREF_100:
+			cap = AC_PINCAP_VREF_100;
+			vref = "100";
+			break;
+		default:
+			cap = 0;
+			break;
+		}
+		if (cap && !(node->pincap & cap)) {
+			hda_log(HDA_LOG_ERR,
+				"setting VREF %s to pin 0x%x without caps\n",
+				vref, node->nid);
+		}
+	}
 	return 0;
 }
 
