@@ -424,37 +424,40 @@ static int set_pin_ctl(struct xhda_codec *codec, struct xhda_node *node,
 			"setting IN_EN to pin 0x%x without caps\n",
 			node->nid);
 	if (node->pinctl & AC_PINCTL_IN_EN) {
-		unsigned int cap;
+		unsigned int cap_set, cap_check;
 		const char *vref;
 		switch (node->pinctl & AC_PINCTL_VREFEN) {
 		case AC_PINCTL_VREF_HIZ:
-			cap = AC_PINCAP_VREF_HIZ;
+			cap_check = AC_PINCAP_VREF_HIZ;
 			vref = "HIZ";
 			break;
 		case AC_PINCTL_VREF_50:
-			cap = AC_PINCAP_VREF_50;
+			cap_check = AC_PINCAP_VREF_50;
 			vref = "50";
 			break;
 		case AC_PINCTL_VREF_GRD:
-			cap = AC_PINCAP_VREF_GRD;
+			cap_check = AC_PINCAP_VREF_GRD;
 			vref = "GRD";
 			break;
 		case AC_PINCTL_VREF_80:
-			cap = AC_PINCAP_VREF_80;
+			cap_check = AC_PINCAP_VREF_80;
 			vref = "80";
 			break;
 		case AC_PINCTL_VREF_100:
-			cap = AC_PINCAP_VREF_100;
+			cap_check = AC_PINCAP_VREF_100;
 			vref = "100";
 			break;
 		default:
-			cap = 0;
+			cap_check = 0;
 			break;
 		}
-		if (cap && !(node->pincap & cap)) {
+		cap_set = (node->pincap & AC_PINCAP_VREF) >> AC_PINCAP_VREF_SHIFT;
+		if (!cap_set)
+			cap_set = AC_PINCAP_VREF_HIZ;
+		if (cap_check && !(cap_set & cap_check)) {
 			hda_log(HDA_LOG_ERR,
-				"setting VREF %s to pin 0x%x without caps\n",
-				vref, node->nid);
+				"setting VREF %s to pin 0x%x without caps 0x%x\n",
+				vref, node->nid, node->pincap);
 		}
 	}
 	return 0;
