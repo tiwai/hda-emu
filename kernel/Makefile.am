@@ -20,11 +20,11 @@ endif
 
 noinst_LIBRARIES = libhda.a
 libhda_a_SOURCES = hda_codec.c hda_generic.c hda_proc.c \
-	 hda_beep.c hda_eld.c hda_jack.c \
+	 hda_beep.c hda_eld.c hda_jack.c hda_auto_parser.c \
 	 misc_wrapper.c \
 	 $(PATCHES)
 noinst_HEADERS = hda_codec.h hda_local.h hda_beep.h hda_patch.h \
-	init_hooks.h
+	init_hooks.h hda_auto_parser.h
 
 INCLUDES = -I$(top_srcdir)/include
 

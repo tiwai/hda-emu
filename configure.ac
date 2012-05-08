@@ -63,7 +63,7 @@ ln -s $hdadir/hda_codec.c kernel
 ln -s $hdadir/hda_codec.h kernel
 ln -s $hdadir/hda_local.h kernel
 ln -s $hdadir/hda_generic.c kernel
-for i in hda_jack.c hda_jack.h hda_trace.h; do
+for i in hda_jack.c hda_jack.h hda_trace.h hda_auto_parser.c hda_auto_parser.h; do
   if test -f $hdadir/$i; then
     ln -s $hdadir/$i kernel
   else
