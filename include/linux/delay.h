@@ -1,10 +1,10 @@
 #ifndef __LINUX_DELAY_H
 #define __LINUX_DELAY_H
 
-#define mdelay(x) do { } while (0)
-#define udelay(x) do { } while (0)
-#define msleep(x) do { } while (0)
-#define ssleep(x) do { } while (0)
+static inline void mdelay(unsigned long x) {}
+static inline void udelay(unsigned long x) {}
+static inline void msleep(unsigned long x) {}
+static inline void ssleep(unsigned long x) {}
 #define HZ	1000
 #define msecs_to_jiffies(x)	(x)
 
