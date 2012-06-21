@@ -219,7 +219,7 @@ static void log_dump_proc_file(struct snd_info_buffer *buf,
 	int node, in_process;
 	char *p;
 
-	if (!buf->nid) {
+	if (buf->nid <= 0) {
 		vfprintf(buf->fp, fmt, ap);
 		return;
 	}
@@ -252,10 +252,10 @@ static void log_dump_proc_file(struct snd_info_buffer *buf,
 		}
 		break;
 	case 1:
-		if (*line == ' ')
-			fputs(line, buf->fp);
-		else
+		if (!strncmp(line, "Node 0x", 7))
 			buf->printing = 2;
+		else
+			fputs(line, buf->fp);
 		break;
 	}
 }
@@ -280,7 +280,10 @@ void hda_log_dump_proc(unsigned int nid, const char *file)
 	} else
 		buf.fp = hda_get_logfp();
 	buf.nid = nid;
-	buf.printing = 0;
+	if (nid > 1)
+		buf.printing = 0;
+	else
+		buf.printing = 1;
 	/* don't show verbs */
 	saved_level = hda_log_level_set(HDA_LOG_KERN);
 	snd_iprintf_dumper = log_dump_proc_file;

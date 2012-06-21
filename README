@@ -157,6 +157,11 @@ BASIC COMMANDS
 	  Pin-ctls: 0x20: IN
 	  Connection: 1
 
+  Passing the value 0 to the first argument is equivalent without
+  passing the argument, i.e. showing full dump.
+  By passing the value 1, it dumps only the codec and FG information
+  (e.g. codec name, vendor id, etc).
+
   Also, you can pass a file name to the second argument if you want
   to save the dump to the specifid file.
 
