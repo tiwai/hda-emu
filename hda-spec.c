@@ -443,6 +443,8 @@ void add_codec_extensions(struct xhda_codec *codec)
 		hda_set_proc_coef(codec, 0x20, 0x00, 0x3010);
 	else if (!strcmp(codec->parsed_name, "Realtek ALC271X"))
 		hda_set_proc_coef(codec, 0x20, 0x00, 0x3010);
+	else if (!strcmp(codec->parsed_name, "Realtek ALC272X"))
+		hda_set_proc_coef(codec, 0x20, 0x00, 0x4010);
 	else if (!strcmp(codec->parsed_name, "Realtek ALC269VB"))
 		hda_set_proc_coef(codec, 0x20, 0x00, 0x10);
 	else if (!strcmp(codec->parsed_name, "Realtek ALC887-VD"))
