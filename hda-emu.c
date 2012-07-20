@@ -934,6 +934,7 @@ static void usage(void)
 	fprintf(stderr, "  -q             don't echo but only to log file\n");
 	fprintf(stderr, "  -C             print messages in color (default)\n");
 	fprintf(stderr, "  -M             no color print\n");
+	fprintf(stderr, "  -F             print prefixes to messages\n");
 	fprintf(stderr, "  -a             issues SIGTRAP at codec errors\n");
 	fprintf(stderr, "  -P pincfg      initialize pin-configuration from sysfs entry\n");
 	fprintf(stderr, "  -j NID         turn on the initial jack-state of the given pin\n");
@@ -982,7 +983,7 @@ int main(int argc, char **argv)
 	int num_active_jacks = 0;
 	unsigned int active_jacks[16];
 
-	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMP:j:")) != -1) {
+	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMFP:j:")) != -1) {
 		switch (c) {
 		case 'a':
 			hda_log_trap_on_error = 1;
@@ -1011,6 +1012,9 @@ int main(int argc, char **argv)
 			break;
 		case 'C':
 			log_flags |= HDA_LOG_FLAG_COLOR;
+			break;
+		case 'F':
+			log_flags |= HDA_LOG_FLAG_PREFIX;
 			break;
 		case 'M':
 			log_flags &= ~HDA_LOG_FLAG_COLOR;

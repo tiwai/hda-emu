@@ -35,6 +35,7 @@ static FILE *logfp;
 static int log_flags = HDA_LOG_FLAG_COLOR;
 
 int hda_log_trap_on_error;
+static int log_previous_prefix = -1;
 
 static void set_color(int level)
 {
@@ -61,15 +62,43 @@ static void reset_color(void)
 	printf("\x1b[0m");
 }
 
+static void print_prefix(int level)
+{
+	static char *prefix_seq[] = {
+		[HDA_LOG_ERR] = "Error",
+		[HDA_LOG_WARN] = "Warning",
+		[HDA_LOG_KERN] = "Kernel",
+		[HDA_LOG_INFO] = "Info",
+		[HDA_LOG_VERB] = "Verb",
+	};
+
+	if (!(log_flags & HDA_LOG_FLAG_PREFIX))
+		return;
+	if (level < 0)
+		level = 0;
+	else if (level > HDA_LOG_VERB)
+		level = HDA_LOG_VERB;
+
+	if (log_previous_prefix == level)
+		return;
+	if (log_previous_prefix != -1)
+		fprintf(logfp, "\n");
+	fprintf(logfp, "%s: ", prefix_seq[level]);
+	log_previous_prefix = level;
+}
+
 static void _hda_log(int level, const char *fmt, va_list ap)
 {
 	va_list ap2;
+	int i;
 
 	if (level > log_level)
 		return;
 
 	if (logfp == stdout)
 		set_color(level);
+	print_prefix(level);
+
 	va_copy(ap2, ap);
 	vfprintf(logfp, fmt, ap);
 	if (!(log_flags & HDA_LOG_FLAG_NO_ECHO) && logfp != stdout)
@@ -77,6 +106,9 @@ static void _hda_log(int level, const char *fmt, va_list ap)
 	va_end(ap2);
 	if (logfp == stdout)
 		reset_color();
+	if (((i = strlen(fmt)) > 0) && (fmt[i-1] == '\n'))
+		log_previous_prefix = -1;
+
 	if ((level == HDA_LOG_ERR || level == HDA_LOG_WARN) &&
 	    hda_log_trap_on_error)
 		raise(SIGTRAP);

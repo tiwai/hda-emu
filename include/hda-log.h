@@ -12,6 +12,7 @@ enum {
 /* flags */
 #define HDA_LOG_FLAG_NO_ECHO	(1 << 0)
 #define HDA_LOG_FLAG_COLOR	(1 << 1)
+#define HDA_LOG_FLAG_PREFIX	(1 << 2)
 
 int hda_log_init(const char *file, unsigned int flags);
 void hda_log(int level, const char *fmt, ...);
