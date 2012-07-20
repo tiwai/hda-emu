@@ -265,6 +265,7 @@ static struct verb_ext_list extensions[] = {
 	{ .id = 0x111d76d4, .verbs = idt_92hd8xx_verbs },
 	{ .id = 0x111d76d5, .verbs = idt_92hd8xx_verbs },
 	{ .id = 0x111d76d9, .verbs = idt_92hd8xx_verbs },
+	{ .id = 0x111d76df, .verbs = idt_92hd8xx_verbs },
 	{ .id = 0x111d76e0, .verbs = idt_92hd8xx_verbs },
 	{ .id = 0x111d76e3, .verbs = idt_92hd8xx_verbs },
 	{ .id = 0x111d76e5, .verbs = idt_92hd8xx_verbs },
