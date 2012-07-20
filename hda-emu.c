@@ -290,7 +290,7 @@ void hda_log_dump_proc(unsigned int nid, const char *file)
 	card.proc->func(card.proc, &buf);
 	hda_log_level_set(saved_level);
 	if (file)
-		fclose(fp);
+		fclose(buf.fp);
 }
 
 /*
