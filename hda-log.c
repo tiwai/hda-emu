@@ -179,6 +179,11 @@ int hda_log_level_set(int level)
 	return saved;
 }
 
+void hda_log_flush()
+{
+	fflush(logfp);
+}
+
 FILE *hda_get_logfp(void)
 {
 	return logfp;

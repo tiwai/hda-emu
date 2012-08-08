@@ -18,6 +18,7 @@ int hda_log_init(const char *file, unsigned int flags);
 void hda_log(int level, const char *fmt, ...);
 void hda_log_printk(const char *fmt, ...);
 void hda_log_echo(int level, const char *fmt, ...);
+void hda_log_flush(void);
 
 extern int hda_log_trap_on_error;
 

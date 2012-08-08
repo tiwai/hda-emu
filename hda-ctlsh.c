@@ -851,6 +851,7 @@ int cmd_loop(FILE *fp)
 	init_completion();
 
 	for (;;) {
+		hda_log_flush();
 		line = readline("> ");
 		if (!line)
 			break;
