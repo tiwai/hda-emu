@@ -51,6 +51,8 @@ AC_ARG_WITH(hdadir,
     [path where HD-audio kernel files are stored]),
   hdadir="$withval", hdadir="")
 
+hdadir="$( cd "$hdadir" && pwd )"
+
 if test -n "$hdadir"; then
 
 test -d "$hdadir" || \
