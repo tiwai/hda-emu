@@ -22,11 +22,17 @@ def handle_argv():
     import argparse
     parser = argparse.ArgumentParser(description='Hda-emu automated test wrapper.')
     parser.add_argument('--file', dest='file', required=True, help='alsa-info filename')
+    parser.add_argument('--print-errors', dest='print_errors', action="store_true", 
+        default=False, help='print errors, and the command that caused it')
+    parser.add_argument('--comm-log', dest='comm_log', action="store_true", 
+        default=False, help='print communication with hda-emu')
     return parser.parse_args()
 
 def run_test(argv):
     import runner
     result = runner.HdaEmuRunner()
+    result.set_print_errors(argv.print_errors)
+    result.set_comm_log_enabled(argv.comm_log)
     result.set_alsa_info_file(argv.file)
     result.run_standard()
     return result
