@@ -386,12 +386,27 @@ static void fixup_via_mixer(struct xhda_codec *codec)
 	node->node[node->num_nodes++] = 0x08;
 }
 
+static void fixup_alc268_beep(struct xhda_codec *codec)
+{
+	struct xhda_node *node = find_node(codec, 0x1d);
+	if (!node)
+		return;
+	node->wcaps |= (1 << 1);	/* AMP-in present */
+
+	node->amp_in_caps.ofs = 0x0c;
+	node->amp_in_caps.nsteps = 0x0c;
+	node->amp_in_caps.stepsize = 0x07;
+	node->amp_in_caps.mute = 0;
+	node->amp_in_caps.override = 1;
+}
+
 struct fixup_list {
 	unsigned int vendor_id;
 	void (*func)(struct xhda_codec *);
 };
 
 static struct fixup_list fixups[] = {
+	{ 0x10ec0268, fixup_alc268_beep },
 	{ 0x11060428, fixup_via_mixer },
 	{ 0x11064428, fixup_via_mixer },
 	{ 0x11060438, fixup_via_mixer },
