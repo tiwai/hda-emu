@@ -155,15 +155,10 @@ static struct xhda_verb_table idt_92hd8xx_verbs[] = {
 /*
  * STAC codecs
  */
-static struct xhda_verb_table stac927x_verbs[] = {
+static struct xhda_verb_table stac92xx_verbs[] = {
 	{ 0xfeb, get_cached_verb, "get_analog_loop" }, /* undocumented */
 	{ 0x7eb, set_cached_verb, "set_analog_loop" },
-	{ } /* terminator */
-};
-
-static struct xhda_verb_table stac9205_verbs[] = {
-	{ 0xfe0, get_cached_verb, "get_analog_loop" }, /* undocumented */
-	{ 0x7e0, set_cached_verb, "set_analog_loop" },
+	{ 0x7e7, set_cached_verb, "idt_set_gpio" },
 	{ } /* terminator */
 };
 
@@ -271,34 +266,35 @@ static struct verb_ext_list extensions[] = {
 	{ .id = 0x111d76e5, .verbs = idt_92hd8xx_verbs },
 	{ .id = 0x111d76e7, .verbs = idt_92hd8xx_verbs },
 
-	{ .id = 0x83847618, .verbs = stac927x_verbs },
-	{ .id = 0x83847619, .verbs = stac927x_verbs },
-	{ .id = 0x83847616, .verbs = stac927x_verbs },
-	{ .id = 0x83847617, .verbs = stac927x_verbs },
-	{ .id = 0x83847614, .verbs = stac927x_verbs },
-	{ .id = 0x83847615, .verbs = stac927x_verbs },
-	{ .id = 0x83847620, .verbs = stac927x_verbs },
-	{ .id = 0x83847621, .verbs = stac927x_verbs },
-	{ .id = 0x83847622, .verbs = stac927x_verbs },
-	{ .id = 0x83847623, .verbs = stac927x_verbs },
-	{ .id = 0x83847624, .verbs = stac927x_verbs },
-	{ .id = 0x83847625, .verbs = stac927x_verbs },
-	{ .id = 0x83847626, .verbs = stac927x_verbs },
-	{ .id = 0x83847627, .verbs = stac927x_verbs },
-	{ .id = 0x83847628, .verbs = stac927x_verbs },
-	{ .id = 0x83847629, .verbs = stac927x_verbs },
-	{ .id = 0x83847645, .verbs = stac927x_verbs },
-	{ .id = 0x83847646, .verbs = stac927x_verbs },
+	{ .id = 0x83847614, .verbs = stac92xx_verbs },
+	{ .id = 0x83847615, .verbs = stac92xx_verbs },
+	{ .id = 0x83847616, .verbs = stac92xx_verbs },
+	{ .id = 0x83847617, .verbs = stac92xx_verbs },
+	{ .id = 0x83847618, .verbs = stac92xx_verbs },
+	{ .id = 0x83847619, .verbs = stac92xx_verbs },
+	{ .id = 0x83847620, .verbs = stac92xx_verbs },
+	{ .id = 0x83847621, .verbs = stac92xx_verbs },
+	{ .id = 0x83847622, .verbs = stac92xx_verbs },
+	{ .id = 0x83847623, .verbs = stac92xx_verbs },
+	{ .id = 0x83847624, .verbs = stac92xx_verbs },
+	{ .id = 0x83847625, .verbs = stac92xx_verbs },
+	{ .id = 0x83847626, .verbs = stac92xx_verbs },
+	{ .id = 0x83847627, .verbs = stac92xx_verbs },
+	{ .id = 0x83847628, .verbs = stac92xx_verbs },
+	{ .id = 0x83847629, .verbs = stac92xx_verbs },
+	{ .id = 0x83847645, .verbs = stac92xx_verbs },
+	{ .id = 0x83847646, .verbs = stac92xx_verbs },
 
-	{ .id = 0x83847698, .verbs = stac9205_verbs },
-	{ .id = 0x838476a0, .verbs = stac9205_verbs },
-	{ .id = 0x838476a1, .verbs = stac9205_verbs },
-	{ .id = 0x838476a2, .verbs = stac9205_verbs },
-	{ .id = 0x838476a3, .verbs = stac9205_verbs },
-	{ .id = 0x838476a4, .verbs = stac9205_verbs },
-	{ .id = 0x838476a5, .verbs = stac9205_verbs },
-	{ .id = 0x838476a6, .verbs = stac9205_verbs },
-	{ .id = 0x838476a7, .verbs = stac9205_verbs },
+	{ .id = 0x83847690, .verbs = stac92xx_verbs },
+	{ .id = 0x83847698, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a0, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a1, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a2, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a3, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a4, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a5, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a6, .verbs = stac92xx_verbs },
+	{ .id = 0x838476a7, .verbs = stac92xx_verbs },
 
 	{ .id = 0x11061708, .verbs = vt1708b_verbs },
 	{ .id = 0x11061709, .verbs = vt1708b_verbs },
