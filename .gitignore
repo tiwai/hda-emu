@@ -1,6 +1,7 @@
 *~
 *.o
 *.a
+*.pyc
 hda-emu
 hda-decode-verb
 hda-encode-verb
