@@ -786,6 +786,19 @@ static int get_gpio_sticky_mask(struct xhda_codec *codec,
 	return node->gpio_sticky;
 }
 
+static int set_cvt_channel_count(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	node->cvt_channel_count = cmd & 0xff;
+	return 0;
+}
+
+static int get_cvt_channel_count(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	return node->cvt_channel_count;
+}
+
 
 /*
  * parameters
@@ -1025,6 +1038,7 @@ static struct xhda_verb_table verb_tbl[] = {
 	{ 0x71d, set_config_def_1, "set_config_def_1" },
 	{ 0x71e, set_config_def_2, "set_config_def_2" },
 	{ 0x71f, set_config_def_3, "set_config_def_3" },
+	{ 0x72d, set_cvt_channel_count, "set_cvt_channel_count" },
 	{ 0x7ff, set_codec_reset, "set_codec_reset" },
 	{ 0xf00, get_parameters, "get_parameters" },
 	{ 0xf01, get_connect_sel, "get_connect_sel" },
@@ -1048,6 +1062,7 @@ static struct xhda_verb_table verb_tbl[] = {
 	{ 0xf1a, get_gpio_sticky_mask, "get_gpio_sticky_mask" },
 	{ 0xf1c, get_config_default, "get_config_default" },
 	{ 0xf20, get_ssid, "get_ssid" },
+	{ 0xf2d, get_cvt_channel_count, "get_cvt_channel_count" },
 	{}
 };
 
