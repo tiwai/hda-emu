@@ -23,6 +23,12 @@ def main():
     import os.path
     import runner
 
+    import argparse
+    parser = argparse.ArgumentParser(description='Hda-emu automated test wrapper.')
+    parser.add_argument('--verbose', '-v', action='count')
+    parser_dict = parser.parse_args()
+    verbose = parser_dict.verbose
+
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
     directory = "../codecs/canonical/"
     files = os.listdir(directory)
@@ -35,11 +41,14 @@ def main():
         try:
             r = runner.HdaEmuRunner()
             r.set_alsa_info_file(os.path.join(directory, f))
+            r.set_print_errors(verbose > 1)
             r.run_standard()
             if r.errors > 0 or r.warnings > 0:
                 fails += 1
                 errors += r.errors
                 warnings += r.warnings
+                if verbose > 0:
+                    print '{0} errors, {1} warnings. ({2})'.format(r.errors, r.warnings, f)
             else:
                 successes += 1
         except:
