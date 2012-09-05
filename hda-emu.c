@@ -776,6 +776,13 @@ static int azx_pcm_create(struct hda_codec *codec)
  * power management
  */
 
+#ifdef HAVE_NEW_PM_NOTIFY
+static void new_pm_notify(struct hda_bus *bus, bool power_up)
+{
+	hda_log(HDA_LOG_INFO, "PM-Notified, power_up = %d\n", power_up);
+}
+#else
+
 static void pm_notify(struct hda_bus *bus)
 {
 	hda_log(HDA_LOG_INFO, "PM-Notified\n");
@@ -787,6 +794,7 @@ static void old_pm_notify(struct hda_codec *codec)
 	pm_notify(codec->bus);
 }
 #endif
+#endif /* HAVE_NEW_PM_NOTIFY */
 
 
 /*
@@ -1112,7 +1120,11 @@ int main(int argc, char **argv)
 #ifdef HAVE_HDA_ATTACH_PCM
 	temp.ops.attach_pcm = attach_pcm;
 #endif
+#ifdef HAVE_NEW_PM_NOTIFY
+	temp.ops.pm_notify = new_pm_notify;
+#else
 	temp.ops.pm_notify = pm_notify;
+#endif
 #endif /* OLD_HDA_CMD */
 	gather_codec_hooks();
 

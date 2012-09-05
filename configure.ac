@@ -222,6 +222,30 @@ if test "$OLD_HDA_CMD" = "1"; then
   AC_DEFINE(OLD_HDA_CMD)
 fi
 
+AC_MSG_CHECKING(for new pm_notify callback)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+HAVE_NEW_PM_NOTIFY=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "kernel/hda_codec.h"
+],[
+  extern struct hda_bus_ops *ops;
+  ops->pm_notify(NULL, 0);
+],
+  [AC_MSG_RESULT(yes); HAVE_NEW_PM_NOTIFY="1"],
+  [AC_MSG_RESULT(no)],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$HAVE_NEW_PM_NOTIFY" = "1"; then
+  AC_DEFINE(HAVE_NEW_PM_NOTIFY)
+fi
+
 AC_MSG_CHECKING(for attach_pcm bus ops)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"
