@@ -717,8 +717,6 @@ void hda_test_pcm(int id, int op, int subid,
 static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		      struct hda_pcm *cpcm)
 {
-	static struct snd_pcm dummy_pcm;
-
 	if (cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams ||
 	    cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams) {
 #ifdef OLD_HDA_PCM
@@ -741,7 +739,12 @@ static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		}
 		pcm_streams[num_pcm_streams] = cpcm;
 #ifdef HAVE_HDA_ATTACH_PCM
-		cpcm->pcm = &dummy_pcm; /* just non-NULL */
+		cpcm->pcm = calloc(1, sizeof(*cpcm->pcm));
+		if (!cpcm->pcm) {
+			hda_log(HDA_LOG_ERR, "cannot malloc\n");
+			exit(1);
+		}
+		cpcm->pcm->device = cpcm->device;
 #endif
 	}
 	num_pcm_streams++;

@@ -164,3 +164,60 @@ struct snd_ctl_event {
 		unsigned char data8[60];
 	} data;
 };
+
+typedef int __bitwise snd_pcm_state_t;
+#define	SNDRV_PCM_STATE_OPEN		((snd_pcm_state_t) 0) /* stream is open */
+#define	SNDRV_PCM_STATE_SETUP		((snd_pcm_state_t) 1) /* stream has a setup */
+#define	SNDRV_PCM_STATE_PREPARED	((snd_pcm_state_t) 2) /* stream is ready to start */
+#define	SNDRV_PCM_STATE_RUNNING		((snd_pcm_state_t) 3) /* stream is running */
+#define	SNDRV_PCM_STATE_XRUN		((snd_pcm_state_t) 4) /* stream reached an xrun */
+#define	SNDRV_PCM_STATE_DRAINING	((snd_pcm_state_t) 5) /* stream is draining */
+#define	SNDRV_PCM_STATE_PAUSED		((snd_pcm_state_t) 6) /* stream is paused */
+#define	SNDRV_PCM_STATE_SUSPENDED	((snd_pcm_state_t) 7) /* hardware is suspended */
+#define	SNDRV_PCM_STATE_DISCONNECTED	((snd_pcm_state_t) 8) /* hardware is disconnected */
+#define	SNDRV_PCM_STATE_LAST		SNDRV_PCM_STATE_DISCONNECTED
+
+struct snd_pcm_mmap_status {
+	snd_pcm_state_t state;		/* RO: state - SNDRV_PCM_STATE_XXXX */
+};
+
+
+/* channel positions */
+enum {
+	SNDRV_CHMAP_UNKNOWN = 0,
+	SNDRV_CHMAP_NA,		/* N/A, silent */
+	SNDRV_CHMAP_MONO,	/* mono stream */
+	/* this follows the alsa-lib mixer channel value + 3 */
+	SNDRV_CHMAP_FL,		/* front left */
+	SNDRV_CHMAP_FR,		/* front right */
+	SNDRV_CHMAP_RL,		/* rear left */
+	SNDRV_CHMAP_RR,		/* rear right */
+	SNDRV_CHMAP_FC,		/* front center */
+	SNDRV_CHMAP_LFE,	/* LFE */
+	SNDRV_CHMAP_SL,		/* side left */
+	SNDRV_CHMAP_SR,		/* side right */
+	SNDRV_CHMAP_RC,		/* rear center */
+	/* new definitions */
+	SNDRV_CHMAP_FLC,	/* front left center */
+	SNDRV_CHMAP_FRC,	/* front right center */
+	SNDRV_CHMAP_RLC,	/* rear left center */
+	SNDRV_CHMAP_RRC,	/* rear right center */
+	SNDRV_CHMAP_FLW,	/* front left wide */
+	SNDRV_CHMAP_FRW,	/* front right wide */
+	SNDRV_CHMAP_FLH,	/* front left high */
+	SNDRV_CHMAP_FCH,	/* front center high */
+	SNDRV_CHMAP_FRH,	/* front right high */
+	SNDRV_CHMAP_TC,		/* top center */
+	SNDRV_CHMAP_TFL,	/* top front left */
+	SNDRV_CHMAP_TFR,	/* top front right */
+	SNDRV_CHMAP_TFC,	/* top front center */
+	SNDRV_CHMAP_TRL,	/* top rear left */
+	SNDRV_CHMAP_TRR,	/* top rear right */
+	SNDRV_CHMAP_TRC,	/* top rear center */
+	SNDRV_CHMAP_LAST = SNDRV_CHMAP_TRC,
+};
+
+#define SNDRV_CHMAP_POSITION_MASK	0xffff
+#define SNDRV_CHMAP_PHASE_INVERSE	(0x01 << 16)
+#define SNDRV_CHMAP_DRIVER_SPEC		(0x02 << 16)
+
