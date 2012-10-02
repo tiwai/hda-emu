@@ -18,6 +18,11 @@
 #    You should have received a copy of the GNU General Public License along 
 #    with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+def defaultpath(s):
+    import os.path
+    q = os.path.dirname(os.path.realpath(__file__))
+    return os.path.join(q, s)
+
 def main():
     import os
     import os.path
@@ -26,18 +31,28 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description='Hda-emu automated test wrapper.')
     parser.add_argument('--verbose', '-v', action='count')
+    parser.add_argument('--directory', '-d', action='store', default=defaultpath("../codecs/canonical/"))
+    parser.add_argument('--recursive', '-r', action="store_true", default=False)
+
     parser_dict = parser.parse_args()
     verbose = parser_dict.verbose
+    directory = parser_dict.directory
 
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
-    directory = "../codecs/canonical/"
-    files = os.listdir(directory)
+    if parser_dict.recursive:
+        files = [os.path.join(root, filename) for root, _, filenames in os.walk(directory) for filename in filenames]
+    else:
+        files = os.listdir(directory)
+    files.sort()
 
     successes = 0
     fails = 0
     warnings = 0
     errors = 0
+    index = 0
     for f in files:
+        index += 1
+        if verbose > 2:
+            print '[{0}/{1}]: Testing {2}'.format(index, len(files), f)
         try:
             r = runner.HdaEmuRunner()
             r.set_alsa_info_file(os.path.join(directory, f))
@@ -51,7 +66,12 @@ def main():
                     print '{0} errors, {1} warnings. ({2})'.format(r.errors, r.warnings, f)
             else:
                 successes += 1
-        except:
+        except KeyboardInterrupt:
+            import sys
+            sys.exit(1)
+        except Exception as e:
+            if verbose > 0:
+                print 'Fatal error for {0}: {1}'.format(f, e)
             errors += 1
             fails += 1
 

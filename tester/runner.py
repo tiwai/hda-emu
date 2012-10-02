@@ -44,10 +44,13 @@ class ControlInfo():
 class HdaEmuRunner():
 
     def __init__(self):
-        self.child_args = "../hda-emu -M -F"
+        import os.path
+        hda_emu_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"../hda-emu")
+        self.child_args = '"' + hda_emu_path + '" -M -F'
         self.alsa_info = "/proc/asound/card0/codec#0"
         self.errors = 0
         self.warnings = 0
+        self.fatals = 0
         self.print_errors = False
         self.comm_log_enabled = False
         self.last_command = None
@@ -81,6 +84,8 @@ class HdaEmuRunner():
             self.warnings += 1
         else:
             self.errors += 1
+            if severity == "Fatal":
+                self.fatals += 1
         if self.print_errors:
             if not self.last_command_printed:
                 if self.last_command:
@@ -89,6 +94,8 @@ class HdaEmuRunner():
                     print "Encountered during initial parsing:"
                 self.last_command_printed = True
             print "  ", message
+        if self.fatals > 0:
+            raise Exception(message)
 
     def check_stdout(self):
         s = os.read(self.child.stdout.fileno(), 65536)
