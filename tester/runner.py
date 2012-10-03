@@ -25,7 +25,9 @@ class ControlInfo():
         self.runner = runner
         carr = list_info.split(":")
         self.numid = carr[1]
-        self.name = carr[2]
+        self.name = carr[2][1:]
+        self.index, _ = tuple(carr[3].split(" "))
+        self.index = int(self.index)
 
     def add_info(self, get_info):
         minmax_regex = re.compile("MIN/MAX: (\d+)/(\d+),\s+VAL:(( \\[\d+\\])+)")
@@ -222,13 +224,28 @@ class HdaEmuRunner():
             if (int(a) != int(b)):
                 self.add_error("Tried to set " + c.name + " to " + str([int(x) for x in values]) + ", but got " + str(c.values) + " instead", "Error")
 
-    def run_kcontrol_test(self):
-        minmax_regex = re.compile("MIN/MAX: (\d+)/(\d+),\s+VAL:(( \\[\d+\\])+)")
-        val_regex = re.compile(" \\[(\d+)\\]")
+    def check_kcontrol_indices(self, cinfo):
+        d = {}
+        for c in cinfo:
+            if not c.name in d:
+                d[c.name] = []
+            d[c.name].append(c.index)
 
+        for k, v in d.iteritems():
+            j = 0
+            for i in sorted(v):
+                if i > j:
+                    self.add_error("Unneccesary index on control '" + k + "' (" + str(i) + ")", "Error")
+# Commented out - gives false positives for 'Playback Channel Map'
+#                elif i < j:
+#                    self.add_error("Duplicate control '" + k + "' (" + str(i) + ")", "Error")
+                j = i+1
+
+    def run_kcontrol_test(self):
         controls = self.run_command("list")
-        for control in controls:
-            c = ControlInfo(self, control)
+        cinfo = [ControlInfo(self, control) for control in controls]
+        self.check_kcontrol_indices(cinfo)
+        for c in cinfo:
             c.add_info(self.run_command("get " + c.numid))
             if "minval" in c.__dict__:
                 minval = c.minval
