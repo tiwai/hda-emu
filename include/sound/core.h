@@ -24,6 +24,7 @@ static inline int _snd_BUG_ON(int cond, const char *func, int line)
 	return cond;
 }
 #define snd_BUG_ON(cond)	_snd_BUG_ON(cond, __func__, __LINE__)
+#define snd_BUG()		snd_BUG_ON(1)
 
 #include "asound.h"
 #include "codec_config.h"
