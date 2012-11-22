@@ -57,6 +57,8 @@ static struct snd_card card = {
 };
 static struct xhda_codec proc;
 
+static struct hda_codec *_codec;
+
 static int ignore_invalid_ftype;
 
 static int cmd_send(struct hda_bus *bus, unsigned int cmd)
@@ -322,7 +324,7 @@ static const char *_get_jack_location(u32 cfg)
 	return "UNKNOWN";
 }
 
-void hda_log_list_jacks(void)
+void hda_log_list_jacks(int raw)
 {
 	struct xhda_node *node;
 	unsigned int type, conn;
@@ -336,23 +338,29 @@ void hda_log_list_jacks(void)
 	static char *jack_locations[4] = { "Ext", "Int", "Sep", "Oth" };
 
 	for (node = proc.afg.next; node; node = node->next) {
+		unsigned int pin_default;
 		type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
 		if (type != AC_WID_PIN)
 			continue;
-		conn = (node->pin_default & AC_DEFCFG_PORT_CONN) >> AC_DEFCFG_PORT_CONN_SHIFT;
+		pin_default = node->pin_default;
+#ifdef HAVE_SND_HDA_CODEC_GET_PINCFG
+		if (!raw)
+			pin_default = snd_hda_codec_get_pincfg(_codec, node->nid);
+#endif
+		conn = (pin_default & AC_DEFCFG_PORT_CONN) >> AC_DEFCFG_PORT_CONN_SHIFT;
 		if (conn == AC_JACK_PORT_NONE)
 			continue;
 		/* if (!(node->pincap & AC_PINCAP_PRES_DETECT))
 		   continue;*/
 		hda_log(HDA_LOG_INFO,
 			"NID 0x%02x: cfg 0x%08x: [%s] %s at %s %s\n",
-			node->nid, node->pin_default,
-			jack_conns[(node->pin_default & AC_DEFCFG_PORT_CONN)
+			node->nid, pin_default,
+			jack_conns[(pin_default & AC_DEFCFG_PORT_CONN)
 				   >> AC_DEFCFG_PORT_CONN_SHIFT],
-			jack_types[(node->pin_default & AC_DEFCFG_DEVICE)
+			jack_types[(pin_default & AC_DEFCFG_DEVICE)
 				   >> AC_DEFCFG_DEVICE_SHIFT],
-			jack_locations[(node->pin_default >> (AC_DEFCFG_LOCATION_SHIFT + 4)) & 3],
-			_get_jack_location(node->pin_default));
+			jack_locations[(pin_default >> (AC_DEFCFG_LOCATION_SHIFT + 4)) & 3],
+			_get_jack_location(pin_default));
 	}
 }
 
@@ -410,8 +418,6 @@ void hda_test_resume(void)
 /*
  * unsol even handling
  */
-
-static struct hda_codec *_codec;
 
 static void issue_unsol(int caddr, int res)
 {

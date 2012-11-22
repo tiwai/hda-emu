@@ -176,6 +176,17 @@ BASIC COMMANDS
 	NID 0x10: cfg 0x921701f0: [Fixed] Speaker at Int Front
 	NID 0x11: cfg 0x95a601f0: [Fixed] Mic at Int Top
 
+  Usually this shows the jack status the driver keeps internally.
+  If you'd need to look at the original default pincfg, pass -r
+  option.
+
+	> jack -r
+	NID 0x0d: cfg 0x921701f0: [Fixed] Speaker at Int Front
+	...
+  (Note that the difference appears only with 3.8 or later kernel
+   code.  In the older kernels, both results with and without -r
+   will show the same list.)
+
   When called with a widget numid, it shows the current jack state.
 
 	> jack 0x0d

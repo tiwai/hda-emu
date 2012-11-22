@@ -334,11 +334,25 @@ static void handle_module_option(char *line)
 static void set_jack(char *line)
 {
 	int nid, val;
+	char *token;
 
-	if (getint(&line, &nid)) {
-		hda_log_list_jacks();
+	token = gettoken(&line);
+	if (!token) {
+		hda_log_list_jacks(0);
 		return;
 	}
+	if (*token == '-') {
+		/* option */
+		switch (token[1]) {
+		case 'r':
+			hda_log_list_jacks(1);
+			return;
+		default:
+			usage("jack");
+			return;
+		}
+	}
+	nid = strtoul(token, NULL, 0);
 	if (getbool(&line, &val)) {
 		hda_log_jack_state(nid);
 		return;
@@ -707,8 +721,8 @@ static struct usage_table usage_str[] = {
 	{ "dump", "dump [nid [filename]]",
 	  "Dump codec contents in the proc file format; nid = 0 means all widgets",
 	  dump_proc },
-	{ "jack", "jack numid [val]",
-	  "Get jack state or set jack state; val = 0 or 1",
+	{ "jack", "jack [-r] numid [val]",
+	  "Get jack state or set jack state; val = 0 or 1; -r = list from uncached pincfgs",
 	  set_jack },
 	{ "unsol", "unsol numid",
 	  "Issue an unsolicited event",

@@ -545,5 +545,17 @@ if test "$HAVE_COMMON_PREAPRE" = "yes"; then
   AC_DEFINE(HAVE_COMMON_PREPARE)
 fi
 
+AC_MSG_CHECKING(for snd_hda_codec_get_pincfg)
+HAVE_SND_HDA_CODEC_GET_PINCFG=
+if grep -q 'snd_hda_codec_get_pincfg' kernel/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_SND_HDA_CODEC_GET_PINCFG=1
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_SND_HDA_CODEC_GET_PINCFG" = "1"; then
+  AC_DEFINE(HAVE_SND_HDA_CODEC_GET_PINCFG)
+fi
+
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 
