@@ -679,9 +679,12 @@ void hda_test_pcm(int id, int op, int subid,
 		}
 		hda_log(HDA_LOG_INFO, "\n");
 		if (channels < runtime->hw.channels_min ||
-		    channels > runtime->hw.channels_max)
+		    channels > runtime->hw.channels_max) {
 			hda_log(HDA_LOG_ERR, "Channels count (%d) not available for %s\n", 
-				channels, (dir ? "capture" : "playback"));	
+				channels, (dir ? "capture" : "playback"));
+			snd_hda_power_down(_codec);
+			return;
+		}
 		hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
 			"format=%d bits\n",
 			rate, channels, format);
