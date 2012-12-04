@@ -24,7 +24,7 @@
 #include <sound/core.h>
 #include <sound/pcm.h>
 #include <assert.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 #include "hda-types.h"
 #include "hda-log.h"
 

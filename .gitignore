@@ -7,6 +7,7 @@ hda-decode-verb
 hda-encode-verb
 hda-decode-pincfg
 hda-encode-pincfg
+hda
 .deps
 INSTALL
 Makefile
@@ -23,4 +24,5 @@ install-sh
 libtool
 ltmain.sh
 missing
-kernel/*.[ch]
+kernel/misc_wrapper.c
+kernel/init_hooks.h

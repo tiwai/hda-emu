@@ -36,9 +36,9 @@
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
-#include "kernel/hda_local.h"
-#include "kernel/hda_beep.h"
+#include "hda/hda_codec.h"
+#include "hda/hda_local.h"
+#include "hda/hda_beep.h"
 
 #ifndef HAVE_POWER_SAVE
 #define snd_hda_power_up(x)

@@ -60,84 +60,29 @@ test -d "$hdadir" || \
 test -f "$hdadir/hda_codec.c" || \
   AC_ERROR([Invalid HD-audio directory: $hdadir])
 
-rm -f kernel/hda_*.h kernel/hda_*.c kernel/patch_*.c kernel/*_quirks.c
-ln -s $hdadir/hda_codec.c kernel
-ln -s $hdadir/hda_codec.h kernel
-ln -s $hdadir/hda_local.h kernel
-ln -s $hdadir/hda_generic.c kernel
-for i in hda_jack.c hda_jack.h hda_trace.h hda_auto_parser.c hda_auto_parser.h; do
-  if test -f $hdadir/$i; then
-    ln -s $hdadir/$i kernel
-  else
-    touch kernel/$i
-  fi
-done
-for i in $hdadir/*_quirks.c; do
-  test -f $i && ln -s $i kernel
-done
-
-AC_ARG_ENABLE(own-proc,
-  AS_HELP_STRING([--enable-own-proc],
-    [use own proc-file output function]),
-  own_proc="$enableval", own_proc="no")
-if test "$own_proc" = "yes"; then
-  rm -f kernel/hda_proc.c
-  ln -s ../hda_own_proc.c kernel/hda_proc.c
-else
-  ln -s $hdadir/hda_proc.c kernel
-fi
+rm -f hda
+ln -s $hdadir hda
 
 else
 dnl check existing kernel codes
 
-if ! test -f kernel/hda_codec.c; then
+if ! test -f hda/hda_codec.c; then
   AC_ERROR([No HD-audio driver codes present in kernel directory; initialize via --with-hdadir])
 fi
 
 fi
 
-AC_DEFUN([CHECK_FILE], [
-  AC_MSG_CHECKING(for file $1)
-  if test -n "$hdadir"; then
-    if test -f $hdadir/$1; then
-      AC_MSG_RESULT(yes)
-      ln -s $hdadir/$1 kernel
-      AC_DEFINE($2)
-    else
-      AC_MSG_RESULT(no, creating dummy file)
-      touch kernel/$1
-    fi
-  else
-    if test -s kernel/$1; then
-      AC_MSG_RESULT(yes)
-      AC_DEFINE($2)
-    else
-      AC_MSG_RESULT(no, creating dummy file)
-      touch kernel/$1
-    fi
-  fi
-])
-
 AC_DEFUN([CHECK_CODEC], [
   AC_MSG_CHECKING(for codec $1)
-  if test -n "$hdadir"; then
-    if test -f $hdadir/patch_$1.c; then
-      AC_MSG_RESULT(yes)
-      ln -s $hdadir/patch_$1.c kernel
-      AC_DEFINE($2)
-    else
-      AC_MSG_RESULT(no, creating dummy file)
-      touch kernel/patch_$1.c
-    fi
+  if test -f hda/patch_$1.c; then
+    AC_MSG_RESULT(yes)
+    AC_DEFINE($2)
+    codec_found=yes
   else
-    if test -s kernel/patch_$1.c; then
-      AC_MSG_RESULT(yes)
-      AC_DEFINE($2)
-    else
-      AC_MSG_RESULT(no, creating dummy file)
-      touch kernel/patch_$1.c
-    fi
+    AC_MSG_RESULT(no)
+    codec_found=
   fi
+  AM_CONDITIONAL($2, test "$codec_found" = "yes")
 ])
 
 CHECK_CODEC(analog, CONFIG_SND_HDA_CODEC_ANALOG)
@@ -146,6 +91,7 @@ CHECK_CODEC(cmedia, CONFIG_SND_HDA_CODEC_CMEDIA)
 CHECK_CODEC(conexant, CONFIG_SND_HDA_CODEC_CONEXANT)
 CHECK_CODEC(intelhdmi, CONFIG_SND_HDA_CODEC_INTELHDMI)
 CHECK_CODEC(nvhdmi, CONFIG_SND_HDA_CODEC_NVHDMI)
+CHECK_CODEC(hdmi, CONFIG_SND_HDA_CODEC_HDMI)
 CHECK_CODEC(realtek, CONFIG_SND_HDA_CODEC_REALTEK)
 CHECK_CODEC(sigmatel, CONFIG_SND_HDA_CODEC_SIGMATEL)
 CHECK_CODEC(si3054, CONFIG_SND_HDA_CODEC_SI3054)
@@ -154,26 +100,24 @@ CHECK_CODEC(ca0110, CONFIG_SND_HDA_CODEC_CA0110)
 CHECK_CODEC(ca0132, CONFIG_SND_HDA_CODEC_CA0132)
 CHECK_CODEC(cirrus, CONFIG_SND_HDA_CODEC_CIRRUS)
 
-CHECK_FILE(hda_patch.h, HDA_PATCH_H)
-CHECK_FILE(hda_beep.c, CONFIG_SND_HDA_INPUT_BEEP)
-CHECK_FILE(hda_beep.h, CONFIG_SND_HDA_INPUT_BEEP)
-CHECK_FILE(hda_eld.c, CONFIG_SND_HDA_ELD)
-CHECK_FILE(patch_hdmi.c, CONFIG_SND_HDA_HDMI)
-
-AM_CONDITIONAL(UNIFIED_HDMI, grep -q module_init kernel/patch_hdmi.c)
+AC_ARG_ENABLE(own-proc,
+  AS_HELP_STRING([--enable-own-proc],
+    [use own proc-file output function]),
+  own_proc="$enableval", own_proc="no")
+AM_CONDITIONAL(USE_OWN_PROC, test "$own_proc" = "yes")
 
 echo "Generating kernel/init_hooks.h..."
 rm -f kernel/init_hooks.h
-cat kernel/patch_*.c | grep '^module_init(' | \
+cat hda/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' > kernel/init_hooks.h
 echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
-cat kernel/patch_*.c | grep '^module_init(' | \
+cat hda/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
 echo '}' >> kernel/init_hooks.h
 
 AC_MSG_CHECKING(for presence of power_save option)
 HAVE_POWER_SAVE=
-if grep -q 'snd_hda_power_up' kernel/hda_codec.h; then
+if grep -q 'snd_hda_power_up' hda/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_POWER_SAVE=1
 else
@@ -187,7 +131,7 @@ fi
 if test "$HAVE_POWER_SAVE" = "1"; then
 AC_MSG_CHECKING(for old power_save option)
 OLD_POWER_SAVE=
-if grep -q '^static int power_save' kernel/hda_codec.c; then
+if grep -q '^static int power_save' hda/hda_codec.c; then
   AC_MSG_RESULT(yes)
   OLD_POWER_SAVE=1
 else
@@ -208,7 +152,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   extern struct hda_bus_ops *ops;
   ops->command(NULL, 0, 0, 0, 0);
@@ -232,7 +176,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   extern struct hda_bus_ops *ops;
   ops->pm_notify(NULL, 0);
@@ -256,7 +200,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   extern struct hda_bus_ops *ops;
   ops->attach_pcm(NULL, NULL, NULL);
@@ -281,7 +225,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   extern struct hda_bus_ops *ops;
   ops->get_response(NULL, 1);
@@ -306,7 +250,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   int err = snd_hda_codec_new(NULL, 0, NULL);
 ],
@@ -322,7 +266,7 @@ fi
 HAVE_HDA_PATCH_LOADER=
 if test "$OLD_HDA_CODEC_NEW" = "1"; then
 AC_MSG_CHECKING(for hda-patch)
-if grep -q snd_hda_load_patch kernel/hda_codec.h; then
+if grep -q snd_hda_load_patch hda/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_HDA_PATCH_LOADER=yes
   AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
@@ -344,7 +288,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   struct hda_pcm pcm;
   pcm.pcm_type = 0;
@@ -359,7 +303,7 @@ if test "$OLD_HDA_PCM" = "1"; then
 fi
 
 AC_MSG_CHECKING(for hda-reconfigure)
-if grep -q snd_hda_codec_configure kernel/hda_*.h; then
+if grep -q snd_hda_codec_configure hda/hda_*.h; then
   AC_MSG_RESULT(yes)
   HAVE_RECONFIG=yes
   AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
@@ -370,7 +314,7 @@ fi
 
 if test "$HAVE_RECONFIG" = "yes"; then
    AC_MSG_CHECKING(for user pin configs)
-   if grep -q user_pins kernel/hda_codec.h; then
+   if grep -q user_pins hda/hda_codec.h; then
       AC_MSG_RESULT(yes)
       AC_DEFINE(HAVE_USER_PINCFGS)
    else
@@ -380,7 +324,7 @@ fi
 
 AC_MSG_CHECKING(for new quirk list)
 NEW_QUIRK_LIST=
-if grep -q SND_PCI_QUIRK_MASK kernel/patch_sigmatel.c; then
+if grep -q SND_PCI_QUIRK_MASK hda/patch_sigmatel.c; then
   AC_MSG_RESULT(yes)
   NEW_QUIRK_LIST=1
 else
@@ -400,7 +344,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   struct hda_codec codec;
   codec.pin_amp_workaround = 1;
@@ -424,7 +368,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   struct hda_codec codec;
   codec.function_id = 1;
@@ -440,7 +384,7 @@ fi
 
 AC_MSG_CHECKING(for snd_ctl_boolean_mono_info definition)
 HAVE_BOOLEAN_INFO=
-if grep -q snd_ctl_boolean_mono_info kernel/hda_local.h; then
+if grep -q snd_ctl_boolean_mono_info hda/hda_local.h; then
   AC_MSG_RESULT(yes)
   HAVE_BOOLEAN_INFO=1
 else
@@ -460,7 +404,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   snd_hda_suspend(NULL);
 ],
@@ -475,7 +419,7 @@ fi
 
 HAVE_SND_HDA_JACK=
 AC_MSG_CHECKING(for snd_hda_jack_xxx)
-if grep -q snd_hda_jack_free kernel/hda_codec.h; then
+if grep -q snd_hda_jack_free hda/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_SND_HDA_JACK=yes
 else
@@ -495,7 +439,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   struct hda_spdif_out *spdif = snd_hda_spdif_out_of_nid(0, 0);
 ],
@@ -519,7 +463,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 ],[
   snd_hda_calc_stream_format(0, 0, 0, 0, 0);
 ],
@@ -535,7 +479,7 @@ fi
 
 HAVE_COMMON_PREPARE=
 AC_MSG_CHECKING(for common snd_hda_codec_prepare/cleanup)
-if grep -q snd_hda_codec_prepare kernel/hda_codec.h; then
+if grep -q snd_hda_codec_prepare hda/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_COMMON_PREPARE=yes
 else
@@ -547,7 +491,7 @@ fi
 
 AC_MSG_CHECKING(for snd_hda_codec_get_pincfg)
 HAVE_SND_HDA_CODEC_GET_PINCFG=
-if grep -q 'snd_hda_codec_get_pincfg' kernel/hda_codec.h; then
+if grep -q 'snd_hda_codec_get_pincfg' hda/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_SND_HDA_CODEC_GET_PINCFG=1
 else

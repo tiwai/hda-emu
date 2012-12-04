@@ -29,7 +29,7 @@
 #include "hda-types.h"
 #include "hda-log.h"
 #include <sound/core.h>
-#include "kernel/hda_codec.h"
+#include "hda/hda_codec.h"
 
 enum { DECODE, ENCODE };
 
