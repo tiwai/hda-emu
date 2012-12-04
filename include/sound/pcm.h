@@ -299,5 +299,20 @@ int snd_pcm_add_chmap_ctls(struct snd_pcm *pcm, int stream,
 			   unsigned long private_value,
 			   struct snd_pcm_chmap **info_ret);
 
+/*
+ */
+struct snd_dma_device {
+	int type;			/* SNDRV_DMA_TYPE_XXX */
+	struct device *dev;		/* generic device */
+};
+
+struct snd_dma_buffer {
+	struct snd_dma_device dev;	/* device type */
+	unsigned char *area;	/* virtual pointer */
+	dma_addr_t addr;	/* physical address */
+	size_t bytes;		/* buffer size in bytes */
+	void *private_data;	/* private for allocator; don't touch */
+};
+
 #endif /* __SOUND_PCM_H */
 

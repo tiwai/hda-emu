@@ -4,6 +4,7 @@
 #include "wrapper.h"
 #include <linux/slab.h>
 #include <linux/list.h>
+#include <linux/device.h>
 
 enum {
 	SND_PR_ALWAYS,
@@ -47,6 +48,8 @@ struct snd_card {
 	int shutdown;
 	struct list_head ctl_files;
 	spinlock_t files_lock;
+
+	struct device *dev;
 };
 
 struct snd_device {
