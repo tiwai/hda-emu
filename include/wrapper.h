@@ -72,6 +72,25 @@
 #define KERN_WARNING	"<4>"
 #define KERN_ERR	"<3>"
 
+#define pr_fmt(fmt) fmt
+#define pr_emerg(fmt, ...) \
+	printk(KERN_EMERG pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_alert(fmt, ...) \
+	printk(KERN_ALERT pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_crit(fmt, ...) \
+	printk(KERN_CRIT pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_err(fmt, ...) \
+	printk(KERN_ERR pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_warning(fmt, ...) \
+	printk(KERN_WARNING pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_warn pr_warning
+#define pr_notice(fmt, ...) \
+	printk(KERN_NOTICE pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_info(fmt, ...) \
+	printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_cont(fmt, ...) \
+	printk(KERN_CONT fmt, ##__VA_ARGS__)
+
 typedef uint64_t u64;
 typedef uint64_t __u64;
 typedef int64_t s64;
@@ -106,6 +125,8 @@ typedef _Bool bool;
 #define true 1
 #define false 0
 
+typedef unsigned long dma_addr_t;
+
 #define PAGE_SIZE	4096
 
 #define __user
@@ -136,6 +157,9 @@ typedef int pm_message_t;
 #define jiffies		0
 static inline bool time_after_eq(unsigned long a, unsigned long b)
 { return 1; }
+
+static inline bool time_before(unsigned long a, unsigned long b)
+{ return 0; }
 
 #define BUG_ON(x) do { \
 	if (x) { fprintf(stderr, "ERROR!\n"); } \
