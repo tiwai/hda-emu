@@ -264,6 +264,10 @@ static int parse_node_items(const char *buf)
 		parse_mode = PARSE_NODE_PCM;
 	} else if ((p = strmatch(head, "Connection: "))) {
 		node->num_nodes = strtoul(p, NULL, 0);
+		if (node->num_nodes >= 128) {
+			hda_log(HDA_LOG_WARN, "Clearing invalid connection# %d @ NID 0x%x\n", node->num_nodes, node->nid);
+			node->num_nodes = 0;
+		}
 		if (node->num_nodes)
 			parse_mode = PARSE_NODE_CONNECTIONS;
 	}
