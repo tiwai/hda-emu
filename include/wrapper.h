@@ -182,10 +182,19 @@ static inline int strict_strtol(const char *str, unsigned int base, long *val)
 	return 0;
 }
 
-/* XXX: this is just a workaround */
-static inline char *strlcat(char *dst, const char *src, size_t n)
+static inline size_t strlcat(char *dest, const char *src, size_t count)
 {
-	return strncat(dst, src, n);
+	size_t dsize = strlen(dest);
+	size_t len = strlen(src);
+	size_t res = dsize + len;
+
+	dest += dsize;
+	count -= dsize;
+	if (len >= count)
+		len = count-1;
+	memcpy(dest, src, len);
+	dest[len] = 0;
+	return res;
 }
 
 #ifdef DEBUG_MALLOC
