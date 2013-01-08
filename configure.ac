@@ -100,6 +100,22 @@ CHECK_CODEC(ca0110, CONFIG_SND_HDA_CODEC_CA0110)
 CHECK_CODEC(ca0132, CONFIG_SND_HDA_CODEC_CA0132)
 CHECK_CODEC(cirrus, CONFIG_SND_HDA_CODEC_CIRRUS)
 
+AC_DEFUN([CHECK_HELPER], [
+  AC_MSG_CHECKING(for helper $1)
+  if test -f hda/$1; then
+    AC_MSG_RESULT(yes)
+    AC_DEFINE($2)
+    codec_found=yes
+  else
+    AC_MSG_RESULT(no)
+    codec_found=
+  fi
+  AM_CONDITIONAL($2, test "$codec_found" = "yes")
+])
+
+CHECK_HELPER([hda_auto_parser.c], [HAVE_HDA_AUTO_PARSER])
+CHECK_HELPER([hda_jack.c], [HAVE_HDA_JACK])
+
 AC_ARG_ENABLE(own-proc,
   AS_HELP_STRING([--enable-own-proc],
     [use own proc-file output function]),

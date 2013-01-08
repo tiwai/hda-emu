@@ -50,10 +50,17 @@ endif
 
 # HELPERS += hda_beep.c 
 
+if HAVE_HDA_AUTO_PARSER
+HELPERS += hda_auto_parser.c
+endif
+
+if HAVE_HDA_JACK
+HELPERS += hda_jack.c
+endif
+
 noinst_LIBRARIES = libhda.a
 libhda_a_SOURCES = hda_codec.c hda_generic.c \
-	 hda_eld.c hda_jack.c hda_auto_parser.c \
-	 misc_wrapper.c \
+	 hda_eld.c misc_wrapper.c \
 	 $(PATCHES) $(HELPERS)
 noinst_HEADERS = init_hooks.h
 
