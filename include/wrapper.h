@@ -216,6 +216,10 @@ enum {
 void mylock_init(int *lock);
 void mylock_lock(int *lock, const char *file, int line);
 void mylock_unlock(int *lock, const char *file, int line);
+void mylock_read_lock(int *lock, const char *file, int line);
+void mylock_read_unlock(int *lock, const char *file, int line);
+void mylock_write_lock(int *lock, const char *file, int line);
+void mylock_write_unlock(int *lock, const char *file, int line);
 
 #include "linux/spinlock.h"
 #include "linux/pci_ids.h"

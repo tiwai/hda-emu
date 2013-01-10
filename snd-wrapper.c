@@ -258,6 +258,83 @@ void mylock_unlock(int *lock, const char *file, int line)
 	}
 }
 
+#define MYLOCK_WRITE_LOCKED	0x10000
+
+void mylock_read_lock(int *lock, const char *file, int line)
+{
+	if (*lock == MYLOCK_UNINIT) {
+		hda_log(HDA_LOG_ERR, "Read-locking uninitialized obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	if (*lock >= MYLOCK_WRITE_LOCKED) {
+		hda_log(HDA_LOG_ERR, "Read-locking write-locked obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	(*lock)++;
+}
+
+void mylock_read_unlock(int *lock, const char *file, int line)
+{
+	if (*lock == MYLOCK_UNINIT) {
+		hda_log(HDA_LOG_ERR, "Read-unlocking uninitialized obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	if (*lock == MYLOCK_UNLOCKED) {
+		hda_log(HDA_LOG_ERR, "Read-unlocking unlocked obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	if (*lock >= MYLOCK_WRITE_LOCKED) {
+		hda_log(HDA_LOG_ERR, "Read-unlocking write-locked obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	(*lock)--;
+}
+
+void mylock_write_lock(int *lock, const char *file, int line)
+{
+	if (*lock == MYLOCK_UNINIT) {
+		hda_log(HDA_LOG_ERR, "Write-locking uninitialized obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	if (*lock == MYLOCK_WRITE_LOCKED) {
+		hda_log(HDA_LOG_ERR, "Double write-locking at %s:%d\n",
+			file, line);
+		return;
+	}
+	if (*lock != MYLOCK_UNLOCKED) {
+		hda_log(HDA_LOG_ERR, "Write-locking read-locked obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	*lock = MYLOCK_WRITE_LOCKED;
+}
+
+void mylock_write_unlock(int *lock, const char *file, int line)
+{
+	if (*lock == MYLOCK_UNINIT) {
+		hda_log(HDA_LOG_ERR, "Write-unlocking uninitialized obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	if (*lock == MYLOCK_UNLOCKED) {
+		hda_log(HDA_LOG_ERR, "Write-unlocking unlocked obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	if (*lock != MYLOCK_WRITE_LOCKED) {
+		hda_log(HDA_LOG_ERR, "Write-unlocking read-locked obj at %s:%d\n",
+			file, line);
+		return;
+	}
+	*lock = MYLOCK_UNLOCKED;
+}
+
 /*
  * standard channel mapping helpers
  */
