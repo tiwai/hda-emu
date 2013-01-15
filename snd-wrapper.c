@@ -46,6 +46,14 @@ int snd_pcm_format_width(int format)
 
 int snd_hda_create_hwdep(struct hda_codec *codec)
 {
+#ifdef HAVE_CODEC_USER_MUTEX
+	mutex_init(&codec->user_mutex);
+#endif
+#if 0
+	snd_array_init(&codec->init_verbs, sizeof(struct hda_verb), 32);
+	snd_array_init(&codec->hints, sizeof(struct hda_hint), 32);
+	snd_array_init(&codec->user_pins, sizeof(struct hda_pincfg), 16);
+#endif
 	return 0;
 }
 

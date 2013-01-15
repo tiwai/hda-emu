@@ -517,5 +517,17 @@ if test "$HAVE_SND_HDA_CODEC_GET_PINCFG" = "1"; then
   AC_DEFINE(HAVE_SND_HDA_CODEC_GET_PINCFG)
 fi
 
+AC_MSG_CHECKING(for codec user_mutex)
+HAVE_CODEC_USER_MUTEX=
+if grep -q 'user_mutex' hda/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_CODEC_USER_MUTEX=1
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_CODEC_USER_MUTEX" = "1"; then
+  AC_DEFINE(HAVE_CODEC_USER_MUTEX)
+fi
+
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 
