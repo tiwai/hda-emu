@@ -537,6 +537,11 @@ int snd_hda_get_bool_hint(struct hda_codec *codec, const char *key)
 	return -ENOENT;
 }
 
+int snd_hda_get_int_hint(struct hda_codec *codec, const char *key, int *valp)
+{
+	return -ENOENT;
+}
+
 #ifdef HAVE_USER_PINCFGS
 static void get_drv_pincfgs(void)
 {
