@@ -29,6 +29,7 @@
 #include <errno.h>
 #include <signal.h>
 #include <unistd.h>
+#include <time.h>
 
 #include "hda-types.h"
 #include "hda-log.h"
@@ -413,6 +414,64 @@ void hda_test_suspend(void)
 void hda_test_resume(void)
 {
 	snd_hda_resume(bus);
+}
+
+static inline unsigned int random_bit(unsigned int pincap, unsigned int mask,
+				      unsigned int bit)
+{
+	if (pincap & mask) {
+		if (random() & 1)
+			return bit;
+	}
+	return 0;
+}
+
+static void randomize_amp(struct xhda_amp_caps *caps,
+			  struct xhda_amp_vals *vals, int nums)
+{
+	int i, c;
+
+	for (i = 0; i < nums; i++)
+		for (c = 0; c < 2; c++) {
+			if (caps->nsteps)
+				vals->vals[i][c] = random() % caps->nsteps;
+			else
+				vals->vals[i][c] = 0;
+			if (caps->mute && (random() & 1))
+				vals->vals[i][c] |= 0x80;
+		}
+}
+
+void hda_test_pm_randomize(void)
+{
+	struct xhda_node *node;
+	for (node = proc.afg.next; node; node = node->next) {
+		unsigned int type;
+		type = (node->wcaps & AC_WCAP_TYPE) >> AC_WCAP_TYPE_SHIFT;
+
+		if (type == AC_WID_PIN)
+			node->pinctl = random() & 0xff;
+		if (node->wcaps & AC_WCAP_IN_AMP)
+			randomize_amp(node->amp_in_caps.override ?
+				      &node->amp_in_caps :
+				      &proc.afg.amp_in_caps,
+				      &node->amp_in_vals, node->num_nodes);
+		if (node->wcaps & AC_WCAP_OUT_AMP)
+			randomize_amp(node->amp_out_caps.override ?
+				      &node->amp_out_caps :
+				      &proc.afg.amp_out_caps,
+				      &node->amp_out_vals, 1);
+	}
+}
+
+void hda_test_pm_reinit(void)
+{
+	struct xhda_node *node;
+	for (node = proc.afg.next; node; node = node->next) {
+		node->pinctl = node->orig_pinctl;
+		node->amp_in_vals = node->orig_amp_in_vals;
+		node->amp_out_vals = node->orig_amp_out_vals;
+	}
 }
 
 /*
@@ -1066,6 +1125,8 @@ int main(int argc, char **argv)
 		fprintf(stderr, "cannot open %s\n", argv[optind]);
 		return 1;
 	}
+
+	srandom((unsigned int)time(NULL));
 
 	hda_log_init(logfile, log_flags);
 

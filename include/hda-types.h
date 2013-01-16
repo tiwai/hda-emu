@@ -33,6 +33,7 @@ struct xhda_node {
 	unsigned int nid;
 	unsigned int wcaps;
 	unsigned int pinctl;
+	unsigned int orig_pinctl;
 	unsigned int pincap;
 	unsigned int pin_default;
 	struct xhda_pcm_info pcm;
@@ -40,6 +41,8 @@ struct xhda_node {
 	struct xhda_amp_caps amp_out_caps;
 	struct xhda_amp_vals amp_in_vals;
 	struct xhda_amp_vals amp_out_vals;
+	struct xhda_amp_vals orig_amp_in_vals;
+	struct xhda_amp_vals orig_amp_out_vals;
 	unsigned int num_nodes;
 	unsigned int curr_conn;
 	unsigned int node[HDA_MAX_NUM_CONNS];

@@ -508,10 +508,48 @@ static int get_pcm_substream(char *id)
 	return strtoul(id + 1, NULL, 0);
 }
 
+enum {
+	TEST_PM_NORMAL,
+	TEST_PM_RANDOMIZE,
+	TEST_PM_REINIT,
+};
+
 static void test_pm(char *line)
 {
+	char *token;
+	int mode = TEST_PM_NORMAL;
+
+	while ((token = gettoken(&line))) {
+		if (*token == '-') {
+			switch (token[1]) {
+			case 'r':
+				mode = TEST_PM_RANDOMIZE;
+				break;
+			case 'i':
+				mode = TEST_PM_REINIT;
+				break;
+			default:
+				usage("pm");
+				return;
+			}
+		} else {
+			usage("pm");
+			return;
+		}
+	}
+
 	hda_log(HDA_LOG_INFO, "** SUSPENDING **\n");
 	hda_test_suspend();
+	switch (mode) {
+	case TEST_PM_RANDOMIZE:
+		hda_log(HDA_LOG_INFO, "** randomize **\n");
+		hda_test_pm_randomize();
+		break;
+	case TEST_PM_REINIT:
+		hda_log(HDA_LOG_INFO, "** init **\n");
+		hda_test_pm_reinit();
+		break;
+	}
 	hda_log(HDA_LOG_INFO, "** RESUMING **\n");
 	hda_test_resume();
 	hda_log(HDA_LOG_INFO, "** TEST_PM DONE **\n");
@@ -811,8 +849,8 @@ static struct usage_table usage_str[] = {
 	{ "PCM", "PCM [-s|-e] [pcm-id dir [rate [channels [format-bits]]]]",
 	  "List PCM streams or test the given PCM stream",
 	  test_pcm },
-	{ "pm", "pm",
-	  "Test suspend/resume cycle",
+	{ "pm", "pm [-i|-r]",
+	  "Test suspend/resume cycle; -i = re-init pins/amps, -r = randomize pins/amps",
 	  test_pm },
 #ifdef CONFIG_SND_HDA_RECONFIG
 	{ "fs", "fs {get|set|list} file args...",

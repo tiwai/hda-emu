@@ -298,6 +298,12 @@ BASIC COMMANDS
 
   Simulate suspend/resume cycle.
 
+  When option -i is given, the pin control values and the in/out amp
+  values are reset to the initial state before resume.  When option -r
+  is given, the pin control values and the in/out amp values are set
+  randomly before resume.  These options are useful to check whether
+  the resume procedure properly restores the values.
+
 * quit
 
   Quit the shell.

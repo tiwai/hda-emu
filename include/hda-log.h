@@ -33,6 +33,9 @@ void hda_log_issue_unsol(int nid);
 
 void hda_test_suspend(void);
 void hda_test_resume(void);
+void hda_test_pm_randomize(void);
+void hda_test_pm_reinit(void);
+
 void hda_exec_verb(int nid, int verb, int parm);
 
 void hda_codec_reset(void);

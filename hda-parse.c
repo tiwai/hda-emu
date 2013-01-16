@@ -139,7 +139,8 @@ static int parse_amp_caps(const char *buf, struct xhda_amp_caps *caps)
 	return 0;
 }
 
-static int parse_amp_vals(const char *buf, struct xhda_amp_vals *vals)
+static int parse_amp_vals(const char *buf, struct xhda_amp_vals *vals,
+			  struct xhda_amp_vals *orig_vals)
 {
 	while (*buf && isspace(*buf))
 		buf++;
@@ -167,6 +168,8 @@ static int parse_amp_vals(const char *buf, struct xhda_amp_vals *vals)
 		vals->vals[0][0] = strtoul(p, &p, 0);
 		vals->vals[0][1] = strtoul(p, &p, 0);
 	}
+	if (orig_vals)
+		*orig_vals = *vals;
 	return 0;
 }
 
@@ -230,11 +233,14 @@ static int parse_node_items(const char *buf)
 	} else if ((p = strmatch(head, "Amp-Out caps: "))) {
 		return parse_amp_caps(p, &node->amp_out_caps);
 	} else if ((p = strmatch(head, "Amp-In vals: "))) {
-		return parse_amp_vals(p, &node->amp_in_vals);
+		return parse_amp_vals(p, &node->amp_in_vals,
+				      &node->orig_amp_in_vals);
 	} else if ((p = strmatch(head, "Amp-Out vals: "))) {
-		return parse_amp_vals(p, &node->amp_out_vals);
+		return parse_amp_vals(p, &node->amp_out_vals,
+				      &node->orig_amp_out_vals);
 	} else if ((p = strmatch(head, "Pin-ctls: "))) {
 		node->pinctl = strtoul(p, NULL, 0);
+		node->orig_pinctl = node->pinctl;
 	} else if ((p = strmatch(head, "Pincap "))) {
 		const char *end;
 		/* a special hack to avoid the old bug */
