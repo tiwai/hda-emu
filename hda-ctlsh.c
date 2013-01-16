@@ -47,14 +47,23 @@ static char *gettoken(char **bufp)
 {
 	char *p;
 	char *token = *bufp;
+	char quote = 0;
 
 	while (*token && isspace(*token))
 		token++;
 	if (!*token || *token == '\n')
 		return NULL;
+	if (*token == '\'' || *token == '"') {
+		quote = *token;
+		token++;
+	}
 	p = token;
-	while (*p && !(isspace(*p) || *p == '\n'))
-		p++;
+	for (; *p && *p != '\n'; p++) {
+		if (*p == quote)
+			break;
+		if (!quote && isspace(*p))
+			break;
+	}
 	if (*p)
 		*p++ = 0;
 	*bufp = p;
@@ -159,6 +168,35 @@ static void show_db_info(struct snd_kcontrol *kctl,
 	}
 }
 
+/* name string may be modified */
+static int get_ctl_numid(char *name)
+{
+	struct snd_kcontrol *kctl = NULL;
+	struct snd_ctl_elem_id id;
+	char *p;
+
+	memset(&id, 0, sizeof(id));
+	id.iface = SNDRV_CTL_ELEM_IFACE_MIXER;
+
+	p = strchr(name, ':');
+	if (p) {
+		id.index = atoi(p + 1);
+		if (id.index < 0)
+			goto error;
+		*p = 0;
+	}
+
+	strncpy(id.name, name, sizeof(id.name) - 1);
+	kctl = snd_ctl_find_id(NULL, &id);
+
+ error:
+	if (p)
+		*p = ':';
+	if (kctl)
+		return kctl->id.numid;
+	return 0;
+}
+
 static void get_element(char *line)
 {
 	struct snd_kcontrol *kctl;
@@ -166,11 +204,24 @@ static void get_element(char *line)
 	struct snd_ctl_elem_value uval;
 	int numid;
 	int i, err;
+	char *token;
 
-	if (getint(&line, &numid)) {
+	token = gettoken(&line);
+	if (!token) {
 		usage("get");
 		return;
 	}
+
+	if (isdigit(*token))
+		numid = strtoul(token, NULL, 0);
+	else {
+		numid = get_ctl_numid(token);
+		if (!numid) {
+			hda_log(HDA_LOG_INFO, "No element '%s'\n", token);
+			return;
+		}
+	}
+
 	kctl = snd_ctl_find_numid(NULL, numid);
 	if (!kctl) {
 		hda_log(HDA_LOG_INFO, "No element %d\n", numid);
@@ -238,11 +289,24 @@ static void set_element(char *line)
 	struct snd_ctl_elem_value uval;
 	unsigned int numid;
 	int i, err;
+	char *token;
 
-	if (getint(&line, &numid)) {
+	token = gettoken(&line);
+	if (!token) {
 		usage("set");
 		return;
 	}
+
+	if (isdigit(*token))
+		numid = strtoul(token, NULL, 0);
+	else {
+		numid = get_ctl_numid(token);
+		if (!numid) {
+			hda_log(HDA_LOG_INFO, "No element '%s'\n", token);
+			return;
+		}
+	}
+
 	kctl = snd_ctl_find_numid(NULL, numid);
 	if (!kctl) {
 		hda_log(HDA_LOG_INFO, "No element %d\n", numid);

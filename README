@@ -122,11 +122,31 @@ BASIC COMMANDS
   integer value between 0 and 31, and its current values are 0 and 0
   (usually for left and right channels).
 
+  Instead of the numid, you can pass the name string of the control
+  element.  Use single- or double quotes around the name.
+
+	> get "Master Playback Volume"
+	1 Master Playback Volume:0
+	MIN/MAX: 0/31,  VAL: [0] [0]
+
+  If there are multiple control elements with the same name and
+  different indices, pass the index number with ":" suffix.
+
+	> get "Headphone Playback Switch:1"
+	20 Headphone Playback Switch:1
+	MIN/MAX: 0/1,  VAL: [1] [1]
+
+
 * set
 
-  Set the control element value.  Pass the numid and the value(s).
+  Set the control element value.  Pass the numid or the name string in
+  the first argument, and pass and the value(s) in the rest.
 
 	> set 1 10 4
+
+  or
+
+	> set "Master Playback Volume" 10 4
 
   When the log level is more than 1, you'll see the codec verbs such
   as
