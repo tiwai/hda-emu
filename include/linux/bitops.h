@@ -13,6 +13,16 @@ static inline unsigned long hweight_long(unsigned long w)
 	return c;
 }
 
+static inline unsigned int hweight32(unsigned int w)
+{
+	int i, c = 0;
+	for (i = 0; i < sizeof(w) * 8; i++) {
+		c += w & 1;
+		w >>= 1;
+	}
+	return c;
+}
+
 static inline unsigned long find_first_bit(const unsigned long *addr,
 					   unsigned long size)
 {
