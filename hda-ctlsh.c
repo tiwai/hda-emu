@@ -467,6 +467,9 @@ static void show_routes(char *line)
 				flags &= ~SHOW_DIR_IN;
 				flags |= SHOW_DIR_OUT;
 				break;
+			case 'm':
+				flags |= SHOW_MUTE;
+				break;
 			default:
 				hda_log(HDA_LOG_ERR, "Invalid route option\n");
 				usage("route");
@@ -835,7 +838,7 @@ static struct usage_table usage_str[] = {
 	  "Issue an unsolicited event",
 	  issue_unsol },
 	{ "route", "route [-opts] numid",
-	  "Show routes via the given widget; -a = show all, -x = show inactive pins too, -i|-o = set direction",
+	  "Show routes via the given widget; -a = show all, -x = show inactive pins too, -i|-o = set direction, -m = show mute flags",
 	  show_routes },
 	{ "option", "option variable [val]",
 	  "Get/set module option value",

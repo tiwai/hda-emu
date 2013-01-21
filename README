@@ -294,6 +294,10 @@ BASIC COMMANDS
   is passed, shows only the routes starting from the given NID.  As
   default, both routes are shown.
 
+  The option -m makes the mute flag appearing in the routes.  When
+  an input or an output amp is muted, the letter '|' appears in the
+  path.
+
 * pm
 
   Simulate suspend/resume cycle.

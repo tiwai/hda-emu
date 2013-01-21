@@ -143,6 +143,7 @@ void hda_free_route_lists(struct xhda_route_list *list);
 #define SHOW_DIR_OUT	(1 << 1)
 #define SHOW_INACTIVE	(1 << 2)
 #define SHOW_ALL	(1 << 3)
+#define SHOW_MUTE	(1 << 4)
 
 void hda_show_routes(int nid, unsigned int flags);
 

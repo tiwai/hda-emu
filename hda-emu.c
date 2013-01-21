@@ -893,13 +893,51 @@ static const char *get_node_type_string(struct xhda_node *node)
 	return names[type] ? names[type] : "\?\?\?";
 }
 
-static void show_route_lists(struct xhda_route_list *list)
+static int get_muted(unsigned char *amp, unsigned int wcaps)
+{
+	if (wcaps & AC_WCAP_STEREO)
+		return (amp[0] & amp[1]) & 0x80;
+	else
+		return amp[0] & 0x80;
+}
+
+static void show_route_lists(struct xhda_route_list *list, unsigned flags)
 {
 	int i;
+	int show_mute = !!(flags & SHOW_MUTE);
+
 	for (; list; list = list->next) {
 		hda_nid_t prev_nid = 0;
 		for (i = 0; i < list->num_nodes; i++) {
 			struct xhda_node *node = list->node[i];
+			int in_mute = 0, out_mute = 0;
+			int idx = 0;
+
+			if (i > 0) {
+				for (idx = 0; idx < node->num_nodes; idx++) {
+					if (node->node[idx] == prev_nid)
+						break;
+				}
+				if (idx >= node->num_nodes)
+					idx = 0;
+			}
+
+			if (node->wcaps & AC_WCAP_IN_AMP)
+				in_mute = get_muted(&node->amp_in_vals.vals[idx][0],
+						    node->wcaps);
+			if (node->wcaps & AC_WCAP_OUT_AMP)
+				out_mute = get_muted(&node->amp_out_vals.vals[0][0],
+						     node->wcaps);
+			if (node_type(node) == AC_WID_PIN) {
+				if (!i) {
+					out_mute = in_mute;
+					in_mute = false;
+				} else {
+					in_mute = out_mute;
+					out_mute = false;
+				}
+			}
+
 			if (i > 0) {
 				const char *path;
 				if (node_type(node) == AC_WID_AUD_MIX)
@@ -908,10 +946,12 @@ static void show_route_lists(struct xhda_route_list *list)
 					path = " -> ";
 				else
 					path = " -x ";
-				hda_log(HDA_LOG_INFO, "%s", path);
+				hda_log(HDA_LOG_INFO, "%s%s", path,
+					show_mute ? (in_mute ? "|" : " ") : "");
 			}
-			hda_log(HDA_LOG_INFO, "%s[%02x]",
-				get_node_type_string(node), node->nid);
+			hda_log(HDA_LOG_INFO, "%s[%02x]%s",
+				get_node_type_string(node), node->nid,
+				show_mute ? (out_mute ? "|" : " ") : "");
 			prev_nid = node->nid;
 		}
 		hda_log(HDA_LOG_INFO, "\n");
@@ -925,7 +965,7 @@ void hda_show_routes(int nid, unsigned flags)
 
 	if (flags & SHOW_DIR_IN) {
 		list = hda_routes_connected_to(&proc, nid, flags);
-		show_route_lists(list);
+		show_route_lists(list, flags);
 		had_list = list != NULL;
 		hda_free_route_lists(list);
 	}
@@ -934,7 +974,7 @@ void hda_show_routes(int nid, unsigned flags)
 		list = hda_routes_connected_from(&proc, nid, flags);
 		if (list && had_list)
 			hda_log(HDA_LOG_INFO, "\n");
-		show_route_lists(list);
+		show_route_lists(list, flags);
 		hda_free_route_lists(list);
 	}
 }
