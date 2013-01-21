@@ -829,16 +829,20 @@ static struct usage_table usage_str[] = {
 	  "Set the contents of the given control element",
 	  set_element },
 	{ "dump", "dump [nid [filename]]",
-	  "Dump codec contents in the proc file format; nid = 0 means all widgets",
+	  "Dump codec contents in the proc file format\n"
+	  "nid = 0 means all widgets",
 	  dump_proc },
 	{ "jack", "jack [-r] numid [val]",
-	  "Get jack state or set jack state; val = 0 or 1; -r = list from uncached pincfgs",
+	  "Get jack state or set jack state\n"
+	  "val = 0 or 1; -r = list from uncached pincfgs",
 	  set_jack },
 	{ "unsol", "unsol numid",
 	  "Issue an unsolicited event",
 	  issue_unsol },
 	{ "route", "route [-opts] numid",
-	  "Show routes via the given widget; -a = show all, -x = show inactive pins too, -i|-o = set direction, -m = show mute flags",
+	  "Show routes via the given widget\n"
+	  "-a = show all, -x = show inactive pins too, -i|-o = set direction,\n"
+	  "-m = show mute flags",
 	  show_routes },
 	{ "option", "option variable [val]",
 	  "Get/set module option value",
@@ -853,7 +857,8 @@ static struct usage_table usage_str[] = {
 	  "List PCM streams or test the given PCM stream",
 	  test_pcm },
 	{ "pm", "pm [-i|-r]",
-	  "Test suspend/resume cycle; -i = re-init pins/amps, -r = randomize pins/amps",
+	  "Test suspend/resume cycle\n"
+	  "-i = re-init pins/amps, -r = randomize pins/amps",
 	  test_pm },
 #ifdef CONFIG_SND_HDA_RECONFIG
 	{ "fs", "fs {get|set|list} file args...",
