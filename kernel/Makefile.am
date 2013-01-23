@@ -29,9 +29,6 @@ endif
 if CONFIG_SND_HDA_CODEC_CIRRUS
 PATCHES += patch_cirrus.c
 endif
-if CONFIG_SND_HDA_CODEC_HDMI
-PATCHES += patch_hdmi.c
-endif
 if CONFIG_SND_HDA_CODEC_ATIHDMI
 PATCHES += patch_atihdmi.c
 endif
