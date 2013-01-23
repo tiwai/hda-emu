@@ -29,8 +29,8 @@
 
 #include <linux/init.h>
 #include <sound/core.h>
-#include "hda_codec.h"
-#include "hda_local.h"
+#include "hda/hda_codec.h"
+#include "hda/hda_local.h"
 
 #include "hda-missing-const.h"
 #ifndef HAVE_POWER_SAVE
