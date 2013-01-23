@@ -115,6 +115,8 @@ AC_DEFUN([CHECK_HELPER], [
 
 CHECK_HELPER([hda_auto_parser.c], [HAVE_HDA_AUTO_PARSER])
 CHECK_HELPER([hda_jack.c], [HAVE_HDA_JACK])
+CHECK_HELPER([hda_eld.c], [HAVE_HDA_ELD])
+CHECK_HELPER([hda_beep.c], [HAVE_HDA_BEEP])
 
 AC_ARG_ENABLE(own-proc,
   AS_HELP_STRING([--enable-own-proc],

@@ -58,9 +58,12 @@ if HAVE_HDA_JACK
 HELPERS += hda_jack.c
 endif
 
+if HAVE_HDA_ELD
+HELPERS += hda_eld.c
+endif
+
 noinst_LIBRARIES = libhda.a
-libhda_a_SOURCES = hda_codec.c hda_generic.c \
-	 hda_eld.c misc_wrapper.c \
+libhda_a_SOURCES = hda_codec.c hda_generic.c misc_wrapper.c \
 	 $(PATCHES) $(HELPERS)
 noinst_HEADERS = init_hooks.h
 

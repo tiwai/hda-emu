@@ -39,7 +39,9 @@
 #include <sound/pcm.h>
 #include "hda/hda_codec.h"
 #include "hda/hda_local.h"
+#ifdef HAVE_HDA_BEEP
 #include "hda/hda_beep.h"
+#endif
 
 #ifndef HAVE_POWER_SAVE
 #define snd_hda_power_up(x)
@@ -1054,6 +1056,7 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 
 static int load_init_hints(struct xhda_codec *codec, char *hints)
 {
+#ifdef CONFIG_SND_HDA_RECONFIG
 	FILE *fp;
 	char buf[256];
 	struct xhda_sysfs_list *sys;
@@ -1080,6 +1083,10 @@ static int load_init_hints(struct xhda_codec *codec, char *hints)
 		_parse_hints(_codec, buf);
 	fclose(fp);
 	return 0;
+#else
+	hda_log(HDA_LOG_ERR, "-H option isn't supported for this kernel\n");
+	return -EINVAL;
+#endif
 }
 
 /*

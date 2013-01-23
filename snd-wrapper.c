@@ -45,6 +45,8 @@ int snd_pcm_format_width(int format)
 	}
 }
 
+#ifdef CONFIG_SND_HDA_RECONFIG
+
 /* hint string pair */
 struct hda_hint {
 	const char *key;
@@ -192,14 +194,19 @@ int snd_hda_get_int_hint(struct hda_codec *codec, const char *key, int *valp)
 	return ret;
 }
 
+#endif /* CONFIG_SND_HDA_RECONFIG */
+
 int snd_hda_create_hwdep(struct hda_codec *codec)
 {
+#ifdef CONFIG_SND_HDA_RECONFIG
+
 #ifdef HAVE_CODEC_USER_MUTEX
 	mutex_init(&codec->user_mutex);
 #endif
 	snd_array_init(&codec->init_verbs, sizeof(struct hda_verb), 32);
 	snd_array_init(&codec->hints, sizeof(struct hda_hint), 32);
 	snd_array_init(&codec->user_pins, sizeof(struct hda_pincfg), 16);
+#endif /* CONFIG_SND_HDA_RECONFIG */
 	return 0;
 }
 
