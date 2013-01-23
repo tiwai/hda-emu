@@ -83,10 +83,21 @@ struct xhda_sysfs_value {
 	struct xhda_sysfs_value *next;
 };
 
+struct xhda_sysfs_hints {
+	char *line;
+	struct xhda_sysfs_hints *next;
+};
+
+enum { XHDA_SYS_PINCFG, XHDA_SYS_VERBS, XHDA_SYS_HINTS };
+
 struct xhda_sysfs_list {
 	char *id;
 	struct xhda_sysfs_list *next;
-	struct xhda_sysfs_value *entry;
+	int type;
+	union {
+		struct xhda_sysfs_value *vals;
+		struct xhda_sysfs_hints *hints;
+	} entry;
 };
 
 struct xhda_codec {

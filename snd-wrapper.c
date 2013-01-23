@@ -20,6 +20,7 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
  */
 
+#include <ctype.h>
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
@@ -44,16 +45,161 @@ int snd_pcm_format_width(int format)
 	}
 }
 
+/* hint string pair */
+struct hda_hint {
+	const char *key;
+	const char *val;	/* contained in the same alloc as key */
+};
+
+static char *skip_spaces(const char *p)
+{
+	while (*p && isspace(*p))
+		p++;
+	return (char *)p;
+}
+
+static void remove_trail_spaces(char *str)
+{
+	char *p;
+	if (!*str)
+		return;
+	p = str + strlen(str) - 1;
+	for (; isspace(*p); p--) {
+		*p = 0;
+		if (p == str)
+			return;
+	}
+}
+
+static struct hda_hint *get_hint(struct hda_codec *codec, const char *key)
+{
+	int i;
+
+	for (i = 0; i < codec->hints.used; i++) {
+		struct hda_hint *hint = snd_array_elem(&codec->hints, i);
+		if (!strcmp(hint->key, key))
+			return hint;
+	}
+	return NULL;
+}
+
+#define MAX_HINTS	1024
+
+int _parse_hints(struct hda_codec *codec, const char *buf)
+{
+	char *key, *val;
+	struct hda_hint *hint;
+	int err = 0;
+
+	buf = skip_spaces(buf);
+	if (!*buf || *buf == '#' || *buf == '\n')
+		return 0;
+	if (*buf == '=')
+		return -EINVAL;
+	key = strdup(buf);
+	if (!key)
+		return -ENOMEM;
+	val = strrchr(buf, '\n');
+	if (val)
+		*val = 0;
+	/* extract key and val */
+	val = strchr(key, '=');
+	if (!val) {
+		kfree(key);
+		return -EINVAL;
+	}
+	*val++ = 0;
+	val = skip_spaces(val);
+	remove_trail_spaces(key);
+	remove_trail_spaces(val);
+	hint = get_hint(codec, key);
+	if (hint) {
+		/* replace */
+		free((void *)hint->key);
+		hint->key = key;
+		hint->val = val;
+		return 0;
+	}
+	/* allocate a new hint entry */
+	if (codec->hints.used >= MAX_HINTS)
+		hint = NULL;
+	else
+		hint = snd_array_new(&codec->hints);
+	if (hint) {
+		hint->key = key;
+		hint->val = val;
+	} else {
+		err = -ENOMEM;
+	}
+	if (err)
+		free(key);
+	return err;
+}
+
+int _show_hints(struct hda_codec *codec, const char *key)
+{
+	int i;
+
+	for (i = 0; i < codec->hints.used; i++) {
+		struct hda_hint *hint = snd_array_elem(&codec->hints, i);
+		if (!key || !strcmp(hint->key, key))
+			hda_log(HDA_LOG_INFO, "%s = %s\n", hint->key, hint->val);
+	}
+	return 0;
+}
+
+const char *snd_hda_get_hint(struct hda_codec *codec, const char *key)
+{
+	struct hda_hint *hint = get_hint(codec, key);
+	return hint ? hint->val : NULL;
+}
+
+int snd_hda_get_bool_hint(struct hda_codec *codec, const char *key)
+{
+	const char *p;
+	int ret;
+
+	p = snd_hda_get_hint(codec, key);
+	if (!p || !*p)
+		ret = -ENOENT;
+	else {
+		switch (toupper(*p)) {
+		case 'T': /* true */
+		case 'Y': /* yes */
+		case '1':
+			ret = 1;
+			break;
+		default:
+			ret = 0;
+			break;
+		}
+	}
+	return ret;
+}
+
+int snd_hda_get_int_hint(struct hda_codec *codec, const char *key, int *valp)
+{
+	const char *p;
+	int ret;
+
+	p = snd_hda_get_hint(codec, key);
+	if (!p)
+		ret = -ENOENT;
+	else {
+		*valp = strtoul(p, NULL, 0);
+		ret = 0;
+	}
+	return ret;
+}
+
 int snd_hda_create_hwdep(struct hda_codec *codec)
 {
 #ifdef HAVE_CODEC_USER_MUTEX
 	mutex_init(&codec->user_mutex);
 #endif
-#if 0
 	snd_array_init(&codec->init_verbs, sizeof(struct hda_verb), 32);
 	snd_array_init(&codec->hints, sizeof(struct hda_hint), 32);
 	snd_array_init(&codec->user_pins, sizeof(struct hda_pincfg), 16);
-#endif
 	return 0;
 }
 

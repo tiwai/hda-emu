@@ -511,10 +511,27 @@ static int add_sysfs_list(struct xhda_codec *codec, int *vals)
 
 	memcpy(item->val, vals, sizeof(item->val));
 	item->next = NULL;
-	if (!codec->sysfs_list->entry)
-		codec->sysfs_list->entry = item;
+	if (!codec->sysfs_list->entry.vals)
+		codec->sysfs_list->entry.vals = item;
 	else {
-		for (p = codec->sysfs_list->entry; p->next; p = p->next)
+		for (p = codec->sysfs_list->entry.vals; p->next; p = p->next)
+			;
+		p->next = item;
+	}
+	return 0;
+}
+
+static int add_sysfs_hint(struct xhda_codec *codec, char *line)
+{
+	struct xhda_sysfs_hints *item = xalloc(sizeof(*item));
+	struct xhda_sysfs_hints *p;
+
+	item->line = strdup(line);
+	item->next = NULL;
+	if (!codec->sysfs_list->entry.hints)
+		codec->sysfs_list->entry.hints = item;
+	else {
+		for (p = codec->sysfs_list->entry.hints; p->next; p = p->next)
 			;
 		p->next = item;
 	}
@@ -534,27 +551,42 @@ static int do_parse_sysfs(struct xhda_codec *codec, char *buffer)
 		p = strchr(sys->id, ':');
 		if (p)
 			*p = 0;
+		p = strchr(sys->id, '/');
+		if (!p) {
+			free(sys->id);
+			free(sys);
+			return 0;
+		}
+		if (!strcmp(p + 1, "init_verbs"))
+			sys->type = XHDA_SYS_VERBS;
+		else if (!strcmp(p + 1, "hints"))
+			sys->type = XHDA_SYS_HINTS;
+		else
+			sys->type = XHDA_SYS_PINCFG;
 		hda_log(HDA_LOG_INFO, "Adding sysfs entry %s\n", sys->id);
 		sys->next = codec->sysfs_list;
-		sys->entry = NULL;
+		sys->entry.vals = NULL;
 		codec->sysfs_list = sys;
 		return 0;
 	}
-	if (isdigit(*buffer)) {
-		char *p;
+	if (strchr(buffer, '=')) {
+		add_sysfs_hint(codec, buffer);
+	} else if (isdigit(*buffer)) {
 		int val[3];
 		if (!codec->sysfs_list)
 			return 0;
-		p = strchr(codec->sysfs_list->id, '/');
-		if (!p)
-			return 0;
-		if (!strcmp(p + 1, "init_verbs")) {
+		switch (codec->sysfs_list->type) {
+		case XHDA_SYS_VERBS:
 			if (sscanf(buffer, "%i %i %i", &val[0], &val[1], &val[2]) != 3)
 				return 0;
-		} else {
+			break;
+		case XHDA_SYS_PINCFG:
 			if (sscanf(buffer, "%i %i", &val[0], &val[1]) != 2)
 				return 0;
 			val[2] = 0;
+			break;
+		default:
+			return 0;
 		}
 		add_sysfs_list(codec, val);
 		return 0;

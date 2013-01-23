@@ -69,4 +69,7 @@ void hda_log_show_user_pin_configs(void);
 void hda_log_set_user_pin_configs(unsigned int nid, unsigned int cfg);
 #endif /* HAVE_USER_PINCFGS */
 
+void hda_log_show_hints(char *hint);
+void hda_log_set_hints(char *hint);
+
 #endif /* __HDA_LOG_H */

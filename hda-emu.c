@@ -560,6 +560,19 @@ void hda_log_set_user_pin_configs(unsigned int nid, unsigned int cfg)
 }
 #endif /* HAVE_USER_PINCFGS */
 
+extern int _show_hints(struct hda_codec *codec, const char *key);
+extern int _parse_hints(struct hda_codec *codec, const char *buf);
+
+void hda_log_show_hints(char *hint)
+{
+	_show_hints(_codec, hint);
+}
+
+void hda_log_set_hints(char *hint)
+{
+	_parse_hints(_codec, hint);
+}
+
 #endif /* CONFIG_SND_HDA_RECONFIG */
 
 /*
@@ -1012,10 +1025,11 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 	struct xhda_sysfs_list *sys;
 
 	for (sys = codec->sysfs_list; sys; sys = sys->next) {
-		if (!strcmp(sys->id, pincfg)) {
+		if (sys->type == XHDA_SYS_PINCFG &&
+		    !strcmp(sys->id, pincfg)) {
 			struct xhda_sysfs_value *val;
 			hda_log(HDA_LOG_INFO, "Overriding pin-configs via %s\n", pincfg);
-			for (val = sys->entry; val; val = val->next)
+			for (val = sys->entry.vals; val; val = val->next)
 				set_pincfg(codec, val->val[0], val->val[1]);
 			return 0;
 		}
@@ -1038,6 +1052,36 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 	return 0;
 }
 
+static int load_init_hints(struct xhda_codec *codec, char *hints)
+{
+	FILE *fp;
+	char buf[256];
+	struct xhda_sysfs_list *sys;
+
+	for (sys = codec->sysfs_list; sys; sys = sys->next) {
+		if (sys->type == XHDA_SYS_HINTS &&
+		    !strcmp(sys->id, hints)) {
+			struct xhda_sysfs_hints *val;
+			hda_log(HDA_LOG_INFO, "Add hints from %s\n", hints);
+			for (val = sys->entry.hints; val; val = val->next)
+				_parse_hints(_codec, val->line);
+			return 0;
+		}
+	}
+
+	/* if not found in the given input, try to open it */
+	fp = fopen(hints, "r");
+	if (!fp) {
+		hda_log(HDA_LOG_ERR, "Cannot find hints %s\n", hints);
+		return -EINVAL;
+	}
+	hda_log(HDA_LOG_INFO, "Add hints from file %s\n", hints);
+	while (fgets(buf, sizeof(buf), fp))
+		_parse_hints(_codec, buf);
+	fclose(fp);
+	return 0;
+}
+
 /*
  */
 static void usage(void)
@@ -1056,6 +1100,7 @@ static void usage(void)
 	fprintf(stderr, "  -F             print prefixes to messages\n");
 	fprintf(stderr, "  -a             issues SIGTRAP at codec errors\n");
 	fprintf(stderr, "  -P pincfg      initialize pin-configuration from sysfs entry\n");
+	fprintf(stderr, "  -H hints       add initial hints from sysfs entry or file\n");
 	fprintf(stderr, "  -j NID         turn on the initial jack-state of the given pin\n");
 }
 
@@ -1099,10 +1144,11 @@ int main(int argc, char **argv)
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
 	char *init_pincfg = NULL;
+	char *init_hints = NULL;
 	int num_active_jacks = 0;
 	unsigned int active_jacks[16];
 
-	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMFP:j:")) != -1) {
+	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMFP:H:j:")) != -1) {
 		switch (c) {
 		case 'a':
 			hda_log_trap_on_error = 1;
@@ -1140,6 +1186,9 @@ int main(int argc, char **argv)
 			break;
 		case 'P':
 			init_pincfg = optarg;
+			break;
+		case 'H':
+			init_hints = optarg;
 			break;
 		case 'j':
 			if (num_active_jacks >= ARRAY_SIZE(active_jacks)) {
@@ -1265,6 +1314,11 @@ int main(int argc, char **argv)
 #ifdef HAVE_USER_PINCFGS
 	snd_array_init(&codec->user_pins, sizeof(struct hda_pincfg), 16);
 #endif
+
+	if (init_hints) {
+		if (load_init_hints(&proc, init_hints) < 0)
+			return 1;
+	}
 
 #ifdef HAVE_HDA_PATCH_LOADER
 	snd_hda_codec_configure(codec);

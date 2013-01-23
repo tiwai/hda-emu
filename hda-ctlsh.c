@@ -630,35 +630,18 @@ static void help(char *buf)
 }
 
 #ifdef CONFIG_SND_HDA_RECONFIG
-struct hda_codec;
-
-const char *snd_hda_get_hint(struct hda_codec *codec, const char *key)
-{
-	return NULL;
-}
-
-int snd_hda_get_bool_hint(struct hda_codec *codec, const char *key)
-{
-	return -ENOENT;
-}
-
-int snd_hda_get_int_hint(struct hda_codec *codec, const char *key, int *valp)
-{
-	return -ENOENT;
-}
-
 #ifdef HAVE_USER_PINCFGS
-static void get_drv_pincfgs(void)
+static void get_drv_pincfgs(char *line)
 {
 	hda_log_show_driver_pin_configs();
 }
 
-static void get_init_pincfgs(void)
+static void get_init_pincfgs(char *line)
 {
 	hda_log_show_init_pin_configs();
 }
 
-static void get_user_pincfgs(void)
+static void get_user_pincfgs(char *line)
 {
 	hda_log_show_user_pin_configs();
 }
@@ -676,7 +659,17 @@ static void set_user_pincfgs(char *line)
 }
 #endif /* HAVE_USER_PINCFGS */
 
-static void get_not_yet(void)
+static void get_hints(char *line)
+{
+	hda_log_show_hints(*line ? line : NULL);
+}
+
+static void set_hints(char *line)
+{
+	hda_log_set_hints(line);
+}
+
+static void get_not_yet(char *line)
 {
 	hda_log(HDA_LOG_ERR, "Not implemented yet\n");
 }
@@ -697,8 +690,6 @@ static void reconfig_codec(char *line)
 	hda_codec_reconfig();
 }
 
-#define get_hints		get_not_yet
-#define set_hints		set_not_yet
 #define get_vendor_id		get_not_yet
 #define set_vendor_id		set_not_yet
 #define get_subsystem_id	get_not_yet
@@ -708,7 +699,7 @@ static void reconfig_codec(char *line)
 
 struct sysfs_entry {
 	const char *name;
-	void (*get)(void);
+	void (*get)(char *line);
 	void (*set)(char *line);
 };
 
@@ -747,7 +738,7 @@ static struct sysfs_entry *find_sysfs_entry(char *file)
 	return NULL;
 }
 
-static void get_sysfs(char *file)
+static void get_sysfs(char *file, char *line)
 {
 	struct sysfs_entry *s;
 	s = find_sysfs_entry(file);
@@ -757,7 +748,7 @@ static void get_sysfs(char *file)
 		hda_log(HDA_LOG_INFO, "%s has no read premission\n", file);
 		return;
 	}
-	s->get();
+	s->get(line);
 }
 
 static void set_sysfs(char *file, char *line)
@@ -797,7 +788,7 @@ static void handle_sysfs(char *line)
 		if (!file)
 			goto error;
 		if (*cmd == 'g')
-			get_sysfs(file);
+			get_sysfs(file, line);
 		else
 			set_sysfs(file, line);
 	}
