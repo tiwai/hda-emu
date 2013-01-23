@@ -430,6 +430,18 @@ pass the pin NID to turn on via -j option.  When nothing is set, all
 pins are assumed to be unplugged at the start up.
 
 
+START WITHOUT CODEC PARSER
+--------------------------
+
+When you don't want to start the codec parser procedure, i.e. just
+probe the codec and initializes the instance without invoking the
+parser, pass -n option.  (This corresponds to probe_only=1 option for
+snd-hda-intel module.)
+
+Then you can inspect the pin config, add hints or whatever, then
+trigger the codec parser manually later by "fs set reconfig 1" command.
+
+
 DEBUGGING DRIVER WITH GDB
 -------------------------
 

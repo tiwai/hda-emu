@@ -1099,6 +1099,7 @@ static void usage(void)
 	fprintf(stderr, "  -M             no color print\n");
 	fprintf(stderr, "  -F             print prefixes to messages\n");
 	fprintf(stderr, "  -a             issues SIGTRAP at codec errors\n");
+	fprintf(stderr, "  -n             don't configure codec at start\n");
 	fprintf(stderr, "  -P pincfg      initialize pin-configuration from sysfs entry\n");
 	fprintf(stderr, "  -H hints       add initial hints from sysfs entry or file\n");
 	fprintf(stderr, "  -j NID         turn on the initial jack-state of the given pin\n");
@@ -1146,9 +1147,10 @@ int main(int argc, char **argv)
 	char *init_pincfg = NULL;
 	char *init_hints = NULL;
 	int num_active_jacks = 0;
+	int no_configure = 0;
 	unsigned int active_jacks[16];
 
-	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMFP:H:j:")) != -1) {
+	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMFP:H:j:n")) != -1) {
 		switch (c) {
 		case 'a':
 			hda_log_trap_on_error = 1;
@@ -1197,6 +1199,9 @@ int main(int argc, char **argv)
 			}
 			active_jacks[num_active_jacks++] =
 				strtoul(optarg, NULL, 0);
+			break;
+		case 'n':
+			no_configure = 1;
 			break;
 		default:
 			usage();
@@ -1321,21 +1326,24 @@ int main(int argc, char **argv)
 	}
 
 #ifdef HAVE_HDA_PATCH_LOADER
-	snd_hda_codec_configure(codec);
+	if (!no_configure)
+		snd_hda_codec_configure(codec);
 #endif
 
-	hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
-	snd_hda_build_pcms(bus);
+	if (!no_configure) {
+		hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
+		snd_hda_build_pcms(bus);
 #ifndef HAVE_HDA_ATTACH_PCM
-	azx_pcm_create(codec);
+		azx_pcm_create(codec);
 #endif
 
-	hda_log(HDA_LOG_INFO, "# Init and building controls...\n");
+		hda_log(HDA_LOG_INFO, "# Init and building controls...\n");
 #ifdef CONFIG_SND_HDA_RECONFIG
-	snd_hda_codec_build_controls(codec);
+		snd_hda_codec_build_controls(codec);
 #else
-	snd_hda_build_controls(codec->bus);
+		snd_hda_build_controls(codec->bus);
 #endif
+	}
 
 	/* power-down after init phase */
 	snd_hda_power_down(codec);
