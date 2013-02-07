@@ -400,29 +400,37 @@ static int get_channel_streamid(struct xhda_codec *codec,
 	return node->streamid;
 }
 
-static int set_pin_ctl(struct xhda_codec *codec, struct xhda_node *node,
-		       unsigned int cmd)
+void hda_verify_pin_ctl(struct xhda_node *node, int log,
+			unsigned int *sanified_pinctl)
 {
-	if (!node)
-		return 0;
-	node->pinctl = cmd & 0xff;
+	int pinctl = node->pinctl;
 
 	/* sanity checks */
 	if ((node->pinctl & AC_PINCTL_OUT_EN) &&
-	    !(node->pincap & AC_PINCAP_OUT))
-		hda_log(HDA_LOG_ERR,
-			"setting OUT_EN to pin 0x%x without caps\n",
-			node->nid);
+	    !(node->pincap & AC_PINCAP_OUT)) {
+		if (log)
+			hda_log(HDA_LOG_ERR,
+				"setting OUT_EN to pin 0x%x without caps\n",
+				node->nid);
+		pinctl &= ~AC_PINCTL_OUT_EN;
+	}
 	if ((node->pinctl & AC_PINCTL_HP_EN) &&
-	    !(node->pincap & AC_PINCAP_HP_DRV))
-		hda_log(HDA_LOG_ERR,
-			"setting HP_EN to pin 0x%x without caps\n",
-			node->nid);
+	    !(node->pincap & AC_PINCAP_HP_DRV)) {
+		if (log)
+			hda_log(HDA_LOG_ERR,
+				"setting HP_EN to pin 0x%x without caps\n",
+				node->nid);
+		pinctl &= ~AC_PINCTL_HP_EN;
+	}
 	if ((node->pinctl & AC_PINCTL_IN_EN) &&
-	    !(node->pincap & AC_PINCAP_IN))
-		hda_log(HDA_LOG_ERR,
-			"setting IN_EN to pin 0x%x without caps\n",
-			node->nid);
+	    !(node->pincap & AC_PINCAP_IN)) {
+		if (log)
+			hda_log(HDA_LOG_ERR,
+				"setting IN_EN to pin 0x%x without caps\n",
+				node->nid);
+		pinctl &= ~AC_PINCTL_IN_EN;
+	}
+
 	if (node->pinctl & AC_PINCTL_IN_EN) {
 		unsigned int cap_set, cap_check;
 		const char *vref;
@@ -455,11 +463,27 @@ static int set_pin_ctl(struct xhda_codec *codec, struct xhda_node *node,
 		if (!cap_set)
 			cap_set = AC_PINCAP_VREF_HIZ;
 		if (cap_check && !(cap_set & cap_check)) {
-			hda_log(HDA_LOG_ERR,
-				"setting VREF %s to pin 0x%x without caps 0x%x\n",
-				vref, node->nid, node->pincap);
+			if (log)
+				hda_log(HDA_LOG_ERR,
+					"setting VREF %s to pin 0x%x without caps 0x%x\n",
+					vref, node->nid, node->pincap);
+			pinctl &= ~AC_PINCTL_VREFEN;
 		}
 	}
+
+	if (sanified_pinctl)
+		*sanified_pinctl = pinctl;
+}
+
+static int set_pin_ctl(struct xhda_codec *codec, struct xhda_node *node,
+		       unsigned int cmd)
+{
+	if (!node)
+		return 0;
+	node->pinctl = cmd & 0xff;
+
+	hda_verify_pin_ctl(node, 1, NULL);
+
 	return 0;
 }
 

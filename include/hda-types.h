@@ -158,6 +158,10 @@ void hda_free_route_lists(struct xhda_route_list *list);
 
 void hda_show_routes(int nid, unsigned int flags);
 
+void hda_verify_pin_ctl(struct xhda_node *node, int log,
+		        unsigned int *sanified_pinctl);
+
+
 void *xalloc(size_t size);
 
 #endif /* __HDA_TYPES_H */

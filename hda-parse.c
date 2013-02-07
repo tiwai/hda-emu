@@ -240,6 +240,8 @@ static int parse_node_items(const char *buf)
 				      &node->orig_amp_out_vals);
 	} else if ((p = strmatch(head, "Pin-ctls: "))) {
 		node->pinctl = strtoul(p, NULL, 0);
+		if (node->pincap)
+			hda_verify_pin_ctl(node, 0, &node->pinctl);
 		node->orig_pinctl = node->pinctl;
 	} else if ((p = strmatch(head, "Pincap "))) {
 		const char *end;
