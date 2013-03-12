@@ -779,7 +779,7 @@ void hda_test_pcm(int id, int op, int subid,
 		}
 		hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
 #ifdef HAVE_COMMON_PREPARE
-		err = snd_hda_codec_prepare(_codec, hinfo, subid,
+		err = snd_hda_codec_prepare(_codec, hinfo, subid + 1,
 					    format_val, substream);
 #else
 		err = hinfo->ops.prepare(hinfo, _codec, 1, format_val, substream);
