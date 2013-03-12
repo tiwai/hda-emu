@@ -503,7 +503,7 @@ if grep -q snd_hda_codec_prepare hda/hda_codec.h; then
 else
   AC_MSG_RESULT(no)
 fi
-if test "$HAVE_COMMON_PREAPRE" = "yes"; then
+if test "$HAVE_COMMON_PREPARE" = "yes"; then
   AC_DEFINE(HAVE_COMMON_PREPARE)
 fi
 
