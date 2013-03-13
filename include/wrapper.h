@@ -197,12 +197,10 @@ static inline size_t strlcat(char *dest, const char *src, size_t count)
 	return res;
 }
 
-#ifdef DEBUG_MALLOC
-void *__hda_malloc(size_t size, const char *file, int line);
+void *__hda_malloc(size_t size, const char *file, int line, int gfp);
 void __hda_free(void *ptr, const char *file, int line);
-void *__hda_realloc(const void *p, size_t new_size, const char *file, int line);
-void *__hda_strdup(const char *str, const char *file, int line);
-#endif
+void *__hda_realloc(const void *p, size_t new_size, const char *file, int line, int gfp);
+void *__hda_strdup(const char *str, const char *file, int line, int gfp);
 
 /*
  * lock debug

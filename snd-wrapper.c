@@ -260,9 +260,9 @@ snd_pci_quirk_lookup(struct pci_dev *pci, const struct snd_pci_quirk *list)
 #endif /* snd_pci_quirk_lookup */
 
 /* malloc debug */
-#ifdef DEBUG_MALLOC
 struct __hda_malloc_elem {
 	void *ptr;
+	size_t size;
 	const char *file;
 	int line;
 	struct list_head list;
@@ -270,17 +270,21 @@ struct __hda_malloc_elem {
 
 static LIST_HEAD(malloc_list);
 
-void *__hda_malloc(size_t size, const char *file, int line)
+void *__hda_malloc(size_t size, const char *file, int line, int gfp)
 {
 	struct __hda_malloc_elem *elem = malloc(sizeof(*elem));
 	if (!elem)
 		return NULL;
-	elem->ptr = calloc(1, size);
+	if (gfp & __GFP_ZERO)
+		elem->ptr = calloc(1, size);
+	else
+		elem->ptr = malloc(size);
 	if (!elem->ptr) {
 		free(elem);
 		return NULL;
 	}
 	elem->file = file;
+	elem->size = size;
 	elem->line = line;
 	list_add_tail(&elem->list, &malloc_list);
 	return elem->ptr;
@@ -306,12 +310,12 @@ void __hda_free(void *ptr, const char *file, int line)
 	assert(0);
 }
 
-void *__hda_realloc(const void *p, size_t new_size, const char *file, int line)
+void *__hda_realloc(const void *p, size_t new_size, const char *file, int line, int gfp)
 {
 	struct __hda_malloc_elem *elem;
 
 	if (!p)
-		return __hda_malloc(new_size, file, line);
+		return __hda_malloc(new_size, file, line, gfp);
 	if (!new_size) {
 		__hda_free((void *)p, file, line);
 		return NULL;
@@ -319,26 +323,33 @@ void *__hda_realloc(const void *p, size_t new_size, const char *file, int line)
 
 	list_for_each_entry(elem, &malloc_list, list) {
 		if (elem->ptr == p) {
-			void *nptr = realloc((void *)p, new_size);
-			if (nptr)
+			void *nptr;
+			if (gfp & __GFP_ZERO)
+				nptr = calloc(1, new_size);
+			else
+				nptr = malloc(new_size);
+			if (nptr) {
+				memcpy(nptr, elem->ptr, elem->size);
+				free(elem->ptr);
 				elem->ptr = nptr;
+				elem->size = new_size;
+			}
 			return nptr;
 		}
 	}
 	hda_log(HDA_LOG_ERR, "Untracked malloc realloced in %s:%d\n",
 		file, line);
-	return __hda_malloc(new_size, file, line);
+	return __hda_malloc(new_size, file, line, gfp);
 }
 
-void *__hda_strdup(const char *str, const char *file, int line)
+void *__hda_strdup(const char *str, const char *file, int line, int gfp)
 {
-	char *dest = __hda_malloc(strlen(str) + 1, file, line);
+	char *dest = __hda_malloc(strlen(str) + 1, file, line, gfp);
 	if (!dest)
 		return NULL;
 	strcpy(dest, str);
 	return dest;
 }
-#endif /* DEBUG_MALLOC */
 
 /* jack API */
 #include <sound/jack.h>

@@ -6,22 +6,14 @@
 typedef unsigned int gfp_t;
 #define GFP_KERNEL	0
 #define GFP_ATOMIC	0
+#define __GFP_ZERO	(1<<8)
 
-#ifdef DEBUG_MALLOC
-#define kmalloc(size,gfp)	__hda_malloc(size, __FILE__, __LINE__)
-#define kzalloc(size,gfp)	kmalloc(size, gfp)
-#define kcalloc(elem,size,gfp)	kmalloc((elem)*(size), gfp)
-#define krealloc(ptr,size,gfp)	__hda_realloc(ptr, size, __FILE__, __LINE__)
+#define kmalloc(size,gfp)	__hda_malloc(size, __FILE__, __LINE__, gfp)
+#define kzalloc(size,gfp)	kmalloc(size, gfp | __GFP_ZERO)
+#define kcalloc(elem,size,gfp)	kmalloc((elem)*(size), gfp | __GFP_ZERO)
+#define krealloc(ptr,size,gfp)	__hda_realloc(ptr, size, __FILE__, __LINE__, gfp)
 #define kfree(ptr)		__hda_free((void*)(ptr), __FILE__, __LINE__)
-#define kstrdup(str,x)		__hda_strdup(str, __FILE__, __LINE__)
-#else
-#define kmalloc(size,gfp)	malloc(size)
-#define kzalloc(size,gfp)	calloc(1,size)
-#define kcalloc(elem,size,gfp)	calloc(elem,size)
-#define krealloc(ptr,size,gfp)	realloc(ptr, size)
-#define kfree(ptr)		free((void*)(ptr))
-#define kstrdup(str,x)		strdup(str)
-#endif
+#define kstrdup(str,gfp)	__hda_strdup(str, __FILE__, __LINE__, gfp)
 
 static inline size_t strlcpy(char *dest, const char *src, size_t size)
 {
