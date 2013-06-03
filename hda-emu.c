@@ -289,11 +289,13 @@ void hda_log_dump_proc(unsigned int nid, const char *file)
 		buf.printing = 0;
 	else
 		buf.printing = 1;
+	snd_hda_power_up(_codec);
 	/* don't show verbs */
 	saved_level = hda_log_level_set(HDA_LOG_KERN);
 	snd_iprintf_dumper = log_dump_proc_file;
 	card.proc->func(card.proc, &buf);
 	hda_log_level_set(saved_level);
+	snd_hda_power_down(_codec);
 	if (file)
 		fclose(buf.fp);
 }
