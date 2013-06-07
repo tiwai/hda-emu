@@ -982,8 +982,7 @@ int cmd_loop(FILE *fp)
 		p = gettoken(&buf);
 		if (!p) {
 			usage(NULL);
-			free(line);
-			continue;
+			goto next;
 		}
 
 		tbl = cmd_match(p);
@@ -994,6 +993,7 @@ int cmd_loop(FILE *fp)
 		else
 			tbl->handler(buf);
 
+	next:
 		flush_scheduled_work();
 		free(line);
 	}

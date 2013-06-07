@@ -34,10 +34,10 @@ static inline bool cancel_work_sync(struct work_struct *x) { return 0; }
 static inline bool cancel_delayed_work_sync(struct delayed_work *x) { return 0; }
 static inline void flush_scheduled_work(void)
 {
-	if (__work_pending) {
-		__work_pending->work.func(&__work_pending->work);
-		__work_pending = NULL;
-	}
+	struct delayed_work *tmp_work = __work_pending;
+	__work_pending = NULL;
+	if (tmp_work)
+		tmp_work->work.func(&tmp_work->work);
 }
 
 #define create_workqueue(x)	(struct workqueue_struct *)1 /* dummy */
