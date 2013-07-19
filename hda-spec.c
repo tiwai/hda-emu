@@ -354,6 +354,16 @@ static struct verb_ext_list extensions[] = {
 	{ }
 };
 
+static int realtek_dsp_cmd(struct xhda_codec *codec, unsigned int cmd)
+{
+	unsigned int nid = (cmd >> 20) & 0x7f;
+	if (nid != 0x51)
+		return -ENXIO;
+	/* There might be a secret DSP connected to node 0x51 */
+	codec->rc = 0;
+	return 0;
+}
+
 /*
  * fixups
  */
@@ -465,5 +475,8 @@ void add_codec_extensions(struct xhda_codec *codec)
 		hda_set_proc_coef(codec, 0x20, 0x00, 0x30);
 	else if (!strcmp(codec->parsed_name, "Realtek ALC661"))
 		hda_set_proc_coef(codec, 0x20, 0x00, 0x8020);
+
+	if (!strncmp(codec->parsed_name, "Realtek", strlen("Realtek")))
+		codec->extended_cmd = realtek_dsp_cmd;
 
 }

@@ -114,6 +114,7 @@ struct xhda_codec {
 	unsigned int rc;
 	struct xhda_verb_table *extended_verbs;
 	struct xhda_verb_table *extended_parameters;
+	int (*extended_cmd) (struct xhda_codec *codec, unsigned int cmd);
 	struct xhda_value_cache *value_cache;
 	unsigned short pci_vendor, pci_device;
 	unsigned short pci_subvendor, pci_subdevice;

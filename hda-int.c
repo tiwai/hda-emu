@@ -1125,6 +1125,12 @@ int hda_cmd(struct xhda_codec *codec, unsigned int cmd)
 	unsigned int nid = (cmd >> 20) & 0x7f;
 	unsigned int verb = (cmd >> 8) & 0xfff;
 
+	if (codec->extended_cmd) {
+		int r = codec->extended_cmd(codec, cmd);
+		if (r != -ENXIO)
+			return r;
+	}
+
 	tbl = find_matching_verb(codec, verb);
 	if (!tbl)
 		return -ENXIO;
