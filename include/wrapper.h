@@ -167,6 +167,15 @@ static inline bool time_before(unsigned long a, unsigned long b)
 
 #define BUILD_BUG_ON(x) do {} while (0)
 
+static inline int _WARN_ON(int cond, const char *func, int line)
+{
+	if (cond)
+		printk(KERN_ERR "WARNING! (%s:%d)\n", func, line);
+	return cond;
+}
+
+#define WARN_ON(cond)	_WARN_ON(cond, __func__, __LINE__)
+
 #define simple_strtoul	strtoul
 #define simple_strtol	strtol
 
