@@ -162,7 +162,7 @@ static inline bool time_before(unsigned long a, unsigned long b)
 { return 0; }
 
 #define BUG_ON(x) do { \
-	if (x) { fprintf(stderr, "ERROR!\n"); } \
+	if (x) { fprintf(stderr, "ERROR! (%s:%d)\n", __func__, __LINE__); } \
 	} while (0)
 
 #define BUILD_BUG_ON(x) do {} while (0)
