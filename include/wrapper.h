@@ -235,4 +235,11 @@ void mylock_write_unlock(int *lock, const char *file, int line);
 #include "linux/module.h"
 #include "linux/log2.h"
 
+/* FIXME */
+#define IS_ENABLED(x)		1
+
+/* FIXME */
+#define symbol_request(x)	NULL
+#define symbol_put(x)
+
 #endif /* __HDA_WRAPPER_H */
