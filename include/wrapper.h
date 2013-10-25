@@ -242,4 +242,16 @@ void mylock_write_unlock(int *lock, const char *file, int line);
 #define symbol_request(x)	NULL
 #define symbol_put(x)
 
+static inline long copy_from_user(void *to, const void __user *from, unsigned long n)
+{
+	memcpy(to, from, n);
+	return 0;
+}
+
+static inline long copy_to_user(void __user *to, const void *from, unsigned long n)
+{
+	memcpy(to, from, n);
+	return 0;
+}
+
 #endif /* __HDA_WRAPPER_H */
