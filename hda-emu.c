@@ -664,12 +664,15 @@ static int rate_consts[] = {
 void hda_test_pcm(int id, int op, int subid,
 		  int dir, int rate, int channels, int format)
 {
+#ifndef HAVE_HDA_ATTACH_PCM
 	static struct snd_pcm_substream dummy_substream;
 	static struct snd_pcm_runtime dummy_runtime;
-	struct snd_pcm_substream *substream = &dummy_substream;
-	struct snd_pcm_runtime *runtime = &dummy_runtime;
+	static struct snd_pcm_str dummy_pstr;
+#endif
+	struct snd_pcm_substream *substream;
+	struct snd_pcm_runtime *runtime;
+	static struct snd_pcm_str *pstr;
 	struct hda_pcm_stream *hinfo;
-	struct snd_pcm_str pstr;
 	unsigned int format_val;
 	unsigned int ctls = 0;
 	int i, err;
@@ -698,14 +701,43 @@ void hda_test_pcm(int id, int op, int subid,
 		return;
 	}
 
+#ifdef HAVE_HDA_ATTACH_PCM
+	pstr = &pcm_streams[id]->pcm->streams[dir];
+	substream = &pstr->substream[subid];
+	runtime = substream->runtime;
+	if (op == PCM_TEST_END) {
+		if (!substream->ref_count) {
+			hda_log(HDA_LOG_ERR, "PCM stream not opened\n");
+			return;
+		}
+	} else {
+		if (substream->ref_count) {
+			hda_log(HDA_LOG_ERR, "PCM stream already opened\n");
+			return;
+		}
+		runtime = calloc(1, sizeof(*runtime));
+		if (!runtime) {
+			hda_log(HDA_LOG_ERR, "cannot malloc\n");
+			exit(1);
+		}
+		substream->runtime = runtime;
+		substream->ref_count = 1;
+		pstr->substream_opened = 1;
+	}
+#else
+	substream = &dummy_substream;
+	runtime = &dummy_runtime;
+	pstr = &dummy_pstr;
 	memset(substream, 0, sizeof(*substream));
 	memset(runtime, 0, sizeof(*runtime));
 	substream->stream = dir;
 	substream->number = subid;
 	substream->runtime = runtime;
 	substream->ref_count = 1;
-	pstr.substream_opened = 1;
-	substream->pstr = &pstr;
+	substream->pstr = pstr;
+	pstr->substream_opened = 1;
+#endif
+
 	runtime->rate = rate;
 	runtime->format = get_alsa_format(format);
 	runtime->channels = channels;
@@ -799,13 +831,22 @@ void hda_test_pcm(int id, int op, int subid,
 		hda_log(HDA_LOG_INFO, "Close PCM\n");
 		hinfo->ops.close(hinfo, _codec, substream);
 		snd_hda_power_down(_codec);
+
+#ifdef HAVE_HDA_ATTACH_PCM
+		substream->runtime = NULL;
+		substream->ref_count = 0;
+		pstr->substream_opened = 0;
+		free(runtime);
 	}
+#endif
 }
 
 /* attach_pcm callback -- register the stream */
 static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		      struct hda_pcm *cpcm)
 {
+	int i, s;
+
 	if (cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams ||
 	    cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams) {
 #ifdef OLD_HDA_PCM
@@ -834,6 +875,24 @@ static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 			exit(1);
 		}
 		cpcm->pcm->device = cpcm->device;
+		for (s = 0; s < 2; s++) {
+			struct snd_pcm_str *str = &cpcm->pcm->streams[s];
+			str->substream_count = cpcm->stream[s].substreams;
+			if (!str->substream_count)
+				continue;
+			str->substream = calloc(str->substream_count,
+						sizeof(*str->substream));
+			if (!str->substream) {
+				hda_log(HDA_LOG_ERR, "cannot malloc\n");
+				exit(1);
+			}
+			for (i = 0; i < str->substream_count; i++) {
+				str->substream[i].pcm = cpcm->pcm;
+				str->substream[i].pstr = str;
+				str->substream[i].stream = s;
+				str->substream[i].number = i;
+			}
+		}
 #endif
 	}
 	num_pcm_streams++;
