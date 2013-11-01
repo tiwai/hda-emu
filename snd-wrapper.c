@@ -720,3 +720,10 @@ int snd_pcm_add_chmap_ctls(struct snd_pcm *pcm, int stream,
 	return 0;
 }
 EXPORT_SYMBOL_GPL(snd_pcm_add_chmap_ctls);
+
+int tpacpi_led_set(int whichled, bool on)
+{
+	hda_log(HDA_LOG_INFO, "Setting thinkpad LED %d to %s\n", whichled, on ? "on" : "off" );
+	return 0;
+}
+
