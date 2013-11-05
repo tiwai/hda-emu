@@ -213,6 +213,49 @@ static struct xhda_verb_table vt2002p_verbs[] = {
 	{ } /* terminator */
 };
 
+static struct xhda_verb_table amdhdmi_verbs[] = {
+	/* Refer to AMD HDA Verbs specification */
+	{ 0x776, set_cached_verb, "amdhdmi_set_descriptor" },
+	{ 0xf76, get_cached_verb, "amdhdmi_get_descriptor" },
+	{ 0x770, set_cached_verb, "amdhdmi_set_ddm_cvt_sync" },
+	{ 0xf70, get_cached_verb, "amdhdmi_get_speaker_alloc/cvt_sync" },
+	{ 0xf93, get_cached_verb, "amdhdmi_get_ddm_audio_assoc" },
+
+	{ 0x777, set_cached_verb, "amdhdmi_set_multich_en_01" },
+	{ 0xf77, get_cached_verb, "amdhdmi_get_multich_en_01" },
+	{ 0x778, set_cached_verb, "amdhdmi_set_multich_en_23" },
+	{ 0xf78, get_cached_verb, "amdhdmi_get_multich_en_23" },
+	{ 0x779, set_cached_verb, "amdhdmi_set_multich_en_45" },
+	{ 0xf79, get_cached_verb, "amdhdmi_get_multich_en_45" },
+	{ 0x77a, set_cached_verb, "amdhdmi_set_multich_en_67" },
+	{ 0xf7a, get_cached_verb, "amdhdmi_get_multich_en_67" },
+
+	{ 0x771, set_cached_verb, "amdhdmi_set_channel_alloc" },
+	{ 0xf71, get_cached_verb, "amdhdmi_get_channel_alloc" },
+	{ 0x772, set_cached_verb, "amdhdmi_set_downmix_info" },
+	{ 0xf72, get_cached_verb, "amdhdmi_get_downmix_info" },
+	{ 0x789, set_cached_verb, "amdhdmi_set_multich_mode" },
+	{ 0xf89, get_cached_verb, "amdhdmi_get_multich_mode" },
+
+	{ 0x785, set_cached_verb, "amdhdmi_set_multich_en_1" },
+	{ 0xf85, get_cached_verb, "amdhdmi_get_multich_en_1" },
+	{ 0x786, set_cached_verb, "amdhdmi_set_multich_en_3" },
+	{ 0xf86, get_cached_verb, "amdhdmi_get_multich_en_3" },
+	{ 0x787, set_cached_verb, "amdhdmi_set_multich_en_5" },
+	{ 0xf87, get_cached_verb, "amdhdmi_get_multich_en_5" },
+	{ 0x788, set_cached_verb, "amdhdmi_set_multich_en_7" },
+	{ 0xf88, get_cached_verb, "amdhdmi_get_multich_en_7" },
+
+	{ 0x77c, set_cached_verb, "amdhdmi_set_hbr_control" },
+	{ 0xf7c, get_cached_verb, "amdhdmi_get_hbr_control" },
+	{ 0xf7b, get_cached_verb, "amdhdmi_get_lipsync" },
+	{ 0x780, set_cached_verb, "amdhdmi_set_sinkinfo_index" },
+	{ 0xf80, get_cached_verb, "amdhdmi_get_sinkinfo_index" },
+	{ 0xf81, get_cached_verb, "amdhdmi_get_sinkinfo_data" },
+
+	{ } /* terminator */
+};
+
 /*
  */
 
@@ -350,6 +393,8 @@ static struct verb_ext_list extensions[] = {
 	{ .id = 0x11060440, .verbs = vt1708s_verbs },
 	{ .id = 0x11060446, .verbs = vt2002p_verbs },
 	{ .id = 0x11068446, .verbs = vt2002p_verbs },
+
+	{ .id = 0x1002aa01, .verbs = amdhdmi_verbs },
 
 	{ }
 };
