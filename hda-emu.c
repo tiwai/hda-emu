@@ -1090,6 +1090,7 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 	FILE *fp;
 	char buf[256];
 	struct xhda_sysfs_list *sys;
+	int is_fw_file, is_in_pincfg;
 
 	for (sys = codec->sysfs_list; sys; sys = sys->next) {
 		if (sys->type == XHDA_SYS_PINCFG &&
@@ -1108,9 +1109,28 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 		hda_log(HDA_LOG_ERR, "Cannot find init pincfg %s\n", pincfg);
 		return -EINVAL;
 	}
+
 	hda_log(HDA_LOG_INFO, "Overriding pin-configs from file %s\n", pincfg);
+	is_fw_file = 0;
+	is_in_pincfg = 0;
 	while (fgets(buf, sizeof(buf), fp)) {
 		int reg, val;
+		if (*buf == '#' || *buf == '\n')
+			continue;
+		if (is_fw_file) {
+			if (*buf == '[') {
+				if (is_in_pincfg)
+					break;
+				is_in_pincfg = !strncmp(buf, "[pincfg]", 8);
+				continue;
+			} else if (!is_in_pincfg)
+				continue;
+		} else {
+			if (!strncmp(buf, "[codec]", 7)) {
+				is_fw_file = 1;
+				continue;
+			}
+		}
 		if (sscanf(buf, "%i %i", &reg, &val) != 2)
 			break;
 		set_pincfg(codec, reg, val);
