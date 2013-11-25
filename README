@@ -420,7 +420,8 @@ the pin-default contents found in hwC0D0/init_pin_configs sysfs file.
 You can also pass an external file name to -P option instead of the
 sysfs files in the input file.  The file must contain a pair of
 register and pin-config value in each line just like in *_pin_configs
-sysfs files.
+sysfs files.  Also, you can pass a pin config directly via -P optoin,
+e.g. -P 0x0a=0x12345678.
 
 Similarly, you can give the initial hints strings either from sysfs
 file in alsa-info.sh output or an external file via -H option.  Also,

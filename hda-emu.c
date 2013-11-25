@@ -1092,6 +1092,17 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 	struct xhda_sysfs_list *sys;
 	int is_fw_file, is_in_pincfg;
 
+	if (strchr(pincfg, '=')) {
+		/* direct pincfg string */
+		int reg, val;
+		if (sscanf(pincfg, "%i %i", &reg, &val) != 2) {
+			hda_log(HDA_LOG_ERR, "Invalid pincfg %s\n", pincfg);
+			return -EINVAL;
+		}
+		set_pincfg(codec, reg, val);
+		return 0;
+	}
+
 	for (sys = codec->sysfs_list; sys; sys = sys->next) {
 		if (sys->type == XHDA_SYS_PINCFG &&
 		    !strcmp(sys->id, pincfg)) {
