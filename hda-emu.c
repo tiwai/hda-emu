@@ -1156,6 +1156,7 @@ static int load_init_hints(struct xhda_codec *codec, char *hints)
 	FILE *fp;
 	char buf[256];
 	struct xhda_sysfs_list *sys;
+	int is_fw_file, is_in_hint;
 
 	if (strchr(hints, '=')) {
 		/* direct hint string */
@@ -1184,8 +1185,27 @@ static int load_init_hints(struct xhda_codec *codec, char *hints)
 		return -EINVAL;
 	}
 	hda_log(HDA_LOG_INFO, "Add hints from file %s\n", hints);
-	while (fgets(buf, sizeof(buf), fp))
+	is_fw_file = 0;
+	is_in_hint = 0;
+	while (fgets(buf, sizeof(buf), fp)) {
+		if (*buf == '#' || *buf == '\n')
+			continue;
+		if (is_fw_file) {
+			if (*buf == '[') {
+				if (is_in_hint)
+					break;
+				is_in_hint = !strncmp(buf, "[hint]", 8);
+				continue;
+			} else if (!is_in_hint)
+				continue;
+		} else {
+			if (!strncmp(buf, "[codec]", 7)) {
+				is_fw_file = 1;
+				continue;
+			}
+		}
 		_parse_hints(_codec, buf);
+	}
 	fclose(fp);
 	return 0;
 #else
