@@ -1146,6 +1146,15 @@ static int load_init_hints(struct xhda_codec *codec, char *hints)
 	char buf[256];
 	struct xhda_sysfs_list *sys;
 
+	if (strchr(hints, '=')) {
+		/* direct hint string */
+		if (_parse_hints(_codec, hints)) {
+			hda_log(HDA_LOG_ERR, "Invalid hints %s\n", hints);
+			return -EINVAL;
+		}
+		return 0;
+	}
+
 	for (sys = codec->sysfs_list; sys; sys = sys->next) {
 		if (sys->type == XHDA_SYS_HINTS &&
 		    !strcmp(sys->id, hints)) {

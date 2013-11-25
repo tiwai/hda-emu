@@ -423,7 +423,8 @@ register and pin-config value in each line just like in *_pin_configs
 sysfs files.
 
 Similarly, you can give the initial hints strings either from sysfs
-file in alsa-info.sh output or an external file via -H option.
+file in alsa-info.sh output or an external file via -H option.  Also,
+you can pass a hint directrly via -H option, e.g. -H "jack_detect=0".
 
 If you want to debug a certain jack-plug state at the initial time,
 pass the pin NID to turn on via -j option.  When nothing is set, all
