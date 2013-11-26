@@ -842,8 +842,8 @@ void hda_test_pcm(int id, int op, int subid,
 		substream->ref_count = 0;
 		pstr->substream_opened = 0;
 		free(runtime);
-	}
 #endif
+	}
 }
 
 /* attach_pcm callback -- register the stream */
