@@ -767,8 +767,7 @@ void hda_test_pcm(int id, int op, int subid,
 		err = hinfo->ops.open(hinfo, _codec, substream);
 		if (err < 0) {
 			hda_log(HDA_LOG_INFO, "Open error = %d\n", err);
-			snd_hda_power_down(_codec);
-			return;
+			goto powerdown;
 		}
 	
 		hda_log(HDA_LOG_INFO, "Available PCM parameters:\n");
@@ -794,8 +793,7 @@ void hda_test_pcm(int id, int op, int subid,
 		    channels > runtime->hw.channels_max) {
 			hda_log(HDA_LOG_ERR, "Channels count (%d) not available for %s\n", 
 				channels, (dir ? "capture" : "playback"));
-			snd_hda_power_down(_codec);
-			return;
+			goto closing;
 		}
 		hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
 			"format=%d bits\n",
@@ -807,10 +805,9 @@ void hda_test_pcm(int id, int op, int subid,
 							, ctls
 #endif
 							);
-		if (!format_val) {
-			snd_hda_power_down(_codec);
-			return;
-		}
+		if (!format_val)
+			goto closing;
+
 		hda_log(HDA_LOG_INFO, "PCM format_val = 0x%x\n", format_val);
 #ifdef HAVE_COMMON_PREPARE
 		err = snd_hda_codec_prepare(_codec, hinfo, subid + 1,
@@ -827,9 +824,17 @@ void hda_test_pcm(int id, int op, int subid,
 #else
 		hinfo->ops.cleanup(hinfo, _codec, substream);
 #endif
+	}
+
+ closing:
+	if (op != PCM_TEST_START) {
 		substream->ref_count = 0;
 		hda_log(HDA_LOG_INFO, "Close PCM\n");
 		hinfo->ops.close(hinfo, _codec, substream);
+	}
+
+ powerdown:
+	if (op != PCM_TEST_START) {
 		snd_hda_power_down(_codec);
 
 #ifdef HAVE_HDA_ATTACH_PCM
