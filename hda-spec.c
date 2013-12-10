@@ -399,9 +399,16 @@ static struct verb_ext_list extensions[] = {
 	{ }
 };
 
-static int realtek_dsp_cmd(struct xhda_codec *codec, unsigned int cmd)
+static int realtek_ext_cmd(struct xhda_codec *codec, unsigned int cmd)
 {
 	unsigned int nid = (cmd >> 20) & 0x7f;
+
+	/* just ignore COEFs on ALC260 for non-existing NID 0x20 */
+	if (codec->vendor_id == 0x10ec0260 && nid == 0x20) {
+		codec->rc = 0;
+		return 0;
+	}
+
 	if (nid != 0x51)
 		return -ENXIO;
 	/* There might be a secret DSP connected to node 0x51 */
@@ -605,6 +612,6 @@ void add_codec_extensions(struct xhda_codec *codec)
 		hda_set_proc_coef(codec, 0x20, 0x00, 0x8020);
 
 	if (!strncmp(codec->parsed_name, "Realtek", strlen("Realtek")))
-		codec->extended_cmd = realtek_dsp_cmd;
+		codec->extended_cmd = realtek_ext_cmd;
 
 }
