@@ -423,18 +423,76 @@ static struct xhda_node *find_node(struct xhda_codec *codec, unsigned int nid)
 	return NULL;
 }
 
-static void fixup_via_mixer(struct xhda_codec *codec)
+static void fixup_via_mixer(struct xhda_codec *codec, unsigned int mixer,
+			    unsigned int dac)
 {
 	int i;
-	struct xhda_node *node = find_node(codec, 0x21);
+	struct xhda_node *node = find_node(codec, mixer);
 
 	if (!node)
 		return;
 	for (i = 0; i < node->num_nodes; i++) {
-		if (node->node[i] == 0x08)
+		if (node->node[i] == dac)
 			return;
 	}
-	node->node[node->num_nodes++] = 0x08;
+	node->node[node->num_nodes++] = dac;
+}
+
+static void fixup_via_mic_boost(struct xhda_codec *codec, unsigned int pin,
+				int offset, int num_steps, int step_size)
+{
+	struct xhda_node *node = find_node(codec, pin);
+	if (!node)
+		return;
+	node->wcaps |= (1 << 1);	/* AMP-in present */
+	node->amp_in_caps.ofs = offset;
+	node->amp_in_caps.nsteps = num_steps;
+	node->amp_in_caps.stepsize = step_size;
+	node->amp_in_caps.mute = 0;
+	node->amp_in_caps.override = 1;
+}
+
+static void fixup_vt1708S(struct xhda_codec *codec)
+{
+	fixup_via_mic_boost(codec, 0x1a, 0, 3, 40);
+	fixup_via_mic_boost(codec, 0x1e, 0, 3, 40);
+}
+
+static void fixup_vt1718S(struct xhda_codec *codec)
+{
+	fixup_via_mic_boost(codec, 0x2b, 0, 3, 40);
+	fixup_via_mic_boost(codec, 0x29, 0, 3, 40);
+	fixup_via_mixer(codec, 0x21, 0x08);
+}
+
+#define fixup_vt1716S	fixup_vt1708S
+
+#define fixup_vt2002P	fixup_vt1718S
+#define fixup_vt1812	fixup_vt1718S
+
+static void fixup_vt1802(struct xhda_codec *codec)
+{
+	struct xhda_node *node;
+
+	fixup_vt2002P(codec);
+
+	node = find_node(codec, 0x24);
+	if (node) {
+		node->num_nodes = 2;
+		node->node[0] = 0x14;
+		node->node[1] = 0x1c;
+	}
+
+	node = find_node(codec, 0x33);
+	if (node) {
+		node->num_nodes = 1;
+		node->node[0] = 0x1c;
+	}
+}
+
+static void fixup_vt3476(struct xhda_codec *codec)
+{
+	fixup_via_mixer(codec, 0x3f, 0x10);
 }
 
 static void fixup_alc268_beep(struct xhda_codec *codec)
@@ -458,11 +516,36 @@ struct fixup_list {
 
 static struct fixup_list fixups[] = {
 	{ 0x10ec0268, fixup_alc268_beep },
-	{ 0x11060428, fixup_via_mixer },
-	{ 0x11064428, fixup_via_mixer },
-	{ 0x11060438, fixup_via_mixer },
-	{ 0x11064438, fixup_via_mixer },
-	{ 0x11060448, fixup_via_mixer },
+
+	{ 0x11060397, fixup_vt1708S },
+	{ 0x11061397, fixup_vt1708S },
+	{ 0x11062397, fixup_vt1708S },
+	{ 0x11063397, fixup_vt1708S },
+	{ 0x11064397, fixup_vt1708S },
+	{ 0x11065397, fixup_vt1708S },
+	{ 0x11066397, fixup_vt1708S },
+	{ 0x11067397, fixup_vt1708S },
+	{ 0x11060440, fixup_vt1708S },
+
+	{ 0x11060428, fixup_vt1718S },
+	{ 0x11064428, fixup_vt1718S },
+	{ 0x11060441, fixup_vt1718S },
+	{ 0x11064441, fixup_vt1718S },
+
+	{ 0x11060433, fixup_vt1716S },
+	{ 0x1106a721, fixup_vt1716S },
+
+	{ 0x11060438, fixup_vt2002P },
+	{ 0x11064438, fixup_vt2002P },
+	{ 0x11060446, fixup_vt1802 },
+	{ 0x11068446, fixup_vt1802 },
+
+	{ 0x11060448, fixup_vt1812 },
+
+	{ 0x11064760, fixup_vt3476 },
+	{ 0x11064761, fixup_vt3476 },
+	{ 0x11064762, fixup_vt3476 },
+
 	{ }
 };
 
