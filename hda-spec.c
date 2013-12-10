@@ -522,6 +522,7 @@ struct fixup_list {
 };
 
 static struct fixup_list fixups[] = {
+	{ 0x10ec0267, fixup_alc268_beep },
 	{ 0x10ec0268, fixup_alc268_beep },
 
 	{ 0x11060397, fixup_vt1708S },
