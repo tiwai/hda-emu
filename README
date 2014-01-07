@@ -423,6 +423,12 @@ register and pin-config value in each line just like in *_pin_configs
 sysfs files.  Also, you can pass a pin config directly via -P optoin,
 e.g. -P 0x0a=0x12345678.
 
+For providing the user-defined pin configurations, use -U instead of
+-P option.  The difference between these two options is that the pin
+configuration set via -P option may be overridden by the driver's own
+setup while the pin configuration set via -U remains over the driver's
+setup.
+
 Similarly, you can give the initial hints strings either from sysfs
 file in alsa-info.sh output or an external file via -H option.  Also,
 you can pass a hint directrly via -H option, e.g. -H "jack_detect=0".

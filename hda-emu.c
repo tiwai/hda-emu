@@ -1080,9 +1080,17 @@ static struct xhda_node *find_node(struct xhda_codec *codec, int nid)
 	return NULL;
 }
 
-static void set_pincfg(struct xhda_codec *codec, int nid, int val)
+static void set_pincfg(struct xhda_codec *codec, int nid, int val, int user)
 {
-	struct xhda_node *node = find_node(codec, nid);
+	struct xhda_node *node;
+
+	if (user) {
+		hda_log_set_user_pin_configs(nid, val);
+		hda_log(HDA_LOG_INFO, "  User Pin 0x%02x to 0x%08x\n", nid, val);
+		return;
+	}
+
+	node = find_node(codec, nid);
 	if (node) {
 		node->pin_default = val;
 		hda_log(HDA_LOG_INFO, "  Pin 0x%02x to 0x%08x\n", nid, val);
@@ -1090,7 +1098,7 @@ static void set_pincfg(struct xhda_codec *codec, int nid, int val)
 	}
 }
 
-static int override_pincfg(struct xhda_codec *codec, char *pincfg)
+static int override_pincfg(struct xhda_codec *codec, char *pincfg, int user)
 {
 	FILE *fp;
 	char buf[256];
@@ -1104,7 +1112,7 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 			hda_log(HDA_LOG_ERR, "Invalid pincfg %s\n", pincfg);
 			return -EINVAL;
 		}
-		set_pincfg(codec, reg, val);
+		set_pincfg(codec, reg, val, user);
 		return 0;
 	}
 
@@ -1114,7 +1122,7 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 			struct xhda_sysfs_value *val;
 			hda_log(HDA_LOG_INFO, "Overriding pin-configs via %s\n", pincfg);
 			for (val = sys->entry.vals; val; val = val->next)
-				set_pincfg(codec, val->val[0], val->val[1]);
+				set_pincfg(codec, val->val[0], val->val[1], user);
 			return 0;
 		}
 	}
@@ -1149,7 +1157,7 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg)
 		}
 		if (sscanf(buf, "%i %i", &reg, &val) != 2)
 			break;
-		set_pincfg(codec, reg, val);
+		set_pincfg(codec, reg, val, user);
 	}
 	fclose (fp);
 	return 0;
@@ -1238,6 +1246,7 @@ static void usage(void)
 	fprintf(stderr, "  -a             issues SIGTRAP at codec errors\n");
 	fprintf(stderr, "  -n             don't configure codec at start\n");
 	fprintf(stderr, "  -P pincfg      initialize pin-configuration from sysfs entry\n");
+	fprintf(stderr, "  -U pincfg      initialize user pincfg overrides\n");
 	fprintf(stderr, "  -H hints       add initial hints from sysfs entry or file\n");
 	fprintf(stderr, "  -j NID         turn on the initial jack-state of the given pin\n");
 }
@@ -1282,12 +1291,13 @@ int main(int argc, char **argv)
 	struct hda_bus_template temp;
 	struct hda_codec *codec;
 	char *init_pincfg = NULL;
+	char *user_pincfg = NULL;
 	char *init_hints = NULL;
 	int num_active_jacks = 0;
 	int no_configure = 0;
 	unsigned int active_jacks[16];
 
-	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMFP:H:j:n")) != -1) {
+	while ((c = getopt(argc, argv, "al:i:p:m:do:qCMFP:U:H:j:n")) != -1) {
 		switch (c) {
 		case 'a':
 			hda_log_trap_on_error = 1;
@@ -1325,6 +1335,9 @@ int main(int argc, char **argv)
 			break;
 		case 'P':
 			init_pincfg = optarg;
+			break;
+		case 'U':
+			user_pincfg = optarg;
 			break;
 		case 'H':
 			init_hints = optarg;
@@ -1371,7 +1384,7 @@ int main(int argc, char **argv)
 	}
 
 	if (init_pincfg) {
-		if (override_pincfg(&proc, init_pincfg) < 0)
+		if (override_pincfg(&proc, init_pincfg, 0) < 0)
 			return 1;
 	}
 	if (num_active_jacks) {
@@ -1459,6 +1472,10 @@ int main(int argc, char **argv)
 
 	if (init_hints) {
 		if (load_init_hints(&proc, init_hints) < 0)
+			return 1;
+	}
+	if (user_pincfg) {
+		if (override_pincfg(&proc, user_pincfg, 1) < 0)
 			return 1;
 	}
 
