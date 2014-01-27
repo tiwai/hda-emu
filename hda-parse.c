@@ -408,6 +408,7 @@ static int in_modem_whitelist(struct xhda_codec *codec)
 	case 0x14f15045:
 	case 0x14f15047:
 	case 0x14f15051:
+	case 0x14f15067:
 	case 0x14f15069:
 		return 1;
 	}
