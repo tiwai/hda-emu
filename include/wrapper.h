@@ -241,9 +241,12 @@ void mylock_write_unlock(int *lock, const char *file, int line);
 
 /* FIXME */
 #define IS_ENABLED(x)		1
+#define IS_BUILTIN(x)		1
+#define IS_MODULE(x)		0
 
 #define symbol_request(x)	x
 #define symbol_put(x)
+#define symbol_put_addr(x)
 
 static inline long copy_from_user(void *to, const void __user *from, unsigned long n)
 {
