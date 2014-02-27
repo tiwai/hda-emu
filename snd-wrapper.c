@@ -727,3 +727,12 @@ int tpacpi_led_set(int whichled, bool on)
 	return 0;
 }
 
+
+/*
+ * dummy entries just for builds
+ */
+void snd_hda_sysfs_init(struct hda_codec *codec) {}
+void snd_hda_sysfs_clear(struct hda_codec *codec) {}
+struct class *sound_class;
+const struct attribute_group *snd_hda_dev_attr_groups[1];
+

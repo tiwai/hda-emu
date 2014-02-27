@@ -32,6 +32,8 @@ static inline int _snd_BUG_ON(int cond, const char *func, int line)
 
 struct snd_info_entry;
 
+extern struct class *sound_class;
+
 struct snd_card {
 	int number;			/* number of soundcard (index to
 								snd_cards) */
@@ -50,6 +52,7 @@ struct snd_card {
 	spinlock_t files_lock;
 
 	struct device *dev;
+	struct device card_dev;
 };
 
 struct snd_device {
