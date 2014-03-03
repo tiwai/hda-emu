@@ -63,6 +63,10 @@ if HAVE_HDA_ELD
 HELPERS += hda_eld.c
 endif
 
+if HAVE_HDA_BEEP
+HELPERS += hda_beep.c
+endif
+
 noinst_LIBRARIES = libhda.a
 libhda_a_SOURCES = hda_codec.c hda_generic.c misc_wrapper.c \
 	 $(PATCHES) $(HELPERS)
