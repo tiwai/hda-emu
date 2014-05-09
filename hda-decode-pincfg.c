@@ -316,12 +316,18 @@ static unsigned int encode(const char *jack,
 		caps &= ~AC_DEFCFG_COLOR;
 		caps |= parse_jack_color(color) << AC_DEFCFG_COLOR_SHIFT;
 	}
-	caps &= ~AC_DEFCFG_MISC;
-	caps |= (misc << AC_DEFCFG_MISC_SHIFT) & AC_DEFCFG_MISC;
-	caps &= ~AC_DEFCFG_DEF_ASSOC;
-	caps |= (assoc << AC_DEFCFG_ASSOC_SHIFT) & AC_DEFCFG_DEF_ASSOC;
-	caps &= ~AC_DEFCFG_SEQUENCE;
-	caps |= seq & AC_DEFCFG_SEQUENCE;
+	if (misc >= 0) {
+		caps &= ~AC_DEFCFG_MISC;
+		caps |= (misc << AC_DEFCFG_MISC_SHIFT) & AC_DEFCFG_MISC;
+	}
+	if (assoc >= 0) {
+		caps &= ~AC_DEFCFG_DEF_ASSOC;
+		caps |= (assoc << AC_DEFCFG_ASSOC_SHIFT) & AC_DEFCFG_DEF_ASSOC;
+	}
+	if (seq >= 0) {
+		caps &= ~AC_DEFCFG_SEQUENCE;
+		caps |= seq & AC_DEFCFG_SEQUENCE;
+	}
 	return caps;
 }	
 
@@ -334,7 +340,7 @@ int main(int argc, char **argv)
 	const char *location = NULL;
 	const char *connection = NULL;
 	const char *color = NULL;
-	int assoc = 0, seq = 0, misc = 0, base = 0;
+	int assoc = -1, seq = -1, misc = -1, base = 0;
 	unsigned int val;
 
 	hda_log_init(NULL, 0);
