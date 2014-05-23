@@ -58,6 +58,8 @@ struct xhda_node {
 	unsigned char gpio_wake, gpio_unsol, gpio_sticky;
 	unsigned int coef_idx;
 	unsigned char cvt_channel_count;
+	unsigned char asp_channel_slot[16];
+	unsigned char dip_xmitctrl;
 	struct xhda_coef_table *coef_tbl;
 	struct xhda_node *next;
 };

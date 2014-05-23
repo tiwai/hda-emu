@@ -823,6 +823,52 @@ static int get_cvt_channel_count(struct xhda_codec *codec,
 	return node->cvt_channel_count;
 }
 
+static int get_asp_channel_slot(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	return (node->asp_channel_slot[cmd & 0xf] << 4) + (cmd & 0xf);
+}
+
+static int set_asp_channel_slot(struct xhda_codec *codec,
+				struct xhda_node *node, unsigned int cmd)
+{
+	node->asp_channel_slot[cmd & 0xf] = (cmd & 0xf0) >> 4;
+	return 0;
+}
+
+static int set_dip_index(struct xhda_codec *codec,
+			 struct xhda_node *node, unsigned int cmd)
+{
+	return 0; /* FIXME */
+}
+
+static int set_dip_data(struct xhda_codec *codec,
+			struct xhda_node *node, unsigned int cmd)
+{
+	return 0; /* FIXME */
+}
+
+static int get_dip_size(struct xhda_codec *codec,
+			struct xhda_node *node, unsigned int cmd)
+{
+	if (cmd & 0x8)
+		return 128; /* ELD buffer size */
+	return 32; /* DIP buffer size */
+}
+
+static int set_dip_xmitctrl(struct xhda_codec *codec,
+			    struct xhda_node *node, unsigned int cmd)
+{
+	node->dip_xmitctrl = cmd & 0xc0;
+	return 0;
+}
+
+static int get_dip_xmitctrl(struct xhda_codec *codec,
+			    struct xhda_node *node, unsigned int cmd)
+{
+	return node->dip_xmitctrl;
+}
+
 
 /*
  * parameters
@@ -1063,6 +1109,10 @@ static struct xhda_verb_table verb_tbl[] = {
 	{ 0x71e, set_config_def_2, "set_config_def_2" },
 	{ 0x71f, set_config_def_3, "set_config_def_3" },
 	{ 0x72d, set_cvt_channel_count, "set_cvt_channel_count" },
+	{ 0x730, set_dip_index, "set_dip_index" },
+	{ 0x731, set_dip_data, "set_dip_data" },
+	{ 0x732, set_dip_xmitctrl, "set_dip_xmitctrl" },
+	{ 0x734, set_asp_channel_slot, "set_asp_channel_slot" },
 	{ 0x7ff, set_codec_reset, "set_codec_reset" },
 	{ 0xf00, get_parameters, "get_parameters" },
 	{ 0xf01, get_connect_sel, "get_connect_sel" },
@@ -1087,6 +1137,9 @@ static struct xhda_verb_table verb_tbl[] = {
 	{ 0xf1c, get_config_default, "get_config_default" },
 	{ 0xf20, get_ssid, "get_ssid" },
 	{ 0xf2d, get_cvt_channel_count, "get_cvt_channel_count" },
+	{ 0xf2e, get_dip_size, "get_dip_size" },
+	{ 0xf32, get_dip_xmitctrl, "get_dip_xmitctrl" },
+	{ 0xf34, get_asp_channel_slot, "get_asp_channel_slot" },
 	{}
 };
 
