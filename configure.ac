@@ -488,6 +488,29 @@ if test "$STREAM_FORMAT_WITH_SPDIF" = "1"; then
 fi
 fi
 
+AC_MSG_CHECKING(for snd_hda_calc_stream_format with codec)
+ac_save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Iinclude"
+STREAM_FORMAT_WITH_CODEC=
+AC_TRY_COMPILE([
+#include "hda-types.h"
+#include "hda-log.h"
+#include <sound/driver.h>
+#include <sound/core.h>
+#include <sound/pcm.h>
+#include "hda/hda_codec.h"
+],[
+  snd_hda_calc_stream_format(0, 0, 0, 0, 0, 0);
+],
+  [AC_MSG_RESULT(yes); STREAM_FORMAT_WITH_CODEC="1"],
+  [AC_MSG_RESULT(no)],
+  [AC_MSG_RESULT(unknown)]
+)
+CFLAGS=$ac_save_CFLAGS
+if test "$STREAM_FORMAT_WITH_CODEC" = "1"; then
+  AC_DEFINE(STREAM_FORMAT_WITH_CODEC)
+fi
+
 HAVE_COMMON_PREPARE=
 AC_MSG_CHECKING(for common snd_hda_codec_prepare/cleanup)
 if grep -q snd_hda_codec_prepare hda/hda_codec.h; then

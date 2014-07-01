@@ -798,7 +798,11 @@ void hda_test_pcm(int id, int op, int subid,
 		hda_log(HDA_LOG_INFO, "Prepare PCM, rate=%d, channels=%d, "
 			"format=%d bits\n",
 			rate, channels, format);
-		format_val = snd_hda_calc_stream_format(rate, channels,
+		format_val = snd_hda_calc_stream_format(
+#if defined(STREAM_FORMAT_WITH_CODEC)
+							_codec,
+#endif
+							rate, channels,
 							get_alsa_format(format),
 							format
 #if defined(INDIVIDUAL_SPDIF_CTLS) || defined(STREAM_FORMAT_WITH_SPDIF)
