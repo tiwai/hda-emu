@@ -93,6 +93,9 @@
 #define pr_debug(fmt, ...) \
 	printk(KERN_DEBUG fmt, ##__VA_ARGS__)
 
+/* FIXME */
+#define scnprintf	snprintf
+
 typedef uint64_t u64;
 typedef uint64_t __u64;
 typedef int64_t s64;
