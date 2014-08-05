@@ -727,6 +727,11 @@ int tpacpi_led_set(int whichled, bool on)
 	return 0;
 }
 
+int dell_app_wmi_led_set(int whichled, int on)
+{
+	hda_log(HDA_LOG_INFO, "Setting Dell LED %d to %s\n", whichled, on ? "on" : "off" );
+	return 0;
+}
 
 /*
  * dummy entries just for builds
