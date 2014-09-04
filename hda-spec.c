@@ -434,6 +434,9 @@ static struct verb_ext_list extensions[] = {
 	{ .id = 0x11060446, .verbs = vt2002p_verbs },
 	{ .id = 0x11068446, .verbs = vt2002p_verbs },
 
+	{ .id = 0x1002793c, .verbs = amdhdmi_verbs },
+	{ .id = 0x10027919, .verbs = amdhdmi_verbs },
+	{ .id = 0x1002791a, .verbs = amdhdmi_verbs },
 	{ .id = 0x1002aa01, .verbs = amdhdmi_verbs },
 
 	{ .id = 0x10de0002, .verbs = nvhdmi_8ch_7x_verbs },
