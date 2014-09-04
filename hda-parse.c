@@ -687,6 +687,11 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 		}
 	}
 
+	if (curidx < codec_index) {
+		hda_log(HDA_LOG_ERR, "Codec index %d requested, but found only %d codecs\n", codec_index, curidx+1);
+		return -ENODEV;
+	}
+
 	add_codec_extensions(codec);
 
 	return 0;
