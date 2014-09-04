@@ -18,15 +18,33 @@
 #    You should have received a copy of the GNU General Public License along 
 #    with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import runner
+
+
 def defaultpath(s):
     import os.path
     q = os.path.dirname(os.path.realpath(__file__))
     return os.path.join(q, s)
 
+def count_codecs(filename):
+    r = runner.HdaEmuRunner()
+    r.set_alsa_info_file(filename)
+    r.set_codec_index(99999)
+    r.start_process()
+    try:
+        r.run_command()
+    except runner.HdaEmuFatalError:
+        import re
+        m = re.compile("Codec index (\d+) requested, but found only (\d+) codecs")
+        for line in r.error_list:
+            match = m.search(line)
+            if match:
+                return int(match.group(2))
+    return -1
+
 def main():
     import os
     import os.path
-    import runner
 
     import argparse
     parser = argparse.ArgumentParser(description='Hda-emu automated test wrapper.')
@@ -53,19 +71,37 @@ def main():
         index += 1
         if verbose > 2:
             print '[{0}/{1}]: Testing {2}'.format(index, len(files), f)
+
         try:
-            r = runner.HdaEmuRunner()
-            r.set_alsa_info_file(os.path.join(directory, f))
-            r.set_print_errors(verbose > 1)
-            r.run_standard()
-            if r.errors > 0 or r.warnings > 0:
-                fails += 1
-                errors += r.errors
-                warnings += r.warnings
-                if verbose > 0:
-                    print '{0} errors, {1} warnings. ({2})'.format(r.errors, r.warnings, f)
-            else:
-                successes += 1
+            codecs = count_codecs(os.path.join(directory, f))
+
+            fail_this = False
+            skip_this = codecs < 0
+            for codec_index in range(codecs):
+                r = runner.HdaEmuRunner()
+                r.set_alsa_info_file(os.path.join(directory, f))
+                r.set_codec_index(codec_index)
+                r.set_print_errors(verbose > 1)
+
+                try:
+                    r.run_standard()
+                except runner.HdaEmuFatalError:
+                    for line in r.error_list:
+                        if line.find("is a modem codec, aborting"):
+                            skip_this = True
+
+                if (not skip_this) and (r.errors > 0 or r.warnings > 0):
+                    fail_this = True
+                    errors += r.errors
+                    warnings += r.warnings
+                    if verbose > 0:
+                        print '{0} errors, {1} warnings for {2}, codec {3}/{4}.'.format(r.errors, r.warnings, f, codec_index+1, codecs)
+
+            if not skip_this:
+                if fail_this:
+                    fails += 1
+                else:
+                    successes += 1
         except KeyboardInterrupt:
             import sys
             sys.exit(1)
