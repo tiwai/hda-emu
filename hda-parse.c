@@ -481,21 +481,21 @@ static int parse_codec_recursive(const char *buffer)
 }
 	
 /* check the extra information from alsa-info output */
-static void check_alsa_info(char *line)
+static int check_alsa_info(char *line, int override)
 {
 	int dummy, classid, vendor, id, rev;
 
 	if (sscanf(line, "%02x:%02x.%1d %04x: %04x:%04x (rev %02x)",
 		   &dummy, &dummy, &dummy, &classid, &vendor, &id, &rev) == 7) {
-		if (classid == 0x0403 && !codec->pci_vendor) {
+		if (classid == 0x0403 && (override || !codec->pci_vendor)) {
 			codec->pci_vendor = vendor;
 			codec->pci_device = id;
 			codec->pci_revision = rev;
 		}
-		return;
+		return 0;
 	}
 	if (sscanf(line, "        Subsystem: %04x:%04x", &vendor, &id) == 2) {
-		if (!codec->pci_subvendor) {
+		if (override || !codec->pci_subvendor) {
 			codec->pci_subvendor = vendor;
 			codec->pci_subdevice = id;
 			hda_log(HDA_LOG_INFO, "Getting PCI ID %04x:%04x (%04x:%04x) rev %02x\n",
@@ -503,8 +503,9 @@ static void check_alsa_info(char *line)
 				codec->pci_subvendor, codec->pci_subdevice,
 				codec->pci_revision);
 		}
-		return;
+		return 1;
 	}
+	return 0;
 }
 
 static int add_sysfs_list(struct xhda_codec *codec, int *vals)
@@ -612,7 +613,7 @@ static void clear_codec(struct xhda_codec *codec)
 int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 {
 	char buffer[256], *p;
-	int curidx = -1;
+	int curidx = -1, pciidx = 0;
 	int err = 0;
 
 	codec = codecp;
@@ -625,7 +626,8 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 	again:
 		if (parse_mode == PARSE_START) {
 			if (!strmatch(buffer, "Codec: ")) {
-				check_alsa_info(buffer);
+				if (check_alsa_info(buffer, pciidx == codec_index))
+					pciidx++;
 				continue;
 			}
 			curidx++;
