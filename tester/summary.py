@@ -90,7 +90,9 @@ def main():
                         if line.find("is a modem codec, aborting"):
                             skip_this = True
 
-                if (not skip_this) and (r.errors > 0 or r.warnings > 0):
+                if skip_this:
+                    skip_this = False
+                elif (r.errors > 0 or r.warnings > 0):
                     fail_this = True
                     errors += r.errors
                     warnings += r.warnings
