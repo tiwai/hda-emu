@@ -20,6 +20,9 @@ import subprocess
 import os
 import re
 
+class HdaEmuFatalError(Exception):
+    pass
+
 class ControlInfo():
     def __init__(self, runner, list_info):
         self.runner = runner
@@ -48,14 +51,19 @@ class HdaEmuRunner():
     def __init__(self):
         import os.path
         hda_emu_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"../hda-emu")
-        self.child_args = '"' + hda_emu_path + '" -M -F'
+        self.child_args = '"' + hda_emu_path + '" -M -F -i'
         self.alsa_info = "/proc/asound/card0/codec#0"
         self.errors = 0
         self.warnings = 0
         self.fatals = 0
+        self.codec_index = 0
         self.print_errors = False
+        self.error_list = []
         self.comm_log_enabled = False
         self.last_command = None
+
+    def set_codec_index(self, codec_index):
+        self.codec_index = codec_index
 
     def set_alsa_info_file(self, filename):
         self.alsa_info = filename
@@ -71,6 +79,7 @@ class HdaEmuRunner():
         from subprocess import PIPE, STDOUT
 
         args = shlex.split(self.child_args)
+        args.append(str(self.codec_index))
         args.append(self.alsa_info)
         self.child = subprocess.Popen(args, bufsize=0, stdin=PIPE, stdout=PIPE, stderr=PIPE)
 
@@ -82,6 +91,7 @@ class HdaEmuRunner():
         self.child = None
 
     def add_error(self, message, severity):
+        self.error_list.append(message)
         if severity == "Warning":
             self.warnings += 1
         else:
@@ -97,7 +107,7 @@ class HdaEmuRunner():
                 self.last_command_printed = True
             print "  ", message
         if self.fatals > 0:
-            raise Exception(message)
+            raise HdaEmuFatalError(message)
 
     def check_stdout(self):
         s = os.read(self.child.stdout.fileno(), 65536)
