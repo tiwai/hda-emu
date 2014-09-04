@@ -675,13 +675,17 @@ int parse_codec_proc(FILE *fp, struct xhda_codec *codecp, int codec_index)
 			parse_mode = PARSE_ROOT;
 		}
 		err = parse_codec_recursive(buffer);
-		if (err < 0) {
-			if (err == -EBADFD && codec_index < 0) {
+		if (err == -EBADFD) {
+			if (codec_index < 0) {
 				hda_log(HDA_LOG_INFO, "Codec %d is a modem codec, skipping\n", curidx);
 				parse_mode = PARSE_START;
 				clear_codec(codec);
 				continue;
 			}
+			hda_log(HDA_LOG_ERR, "Codec %d is a modem codec, aborting\n", curidx);
+			return err;
+		}
+		else if (err < 0) {
 			hda_log(HDA_LOG_ERR, "ERROR %d\n", err);
 			return err;
 		}
