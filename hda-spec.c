@@ -263,6 +263,14 @@ static struct xhda_verb_table amdhdmi_verbs[] = {
 	{ } /* terminator */
 };
 
+static struct xhda_verb_table nvhdmi_8ch_7x_verbs[] = {
+	{ 0xf79, set_cached_verb, "nvhdmi_set_channel_allocation" },
+	{ 0xf7a, set_cached_verb, "nvhdmi_set_info_frame_checksum" },
+	{ 0xf98, set_cached_verb, "nvhdmi_set_audio_protection_on" },
+	{ 0xf99, set_cached_verb, "nvhdmi_set_audio_protection_off" },
+	{ } /* terminator */
+};
+
 /*
  */
 
@@ -427,6 +435,12 @@ static struct verb_ext_list extensions[] = {
 	{ .id = 0x11068446, .verbs = vt2002p_verbs },
 
 	{ .id = 0x1002aa01, .verbs = amdhdmi_verbs },
+
+	{ .id = 0x10de0002, .verbs = nvhdmi_8ch_7x_verbs },
+	{ .id = 0x10de0003, .verbs = nvhdmi_8ch_7x_verbs },
+	{ .id = 0x10de0005, .verbs = nvhdmi_8ch_7x_verbs },
+	{ .id = 0x10de0006, .verbs = nvhdmi_8ch_7x_verbs },
+	{ .id = 0x10de0007, .verbs = nvhdmi_8ch_7x_verbs },
 
 	{ }
 };
