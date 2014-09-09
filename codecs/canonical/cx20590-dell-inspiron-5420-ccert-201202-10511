@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Wed Jul  4 06:57:55 UTC 2012
+!!Script ran on: Wed Jun 19 03:54:10 UTC 2013
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+Ubuntu 12.04.2 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04.2 LTS" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu precise (12.04.2 LTS)"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
 Manufacturer:      Dell Inc.         
 Product Name:      Inspiron 5420
 Product Version:   
+Firmware Version:  X58
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.2.0-23-generic
+Kernel release:    3.5.0-34-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -33,7 +34,7 @@ SMP Enabled:       Yes
 !!ALSA Version
 !!------------
 
-Driver version:     1.0.24
+Driver version:     1.0.25
 Library version:    1.0.25
 Utilities version:  1.0.25
 
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:1e20 (rev 04)
 	Subsystem: 1028:055e
@@ -89,10 +90,10 @@ snd-usb-audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
-	align_buffer_size : Y
+	align_buffer_size : -1
 	bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
@@ -102,7 +103,7 @@ snd-usb-audio: index=-2
 	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
 	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
 	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-	power_save : 0
+	power_save : 1
 	power_save_controller : Y
 	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -139,8 +140,8 @@ Node 0x10 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Device: name="CONEXANT Analog", type="Audio", device=0
   Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
-  Amp-Out vals:  [0x4a 0x4a]
-  Converter: stream=8, channel=0
+  Amp-Out vals:  [0x36 0x36]
+  Converter: stream=0, channel=0
   PCM:
     rates [0x560]: 44100 48000 96000 192000
     bits [0xe]: 16 20 24
@@ -153,8 +154,8 @@ Node 0x11 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
   Control: name="Headphone Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
-  Amp-Out vals:  [0x4a 0x4a]
-  Converter: stream=8, channel=0
+  Amp-Out vals:  [0x36 0x36]
+  Converter: stream=0, channel=0
   PCM:
     rates [0x560]: 44100 48000 96000 192000
     bits [0xe]: 16 20 24
@@ -190,7 +191,7 @@ Node 0x14 [Audio Input] wcaps 0x100d1b: Stereo Amp-In R/L
   Device: name="CONEXANT Analog", type="Audio", device=0
   Amp-In caps: ofs=0x4a, nsteps=0x50, stepsize=0x03, mute=1
   Amp-In vals:  [0x80 0x80] [0x4a 0x4a] [0x4a 0x4a] [0x4a 0x4a]
-  Converter: stream=4, channel=0
+  Converter: stream=0, channel=0
   SDI-Select: 0
   PCM:
     rates [0x160]: 44100 48000 96000
@@ -315,6 +316,7 @@ Node 0x1e [Pin Complex] wcaps 0x400481: Stereo
   Power states:  D0 D1 D2 D3 D3cold EPSS
   Power: setting=D0, actual=D0
 Node 0x1f [Pin Complex] wcaps 0x400501: Stereo
+  Control: name="Speaker Phantom Jack", index=0, device=0
   Pincap 0x00000010: OUT
   Pin Default 0x92170110: [Fixed] Speaker at Int Front
     Conn = Analog, Color = Unknown
@@ -362,6 +364,7 @@ Node 0x22 [Pin Complex] wcaps 0x400781: Stereo Digital
 Node 0x23 [Pin Complex] wcaps 0x40040b: Stereo Amp-In
   Control: name="Internal Mic Boost Volume", index=0, device=0
     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Internal Mic Phantom Jack", index=0, device=0
   Amp-In caps: ofs=0x00, nsteps=0x04, stepsize=0x2f, mute=0
   Amp-In vals:  [0x00 0x00]
   Pincap 0x00000020: IN
@@ -437,7 +440,7 @@ Node 0x05 [Pin Complex] wcaps 0x40778d: 8-Channels Digital Amp-Out CP
   Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
     Conn = Digital, Color = Unknown
     DefAssociation = 0x1, Sequence = 0x0
-  Pin-ctls: 0x00:
+  Pin-ctls: 0x40: OUT
   Unsolicited: tag=01, enabled=1
   Power states:  D0 D3 EPSS
   Power: setting=D0, actual=D0
@@ -476,24 +479,24 @@ Node 0x08 [Vendor Defined Widget] wcaps 0xf00000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  7 Jul  4 14:27 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  6 Jul  4 14:27 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  5 Jul  4 14:27 /dev/snd/hwC0D3
-crw-rw---T+ 1 root audio 116,  4 Jul  4 14:57 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  3 Jul  4 14:27 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  2 Jul  4 14:27 /dev/snd/pcmC0D3p
-crw-rw---T+ 1 root audio 116,  1 Jul  4 14:27 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul  4 14:27 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  7 Jun 19 11:52 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  6 Jun 19 11:52 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  5 Jun 19 11:52 /dev/snd/hwC0D3
+crw-rw---T+ 1 root audio 116,  4 Jun 19 11:52 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  3 Jun 19 11:52 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  2 Jun 19 11:52 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  1 Jun 19 11:52 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jun 19 11:52 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul  4 14:27 .
-drwxr-xr-x 3 root root 220 Jul  4 14:27 ..
-lrwxrwxrwx 1 root root  12 Jul  4 14:27 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Jun 19 11:52 .
+drwxr-xr-x 3 root root 220 Jun 19 11:52 ..
+lrwxrwxrwx 1 root root  12 Jun 19 11:52 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -509,7 +512,7 @@ ARECORD
 
 **** List of CAPTURE Hardware Devices ****
 card 0: PCH [HDA Intel PCH], device 0: CONEXANT Analog [CONEXANT Analog]
-  Subdevices: 0/1
+  Subdevices: 1/1
   Subdevice #0: subdevice #0
 
 !!Amixer output
@@ -520,13 +523,13 @@ card 0: PCH [HDA Intel PCH], device 0: CONEXANT Analog [CONEXANT Analog]
 Card hw:0 'PCH'/'HDA Intel PCH at 0xb1a10000 irq 46'
   Mixer name	: 'Intel PantherPoint HDMI'
   Components	: 'HDA:14f1506e,1028055e,00100002 HDA:80862806,80860101,00100000'
-  Controls      : 24
+  Controls      : 26
   Simple ctrls  : 11
 Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
   Playback channels: Mono
   Limits: Playback 0 - 74
-  Mono: Playback 74 [100%] [0.00dB] [on]
+  Mono: Playback 54 [73%] [-20.00dB] [on]
 Simple mixer control 'Headphone',0
   Capabilities: pvolume pswitch penum
   Playback channels: Front Left - Front Right
@@ -590,7 +593,7 @@ Simple mixer control 'Internal Mic Boost',0
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.PCH {
@@ -749,7 +752,7 @@ state.PCH {
 	control.12 {
 		iface MIXER
 		name 'Master Playback Volume'
-		value 74
+		value 54
 		comment {
 			access 'read write'
 			type INTEGER
@@ -757,7 +760,7 @@ state.PCH {
 			range '0 - 74'
 			dbmin -7400
 			dbmax 0
-			dbvalue.0 0
+			dbvalue.0 -2000
 		}
 	}
 	control.13 {
@@ -796,8 +799,8 @@ state.PCH {
 	}
 	control.16 {
 		iface CARD
-		name 'Headphone Jack'
-		value false
+		name 'Speaker Phantom Jack'
+		value true
 		comment {
 			access read
 			type BOOLEAN
@@ -806,7 +809,7 @@ state.PCH {
 	}
 	control.17 {
 		iface CARD
-		name 'Mic Jack'
+		name 'Headphone Jack'
 		value false
 		comment {
 			access read
@@ -816,7 +819,7 @@ state.PCH {
 	}
 	control.18 {
 		iface CARD
-		name 'HDMI/DP,pcm=3 Jack'
+		name 'Mic Jack'
 		value false
 		comment {
 			access read
@@ -825,6 +828,26 @@ state.PCH {
 		}
 	}
 	control.19 {
+		iface CARD
+		name 'Internal Mic Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.20 {
+		iface CARD
+		name 'HDMI/DP,pcm=3 Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.21 {
 		iface MIXER
 		name 'IEC958 Playback Con Mask'
 		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -834,7 +857,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.20 {
+	control.22 {
 		iface MIXER
 		name 'IEC958 Playback Pro Mask'
 		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -844,7 +867,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.21 {
+	control.23 {
 		iface MIXER
 		name 'IEC958 Playback Default'
 		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -854,7 +877,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.22 {
+	control.24 {
 		iface MIXER
 		name 'IEC958 Playback Switch'
 		value true
@@ -864,7 +887,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.23 {
+	control.25 {
 		iface PCM
 		device 3
 		name ELD
@@ -875,7 +898,7 @@ state.PCH {
 			count 0
 		}
 	}
-	control.24 {
+	control.26 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 255
@@ -900,54 +923,67 @@ state.PCH {
 !!------------------
 
 Module
-snd_hda_codec_hdmi
-snd_hda_codec_conexant
+hidp
+hid
 rfcomm
-bnep
 parport_pc
 ppdev
+bnep
+snd_hda_codec_hdmi
+snd_hda_codec_conexant
 rts5139
 uvcvideo
+videobuf2_core
 videodev
-v4l2_compat_ioctl32
+videobuf2_vmalloc
+videobuf2_memops
+coretemp
+arc4
 snd_hda_intel
 snd_hda_codec
+dell_laptop
+ghash_clmulni_intel
+iwlwifi
+nouveau
 snd_hwdep
-arc4
-dell_wmi
-sparse_keymap
 snd_pcm
 snd_seq_midi
-btusb
 snd_rawmidi
-dell_laptop
-dcdbas
-bluetooth
+cryptd
 snd_seq_midi_event
 snd_seq
-mei
-psmouse
-serio_raw
-nouveau
+mac80211
 i915
 ttm
-drm_kms_helper
-drm
-iwlwifi
 snd_timer
+dcdbas
 snd_seq_device
-mac80211
+microcode
+btusb
+dell_wmi
+drm_kms_helper
+mei
+drm
+psmouse
+cfg80211
+sparse_keymap
+alx
 snd
+bluetooth
+i2c_algo_bit
 soundcore
 snd_page_alloc
-cfg80211
-i2c_algo_bit
 mxm_wmi
-wmi
 video
 mac_hid
+mdio
+wmi
+lpc_ich
+serio_raw
 lp
 parport
+ahci
+libahci
 
 
 !!Sysfs Files
@@ -984,20 +1020,17 @@ parport
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[   17.639187] nouveau 0000:01:00.0: Invalid ROM contents
-[   17.639459] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
-[   17.639513] snd_hda_intel 0000:00:1b.0: irq 46 for MSI/MSI-X
-[   17.639538] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   17.640645] [drm] nouveau 0000:01:00.0: ... BIOS signature not found
+[    7.691015] [drm] nouveau 0000:01:00.0: Detected an NVc0 generation card (0x0c1480a1)
+[    7.696773] snd_hda_intel 0000:00:1b.0: irq 46 for MSI/MSI-X
+[    7.697896] vga_switcheroo: enabled
 --
-[   18.252315] Bluetooth: RFCOMM ver 1.11
-[   18.411324] hda_codec: CX20590: BIOS auto-probing.
-[   18.436824] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
-[   18.436890] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[   18.436962] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[   18.437012] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
-[   18.454716] iwlwifi 0000:02:00.0: L1 Enabled; Disabling L0S
+[    8.224042] sd 6:0:0:0: [sdb] Attached SCSI removable disk
+[    8.288062] hda_codec: CX20590: BIOS auto-probing.
+[    8.304106] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[    8.304217] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
+[    8.304306] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
+[    8.823740] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
 
 

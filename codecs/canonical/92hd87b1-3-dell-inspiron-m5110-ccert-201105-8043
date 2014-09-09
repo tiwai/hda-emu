@@ -3,7 +3,7 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Wed Jun 20 06:30:33 UTC 2012
+!!Script ran on: Tue Jun 19 07:40:53 UTC 2012
 
 
 !!Linux Distribution
@@ -57,7 +57,7 @@ Pulseaudio:
 !!-----------------------------
 
  0 [Generic        ]: HDA-Intel - HD-Audio Generic
-                      HD-Audio Generic at 0xff744000 irq 57
+                      HD-Audio Generic at 0xff744000 irq 58
  1 [Generic_1      ]: HDA-Intel - HD-Audio Generic
                       HD-Audio Generic at 0xff740000 irq 16
 
@@ -274,7 +274,7 @@ Node 0x11 [Pin Complex] wcaps 0x400483: Stereo Amp-In
   Control: name="Internal Mic Capture Volume", index=0, device=0
     ControlAmp: chs=3, dir=In, idx=0, ofs=0
   Amp-In caps: N/A
-  Amp-In vals:  [0x03 0x03]
+  Amp-In vals:  [0x00 0x00]
   Pincap 0x00000024: IN Detect
   Pin Default 0xd5a30160: [Both] Mic at Int Top
     Conn = ATAPI, Color = Unknown
@@ -296,7 +296,7 @@ Node 0x13 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Device: name="STAC92xx Analog", type="Audio", device=0
   Amp-Out caps: N/A
-  Amp-Out vals:  [0x7d 0x7d]
+  Amp-Out vals:  [0x64 0x64]
   Converter: stream=8, channel=0
   Power: setting=D0, actual=D0
   Delay: 13 samples
@@ -306,7 +306,7 @@ Node 0x14 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
   Control: name="Headphone Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: N/A
-  Amp-Out vals:  [0x7d 0x7d]
+  Amp-Out vals:  [0x64 0x64]
   Converter: stream=8, channel=0
   Power: setting=D0, actual=D0
   Delay: 13 samples
@@ -333,7 +333,7 @@ Node 0x17 [Audio Selector] wcaps 0x300d0d: Stereo Amp-Out R/L
   Control: name="Capture Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: ofs=0x00, nsteps=0x0f, stepsize=0x05, mute=1
-  Amp-Out vals:  [0x0d 0x0d]
+  Amp-Out vals:  [0x08 0x08]
   Power: setting=D0, actual=D0
   Connection: 7
      0x0c 0x0e 0x0f 0x1b 0x11* 0x12 0x0a
@@ -398,22 +398,22 @@ Node 0x22 [Vendor Defined Widget] wcaps 0xf00000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  4 Jun 19 23:32 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  8 Jun 19 23:32 /dev/snd/controlC1
-crw-rw---T+ 1 root audio 116,  3 Jun 19 23:32 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  7 Jun 19 23:32 /dev/snd/hwC1D0
-crw-rw---T+ 1 root audio 116,  2 Jun 20 02:27 /dev/snd/pcmC0D3p
-crw-rw---T+ 1 root audio 116,  6 Jun 20 02:25 /dev/snd/pcmC1D0c
-crw-rw---T+ 1 root audio 116,  5 Jun 20 02:28 /dev/snd/pcmC1D0p
-crw-rw---T+ 1 root audio 116,  1 Jun 19 23:32 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jun 19 23:32 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  4 Jun 19 03:38 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  8 Jun 19 03:38 /dev/snd/controlC1
+crw-rw---T+ 1 root audio 116,  3 Jun 19 03:38 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  7 Jun 19 03:38 /dev/snd/hwC1D0
+crw-rw---T+ 1 root audio 116,  2 Jun 19 03:38 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  6 Jun 19 03:38 /dev/snd/pcmC1D0c
+crw-rw---T+ 1 root audio 116,  5 Jun 19 03:38 /dev/snd/pcmC1D0p
+crw-rw---T+ 1 root audio 116,  1 Jun 19 03:38 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jun 19 03:38 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  80 Jun 19 23:32 .
-drwxr-xr-x 3 root root 240 Jun 19 23:32 ..
-lrwxrwxrwx 1 root root  12 Jun 19 23:32 pci-0000:00:01.1 -> ../controlC0
-lrwxrwxrwx 1 root root  12 Jun 19 23:32 pci-0000:00:14.2 -> ../controlC1
+drwxr-xr-x 2 root root  80 Jun 19 03:38 .
+drwxr-xr-x 3 root root 240 Jun 19 03:38 ..
+lrwxrwxrwx 1 root root  12 Jun 19 03:38 pci-0000:00:01.1 -> ../controlC0
+lrwxrwxrwx 1 root root  12 Jun 19 03:38 pci-0000:00:14.2 -> ../controlC1
 
 
 !!Aplay/Arecord output
@@ -433,7 +433,7 @@ ARECORD
 
 **** List of CAPTURE Hardware Devices ****
 card 1: Generic_1 [HD-Audio Generic], device 0: STAC92xx Analog [STAC92xx Analog]
-  Subdevices: 0/1
+  Subdevices: 1/1
   Subdevice #0: subdevice #0
 
 !!Amixer output
@@ -441,7 +441,7 @@ card 1: Generic_1 [HD-Audio Generic], device 0: STAC92xx Analog [STAC92xx Analog
 
 !!-------Mixer controls for card 0 [Generic]
 
-Card hw:0 'Generic'/'HD-Audio Generic at 0xff744000 irq 57'
+Card hw:0 'Generic'/'HD-Audio Generic at 0xff744000 irq 58'
   Mixer name	: 'ATI R6xx HDMI'
   Components	: 'HDA:1002aa01,00aa0100,00100200'
   Controls      : 6
@@ -462,7 +462,7 @@ Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
   Playback channels: Mono
   Limits: Playback 0 - 64
-  Mono: Playback 62 [97%] [-1.50dB] [on]
+  Mono: Playback 37 [58%] [-20.25dB] [on]
 Simple mixer control 'Headphone',0
   Capabilities: pvolume pswitch penum
   Playback channels: Front Left - Front Right
@@ -503,14 +503,14 @@ Simple mixer control 'Capture',0
   Capabilities: cvolume cswitch penum
   Capture channels: Front Left - Front Right
   Limits: Capture 0 - 15
-  Front Left: Capture 13 [87%] [19.50dB] [on]
-  Front Right: Capture 13 [87%] [19.50dB] [on]
+  Front Left: Capture 8 [53%] [12.00dB] [on]
+  Front Right: Capture 8 [53%] [12.00dB] [on]
 Simple mixer control 'Internal Mic',0
   Capabilities: cvolume penum
   Capture channels: Front Left - Front Right
   Limits: Capture 0 - 3
-  Front Left: Capture 3 [100%] [30.00dB]
-  Front Right: Capture 3 [100%] [30.00dB]
+  Front Left: Capture 0 [0%] [0.00dB]
+  Front Right: Capture 0 [0%] [0.00dB]
 
 
 !!Alsactl output
@@ -674,8 +674,8 @@ state.Generic_1 {
 	control.8 {
 		iface MIXER
 		name 'Capture Volume'
-		value.0 13
-		value.1 13
+		value.0 8
+		value.1 8
 		comment {
 			access 'read write'
 			type INTEGER
@@ -683,8 +683,8 @@ state.Generic_1 {
 			range '0 - 15'
 			dbmin 0
 			dbmax 2250
-			dbvalue.0 1950
-			dbvalue.1 1950
+			dbvalue.0 1200
+			dbvalue.1 1200
 		}
 	}
 	control.9 {
@@ -717,8 +717,8 @@ state.Generic_1 {
 	control.11 {
 		iface MIXER
 		name 'Internal Mic Capture Volume'
-		value.0 3
-		value.1 3
+		value.0 0
+		value.1 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -726,14 +726,14 @@ state.Generic_1 {
 			range '0 - 3'
 			dbmin 0
 			dbmax 3000
-			dbvalue.0 3000
-			dbvalue.1 3000
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.12 {
 		iface MIXER
 		name 'Master Playback Volume'
-		value 62
+		value 37
 		comment {
 			access 'read write'
 			type INTEGER
@@ -741,7 +741,7 @@ state.Generic_1 {
 			range '0 - 64'
 			dbmin -9999999
 			dbmax 0
-			dbvalue.0 -150
+			dbvalue.0 -2025
 		}
 	}
 	control.13 {
@@ -799,48 +799,56 @@ state.Generic_1 {
 !!------------------
 
 Module
-bnep
-joydev
-rfcomm
-bluetooth
 parport_pc
 ppdev
-vesafb
+rfcomm
+bnep
+bluetooth
 uvcvideo
 videodev
 v4l2_compat_ioctl32
-lib80211_crypt_tkip
-wl
 snd_hda_codec_idt
-dell_wmi
-psmouse
-sparse_keymap
 snd_hda_codec_hdmi
-serio_raw
-dell_laptop
+joydev
 snd_hda_intel
 snd_hda_codec
-snd_hwdep
-dcdbas
-lib80211
-wmi
-i2c_piix4
-k10temp
-snd_pcm
-fglrx
 snd_seq_midi
+bcma
+arc4
+radeon
+snd_hwdep
 snd_rawmidi
+snd_pcm
 snd_seq_midi_event
 snd_seq
 snd_timer
 snd_seq_device
 snd
+brcmsmac
 soundcore
-snd_page_alloc
-video
-lp
-parport
+dell_laptop
+ttm
+drm_kms_helper
+mac80211
+dcdbas
+drm
 mac_hid
+dell_wmi
+psmouse
+sparse_keymap
+wmi
+serio_raw
+snd_page_alloc
+brcmutil
+cfg80211
+lp
+i2c_piix4
+parport
+crc8
+i2c_algo_bit
+video
+cordic
+k10temp
 sdhci_pci
 sdhci
 pata_atiixp
@@ -877,16 +885,22 @@ r8169
 !!ALSA/HDA dmesg
 !!------------------
 
-[   11.008319] type=1400 audit(1340163173.302:7): apparmor="STATUS" operation="profile_replace" name="/usr/lib/connman/scripts/dhclient-script" pid=567 comm="apparmor_parser"
-[   11.018527] snd_hda_intel 0000:00:01.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
-[   11.018602] snd_hda_intel 0000:00:01.1: irq 57 for MSI/MSI-X
-[   11.018672] snd_hda_intel 0000:00:01.1: setting latency timer to 64
-[   11.037906] HDMI status: Codec=0 Pin=3 Presence_Detect=0 ELD_Valid=0
-[   11.038020] input: HD-Audio Generic HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:01.1/sound/card0/input7
-[   11.038315] snd_hda_intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
-[   11.074101] input: Dell WMI hotkeys as /devices/virtual/input/input8
-[   11.090020] input: HD-Audio Generic Mic as /devices/pci0000:00/0000:00:14.2/sound/card1/input9
-[   11.090142] input: HD-Audio Generic Headphone as /devices/pci0000:00/0000:00:14.2/sound/card1/input10
-[   11.215440] wl 0000:03:00.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[    8.163759] [drm] Connector 2:
+[    8.163760] [drm]   HDMI-A
+[    8.163761] [drm]   HPD3
+--
+[    8.458762] radeon 0000:01:00.0: setting latency timer to 64
+[    8.458776] snd_hda_intel 0000:00:01.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+[    8.458844] snd_hda_intel 0000:00:01.1: irq 58 for MSI/MSI-X
+[    8.458868] snd_hda_intel 0000:00:01.1: setting latency timer to 64
+[    8.459341] [drm] initializing kernel modesetting (CAICOS 0x1002:0x6760 0x1028:0x04CB).
+--
+[    8.797394] type=1400 audit(1340091517.059:4): apparmor="STATUS" operation="profile_load" name="/usr/lib/connman/scripts/dhclient-script" pid=687 comm="apparmor_parser"
+[    8.936673] HDMI status: Codec=0 Pin=3 Presence_Detect=0 ELD_Valid=0
+[    8.936768] input: HD-Audio Generic HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:01.1/sound/card0/input10
+[    8.937126] snd_hda_intel 0000:00:14.2: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[    9.005810] input: HD-Audio Generic Mic as /devices/pci0000:00/0000:00:14.2/sound/card1/input11
+[    9.006082] input: HD-Audio Generic Headphone as /devices/pci0000:00/0000:00:14.2/sound/card1/input12
+[    9.025438] Linux video capture interface: v2.00
 
 

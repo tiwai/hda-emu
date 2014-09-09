@@ -3,13 +3,13 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Fri Jul 13 15:37:32 UTC 2012
+!!Script ran on: Mon Jun  4 22:00:35 UTC 2012
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+Ubuntu quantal (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu quantal (development branch)"
 
 
 !!DMI Information
@@ -23,7 +23,7 @@ Product Version:
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.2.0-27-generic
+Kernel release:    3.4.0-3-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -33,7 +33,7 @@ SMP Enabled:       Yes
 !!ALSA Version
 !!------------
 
-Driver version:     1.0.24
+Driver version:     1.0.25
 Library version:    1.0.25
 Utilities version:  1.0.25
 
@@ -57,9 +57,9 @@ Pulseaudio:
 !!-----------------------------
 
  0 [Intel          ]: HDA-Intel - HDA Intel
-                      HDA Intel at 0xf6ffc000 irq 43
+                      HDA Intel at 0xf6ffc000 irq 44
  1 [HDMI           ]: HDA-Intel - HDA ATI HDMI
-                      HDA ATI HDMI at 0xf6dec000 irq 44
+                      HDA ATI HDMI at 0xf6dec000 irq 46
 
 
 !!PCI Soundcards installed in the system
@@ -100,7 +100,7 @@ snd-usb-audio: index=-2
 !!--------------------------
 
 !!Module: snd_hda_intel
-	align_buffer_size : Y
+	align_buffer_size : -1
 	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
@@ -118,7 +118,7 @@ snd-usb-audio: index=-2
 	snoop : Y
 
 !!Module: snd_hda_intel
-	align_buffer_size : Y
+	align_buffer_size : -1
 	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
@@ -157,7 +157,7 @@ GPIO: io=3, o=0, i=0, unsolicited=1, wake=1
   IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
   IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
   IO[2]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
-Power-Map: 0x22
+Power-Map: 0x66
 Node 0x0a [Pin Complex] wcaps 0x400583: Stereo Amp-In
   Control: name="Mic Jack Mode", index=0, device=0
     ControlAmp: chs=0, dir=In, idx=0, ofs=0
@@ -199,7 +199,7 @@ Node 0x0c [Pin Complex] wcaps 0x400583: Stereo Amp-In
     Conn = Unknown, Color = Unknown
     DefAssociation = 0xf, Sequence = 0x0
   Pin-ctls: 0x00: VREF_HIZ
-  Unsolicited: tag=00, enabled=0
+  Unsolicited: tag=05, enabled=1
   Power: setting=D0, actual=D0
   Connection: 3
      0x13* 0x14 0x1c
@@ -231,7 +231,7 @@ Node 0x0e [Pin Complex] wcaps 0x400583: Stereo Amp-In
   Connection: 3
      0x13* 0x14 0x1c
 Node 0x0f [Pin Complex] wcaps 0x400583: Stereo Amp-In
-  Control: name="Dock Line-Out Jack", index=0, device=0
+  Control: name="Dock Line Out Jack", index=0, device=0
   Amp-In caps: N/A
   Amp-In vals:  [0x00 0x00]
   Pincap 0x00010034: IN OUT EAPD Detect
@@ -444,23 +444,23 @@ Node 0x03 [Pin Complex] wcaps 0x400381: Stereo Digital
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  6 Jul 13 11:35 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  9 Jul 13 11:35 /dev/snd/controlC1
-crw-rw---T+ 1 root audio 116,  5 Jul 13 11:35 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  8 Jul 13 11:35 /dev/snd/hwC1D0
-crw-rw---T+ 1 root audio 116,  4 Jul 13 11:35 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  3 Jul 13 11:35 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  2 Jul 13 11:35 /dev/snd/pcmC0D1p
-crw-rw---T+ 1 root audio 116,  7 Jul 13 11:35 /dev/snd/pcmC1D3p
-crw-rw---T+ 1 root audio 116,  1 Jul 13 11:35 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul 13 11:35 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  6 Jun  4 17:58 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  9 Jun  4 17:58 /dev/snd/controlC1
+crw-rw---T+ 1 root audio 116,  5 Jun  4 17:58 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  8 Jun  4 17:58 /dev/snd/hwC1D0
+crw-rw---T+ 1 root audio 116,  4 Jun  4 17:58 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  3 Jun  4 17:58 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  2 Jun  4 17:58 /dev/snd/pcmC0D1p
+crw-rw---T+ 1 root audio 116,  7 Jun  4 17:58 /dev/snd/pcmC1D3p
+crw-rw---T+ 1 root audio 116,  1 Jun  4 17:58 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jun  4 17:58 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  80 Jul 13 11:35 .
-drwxr-xr-x 3 root root 260 Jul 13 11:35 ..
-lrwxrwxrwx 1 root root  12 Jul 13 11:35 pci-0000:00:1b.0 -> ../controlC0
-lrwxrwxrwx 1 root root  12 Jul 13 11:35 pci-0000:01:00.1 -> ../controlC1
+drwxr-xr-x 2 root root  80 Jun  4 17:58 .
+drwxr-xr-x 3 root root 260 Jun  4 17:58 ..
+lrwxrwxrwx 1 root root  12 Jun  4 17:58 pci-0000:00:1b.0 -> ../controlC0
+lrwxrwxrwx 1 root root  12 Jun  4 17:58 pci-0000:01:00.1 -> ../controlC1
 
 
 !!Aplay/Arecord output
@@ -491,7 +491,7 @@ card 0: Intel [HDA Intel], device 0: STAC92xx Analog [STAC92xx Analog]
 
 !!-------Mixer controls for card 0 [Intel]
 
-Card hw:0 'Intel'/'HDA Intel at 0xf6ffc000 irq 43'
+Card hw:0 'Intel'/'HDA Intel at 0xf6ffc000 irq 44'
   Mixer name	: 'IDT 92HD81B1C5'
   Components	: 'HDA:111d76d5,102802ef,00100104'
   Controls      : 24
@@ -566,7 +566,7 @@ Simple mixer control 'Internal Mic',0
 
 !!-------Mixer controls for card 1 [HDMI]
 
-Card hw:1 'HDMI'/'HDA ATI HDMI at 0xf6dec000 irq 44'
+Card hw:1 'HDMI'/'HDA ATI HDMI at 0xf6dec000 irq 46'
   Mixer name	: 'ATI R6xx HDMI'
   Components	: 'HDA:1002aa01,00aa0100,00100100'
   Controls      : 6
@@ -823,7 +823,7 @@ state.Intel {
 	}
 	control.20 {
 		iface CARD
-		name 'Dock Line-Out Jack'
+		name 'Dock Line Out Jack'
 		value false
 		comment {
 			access read
@@ -949,65 +949,66 @@ state.HDMI {
 !!------------------
 
 Module
-nls_iso8859_1
-nls_cp437
-vfat
-fat
 bnep
 rfcomm
 bluetooth
 parport_pc
 ppdev
-vesafb
 snd_hda_codec_hdmi
 snd_hda_codec_idt
 snd_hda_intel
-arc4
 snd_hda_codec
-fglrx
+arc4
 snd_hwdep
-snd_seq_midi
-iwlwifi
+radeon
 snd_pcm
+snd_seq_midi
 snd_rawmidi
 snd_seq_midi_event
+snd_seq
+iwlwifi
+tifm_7xx1
+joydev
+ttm
 pcmcia
 mac80211
-tifm_7xx1
-tifm_core
-uvcvideo
-videodev
-v4l2_compat_ioctl32
-snd_seq
 snd_timer
-snd_seq_device
-joydev
-snd
+tifm_core
+drm_kms_helper
+drm
+coretemp
 yenta_socket
 pcmcia_rsrc
-pcmcia_core
-intel_ips
+dell_laptop
 dell_wmi
 sparse_keymap
-soundcore
-dell_laptop
+ghash_clmulni_intel
 cfg80211
-snd_page_alloc
-mac_hid
-lp
+snd_seq_device
 psmouse
-parport
 serio_raw
-dcdbas
+aesni_intel
+snd
+i2c_algo_bit
+pcmcia_core
 video
+dcdbas
+mac_hid
 wmi
+intel_ips
+cryptd
+lp
+soundcore
+aes_x86_64
+parport
+snd_page_alloc
+microcode
 firewire_ohci
 firewire_core
-sdhci_pci
 crc_itu_t
+sdhci_pci
 sdhci
 tg3
-usb_storage
 
 
 !!Sysfs Files
@@ -1044,19 +1045,17 @@ usb_storage
 !!ALSA/HDA dmesg
 !!------------------
 
-[   11.969369] ieee80211 phy0: Selected rate control algorithm 'iwl-agn-rs'
-[   11.970349] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
-[   11.970411] snd_hda_intel 0000:00:1b.0: irq 43 for MSI/MSI-X
-[   11.970441] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   12.238149] input: HDA Intel Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
-[   12.238242] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
-[   12.238298] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[   12.238353] input: HDA Intel Dock Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[   12.238586] snd_hda_intel 0000:01:00.1: PCI INT B -> GSI 17 (level, low) -> IRQ 17
-[   12.238644] snd_hda_intel 0000:01:00.1: irq 44 for MSI/MSI-X
-[   12.238665] snd_hda_intel 0000:01:00.1: setting latency timer to 64
-[   12.274998] HDMI status: Codec=0 Pin=3 Presence_Detect=0 ELD_Valid=0
-[   12.275063] input: HDA ATI HDMI HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input12
-[   12.441211] type=1400 audit(1342193720.720:2): apparmor="STATUS" operation="profile_load" name="/sbin/dhclient" pid=598 comm="apparmor_parser"
+[   11.366719] cfg80211:   (5735000 KHz - 5835000 KHz @ 40000 KHz), (300 mBi, 2000 mBm)
+[   11.830148] snd_hda_intel 0000:00:1b.0: irq 44 for MSI/MSI-X
+[   12.187991] [drm] fb mappable at 0xE0142000
+--
+[   12.808444] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+[   13.089222] input: HDA Intel Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input7
+[   13.089324] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
+[   13.089444] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[   13.089589] input: HDA Intel Dock Line Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[   13.090027] snd_hda_intel 0000:01:00.1: irq 46 for MSI/MSI-X
+[   13.263877] input: HDA ATI HDMI HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input11
+[   15.447774] psmouse serio2: Failed to deactivate mouse on synaptics-pt/serio0
 
 

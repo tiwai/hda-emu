@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Mon Jun  4 22:15:32 UTC 2012
+!!Script ran on: Tue Apr 30 09:26:09 UTC 2013
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu quantal (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu quantal (development branch)"
+Ubuntu 12.04.2 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04.2 LTS" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu precise (12.04.2 LTS)"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu quantal (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION=
 Manufacturer:      Dell Inc.
 Product Name:      Latitude 2120                   
 Product Version:   
+Firmware Version:  W06
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.4.0-3-generic
+Kernel release:    3.5.0-23-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:27d8 (rev 01)
 	Subsystem: 1028:04a5
@@ -89,7 +90,7 @@ snd-usb-audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
 	align_buffer_size : -1
@@ -222,6 +223,7 @@ Node 0x11 [Vendor Defined Widget] wcaps 0xf00000: Mono
 Node 0x12 [Pin Complex] wcaps 0x40000b: Stereo Amp-In
   Control: name="Internal Mic Boost Volume", index=0, device=0
     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Internal Mic Phantom Jack", index=0, device=0
   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
   Amp-In vals:  [0x00 0x00]
   Pincap 0x00000020: IN
@@ -234,6 +236,7 @@ Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
 Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
   Control: name="Speaker Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Speaker Phantom Jack", index=0, device=0
   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
   Amp-Out vals:  [0x00 0x00]
   Pincap 0x00010014: OUT EAPD Detect
@@ -366,22 +369,22 @@ Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  5 Jun  4 18:12 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  4 Jun  4 18:12 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  3 Jun  4 18:12 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  2 Jun  4 18:12 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  1 Jun  4 18:12 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jun  4 18:12 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  5 Apr 30 04:52 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  4 Apr 30 04:52 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  3 Apr 30 04:52 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  2 Apr 30 04:52 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  1 Apr 30 04:52 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Apr 30 04:52 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jun  4 18:12 .
-drwxr-xr-x 3 root root 180 Jun  4 18:12 ..
-lrwxrwxrwx 1 root root  12 Jun  4 18:12 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Apr 30 04:52 .
+drwxr-xr-x 3 root root 180 Apr 30 04:52 ..
+lrwxrwxrwx 1 root root  12 Apr 30 04:52 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -405,7 +408,7 @@ card 0: Intel [HDA Intel], device 0: ALC269VB Analog [ALC269VB Analog]
 Card hw:0 'Intel'/'HDA Intel at 0xf6dfc000 irq 46'
   Mixer name	: 'Realtek ALC269VB'
   Components	: 'HDA:10ec0269,102804a5,00100100'
-  Controls      : 18
+  Controls      : 20
   Simple ctrls  : 10
 Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
@@ -474,7 +477,7 @@ Simple mixer control 'Internal Mic Boost',0
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.Intel {
@@ -693,6 +696,26 @@ state.Intel {
 	}
 	control.17 {
 		iface CARD
+		name 'Speaker Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.18 {
+		iface CARD
+		name 'Internal Mic Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.19 {
+		iface CARD
 		name 'Mic Jack'
 		value false
 		comment {
@@ -701,7 +724,7 @@ state.Intel {
 			count 1
 		}
 	}
-	control.18 {
+	control.20 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 255
@@ -726,67 +749,63 @@ state.Intel {
 !!------------------
 
 Module
-nls_iso8859_1
-nls_cp437
-vfat
-fat
-rfcomm
+gpio_ich
+arc4
+brcmsmac
+joydev
+mac80211
+brcmutil
+hid_multitouch
+cfg80211
+cordic
+dell_wmi
+sparse_keymap
+snd_hda_codec_realtek
+dell_laptop
+dcdbas
 bnep
 parport_pc
+coretemp
+rfcomm
 ppdev
-snd_hda_codec_realtek
+microcode
+usbhid
+hid
+uvcvideo
+videobuf2_core
+videodev
+videobuf2_vmalloc
+videobuf2_memops
+psmouse
+lpc_ich
+serio_raw
 snd_hda_intel
 snd_hda_codec
+btusb
 snd_hwdep
+bluetooth
+rts_pstor
 snd_pcm
 snd_seq_midi
 snd_rawmidi
 snd_seq_midi_event
-arc4
 snd_seq
 snd_timer
 snd_seq_device
-brcmsmac
-mac80211
-brcmutil
-cfg80211
-dell_wmi
-sparse_keymap
-joydev
-uvcvideo
 i915
-snd
-hid_multitouch
-crc8
-cordic
-dell_laptop
-videobuf2_core
-videodev
-dcdbas
-wmi
-soundcore
+mac_hid
 drm_kms_helper
-videobuf2_vmalloc
-psmouse
-serio_raw
-drm
-videobuf2_memops
-rts_pstor
-snd_page_alloc
-coretemp
+snd
 bcma
-usbhid
-hid
+wmi
+drm
 i2c_algo_bit
 video
-btusb
-bluetooth
-mac_hid
-microcode
+soundcore
+snd_page_alloc
 lp
 parport
 tg3
-usb_storage
 
 
 !!Sysfs Files
@@ -812,15 +831,15 @@ usb_storage
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[    8.261816] type=1400 audit(1338847956.340:7): apparmor="STATUS" operation="profile_replace" name="/usr/lib/connman/scripts/dhclient-script" pid=684 comm="apparmor_parser"
-[    8.896728] snd_hda_intel 0000:00:1b.0: irq 46 for MSI/MSI-X
-[    9.091973] cfg80211: Updating information on frequency 2412 MHz for a 20 MHz width channel with regulatory rule:
+[   15.663256] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+[   15.663841] snd_hda_intel 0000:00:1b.0: irq 46 for MSI/MSI-X
+[   16.243211] init: failsafe main process (695) killed by TERM signal
 --
-[    9.110991] cfg80211:   (5735000 KHz - 5835000 KHz @ 40000 KHz), (300 mBi, 3000 mBm)
-[    9.360091] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[    9.360514] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[   10.859493] tg3 0000:09:00.0: irq 47 for MSI/MSI-X
+[   18.467612] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   18.812678] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[   18.814153] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[   18.819304] ACPI Warning: 0x0000000000001060-0x000000000000107f SystemIO conflicts with Region \_SB_.PCI0.VID_.TCOI 1 (20120320/utaddress-251)
 
 

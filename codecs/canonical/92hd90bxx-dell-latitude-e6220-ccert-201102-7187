@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Fri Jul 13 07:13:09 UTC 2012
+!!Script ran on: Fri Mar  8 17:20:28 UTC 2013
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu quantal (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu quantal (development branch)"
+Ubuntu 12.04.2 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04.2 LTS" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu precise (12.04.2 LTS)"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu quantal (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION=
 Manufacturer:      Dell Inc.
 Product Name:      Latitude E6220
 Product Version:   01
+Firmware Version:  X22
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.4.0-3-generic
+Kernel release:    3.5.0-23-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -56,7 +57,7 @@ Pulseaudio:
 !!-----------------------------
 
  0 [PCH            ]: HDA-Intel - HDA Intel PCH
-                      HDA Intel PCH at 0x3ec60000 irq 43
+                      HDA Intel PCH at 0x3ec60000 irq 44
 
 
 !!PCI Soundcards installed in the system
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:1c20 (rev 04)
 	Subsystem: 1028:04a9
@@ -89,7 +90,7 @@ snd-usb-audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
 	align_buffer_size : -1
@@ -174,11 +175,12 @@ Node 0x0c [Pin Complex] wcaps 0x400583: Stereo Amp-In
     Conn = Unknown, Color = Unknown
     DefAssociation = 0xf, Sequence = 0x0
   Pin-ctls: 0x00:
-  Unsolicited: tag=05, enabled=1
+  Unsolicited: tag=00, enabled=0
   Power: setting=D0, actual=D0
   Connection: 3
      0x13* 0x14 0x1c
 Node 0x0d [Pin Complex] wcaps 0x400501: Stereo
+  Control: name="Speaker Phantom Jack", index=0, device=0
   Pincap 0x00010050: OUT EAPD Balanced
   EAPD 0x2: EAPD
   Pin Default 0x90170110: [Fixed] Speaker at Int N/A
@@ -477,26 +479,26 @@ Node 0x08 [Vendor Defined Widget] wcaps 0xf00000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  9 Jul 13 03:11 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  8 Jul 13 03:11 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  7 Jul 13 03:11 /dev/snd/hwC0D3
-crw-rw---T+ 1 root audio 116,  6 Jul 13 03:12 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  5 Jul 13 03:12 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  4 Jul 13 03:12 /dev/snd/pcmC0D3p
-crw-rw---T+ 1 root audio 116,  3 Jul 13 03:12 /dev/snd/pcmC0D7p
-crw-rw---T+ 1 root audio 116,  2 Jul 13 03:12 /dev/snd/pcmC0D8p
-crw-rw---T+ 1 root audio 116,  1 Jul 13 03:11 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul 13 03:11 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  9 Mar  8 12:12 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  8 Mar  8 12:12 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  7 Mar  8 12:12 /dev/snd/hwC0D3
+crw-rw---T+ 1 root audio 116,  6 Mar  8 12:12 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  5 Mar  8 12:12 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  4 Mar  8 12:12 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  3 Mar  8 12:12 /dev/snd/pcmC0D7p
+crw-rw---T+ 1 root audio 116,  2 Mar  8 12:12 /dev/snd/pcmC0D8p
+crw-rw---T+ 1 root audio 116,  1 Mar  8 12:12 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Mar  8 12:12 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul 13 03:11 .
-drwxr-xr-x 3 root root 260 Jul 13 03:11 ..
-lrwxrwxrwx 1 root root  12 Jul 13 03:11 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Mar  8 12:12 .
+drwxr-xr-x 3 root root 260 Mar  8 12:12 ..
+lrwxrwxrwx 1 root root  12 Mar  8 12:12 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -526,10 +528,10 @@ card 0: PCH [HDA Intel PCH], device 0: STAC92xx Analog [STAC92xx Analog]
 
 !!-------Mixer controls for card 0 [PCH]
 
-Card hw:0 'PCH'/'HDA Intel PCH at 0x3ec60000 irq 43'
+Card hw:0 'PCH'/'HDA Intel PCH at 0x3ec60000 irq 44'
   Mixer name	: 'Intel CougarPoint HDMI'
   Components	: 'HDA:111d76e7,102804a9,00100102 HDA:80862805,80860101,00100000'
-  Controls      : 37
+  Controls      : 38
   Simple ctrls  : 13
 Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
@@ -605,7 +607,7 @@ Simple mixer control 'Internal Mic',0
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.PCH {
@@ -820,8 +822,8 @@ state.PCH {
 	}
 	control.17 {
 		iface CARD
-		name 'Mic Jack'
-		value false
+		name 'Speaker Phantom Jack'
+		value true
 		comment {
 			access read
 			type BOOLEAN
@@ -830,7 +832,7 @@ state.PCH {
 	}
 	control.18 {
 		iface CARD
-		name 'Dock Mic Jack'
+		name 'Mic Jack'
 		value false
 		comment {
 			access read
@@ -840,7 +842,7 @@ state.PCH {
 	}
 	control.19 {
 		iface CARD
-		name 'HDMI/DP,pcm=3 Jack'
+		name 'Dock Mic Jack'
 		value false
 		comment {
 			access read
@@ -849,6 +851,16 @@ state.PCH {
 		}
 	}
 	control.20 {
+		iface CARD
+		name 'HDMI/DP,pcm=3 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.21 {
 		iface MIXER
 		name 'IEC958 Playback Con Mask'
 		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -858,7 +870,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.21 {
+	control.22 {
 		iface MIXER
 		name 'IEC958 Playback Pro Mask'
 		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -868,7 +880,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.22 {
+	control.23 {
 		iface MIXER
 		name 'IEC958 Playback Default'
 		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -878,7 +890,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.23 {
+	control.24 {
 		iface MIXER
 		name 'IEC958 Playback Switch'
 		value true
@@ -888,7 +900,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.24 {
+	control.25 {
 		iface PCM
 		device 3
 		name ELD
@@ -899,7 +911,7 @@ state.PCH {
 			count 0
 		}
 	}
-	control.25 {
+	control.26 {
 		iface CARD
 		name 'HDMI/DP,pcm=7 Jack'
 		value false
@@ -909,7 +921,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.26 {
+	control.27 {
 		iface MIXER
 		name 'IEC958 Playback Con Mask'
 		index 1
@@ -920,7 +932,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.27 {
+	control.28 {
 		iface MIXER
 		name 'IEC958 Playback Pro Mask'
 		index 1
@@ -931,7 +943,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.28 {
+	control.29 {
 		iface MIXER
 		name 'IEC958 Playback Default'
 		index 1
@@ -942,7 +954,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.29 {
+	control.30 {
 		iface MIXER
 		name 'IEC958 Playback Switch'
 		index 1
@@ -953,7 +965,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.30 {
+	control.31 {
 		iface PCM
 		device 7
 		name ELD
@@ -964,7 +976,7 @@ state.PCH {
 			count 0
 		}
 	}
-	control.31 {
+	control.32 {
 		iface CARD
 		name 'HDMI/DP,pcm=8 Jack'
 		value false
@@ -974,7 +986,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.32 {
+	control.33 {
 		iface MIXER
 		name 'IEC958 Playback Con Mask'
 		index 2
@@ -985,7 +997,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.33 {
+	control.34 {
 		iface MIXER
 		name 'IEC958 Playback Pro Mask'
 		index 2
@@ -996,7 +1008,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.34 {
+	control.35 {
 		iface MIXER
 		name 'IEC958 Playback Default'
 		index 2
@@ -1007,7 +1019,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.35 {
+	control.36 {
 		iface MIXER
 		name 'IEC958 Playback Switch'
 		index 2
@@ -1018,7 +1030,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.36 {
+	control.37 {
 		iface PCM
 		device 8
 		name ELD
@@ -1029,7 +1041,7 @@ state.PCH {
 			count 0
 		}
 	}
-	control.37 {
+	control.38 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 255
@@ -1054,65 +1066,59 @@ state.PCH {
 !!------------------
 
 Module
-nls_iso8859_1
-nls_cp437
-vfat
-fat
 bnep
 rfcomm
 bluetooth
-joydev
 snd_hda_codec_hdmi
 snd_hda_codec_idt
-arc4
-brcmsmac
-mac80211
-i915
+joydev
 snd_hda_intel
 snd_hda_codec
-drm_kms_helper
 snd_hwdep
+i915
 snd_pcm
 snd_seq_midi
-brcmutil
-drm
 snd_rawmidi
 snd_seq_midi_event
 snd_seq
+lib80211_crypt_tkip
+drm_kms_helper
 snd_timer
+drm
 snd_seq_device
-cfg80211
-dell_wmi
-dell_laptop
-sparse_keymap
-psmouse
-snd
-wmi
-dcdbas
-serio_raw
-ppdev
-soundcore
-mei
-crc8
-snd_page_alloc
-cordic
-coretemp
-ghash_clmulni_intel
+wl
 i2c_algo_bit
+video
+cfg80211
+lib80211
+snd
+dell_laptop
+dell_wmi
+sparse_keymap
+mac_hid
+soundcore
+dcdbas
+snd_page_alloc
+wmi
+ppdev
+coretemp
+kvm_intel
+kvm
+ghash_clmulni_intel
 aesni_intel
 cryptd
-bcma
 aes_x86_64
-video
+mei
 microcode
+lpc_ich
 parport_pc
-mac_hid
+psmouse
+serio_raw
 lp
 parport
-e1000e
 sdhci_pci
 sdhci
-usb_storage
+e1000e
 
 
 !!Sysfs Files
@@ -1149,20 +1155,18 @@ usb_storage
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[   17.548687] cfg80211:   (5735000 KHz - 5835000 KHz @ 40000 KHz), (300 mBi, 2000 mBm)
-[   17.683496] snd_hda_intel 0000:00:1b.0: irq 43 for MSI/MSI-X
-[   17.793787] type=1400 audit(1342163505.252:2): apparmor="STATUS" operation="profile_load" name="/sbin/dhclient" pid=620 comm="apparmor_parser"
---
-[   18.295227] input: AlpsPS/2 ALPS DualPoint TouchPad as /devices/platform/i8042/serio1/input/input7
-[   18.356791] input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
-[   18.356850] input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
-[   18.356897] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[   18.356941] input: HDA Intel PCH Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[   18.356983] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
-[   18.357023] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input13
-[   18.357062] input: HDA Intel PCH Dock Line Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input14
-[   18.357489] i915 0000:00:02.0: setting latency timer to 64
+[   14.593516] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+[   14.602723] snd_hda_intel 0000:00:1b.0: irq 44 for MSI/MSI-X
+[   14.877051] type=1400 audit(1362762741.666:11): apparmor="STATUS" operation="profile_replace" name="/sbin/dhclient" pid=837 comm="apparmor_parser"
+[   15.276145] input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[   15.276211] input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[   15.276257] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
+[   15.276303] input: HDA Intel PCH Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
+[   15.276347] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input13
+[   15.276390] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input14
+[   15.276432] input: HDA Intel PCH Dock Line Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input15
+[   15.689364] Bluetooth: Core ver 2.16
 
 

@@ -3,7 +3,7 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Fri Jul  6 09:06:04 UTC 2012
+!!Script ran on: Mon Jul  9 05:33:02 UTC 2012
 
 
 !!Linux Distribution
@@ -139,7 +139,7 @@ Node 0x10 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Device: name="CONEXANT Analog", type="Audio", device=0
   Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
-  Amp-Out vals:  [0x38 0x38]
+  Amp-Out vals:  [0x35 0x35]
   Converter: stream=8, channel=0
   PCM:
     rates [0x560]: 44100 48000 96000 192000
@@ -153,7 +153,7 @@ Node 0x11 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
   Control: name="Headphone Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
-  Amp-Out vals:  [0x38 0x38]
+  Amp-Out vals:  [0x35 0x35]
   Converter: stream=8, channel=0
   PCM:
     rates [0x560]: 44100 48000 96000 192000
@@ -476,20 +476,20 @@ Node 0x08 [Vendor Defined Widget] wcaps 0xf00000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  7 Jul  6 16:34 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  6 Jul  6 16:34 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  5 Jul  6 16:34 /dev/snd/hwC0D3
-crw-rw---T+ 1 root audio 116,  4 Jul  6 16:48 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  3 Jul  6 16:48 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  2 Jul  6 16:34 /dev/snd/pcmC0D3p
-crw-rw---T+ 1 root audio 116,  1 Jul  6 16:34 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul  6 16:34 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  7 Jul  9 10:51 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  6 Jul  9 10:51 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  5 Jul  9 10:51 /dev/snd/hwC0D3
+crw-rw---T+ 1 root audio 116,  4 Jul  9 10:53 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  3 Jul  9 10:53 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  2 Jul  9 10:53 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  1 Jul  9 10:51 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jul  9 10:51 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul  6 16:34 .
-drwxr-xr-x 3 root root 220 Jul  6 16:34 ..
-lrwxrwxrwx 1 root root  12 Jul  6 16:34 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Jul  9 10:51 .
+drwxr-xr-x 3 root root 220 Jul  9 10:51 ..
+lrwxrwxrwx 1 root root  12 Jul  9 10:51 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
@@ -526,7 +526,7 @@ Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
   Playback channels: Mono
   Limits: Playback 0 - 74
-  Mono: Playback 56 [76%] [-18.00dB] [on]
+  Mono: Playback 53 [72%] [-21.00dB] [on]
 Simple mixer control 'Headphone',0
   Capabilities: pvolume pswitch penum
   Playback channels: Front Left - Front Right
@@ -546,8 +546,8 @@ Simple mixer control 'PCM',0
   Playback channels: Front Left - Front Right
   Limits: Playback 0 - 255
   Mono:
-  Front Left: Playback 255 [100%] [0.00dB]
-  Front Right: Playback 255 [100%] [0.00dB]
+  Front Left: Playback 253 [99%] [0.40dB]
+  Front Right: Playback 253 [99%] [0.40dB]
 Simple mixer control 'Mic',0
   Capabilities: cvolume cswitch penum
   Capture channels: Front Left - Front Right
@@ -749,7 +749,7 @@ state.PCH {
 	control.12 {
 		iface MIXER
 		name 'Master Playback Volume'
-		value 56
+		value 53
 		comment {
 			access 'read write'
 			type INTEGER
@@ -757,7 +757,7 @@ state.PCH {
 			range '0 - 74'
 			dbmin -7400
 			dbmax 0
-			dbvalue.0 -1800
+			dbvalue.0 -2100
 		}
 	}
 	control.13 {
@@ -878,8 +878,8 @@ state.PCH {
 	control.24 {
 		iface MIXER
 		name 'PCM Playback Volume'
-		value.0 255
-		value.1 255
+		value.0 253
+		value.1 253
 		comment {
 			access 'read write user'
 			type INTEGER
@@ -888,8 +888,8 @@ state.PCH {
 			tlv '0000000100000008ffffec1400000014'
 			dbmin -5100
 			dbmax 0
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 -40
+			dbvalue.1 -40
 		}
 	}
 }
@@ -900,57 +900,53 @@ state.PCH {
 !!------------------
 
 Module
-nls_iso8859_1
-nls_cp437
-vfat
-fat
 nls_utf8
 isofs
+rfcomm
+bnep
 parport_pc
 ppdev
-bnep
-rfcomm
 snd_hda_codec_hdmi
 snd_hda_codec_conexant
+arc4
 snd_hda_intel
 snd_hda_codec
+iwlwifi
 snd_hwdep
 snd_pcm
-arc4
+psmouse
 snd_seq_midi
 snd_rawmidi
-iwlwifi
-mac80211
-snd_seq_midi_event
-snd_seq
-snd_timer
-snd_seq_device
-snd
-rts5139
-cdc_ncm
-uvcvideo
-videodev
-v4l2_compat_ioctl32
-dell_laptop
-dcdbas
-dell_wmi
-sparse_keymap
-psmouse
-soundcore
-cfg80211
-mei
-usbnet
-cdc_acm
-cdc_wdm
-snd_page_alloc
-wmi
-btusb
-serio_raw
-bluetooth
 i915
 drm_kms_helper
 drm
+snd_seq_midi_event
+mac80211
+snd_seq
+dell_wmi
+serio_raw
 i2c_algo_bit
+sparse_keymap
+rts5139
+cdc_acm
+cdc_ncm
+usbnet
+uvcvideo
+videodev
+v4l2_compat_ioctl32
+snd_timer
+snd_seq_device
+cfg80211
+snd
+soundcore
+wmi
+mei
+cdc_wdm
+snd_page_alloc
+btusb
+dell_laptop
+dcdbas
+bluetooth
 video
 mac_hid
 lp
@@ -993,25 +989,16 @@ parport
 !!ALSA/HDA dmesg
 !!------------------
 
-[  529.340927] ehci_hcd 0000:00:1a.0: PCI INT A disabled
-[  529.512841] snd_hda_intel 0000:00:1b.0: PCI INT A disabled
-[  529.528575] PM: suspend of drv:snd_hda_intel dev:0000:00:1b.0 complete after 222.689 msecs
-[  529.936811] PM: suspend of drv:sd dev:0:0:0:0 complete after 642.419 msecs
---
-[  530.499925] ehci_hcd 0000:00:1a.0: PME# disabled
-[  530.499940] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0xf (was 0x100, writing 0x10a)
-[  530.499953] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x4 (was 0x4, writing 0xf0610004)
-[  530.499957] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x10)
-[  530.499962] snd_hda_intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100002)
-[  530.499998] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x100, writing 0x10b)
---
-[  530.500865] ehci_hcd 0000:00:1a.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
-[  530.500874] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
-[  530.500877] ehci_hcd 0000:00:1a.0: setting latency timer to 64
-[  530.500880] ehci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
-[  530.500886] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[  530.500888] ehci_hcd 0000:00:1d.0: setting latency timer to 64
-[  530.500934] snd_hda_intel 0000:00:1b.0: irq 45 for MSI/MSI-X
-[  530.500942] ahci 0000:00:1f.2: setting latency timer to 64
+[   11.442330] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+[   11.442378] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[   11.442440] snd_hda_intel 0000:00:1b.0: irq 45 for MSI/MSI-X
+[   11.442468] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[   11.558065] input: PS/2 Generic Mouse as /devices/platform/i8042/serio1/input/input8
+[   12.020410] hda_codec: CX20590: BIOS auto-probing.
+[   12.038368] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
+[   12.038427] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[   12.038492] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[   12.038541] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
+[   12.551975] ppdev: user-space parallel port driver
 
 

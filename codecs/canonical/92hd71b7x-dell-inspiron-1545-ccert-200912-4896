@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Fri Jul 13 15:46:13 UTC 2012
+!!Script ran on: Fri Jun 20 13:03:05 UTC 2014
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+Ubuntu 12.04.4 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04.4 LTS" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu precise (12.04.4 LTS)"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
 Manufacturer:      Dell Inc.
 Product Name:      Inspiron 1545                   
 Product Version:   
+Firmware Version:  A11
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.2.0-27-generic
+Kernel release:    3.2.0-65-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:293e (rev 03)
 	Subsystem: 1028:02aa
@@ -89,7 +90,7 @@ snd-usb-audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
 	align_buffer_size : Y
@@ -276,7 +277,7 @@ Node 0x1a [Audio Selector] wcaps 0x30010d: Stereo Amp-Out
   Amp-Out caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
   Amp-Out vals:  [0x00 0x00]
   Connection: 3
-     0x0b 0x0c* 0x0e
+     0x0b* 0x0c 0x0e
 Node 0x1b [Audio Selector] wcaps 0x30010d: Stereo Amp-Out
   Control: name="Mux Capture Volume", index=1, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
@@ -384,23 +385,23 @@ Node 0x28 [Volume Knob Widget] wcaps 0x600000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  6 Jul 13 11:43 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  5 Jul 13 11:43 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  4 Jul 13 11:44 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  3 Jul 13 11:44 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  2 Jul 13 11:44 /dev/snd/pcmC0D1p
-crw-rw---T+ 1 root audio 116,  1 Jul 13 11:43 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul 13 11:43 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  6 Jun 20 08:57 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  5 Jun 20 08:57 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  4 Jun 20 08:58 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  3 Jun 20 08:58 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  2 Jun 20 08:58 /dev/snd/pcmC0D1p
+crw-rw---T+ 1 root audio 116,  1 Jun 20 08:57 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jun 20 08:57 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul 13 11:43 .
-drwxr-xr-x 3 root root 200 Jul 13 11:43 ..
-lrwxrwxrwx 1 root root  12 Jul 13 11:43 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Jun 20 08:57 .
+drwxr-xr-x 3 root root 200 Jun 20 08:57 ..
+lrwxrwxrwx 1 root root  12 Jun 20 08:57 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -514,7 +515,7 @@ Simple mixer control 'Mux',1
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.Intel {
@@ -864,8 +865,8 @@ nls_iso8859_1
 nls_cp437
 vfat
 fat
-rfcomm
 bnep
+rfcomm
 bluetooth
 parport_pc
 ppdev
@@ -873,41 +874,41 @@ snd_hda_codec_idt
 snd_hda_intel
 snd_hda_codec
 snd_hwdep
+lib80211_crypt_tkip
 snd_pcm
+wl
 snd_seq_midi
-joydev
 snd_rawmidi
 snd_seq_midi_event
+uvcvideo
+joydev
+videodev
 snd_seq
-i915
-drm_kms_helper
+v4l2_compat_ioctl32
 snd_timer
 snd_seq_device
-lib80211_crypt_tkip
+cfg80211
 snd
-drm
 dell_laptop
-wl
 dell_wmi
-dcdbas
+lib80211
+i915
 psmouse
-serio_raw
-i2c_algo_bit
-sparse_keymap
-video
 mac_hid
-uvcvideo
-videodev
-v4l2_compat_ioctl32
+drm_kms_helper
+drm
+sparse_keymap
+dcdbas
 soundcore
 snd_page_alloc
-lib80211
+i2c_algo_bit
 wmi
+serio_raw
+video
 lp
 parport
 sky2
 ums_realtek
-uas
 usb_storage
 
 
@@ -948,14 +949,14 @@ usb_storage
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[    9.581806] type=1400 audit(1342194236.315:10): apparmor="STATUS" operation="profile_replace" name="/usr/lib/connman/scripts/dhclient-script" pid=714 comm="apparmor_parser"
-[    9.941115] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
-[    9.941190] snd_hda_intel 0000:00:1b.0: irq 47 for MSI/MSI-X
-[    9.941223] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   10.233175] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[   10.233332] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[   12.438289] sky2 0000:09:00.0: eth0: enabling interface
+[   12.656047] eth1: Broadcom BCM4315 802.11 Hybrid Wireless Controller 6.20.155.1 (r326264)
+[   13.015576] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+[   13.015653] snd_hda_intel 0000:00:1b.0: irq 47 for MSI/MSI-X
+[   13.015686] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[   13.105004] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[   13.105180] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
+[   14.052672] sky2 0000:09:00.0: eth0: enabling interface
 
 

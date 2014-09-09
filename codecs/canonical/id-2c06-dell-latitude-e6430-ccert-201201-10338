@@ -1,0 +1,1402 @@
+upload=true&script=true&cardinfo=
+!!################################
+!!ALSA Information Script v 0.4.61
+!!################################
+
+!!Script ran on: Tue Jul  9 06:23:02 UTC 2013
+
+
+!!Linux Distribution
+!!------------------
+
+Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      Dell Inc.
+Product Name:      Latitude E6430
+Product Version:   01
+Firmware Version:  A06
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    3.2.0-32-generic
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         x86_64
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     1.0.24
+Library version:    1.0.25
+Utilities version:  1.0.25
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+Pulseaudio:
+      Installed - Yes (/usr/bin/pulseaudio)
+      Running - Yes
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [PCH            ]: HDA-Intel - HDA Intel PCH
+                      HDA Intel PCH at 0xf7730000 irq 47
+ 1 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xf6080000 irq 17
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:1b.0 Audio device: Intel Corporation Panther Point High Definition Audio Controller (rev 04)
+01:00.1 Audio device: NVIDIA Corporation GF108 High Definition Audio Controller (rev a1)
+
+
+!!Advanced information - PCI Vendor/Device/Subsystem ID's
+!!-------------------------------------------------------
+
+00:1b.0 0403: 8086:1e20 (rev 04)
+	Subsystem: 1028:0534
+--
+01:00.1 0403: 10de:0bea (rev a1)
+	Subsystem: 1028:0534
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-atiixp-modem: index=-2
+snd-intel8x0m: index=-2
+snd-via82xx-modem: index=-2
+snd-usb-audio: index=-2
+snd-usb-caiaq: index=-2
+snd-usb-ua101: index=-2
+snd-usb-us122l: index=-2
+snd-usb-usx2y: index=-2
+snd-cmipci: mpu_port=0x330 fm_port=0x388
+snd-pcsp: index=-2
+snd-usb-audio: index=-2
+
+
+!!Loaded sound module options
+!!---------------------------
+
+!!Module: snd_hda_intel
+	align_buffer_size : -1
+	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	power_save : 1
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+	snoop : Y
+
+!!Module: snd_hda_intel
+	align_buffer_size : -1
+	bdl_pos_adj : 1,32,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	power_save : 1
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+	snoop : Y
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: IDT 92HD93BXX
+Address: 0
+AFG Function Id: 0x1 (unsol 1)
+Vendor Id: 0x111d76df
+Subsystem Id: 0x10280534
+Revision Id: 0x100203
+No Modem Function Group found
+Default PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
+Default Amp-Out caps: ofs=0x7f, nsteps=0x7f, stepsize=0x02, mute=1
+GPIO: io=5, o=0, i=0, unsolicited=1, wake=1
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[2]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[3]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[4]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Power-Map: 0x77
+Node 0x0a [Pin Complex] wcaps 0x400583: Stereo Amp-In
+  Control: name="Mic Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Mic Jack", index=0, device=0
+  Amp-In caps: N/A
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x0001173c: IN OUT HP EAPD Detect
+    Vref caps: HIZ 50 GRD 80
+  EAPD 0x2: EAPD
+  Pin Default 0x03a11020: [Jack] Mic at Ext Left
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x2, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=03, enabled=1
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x13* 0x14 0x1c
+Node 0x0b [Pin Complex] wcaps 0x400581: Stereo
+  Control: name="Headphone Jack", index=0, device=0
+  Pincap 0x0001001c: OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x0321101f: [Jack] HP Out at Ext Left
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x1, Sequence = 0xf
+  Pin-ctls: 0xc0: OUT HP
+  Unsolicited: tag=01, enabled=1
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x13 0x14* 0x1c
+Node 0x0c [Pin Complex] wcaps 0x400583: Stereo Amp-In
+  Amp-In caps: N/A
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00010034: IN OUT EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x400000f0: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x13* 0x14 0x1c
+Node 0x0d [Pin Complex] wcaps 0x400501: Stereo
+  Control: name="Speaker Phantom Jack", index=0, device=0
+  Pincap 0x00010050: OUT EAPD Balanced
+  EAPD 0x2: EAPD
+  Pin Default 0x90170110: [Fixed] Speaker at Int N/A
+    Conn = Analog, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x13* 0x14 0x1c
+Node 0x0e [Pin Complex] wcaps 0x400581: Stereo
+  Control: name="Dock Line Out Jack", index=0, device=0
+  Pincap 0x0001001c: OUT HP EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x23011050: [Jack] Line Out at Sep Left
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x5, Sequence = 0x0
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=02, enabled=1
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x13* 0x14 0x1c
+Node 0x0f [Pin Complex] wcaps 0x400483: Stereo Amp-In
+  Control: name="Dock Mic Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Dock Mic Jack", index=0, device=0
+  Amp-In caps: N/A
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00000024: IN Detect
+  Pin Default 0x23a1102e: [Jack] Mic at Sep Left
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x2, Sequence = 0xe
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=04, enabled=1
+  Power states: 
+  Power: setting=D0, actual=D0
+Node 0x10 [Pin Complex] wcaps 0x400500: Mono
+  Pincap 0x00000010: OUT
+  Pin Default 0x400000f3: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x3
+  Pin-ctls: 0x00:
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x1a
+Node 0x11 [Pin Complex] wcaps 0x400483: Stereo Amp-In
+  Control: name="Internal Mic Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Amp-In caps: N/A
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00000024: IN Detect
+  Pin Default 0xd5a30130: [Both] Mic at Int Top
+    Conn = ATAPI, Color = Unknown
+    DefAssociation = 0x3, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Unsolicited: tag=00, enabled=0
+  Power states: 
+  Power: setting=D0, actual=D0
+Node 0x12 [Vendor Defined Widget] wcaps 0xf00503: Stereo Amp-In
+  Amp-In caps: N/A
+  Amp-In vals:  [0x00 0x00]
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x20
+Node 0x13 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
+  Control: name="Front Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=63
+  Control: name="Front Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Device: name="STAC92xx Analog", type="Audio", device=0
+  Amp-Out caps: N/A
+  Amp-Out vals:  [0x68 0x68]
+  Converter: stream=0, channel=0
+  Power states: 
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+Node 0x14 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
+  Control: name="Headphone Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=63
+  Control: name="Headphone Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: N/A
+  Amp-Out vals:  [0x68 0x68]
+  Converter: stream=0, channel=0
+  Power states: 
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+Node 0x15 [Audio Input] wcaps 0x1d0541: Stereo
+  Device: name="STAC92xx Analog", type="Audio", device=0
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  Power states: 
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+  Connection: 1
+     0x17
+  Processing caps: benign=0, ncoeff=0
+Node 0x16 [Audio Input] wcaps 0x1d0541: Stereo
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  Power states: 
+  Power: setting=D0, actual=D0
+  Delay: 13 samples
+  Connection: 1
+     0x18
+  Processing caps: benign=0, ncoeff=0
+Node 0x17 [Audio Selector] wcaps 0x300d0d: Stereo Amp-Out R/L
+  Control: name="Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Capture Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x10, nsteps=0x2e, stepsize=0x03, mute=1
+  Amp-Out vals:  [0x10 0x10]
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 6
+     0x1b 0x0a 0x0c 0x0f 0x11* 0x12
+Node 0x18 [Audio Selector] wcaps 0x300d0d: Stereo Amp-Out R/L
+  Amp-Out caps: ofs=0x10, nsteps=0x2e, stepsize=0x03, mute=1
+  Amp-Out vals:  [0x90 0x90]
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 6
+     0x1b* 0x0a 0x0c 0x0f 0x11 0x12
+Node 0x19 [Audio Selector] wcaps 0x300501: Stereo
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 3
+     0x13* 0x14 0x1c
+Node 0x1a [Audio Mixer] wcaps 0x200500: Mono
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x19
+Node 0x1b [Audio Mixer] wcaps 0x20050b: Stereo Amp-In
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x97 0x97] [0x97 0x97] [0x97 0x97] [0x97 0x97] [0x97 0x97]
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 5
+     0x13 0x14 0x0a 0x0c 0x0f
+Node 0x1c [Audio Selector] wcaps 0x30050d: Stereo Amp-Out
+  Amp-Out caps: ofs=0x1f, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-Out vals:  [0x9f 0x9f]
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x1b
+Node 0x1d [Audio Output] wcaps 0x4061d: Stereo Digital Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Power states: 
+  Power: setting=D0, actual=D0
+  Delay: 4 samples
+Node 0x1e [Audio Output] wcaps 0x4061d: Stereo Digital Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Power states: 
+  Power: setting=D0, actual=D0
+  Delay: 4 samples
+Node 0x1f [Pin Complex] wcaps 0x400781: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x400000f0: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x1d
+Node 0x20 [Pin Complex] wcaps 0x400781: Stereo Digital
+  Pincap 0x00000034: IN OUT Detect
+  Pin Default 0x400000f0: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0xf, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states: 
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x1e
+Node 0x21 [Beep Generator Widget] wcaps 0x70040c: Mono Amp-Out
+  Control: name="Beep Playback Switch", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Control: name="Beep Playback Volume", index=0, device=0
+    ControlAmp: chs=1, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x03, nsteps=0x03, stepsize=0x17, mute=1
+  Amp-Out vals:  [0x00]
+  Power states: 
+  Power: setting=D0, actual=D0
+Node 0x22 [Vendor Defined Widget] wcaps 0xf00001: Stereo
+Codec: Conexant ID 2c06
+Address: 1
+MFG Function Id: 0x2 (unsol 1)
+Vendor Id: 0x14f12c06
+Subsystem Id: 0x14f1000f
+Revision Id: 0x100000
+Modem Function Group: 0x2
+Codec: Nvidia GPU 14 HDMI/DP
+Address: 0
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0014
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Control: name="HDMI/DP,pcm=3 Jack", index=0, device=0
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Control: name="ELD", index=0, device=3
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=01, enabled=1
+  Connection: 1
+     0x04
+Codec: Nvidia GPU 14 HDMI/DP
+Address: 1
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0014
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Control: name="HDMI/DP,pcm=7 Jack", index=0, device=0
+  Control: name="IEC958 Playback Con Mask", index=1, device=0
+  Control: name="IEC958 Playback Pro Mask", index=1, device=0
+  Control: name="IEC958 Playback Default", index=1, device=0
+  Control: name="IEC958 Playback Switch", index=1, device=0
+  Control: name="ELD", index=0, device=7
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=01, enabled=1
+  Connection: 1
+     0x04
+Codec: Nvidia GPU 14 HDMI/DP
+Address: 2
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0014
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Control: name="HDMI/DP,pcm=8 Jack", index=0, device=0
+  Control: name="IEC958 Playback Con Mask", index=2, device=0
+  Control: name="IEC958 Playback Pro Mask", index=2, device=0
+  Control: name="IEC958 Playback Default", index=2, device=0
+  Control: name="IEC958 Playback Switch", index=2, device=0
+  Control: name="ELD", index=0, device=8
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=01, enabled=1
+  Connection: 1
+     0x04
+Codec: Nvidia GPU 14 HDMI/DP
+Address: 3
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x10de0014
+Subsystem Id: 0x10de0101
+Revision Id: 0x100100
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x04 [Audio Output] wcaps 0x72b1: 8-Channels Digital Stripe CP
+  Converter: stream=0, channel=0
+  Digital: Enabled
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0xe]: 16 20 24
+    formats [0x5]: PCM AC3
+  Unsolicited: tag=00, enabled=0
+Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
+  Control: name="HDMI/DP,pcm=9 Jack", index=0, device=0
+  Control: name="IEC958 Playback Con Mask", index=3, device=0
+  Control: name="IEC958 Playback Pro Mask", index=3, device=0
+  Control: name="IEC958 Playback Default", index=3, device=0
+  Control: name="IEC958 Playback Switch", index=3, device=0
+  Control: name="ELD", index=0, device=9
+  Pincap 0x09000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=01, enabled=1
+  Connection: 1
+     0x04
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw---T+ 1 root audio 116,  6 Jul  9 14:13 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116, 15 Jul  9 14:13 /dev/snd/controlC1
+crw-rw---T+ 1 root audio 116,  5 Jul  9 14:13 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  4 Jul  9 14:13 /dev/snd/hwC0D1
+crw-rw---T+ 1 root audio 116, 14 Jul  9 14:13 /dev/snd/hwC1D0
+crw-rw---T+ 1 root audio 116, 13 Jul  9 14:13 /dev/snd/hwC1D1
+crw-rw---T+ 1 root audio 116, 12 Jul  9 14:13 /dev/snd/hwC1D2
+crw-rw---T+ 1 root audio 116, 11 Jul  9 14:13 /dev/snd/hwC1D3
+crw-rw---T+ 1 root audio 116,  3 Jul  9 14:13 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  2 Jul  9 14:13 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116, 10 Jul  9 14:13 /dev/snd/pcmC1D3p
+crw-rw---T+ 1 root audio 116,  9 Jul  9 14:13 /dev/snd/pcmC1D7p
+crw-rw---T+ 1 root audio 116,  8 Jul  9 14:13 /dev/snd/pcmC1D8p
+crw-rw---T+ 1 root audio 116,  7 Jul  9 14:13 /dev/snd/pcmC1D9p
+crw-rw---T+ 1 root audio 116,  1 Jul  9 14:13 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jul  9 14:13 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  80 Jul  9 14:13 .
+drwxr-xr-x 3 root root 380 Jul  9 14:13 ..
+lrwxrwxrwx 1 root root  12 Jul  9 14:13 pci-0000:00:1b.0 -> ../controlC0
+lrwxrwxrwx 1 root root  12 Jul  9 14:13 pci-0000:01:00.1 -> ../controlC1
+
+
+!!Aplay/Arecord output
+!!--------------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: PCH [HDA Intel PCH], device 0: STAC92xx Analog [STAC92xx Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 7: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 8: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: NVidia [HDA NVidia], device 9: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 0: PCH [HDA Intel PCH], device 0: STAC92xx Analog [STAC92xx Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [PCH]
+
+Card hw:0 'PCH'/'HDA Intel PCH at 0xf7730000 irq 47'
+  Mixer name	: 'IDT 92HD93BXX'
+  Components	: 'HDA:111d76df,10280534,00100203 HDA:14f12c06,14f1000f,00100000'
+  Controls      : 19
+  Simple ctrls  : 9
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 64
+  Mono: Playback 41 [64%] [-17.25dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Front',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 64
+  Mono:
+  Front Left: Playback 64 [100%] [0.00dB] [on]
+  Front Right: Playback 64 [100%] [0.00dB] [on]
+Simple mixer control 'Mic',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 3
+  Front Left: Capture 0 [0%] [0.00dB]
+  Front Right: Capture 0 [0%] [0.00dB]
+Simple mixer control 'Beep',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 3
+  Mono: Playback 1 [33%] [-12.00dB] [on]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 46
+  Front Left: Capture 16 [35%] [0.00dB] [on]
+  Front Right: Capture 16 [35%] [0.00dB] [on]
+Simple mixer control 'Dock Mic',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 3
+  Front Left: Capture 0 [0%] [0.00dB]
+  Front Right: Capture 0 [0%] [0.00dB]
+Simple mixer control 'Internal Mic',0
+  Capabilities: cvolume penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 3
+  Front Left: Capture 0 [0%] [0.00dB]
+  Front Right: Capture 0 [0%] [0.00dB]
+
+!!-------Mixer controls for card 1 [NVidia]
+
+Card hw:1 'NVidia'/'HDA NVidia at 0xf6080000 irq 17'
+  Mixer name	: 'Nvidia GPU 14 HDMI/DP'
+  Components	: 'HDA:10de0014,10de0101,00100100'
+  Controls      : 24
+  Simple ctrls  : 4
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',1
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',2
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',3
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+
+
+!!Alsactl output
+!!--------------
+
+--startcollapse--
+state.PCH {
+	control.1 {
+		iface MIXER
+		name 'Front Playback Volume'
+		value.0 64
+		value.1 64
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 64'
+			dbmin -4800
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'Front Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'Beep Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'Beep Playback Volume'
+		value 1
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 3'
+			dbmin -1800
+			dbmax 0
+			dbvalue.0 -1200
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'Headphone Playback Volume'
+		value.0 64
+		value.1 64
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 64'
+			dbmin -4800
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'Capture Volume'
+		value.0 16
+		value.1 16
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 46'
+			dbmin -1600
+			dbmax 3000
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'Mic Capture Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3000
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'Dock Mic Capture Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3000
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'Internal Mic Capture Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3000
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'Master Playback Volume'
+		value 41
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 64'
+			dbmin -9999999
+			dbmax 0
+			dbvalue.0 -1725
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.14 {
+		iface CARD
+		name 'Dock Line Out Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.15 {
+		iface CARD
+		name 'Headphone Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.16 {
+		iface CARD
+		name 'Speaker Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.17 {
+		iface CARD
+		name 'Mic Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.18 {
+		iface CARD
+		name 'Dock Mic Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.19 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+}
+state.NVidia {
+	control.1 {
+		iface CARD
+		name 'HDMI/DP,pcm=3 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.6 {
+		iface PCM
+		device 3
+		name ELD
+		value ''
+		comment {
+			access read
+			type BYTES
+			count 0
+		}
+	}
+	control.7 {
+		iface CARD
+		name 'HDMI/DP,pcm=7 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 1
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 1
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 1
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 1
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.12 {
+		iface PCM
+		device 7
+		name ELD
+		value ''
+		comment {
+			access read
+			type BYTES
+			count 0
+		}
+	}
+	control.13 {
+		iface CARD
+		name 'HDMI/DP,pcm=8 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 2
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 2
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 2
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.17 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 2
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.18 {
+		iface PCM
+		device 8
+		name ELD
+		value ''
+		comment {
+			access read
+			type BYTES
+			count 0
+		}
+	}
+	control.19 {
+		iface CARD
+		name 'HDMI/DP,pcm=9 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.20 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 3
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.21 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 3
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.22 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 3
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.23 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 3
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.24 {
+		iface PCM
+		device 9
+		name ELD
+		value ''
+		comment {
+			access read
+			type BYTES
+			count 0
+		}
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+hidp
+vesafb
+bnep
+rfcomm
+snd_hda_codec_hdmi
+nvidia
+snd_hda_codec_idt
+snd_hda_intel
+arc4
+snd_hda_codec
+iwlwifi
+mac80211
+dell_laptop
+dell_wmi
+snd_seq_midi
+snd_rawmidi
+snd_seq_midi_event
+snd_seq
+snd_hwdep
+snd_seq_device
+uvcvideo
+videodev
+dcdbas
+cfg80211
+psmouse
+snd_pcm
+snd_timer
+joydev
+sparse_keymap
+snd
+soundcore
+v4l2_compat_ioctl32
+serio_raw
+wmi
+mei
+ppdev
+parport_pc
+snd_page_alloc
+dm_multipath
+btusb
+bluetooth
+video
+mac_hid
+lp
+parport
+usbhid
+hid
+sdhci_pci
+sdhci
+dm_raid45
+e1000e
+xor
+dm_mirror
+dm_region_hash
+dm_log
+btrfs
+zlib_deflate
+libcrc32c
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x0a 0x03a11020
+0x0b 0x0321101f
+0x0c 0x400000f0
+0x0d 0x90170110
+0x0e 0x23011050
+0x0f 0x23a1102e
+0x10 0x400000f3
+0x11 0xd5a30130
+0x1f 0x400000f0
+0x20 0x400000f0
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC0D1/init_pin_configs:
+0x73 0x016a10f0
+
+/sys/class/sound/hwC0D1/driver_pin_configs:
+
+/sys/class/sound/hwC0D1/user_pin_configs:
+
+/sys/class/sound/hwC0D1/init_verbs:
+
+/sys/class/sound/hwC1D0/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D0/driver_pin_configs:
+
+/sys/class/sound/hwC1D0/user_pin_configs:
+
+/sys/class/sound/hwC1D0/init_verbs:
+
+/sys/class/sound/hwC1D1/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D1/driver_pin_configs:
+
+/sys/class/sound/hwC1D1/user_pin_configs:
+
+/sys/class/sound/hwC1D1/init_verbs:
+
+/sys/class/sound/hwC1D2/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D2/driver_pin_configs:
+
+/sys/class/sound/hwC1D2/user_pin_configs:
+
+/sys/class/sound/hwC1D2/init_verbs:
+
+/sys/class/sound/hwC1D3/init_pin_configs:
+0x05 0x18560010
+
+/sys/class/sound/hwC1D3/driver_pin_configs:
+
+/sys/class/sound/hwC1D3/user_pin_configs:
+
+/sys/class/sound/hwC1D3/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!--------------
+
+[   18.873517] EXT4-fs (sda3): re-mounted. Opts: errors=remount-ro
+[   19.044374] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[   19.044478] snd_hda_intel 0000:00:1b.0: irq 47 for MSI/MSI-X
+[   19.044504] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[   19.233937] input: HDA Intel PCH Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
+[   19.234025] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
+[   19.234092] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input13
+[   19.234153] input: HDA Intel PCH Dock Line Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input14
+[   19.234392] snd_hda_intel 0000:01:00.1: PCI INT B -> GSI 17 (level, low) -> IRQ 17
+[   19.234395] hda_intel: Disabling MSI
+[   19.234457] snd_hda_intel 0000:01:00.1: setting latency timer to 64
+[   19.324583] nvidia: module license 'NVIDIA' taints kernel.
+--
+[   20.705757] type=1400 audit(1373350393.051:11): apparmor="STATUS" operation="profile_replace" name="/sbin/dhclient" pid=1035 comm="apparmor_parser"
+[   20.987776] input: HDA NVidia HDMI/DP,pcm=9 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input17
+[   20.987949] input: HDA NVidia HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input18
+[   20.988107] input: HDA NVidia HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input19
+[   20.988268] input: HDA NVidia HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input20
+[   21.047910] nvidia 0000:01:00.0: power state changed by ACPI to D0
+
+

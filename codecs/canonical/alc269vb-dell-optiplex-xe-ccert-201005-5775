@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Mon Jul 16 11:32:56 UTC 2012
+!!Script ran on: Fri May 10 14:22:31 UTC 2013
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+Ubuntu 12.10 \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.10" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu quantal (12.10)"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
 Manufacturer:      Dell Inc.
 Product Name:      OptiPlex XE                  
 Product Version:   
+Firmware Version:  A00
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.2.0-23-generic
+Kernel release:    3.5.0-17-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -33,7 +34,7 @@ SMP Enabled:       Yes
 !!ALSA Version
 !!------------
 
-Driver version:     1.0.24
+Driver version:     1.0.25
 Library version:    1.0.25
 Utilities version:  1.0.25
 
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:3a6e (rev 02)
 	Subsystem: 1028:02fb
@@ -89,10 +90,10 @@ snd-usb-audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
-	align_buffer_size : Y
+	align_buffer_size : -1
 	bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
@@ -232,6 +233,7 @@ Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
 Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
   Control: name="Speaker Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Speaker Phantom Jack", index=0, device=0
   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
   Amp-Out vals:  [0x00 0x00]
   Pincap 0x00010014: OUT EAPD Detect
@@ -284,7 +286,7 @@ Node 0x19 [Pin Complex] wcaps 0x40008b: Stereo Amp-In
     Conn = 1/8, Color = Pink
     DefAssociation = 0x3, Sequence = 0x0
   Pin-ctls: 0x24: IN VREF_80
-  Unsolicited: tag=02, enabled=1
+  Unsolicited: tag=03, enabled=1
 Node 0x1a [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
   Amp-In vals:  [0x00 0x00]
@@ -302,7 +304,7 @@ Node 0x1a [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
 Node 0x1b [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
   Control: name="PCM Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
-  Control: name="Line-Out Jack", index=0, device=0
+  Control: name="Line Out Jack", index=0, device=0
   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
   Amp-In vals:  [0x00 0x00]
   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
@@ -364,22 +366,22 @@ Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  5 Jul 16 07:30 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  4 Jul 16 07:30 /dev/snd/hwC0D2
-crw-rw---T+ 1 root audio 116,  3 Jul 16 07:30 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  2 Jul 16 07:30 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  1 Jul 16 07:30 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul 16 07:30 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  5 May 10 10:20 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  4 May 10 10:20 /dev/snd/hwC0D2
+crw-rw---T+ 1 root audio 116,  3 May 10 10:20 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  2 May 10 10:20 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  1 May 10 10:20 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 May 10 10:20 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul 16 07:30 .
-drwxr-xr-x 3 root root 180 Jul 16 07:30 ..
-lrwxrwxrwx 1 root root  12 Jul 16 07:30 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 May 10 10:20 .
+drwxr-xr-x 3 root root 180 May 10 10:20 ..
+lrwxrwxrwx 1 root root  12 May 10 10:20 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -403,7 +405,7 @@ card 0: Intel [HDA Intel], device 0: ALC269VB Analog [ALC269VB Analog]
 Card hw:0 'Intel'/'HDA Intel at 0xfe6fc000 irq 52'
   Mixer name	: 'Realtek ALC269VB'
   Components	: 'HDA:10ec0269,102802fb,00100100'
-  Controls      : 16
+  Controls      : 17
   Simple ctrls  : 8
 Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
@@ -458,7 +460,7 @@ Simple mixer control 'Auto-Mute Mode',0
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.Intel {
@@ -651,7 +653,7 @@ state.Intel {
 	}
 	control.15 {
 		iface CARD
-		name 'Line-Out Jack'
+		name 'Line Out Jack'
 		value false
 		comment {
 			access read
@@ -660,6 +662,16 @@ state.Intel {
 		}
 	}
 	control.16 {
+		iface CARD
+		name 'Speaker Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.17 {
 		iface CARD
 		name 'Mic Jack'
 		value false
@@ -678,47 +690,49 @@ state.Intel {
 
 Module
 nls_iso8859_1
-nls_cp437
-vfat
-fat
-parport_pc
-ppdev
-rfcomm
 bnep
+rfcomm
+parport_pc
 bluetooth
+ppdev
 snd_hda_codec_realtek
 snd_hda_intel
 snd_hda_codec
+coretemp
+joydev
+gpio_ich
 snd_hwdep
+hid_generic
 snd_pcm
-snd_seq_midi
-snd_rawmidi
-snd_seq_midi_event
-psmouse
 dell_wmi
 sparse_keymap
-snd_seq
-serio_raw
-joydev
-wmi
-snd_timer
-snd_seq_device
+snd_seq_midi
+snd_rawmidi
 usbhid
 hid
 dcdbas
+snd_seq_midi_event
+snd_seq
+i915
+snd_timer
+psmouse
+snd_seq_device
+microcode
+serio_raw
+drm_kms_helper
+lpc_ich
 snd
+drm
 soundcore
 snd_page_alloc
-mac_hid
-i915
-drm_kms_helper
-drm
 i2c_algo_bit
+wmi
+mac_hid
 video
 lp
 parport
-tg3
 usb_storage
+tg3
 
 
 !!Sysfs Files
@@ -744,18 +758,14 @@ usb_storage
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[    9.759390] input: Dell WMI hotkeys as /devices/virtual/input/input4
-[   11.123357] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
-[   11.123420] snd_hda_intel 0000:00:1b.0: irq 52 for MSI/MSI-X
-[   11.123447] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   11.360939] type=1400 audit(1342438243.582:2): apparmor="STATUS" operation="profile_load" name="/sbin/dhclient" pid=587 comm="apparmor_parser"
---
-[   11.363392] type=1400 audit(1342438243.582:7): apparmor="STATUS" operation="profile_replace" name="/usr/lib/connman/scripts/dhclient-script" pid=587 comm="apparmor_parser"
-[   11.953427] hda_codec: ALC269: SKU not ready 0x411111f0
-[   11.958627] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
-[   11.958950] input: HDA Intel Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
-[   13.433138] tg3 0000:05:00.0: irq 53 for MSI/MSI-X
+[   10.670810] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+[   10.670932] snd_hda_intel 0000:00:1b.0: >irq 52 for MSI/MSI-X
+[   10.786519] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+[   10.899729] hda_codec: ALC269VB: SKU not ready 0x411111f0
+[   10.903838] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
+[   10.904221] input: HDA Intel Line Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
+[   11.801140] tg3 0000:05:00.0: >irq 53 for MSI/MSI-X
 
 

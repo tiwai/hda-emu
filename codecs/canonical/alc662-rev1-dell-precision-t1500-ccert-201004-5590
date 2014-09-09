@@ -3,7 +3,7 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Sat Jul  7 16:09:50 UTC 2012
+!!Script ran on: Mon Jun 25 15:29:19 UTC 2012
 
 
 !!Linux Distribution
@@ -23,7 +23,7 @@ Product Version:   00
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.2.0-23-generic
+Kernel release:    3.2.0-26-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -135,7 +135,7 @@ Node 0x02 [Audio Output] wcaps 0x1d: Stereo Amp-Out
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Device: name="ALC662 rev1 Analog", type="Audio", device=0
   Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
-  Amp-Out vals:  [0x2c 0x2c]
+  Amp-Out vals:  [0x2e 0x2e]
   Converter: stream=8, channel=0
   PCM:
     rates [0x160]: 44100 48000 96000
@@ -145,7 +145,7 @@ Node 0x03 [Audio Output] wcaps 0x1d: Stereo Amp-Out
   Control: name="Surround Playback Volume", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
-  Amp-Out vals:  [0x2c 0x2c]
+  Amp-Out vals:  [0x2e 0x2e]
   Converter: stream=8, channel=0
   PCM:
     rates [0x160]: 44100 48000 96000
@@ -157,7 +157,7 @@ Node 0x04 [Audio Output] wcaps 0x1d: Stereo Amp-Out
   Control: name="LFE Playback Volume", index=0, device=0
     ControlAmp: chs=2, dir=Out, idx=0, ofs=0
   Amp-Out caps: ofs=0x40, nsteps=0x40, stepsize=0x03, mute=0
-  Amp-Out vals:  [0x2c 0x2c]
+  Amp-Out vals:  [0x2e 0x2e]
   Converter: stream=8, channel=0
   PCM:
     rates [0x160]: 44100 48000 96000
@@ -184,7 +184,7 @@ Node 0x08 [Audio Input] wcaps 0x10011b: Stereo Amp-In
   Control: name="Capture Volume", index=0, device=0
   Device: name="ALC662 rev1 Analog", type="Audio", device=0
   Amp-In caps: ofs=0x09, nsteps=0x1f, stepsize=0x05, mute=1
-  Amp-In vals:  [0x11 0x11]
+  Amp-In vals:  [0x12 0x12]
   Converter: stream=4, channel=0
   SDI-Select: 0
   PCM:
@@ -256,7 +256,7 @@ Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
   Pin Default 0x01014010: [Jack] Line Out at Ext Rear
     Conn = 1/8, Color = Green
     DefAssociation = 0x1, Sequence = 0x0
-  Pin-ctls: 0x40: OUT
+  Pin-ctls: 0x00:
   Unsolicited: tag=02, enabled=1
   Connection: 1
      0x0c
@@ -312,7 +312,7 @@ Node 0x19 [Pin Complex] wcaps 0x40018f: Stereo Amp-In Amp-Out
     ControlAmp: chs=3, dir=In, idx=0, ofs=0
   Control: name="Front Mic Jack", index=0, device=0
   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x27, mute=0
-  Amp-In vals:  [0x00 0x00]
+  Amp-In vals:  [0x03 0x03]
   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
   Amp-Out vals:  [0x80 0x80]
   Pincap 0x0000173c: IN OUT HP Detect
@@ -402,20 +402,20 @@ Node 0x26 [Vendor Defined Widget] wcaps 0xf00000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  7 Jul  7 11:47 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  6 Jul  7 11:47 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  5 Jul  7 11:47 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  4 Jul  7 11:47 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  3 Jul  7 11:47 /dev/snd/pcmC0D1p
-crw-rw---T+ 1 root audio 116,  2 Jul  7 11:47 /dev/snd/pcmC0D2c
-crw-rw---T+ 1 root audio 116,  1 Jul  7 11:47 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul  7 11:47 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  7 Jun 25 11:08 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  6 Jun 25 11:08 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  5 Jun 25 11:29 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  4 Jun 25 11:29 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  3 Jun 25 11:09 /dev/snd/pcmC0D1p
+crw-rw---T+ 1 root audio 116,  2 Jun 25 11:08 /dev/snd/pcmC0D2c
+crw-rw---T+ 1 root audio 116,  1 Jun 25 11:08 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jun 25 11:08 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul  7 11:47 .
-drwxr-xr-x 3 root root 220 Jul  7 11:47 ..
-lrwxrwxrwx 1 root root  12 Jul  7 11:47 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Jun 25 11:08 .
+drwxr-xr-x 3 root root 220 Jun 25 11:08 ..
+lrwxrwxrwx 1 root root  12 Jun 25 11:08 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
@@ -455,7 +455,7 @@ Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
   Playback channels: Mono
   Limits: Playback 0 - 64
-  Mono: Playback 44 [69%] [-20.00dB] [on]
+  Mono: Playback 46 [72%] [-18.00dB] [on]
 Simple mixer control 'Headphone',0
   Capabilities: pswitch penum
   Playback channels: Front Left - Front Right
@@ -488,8 +488,8 @@ Simple mixer control 'Front Mic Boost',0
   Playback channels: Front Left - Front Right
   Capture channels: Front Left - Front Right
   Limits: 0 - 3
-  Front Left: 0 [0%] [0.00dB]
-  Front Right: 0 [0%] [0.00dB]
+  Front Left: 3 [100%] [30.00dB]
+  Front Right: 3 [100%] [30.00dB]
 Simple mixer control 'Surround',0
   Capabilities: pvolume pswitch penum
   Playback channels: Front Left - Front Right
@@ -526,8 +526,8 @@ Simple mixer control 'Capture',0
   Capabilities: cvolume cswitch penum
   Capture channels: Front Left - Front Right
   Limits: Capture 0 - 31
-  Front Left: Capture 17 [55%] [12.00dB] [on]
-  Front Right: Capture 17 [55%] [12.00dB] [on]
+  Front Left: Capture 18 [58%] [13.50dB] [on]
+  Front Right: Capture 18 [58%] [13.50dB] [on]
 Simple mixer control 'Capture',1
   Capabilities: cvolume cswitch penum
   Capture channels: Front Left - Front Right
@@ -809,8 +809,8 @@ state.Intel {
 	control.19 {
 		iface MIXER
 		name 'Front Mic Boost Volume'
-		value.0 0
-		value.1 0
+		value.0 3
+		value.1 3
 		comment {
 			access 'read write'
 			type INTEGER
@@ -818,8 +818,8 @@ state.Intel {
 			range '0 - 3'
 			dbmin 0
 			dbmax 3000
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 3000
+			dbvalue.1 3000
 		}
 	}
 	control.20 {
@@ -848,8 +848,8 @@ state.Intel {
 	control.22 {
 		iface MIXER
 		name 'Capture Volume'
-		value.0 17
-		value.1 17
+		value.0 18
+		value.1 18
 		comment {
 			access 'read write'
 			type INTEGER
@@ -857,8 +857,8 @@ state.Intel {
 			range '0 - 31'
 			dbmin -1350
 			dbmax 3300
-			dbvalue.0 1200
-			dbvalue.1 1200
+			dbvalue.0 1350
+			dbvalue.1 1350
 		}
 	}
 	control.23 {
@@ -958,7 +958,7 @@ state.Intel {
 	control.31 {
 		iface MIXER
 		name 'Master Playback Volume'
-		value 44
+		value 46
 		comment {
 			access 'read write'
 			type INTEGER
@@ -966,7 +966,7 @@ state.Intel {
 			range '0 - 64'
 			dbmin -6400
 			dbmax 0
-			dbvalue.0 -2000
+			dbvalue.0 -1800
 		}
 	}
 	control.32 {
@@ -992,7 +992,7 @@ state.Intel {
 	control.34 {
 		iface CARD
 		name 'Front Headphone Jack'
-		value false
+		value true
 		comment {
 			access read
 			type BOOLEAN
@@ -1054,8 +1054,12 @@ state.Intel {
 !!------------------
 
 Module
-bnep
+nls_iso8859_1
+nls_cp437
+vfat
+fat
 rfcomm
+bnep
 bluetooth
 parport_pc
 ppdev
@@ -1064,28 +1068,29 @@ snd_hda_intel
 snd_hda_codec
 snd_hwdep
 snd_pcm
-snd_seq_midi
 i915
 drm_kms_helper
-snd_rawmidi
 drm
+snd_seq_midi
+snd_rawmidi
 snd_seq_midi_event
-snd_seq
 psmouse
-joydev
-serio_raw
+snd_seq
 i2c_algo_bit
-dcdbas
-video
 snd_timer
 snd_seq_device
-mei
 snd
+joydev
+serio_raw
+video
 soundcore
 snd_page_alloc
+mei
+mac_hid
+dcdbas
 lp
 parport
-mac_hid
+usb_storage
 usbhid
 hid
 tg3
@@ -1116,15 +1121,18 @@ tg3
 !!ALSA/HDA dmesg
 !!------------------
 
-[   15.214204] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
-[   15.214280] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
-[   15.214327] snd_hda_intel 0000:00:1b.0: irq 43 for MSI/MSI-X
-[   15.214348] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   15.440163] input: HDA Intel Line as /devices/pci0000:00/0000:00:1b.0/sound/card0/input4
-[   15.440245] input: HDA Intel Front Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
-[   15.440312] input: HDA Intel Rear Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
-[   15.440378] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input7
-[   15.440443] input: HDA Intel Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
-[   16.133583] init: failsafe main process (750) killed by TERM signal
+[   10.674067] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+[   10.674121] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[   10.674165] snd_hda_intel 0000:00:1b.0: irq 43 for MSI/MSI-X
+[   10.674190] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[   10.706697] type=1400 audit(1340636935.210:2): apparmor="STATUS" operation="profile_load" name="/sbin/dhclient" pid=670 comm="apparmor_parser"
+--
+[   10.747937] type=1400 audit(1340636935.250:7): apparmor="STATUS" operation="profile_replace" name="/usr/lib/connman/scripts/dhclient-script" pid=618 comm="apparmor_parser"
+[   10.791066] input: HDA Intel Line as /devices/pci0000:00/0000:00:1b.0/sound/card0/input4
+[   10.791166] input: HDA Intel Front Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
+[   10.791237] input: HDA Intel Rear Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
+[   10.791307] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input7
+[   10.791376] input: HDA Intel Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
+[   12.421978] tg3 0000:01:00.0: irq 44 for MSI/MSI-X
 
 

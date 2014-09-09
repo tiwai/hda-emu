@@ -3,7 +3,7 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Thu Jul  5 17:27:41 UTC 2012
+!!Script ran on: Thu Jul  5 16:49:36 UTC 2012
 
 
 !!Linux Distribution
@@ -574,21 +574,21 @@ Node 0x03 [Pin Complex] wcaps 0x40739d: 8-Channels Digital Amp-Out CP
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  8 Jul  5 13:13 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  7 Jul  5 13:13 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  6 Jul  5 13:13 /dev/snd/hwC0D3
-crw-rw---T+ 1 root audio 116,  5 Jul  5 13:13 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  4 Jul  5 13:13 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  3 Jul  5 13:13 /dev/snd/pcmC0D2c
-crw-rw---T+ 1 root audio 116,  2 Jul  5 13:13 /dev/snd/pcmC0D3p
-crw-rw---T+ 1 root audio 116,  1 Jul  5 13:13 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul  5 13:13 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  8 Jul  5 12:47 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  7 Jul  5 12:47 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  6 Jul  5 12:47 /dev/snd/hwC0D3
+crw-rw---T+ 1 root audio 116,  5 Jul  5 12:47 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  4 Jul  5 12:47 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  3 Jul  5 12:47 /dev/snd/pcmC0D2c
+crw-rw---T+ 1 root audio 116,  2 Jul  5 12:47 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  1 Jul  5 12:47 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jul  5 12:47 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul  5 13:13 .
-drwxr-xr-x 3 root root 240 Jul  5 13:13 ..
-lrwxrwxrwx 1 root root  12 Jul  5 13:13 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Jul  5 12:47 .
+drwxr-xr-x 3 root root 240 Jul  5 12:47 ..
+lrwxrwxrwx 1 root root  12 Jul  5 12:47 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
@@ -1302,8 +1302,8 @@ nls_iso8859_1
 nls_cp437
 vfat
 fat
-bnep
 rfcomm
+bnep
 bluetooth
 parport_pc
 ppdev
@@ -1316,26 +1316,26 @@ snd_pcm
 snd_seq_midi
 snd_rawmidi
 snd_seq_midi_event
-snd_seq
 joydev
-i915
-drm_kms_helper
-drm
+snd_seq
 snd_timer
 snd_seq_device
 snd
-dcdbas
-soundcore
-psmouse
-serio_raw
-i2c_algo_bit
-video
-mac_hid
-snd_page_alloc
-lp
-parport
+i915
 usbhid
 hid
+drm_kms_helper
+drm
+mac_hid
+soundcore
+snd_page_alloc
+psmouse
+lp
+serio_raw
+parport
+i2c_algo_bit
+dcdbas
+video
 r8169
 usb_storage
 
@@ -1378,21 +1378,21 @@ usb_storage
 !!ALSA/HDA dmesg
 !!------------------
 
-[   11.635965] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
-[   11.776743] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
-[   11.776900] snd_hda_intel 0000:00:1b.0: irq 45 for MSI/MSI-X
-[   11.776926] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   11.819317] hda_codec: ALC887: BIOS auto-probing.
-[   11.840177] HDMI status: Codec=3 Pin=3 Presence_Detect=0 ELD_Valid=0
-[   11.840316] input: HDA Intel HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input4
-[   11.840393] input: HDA Intel Line as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
-[   11.840449] input: HDA Intel Front Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
-[   11.840506] input: HDA Intel Rear Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input7
-[   11.840560] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
-[   11.840622] input: HDA Intel Line-Out Side as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
-[   11.840678] input: HDA Intel Line-Out CLFE as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[   11.840734] input: HDA Intel Line-Out Surround as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[   11.840796] input: HDA Intel Line-Out Front as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
-[   11.968951] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+[    6.008871] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+[    6.152508] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[    6.152557] snd_hda_intel 0000:00:1b.0: irq 45 for MSI/MSI-X
+[    6.152582] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[    6.398274] hda_codec: ALC887: BIOS auto-probing.
+[    6.579569] HDMI status: Codec=3 Pin=3 Presence_Detect=0 ELD_Valid=0
+[    6.579705] input: HDA Intel HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input4
+[    6.579785] input: HDA Intel Line as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
+[    6.579842] input: HDA Intel Front Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
+[    6.579898] input: HDA Intel Rear Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input7
+[    6.579956] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
+[    6.580026] input: HDA Intel Line-Out Side as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[    6.580082] input: HDA Intel Line-Out CLFE as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[    6.580140] input: HDA Intel Line-Out Surround as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
+[    6.580196] input: HDA Intel Line-Out Front as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
+[    8.569421] r8169 0000:02:00.0: eth0: link down
 
 

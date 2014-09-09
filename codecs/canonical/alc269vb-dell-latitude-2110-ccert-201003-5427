@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Fri Jul 13 15:55:24 UTC 2012
+!!Script ran on: Wed Mar 27 17:35:00 UTC 2013
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+Ubuntu 12.04.2 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04.2 LTS" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu precise (12.04.2 LTS)"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
 Manufacturer:      Dell Inc.
 Product Name:      Latitude 2110                   
 Product Version:   
+Firmware Version:  X06
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.2.0-27-generic
+Kernel release:    3.5.0-23-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -33,7 +34,7 @@ SMP Enabled:       Yes
 !!ALSA Version
 !!------------
 
-Driver version:     1.0.24
+Driver version:     1.0.25
 Library version:    1.0.25
 Utilities version:  1.0.25
 
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:27d8 (rev 01)
 	Subsystem: 1028:0461
@@ -89,10 +90,10 @@ snd-usb-audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
-	align_buffer_size : Y
+	align_buffer_size : -1
 	bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
@@ -222,6 +223,7 @@ Node 0x11 [Vendor Defined Widget] wcaps 0xf00000: Mono
 Node 0x12 [Pin Complex] wcaps 0x40000b: Stereo Amp-In
   Control: name="Internal Mic Boost Volume", index=0, device=0
     ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Internal Mic Phantom Jack", index=0, device=0
   Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
   Amp-In vals:  [0x00 0x00]
   Pincap 0x00000020: IN
@@ -234,6 +236,7 @@ Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
 Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
   Control: name="Speaker Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Speaker Phantom Jack", index=0, device=0
   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
   Amp-Out vals:  [0x00 0x00]
   Pincap 0x00010014: OUT EAPD Detect
@@ -366,22 +369,22 @@ Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  5 Jul 13 11:52 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  4 Jul 13 11:52 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  3 Jul 13 11:52 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  2 Jul 13 11:52 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  1 Jul 13 11:52 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul 13 11:52 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  5 Mar 27 13:31 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  4 Mar 27 13:31 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  3 Mar 27 13:32 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  2 Mar 27 13:32 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  1 Mar 27 13:31 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Mar 27 13:31 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul 13 11:52 .
-drwxr-xr-x 3 root root 180 Jul 13 11:52 ..
-lrwxrwxrwx 1 root root  12 Jul 13 11:52 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Mar 27 13:31 .
+drwxr-xr-x 3 root root 180 Mar 27 13:31 ..
+lrwxrwxrwx 1 root root  12 Mar 27 13:31 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -405,7 +408,7 @@ card 0: Intel [HDA Intel], device 0: ALC269VB Analog [ALC269VB Analog]
 Card hw:0 'Intel'/'HDA Intel at 0xf6dfc000 irq 46'
   Mixer name	: 'Realtek ALC269VB'
   Components	: 'HDA:10ec0269,10280461,00100100'
-  Controls      : 18
+  Controls      : 20
   Simple ctrls  : 10
 Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
@@ -474,7 +477,7 @@ Simple mixer control 'Internal Mic Boost',0
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.Intel {
@@ -693,6 +696,26 @@ state.Intel {
 	}
 	control.17 {
 		iface CARD
+		name 'Speaker Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.18 {
+		iface CARD
+		name 'Internal Mic Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.19 {
+		iface CARD
 		name 'Mic Jack'
 		value false
 		comment {
@@ -701,7 +724,7 @@ state.Intel {
 			count 1
 		}
 	}
-	control.18 {
+	control.20 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 255
@@ -727,63 +750,66 @@ state.Intel {
 
 Module
 nls_iso8859_1
-nls_cp437
-vfat
-fat
-rfcomm
 bnep
+rfcomm
 parport_pc
 ppdev
-bcma
 arc4
+brcmsmac
 snd_hda_codec_realtek
 snd_hda_intel
-snd_hda_codec
-snd_hwdep
-brcmsmac
-snd_pcm
-snd_seq_midi
-snd_rawmidi
 mac80211
-snd_seq_midi_event
-snd_seq
+snd_hda_codec
+uvcvideo
+hid_generic
+videobuf2_core
+videodev
 joydev
 usbhid
-cdc_wdm
+snd_hwdep
 cdc_acm
-i915
-hid
-uvcvideo
-videodev
+videobuf2_vmalloc
 cdc_ether
-usbnet
+snd_pcm
+hid
 brcmutil
-snd_timer
-cfg80211
-snd_seq_device
-drm_kms_helper
-rts_pstor
-dell_wmi
-drm
+videobuf2_memops
 btusb
+usbnet
+gpio_ich
+cdc_wdm
+cfg80211
 bluetooth
-v4l2_compat_ioctl32
-snd
+snd_seq_midi
+snd_rawmidi
+snd_seq_midi_event
+snd_seq
+cordic
+dell_wmi
+snd_timer
 sparse_keymap
+coretemp
+snd_seq_device
+dell_laptop
 psmouse
+dcdbas
+serio_raw
+microcode
+i915
+mac_hid
+lpc_ich
+rts_pstor
+drm_kms_helper
+snd
+drm
+wmi
+bcma
+soundcore
+snd_page_alloc
 i2c_algo_bit
 video
-dell_laptop
-serio_raw
-dcdbas
 lp
-mac_hid
-wmi
 parport
-crc8
-soundcore
-cordic
-snd_page_alloc
 tg3
 usb_storage
 
@@ -811,14 +837,12 @@ usb_storage
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[    9.538116] brcmsmac 0000:0c:00.0: setting latency timer to 64
-[    9.753713] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
-[    9.753847] snd_hda_intel 0000:00:1b.0: irq 46 for MSI/MSI-X
-[    9.753920] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[    9.880845] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[    9.881748] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
-[    9.894669] cfg80211: Updating information on frequency 2412 MHz for a 20 MHz width channel with regulatory rule:
+[   10.909002] USB Video Class driver (1.1.1)
+[   11.134669] snd_hda_intel 0000:00:1b.0: irq 46 for MSI/MSI-X
+[   11.232842] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
+[   11.233649] input: HDA Intel Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input12
+[   11.252654] brcmsmac bcma0:0: mfg 4bf core 812 rev 23 class 0 irq 17
 
 

@@ -1,0 +1,2936 @@
+upload=true&script=true&cardinfo=
+!!################################
+!!ALSA Information Script v 0.4.61
+!!################################
+
+!!Script ran on: Mon May 26 07:06:10 UTC 2014
+
+
+!!Linux Distribution
+!!------------------
+
+Ubuntu 12.04.4 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04.4 LTS" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu precise (12.04.4 LTS)"
+
+
+!!DMI Information
+!!---------------
+
+Manufacturer:      Hewlett-Packard
+Product Name:      HP ProBook 440 G2
+Product Version:   A3009C510002
+Firmware Version:  M74 Ver. 93.24
+
+
+!!Kernel Information
+!!------------------
+
+Kernel release:    3.11.0-18-generic
+Operating System:  GNU/Linux
+Architecture:      x86_64
+Processor:         x86_64
+SMP Enabled:       Yes
+
+
+!!ALSA Version
+!!------------
+
+Driver version:     k3.11.0-18-generic
+Library version:    1.0.25
+Utilities version:  1.0.25
+
+
+!!Loaded ALSA modules
+!!-------------------
+
+snd_hda_intel
+snd_hda_intel
+
+
+!!Sound Servers on this system
+!!----------------------------
+
+Pulseaudio:
+      Installed - Yes (/usr/bin/pulseaudio)
+      Running - Yes
+
+
+!!Soundcards recognised by ALSA
+!!-----------------------------
+
+ 0 [MID            ]: HDA-Intel - HDA Intel MID
+                      HDA Intel MID at 0xa0810000 irq 68
+ 1 [PCH            ]: HDA-Intel - HDA Intel PCH
+                      HDA Intel PCH at 0xa0814000 irq 67
+
+
+!!PCI Soundcards installed in the system
+!!--------------------------------------
+
+00:03.0 Audio device: Intel Corporation Device 0a0c (rev 0b)
+00:1b.0 Audio device: Intel Corporation Lynx Point-LP HD Audio Controller (rev 04)
+
+
+!!Advanced information - PCI Vendor/Device/Subsystem ID's
+!!-------------------------------------------------------
+
+00:03.0 0403: 8086:0a0c (rev 0b)
+	Subsystem: 103c:2247
+--
+00:1b.0 0403: 8086:9c20 (rev 04)
+	Subsystem: 103c:2247
+
+
+!!Modprobe options (Sound related)
+!!--------------------------------
+
+snd-atiixp-modem: index=-2
+snd-intel8x0m: index=-2
+snd-via82xx-modem: index=-2
+snd-usb-audio: index=-2
+snd-usb-caiaq: index=-2
+snd-usb-ua101: index=-2
+snd-usb-us122l: index=-2
+snd-usb-usx2y: index=-2
+snd-cmipci: mpu_port=0x330 fm_port=0x388
+snd-pcsp: index=-2
+snd-usb-audio: index=-2
+snd-hda-intel: jackpoll_ms=500
+
+
+!!Loaded sound module options
+!!---------------------------
+
+!!Module: snd_hda_intel
+	align_buffer_size : -1
+	bdl_pos_adj : 32,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	jackpoll_ms : 500,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	power_save : 1
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+	snoop : Y
+
+!!Module: snd_hda_intel
+	align_buffer_size : -1
+	bdl_pos_adj : 32,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	beep_mode : N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+	enable_msi : -1
+	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	jackpoll_ms : 500,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
+	position_fix : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	power_save : 1
+	power_save_controller : Y
+	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	single_cmd : N
+	snoop : Y
+
+
+!!HDA-Intel Codec information
+!!---------------------------
+--startcollapse--
+
+Codec: Intel Haswell HDMI
+Address: 0
+AFG Function Id: 0x1 (unsol 0)
+Vendor Id: 0x80862807
+Subsystem Id: 0x80860101
+Revision Id: 0x100000
+No Modem Function Group found
+Default PCM:
+    rates [0x0]:
+    bits [0x0]:
+    formats [0x0]:
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+State of AFG node 0x01:
+  Power states:  D0 D3 CLKSTOP EPSS
+  Power: setting=D0, actual=D0, Clock-stop-OK
+GPIO: io=0, o=0, i=0, unsolicited=0, wake=0
+Node 0x02 [Audio Output] wcaps 0x6611: 8-Channels Digital
+  Converter: stream=0, channel=0
+  Digital: Enabled GenLevel KAE
+  Digital category: 0x2
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0x1e]: 16 20 24 32
+    formats [0x5]: PCM AC3
+  Power states:  D0 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x03 [Audio Output] wcaps 0x6611: 8-Channels Digital
+  Converter: stream=0, channel=0
+  Digital: Enabled KAE
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0x1e]: 16 20 24 32
+    formats [0x5]: PCM AC3
+  Power states:  D0 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x04 [Audio Output] wcaps 0x6611: 8-Channels Digital
+  Converter: stream=0, channel=0
+  Digital: Enabled KAE
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x7f0]: 32000 44100 48000 88200 96000 176400 192000
+    bits [0x1e]: 16 20 24 32
+    formats [0x5]: PCM AC3
+  Power states:  D0 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x05 [Pin Complex] wcaps 0x40778d: 8-Channels Digital Amp-Out CP
+  Control: name="HDMI/DP,pcm=3 Jack", index=0, device=0
+  Control: name="IEC958 Playback Con Mask", index=0, device=0
+  Control: name="IEC958 Playback Pro Mask", index=0, device=0
+  Control: name="IEC958 Playback Default", index=0, device=0
+  Control: name="IEC958 Playback Switch", index=0, device=0
+  Control: name="ELD", index=0, device=3
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0b000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 0
+  In-driver Connection: 3
+     0x02 0x03 0x04
+Node 0x06 [Pin Complex] wcaps 0x40778d: 8-Channels Digital Amp-Out CP
+  Control: name="HDMI/DP,pcm=7 Jack", index=0, device=0
+  Control: name="IEC958 Playback Con Mask", index=1, device=0
+  Control: name="IEC958 Playback Pro Mask", index=1, device=0
+  Control: name="IEC958 Playback Default", index=1, device=0
+  Control: name="IEC958 Playback Switch", index=1, device=0
+  Control: name="ELD", index=0, device=7
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0b000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 0
+  In-driver Connection: 3
+     0x02 0x03 0x04
+Node 0x07 [Pin Complex] wcaps 0x40778d: 8-Channels Digital Amp-Out CP
+  Control: name="HDMI/DP,pcm=8 Jack", index=0, device=0
+  Control: name="IEC958 Playback Con Mask", index=2, device=0
+  Control: name="IEC958 Playback Pro Mask", index=2, device=0
+  Control: name="IEC958 Playback Default", index=2, device=0
+  Control: name="IEC958 Playback Switch", index=2, device=0
+  Control: name="ELD", index=0, device=8
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0b000094: OUT Detect HBR HDMI DP
+  Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 0
+  In-driver Connection: 3
+     0x02 0x03 0x04
+Node 0x08 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Codec: Realtek ALC282
+Address: 0
+AFG Function Id: 0x1 (unsol 1)
+Vendor Id: 0x10ec0282
+Subsystem Id: 0x103c2247
+Revision Id: 0x100003
+No Modem Function Group found
+Default PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Default Amp-In caps: N/A
+Default Amp-Out caps: N/A
+State of AFG node 0x01:
+  Power states:  D0 D1 D2 D3 CLKSTOP EPSS
+  Power: setting=D0, actual=D0
+GPIO: io=3, o=0, i=0, unsolicited=1, wake=0
+  IO[0]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[1]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+  IO[2]: enable=0, dir=0, wake=0, sticky=0, data=0, unsol=0
+Node 0x02 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Speaker Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Amp-Out caps: ofs=0x57, nsteps=0x57, stepsize=0x02, mute=0
+  Amp-Out vals:  [0x3d 0x3d]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x03 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+  Control: name="Headphone Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Device: name="ALC282 Analog", type="Audio", device=0
+  Amp-Out caps: ofs=0x57, nsteps=0x57, stepsize=0x02, mute=0
+  Amp-Out vals:  [0x3d 0x3d]
+  Converter: stream=0, channel=0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x04 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x05 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x06 [Audio Output] wcaps 0x611: Stereo Digital
+  Converter: stream=0, channel=0
+  Digital:
+  Digital category: 0x0
+  IEC Coding Type: 0x0
+  PCM:
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x07 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x08 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Control: name="Capture Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Capture Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Device: name="ALC282 Analog", type="Audio", device=0
+  Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+  Amp-In vals:  [0x27 0x27]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x23
+Node 0x09 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+  Amp-In vals:  [0x97 0x97]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x22
+Node 0x0a [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x0b [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Control: name="Mic Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Mic Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=1, ofs=0
+  Control: name="Beep Playback Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Control: name="Beep Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=4, ofs=0
+  Amp-In caps: ofs=0x17, nsteps=0x1f, stepsize=0x05, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 5
+     0x18 0x19 0x1a 0x1b 0x1d
+Node 0x0c [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x02 0x0b
+Node 0x0d [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00 0x00] [0x00 0x00]
+  Connection: 2
+     0x03 0x0b
+Node 0x0e [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x0f [Audio Mixer] wcaps 0x20010a: Mono Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x00]
+  Connection: 1
+     0x0d
+Node 0x10 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x11 [Audio Input] wcaps 0x10051b: Stereo Amp-In
+  Amp-In caps: ofs=0x17, nsteps=0x3f, stepsize=0x02, mute=1
+  Amp-In vals:  [0x27 0x27]
+  Converter: stream=0, channel=0
+  SDI-Select: 0
+  PCM:
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x12
+Node 0x12 [Pin Complex] wcaps 0x40040b: Stereo Amp-In
+  Control: name="Internal Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Internal Mic Phantom Jack", index=0, device=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00000020: IN
+  Pin Default 0x90a60140: [Fixed] Mic at Int N/A
+    Conn = Digital, Color = Unknown
+    DefAssociation = 0x4, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x14 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Speaker Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Speaker Phantom Jack", index=0, device=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x00010014: OUT EAPD Detect
+  EAPD 0x2: EAPD
+  Pin Default 0x90170110: [Fixed] Speaker at Int N/A
+    Conn = Analog, Color = Unknown
+    DefAssociation = 0x1, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0c
+Node 0x15 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x16 [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x17 [Pin Complex] wcaps 0x40050c: Mono Amp-Out
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80]
+  Pincap 0x00000010: OUT
+  Pin Default 0x40000000: [N/A] Line Out at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0x0, Sequence = 0x0
+  Pin-ctls: 0x00:
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x0f
+Node 0x18 [Pin Complex] wcaps 0x40048b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00003724: IN Detect
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x19 [Pin Complex] wcaps 0x40048b: Stereo Amp-In
+  Control: name="Mic Boost Volume", index=0, device=0
+    ControlAmp: chs=3, dir=In, idx=0, ofs=0
+  Control: name="Mic Jack", index=0, device=0
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00003724: IN Detect
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x04a11030: [Jack] Mic at Ext Right
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x3, Sequence = 0x0
+  Pin-ctls: 0x24: IN VREF_80
+  Unsolicited: tag=02, enabled=1
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1a [Pin Complex] wcaps 0x40048b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Pincap 0x00003724: IN Detect
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1b [Pin Complex] wcaps 0x40058f: Stereo Amp-In Amp-Out
+  Amp-In caps: ofs=0x00, nsteps=0x03, stepsize=0x2f, mute=0
+  Amp-In vals:  [0x00 0x00]
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x80 0x80]
+  Pincap 0x0000373c: IN OUT HP Detect
+    Vref caps: HIZ 50 GRD 80 100
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x20: IN VREF_HIZ
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x0c* 0x0d
+Node 0x1c [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x1d [Pin Complex] wcaps 0x400400: Mono
+  Pincap 0x00000020: IN
+  Pin Default 0x40f00001: [N/A] Other at Ext N/A
+    Conn = Unknown, Color = Unknown
+    DefAssociation = 0x0, Sequence = 0x1
+  Pin-ctls: 0x20: IN
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+Node 0x1e [Pin Complex] wcaps 0x400781: Stereo Digital
+  Pincap 0x00000014: OUT Detect
+  Pin Default 0x411111f0: [N/A] Speaker at Ext Rear
+    Conn = 1/8, Color = Black
+    DefAssociation = 0xf, Sequence = 0x0
+    Misc = NO_PRESENCE
+  Pin-ctls: 0x40: OUT
+  Unsolicited: tag=00, enabled=0
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 1
+     0x06
+Node 0x1f [Vendor Defined Widget] wcaps 0xf00000: Mono
+Node 0x20 [Vendor Defined Widget] wcaps 0xf00040: Mono
+  Processing caps: benign=0, ncoeff=117
+Node 0x21 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+  Control: name="Headphone Playback Switch", index=0, device=0
+    ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Headphone Jack", index=0, device=0
+  Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-Out vals:  [0x00 0x00]
+  Pincap 0x0000001c: OUT HP Detect
+  Pin Default 0x04211020: [Jack] HP Out at Ext Right
+    Conn = 1/8, Color = Black
+    DefAssociation = 0x2, Sequence = 0x0
+  Pin-ctls: 0xc0: OUT HP
+  Unsolicited: tag=01, enabled=1
+  Power states:  D0 D1 D2 D3 EPSS
+  Power: setting=D0, actual=D0
+  Connection: 2
+     0x0c 0x0d*
+Node 0x22 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 6
+     0x18 0x19 0x1a 0x1b 0x1d 0x0b
+Node 0x23 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
+  Amp-In caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
+  Amp-In vals:  [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80] [0x80 0x80]
+  Connection: 6
+     0x18 0x19 0x1a 0x1b 0x1d 0x0b
+--endcollapse--
+
+
+!!ALSA Device nodes
+!!-----------------
+
+crw-rw---T+ 1 root audio 116, 10 May 23 23:21 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  5 May 23 23:21 /dev/snd/controlC1
+crw-rw---T+ 1 root audio 116,  9 May 23 23:21 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  4 May 23 23:21 /dev/snd/hwC1D0
+crw-rw---T+ 1 root audio 116,  8 May 23 23:21 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  7 May 23 23:21 /dev/snd/pcmC0D7p
+crw-rw---T+ 1 root audio 116,  6 May 23 23:21 /dev/snd/pcmC0D8p
+crw-rw---T+ 1 root audio 116,  3 May 23 23:21 /dev/snd/pcmC1D0c
+crw-rw---T+ 1 root audio 116,  2 May 23 23:21 /dev/snd/pcmC1D0p
+crw-rw---T+ 1 root audio 116,  1 May 23 23:21 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 May 23 23:21 /dev/snd/timer
+
+/dev/snd/by-path:
+total 0
+drwxr-xr-x 2 root root  80 May 23 23:21 .
+drwxr-xr-x 3 root root 280 May 23 23:21 ..
+lrwxrwxrwx 1 root root  12 May 23 23:21 pci-0000:00:03.0 -> ../controlC0
+lrwxrwxrwx 1 root root  12 May 23 23:21 pci-0000:00:1b.0 -> ../controlC1
+
+
+!!Aplay/Arecord output
+!!--------------------
+
+APLAY
+
+**** List of PLAYBACK Hardware Devices ****
+card 0: MID [HDA Intel MID], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: MID [HDA Intel MID], device 7: HDMI 1 [HDMI 1]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: MID [HDA Intel MID], device 8: HDMI 2 [HDMI 2]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: PCH [HDA Intel PCH], device 0: ALC282 Analog [ALC282 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+ARECORD
+
+**** List of CAPTURE Hardware Devices ****
+card 1: PCH [HDA Intel PCH], device 0: ALC282 Analog [ALC282 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+!!Amixer output
+!!-------------
+
+!!-------Mixer controls for card 0 [MID]
+
+Card hw:0 'MID'/'HDA Intel MID at 0xa0810000 irq 68'
+  Mixer name	: 'Intel Haswell HDMI'
+  Components	: 'HDA:80862807,80860101,00100000'
+  Controls      : 21
+  Simple ctrls  : 3
+Simple mixer control 'IEC958',0
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',1
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+Simple mixer control 'IEC958',2
+  Capabilities: pswitch pswitch-joined penum
+  Playback channels: Mono
+  Mono: Playback [on]
+
+!!-------Mixer controls for card 1 [PCH]
+
+Card hw:1 'PCH'/'HDA Intel PCH at 0xa0814000 irq 67'
+  Mixer name	: 'Realtek ALC282'
+  Components	: 'HDA:10ec0282,103c2247,00100003'
+  Controls      : 22
+  Simple ctrls  : 10
+Simple mixer control 'Master',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
+  Playback channels: Mono
+  Limits: Playback 0 - 87
+  Mono: Playback 61 [70%] [-19.50dB] [on]
+Simple mixer control 'Headphone',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 87
+  Mono:
+  Front Left: Playback 87 [100%] [0.00dB] [on]
+  Front Right: Playback 87 [100%] [0.00dB] [on]
+Simple mixer control 'Speaker',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 87
+  Mono:
+  Front Left: Playback 87 [100%] [0.00dB] [on]
+  Front Right: Playback 87 [100%] [0.00dB] [on]
+Simple mixer control 'PCM',0
+  Capabilities: pvolume penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 255
+  Mono:
+  Front Left: Playback 255 [100%] [0.00dB]
+  Front Right: Playback 255 [100%] [0.00dB]
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 0 [0%] [0.00dB]
+  Front Right: 0 [0%] [0.00dB]
+Simple mixer control 'Beep',0
+  Capabilities: pvolume pswitch penum
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 31
+  Mono:
+  Front Left: Playback 0 [0%] [-34.50dB] [off]
+  Front Right: Playback 0 [0%] [-34.50dB] [off]
+Simple mixer control 'Capture',0
+  Capabilities: cvolume cswitch penum
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 63
+  Front Left: Capture 39 [62%] [12.00dB] [on]
+  Front Right: Capture 39 [62%] [12.00dB] [on]
+Simple mixer control 'Auto-Mute Mode',0
+  Capabilities: enum
+  Items: 'Disabled' 'Enabled'
+  Item0: 'Enabled'
+Simple mixer control 'Internal Mic Boost',0
+  Capabilities: volume penum
+  Playback channels: Front Left - Front Right
+  Capture channels: Front Left - Front Right
+  Limits: 0 - 3
+  Front Left: 0 [0%] [0.00dB]
+  Front Right: 0 [0%] [0.00dB]
+
+
+!!Alsactl output
+!!--------------
+
+--startcollapse--
+state.MID {
+	control.1 {
+		iface CARD
+		name 'HDMI/DP,pcm=3 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		value '0482000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.6 {
+		iface PCM
+		device 3
+		name ELD
+		value ''
+		comment {
+			access 'read volatile'
+			type BYTES
+			count 0
+		}
+	}
+	control.7 {
+		iface CARD
+		name 'HDMI/DP,pcm=7 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 1
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 1
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 1
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 1
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.12 {
+		iface PCM
+		device 7
+		name ELD
+		value ''
+		comment {
+			access 'read volatile'
+			type BYTES
+			count 0
+		}
+	}
+	control.13 {
+		iface CARD
+		name 'HDMI/DP,pcm=8 Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'IEC958 Playback Con Mask'
+		index 2
+		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'IEC958 Playback Pro Mask'
+		index 2
+		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access read
+			type IEC958
+			count 1
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'IEC958 Playback Default'
+		index 2
+		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+		comment {
+			access 'read write'
+			type IEC958
+			count 1
+		}
+	}
+	control.17 {
+		iface MIXER
+		name 'IEC958 Playback Switch'
+		index 2
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.18 {
+		iface PCM
+		device 8
+		name ELD
+		value ''
+		comment {
+			access 'read volatile'
+			type BYTES
+			count 0
+		}
+	}
+	control.19 {
+		iface PCM
+		device 3
+		name 'Playback Channel Map'
+		value.0 0
+		value.1 0
+		value.2 0
+		value.3 0
+		value.4 0
+		value.5 0
+		value.6 0
+		value.7 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 8
+			range '0 - 36'
+		}
+	}
+	control.20 {
+		iface PCM
+		device 7
+		name 'Playback Channel Map'
+		value.0 0
+		value.1 0
+		value.2 0
+		value.3 0
+		value.4 0
+		value.5 0
+		value.6 0
+		value.7 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 8
+			range '0 - 36'
+		}
+	}
+	control.21 {
+		iface PCM
+		device 8
+		name 'Playback Channel Map'
+		value.0 0
+		value.1 0
+		value.2 0
+		value.3 0
+		value.4 0
+		value.5 0
+		value.6 0
+		value.7 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 8
+			range '0 - 36'
+		}
+	}
+}
+state.PCH {
+	control.1 {
+		iface MIXER
+		name 'Headphone Playback Volume'
+		value.0 87
+		value.1 87
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 87'
+			dbmin -6525
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'Speaker Playback Volume'
+		value.0 87
+		value.1 87
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 87'
+			dbmin -6525
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'Speaker Playback Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'Mic Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -3450
+			dbvalue.1 -3450
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'Mic Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'Auto-Mute Mode'
+		value Enabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'Capture Volume'
+		value.0 39
+		value.1 39
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 63'
+			dbmin -1725
+			dbmax 3000
+			dbvalue.0 1200
+			dbvalue.1 1200
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'Mic Boost Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3600
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'Internal Mic Boost Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3600
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'Master Playback Volume'
+		value 61
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 87'
+			dbmin -6525
+			dbmax 0
+			dbvalue.0 -1950
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'Master Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.14 {
+		iface CARD
+		name 'Mic Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.15 {
+		iface CARD
+		name 'Internal Mic Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.16 {
+		iface CARD
+		name 'Headphone Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.17 {
+		iface CARD
+		name 'Speaker Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.18 {
+		iface MIXER
+		name 'Beep Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 31'
+			dbmin -3450
+			dbmax 1200
+			dbvalue.0 -3450
+			dbvalue.1 -3450
+		}
+	}
+	control.19 {
+		iface MIXER
+		name 'Beep Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.20 {
+		iface PCM
+		name 'Playback Channel Map'
+		value.0 0
+		value.1 0
+		comment {
+			access read
+			type INTEGER
+			count 2
+			range '0 - 36'
+		}
+	}
+	control.21 {
+		iface PCM
+		name 'Capture Channel Map'
+		value.0 0
+		value.1 0
+		comment {
+			access read
+			type INTEGER
+			count 2
+			range '0 - 36'
+		}
+	}
+	control.22 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+}
+--endcollapse--
+
+
+!!All Loaded Modules
+!!------------------
+
+Module
+coretemp
+nvram
+rfcomm
+bnep
+parport_pc
+ppdev
+binfmt_misc
+snd_hda_codec_hdmi
+snd_hda_codec_realtek
+uvcvideo
+videobuf2_core
+videodev
+videobuf2_vmalloc
+videobuf2_memops
+arc4
+rtk_btusb
+bluetooth
+joydev
+snd_hda_intel
+rtl8723be
+snd_hda_codec
+rtlwifi
+dm_multipath
+i915
+mac80211
+scsi_dh
+snd_hwdep
+snd_pcm
+drm_kms_helper
+drm
+snd_seq_midi
+snd_rawmidi
+snd_seq_midi_event
+snd_seq
+cfg80211
+rtsx_pci_ms
+snd_timer
+snd_seq_device
+rtsx_pci_sdmmc
+tpm_infineon
+psmouse
+memstick
+mei_me
+hp_accel
+lis3lv02d
+hp_wmi
+intel_smartconnect
+kbccmnd
+hp_wireless
+sparse_keymap
+input_polldev
+i2c_algo_bit
+snd
+mei
+rtsx_pci
+lpc_ich
+mac_hid
+serio_raw
+lp
+soundcore
+parport
+btcoexist
+snd_page_alloc
+video
+wmi
+disable_mmc
+tpm_tis
+dm_raid45
+dm_mirror
+dm_region_hash
+dm_log
+btrfs
+r8169
+ahci
+libahci
+raid6_pq
+mii
+xor
+zlib_deflate
+
+
+!!Sysfs Files
+!!-----------
+
+/sys/class/sound/hwC0D0/init_pin_configs:
+0x05 0x18560010
+0x06 0x18560010
+0x07 0x18560010
+
+/sys/class/sound/hwC0D0/driver_pin_configs:
+
+/sys/class/sound/hwC0D0/user_pin_configs:
+
+/sys/class/sound/hwC0D0/init_verbs:
+
+/sys/class/sound/hwC1D0/init_pin_configs:
+0x12 0x90a60140
+0x14 0x90170110
+0x17 0x40000000
+0x18 0x411111f0
+0x19 0x04a11030
+0x1a 0x411111f0
+0x1b 0x411111f0
+0x1d 0x40f00001
+0x1e 0x411111f0
+0x21 0x04211020
+
+/sys/class/sound/hwC1D0/driver_pin_configs:
+
+/sys/class/sound/hwC1D0/user_pin_configs:
+
+/sys/class/sound/hwC1D0/init_verbs:
+
+
+!!ALSA/HDA dmesg
+!!--------------
+
+[196324.596293] 
+[196432.971717] HDMI: ELD buf size is 0, force 128
+[196432.971761] HDMI: invalid ELD data byte 0
+[196438.570974] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[196438.571018] 
+[196442.259311] HDMI: ELD buf size is 0, force 128
+[196442.259334] HDMI: invalid ELD data byte 0
+[196444.933424] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[196565.270583] 
+[196660.619558] HDMI: ELD buf size is 0, force 128
+[196660.619599] HDMI: invalid ELD data byte 0
+[196678.765228] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[196685.607618] 
+[196699.182590] HDMI: ELD buf size is 0, force 128
+[196699.182630] HDMI: invalid ELD data byte 0
+[196777.846082] HDMI: ELD buf size is 0, force 128
+[196777.846126] HDMI: invalid ELD data byte 0
+[196798.861692] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[196805.944842] 
+[196807.550173] HDMI: ELD buf size is 0, force 128
+[196807.550224] HDMI: invalid ELD data byte 0
+[196826.705616] HDMI: ELD buf size is 0, force 128
+[196826.705654] HDMI: invalid ELD data byte 0
+[196918.958808] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[196924.276310] 
+[197018.400344] HDMI: ELD buf size is 0, force 128
+[197018.400367] HDMI: invalid ELD data byte 0
+[197036.152504] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[197048.624709] 
+[197049.509437] HDMI: ELD buf size is 0, force 128
+[197049.509457] HDMI: invalid ELD data byte 0
+[197159.152617] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[197886.973298] 
+[197902.842120] HDMI: ELD buf size is 0, force 128
+[197902.842191] HDMI: invalid ELD data byte 0
+[197999.831062] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[198005.304859] 
+[198115.553895] HDMI: ELD buf size is 0, force 128
+[198115.553916] HDMI: invalid ELD data byte 0
+[198119.927462] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[198125.642034] 
+[198131.847075] HDMI: ELD buf size is 0, force 128
+[198131.847116] HDMI: invalid ELD data byte 0
+[198140.539052] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[198147.703782] 
+[198176.234884] HDMI: ELD buf size is 0, force 128
+[198176.234918] HDMI: invalid ELD data byte 0
+[198214.553801] HDMI: ELD buf size is 0, force 128
+[198214.553832] HDMI: invalid ELD data byte 0
+[198240.024791] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[198245.979161] 
+[198261.936046] HDMI: ELD buf size is 0, force 128
+[198261.936098] HDMI: invalid ELD data byte 0
+[198360.122299] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[198426.484869] 
+[198480.132169] HDMI: ELD buf size is 0, force 128
+[198480.132210] HDMI: invalid ELD data byte 0
+[198480.219061] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[198606.990547] 
+[198632.719353] HDMI: ELD buf size is 0, force 128
+[198632.719394] HDMI: invalid ELD data byte 0
+[198659.032559] HDMI: ELD buf size is 0, force 128
+[198659.032591] HDMI: invalid ELD data byte 0
+[198691.482783] HDMI: ELD buf size is 0, force 128
+[198691.482824] HDMI: invalid ELD data byte 0
+[198713.522913] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[198727.327686] 
+[198831.555824] HDMI: ELD buf size is 0, force 128
+[198831.555865] HDMI: invalid ELD data byte 0
+[198840.509104] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[198965.996278] 
+[199058.242813] HDMI: ELD buf size is 0, force 128
+[199058.242854] HDMI: invalid ELD data byte 0
+[199080.703029] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[199206.670498] 
+[199240.750089] HDMI: ELD buf size is 0, force 128
+[199240.750109] HDMI: invalid ELD data byte 0
+[199303.537702] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[199327.007715] 
+[199340.610699] HDMI: ELD buf size is 0, force 128
+[199340.610732] HDMI: invalid ELD data byte 0
+[199350.947033] HDMI: ELD buf size is 0, force 128
+[199350.947054] HDMI: invalid ELD data byte 0
+[199440.994288] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[199447.344837] 
+[199471.976726] HDMI: ELD buf size is 0, force 128
+[199471.976767] HDMI: invalid ELD data byte 0
+[199561.091516] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[199567.681999] 
+[199625.892990] HDMI: ELD buf size is 0, force 128
+[199625.893031] HDMI: invalid ELD data byte 0
+[199681.188338] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[199688.019105] 
+[199715.605400] HDMI: ELD buf size is 0, force 128
+[199715.605441] HDMI: invalid ELD data byte 0
+[199781.594629] HDMI: ELD buf size is 0, force 128
+[199781.594669] HDMI: invalid ELD data byte 0
+[199801.285083] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[199808.356233] 
+[199843.192359] HDMI: ELD buf size is 0, force 128
+[199843.192391] HDMI: invalid ELD data byte 0
+[199888.780267] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[199892.592224] 
+[199900.726823] HDMI: ELD buf size is 0, force 128
+[199900.726895] HDMI: invalid ELD data byte 0
+[199912.540333] HDMI: ELD buf size is 0, force 128
+[199912.540365] HDMI: invalid ELD data byte 0
+[199921.382186] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[199926.687731] 
+[199998.737901] HDMI: ELD buf size is 0, force 128
+[199998.737943] HDMI: invalid ELD data byte 0
+[200041.479461] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[200167.361877] 
+[200267.258552] HDMI: ELD buf size is 0, force 128
+[200267.258623] HDMI: invalid ELD data byte 0
+[200281.673333] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[200408.036174] 
+[200502.768643] HDMI: ELD buf size is 0, force 128
+[200502.768687] HDMI: invalid ELD data byte 0
+[200521.866420] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[200648.710443] 
+[200704.407490] HDMI: ELD buf size is 0, force 128
+[200704.407517] HDMI: invalid ELD data byte 0
+[200707.982396] HDMI: ELD buf size is 0, force 128
+[200707.982447] HDMI: invalid ELD data byte 0
+[200762.060708] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[200769.047654] 
+[200822.975097] HDMI: ELD buf size is 0, force 128
+[200822.975117] HDMI: invalid ELD data byte 0
+[200882.157148] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[200882.157194] 
+[200889.368782] HDMI: ELD buf size is 0, force 128
+[200889.368822] HDMI: invalid ELD data byte 0
+[200889.384657] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[200976.955559] 
+[200978.072397] HDMI: ELD buf size is 0, force 128
+[200978.072438] HDMI: invalid ELD data byte 0
+[200979.637596] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[201368.727598] 
+[201385.989647] HDMI: ELD buf size is 0, force 128
+[201385.989688] HDMI: invalid ELD data byte 0
+[201400.297173] HDMI: ELD buf size is 0, force 128
+[201400.297214] HDMI: invalid ELD data byte 0
+[201482.642311] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[201489.064728] 
+[201491.542813] HDMI: ELD buf size is 0, force 128
+[201491.542853] HDMI: invalid ELD data byte 0
+[201536.680713] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[201539.205281] 
+[201557.712254] HDMI: ELD buf size is 0, force 128
+[201557.712324] HDMI: invalid ELD data byte 0
+[201576.059032] HDMI: ELD buf size is 0, force 128
+[201576.059073] HDMI: invalid ELD data byte 0
+[201602.739068] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[201602.739445] 
+[201603.064834] HDMI: ELD buf size is 0, force 128
+[201603.064862] HDMI: invalid ELD data byte 0
+[201609.401911] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[201609.401941] 
+[201662.921168] HDMI: ELD buf size is 0, force 128
+[201662.921209] HDMI: invalid ELD data byte 0
+[201721.532445] HDMI: ELD buf size is 0, force 128
+[201721.532485] HDMI: invalid ELD data byte 0
+[201722.836232] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[201729.739080] 
+[201749.475001] HDMI: ELD buf size is 0, force 128
+[201749.475033] HDMI: invalid ELD data byte 0
+[201816.316983] HDMI: ELD buf size is 0, force 128
+[201816.317054] HDMI: invalid ELD data byte 0
+[201828.638901] HDMI: ELD buf size is 0, force 128
+[201828.638942] HDMI: invalid ELD data byte 0
+[201842.932576] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[202032.587514] 
+[202063.544502] HDMI: ELD buf size is 0, force 128
+[202063.544534] HDMI: invalid ELD data byte 0
+[202081.770468] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[202090.750375] 
+[202098.204508] HDMI: ELD buf size is 0, force 128
+[202098.204549] HDMI: invalid ELD data byte 0
+[202203.223539] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[202209.081971] 
+[202304.106693] HDMI: ELD buf size is 0, force 128
+[202304.106764] HDMI: invalid ELD data byte 0
+[202323.320297] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[202449.756235] 
+[202477.786891] HDMI: ELD buf size is 0, force 128
+[202477.786932] HDMI: invalid ELD data byte 0
+[202547.903482] HDMI: ELD buf size is 0, force 128
+[202547.903554] HDMI: invalid ELD data byte 0
+[202563.514356] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[202570.093363] 
+[202571.182239] HDMI: ELD buf size is 0, force 128
+[202571.182280] HDMI: invalid ELD data byte 0
+[202612.400888] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[202616.222592] 
+[202642.023452] HDMI: ELD buf size is 0, force 128
+[202642.023494] HDMI: invalid ELD data byte 0
+[202650.262068] HDMI: ELD buf size is 0, force 128
+[202650.262088] HDMI: invalid ELD data byte 0
+[202683.611266] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[202810.767523] 
+[202828.145659] HDMI: ELD buf size is 0, force 128
+[202828.145700] HDMI: invalid ELD data byte 0
+[202864.611113] HDMI: ELD buf size is 0, force 128
+[202864.611154] HDMI: invalid ELD data byte 0
+[202879.387007] HDMI: ELD buf size is 0, force 128
+[202879.387048] HDMI: invalid ELD data byte 0
+[202923.805939] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[202931.104751] 
+[202968.723116] HDMI: ELD buf size is 0, force 128
+[202968.723147] HDMI: invalid ELD data byte 0
+[203043.902541] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[203049.436177] 
+[203099.660762] HDMI: invalid ELD buf size -1
+[203101.670385] HDMI: invalid ELD buf size -1
+[203103.680008] HDMI: invalid ELD buf size -1
+[203108.704062] HDMI: invalid ELD buf size -1
+[203109.708874] HDMI: invalid ELD buf size -1
+[203110.713685] HDMI: invalid ELD buf size -1
+[203133.875180] HDMI: ELD buf size is 0, force 128
+[203133.875201] HDMI: invalid ELD data byte 0
+[203163.999181] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[203290.110476] 
+[203292.956851] HDMI: ELD buf size is 0, force 128
+[203292.956892] HDMI: invalid ELD data byte 0
+[203325.250884] HDMI: ELD buf size is 0, force 128
+[203325.250905] HDMI: invalid ELD data byte 0
+[203404.192815] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[203410.447563] 
+[203460.183808] HDMI: ELD buf size is 0, force 128
+[203460.183837] HDMI: invalid ELD data byte 0
+[203473.514564] HDMI: ELD buf size is 0, force 128
+[203473.514595] HDMI: invalid ELD data byte 0
+[203502.666084] HDMI: ELD buf size is 0, force 128
+[203502.666124] HDMI: invalid ELD data byte 0
+[203504.723778] HDMI: ELD buf size is 0, force 128
+[203504.723819] HDMI: invalid ELD data byte 0
+[203524.289766] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[203530.784683] 
+[203551.117208] HDMI: ELD buf size is 0, force 128
+[203551.117249] HDMI: invalid ELD data byte 0
+[203644.387195] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[203651.121909] 
+[203665.185258] HDMI: ELD buf size is 0, force 128
+[203665.185298] HDMI: invalid ELD data byte 0
+[203764.484205] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[203769.955915] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+[203770.350177] HDMI: ELD buf size is 0, force 128
+[203770.350248] HDMI: invalid ELD data byte 0
+[203773.464628] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[203891.796171] 
+[203894.762567] HDMI: ELD buf size is 0, force 128
+[203894.762599] HDMI: invalid ELD data byte 0
+[203925.739544] HDMI: ELD buf size is 0, force 128
+[203925.739585] HDMI: invalid ELD data byte 0
+[203949.762963] HDMI: ELD buf size is 0, force 128
+[203949.763014] HDMI: invalid ELD data byte 0
+[203986.993019] HDMI: ELD buf size is 0, force 128
+[203986.993060] HDMI: invalid ELD data byte 0
+[203993.133976] HDMI: ELD buf size is 0, force 128
+[203993.134017] HDMI: invalid ELD data byte 0
+[204004.677532] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[204010.127679] 
+[204055.216085] HDMI: ELD buf size is 0, force 128
+[204055.216125] HDMI: invalid ELD data byte 0
+[204124.774331] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[204130.464726] 
+[204216.069826] HDMI: ELD buf size is 0, force 128
+[204216.069866] HDMI: invalid ELD data byte 0
+[204225.825783] HDMI: ELD buf size is 0, force 128
+[204225.825815] HDMI: invalid ELD data byte 0
+[204244.871279] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[204307.535039] 
+[204308.792746] HDMI: ELD buf size is 0, force 128
+[204308.792786] HDMI: invalid ELD data byte 0
+[204310.970473] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[204310.970503] 
+[204342.183700] HDMI: ELD buf size is 0, force 128
+[204342.183732] HDMI: invalid ELD data byte 0
+[204358.661010] HDMI: ELD buf size is 0, force 128
+[204358.661041] HDMI: invalid ELD data byte 0
+[204364.968718] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[204371.139074] 
+[204375.646737] HDMI: ELD buf size is 0, force 128
+[204375.646771] HDMI: invalid ELD data byte 0
+[204485.065814] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[204491.476194] 
+[204522.745470] HDMI: ELD buf size is 0, force 128
+[204522.745510] HDMI: invalid ELD data byte 0
+[204605.162842] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[204970.819098] 
+[204974.990498] HDMI: ELD buf size is 0, force 128
+[204974.990539] HDMI: invalid ELD data byte 0
+[205085.550699] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[205091.156229] 
+[205100.423712] HDMI: ELD buf size is 0, force 128
+[205100.423753] HDMI: invalid ELD data byte 0
+[205205.646867] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[205452.167615] 
+[205472.524082] HDMI: ELD buf size is 0, force 128
+[205472.524133] HDMI: invalid ELD data byte 0
+[205554.554260] HDMI: ELD buf size is 0, force 128
+[205554.554292] HDMI: invalid ELD data byte 0
+[205565.937905] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[205572.504650] 
+[205583.789902] HDMI: ELD buf size is 0, force 128
+[205583.789943] HDMI: invalid ELD data byte 0
+[205629.902686] rtlwifi-0:rtl_lps_set_psmode():<10000-1> FW LPS leave ps_mode:0
+--
+[205636.684560] 
+[205651.852818] HDMI: ELD buf size is 0, force 128
+[205651.852859] HDMI: invalid ELD data byte 0
+[205686.034996] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[205692.841875] 
+[205752.253832] HDMI: ELD buf size is 0, force 128
+[205752.253853] HDMI: invalid ELD data byte 0
+[205806.131854] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[206434.920763] 
+[206440.753555] HDMI: ELD buf size is 0, force 128
+[206440.753596] HDMI: invalid ELD data byte 0
+[206526.713967] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[207562.078628] 
+[207564.028199] HDMI: ELD buf size is 0, force 128
+[207564.028240] HDMI: invalid ELD data byte 0
+[207607.585928] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[207854.898984] 
+[207931.680957] HDMI: ELD buf size is 0, force 128
+[207931.680978] HDMI: invalid ELD data byte 0
+[207960.672356] HDMI: ELD buf size is 0, force 128
+[207960.672387] HDMI: invalid ELD data byte 0
+[207967.877128] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[208576.921750] 
+[208673.171444] HDMI: ELD buf size is 0, force 128
+[208673.171476] HDMI: invalid ELD data byte 0
+[208688.458708] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[208695.253270] 
+[208703.996337] HDMI: ELD buf size is 0, force 128
+[208703.996359] HDMI: invalid ELD data byte 0
+[208808.555011] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[209078.326464] 
+[209161.097271] HDMI: ELD buf size is 0, force 128
+[209161.097303] HDMI: invalid ELD data byte 0
+[209168.845988] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[209174.596167] 
+[209232.763095] HDMI: ELD buf size is 0, force 128
+[209232.763115] HDMI: invalid ELD data byte 0
+[209235.244896] rtlwifi-0:rtl_lps_set_psmode():<10000-1> FW LPS leave ps_mode:0
+--
+[209242.787210] 
+[209253.251664] HDMI: ELD buf size is 0, force 128
+[209253.251705] HDMI: invalid ELD data byte 0
+[209288.943477] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[209294.933301] 
+[209303.760440] HDMI: ELD buf size is 0, force 128
+[209303.760481] HDMI: invalid ELD data byte 0
+[209311.530723] HDMI: ELD buf size is 0, force 128
+[209311.530774] HDMI: invalid ELD data byte 0
+[209387.828290] HDMI: ELD buf size is 0, force 128
+[209387.828331] HDMI: invalid ELD data byte 0
+[209409.040372] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[209415.270425] 
+[209527.641123] HDMI: ELD buf size is 0, force 128
+[209527.641143] HDMI: invalid ELD data byte 0
+[209529.137027] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[209535.607559] 
+[209550.447534] HDMI: ELD buf size is 0, force 128
+[209550.447574] HDMI: invalid ELD data byte 0
+[209566.232306] HDMI: ELD buf size is 0, force 128
+[209566.232377] HDMI: invalid ELD data byte 0
+[209577.933752] HDMI: ELD buf size is 0, force 128
+[209577.933793] HDMI: invalid ELD data byte 0
+[209633.964437] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[209896.618944] 
+[209936.194888] HDMI: ELD buf size is 0, force 128
+[209936.194909] HDMI: invalid ELD data byte 0
+[209981.875760] HDMI: ELD buf size is 0, force 128
+[209981.875800] HDMI: invalid ELD data byte 0
+[210009.524951] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[210014.950457] 
+[210027.152310] HDMI: ELD buf size is 0, force 128
+[210027.152351] HDMI: invalid ELD data byte 0
+[210068.237474] HDMI: ELD buf size is 0, force 128
+[210068.237515] HDMI: invalid ELD data byte 0
+[210072.280742] HDMI: ELD buf size is 0, force 128
+[210072.280782] HDMI: invalid ELD data byte 0
+[210083.978171] HDMI: ELD buf size is 0, force 128
+[210083.978212] HDMI: invalid ELD data byte 0
+[210111.709402] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[210111.709819] 
+[210111.880694] HDMI: ELD buf size is 0, force 128
+[210111.880726] HDMI: invalid ELD data byte 0
+[210115.231367] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[210135.287583] 
+[210213.614839] HDMI: ELD buf size is 0, force 128
+[210213.614880] HDMI: invalid ELD data byte 0
+[210228.931175] HDMI: ELD buf size is 0, force 128
+[210228.931216] HDMI: invalid ELD data byte 0
+[210249.718815] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[210255.624718] 
+[210291.305477] HDMI: invalid ELD buf size -1
+[210293.315100] HDMI: invalid ELD buf size -1
+[210295.324723] HDMI: invalid ELD buf size -1
+[210300.348751] HDMI: invalid ELD buf size -1
+[210301.353585] HDMI: invalid ELD buf size -1
+[210302.358401] HDMI: invalid ELD buf size -1
+[210325.519918] HDMI: ELD buf size is 0, force 128
+[210325.519938] HDMI: invalid ELD data byte 0
+[210369.815933] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[210375.961854] 
+[210472.667913] HDMI: ELD buf size is 0, force 128
+[210472.667954] HDMI: invalid ELD data byte 0
+[210489.912168] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[210688.838383] 
+[210701.968980] HDMI: ELD buf size is 0, force 128
+[210701.969021] HDMI: invalid ELD data byte 0
+[210730.106492] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[210730.106526] 
+[210731.969184] HDMI: ELD buf size is 0, force 128
+[210731.969225] HDMI: invalid ELD data byte 0
+[210736.973211] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[210857.310350] 
+[210859.412072] HDMI: ELD buf size is 0, force 128
+[210859.412113] HDMI: invalid ELD data byte 0
+[210874.616333] HDMI: ELD buf size is 0, force 128
+[210874.616373] HDMI: invalid ELD data byte 0
+[210970.300046] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[210975.641877] 
+[211000.349830] HDMI: ELD buf size is 0, force 128
+[211000.349882] HDMI: invalid ELD data byte 0
+[211007.539539] HDMI: ELD buf size is 0, force 128
+[211007.539579] HDMI: invalid ELD data byte 0
+[211045.702435] HDMI: ELD buf size is 0, force 128
+[211045.702476] HDMI: invalid ELD data byte 0
+[211090.397000] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[211216.316112] 
+[211282.481572] HDMI: ELD buf size is 0, force 128
+[211282.481613] HDMI: invalid ELD data byte 0
+[211330.590616] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[211336.653223] 
+[211356.305133] HDMI: ELD buf size is 0, force 128
+[211356.305165] HDMI: invalid ELD data byte 0
+[211364.543811] HDMI: ELD buf size is 0, force 128
+[211364.543852] HDMI: invalid ELD data byte 0
+[211421.541783] HDMI: ELD buf size is 0, force 128
+[211421.541814] HDMI: invalid ELD data byte 0
+[211450.687446] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[211456.990400] 
+[211568.652525] HDMI: ELD buf size is 0, force 128
+[211568.652556] HDMI: invalid ELD data byte 0
+[211570.784456] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[211719.726466] 
+[211731.760512] HDMI: ELD buf size is 0, force 128
+[211731.760553] HDMI: invalid ELD data byte 0
+[211810.978306] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[211818.001788] 
+[211831.408637] HDMI: ELD buf size is 0, force 128
+[211831.408678] HDMI: invalid ELD data byte 0
+[211835.451901] HDMI: ELD buf size is 0, force 128
+[211835.451942] HDMI: invalid ELD data byte 0
+[211921.865626] HDMI: ELD buf size is 0, force 128
+[211921.865651] HDMI: invalid ELD data byte 0
+[211923.923281] HDMI: ELD buf size is 0, force 128
+[211923.923322] HDMI: invalid ELD data byte 0
+[211931.075671] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[212177.007558] 
+[212185.474390] HDMI: ELD buf size is 0, force 128
+[212185.474421] HDMI: invalid ELD data byte 0
+[212199.793143] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[212207.091752] 
+[212230.218515] HDMI: ELD buf size is 0, force 128
+[212230.218544] HDMI: invalid ELD data byte 0
+[212252.336367] HDMI: ELD buf size is 0, force 128
+[212252.336408] HDMI: invalid ELD data byte 0
+[212256.379632] HDMI: ELD buf size is 0, force 128
+[212256.379683] HDMI: invalid ELD data byte 0
+[212291.365990] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[212417.681813] 
+[212437.998214] HDMI: ELD buf size is 0, force 128
+[212437.998246] HDMI: invalid ELD data byte 0
+[212499.299691] HDMI: ELD buf size is 0, force 128
+[212499.299732] HDMI: invalid ELD data byte 0
+[212519.676144] HDMI: ELD buf size is 0, force 128
+[212519.676184] HDMI: invalid ELD data byte 0
+[212531.560653] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[212538.018941] 
+[212574.400326] HDMI: ELD buf size is 0, force 128
+[212574.400377] HDMI: invalid ELD data byte 0
+[212582.526867] HDMI: ELD buf size is 0, force 128
+[212582.526907] HDMI: invalid ELD data byte 0
+[212590.721485] HDMI: ELD buf size is 0, force 128
+[212590.721537] HDMI: invalid ELD data byte 0
+[212637.407196] HDMI: ELD buf size is 0, force 128
+[212637.407237] HDMI: invalid ELD data byte 0
+[212651.657243] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[212778.693207] 
+[212814.434052] HDMI: ELD buf size is 0, force 128
+[212814.434083] HDMI: invalid ELD data byte 0
+[212823.833641] HDMI: ELD buf size is 0, force 128
+[212823.833682] HDMI: invalid ELD data byte 0
+[212835.218829] HDMI: ELD buf size is 0, force 128
+[212835.218869] HDMI: invalid ELD data byte 0
+[212840.323876] rtlwifi-0:rtl_lps_set_psmode():<10000-1> FW LPS leave ps_mode:0
+--
+[212840.323909] 
+[212843.925857] HDMI: ELD buf size is 0, force 128
+[212843.925889] HDMI: invalid ELD data byte 0
+[212844.878603] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[212848.889867] 
+[212862.316732] HDMI: ELD buf size is 0, force 128
+[212862.316773] HDMI: invalid ELD data byte 0
+[212891.850897] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[212891.850931] 
+[212893.605958] HDMI: ELD buf size is 0, force 128
+[212893.606010] HDMI: invalid ELD data byte 0
+[212899.030312] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[212899.030343] 
+[212934.226740] HDMI: ELD buf size is 0, force 128
+[212934.226780] HDMI: invalid ELD data byte 0
+[212986.893283] HDMI: ELD buf size is 0, force 128
+[212986.893324] HDMI: invalid ELD data byte 0
+[213011.947772] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213017.361846] 
+[213060.636805] HDMI: ELD buf size is 0, force 128
+[213060.636845] HDMI: invalid ELD data byte 0
+[213132.045008] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213137.698975] 
+[213150.365232] HDMI: ELD buf size is 0, force 128
+[213150.365283] HDMI: invalid ELD data byte 0
+[213192.615302] HDMI: ELD buf size is 0, force 128
+[213192.615334] HDMI: invalid ELD data byte 0
+[213252.142246] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213378.373239] 
+[213446.748424] HDMI: ELD buf size is 0, force 128
+[213446.748466] HDMI: invalid ELD data byte 0
+[213467.309050] HDMI: ELD buf size is 0, force 128
+[213467.309091] HDMI: invalid ELD data byte 0
+[213492.335458] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213498.710364] 
+[213551.220778] HDMI: ELD buf size is 0, force 128
+[213551.220839] HDMI: invalid ELD data byte 0
+[213612.432416] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213619.047491] 
+[213660.809212] HDMI: ELD buf size is 0, force 128
+[213660.809253] HDMI: invalid ELD data byte 0
+[213671.033451] HDMI: ELD buf size is 0, force 128
+[213671.033472] HDMI: invalid ELD data byte 0
+[213692.214582] HDMI: ELD buf size is 0, force 128
+[213692.214623] HDMI: invalid ELD data byte 0
+[213732.529341] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213739.384635] 
+[213803.800648] HDMI: ELD buf size is 0, force 128
+[213803.800689] HDMI: invalid ELD data byte 0
+[213852.625718] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213911.867840] 
+[213925.755059] HDMI: ELD buf size is 0, force 128
+[213925.755090] HDMI: invalid ELD data byte 0
+[213931.896012] HDMI: ELD buf size is 0, force 128
+[213931.896053] HDMI: invalid ELD data byte 0
+[213972.723757] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[213972.724143] 
+[213973.493615] HDMI: ELD buf size is 0, force 128
+[213973.493657] HDMI: invalid ELD data byte 0
+[213978.053229] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[214218.727455] 
+[214225.252746] HDMI: ELD buf size is 0, force 128
+[214225.252786] HDMI: invalid ELD data byte 0
+[214333.013895] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[214339.064652] 
+[214417.676135] HDMI: ELD buf size is 0, force 128
+[214417.676176] HDMI: invalid ELD data byte 0
+[214428.752197] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[214431.323126] 
+[214439.749925] HDMI: ELD buf size is 0, force 128
+[214439.749957] HDMI: invalid ELD data byte 0
+[214453.111223] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[214459.401786] 
+[214480.951179] HDMI: ELD buf size is 0, force 128
+[214480.951219] HDMI: invalid ELD data byte 0
+[214507.152298] HDMI: ELD buf size is 0, force 128
+[214507.152349] HDMI: invalid ELD data byte 0
+[214573.207810] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[214579.738828] 
+[214626.961059] HDMI: ELD buf size is 0, force 128
+[214626.961099] HDMI: invalid ELD data byte 0
+[214653.586518] HDMI: ELD buf size is 0, force 128
+[214653.586550] HDMI: invalid ELD data byte 0
+[214691.212900] HDMI: ELD buf size is 0, force 128
+[214691.212940] HDMI: invalid ELD data byte 0
+[214693.304879] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[214820.413169] 
+[214822.090527] HDMI: ELD buf size is 0, force 128
+[214822.090568] HDMI: invalid ELD data byte 0
+[214831.958503] HDMI: ELD buf size is 0, force 128
+[214831.958533] HDMI: invalid ELD data byte 0
+[214859.208496] HDMI: ELD buf size is 0, force 128
+[214859.208537] HDMI: invalid ELD data byte 0
+[214890.654470] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[214898.632308] 
+[214926.751007] HDMI: ELD buf size is 0, force 128
+[214926.751038] HDMI: invalid ELD data byte 0
+[214933.499517] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[214940.750303] 
+[214958.396462] HDMI: ELD buf size is 0, force 128
+[214958.396505] HDMI: invalid ELD data byte 0
+[214993.416825] HDMI: ELD buf size is 0, force 128
+[214993.416851] HDMI: invalid ELD data byte 0
+[215017.163981] HDMI: ELD buf size is 0, force 128
+[215017.164012] HDMI: invalid ELD data byte 0
+[215053.595944] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215059.081805] 
+[215081.980256] HDMI: invalid ELD buf size -1
+[215083.989881] HDMI: invalid ELD buf size -1
+[215085.999501] HDMI: invalid ELD buf size -1
+[215091.027534] HDMI: invalid ELD buf size -1
+[215092.032371] HDMI: invalid ELD buf size -1
+[215093.037181] HDMI: invalid ELD buf size -1
+[215116.198725] HDMI: ELD buf size is 0, force 128
+[215116.198767] HDMI: invalid ELD data byte 0
+[215173.692548] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215179.418940] 
+[215227.201513] HDMI: ELD buf size is 0, force 128
+[215227.201545] HDMI: invalid ELD data byte 0
+[215293.790015] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215299.756029] 
+[215310.805001] HDMI: ELD buf size is 0, force 128
+[215310.805042] HDMI: invalid ELD data byte 0
+[215324.175783] HDMI: ELD buf size is 0, force 128
+[215324.175815] HDMI: invalid ELD data byte 0
+[215413.886748] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215420.093116] 
+[215423.568011] HDMI: ELD buf size is 0, force 128
+[215423.568043] HDMI: invalid ELD data byte 0
+[215470.033517] HDMI: ELD buf size is 0, force 128
+[215470.033558] HDMI: invalid ELD data byte 0
+[215475.706091] HDMI: ELD buf size is 0, force 128
+[215475.706131] HDMI: invalid ELD data byte 0
+[215533.983694] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215540.430342] 
+[215632.808894] HDMI: ELD buf size is 0, force 128
+[215632.808935] HDMI: invalid ELD data byte 0
+[215654.081129] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215660.767379] 
+[215704.686911] HDMI: ELD buf size is 0, force 128
+[215704.686943] HDMI: invalid ELD data byte 0
+[215745.684002] HDMI: ELD buf size is 0, force 128
+[215745.684034] HDMI: invalid ELD data byte 0
+[215774.177967] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215781.104584] 
+[215840.804781] HDMI: ELD buf size is 0, force 128
+[215840.804833] HDMI: invalid ELD data byte 0
+[215873.687319] HDMI: ELD buf size is 0, force 128
+[215873.687360] HDMI: invalid ELD data byte 0
+[215894.274719] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[215901.441721] 
+[215904.732379] HDMI: ELD buf size is 0, force 128
+[215904.732411] HDMI: invalid ELD data byte 0
+[215936.266929] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[215939.548516] 
+[215976.862597] HDMI: ELD buf size is 0, force 128
+[215976.862629] HDMI: invalid ELD data byte 0
+[216014.371623] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[216019.773232] 
+[216044.925565] HDMI: ELD buf size is 0, force 128
+[216044.925606] HDMI: invalid ELD data byte 0
+[216134.468364] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[216140.110360] 
+[216185.891327] HDMI: ELD buf size is 0, force 128
+[216185.891361] HDMI: invalid ELD data byte 0
+[216230.014960] HDMI: ELD buf size is 0, force 128
+[216230.015001] HDMI: invalid ELD data byte 0
+[216254.565309] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[216260.447501] 
+[216295.111470] HDMI: ELD buf size is 0, force 128
+[216295.111510] HDMI: invalid ELD data byte 0
+[216327.361504] HDMI: ELD buf size is 0, force 128
+[216327.361545] HDMI: invalid ELD data byte 0
+[216361.909417] HDMI: ELD buf size is 0, force 128
+[216361.909458] HDMI: invalid ELD data byte 0
+[216374.661995] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[216501.121754] 
+[216563.492096] HDMI: ELD buf size is 0, force 128
+[216563.492129] HDMI: invalid ELD data byte 0
+[216586.146410] HDMI: ELD buf size is 0, force 128
+[216586.146451] HDMI: invalid ELD data byte 0
+[216614.856142] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[216743.801638] 
+[216787.416845] HDMI: ELD buf size is 0, force 128
+[216787.416886] HDMI: invalid ELD data byte 0
+[216855.050118] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[216862.133141] 
+[216882.133282] HDMI: ELD buf size is 0, force 128
+[216882.133303] HDMI: invalid ELD data byte 0
+[216897.958058] HDMI: ELD buf size is 0, force 128
+[216897.958089] HDMI: invalid ELD data byte 0
+[216923.802949] HDMI: ELD buf size is 0, force 128
+[216923.802989] HDMI: invalid ELD data byte 0
+[216956.831835] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[216964.419708] 
+[216965.164304] HDMI: ELD buf size is 0, force 128
+[216965.164345] HDMI: invalid ELD data byte 0
+[216975.146959] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[216980.464608] 
+[217083.888161] HDMI: ELD buf size is 0, force 128
+[217083.888202] HDMI: invalid ELD data byte 0
+[217091.546341] HDMI: ELD buf size is 0, force 128
+[217091.546382] HDMI: invalid ELD data byte 0
+[217095.243400] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[217100.801781] 
+[217106.394297] HDMI: ELD buf size is 0, force 128
+[217106.394338] HDMI: invalid ELD data byte 0
+[217166.198599] HDMI: ELD buf size is 0, force 128
+[217166.198639] HDMI: invalid ELD data byte 0
+[217204.649634] HDMI: ELD buf size is 0, force 128
+[217204.649674] HDMI: invalid ELD data byte 0
+[217215.340436] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[217221.138908] 
+[217286.619775] HDMI: ELD buf size is 0, force 128
+[217286.619806] HDMI: invalid ELD data byte 0
+[217315.879382] HDMI: ELD buf size is 0, force 128
+[217315.879434] HDMI: invalid ELD data byte 0
+[217335.437152] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[217341.476042] 
+[217400.723864] HDMI: ELD buf size is 0, force 128
+[217400.723905] HDMI: invalid ELD data byte 0
+[217438.661109] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[217461.813170] 
+[217488.250533] HDMI: ELD buf size is 0, force 128
+[217488.250574] HDMI: invalid ELD data byte 0
+[217575.631755] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[217582.150303] 
+[217694.989379] HDMI: ELD buf size is 0, force 128
+[217694.989411] HDMI: invalid ELD data byte 0
+[217695.728366] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[217702.487387] 
+[217709.877374] HDMI: ELD buf size is 0, force 128
+[217709.877394] HDMI: invalid ELD data byte 0
+[217815.825100] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[217822.824571] 
+[217855.999334] HDMI: ELD buf size is 0, force 128
+[217855.999354] HDMI: invalid ELD data byte 0
+[217881.223728] HDMI: ELD buf size is 0, force 128
+[217881.223769] HDMI: invalid ELD data byte 0
+[217935.922444] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[217943.161698] 
+[217974.286824] HDMI: ELD buf size is 0, force 128
+[217974.286865] HDMI: invalid ELD data byte 0
+[218011.810862] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[218061.493201] 
+[218129.135830] HDMI: ELD buf size is 0, force 128
+[218129.135871] HDMI: invalid ELD data byte 0
+[218174.448373] HDMI: ELD buf size is 0, force 128
+[218174.448405] HDMI: invalid ELD data byte 0
+[218176.115813] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[218181.830328] 
+[218208.996260] HDMI: ELD buf size is 0, force 128
+[218208.996301] HDMI: invalid ELD data byte 0
+[218248.964550] HDMI: ELD buf size is 0, force 128
+[218248.964591] HDMI: invalid ELD data byte 0
+[218296.212521] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[218302.167458] 
+[218314.909748] HDMI: ELD buf size is 0, force 128
+[218314.909789] HDMI: invalid ELD data byte 0
+[218364.345654] HDMI: ELD buf size is 0, force 128
+[218364.345674] HDMI: invalid ELD data byte 0
+[218416.309876] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[218422.504548] 
+[218527.028959] HDMI: ELD buf size is 0, force 128
+[218527.029000] HDMI: invalid ELD data byte 0
+[218536.406648] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[218542.841724] 
+[218568.046067] HDMI: ELD buf size is 0, force 128
+[218568.046098] HDMI: invalid ELD data byte 0
+[218570.668565] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[218575.751384] 
+[218576.865183] HDMI: ELD buf size is 0, force 128
+[218576.865223] HDMI: invalid ELD data byte 0
+[218578.922856] HDMI: ELD buf size is 0, force 128
+[218578.922886] HDMI: invalid ELD data byte 0
+[218578.942734] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[218663.178849] 
+[218687.794722] HDMI: ELD buf size is 0, force 128
+[218687.794754] HDMI: invalid ELD data byte 0
+[218776.601357] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[218783.515980] 
+[218798.544120] HDMI: ELD buf size is 0, force 128
+[218798.544161] HDMI: invalid ELD data byte 0
+[218807.251138] HDMI: ELD buf size is 0, force 128
+[218807.251179] HDMI: invalid ELD data byte 0
+[218896.697974] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[218903.853113] 
+[218939.830148] HDMI: ELD buf size is 0, force 128
+[218939.830180] HDMI: invalid ELD data byte 0
+[219016.795223] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[219142.521648] 
+[219145.984473] HDMI: ELD buf size is 0, force 128
+[219145.984504] HDMI: invalid ELD data byte 0
+[219155.485401] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[219168.594778] 
+[219169.151243] HDMI: ELD buf size is 0, force 128
+[219169.151283] HDMI: invalid ELD data byte 0
+[219256.988669] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[219503.533135] 
+[219586.339990] HDMI: ELD buf size is 0, force 128
+[219586.340031] HDMI: invalid ELD data byte 0
+[219617.279505] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[219635.903977] 
+[219677.613676] HDMI: ELD buf size is 0, force 128
+[219677.613728] HDMI: invalid ELD data byte 0
+[219737.376173] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[219744.207402] 
+[219831.726036] HDMI: ELD buf size is 0, force 128
+[219831.726057] HDMI: invalid ELD data byte 0
+[219847.578867] HDMI: ELD buf size is 0, force 128
+[219847.578907] HDMI: invalid ELD data byte 0
+[219857.473477] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[219864.544526] 
+[219942.463425] HDMI: ELD buf size is 0, force 128
+[219942.463445] HDMI: invalid ELD data byte 0
+[219962.595682] HDMI: ELD buf size is 0, force 128
+[219962.595723] HDMI: invalid ELD data byte 0
+[219977.570461] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[219982.876026] 
+[220018.164523] HDMI: ELD buf size is 0, force 128
+[220018.164555] HDMI: invalid ELD data byte 0
+[220051.733569] rtlwifi-0:rtl_lps_set_psmode():<10000-1> FW LPS leave ps_mode:0
+--
+[220059.089556] 
+[220090.939294] HDMI: ELD buf size is 0, force 128
+[220090.939336] HDMI: invalid ELD data byte 0
+[220097.667694] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220125.274977] 
+[220209.595048] HDMI: ELD buf size is 0, force 128
+[220209.595077] HDMI: invalid ELD data byte 0
+[220217.763602] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220223.550181] 
+[220337.654399] HDMI: ELD buf size is 0, force 128
+[220337.654430] HDMI: invalid ELD data byte 0
+[220337.860967] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220337.861001] 
+[220341.761610] HDMI: invalid ELD buf size -1
+[220343.771296] HDMI: invalid ELD buf size -1
+[220343.887385] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[220343.887419] 
+[220345.780919] HDMI: invalid ELD buf size -1
+[220350.804973] HDMI: invalid ELD buf size -1
+[220351.809787] HDMI: invalid ELD buf size -1
+[220352.814599] HDMI: invalid ELD buf size -1
+[220375.976088] HDMI: ELD buf size is 0, force 128
+[220375.976108] HDMI: invalid ELD data byte 0
+[220406.481955] HDMI: ELD buf size is 0, force 128
+[220406.481996] HDMI: invalid ELD data byte 0
+[220457.958354] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220464.224560] 
+[220478.227868] HDMI: ELD buf size is 0, force 128
+[220478.227900] HDMI: invalid ELD data byte 0
+[220512.015166] HDMI: ELD buf size is 0, force 128
+[220512.015207] HDMI: invalid ELD data byte 0
+[220578.055282] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220584.561602] 
+[220592.131800] HDMI: ELD buf size is 0, force 128
+[220592.131821] HDMI: invalid ELD data byte 0
+[220597.223910] HDMI: ELD buf size is 0, force 128
+[220597.223950] HDMI: invalid ELD data byte 0
+[220625.355666] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[220630.363008] 
+[220630.678943] HDMI: ELD buf size is 0, force 128
+[220630.678984] HDMI: invalid ELD data byte 0
+[220632.696516] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[220632.696547] 
+[220635.771023] HDMI: ELD buf size is 0, force 128
+[220635.771055] HDMI: invalid ELD data byte 0
+[220678.321378] HDMI: ELD buf size is 0, force 128
+[220678.321407] HDMI: invalid ELD data byte 0
+[220698.151942] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220704.898717] 
+[220810.584146] HDMI: ELD buf size is 0, force 128
+[220810.584187] HDMI: invalid ELD data byte 0
+[220818.248723] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220825.235948] 
+[220833.170351] HDMI: ELD buf size is 0, force 128
+[220833.170392] HDMI: invalid ELD data byte 0
+[220835.696392] HDMI: ELD buf size is 0, force 128
+[220835.696433] HDMI: invalid ELD data byte 0
+[220919.972411] HDMI: ELD buf size is 0, force 128
+[220919.972443] HDMI: invalid ELD data byte 0
+[220938.345362] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[220945.573078] 
+[220964.940714] HDMI: ELD buf size is 0, force 128
+[220964.940755] HDMI: invalid ELD data byte 0
+[220988.107421] HDMI: ELD buf size is 0, force 128
+[220988.107463] HDMI: invalid ELD data byte 0
+[221021.210148] HDMI: ELD buf size is 0, force 128
+[221021.210182] HDMI: invalid ELD data byte 0
+[221058.442359] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[221184.241715] 
+[221213.353218] HDMI: ELD buf size is 0, force 128
+[221213.353259] HDMI: invalid ELD data byte 0
+[221298.636617] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[221633.500333] 
+[221646.306673] HDMI: ELD buf size is 0, force 128
+[221646.306724] HDMI: invalid ELD data byte 0
+[221658.927502] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[221665.590238] 
+[221686.030738] HDMI: ELD buf size is 0, force 128
+[221686.030770] HDMI: invalid ELD data byte 0
+[221757.332289] HDMI: ELD buf size is 0, force 128
+[221757.332321] HDMI: invalid ELD data byte 0
+[221779.023876] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[221906.264498] 
+[221927.633778] HDMI: ELD buf size is 0, force 128
+[221927.633849] HDMI: invalid ELD data byte 0
+[222019.218332] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[222024.595970] 
+[222065.464998] HDMI: ELD buf size is 0, force 128
+[222065.465050] HDMI: invalid ELD data byte 0
+[222080.821390] HDMI: ELD buf size is 0, force 128
+[222080.821430] HDMI: invalid ELD data byte 0
+[222086.962378] HDMI: ELD buf size is 0, force 128
+[222086.962419] HDMI: invalid ELD data byte 0
+[222129.708879] HDMI: ELD buf size is 0, force 128
+[222129.708920] HDMI: invalid ELD data byte 0
+[222139.315654] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[222185.045516] 
+[222218.680625] HDMI: invalid ELD buf size -1
+[222220.690247] HDMI: invalid ELD buf size -1
+[222222.699869] HDMI: invalid ELD buf size -1
+[222227.723910] HDMI: invalid ELD buf size -1
+[222228.728737] HDMI: invalid ELD buf size -1
+[222229.733546] HDMI: invalid ELD buf size -1
+[222252.895098] HDMI: ELD buf size is 0, force 128
+[222252.895130] HDMI: invalid ELD data byte 0
+[222259.411953] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[222265.270262] 
+[222272.688260] HDMI: ELD buf size is 0, force 128
+[222272.688280] HDMI: invalid ELD data byte 0
+[222276.263173] HDMI: ELD buf size is 0, force 128
+[222276.263214] HDMI: invalid ELD data byte 0
+[222292.312125] HDMI: ELD buf size is 0, force 128
+[222292.312167] HDMI: invalid ELD data byte 0
+[222302.068002] HDMI: ELD buf size is 0, force 128
+[222302.068043] HDMI: invalid ELD data byte 0
+[222379.508943] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[222385.607322] 
+[222392.048622] HDMI: ELD buf size is 0, force 128
+[222392.048663] HDMI: invalid ELD data byte 0
+[222396.091891] HDMI: ELD buf size is 0, force 128
+[222396.091962] HDMI: invalid ELD data byte 0
+[222405.959823] HDMI: ELD buf size is 0, force 128
+[222405.959863] HDMI: invalid ELD data byte 0
+[222419.911118] HDMI: ELD buf size is 0, force 128
+[222419.911158] HDMI: invalid ELD data byte 0
+[222467.869828] HDMI: ELD buf size is 0, force 128
+[222467.869868] HDMI: invalid ELD data byte 0
+[222499.605852] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[222626.281666] 
+[222657.931237] HDMI: ELD buf size is 0, force 128
+[222657.931279] HDMI: invalid ELD data byte 0
+[222696.086275] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[222746.618928] 
+[222763.012051] HDMI: ELD buf size is 0, force 128
+[222763.012093] HDMI: invalid ELD data byte 0
+[222808.224515] HDMI: ELD buf size is 0, force 128
+[222808.224556] HDMI: invalid ELD data byte 0
+[222846.815669] HDMI: ELD buf size is 0, force 128
+[222846.815701] HDMI: invalid ELD data byte 0
+[222859.897255] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[222866.955917] 
+[222874.421973] HDMI: ELD buf size is 0, force 128
+[222874.422014] HDMI: invalid ELD data byte 0
+[222885.226643] HDMI: ELD buf size is 0, force 128
+[222885.226663] HDMI: invalid ELD data byte 0
+[222912.544716] HDMI: ELD buf size is 0, force 128
+[222912.544757] HDMI: invalid ELD data byte 0
+[222924.398313] HDMI: ELD buf size is 0, force 128
+[222924.398354] HDMI: invalid ELD data byte 0
+[222968.049509] HDMI: ELD buf size is 0, force 128
+[222968.049550] HDMI: invalid ELD data byte 0
+[222974.770972] HDMI: ELD buf size is 0, force 128
+[222974.771013] HDMI: invalid ELD data byte 0
+[222979.993822] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[222987.293041] 
+[223074.635557] HDMI: ELD buf size is 0, force 128
+[223074.635597] HDMI: invalid ELD data byte 0
+[223100.090550] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223105.624554] 
+[223111.325164] HDMI: ELD buf size is 0, force 128
+[223111.325184] HDMI: invalid ELD data byte 0
+[223127.842502] HDMI: ELD buf size is 0, force 128
+[223127.842543] HDMI: invalid ELD data byte 0
+[223220.187681] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223225.961685] 
+[223258.952328] HDMI: ELD buf size is 0, force 128
+[223258.952369] HDMI: invalid ELD data byte 0
+[223293.304043] HDMI: ELD buf size is 0, force 128
+[223293.304075] HDMI: invalid ELD data byte 0
+[223298.396154] HDMI: ELD buf size is 0, force 128
+[223298.396195] HDMI: invalid ELD data byte 0
+[223300.641083] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[223304.180732] 
+[223321.406748] HDMI: ELD buf size is 0, force 128
+[223321.406799] HDMI: invalid ELD data byte 0
+[223340.284460] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223346.298822] 
+[223374.181325] HDMI: ELD buf size is 0, force 128
+[223374.181366] HDMI: invalid ELD data byte 0
+[223460.381451] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223466.635821] 
+[223467.616743] HDMI: ELD buf size is 0, force 128
+[223467.616775] HDMI: invalid ELD data byte 0
+[223489.154126] HDMI: ELD buf size is 0, force 128
+[223489.154167] HDMI: invalid ELD data byte 0
+[223520.019038] HDMI: ELD buf size is 0, force 128
+[223520.019071] HDMI: invalid ELD data byte 0
+[223524.062333] HDMI: ELD buf size is 0, force 128
+[223524.062374] HDMI: invalid ELD data byte 0
+[223550.687792] HDMI: ELD buf size is 0, force 128
+[223550.687832] HDMI: invalid ELD data byte 0
+[223575.840124] HDMI: ELD buf size is 0, force 128
+[223575.840165] HDMI: invalid ELD data byte 0
+[223580.478259] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223586.972984] 
+[223598.538424] HDMI: ELD buf size is 0, force 128
+[223598.538456] HDMI: invalid ELD data byte 0
+[223627.193573] HDMI: ELD buf size is 0, force 128
+[223627.193614] HDMI: invalid ELD data byte 0
+[223658.486776] HDMI: ELD buf size is 0, force 128
+[223658.486817] HDMI: invalid ELD data byte 0
+[223658.910256] rtlwifi-0:rtl_lps_set_psmode():<10000-1> FW LPS leave ps_mode:0
+--
+[223667.197830] 
+[223679.443658] HDMI: ELD buf size is 0, force 128
+[223679.443689] HDMI: invalid ELD data byte 0
+[223700.575218] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223700.575251] 
+[223704.015592] HDMI: ELD buf size is 0, force 128
+[223704.015633] HDMI: invalid ELD data byte 0
+[223707.310176] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[223707.310206] 
+[223754.031915] HDMI: ELD buf size is 0, force 128
+[223754.031955] HDMI: invalid ELD data byte 0
+[223763.207345] HDMI: ELD buf size is 0, force 128
+[223763.207385] HDMI: invalid ELD data byte 0
+[223768.299447] HDMI: ELD buf size is 0, force 128
+[223768.299488] HDMI: invalid ELD data byte 0
+[223797.178774] HDMI: ELD buf size is 0, force 128
+[223797.178815] HDMI: invalid ELD data byte 0
+[223820.672577] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223827.651348] 
+[223882.767829] HDMI: ELD buf size is 0, force 128
+[223882.767861] HDMI: invalid ELD data byte 0
+[223894.299200] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[223901.859237] 
+[223911.246811] HDMI: ELD buf size is 0, force 128
+[223911.246852] HDMI: invalid ELD data byte 0
+[223927.720143] HDMI: ELD buf size is 0, force 128
+[223927.720183] HDMI: invalid ELD data byte 0
+[223932.343876] HDMI: ELD buf size is 0, force 128
+[223932.343947] HDMI: invalid ELD data byte 0
+[223940.768751] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[223947.988471] 
+[223949.685842] HDMI: ELD buf size is 0, force 128
+[223949.685873] HDMI: invalid ELD data byte 0
+[223952.211878] HDMI: ELD buf size is 0, force 128
+[223952.211898] HDMI: invalid ELD data byte 0
+[223965.470583] HDMI: ELD buf size is 0, force 128
+[223965.470603] HDMI: invalid ELD data byte 0
+[224060.866711] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[224186.657107] 
+[224264.720127] HDMI: ELD buf size is 0, force 128
+[224264.720168] HDMI: invalid ELD data byte 0
+[224285.901249] HDMI: ELD buf size is 0, force 128
+[224285.901290] HDMI: invalid ELD data byte 0
+[224301.059964] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[224306.994236] 
+[224348.159499] HDMI: ELD buf size is 0, force 128
+[224348.159540] HDMI: invalid ELD data byte 0
+[224369.340565] HDMI: ELD buf size is 0, force 128
+[224369.340605] HDMI: invalid ELD data byte 0
+[224378.628063] HDMI: ELD buf size is 0, force 128
+[224378.628104] HDMI: invalid ELD data byte 0
+[224419.537080] HDMI: ELD buf size is 0, force 128
+[224419.537122] HDMI: invalid ELD data byte 0
+[224421.157048] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[224427.331323] 
+[224441.654934] HDMI: ELD buf size is 0, force 128
+[224441.654975] HDMI: invalid ELD data byte 0
+[224492.832855] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[224495.522411] 
+[224517.728336] HDMI: ELD buf size is 0, force 128
+[224517.728378] HDMI: invalid ELD data byte 0
+[224541.253414] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[224547.668496] 
+[224639.774885] HDMI: ELD buf size is 0, force 128
+[224639.774927] HDMI: invalid ELD data byte 0
+[224661.350416] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[224668.005720] 
+[224674.683023] HDMI: ELD buf size is 0, force 128
+[224674.683065] HDMI: invalid ELD data byte 0
+[224682.341204] HDMI: ELD buf size is 0, force 128
+[224682.341247] HDMI: invalid ELD data byte 0
+[224747.569862] HDMI: ELD buf size is 0, force 128
+[224747.569903] HDMI: invalid ELD data byte 0
+[224761.833370] HDMI: ELD buf size is 0, force 128
+[224761.833401] HDMI: invalid ELD data byte 0
+[224781.447330] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[224788.342756] 
+[224794.683909] HDMI: ELD buf size is 0, force 128
+[224794.683950] HDMI: invalid ELD data byte 0
+[224818.162856] HDMI: ELD buf size is 0, force 128
+[224818.162927] HDMI: invalid ELD data byte 0
+[224889.372307] HDMI: ELD buf size is 0, force 128
+[224889.372347] HDMI: invalid ELD data byte 0
+[224901.544402] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225005.705189] 
+[225007.003276] HDMI: ELD buf size is 0, force 128
+[225007.003327] HDMI: invalid ELD data byte 0
+[225008.960797] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[225027.011395] 
+[225068.997286] HDMI: ELD buf size is 0, force 128
+[225068.997306] HDMI: invalid ELD data byte 0
+[225141.738985] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225147.348526] 
+[225168.501604] HDMI: ELD buf size is 0, force 128
+[225168.501636] HDMI: invalid ELD data byte 0
+[225261.835987] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225267.685659] 
+[225319.103182] HDMI: ELD buf size is 0, force 128
+[225319.103224] HDMI: invalid ELD data byte 0
+[225381.932345] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225388.022790] 
+[225394.584088] HDMI: ELD buf size is 0, force 128
+[225394.584128] HDMI: invalid ELD data byte 0
+[225469.232367] HDMI: ELD buf size is 0, force 128
+[225469.232408] HDMI: invalid ELD data byte 0
+[225482.722758] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[225490.309301] 
+[225493.403847] HDMI: ELD buf size is 0, force 128
+[225493.403868] HDMI: invalid ELD data byte 0
+[225502.029292] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225508.359859] 
+[225540.714032] HDMI: ELD buf size is 0, force 128
+[225540.714052] HDMI: invalid ELD data byte 0
+[225622.125980] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225628.697046] 
+[225675.262646] HDMI: ELD buf size is 0, force 128
+[225675.262686] HDMI: invalid ELD data byte 0
+[225684.906419] HDMI: ELD buf size is 0, force 128
+[225684.906440] HDMI: invalid ELD data byte 0
+[225710.751282] HDMI: ELD buf size is 0, force 128
+[225710.751322] HDMI: invalid ELD data byte 0
+[225742.223189] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225869.371261] 
+[225892.858267] HDMI: ELD buf size is 0, force 128
+[225892.858309] HDMI: invalid ELD data byte 0
+[225940.919921] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[225945.584828] 
+[225948.803419] HDMI: ELD buf size is 0, force 128
+[225948.803459] HDMI: invalid ELD data byte 0
+[225982.417148] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[225982.417182] 
+[225982.995032] HDMI: ELD buf size is 0, force 128
+[225982.995083] HDMI: invalid ELD data byte 0
+[225989.708409] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[226108.039950] 
+[226142.031345] HDMI: invalid ELD buf size -1
+[226144.040968] HDMI: invalid ELD buf size -1
+[226146.050585] HDMI: invalid ELD buf size -1
+[226151.074645] HDMI: invalid ELD buf size -1
+[226152.079456] HDMI: invalid ELD buf size -1
+[226153.084269] HDMI: invalid ELD buf size -1
+[226176.249792] HDMI: ELD buf size is 0, force 128
+[226176.249812] HDMI: invalid ELD data byte 0
+[226207.468213] HDMI: ELD buf size is 0, force 128
+[226207.468254] HDMI: invalid ELD data byte 0
+[226222.611135] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[226228.377076] 
+[226249.534187] HDMI: ELD buf size is 0, force 128
+[226249.534228] HDMI: invalid ELD data byte 0
+[226342.707857] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[226348.714185] 
+[226355.655823] HDMI: ELD buf size is 0, force 128
+[226355.655864] HDMI: invalid ELD data byte 0
+[226462.804613] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[226469.051325] 
+[226487.538263] HDMI: ELD buf size is 0, force 128
+[226487.538303] HDMI: invalid ELD data byte 0
+[226506.509577] HDMI: ELD buf size is 0, force 128
+[226506.509617] HDMI: invalid ELD data byte 0
+[226582.901940] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[226589.388469] 
+[226597.134752] HDMI: ELD buf size is 0, force 128
+[226597.134793] HDMI: invalid ELD data byte 0
+[226613.071596] HDMI: ELD buf size is 0, force 128
+[226613.071637] HDMI: invalid ELD data byte 0
+[226633.003684] HDMI: ELD buf size is 0, force 128
+[226633.003726] HDMI: invalid ELD data byte 0
+[226697.427683] HDMI: ELD buf size is 0, force 128
+[226697.427724] HDMI: invalid ELD data byte 0
+[226702.998637] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[226709.725525] 
+[226729.497588] HDMI: ELD buf size is 0, force 128
+[226729.497628] HDMI: invalid ELD data byte 0
+[226749.005298] HDMI: ELD buf size is 0, force 128
+[226749.005319] HDMI: invalid ELD data byte 0
+[226823.095553] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227068.731366] 
+[227153.467725] HDMI: invalid ELD buf size -1
+[227155.477348] HDMI: invalid ELD buf size -1
+[227157.486967] HDMI: invalid ELD buf size -1
+[227162.511023] HDMI: invalid ELD buf size -1
+[227163.515835] HDMI: invalid ELD buf size -1
+[227164.520645] HDMI: invalid ELD buf size -1
+[227183.386475] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227183.386852] 
+[227187.686025] HDMI: ELD buf size is 0, force 128
+[227187.686044] HDMI: invalid ELD data byte 0
+[227189.068468] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[227189.068498] 
+[227262.563830] HDMI: ELD buf size is 0, force 128
+[227262.563887] HDMI: invalid ELD data byte 0
+[227263.983329] rtlwifi-0:rtl_lps_set_psmode():<10300-1> FW LPS leave ps_mode:0
+--
+[227271.298821] 
+[227296.931558] HDMI: ELD buf size is 0, force 128
+[227296.931578] HDMI: invalid ELD data byte 0
+[227303.483495] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227309.405611] 
+[227363.209055] HDMI: ELD buf size is 0, force 128
+[227363.209096] HDMI: invalid ELD data byte 0
+[227423.580512] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227423.580896] 
+[227428.281520] HDMI: ELD buf size is 0, force 128
+[227428.281561] HDMI: invalid ELD data byte 0
+[227429.742731] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[227459.827040] 
+[227510.071594] HDMI: ELD buf size is 0, force 128
+[227510.071635] HDMI: invalid ELD data byte 0
+[227543.676843] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227550.079877] 
+[227651.545784] HDMI: ELD buf size is 0, force 128
+[227651.545825] HDMI: invalid ELD data byte 0
+[227663.774494] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227670.417016] 
+[227694.884798] HDMI: ELD buf size is 0, force 128
+[227694.884839] HDMI: invalid ELD data byte 0
+[227746.238228] HDMI: ELD buf size is 0, force 128
+[227746.238268] HDMI: invalid ELD data byte 0
+[227770.297612] HDMI: ELD buf size is 0, force 128
+[227770.297633] HDMI: invalid ELD data byte 0
+[227783.871612] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227790.754135] 
+[227791.947113] HDMI: ELD buf size is 0, force 128
+[227791.947133] HDMI: invalid ELD data byte 0
+[227903.968177] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[227911.091208] 
+[227959.554393] HDMI: ELD buf size is 0, force 128
+[227959.554433] HDMI: invalid ELD data byte 0
+[227976.599821] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[227979.282318] 
+[228015.299390] HDMI: ELD buf size is 0, force 128
+[228015.299453] HDMI: invalid ELD data byte 0
+[228024.065423] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[228149.759918] 
+[228196.089310] HDMI: ELD buf size is 0, force 128
+[228196.089331] HDMI: invalid ELD data byte 0
+[228264.259201] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[228390.434129] 
+[228429.085373] HDMI: ELD buf size is 0, force 128
+[228429.085414] HDMI: invalid ELD data byte 0
+[228440.826863] HDMI: ELD buf size is 0, force 128
+[228440.826903] HDMI: invalid ELD data byte 0
+[228475.039491] rtlwifi-0:rtl_is_special_data():<400-1> dhcp Tx !!
+--
+[228484.698251] 
+[228488.561384] HDMI: ELD buf size is 0, force 128
+[228488.561424] HDMI: invalid ELD data byte 0
+[228504.452571] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[228510.771252] 
+[228546.448104] HDMI: ELD buf size is 0, force 128
+[228546.448137] HDMI: invalid ELD data byte 0
+[228624.549847] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[228631.108344] 
+[228645.079717] HDMI: ELD buf size is 0, force 128
+[228645.079737] HDMI: invalid ELD data byte 0
+[228744.646470] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[228751.445565] 
+[228863.459988] HDMI: ELD buf size is 0, force 128
+[228863.460019] HDMI: invalid ELD data byte 0
+[228864.743442] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[228871.782696] 
+[228939.089033] HDMI: ELD buf size is 0, force 128
+[228939.089074] HDMI: invalid ELD data byte 0
+[228948.844894] HDMI: ELD buf size is 0, force 128
+[228948.844914] HDMI: invalid ELD data byte 0
+[228972.367916] HDMI: ELD buf size is 0, force 128
+[228972.367957] HDMI: invalid ELD data byte 0
+[228984.840883] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[229012.175992] 
+[229064.290079] HDMI: ELD buf size is 0, force 128
+[229064.290120] HDMI: invalid ELD data byte 0
+[229104.937634] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[229110.451293] 
+[229114.882924] HDMI: ELD buf size is 0, force 128
+[229114.882965] HDMI: invalid ELD data byte 0
+[229221.040626] HDMI: ELD buf size is 0, force 128
+[229221.040677] HDMI: invalid ELD data byte 0
+[229225.034536] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[229230.788470] 
+[229260.652571] HDMI: ELD buf size is 0, force 128
+[229260.652611] HDMI: invalid ELD data byte 0
+[229269.827988] HDMI: ELD buf size is 0, force 128
+[229269.828029] HDMI: invalid ELD data byte 0
+[229345.130942] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[229351.125553] 
+[229377.294714] HDMI: ELD buf size is 0, force 128
+[229377.294755] HDMI: invalid ELD data byte 0
+[229407.579163] HDMI: ELD buf size is 0, force 128
+[229407.579203] HDMI: invalid ELD data byte 0
+[229411.154045] HDMI: ELD buf size is 0, force 128
+[229411.154065] HDMI: invalid ELD data byte 0
+[229465.228623] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[229471.462721] 
+[229516.923418] HDMI: ELD buf size is 0, force 128
+[229516.923438] HDMI: invalid ELD data byte 0
+[229570.546703] HDMI: ELD buf size is 0, force 128
+[229570.546723] HDMI: invalid ELD data byte 0
+[229585.325388] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS leave ps_mode:0
+--
+[229585.325769] 
+[229588.493130] HDMI: ELD buf size is 0, force 128
+[229588.493164] HDMI: invalid ELD data byte 0
+[229591.799825] rtlwifi-0:rtl_lps_set_psmode():<0-0> FW LPS enter ps_mode:3
+--
+[229591.799856] 
+[229651.624147] HDMI: ELD buf size is 0, force 128
+[229651.624188] HDMI: invalid ELD data byte 0
+[229668.264223] snd_hda_intel 0000:00:1b.0: power state changed by ACPI to D0
+[229668.389758] snd_hda_intel 0000:00:1b.0: power state changed by ACPI to D3cold
+[229668.442112] snd_hda_intel 0000:00:1b.0: power state changed by ACPI to D0
+[229668.570615] snd_hda_intel 0000:00:1b.0: power state changed by ACPI to D3cold
+[229668.663189] snd_hda_intel 0000:00:1b.0: power state changed by ACPI to D0
+[229668.790695] snd_hda_intel 0000:00:1b.0: power state changed by ACPI to D3cold
+[229668.806099] hda_codec: invalid CONNECT_LIST verb 5[1]:0
+[229668.806344] hda_codec: invalid CONNECT_LIST verb 6[1]:0
+[229668.806595] hda_codec: invalid CONNECT_LIST verb 7[1]:0
+[229668.811848] snd_hda_intel 0000:00:1b.0: power state changed by ACPI to D0
+
+

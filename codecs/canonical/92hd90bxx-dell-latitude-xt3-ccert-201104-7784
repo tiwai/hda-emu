@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Fri Jun 15 16:17:51 UTC 2012
+!!Script ran on: Wed Nov 20 07:24:57 UTC 2013
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+Ubuntu 12.04.3 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04.3 LTS" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu precise (12.04.3 LTS)"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu 12.04 LTS \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
 Manufacturer:      Dell Inc.
 Product Name:      Latitude XT3
 Product Version:   01
+Firmware Version:  A05
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.2.0-23-generic
+Kernel release:    3.2.0-57-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -56,7 +57,7 @@ Pulseaudio:
 !!-----------------------------
 
  0 [PCH            ]: HDA-Intel - HDA Intel PCH
-                      HDA Intel PCH at 0xe1c60000 irq 47
+                      HDA Intel PCH at 0x7ec60000 irq 46
 
 
 !!PCI Soundcards installed in the system
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:1c20 (rev 04)
 	Subsystem: 1028:04b4
@@ -89,7 +90,7 @@ snd-usb-audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
 	align_buffer_size : Y
@@ -249,7 +250,7 @@ Node 0x13 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Device: name="STAC92xx Analog", type="Audio", device=0
   Amp-Out caps: N/A
-  Amp-Out vals:  [0x64 0x64]
+  Amp-Out vals:  [0x67 0x67]
   Converter: stream=8, channel=0
   Power: setting=D0, actual=D0
   Delay: 13 samples
@@ -259,7 +260,7 @@ Node 0x14 [Audio Output] wcaps 0xd0c05: Stereo Amp-Out R/L
   Control: name="Headphone Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: N/A
-  Amp-Out vals:  [0x64 0x64]
+  Amp-Out vals:  [0x67 0x67]
   Converter: stream=8, channel=0
   Power: setting=D0, actual=D0
   Delay: 13 samples
@@ -286,7 +287,7 @@ Node 0x17 [Audio Selector] wcaps 0x300d0d: Stereo Amp-Out R/L
   Control: name="Capture Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: ofs=0x10, nsteps=0x2e, stepsize=0x03, mute=1
-  Amp-Out vals:  [0x1c 0x1c]
+  Amp-Out vals:  [0x10 0x10]
   Power: setting=D0, actual=D0
   Connection: 6
      0x1b 0x0a 0x0c 0x0f 0x11* 0x12
@@ -426,7 +427,7 @@ Node 0x05 [Pin Complex] wcaps 0x40778d: 8-Channels Digital Amp-Out CP
   Pin Default 0x18560010: [Jack] Digital Out at Int HDMI
     Conn = Digital, Color = Unknown
     DefAssociation = 0x1, Sequence = 0x0
-  Pin-ctls: 0x00:
+  Pin-ctls: 0x40: OUT
   Unsolicited: tag=01, enabled=1
   Power states:  D0 D3 EPSS
   Power: setting=D0, actual=D0
@@ -445,7 +446,7 @@ Node 0x06 [Pin Complex] wcaps 0x40778d: 8-Channels Digital Amp-Out CP
   Pin Default 0x18560020: [Jack] Digital Out at Int HDMI
     Conn = Digital, Color = Unknown
     DefAssociation = 0x2, Sequence = 0x0
-  Pin-ctls: 0x00:
+  Pin-ctls: 0x40: OUT
   Unsolicited: tag=02, enabled=1
   Power states:  D0 D3 EPSS
   Power: setting=D0, actual=D0
@@ -464,7 +465,7 @@ Node 0x07 [Pin Complex] wcaps 0x40778d: 8-Channels Digital Amp-Out CP
   Pin Default 0x18560030: [Jack] Digital Out at Int HDMI
     Conn = Digital, Color = Unknown
     DefAssociation = 0x3, Sequence = 0x0
-  Pin-ctls: 0x00:
+  Pin-ctls: 0x40: OUT
   Unsolicited: tag=03, enabled=1
   Power states:  D0 D3 EPSS
   Power: setting=D0, actual=D0
@@ -477,26 +478,26 @@ Node 0x08 [Vendor Defined Widget] wcaps 0xf00000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  9 Jun 15 12:15 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  8 Jun 15 12:15 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  7 Jun 15 12:15 /dev/snd/hwC0D3
-crw-rw---T+ 1 root audio 116,  6 Jun 15 12:16 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  5 Jun 15 12:16 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  4 Jun 15 12:16 /dev/snd/pcmC0D3p
-crw-rw---T+ 1 root audio 116,  3 Jun 15 12:16 /dev/snd/pcmC0D7p
-crw-rw---T+ 1 root audio 116,  2 Jun 15 12:16 /dev/snd/pcmC0D8p
-crw-rw---T+ 1 root audio 116,  1 Jun 15 12:15 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jun 15 12:15 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  9 Nov 20 02:20 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  8 Nov 20 02:20 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  7 Nov 20 02:20 /dev/snd/hwC0D3
+crw-rw---T+ 1 root audio 116,  6 Nov 20 02:21 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  5 Nov 20 02:21 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  4 Nov 20 02:21 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  3 Nov 20 02:21 /dev/snd/pcmC0D7p
+crw-rw---T+ 1 root audio 116,  2 Nov 20 02:21 /dev/snd/pcmC0D8p
+crw-rw---T+ 1 root audio 116,  1 Nov 20 02:20 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Nov 20 02:20 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jun 15 12:15 .
-drwxr-xr-x 3 root root 260 Jun 15 12:15 ..
-lrwxrwxrwx 1 root root  12 Jun 15 12:15 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Nov 20 02:20 .
+drwxr-xr-x 3 root root 260 Nov 20 02:20 ..
+lrwxrwxrwx 1 root root  12 Nov 20 02:20 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -526,7 +527,7 @@ card 0: PCH [HDA Intel PCH], device 0: STAC92xx Analog [STAC92xx Analog]
 
 !!-------Mixer controls for card 0 [PCH]
 
-Card hw:0 'PCH'/'HDA Intel PCH at 0xe1c60000 irq 47'
+Card hw:0 'PCH'/'HDA Intel PCH at 0x7ec60000 irq 46'
   Mixer name	: 'Intel CougarPoint HDMI'
   Components	: 'HDA:111d76e7,102804b4,00100102 HDA:80862805,80860101,00100000'
   Controls      : 37
@@ -535,7 +536,7 @@ Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
   Playback channels: Mono
   Limits: Playback 0 - 64
-  Mono: Playback 37 [58%] [-20.25dB] [on]
+  Mono: Playback 40 [62%] [-18.00dB] [on]
 Simple mixer control 'Headphone',0
   Capabilities: pvolume pswitch penum
   Playback channels: Front Left - Front Right
@@ -588,8 +589,8 @@ Simple mixer control 'Capture',0
   Capabilities: cvolume cswitch penum
   Capture channels: Front Left - Front Right
   Limits: Capture 0 - 46
-  Front Left: Capture 28 [61%] [12.00dB] [on]
-  Front Right: Capture 28 [61%] [12.00dB] [on]
+  Front Left: Capture 16 [35%] [0.00dB] [on]
+  Front Right: Capture 16 [35%] [0.00dB] [on]
 Simple mixer control 'Dock Mic',0
   Capabilities: cvolume penum
   Capture channels: Front Left - Front Right
@@ -605,7 +606,7 @@ Simple mixer control 'Internal Mic',0
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.PCH {
@@ -702,8 +703,8 @@ state.PCH {
 	control.8 {
 		iface MIXER
 		name 'Capture Volume'
-		value.0 28
-		value.1 28
+		value.0 16
+		value.1 16
 		comment {
 			access 'read write'
 			type INTEGER
@@ -711,8 +712,8 @@ state.PCH {
 			range '0 - 46'
 			dbmin -1600
 			dbmax 3000
-			dbvalue.0 1200
-			dbvalue.1 1200
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.9 {
@@ -777,7 +778,7 @@ state.PCH {
 	control.13 {
 		iface MIXER
 		name 'Master Playback Volume'
-		value 37
+		value 40
 		comment {
 			access 'read write'
 			type INTEGER
@@ -785,7 +786,7 @@ state.PCH {
 			range '0 - 64'
 			dbmin -9999999
 			dbmax 0
-			dbvalue.0 -2025
+			dbvalue.0 -1800
 		}
 	}
 	control.14 {
@@ -1058,64 +1059,69 @@ nls_iso8859_1
 nls_cp437
 vfat
 fat
-bnep
-rfcomm
 snd_hda_codec_hdmi
 snd_hda_codec_idt
+bcma
+rfcomm
 snd_hda_intel
 snd_hda_codec
-snd_hwdep
-uvcvideo
+bnep
 arc4
+snd_hwdep
 snd_pcm
-videodev
-joydev
-iwlwifi
 snd_seq_midi
-mac80211
-hid_ntrig
-v4l2_compat_ioctl32
 snd_rawmidi
-i915
-cdc_acm
-cdc_wdm
 snd_seq_midi_event
-cdc_ncm
-usbnet
-btusb
-bluetooth
 snd_seq
-cfg80211
-drm_kms_helper
-drm
-dell_laptop
+brcmsmac
+i915
+mac80211
 snd_timer
 snd_seq_device
-psmouse
-mei
+drm_kms_helper
+brcmutil
+drm
+cfg80211
 snd
-i2c_algo_bit
+dell_laptop
+crc8
+psmouse
+serio_raw
 ppdev
+btusb
+dcdbas
+cdc_wdm
+cordic
+joydev
+hid_ntrig
+cdc_ncm
+usbnet
+dell_wmi
+cdc_acm
+sparse_keymap
+mei
 soundcore
 snd_page_alloc
-serio_raw
-video
-dcdbas
-dell_wmi
-sparse_keymap
-parport_pc
-wmi
 mac_hid
+uvcvideo
+videodev
+parport_pc
+v4l2_compat_ioctl32
+wmi
+i2c_algo_bit
+bluetooth
+video
 lp
 parport
-usbhid
-hid
-e1000e
-sdhci_pci
-sdhci
+mmc_block
 firewire_ohci
 firewire_core
 crc_itu_t
+e1000e
+usbhid
+hid
+sdhci_pci
+sdhci
 usb_storage
 
 
@@ -1153,30 +1159,22 @@ usb_storage
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[   12.105040] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
-[   12.105133] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
-[   12.105200] snd_hda_intel 0000:00:1b.0: irq 47 for MSI/MSI-X
-[   12.105226] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   12.977824] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
-[   12.977864] HDMI status: Codec=3 Pin=6 Presence_Detect=0 ELD_Valid=0
-[   12.977914] HDMI status: Codec=3 Pin=7 Presence_Detect=0 ELD_Valid=0
-[   12.977995] input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input14
-[   12.978078] input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input15
-[   12.978215] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input16
-[   12.978286] input: HDA Intel PCH Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input17
-[   12.978350] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input18
-[   12.978421] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input19
-[   12.978492] input: HDA Intel PCH Dock Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input20
-[   13.603739] type=1400 audit(1339776952.738:5): apparmor="STATUS" operation="profile_load" name="/usr/lib/cups/backend/cups-pdf" pid=931 comm="apparmor_parser"
---
-[  126.139407] CPU 0 
-[  126.139433] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat bnep rfcomm snd_hda_codec_hdmi snd_hda_codec_idt snd_hda_intel snd_hda_codec snd_hwdep uvcvideo arc4 snd_pcm videodev joydev iwlwifi snd_seq_midi mac80211 hid_ntrig v4l2_compat_ioctl32 snd_rawmidi i915 cdc_acm cdc_wdm snd_seq_midi_event cdc_ncm usbnet btusb bluetooth snd_seq cfg80211 drm_kms_helper drm dell_laptop snd_timer snd_seq_device psmouse mei(C) snd i2c_algo_bit ppdev soundcore snd_page_alloc serio_raw video dcdbas dell_wmi sparse_keymap parport_pc wmi mac_hid lp parport usbhid hid e1000e sdhci_pci sdhci firewire_ohci firewire_core crc_itu_t usb_storage
-[  126.140307] 
---
-[  126.214872] CPU 0 
-[  126.214898] Modules linked in: nls_iso8859_1 nls_cp437 vfat fat bnep rfcomm snd_hda_codec_hdmi snd_hda_codec_idt snd_hda_intel snd_hda_codec snd_hwdep uvcvideo arc4 snd_pcm videodev joydev iwlwifi snd_seq_midi mac80211 hid_ntrig v4l2_compat_ioctl32 snd_rawmidi i915 cdc_acm cdc_wdm snd_seq_midi_event cdc_ncm usbnet btusb bluetooth snd_seq cfg80211 drm_kms_helper drm dell_laptop snd_timer snd_seq_device psmouse mei(C) snd i2c_algo_bit ppdev soundcore snd_page_alloc serio_raw video dcdbas dell_wmi sparse_keymap parport_pc wmi mac_hid lp parport usbhid hid e1000e sdhci_pci sdhci firewire_ohci firewire_core crc_itu_t usb_storage
-[  126.215776] 
+[   27.524942] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+[   27.540730] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[   27.540806] snd_hda_intel 0000:00:1b.0: irq 46 for MSI/MSI-X
+[   27.540825] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[   28.126219] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
+[   28.126257] HDMI status: Codec=3 Pin=6 Presence_Detect=0 ELD_Valid=0
+[   28.126305] HDMI status: Codec=3 Pin=7 Presence_Detect=0 ELD_Valid=0
+[   28.126380] input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input14
+[   28.126469] input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input15
+[   28.126532] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input16
+[   28.126599] input: HDA Intel PCH Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input17
+[   28.126658] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input18
+[   28.126717] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input19
+[   28.126777] input: HDA Intel PCH Dock Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input20
+[   29.963252] e1000e: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: Rx/Tx
 
 

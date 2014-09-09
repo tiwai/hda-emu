@@ -3,7 +3,7 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Mon Jun  4 22:04:50 UTC 2012
+!!Script ran on: Mon Jun  4 18:40:22 UTC 2012
 
 
 !!Linux Distribution
@@ -380,18 +380,18 @@ Node 0x24 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  5 Jun  4 17:56 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  4 Jun  4 17:56 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  3 Jun  4 18:03 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  2 Jun  4 18:03 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  1 Jun  4 17:56 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jun  4 17:56 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  5 Jun  4 14:32 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  4 Jun  4 14:32 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  3 Jun  4 14:38 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  2 Jun  4 14:38 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  1 Jun  4 14:32 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jun  4 14:32 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jun  4 17:56 .
-drwxr-xr-x 3 root root 180 Jun  4 17:56 ..
-lrwxrwxrwx 1 root root  12 Jun  4 17:56 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Jun  4 14:32 .
+drwxr-xr-x 3 root root 180 Jun  4 14:32 ..
+lrwxrwxrwx 1 root root  12 Jun  4 14:32 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
@@ -717,52 +717,52 @@ state.Intel {
 !!------------------
 
 Module
-parport_pc
-rfcomm
 bnep
+rfcomm
+parport_pc
 ppdev
-snd_hda_codec_realtek
-btusb
-bluetooth
-snd_hda_intel
-snd_hda_codec
-snd_hwdep
-snd_pcm
 uvcvideo
 videobuf2_core
 videodev
+btusb
 arc4
-snd_seq_midi
+bluetooth
 videobuf2_vmalloc
-usbhid
-hid
+videobuf2_memops
+snd_hda_codec_realtek
+joydev
+snd_hda_intel
+snd_hda_codec
+iwlwifi
+snd_hwdep
+snd_pcm
+dell_laptop
+snd_seq_midi
 snd_rawmidi
 snd_seq_midi_event
-videobuf2_memops
-joydev
 snd_seq
 snd_timer
-iwlwifi
 snd_seq_device
-snd
-mac80211
-cfg80211
-dell_laptop
-soundcore
-snd_page_alloc
-i915
-drm_kms_helper
-drm
-i2c_algo_bit
-coretemp
 psmouse
 serio_raw
-video
 dcdbas
+snd
+mac80211
+i915
+cfg80211
+soundcore
+drm_kms_helper
+coretemp
+drm
 microcode
+i2c_algo_bit
+snd_page_alloc
 mac_hid
+video
 lp
 parport
+usbhid
+hid
 r8169
 
 
@@ -792,13 +792,13 @@ r8169
 !!ALSA/HDA dmesg
 !!------------------
 
-[    7.611342] cfg80211:   (5735000 KHz - 5835000 KHz @ 40000 KHz), (300 mBi, 2000 mBm)
-[    7.682352] snd_hda_intel 0000:00:1b.0: irq 49 for MSI/MSI-X
-[    7.767656] type=1400 audit(1338847006.479:2): apparmor="STATUS" operation="profile_load" name="/sbin/dhclient" pid=643 comm="apparmor_parser"
+[    8.111175] iwlwifi 0000:09:00.0: irq 48 for MSI/MSI-X
+[    8.211890] snd_hda_intel 0000:00:1b.0: irq 49 for MSI/MSI-X
+[    8.237435] psmouse serio1: synaptics: Touchpad model: 1, fw: 7.2, id: 0x1c0b1, caps: 0xd04733/0xa40000/0xa0000
 --
-[    7.928819] usbcore: registered new interface driver btusb
-[    7.945108] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[    7.945341] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input11
-[    8.210512] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+[    8.279066] input: SynPS/2 Synaptics TouchPad as /devices/platform/i8042/serio1/input/input8
+[    8.351967] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[    8.352228] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[    8.779092] microcode: CPU1 sig=0x1067a, pf=0x80, revision=0xa07
 
 

@@ -3,7 +3,7 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Sat Jul  7 16:10:56 UTC 2012
+!!Script ran on: Mon Jun 18 18:13:53 UTC 2012
 
 
 !!Linux Distribution
@@ -281,7 +281,7 @@ Node 0x14 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
   Pin Default 0x01014010: [Jack] Line Out at Ext Rear
     Conn = 1/8, Color = Green
     DefAssociation = 0x1, Sequence = 0x0
-  Pin-ctls: 0x00:
+  Pin-ctls: 0x40: OUT
   Unsolicited: tag=02, enabled=1
   Connection: 1
      0x0c
@@ -579,30 +579,30 @@ Node 0x05 [Pin Complex] wcaps 0x407381: 8-Channels Digital CP
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  7 Jul  7 12:05 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116, 16 Jul  7 12:05 /dev/snd/controlC1
-crw-rw---T+ 1 root audio 116,  6 Jul  7 12:05 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116, 15 Jul  7 12:05 /dev/snd/hwC1D0
-crw-rw---T+ 1 root audio 116, 14 Jul  7 12:05 /dev/snd/hwC1D1
-crw-rw---T+ 1 root audio 116, 13 Jul  7 12:05 /dev/snd/hwC1D2
-crw-rw---T+ 1 root audio 116, 12 Jul  7 12:05 /dev/snd/hwC1D3
-crw-rw---T+ 1 root audio 116,  5 Jul  7 12:05 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  4 Jul  7 12:05 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  3 Jul  7 12:05 /dev/snd/pcmC0D1p
-crw-rw---T+ 1 root audio 116,  2 Jul  7 12:05 /dev/snd/pcmC0D2c
-crw-rw---T+ 1 root audio 116, 11 Jul  7 12:05 /dev/snd/pcmC1D3p
-crw-rw---T+ 1 root audio 116, 10 Jul  7 12:05 /dev/snd/pcmC1D7p
-crw-rw---T+ 1 root audio 116,  9 Jul  7 12:05 /dev/snd/pcmC1D8p
-crw-rw---T+ 1 root audio 116,  8 Jul  7 12:05 /dev/snd/pcmC1D9p
-crw-rw---T+ 1 root audio 116,  1 Jul  7 12:05 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul  7 12:05 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  7 Jun 18 14:11 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116, 16 Jun 18 14:11 /dev/snd/controlC1
+crw-rw---T+ 1 root audio 116,  6 Jun 18 14:11 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116, 15 Jun 18 14:11 /dev/snd/hwC1D0
+crw-rw---T+ 1 root audio 116, 14 Jun 18 14:11 /dev/snd/hwC1D1
+crw-rw---T+ 1 root audio 116, 13 Jun 18 14:11 /dev/snd/hwC1D2
+crw-rw---T+ 1 root audio 116, 12 Jun 18 14:11 /dev/snd/hwC1D3
+crw-rw---T+ 1 root audio 116,  5 Jun 18 14:12 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  4 Jun 18 14:12 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  3 Jun 18 14:12 /dev/snd/pcmC0D1p
+crw-rw---T+ 1 root audio 116,  2 Jun 18 14:11 /dev/snd/pcmC0D2c
+crw-rw---T+ 1 root audio 116, 11 Jun 18 14:12 /dev/snd/pcmC1D3p
+crw-rw---T+ 1 root audio 116, 10 Jun 18 14:12 /dev/snd/pcmC1D7p
+crw-rw---T+ 1 root audio 116,  9 Jun 18 14:12 /dev/snd/pcmC1D8p
+crw-rw---T+ 1 root audio 116,  8 Jun 18 14:12 /dev/snd/pcmC1D9p
+crw-rw---T+ 1 root audio 116,  1 Jun 18 14:11 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jun 18 14:11 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  80 Jul  7 12:05 .
-drwxr-xr-x 3 root root 400 Jul  7 12:05 ..
-lrwxrwxrwx 1 root root  12 Jul  7 12:05 pci-0000:00:1b.0 -> ../controlC0
-lrwxrwxrwx 1 root root  12 Jul  7 12:05 pci-0000:01:00.1 -> ../controlC1
+drwxr-xr-x 2 root root  80 Jun 18 14:11 .
+drwxr-xr-x 3 root root 400 Jun 18 14:11 ..
+lrwxrwxrwx 1 root root  12 Jun 18 14:11 pci-0000:00:1b.0 -> ../controlC0
+lrwxrwxrwx 1 root root  12 Jun 18 14:11 pci-0000:01:00.1 -> ../controlC1
 
 
 !!Aplay/Arecord output
@@ -1215,7 +1215,7 @@ state.Intel {
 	control.34 {
 		iface CARD
 		name 'Front Headphone Jack'
-		value true
+		value false
 		comment {
 			access read
 			type BOOLEAN
@@ -1535,45 +1535,45 @@ state.NVidia {
 !!------------------
 
 Module
-bnep
 rfcomm
+bnep
+bluetooth
 parport_pc
 ppdev
-bluetooth
 snd_hda_codec_hdmi
-nouveau
-joydev
-snd_seq_midi
-snd_rawmidi
-psmouse
-ttm
-snd_seq_midi_event
 snd_hda_codec_realtek
-drm_kms_helper
-drm
+snd_seq_midi
+nouveau
 snd_hda_intel
 snd_hda_codec
+ttm
+drm_kms_helper
+drm
 snd_hwdep
+snd_rawmidi
+snd_seq_midi_event
 snd_pcm
 snd_seq
-snd_timer
 snd_seq_device
-snd
-soundcore
 i2c_algo_bit
 mxm_wmi
 wmi
-dcdbas
-serio_raw
+snd_timer
 video
-snd_page_alloc
-mac_hid
+psmouse
 mei
+joydev
+serio_raw
+mac_hid
+snd
+soundcore
+snd_page_alloc
+dcdbas
 lp
 parport
 usbhid
-tg3
 hid
+tg3
 
 
 !!Sysfs Files
@@ -1637,30 +1637,33 @@ hid
 !!ALSA/HDA dmesg
 !!------------------
 
-[   14.275090] wmi: Mapper loaded
-[   14.304014] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
-[   14.304057] snd_hda_intel 0000:00:1b.0: irq 43 for MSI/MSI-X
-[   14.304078] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   14.313121] [drm] Initialized drm 1.1.0 20060810
-[   14.345722] input: HDA Intel Line as /devices/pci0000:00/0000:00:1b.0/sound/card0/input4
-[   14.345793] input: HDA Intel Front Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
-[   14.345955] input: HDA Intel Rear Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
-[   14.346058] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input7
-[   14.346378] input: HDA Intel Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
-[   14.346765] snd_hda_intel 0000:01:00.1: PCI INT A -> GSI 16 (level, low) -> IRQ 16
-[   14.346768] hda_intel: Disabling MSI
-[   14.346793] snd_hda_intel 0000:01:00.1: setting latency timer to 64
-[   14.444883] type=1400 audit(1341677150.242:2): apparmor="STATUS" operation="profile_load" name="/sbin/dhclient" pid=649 comm="apparmor_parser"
+[    8.110674] [drm] Initialized drm 1.1.0 20060810
+[    8.145605] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[    8.145648] snd_hda_intel 0000:00:1b.0: irq 43 for MSI/MSI-X
+[    8.145669] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[    8.162683] VGA switcheroo: detected Optimus DSM method \ handle
 --
-[   15.161584] Bluetooth: RFCOMM ver 1.11
-[   15.185299] HDMI status: Codec=0 Pin=5 Presence_Detect=0 ELD_Valid=0
-[   15.209263] HDMI status: Codec=1 Pin=5 Presence_Detect=0 ELD_Valid=0
-[   15.233286] HDMI status: Codec=2 Pin=5 Presence_Detect=0 ELD_Valid=0
-[   15.257235] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
-[   15.257370] input: HDA NVidia HDMI/DP,pcm=9 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input9
-[   15.257496] input: HDA NVidia HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input10
-[   15.257582] input: HDA NVidia HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input11
-[   15.257663] input: HDA NVidia HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input12
-[   15.258295] nouveau 0000:01:00.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[    8.363692] [drm] nouveau 0000:01:00.0: 0xE1D2: Condition still not met after 20ms, skipping following opcodes
+[    8.443590] input: HDA Intel Line as /devices/pci0000:00/0000:00:1b.0/sound/card0/input4
+[    8.443705] input: HDA Intel Front Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input5
+[    8.443795] input: HDA Intel Rear Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input6
+[    8.443883] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input7
+[    8.443971] input: HDA Intel Line-Out as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
+[    8.781615] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+--
+[   10.229433] [drm] Initialized nouveau 0.0.16 20090420 for 0000:01:00.0 on minor 0
+[   10.229472] snd_hda_intel 0000:01:00.1: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[   10.229475] hda_intel: Disabling MSI
+[   10.229498] snd_hda_intel 0000:01:00.1: setting latency timer to 64
+[   10.710147] tg3 0000:02:00.0: eth0: Link is down
+[   11.092492] HDMI status: Codec=0 Pin=5 Presence_Detect=0 ELD_Valid=0
+[   11.116466] HDMI status: Codec=1 Pin=5 Presence_Detect=0 ELD_Valid=0
+[   11.140406] HDMI status: Codec=2 Pin=5 Presence_Detect=0 ELD_Valid=0
+[   11.164558] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
+[   11.164642] input: HDA NVidia HDMI/DP,pcm=9 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input9
+[   11.164769] input: HDA NVidia HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input10
+[   11.164859] input: HDA NVidia HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input11
+[   11.164944] input: HDA NVidia HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:01.0/0000:01:00.1/sound/card1/input12
+[   11.250476] ppdev: user-space parallel port driver
 
 

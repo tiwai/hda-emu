@@ -1,15 +1,15 @@
 upload=true&script=true&cardinfo=
 !!################################
-!!ALSA Information Script v 0.4.60
+!!ALSA Information Script v 0.4.61
 !!################################
 
-!!Script ran on: Mon Jun  4 18:39:33 UTC 2012
+!!Script ran on: Tue Apr 16 18:57:48 UTC 2013
 
 
 !!Linux Distribution
 !!------------------
 
-Ubuntu quantal (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu quantal (development branch)"
+Ubuntu Raring Ringtail (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION="Ubuntu Raring Ringtail (development branch)" NAME="Ubuntu" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu Raring Ringtail (development branch)" HOME_URL="http://www.ubuntu.com/" SUPPORT_URL="http://help.ubuntu.com/" BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
 
 
 !!DMI Information
@@ -18,12 +18,13 @@ Ubuntu quantal (development branch) \n \l DISTRIB_ID=Ubuntu DISTRIB_DESCRIPTION=
 Manufacturer:      Dell Inc.
 Product Name:      Vostro V13
 Product Version:   A02
+Firmware Version:  A02
 
 
 !!Kernel Information
 !!------------------
 
-Kernel release:    3.4.0-3-generic
+Kernel release:    3.8.0-18-generic
 Operating System:  GNU/Linux
 Architecture:      x86_64
 Processor:         x86_64
@@ -33,7 +34,7 @@ SMP Enabled:       Yes
 !!ALSA Version
 !!------------
 
-Driver version:     1.0.25
+Driver version:     k3.8.0-18-generic
 Library version:    1.0.25
 Utilities version:  1.0.25
 
@@ -66,7 +67,7 @@ Pulseaudio:
 
 
 !!Advanced information - PCI Vendor/Device/Subsystem ID's
-!!--------------------------------------------------------
+!!-------------------------------------------------------
 
 00:1b.0 0403: 8086:293e (rev 03)
 	Subsystem: 1028:042b
@@ -75,33 +76,34 @@ Pulseaudio:
 !!Modprobe options (Sound related)
 !!--------------------------------
 
-snd-atiixp-modem: index=-2
-snd-intel8x0m: index=-2
-snd-via82xx-modem: index=-2
-snd-usb-audio: index=-2
-snd-usb-caiaq: index=-2
-snd-usb-ua101: index=-2
-snd-usb-us122l: index=-2
-snd-usb-usx2y: index=-2
-snd-cmipci: mpu_port=0x330 fm_port=0x388
-snd-pcsp: index=-2
-snd-usb-audio: index=-2
+snd_atiixp_modem: index=-2
+snd_intel8x0m: index=-2
+snd_via82xx_modem: index=-2
+snd_usb_audio: index=-2
+snd_usb_caiaq: index=-2
+snd_usb_ua101: index=-2
+snd_usb_us122l: index=-2
+snd_usb_usx2y: index=-2
+snd_cmipci: mpu_port=0x330 fm_port=0x388
+snd_pcsp: index=-2
+snd_usb_audio: index=-2
 
 
 !!Loaded sound module options
-!!--------------------------
+!!---------------------------
 
 !!Module: snd_hda_intel
 	align_buffer_size : -1
 	bdl_pos_adj : 1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
-	beep_mode : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	beep_mode : N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
 	enable : Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 	enable_msi : -1
 	id : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
 	index : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+	jackpoll_ms : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
 	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
-	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	position_fix : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	power_save : 0
 	power_save_controller : Y
 	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
@@ -155,6 +157,7 @@ Node 0x06 [Audio Output] wcaps 0x211: Stereo Digital
   Converter: stream=0, channel=0
   Digital:
   Digital category: 0x0
+  IEC Coding Type: 0x0
   PCM:
     rates [0x5f0]: 32000 44100 48000 88200 96000 192000
     bits [0xe]: 16 20 24
@@ -219,6 +222,7 @@ Node 0x10 [Audio Output] wcaps 0x211: Stereo Digital
   Converter: stream=0, channel=0
   Digital:
   Digital category: 0x0
+  IEC Coding Type: 0x0
   PCM:
     rates [0x5f0]: 32000 44100 48000 88200 96000 192000
     bits [0xe]: 16 20 24
@@ -234,6 +238,7 @@ Node 0x11 [Pin Complex] wcaps 0x400380: Mono Digital
   Connection: 1
      0x10
 Node 0x12 [Pin Complex] wcaps 0x400001: Stereo
+  Control: name="Internal Mic Phantom Jack", index=0, device=0
   Pincap 0x00000020: IN
   Pin Default 0x99a30920: [Fixed] Mic at Int ATAPI
     Conn = ATAPI, Color = Unknown
@@ -244,6 +249,7 @@ Node 0x13 [Vendor Defined Widget] wcaps 0xf00000: Mono
 Node 0x14 [Pin Complex] wcaps 0x40010d: Stereo Amp-Out
   Control: name="Speaker Playback Switch", index=0, device=0
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
+  Control: name="Speaker Phantom Jack", index=0, device=0
   Amp-Out caps: ofs=0x00, nsteps=0x00, stepsize=0x00, mute=1
   Amp-Out vals:  [0x00 0x00]
   Pincap 0x00010050: OUT EAPD Balanced
@@ -380,22 +386,22 @@ Node 0x24 [Audio Mixer] wcaps 0x20010b: Stereo Amp-In
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  5 Jun  4 14:31 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  4 Jun  4 14:31 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  3 Jun  4 14:37 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  2 Jun  4 14:37 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  1 Jun  4 14:31 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jun  4 14:31 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  5 Apr 16 14:55 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  4 Apr 16 14:55 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  3 Apr 16 14:55 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  2 Apr 16 14:55 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  1 Apr 16 14:55 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Apr 16 14:55 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jun  4 14:31 .
-drwxr-xr-x 3 root root 180 Jun  4 14:31 ..
-lrwxrwxrwx 1 root root  12 Jun  4 14:31 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Apr 16 14:55 .
+drwxr-xr-x 3 root root 180 Apr 16 14:55 ..
+lrwxrwxrwx 1 root root  12 Apr 16 14:55 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
-!!------------
+!!--------------------
 
 APLAY
 
@@ -419,7 +425,7 @@ card 0: Intel [HDA Intel], device 0: ALC269 Analog [ALC269 Analog]
 Card hw:0 'Intel'/'HDA Intel at 0xfe700000 irq 48'
   Mixer name	: 'Realtek ALC269'
   Components	: 'HDA:10ec0269,1028042b,00100004'
-  Controls      : 17
+  Controls      : 21
   Simple ctrls  : 9
 Simple mixer control 'Master',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined penum
@@ -481,7 +487,7 @@ Simple mixer control 'Auto-Mute Mode',0
 
 
 !!Alsactl output
-!!-------------
+!!--------------
 
 --startcollapse--
 state.Intel {
@@ -684,6 +690,16 @@ state.Intel {
 	}
 	control.16 {
 		iface CARD
+		name 'Speaker Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.17 {
+		iface CARD
 		name 'Mic Jack'
 		value false
 		comment {
@@ -692,7 +708,41 @@ state.Intel {
 			count 1
 		}
 	}
-	control.17 {
+	control.18 {
+		iface CARD
+		name 'Internal Mic Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.19 {
+		iface PCM
+		name 'Playback Channel Map'
+		value.0 0
+		value.1 0
+		comment {
+			access read
+			type INTEGER
+			count 2
+			range '0 - 36'
+		}
+	}
+	control.20 {
+		iface PCM
+		name 'Capture Channel Map'
+		value.0 0
+		value.1 0
+		comment {
+			access read
+			type INTEGER
+			count 2
+			range '0 - 36'
+		}
+	}
+	control.21 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 255
@@ -718,58 +768,61 @@ state.Intel {
 
 Module
 nls_iso8859_1
-nls_cp437
-vfat
-fat
-bnep
-rfcomm
 parport_pc
 ppdev
-uvcvideo
+rfcomm
+bnep
 snd_hda_codec_realtek
 btusb
-videobuf2_core
-videodev
-videobuf2_vmalloc
-videobuf2_memops
-snd_hda_intel
 bluetooth
+coretemp
+kvm_intel
+kvm
+snd_hda_intel
 snd_hda_codec
 snd_hwdep
 snd_pcm
-joydev
-b43
+snd_page_alloc
 snd_seq_midi
-mac80211
-snd_rawmidi
+joydev
+hid_generic
 snd_seq_midi_event
-coretemp
-snd_seq
-cfg80211
-dell_laptop
-snd_timer
-snd_seq_device
-psmouse
-dcdbas
-snd
+b43
+snd_rawmidi
 bcma
+uvcvideo
+dell_laptop
+snd_seq
+videobuf2_vmalloc
+usbhid
+mac80211
+videobuf2_memops
+videobuf2_core
+videodev
+dcdbas
+hid
+snd_seq_device
 microcode
 i915
+snd_timer
+cfg80211
+snd
 drm_kms_helper
+video
 soundcore
 drm
-serio_raw
-snd_page_alloc
 i2c_algo_bit
-video
-mac_hid
 lp
+psmouse
+mac_hid
+serio_raw
+lpc_ich
 parport
-usbhid
-hid
-ssb
-r8169
 usb_storage
+ssb
+ahci
+libahci
+r8169
 
 
 !!Sysfs Files
@@ -796,15 +849,12 @@ usb_storage
 
 
 !!ALSA/HDA dmesg
-!!------------------
+!!--------------
 
-[    9.893896] Bluetooth: SCO socket layer initialized
-[    9.905085] snd_hda_intel 0000:00:1b.0: irq 48 for MSI/MSI-X
-[   10.016901] Linux video capture interface: v2.00
---
-[   10.741160] uvcvideo: Found UVC 1.00 device Laptop_Integrated_Webcam_1.3M (05c8:030b)
-[   10.741911] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
-[   10.742209] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[   10.744760] input: Laptop_Integrated_Webcam_1.3M as /devices/pci0000:00/0000:00:1a.7/usb1/1-2/1-2:1.0/input/input11
+[    7.180721] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+[    7.180858] snd_hda_intel 0000:00:1b.0: irq 48 for MSI/MSI-X
+[    7.224164] input: HDA Intel Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[    7.225584] input: HDA Intel Front Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[    8.750533] init: avahi-cups-reload main process (749) terminated with status 1
 
 

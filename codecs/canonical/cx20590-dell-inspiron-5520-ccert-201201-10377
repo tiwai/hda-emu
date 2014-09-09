@@ -3,7 +3,7 @@ upload=true&script=true&cardinfo=
 !!ALSA Information Script v 0.4.60
 !!################################
 
-!!Script ran on: Thu Jul  5 09:57:34 UTC 2012
+!!Script ran on: Tue Jul  3 10:20:14 UTC 2012
 
 
 !!Linux Distribution
@@ -102,7 +102,7 @@ snd-usb-audio: index=-2
 	model : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
 	patch : (null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)
 	position_fix : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-	power_save : 0
+	power_save : 1
 	power_save_controller : Y
 	probe_mask : -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 	probe_only : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -140,7 +140,7 @@ Node 0x10 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
   Device: name="CONEXANT Analog", type="Audio", device=0
   Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
   Amp-Out vals:  [0x36 0x36]
-  Converter: stream=8, channel=0
+  Converter: stream=0, channel=0
   PCM:
     rates [0x560]: 44100 48000 96000 192000
     bits [0xe]: 16 20 24
@@ -154,7 +154,7 @@ Node 0x11 [Audio Output] wcaps 0xc1d: Stereo Amp-Out R/L
     ControlAmp: chs=3, dir=Out, idx=0, ofs=0
   Amp-Out caps: ofs=0x4a, nsteps=0x4a, stepsize=0x03, mute=1
   Amp-Out vals:  [0x36 0x36]
-  Converter: stream=8, channel=0
+  Converter: stream=0, channel=0
   PCM:
     rates [0x560]: 44100 48000 96000 192000
     bits [0xe]: 16 20 24
@@ -190,7 +190,7 @@ Node 0x14 [Audio Input] wcaps 0x100d1b: Stereo Amp-In R/L
   Device: name="CONEXANT Analog", type="Audio", device=0
   Amp-In caps: ofs=0x4a, nsteps=0x50, stepsize=0x03, mute=1
   Amp-In vals:  [0x80 0x80] [0x4a 0x4a] [0x4a 0x4a] [0x4a 0x4a]
-  Converter: stream=4, channel=0
+  Converter: stream=0, channel=0
   SDI-Select: 0
   PCM:
     rates [0x160]: 44100 48000 96000
@@ -476,20 +476,20 @@ Node 0x08 [Vendor Defined Widget] wcaps 0xf00000: Mono
 !!ALSA Device nodes
 !!-----------------
 
-crw-rw---T+ 1 root audio 116,  7 Jul  5 05:55 /dev/snd/controlC0
-crw-rw---T+ 1 root audio 116,  6 Jul  5 05:55 /dev/snd/hwC0D0
-crw-rw---T+ 1 root audio 116,  5 Jul  5 05:55 /dev/snd/hwC0D3
-crw-rw---T+ 1 root audio 116,  4 Jul  5 05:55 /dev/snd/pcmC0D0c
-crw-rw---T+ 1 root audio 116,  3 Jul  5 05:55 /dev/snd/pcmC0D0p
-crw-rw---T+ 1 root audio 116,  2 Jul  5 05:55 /dev/snd/pcmC0D3p
-crw-rw---T+ 1 root audio 116,  1 Jul  5 05:55 /dev/snd/seq
-crw-rw---T+ 1 root audio 116, 33 Jul  5 05:55 /dev/snd/timer
+crw-rw---T+ 1 root audio 116,  7 Jul  3 06:18 /dev/snd/controlC0
+crw-rw---T+ 1 root audio 116,  6 Jul  3 06:18 /dev/snd/hwC0D0
+crw-rw---T+ 1 root audio 116,  5 Jul  3 06:18 /dev/snd/hwC0D3
+crw-rw---T+ 1 root audio 116,  4 Jul  3 06:18 /dev/snd/pcmC0D0c
+crw-rw---T+ 1 root audio 116,  3 Jul  3 06:18 /dev/snd/pcmC0D0p
+crw-rw---T+ 1 root audio 116,  2 Jul  3 06:18 /dev/snd/pcmC0D3p
+crw-rw---T+ 1 root audio 116,  1 Jul  3 06:18 /dev/snd/seq
+crw-rw---T+ 1 root audio 116, 33 Jul  3 06:18 /dev/snd/timer
 
 /dev/snd/by-path:
 total 0
-drwxr-xr-x 2 root root  60 Jul  5 05:55 .
-drwxr-xr-x 3 root root 220 Jul  5 05:55 ..
-lrwxrwxrwx 1 root root  12 Jul  5 05:55 pci-0000:00:1b.0 -> ../controlC0
+drwxr-xr-x 2 root root  60 Jul  3 06:18 .
+drwxr-xr-x 3 root root 220 Jul  3 06:18 ..
+lrwxrwxrwx 1 root root  12 Jul  3 06:18 pci-0000:00:1b.0 -> ../controlC0
 
 
 !!Aplay/Arecord output
@@ -900,8 +900,8 @@ state.PCH {
 !!------------------
 
 Module
-bnep
 rfcomm
+bnep
 bluetooth
 parport_pc
 ppdev
@@ -912,33 +912,33 @@ snd_hda_codec
 snd_hwdep
 snd_pcm
 snd_seq_midi
+uvcvideo
+videodev
 snd_rawmidi
 snd_seq_midi_event
 snd_seq
+v4l2_compat_ioctl32
 snd_timer
+rts5139
 snd_seq_device
+joydev
+snd
 i915
 drm_kms_helper
 drm
-rts5139
-joydev
 i2c_algo_bit
-uvcvideo
-snd
-videodev
-video
-psmouse
-dell_wmi
-sparse_keymap
-serio_raw
-soundcore
-mac_hid
-snd_page_alloc
 mei
-v4l2_compat_ioctl32
-wmi
+soundcore
+psmouse
 dell_laptop
+dell_wmi
+serio_raw
+sparse_keymap
+snd_page_alloc
+video
+mac_hid
 dcdbas
+wmi
 lp
 parport
 r8169
@@ -980,15 +980,18 @@ r8169
 !!ALSA/HDA dmesg
 !!------------------
 
-[   10.334100] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
-[   10.334150] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
-[   10.334204] snd_hda_intel 0000:00:1b.0: irq 45 for MSI/MSI-X
-[   10.334227] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
-[   11.232748] hda_codec: CX20590: BIOS auto-probing.
-[   11.257004] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
-[   11.257075] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
-[   11.257155] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
-[   11.257217] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
-[   12.732210] r8169 0000:01:00.0: eth0: link down
+[   10.967658] USB Video Class driver (1.1.1)
+[   11.199223] snd_hda_intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+[   11.199273] snd_hda_intel 0000:00:1b.0: irq 45 for MSI/MSI-X
+[   11.199295] snd_hda_intel 0000:00:1b.0: setting latency timer to 64
+[   11.480451] type=1400 audit(1341310692.208:2): apparmor="STATUS" operation="profile_load" name="/sbin/dhclient" pid=611 comm="apparmor_parser"
+--
+[   11.480898] type=1400 audit(1341310692.208:7): apparmor="STATUS" operation="profile_replace" name="/usr/lib/connman/scripts/dhclient-script" pid=623 comm="apparmor_parser"
+[   11.920369] hda_codec: CX20590: BIOS auto-probing.
+[   11.950173] HDMI status: Codec=3 Pin=5 Presence_Detect=0 ELD_Valid=0
+[   11.950233] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input8
+[   11.950294] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input9
+[   11.950349] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input10
+[   14.589365] r8169 0000:01:00.0: eth0: link down
 
 
