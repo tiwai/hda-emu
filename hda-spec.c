@@ -474,17 +474,26 @@ static int realtek_ext_cmd(struct xhda_codec *codec, unsigned int cmd)
 {
 	unsigned int nid = (cmd >> 20) & 0x7f;
 
-	/* just ignore COEFs on ALC260 for non-existing NID 0x20 */
-	if (codec->vendor_id == 0x10ec0260 && nid == 0x20) {
-		codec->rc = 0;
-		return 0;
-	}
-
-	if (nid != 0x51)
-		return -ENXIO;
-	/* There might be a secret DSP connected to node 0x51 */
 	codec->rc = 0;
-	return 0;
+
+	/* just ignore COEFs on ALC260 for non-existing NID 0x20 */
+	if (codec->vendor_id == 0x10ec0260 && nid == 0x20)
+		return 0;
+
+	if (codec->vendor_id == 0x10ec0283 && nid == 0x53)
+		return 0;
+
+	if (codec->vendor_id == 0x10ec0255 && nid == 0x57)
+		return 0;
+
+	if (codec->vendor_id == 0x10ec0293 && nid == 0x57)
+		return 0;
+
+	/* There might be a secret DSP connected to node 0x51 */
+	if (nid == 0x51)
+		return 0;
+
+	return -ENXIO;
 }
 
 /*
