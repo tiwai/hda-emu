@@ -575,6 +575,18 @@ static void fixup_alc268_beep(struct xhda_codec *codec)
 	node->amp_in_caps.override = 1;
 }
 
+static int haswell_ext_cmd(struct xhda_codec *codec, unsigned int cmd)
+{
+	unsigned int nid = (cmd >> 20) & 0x7f;
+
+	codec->rc = 0;
+
+	/* Secret Haswell node on 0x8, used to turn on DP1.2 features */
+	if (nid == 0x8)
+		return 0;
+	return -ENXIO;
+}
+
 static void fixup_haswellhdmi(struct xhda_codec *codec)
 {
 	struct xhda_node *node;
@@ -602,6 +614,8 @@ static void fixup_haswellhdmi(struct xhda_codec *codec)
 			node->node[0] = 0x2;
 		}
 	}
+
+	codec->extended_cmd = haswell_ext_cmd;
 }
 
 struct fixup_list {
