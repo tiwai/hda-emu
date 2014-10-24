@@ -153,6 +153,24 @@ int snd_ctl_boolean_stereo_info(struct snd_kcontrol *kcontrol,
 }
 #endif
 
+int snd_ctl_enum_info(struct snd_ctl_elem_info *info, unsigned int channels,
+		      unsigned int items, const char *const names[])
+{
+	info->type = SNDRV_CTL_ELEM_TYPE_ENUMERATED;
+	info->count = channels;
+	info->value.enumerated.items = items;
+	if (!items)
+		return 0;
+	if (info->value.enumerated.item >= items)
+		info->value.enumerated.item = items - 1;
+	if (strlen(names[info->value.enumerated.item]) >= sizeof(info->value.enumerated.name))
+		hda_log(HDA_LOG_WARN, "ALSA: too long item name '%s'\n", names[info->value.enumerated.item]);
+	strlcpy(info->value.enumerated.name,
+		names[info->value.enumerated.item],
+		sizeof(info->value.enumerated.name));
+	return 0;
+}
+
 int snd_ctl_activate_id(struct snd_card *card, struct snd_ctl_elem_id *id,
 			int active)
 {
