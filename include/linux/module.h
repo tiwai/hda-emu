@@ -20,7 +20,7 @@ struct module;
 #define EXPORT_SYMBOL(x)
 #define EXPORT_SYMBOL_GPL(x)
 
-static inline int request_module(const char *name) { return 0; }
+static inline int request_module(const char *name, ...) { return 0; }
 #define module_put(x) do { } while (0)
 #define module_get(x) do { } while (0)
 static inline int try_module_get(struct module *x) { return 1; }
