@@ -23,6 +23,7 @@ struct input_dev {
 
 	unsigned long evbit[8];
 	unsigned long sndbit[8];
+	unsigned long keybit[0x300 / (sizeof(long) * 8)];
 	/* ... */
 
 	int (*open)(struct input_dev *dev);
@@ -50,6 +51,8 @@ static inline void input_free_device(struct input_dev *dev)
 #define input_get_drvdata(idev)	((idev)->dev.driver_data)
 #define input_register_device(dev) 0
 #define input_unregister_device(dev) input_free_device(dev)
+static inline void input_report_key(struct input_dev *dev, unsigned int code, int value) {}
+static inline void input_sync(struct input_dev *dev) {}
 
 #define BUS_PCI			0x01
 
@@ -73,5 +76,10 @@ static inline void input_free_device(struct input_dev *dev)
 #define EV_FF_STATUS		0x17
 #define EV_MAX			0x1f
 #define EV_CNT			(EV_MAX+1)
+
+#define KEY_MUTE		113
+#define KEY_VOLUMEDOWN		114
+#define KEY_VOLUMEUP		115
+#define KEY_MICMUTE		248	/* Mute / unmute the microphone */
 
 #endif /* __LINUX_INPUT_H */
