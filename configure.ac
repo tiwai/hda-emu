@@ -547,5 +547,17 @@ if test "$HAVE_CODEC_USER_MUTEX" = "1"; then
   AC_DEFINE(HAVE_CODEC_USER_MUTEX)
 fi
 
+HAVE_HDA_BUS_TEMPLATE=
+AC_MSG_CHECKING(for hda_bus_template)
+if grep -q hda_bus_template hda/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_HDA_BUS_TEMPLATE=yes
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_HDA_BUS_TEMPLATE" = "yes"; then
+  AC_DEFINE(HAVE_HDA_BUS_TEMPLATE)
+fi
+
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
 

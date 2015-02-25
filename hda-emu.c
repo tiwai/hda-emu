@@ -1281,6 +1281,15 @@ static FILE *file_open(const char *fname)
 	return fopen(fname, "r");
 }
 
+#ifndef HAVE_HDA_BUS_TEMPLATE
+static struct hda_bus_ops bus_ops = {
+	.command = cmd_send,
+	.get_response = resp_get_caddr,
+	.attach_pcm = attach_pcm,
+	.pm_notify = new_pm_notify,
+};
+#endif /* HAVE_HDA_BUS_TEMPLATE */
+
 int main(int argc, char **argv)
 {
 	int c, err;
@@ -1292,7 +1301,9 @@ int main(int argc, char **argv)
 	char *logfile = NULL;
 	unsigned int log_flags = HDA_LOG_FLAG_COLOR;
 	struct pci_dev mypci;
+#ifdef HAVE_HDA_BUS_TEMPLATE
 	struct hda_bus_template temp;
+#endif
 	struct hda_codec *codec;
 	char *init_pincfg = NULL;
 	char *user_pincfg = NULL;
@@ -1414,6 +1425,7 @@ int main(int argc, char **argv)
 			pci_subvendor, pci_subdevice);
 	}
 
+#ifdef HAVE_HDA_BUS_TEMPLATE
 	memset(&temp, 0, sizeof(temp));
 
 	temp.pci = &mypci;
@@ -1447,12 +1459,25 @@ int main(int argc, char **argv)
 	temp.ops.pm_notify = pm_notify;
 #endif
 #endif /* OLD_HDA_CMD */
+#endif /* HAVE_HDA_BUS_TEMPLATE */
 	gather_codec_hooks();
 
-	if (snd_hda_bus_new(&card, &temp, &bus) < 0) {
+#ifdef HAVE_HDA_BUS_TEMPLATE
+	err = snd_hda_bus_new(&card, &temp, &bus);
+#else
+	err = snd_hda_bus_new(&card, &bus);
+#endif
+	if (err < 0) {
 		hda_log(HDA_LOG_ERR, "cannot create snd_hda_bus\n");
 		return 1;
 	}
+
+#ifndef HAVE_HDA_BUS_TEMPLATE
+	bus->pci = &mypci;
+	bus->ops = bus_ops;
+	bus->power_save = &power_save;
+	bus->modelname = opt_model;
+#endif /* HAVE_HDA_BUS_TEMPLATE */
 
 	ignore_invalid_ftype = 1;
 #ifdef OLD_HDA_CODEC_NEW
