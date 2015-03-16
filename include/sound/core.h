@@ -53,6 +53,8 @@ struct snd_card {
 
 	struct device *dev;
 	struct device card_dev;
+
+	bool registered;
 };
 
 struct snd_device {
@@ -93,6 +95,19 @@ int snd_device_new(struct snd_card *card, snd_device_type_t type,
 static inline
 int snd_device_free(struct snd_card *card, void *device_data)
 {
+	return 0;
+}
+
+static inline
+int snd_device_disconnect(struct snd_card *card, void *device_data)
+{
+	return 0;
+}
+
+static inline
+int snd_card_register(struct snd_card *card)
+{
+	card->registered = true;
 	return 0;
 }
 

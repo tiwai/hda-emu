@@ -60,6 +60,8 @@ static struct snd_card card = {
 };
 static struct xhda_codec proc;
 
+static struct hda_bus *bus;
+
 static struct hda_codec *_codec;
 
 static int ignore_invalid_ftype;
@@ -196,11 +198,15 @@ int hda_get_power_save(void)
 
 void hda_set_power_save(int val)
 {
+#ifdef NEW_HDA_INFRA
+	snd_hda_set_power_save(bus, val * 1000);
+#else /* !NEW_HDA_INFRA */
 #ifdef HDA_OLD_POWER_SAVE
 	*power_save_parameter = val;
 #else
 	power_save = val;
 #endif
+#endif /* NEW_HDA_INFRA */
 }
 
 /*
@@ -404,20 +410,30 @@ void hda_log_issue_unsol(int nid)
  * suspend/resume simulation
  */
 
-static struct hda_bus *bus;
-
 void hda_test_suspend(void)
 {
+#ifdef NEW_HDA_INFRA
+	struct device *dev = hda_codec_dev(_codec);
+	if (dev->driver && dev->driver->pm)
+		dev->driver->pm->suspend(dev);
+#else /* !NEW_HDA_INFRA */
 #ifdef HAVE_HDA_SUSPEND_PMSG
 	snd_hda_suspend(bus, PMSG_SUSPEND);
 #else
 	snd_hda_suspend(bus);
 #endif
+#endif /* NEW_HDA_INFRA */
 }
 
 void hda_test_resume(void)
 {
+#ifdef NEW_HDA_INFRA
+	struct device *dev = hda_codec_dev(_codec);
+	if (dev->driver && dev->driver->pm)
+		dev->driver->pm->resume(dev);
+#else /* !NEW_HDA_INFRA */
 	snd_hda_resume(bus);
+#endif /* NEW_HDA_INFRA */
 }
 
 static inline unsigned int random_bit(unsigned int pincap, unsigned int mask,
@@ -523,12 +539,14 @@ int hda_codec_reconfig(void)
 	err = snd_hda_codec_configure(_codec);
 	if (err < 0)
 		goto error;
+#ifndef NEW_HDA_INFRA
 	/* rebuild PCMs */
 	err = snd_hda_build_pcms(bus);
 	if (err < 0)
 		goto error;
 	/* rebuild mixers */
 	err = snd_hda_codec_build_controls(_codec);
+#endif /* !NEW_HDA_INFRA */
  error:
 	snd_hda_power_down(_codec);
 	return err;
@@ -936,6 +954,7 @@ static int azx_pcm_create(struct hda_codec *codec)
  * power management
  */
 
+#ifndef NEW_HDA_INFRA
 #ifdef HAVE_NEW_PM_NOTIFY
 static void new_pm_notify(struct hda_bus *bus, bool power_up)
 {
@@ -955,6 +974,7 @@ static void old_pm_notify(struct hda_codec *codec)
 }
 #endif
 #endif /* HAVE_NEW_PM_NOTIFY */
+#endif /* !NEW_HDA_INFRA */
 
 
 /*
@@ -1281,14 +1301,44 @@ static FILE *file_open(const char *fname)
 	return fopen(fname, "r");
 }
 
-#ifndef HAVE_HDA_BUS_TEMPLATE
+#ifdef NEW_HDA_INFRA
 static struct hda_bus_ops bus_ops = {
 	.command = cmd_send,
 	.get_response = resp_get_caddr,
 	.attach_pcm = attach_pcm,
-	.pm_notify = new_pm_notify,
 };
-#endif /* HAVE_HDA_BUS_TEMPLATE */
+#else /* !NEW_HDA_INFRA */
+static void setup_bus_template(struct hda_bus_template *temp)
+{
+#ifdef HAVE_POWER_SAVE
+#ifndef OLD_POWER_SAVE
+	temp->power_save = &power_save;
+#endif
+#endif
+#ifdef OLD_HDA_CMD
+	temp->ops.command = old_cmd_send;
+	temp->ops.get_response = old_resp_get;
+#ifdef HAVE_POWER_SAVE
+	temp->ops.pm_notify = old_pm_notify;
+#endif
+#else /* !OLD_HDA_CMD */
+	temp.ops.command = cmd_send;
+#ifdef HAVE_GET_RESPONSE_WITH_CADDR
+	temp->ops.get_response = resp_get_caddr;
+#else
+	temp->ops.get_response = resp_get;
+#endif
+#ifdef HAVE_HDA_ATTACH_PCM
+	temp->ops.attach_pcm = attach_pcm;
+#endif
+#ifdef HAVE_NEW_PM_NOTIFY
+	temp->ops.pm_notify = new_pm_notify;
+#else
+	temp->ops.pm_notify = pm_notify;
+#endif
+#endif /* OLD_HDA_CMD */
+}
+#endif /* NEW_HDA_INFRA */
 
 int main(int argc, char **argv)
 {
@@ -1301,7 +1351,7 @@ int main(int argc, char **argv)
 	char *logfile = NULL;
 	unsigned int log_flags = HDA_LOG_FLAG_COLOR;
 	struct pci_dev mypci;
-#ifdef HAVE_HDA_BUS_TEMPLATE
+#ifndef NEW_HDA_INFRA
 	struct hda_bus_template temp;
 #endif
 	struct hda_codec *codec;
@@ -1425,66 +1475,42 @@ int main(int argc, char **argv)
 			pci_subvendor, pci_subdevice);
 	}
 
-#ifdef HAVE_HDA_BUS_TEMPLATE
+#ifndef NEW_HDA_INFRA
 	memset(&temp, 0, sizeof(temp));
-
 	temp.pci = &mypci;
-	temp.modelname = opt_model;
+	temp->modelname = opt_model;
 	if (opt_model)
 		hda_log(HDA_LOG_INFO, "Using model option '%s'\n", opt_model);
-#ifdef HAVE_POWER_SAVE
-#ifndef OLD_POWER_SAVE
-	temp.power_save = &power_save;
-#endif
-#endif
-#ifdef OLD_HDA_CMD
-	temp.ops.command = old_cmd_send;
-	temp.ops.get_response = old_resp_get;
-#ifdef HAVE_POWER_SAVE
-	temp.ops.pm_notify = old_pm_notify;
-#endif
-#else /* !OLD_HDA_CMD */
-	temp.ops.command = cmd_send;
-#ifdef HAVE_GET_RESPONSE_WITH_CADDR
-	temp.ops.get_response = resp_get_caddr;
-#else
-	temp.ops.get_response = resp_get;
-#endif
-#ifdef HAVE_HDA_ATTACH_PCM
-	temp.ops.attach_pcm = attach_pcm;
-#endif
-#ifdef HAVE_NEW_PM_NOTIFY
-	temp.ops.pm_notify = new_pm_notify;
-#else
-	temp.ops.pm_notify = pm_notify;
-#endif
-#endif /* OLD_HDA_CMD */
-#endif /* HAVE_HDA_BUS_TEMPLATE */
+	setup_bus_template(&temp);
+#endif /* !NEW_HDA_INFRA */
 	gather_codec_hooks();
 
-#ifdef HAVE_HDA_BUS_TEMPLATE
-	err = snd_hda_bus_new(&card, &temp, &bus);
-#else
+#ifdef NEW_HDA_INFRA
 	err = snd_hda_bus_new(&card, &bus);
+#else
+	err = snd_hda_bus_new(&card, &temp, &bus);
 #endif
 	if (err < 0) {
 		hda_log(HDA_LOG_ERR, "cannot create snd_hda_bus\n");
 		return 1;
 	}
 
-#ifndef HAVE_HDA_BUS_TEMPLATE
+#ifdef NEW_HDA_INFRA
 	bus->pci = &mypci;
 	bus->ops = bus_ops;
-	bus->power_save = &power_save;
 	bus->modelname = opt_model;
-#endif /* HAVE_HDA_BUS_TEMPLATE */
+#endif /* NEW_HDA_INFRA */
 
 	ignore_invalid_ftype = 1;
+#ifdef NEW_HDA_INFRA
+	err = snd_hda_codec_new(bus, &card, proc.addr, &codec);
+#else /* !NEW_HDA_INFRA */
 #ifdef OLD_HDA_CODEC_NEW
 	err = snd_hda_codec_new(bus, proc.addr, &codec);
 #else
 	err = snd_hda_codec_new(bus, proc.addr, 1, &codec);
 #endif
+#endif /* NEW_HDA_INFRA */
 	ignore_invalid_ftype = 0;
 	if (err) {
 		hda_log(HDA_LOG_ERR, "cannot create codec\n");
@@ -1513,6 +1539,7 @@ int main(int argc, char **argv)
 		snd_hda_codec_configure(codec);
 #endif
 
+#ifndef NEW_HDA_INFRA
 	if (!no_configure) {
 		hda_log(HDA_LOG_INFO, "# Building PCMs...\n");
 		snd_hda_build_pcms(bus);
@@ -1527,6 +1554,7 @@ int main(int argc, char **argv)
 		snd_hda_build_controls(codec->bus);
 #endif
 	}
+#endif /* !NEW_HDA_INFRA */
 
 	/* power-down after init phase */
 	snd_hda_power_down(codec);

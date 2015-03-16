@@ -110,6 +110,7 @@ CHECK_HELPER([hda_auto_parser.c], [HAVE_HDA_AUTO_PARSER])
 CHECK_HELPER([hda_jack.c], [HAVE_HDA_JACK])
 CHECK_HELPER([hda_eld.c], [HAVE_HDA_ELD])
 CHECK_HELPER([hda_beep.c], [HAVE_HDA_BEEP])
+CHECK_HELPER([hda_bind.c], [HAVE_HDA_BIND])
 
 AC_ARG_ENABLE(own-proc,
   AS_HELP_STRING([--enable-own-proc],
@@ -119,11 +120,23 @@ AM_CONDITIONAL(USE_OWN_PROC, test "$own_proc" = "yes")
 
 echo "Generating kernel/init_hooks.h..."
 rm -f kernel/init_hooks.h
+if test -f hda/hda_bind.c; then
+cat hda/hda_bind.c | grep '^module_init(' | \
+    sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' >> kernel/init_hooks.h
+fi
 cat hda/patch_*.c | grep '^module_init(' | \
-    sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' > kernel/init_hooks.h
+    sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' >> kernel/init_hooks.h
+cat hda/patch_*.c | grep '^module_hda_codec_driver(' | \
+    sed -e's/^module_hda_codec_driver(\(.*\))/void call_init_\1_init(void);/g' >> kernel/init_hooks.h
 echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
+if test -f hda/hda_bind.c; then
+cat hda/hda_bind.c | grep '^module_init(' | \
+    sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
+fi
 cat hda/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
+cat hda/patch_*.c | grep '^module_hda_codec_driver(' | \
+    sed -e's/^module_hda_codec_driver(\(.*\))/call_init_\1_init();/g' >> kernel/init_hooks.h
 echo '}' >> kernel/init_hooks.h
 
 AC_MSG_CHECKING(for presence of power_save option)
@@ -151,6 +164,18 @@ fi
 if test "$OLD_POWER_SAVE" = "1"; then
   AC_DEFINE(OLD_POWER_SAVE)
 fi
+fi
+
+NEW_HDA_INFRA=
+AC_MSG_CHECKING(for new hda structure)
+if grep -q hda_bus_template hda/hda_codec.h; then
+  AC_MSG_RESULT(no)
+else
+  AC_MSG_RESULT(yes)
+  NEW_HDA_INFRA=yes
+fi
+if test "$NEW_HDA_INFRA" = "yes"; then
+  AC_DEFINE(NEW_HDA_INFRA)
 fi
 
 AC_MSG_CHECKING(for old bus callbacks)
@@ -251,6 +276,13 @@ if test "$HAVE_GET_RESPONSE_WITH_CADDR" = "1"; then
 fi
 fi # HAVE_HDA_ATTACH_PCM=1
 
+if test "$NEW_HDA_INFRA" = "yes"; then
+
+AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
+AC_DEFINE(HAVE_HDA_PATCH_LOADER)
+
+else
+
 AC_MSG_CHECKING(for old snd_hda_codec_new)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"
@@ -288,6 +320,8 @@ fi
 if test "$HAVE_HDA_PATCH_LOADER" = "yes"; then
   AC_DEFINE(HAVE_HDA_PATCH_LOADER)
 fi
+
+fi # NEW_HDA_INFRA
 
 AC_MSG_CHECKING(for new HDA PCM)
 ac_save_CFLAGS="$CFLAGS"
@@ -405,6 +439,7 @@ if test "$HAVE_BOOLEAN_INFO" = "1"; then
   AC_DEFINE(HAVE_BOOLEAN_INFO)
 fi
 
+if test "$NEW_HDA_INFRA" != "yes"; then
 AC_MSG_CHECKING(for snd_hda_suspend with pmsg)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"
@@ -427,6 +462,7 @@ CFLAGS=$ac_save_CFLAGS
 if test "$HAVE_HDA_SUSPEND_PMSG" = "1"; then
   AC_DEFINE(HAVE_HDA_SUSPEND_PMSG)
 fi
+fi # !NEW_HDA_INFRA
 
 HAVE_SND_HDA_JACK=
 AC_MSG_CHECKING(for snd_hda_jack_xxx)
@@ -545,18 +581,6 @@ else
 fi
 if test "$HAVE_CODEC_USER_MUTEX" = "1"; then
   AC_DEFINE(HAVE_CODEC_USER_MUTEX)
-fi
-
-HAVE_HDA_BUS_TEMPLATE=
-AC_MSG_CHECKING(for hda_bus_template)
-if grep -q hda_bus_template hda/hda_codec.h; then
-  AC_MSG_RESULT(yes)
-  HAVE_HDA_BUS_TEMPLATE=yes
-else
-  AC_MSG_RESULT(no)
-fi
-if test "$HAVE_HDA_BUS_TEMPLATE" = "yes"; then
-  AC_DEFINE(HAVE_HDA_BUS_TEMPLATE)
 fi
 
 AC_OUTPUT(Makefile kernel/Makefile include/Makefile)

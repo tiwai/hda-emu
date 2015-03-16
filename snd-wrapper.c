@@ -741,3 +741,137 @@ void snd_hda_sysfs_clear(struct hda_codec *codec) {}
 struct class *sound_class;
 const struct attribute_group *snd_hda_dev_attr_groups[1];
 
+/*
+ * for device binding
+ */
+
+static LIST_HEAD(registered_drivers);
+
+int driver_register(struct device_driver *drv)
+{
+	list_add_tail(&drv->list, &registered_drivers);
+	return 0;
+}
+
+void driver_unregister(struct device_driver *drv)
+{
+	list_del(&drv->list);
+}
+
+static struct bus_type *_bus;
+
+int bus_register(struct bus_type *bus)
+{
+	_bus = bus;
+	return 0;
+}
+
+void bus_unregister(struct bus_type *bus)
+{
+}
+
+void device_initialize(struct device *dev)
+{
+	dev->pmcnt = 0;
+}
+
+int device_add(struct device *dev)
+{
+	dev->registered = true;
+	return device_attach(dev);
+}
+
+void device_del(struct device *dev)
+
+{
+	dev->registered = false;
+	dev->driver->remove(dev);
+	dev->driver = NULL;
+}
+
+int device_attach(struct device *dev)
+{
+	struct device_driver *drv;
+	int err;
+
+	if (!_bus) {
+		hda_log(HDA_LOG_ERR, "Bus not registered!!\n");
+		return -ENXIO;
+	}
+
+	list_for_each_entry(drv, &registered_drivers, list) {
+		if (!_bus->match(dev, drv))
+			continue;
+		dev->driver = drv;
+		err = drv->probe(dev);
+		if (!err)
+			return 1; /* bound */
+		dev->driver = NULL;
+		if (err < 0) {
+			hda_log(HDA_LOG_INFO, "Driver %s not bound\n", drv->name);
+			continue;
+		}
+	}
+
+	return 0;
+}
+
+/*
+ */
+static void check_resume(struct device *dev)
+{
+	if (dev->pmcnt > 0 && dev->pmsuspended) {
+		hda_log(HDA_LOG_INFO, "Codec resuming...\n");
+		dev->pmsuspended = false;
+		dev->driver->pm->runtime_resume(dev);
+	}
+}
+
+int pm_runtime_get_sync(struct device *dev)
+{
+	dev->pmcnt++;
+	check_resume(dev);
+	return 0;
+}
+
+static void check_suspend(struct device *dev)
+{
+	if (!dev->pmcnt && !dev->pmsuspended && dev->pmallow) {
+		hda_log(HDA_LOG_INFO, "Codec suspending...\n");
+		dev->driver->pm->runtime_suspend(dev);
+		dev->pmsuspended = true;
+	}
+}
+
+int pm_runtime_put_autosuspend(struct device *dev)
+{
+	dev->pmcnt--;
+	check_suspend(dev);
+	return 0;
+}
+
+int pm_runtime_force_suspend(struct device *dev)
+{
+	if (!dev->driver || !dev->driver->pm)
+		return -ENODEV;
+	return dev->driver->pm->runtime_suspend(dev);
+}
+
+int pm_runtime_force_resume(struct device *dev)
+{
+	if (!dev->driver || !dev->driver->pm)
+		return -ENODEV;
+	return dev->driver->pm->runtime_resume(dev);
+}
+
+void pm_runtime_allow(struct device *dev)
+{
+	dev->pmallow = 1;
+	check_suspend(dev);
+}
+
+void pm_runtime_forbid(struct device *dev)
+{
+	dev->pmallow = 0;
+	check_resume(dev);
+}

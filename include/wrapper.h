@@ -4,6 +4,8 @@
 #ifndef __HDA_WRAPPER_H
 #define __HDA_WRAPPER_H
 
+#include <stdarg.h>
+
 #define min(x, y) ({				\
 	typeof(x) _min1 = (x);			\
 	typeof(y) _min2 = (y);			\
@@ -237,6 +239,7 @@ void mylock_read_unlock(int *lock, const char *file, int line);
 void mylock_write_lock(int *lock, const char *file, int line);
 void mylock_write_unlock(int *lock, const char *file, int line);
 
+#include "linux/atomic.h"
 #include "linux/spinlock.h"
 #include "linux/pci_ids.h"
 #include "linux/workqueue.h"
@@ -264,5 +267,42 @@ static inline long copy_to_user(void __user *to, const void *from, unsigned long
 	memcpy(to, from, n);
 	return 0;
 }
+
+
+static inline char *kvasprintf(int gfp, const char *fmt, va_list ap)
+{
+	char tmp;
+	va_list app;
+	int len;
+	char *buf;
+
+	va_copy(app, ap);
+	len = vsnprintf(&tmp, 1, fmt, app);
+	va_end(app);
+	if (len < 0)
+		return NULL;
+	buf = malloc(len + 1);
+	if (!buf)
+		return NULL;
+	vsnprintf(buf, len + 1, fmt, ap);
+	return buf;
+}
+
+#define KBUILD_MODNAME	__FILE__
+
+#define module_driver(__driver, __register, __unregister, ...) \
+static int __init __driver##_init(void) \
+{ \
+	return __register(&(__driver) , ##__VA_ARGS__); \
+} \
+module_init(__driver##_init); \
+static void __exit __driver##_exit(void) \
+{ \
+	__unregister(&(__driver) , ##__VA_ARGS__); \
+} \
+module_exit(__driver##_exit);
+
+/* attributes */
+#define __printf(a, b)	__attribute__((format(printf, a, b)))
 
 #endif /* __HDA_WRAPPER_H */

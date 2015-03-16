@@ -314,5 +314,6 @@ struct snd_dma_buffer {
 	void *private_data;	/* private for allocator; don't touch */
 };
 
-#endif /* __SOUND_PCM_H */
+#define snd_pcm_suspend_all(pcm)
 
+#endif /* __SOUND_PCM_H */
