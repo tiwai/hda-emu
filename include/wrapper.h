@@ -202,6 +202,12 @@ static inline int strict_strtol(const char *str, unsigned int base, long *val)
 	return 0;
 }
 
+static inline int kstrtoint(const char *s, unsigned int base, int *res)
+{
+	*res = strtol(s, NULL, base);
+	return 0;
+}
+
 static inline size_t strlcat(char *dest, const char *src, size_t count)
 {
 	size_t dsize = strlen(dest);
@@ -281,11 +287,22 @@ static inline char *kvasprintf(int gfp, const char *fmt, va_list ap)
 	va_end(app);
 	if (len < 0)
 		return NULL;
-	buf = malloc(len + 1);
+	buf = __hda_malloc(len + 1, __FILE__, __LINE__, 0);
 	if (!buf)
 		return NULL;
 	vsnprintf(buf, len + 1, fmt, ap);
 	return buf;
+}
+
+static inline char *kasprintf(int gfp, const char *fmt, ...)
+{
+	va_list ap;
+	char *ret;
+
+	va_start(ap, fmt);
+	ret = kvasprintf(gfp, fmt, ap);
+	va_end(ap);
+	return ret;
 }
 
 #define KBUILD_MODNAME	__FILE__
