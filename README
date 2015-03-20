@@ -11,13 +11,13 @@ contains three things: the HD-audio controller/codec emulation codes,
 the build stub for codec parser codes in the kernel HD-audio driver
 tree, and a collection of codec proc files.
 
-The package already contains the recent codes of HD-audio kernel
-driver.  If you want to emulate other versions of codes, prepare the
-kernel-tree, and pass the directory of HD-audio driver, typically
-$LINUX/sound/pci/hda, to --with-hdadir option of configure script.
-For example, if you have linux-2.6.28 kernel in /somewhere/linux-2.6.28,
+This package itself doesn't contain the kernel driver code at all.
+You need to prepare the Linux kernel-tree to emulate, and pass the
+root directory of Linux kernel to --with-kerneldir option of configure
+script.  For example, if you have linux-4.0 kernel in
+/somewhere/linux-4.0,
 
-	% ./configure --with-hdadir=/somewhere/linux-2.6.28/sound/pci/hda
+	% ./configure --with-kerneldir=/somewhere/linux-2.0
 
 Then it'll copy (symlink) the files from the given directory into
 kernel subdirectory.
@@ -465,11 +465,11 @@ gdb or such, as SIGTRAP is ignored as default in hda-emu.
 DOWNLOAD
 --------
 
-The package tarballs are found at
-	ftp://ftp.kernel.org/pub/linux/kernel/people/tiwai/misc/
-
-The git tree is at
+The git tree is found at:
 	git://git.kernel.org/pub/scm/linux/kernel/git/tiwai/hda-emu.git
+
+A backup repo is at:
+	https://github.com/tiwai/hda-emu
 
 
 LICENSE
