@@ -785,8 +785,10 @@ void device_del(struct device *dev)
 
 {
 	dev->registered = false;
-	dev->driver->remove(dev);
-	dev->driver = NULL;
+	if (dev->driver) {
+		dev->driver->remove(dev);
+		dev->driver = NULL;
+	}
 }
 
 int device_attach(struct device *dev)
