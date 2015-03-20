@@ -4,6 +4,7 @@
 #include <linux/device.h>
 
 static inline void pm_runtime_enable(struct device *dev) {}
+static inline void pm_runtime_disable(struct device *dev) {}
 static inline void pm_runtime_set_active(struct device *dev) {}
 static inline void pm_runtime_set_autosuspend_delay(struct device *dev, int delay) {}
 static inline void pm_runtime_use_autosuspend(struct device *dev) {}
@@ -13,6 +14,8 @@ static inline void pm_runtime_mark_last_busy(struct device *dev) {}
 static inline bool pm_runtime_suspended(struct device *dev) { return dev->pmsuspended; }
 
 static inline void pm_runtime_get_noresume(struct device *dev) { dev->pmcnt++; }
+static inline void pm_runtime_put_noidle(struct device *dev) { dev->pmcnt--; }
+
 int pm_runtime_get_sync(struct device *dev);
 int pm_runtime_put_autosuspend(struct device *dev);
 int pm_runtime_force_suspend(struct device *dev);
