@@ -13,6 +13,7 @@
 #define MODULE_PARM_DESC(a,b)
 
 #define module_init(func)	int call_init_##func(void) { return func(); }
+#define subsys_initcall(func)	int call_init_##func(void) { return func(); }
 #define module_exit(func)	void call_exit_##func(void) { func(); }
 
 struct module;

@@ -500,13 +500,20 @@ void hda_test_pm_reinit(void)
 
 static void issue_unsol(int caddr, int res)
 {
+	int vendor_id;
+
 	/* no unsol handling during D3 */
 	if (proc.afg.power_current == 3)
 		return;
 
 	caddr |= 1 << 4;
 	/* ALC880 has incompatible unsol tag */
-	if (_codec->vendor_id == 0x10ec0880)
+#ifdef HAVE_HDA_CORE
+	vendor_id = _codec->core.vendor_id;
+#else
+	vendor_id = _codec->vendor_id;
+#endif
+	if (vendor_id == 0x10ec0880)
 		res = (res & 0x3f) << 28;
 	else
 		res = (res & 0x3f) << 26;

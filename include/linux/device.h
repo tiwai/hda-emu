@@ -1,8 +1,10 @@
 #ifndef __LINUX_DEVICE_H
 #define __LINUX_DEVICE_H
 
+#include <wrapper.h>
 #include <linux/list.h>
 #include <linux/pm.h>
+#include <linux/sysfs.h>
 
 struct device;
 struct device_driver;
@@ -11,6 +13,7 @@ struct class;
 struct attribute_group;
 
 struct device {
+	struct kobject kobj;
 	struct device *parent;
 	void *driver_data;
 	struct bus_type	*bus;
@@ -91,5 +94,22 @@ struct bus_type {
 
 int bus_register(struct bus_type *bus);
 void bus_unregister(struct bus_type *bus);
+
+/*
+ */
+struct device_attribute {
+	struct attribute	attr;
+	ssize_t (*show)(struct device *dev, struct device_attribute *attr,
+			char *buf);
+	ssize_t (*store)(struct device *dev, struct device_attribute *attr,
+			 const char *buf, size_t count);
+};
+
+#define DEVICE_ATTR(_name, _mode, _show, _store) \
+	struct device_attribute dev_attr_##_name = __ATTR(_name, _mode, _show, _store)
+#define DEVICE_ATTR_RW(_name) \
+	struct device_attribute dev_attr_##_name = __ATTR_RW(_name)
+#define DEVICE_ATTR_RO(_name) \
+	struct device_attribute dev_attr_##_name = __ATTR_RO(_name)
 
 #endif /* __LINUX_DEVICE_H */

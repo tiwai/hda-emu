@@ -39,31 +39,33 @@ if test "$old_workq" = "yes"; then
   AC_DEFINE(OLD_WORKQUEUE)
 fi
 
-AC_ARG_WITH(hdadir,
-  AS_HELP_STRING([--with-hdadir=dir],
-    [path where HD-audio kernel files are stored]),
-  hdadir="$withval", hdadir="")
+AC_ARG_WITH(kerneldir,
+  AS_HELP_STRING([--with-kerneldir=dir],
+    [path where Linux kernel tree is stored]),
+  kerneldir="$withval", kerneldir="")
 
-hdadir="$( cd "$hdadir" && pwd )"
+kerneldir="$( cd "$kerneldir" && pwd )"
 
-if test -n "$hdadir"; then
+test -n "$kerneldir" ||
+  AC_ERROR([No kernel directory is specified])
+test -d "$kerneldir" || \
+  AC_ERROR([Invalid kernel directory: $kerneldir])
+test -f "$kerneldir/sound/pci/hda/hda_codec.c" || \
+  AC_ERROR([Invalid kernel directory: $kerneldir])
 
-test -d "$hdadir" || \
-  AC_ERROR([Invalid HD-audio directory: $hdadir])
-test -f "$hdadir/hda_codec.c" || \
-  AC_ERROR([Invalid HD-audio directory: $hdadir])
-
+rm -f dist
+ln -s $kerneldir dist
 rm -f hda
-ln -s $hdadir hda
+ln -s dist/sound/pci/hda hda
 
-else
-dnl check existing kernel codes
-
-if ! test -f hda/hda_codec.c; then
-  AC_ERROR([No HD-audio driver codes present in kernel directory; initialize via --with-hdadir])
+have_hda_core=
+AC_MSG_CHECKING(for HDA core)
+if test -f dist/sound/hda/hdac_bus.c; then
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(HAVE_HDA_CORE)
+  have_hda_core=yes
 fi
-
-fi
+AM_CONDITIONAL(HAVE_HDA_CORE, test "$have_hda_core" = "yes")
 
 AC_DEFUN([CHECK_CODEC], [
   AC_MSG_CHECKING(for codec $1)
@@ -120,23 +122,32 @@ AM_CONDITIONAL(USE_OWN_PROC, test "$own_proc" = "yes")
 
 echo "Generating kernel/init_hooks.h..."
 rm -f kernel/init_hooks.h
-if test -f hda/hda_bind.c; then
-cat hda/hda_bind.c | grep '^module_init(' | \
+
+if test -f dist/sound/hda/hdac_bus.c; then
+cat dist/sound/hda/*.c | grep '^subsys_initcall(' | \
+    sed -e's/^subsys_initcall(\(.*\))/void call_init_\1(void);/g' >> kernel/init_hooks.h
+cat dist/sound/hda/*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' >> kernel/init_hooks.h
 fi
 cat hda/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' >> kernel/init_hooks.h
 cat hda/patch_*.c | grep '^module_hda_codec_driver(' | \
     sed -e's/^module_hda_codec_driver(\(.*\))/void call_init_\1_init(void);/g' >> kernel/init_hooks.h
+
 echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
-if test -f hda/hda_bind.c; then
-cat hda/hda_bind.c | grep '^module_init(' | \
+
+if test -f dist/sound/hda/hdac_bus.c; then
+cat dist/sound/hda/*.c | grep '^subsys_initcall(' | \
+    sed -e's/^subsys_initcall(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
+cat dist/sound/hda/*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
 fi
+
 cat hda/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
 cat hda/patch_*.c | grep '^module_hda_codec_driver(' | \
     sed -e's/^module_hda_codec_driver(\(.*\))/call_init_\1_init();/g' >> kernel/init_hooks.h
+
 echo '}' >> kernel/init_hooks.h
 
 AC_MSG_CHECKING(for presence of power_save option)
@@ -583,5 +594,4 @@ if test "$HAVE_CODEC_USER_MUTEX" = "1"; then
   AC_DEFINE(HAVE_CODEC_USER_MUTEX)
 fi
 
-AC_OUTPUT(Makefile kernel/Makefile include/Makefile)
-
+AC_OUTPUT(Makefile lib/Makefile kernel/Makefile include/Makefile)
