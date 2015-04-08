@@ -1139,7 +1139,7 @@ static int override_pincfg(struct xhda_codec *codec, char *pincfg, int user)
 	if (strchr(pincfg, '=')) {
 		/* direct pincfg string */
 		int reg, val;
-		if (sscanf(pincfg, "%i %i", &reg, &val) != 2) {
+		if (sscanf(pincfg, "%i=%i", &reg, &val) != 2) {
 			hda_log(HDA_LOG_ERR, "Invalid pincfg %s\n", pincfg);
 			return -EINVAL;
 		}
