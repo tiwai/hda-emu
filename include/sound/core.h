@@ -34,6 +34,8 @@ struct snd_info_entry;
 
 extern struct class *sound_class;
 
+static inline void snd_info_free_entry(struct snd_info_entry *entry) {}
+
 struct snd_card {
 	int number;			/* number of soundcard (index to
 								snd_cards) */

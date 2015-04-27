@@ -128,6 +128,15 @@ typedef int8_t __s8;
 #define LLONG_MIN	(-LLONG_MAX - 1)
 #define ULLONG_MAX	(~0ULL)
 
+typedef u32 __le32;
+typedef u32 __be32;
+
+#define le32_to_cpu(x)	(x)
+#define cpu_to_le32(x)	(x)
+#define upper_32_bits(x) ((u32)((x) >> 32))
+
+typedef unsigned long cycle_t;
+
 typedef _Bool bool;
 #define true 1
 #define false 0
@@ -138,6 +147,7 @@ typedef unsigned long dma_addr_t;
 
 #define __user
 #define __bitwise
+#define __iomem
 
 typedef int pm_message_t;
 #define PMSG_SUSPEND	0
@@ -321,5 +331,7 @@ module_exit(__driver##_exit);
 
 /* attributes */
 #define __printf(a, b)	__attribute__((format(printf, a, b)))
+
+#define cpu_relax()
 
 #endif /* __HDA_WRAPPER_H */

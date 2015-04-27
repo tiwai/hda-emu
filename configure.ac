@@ -189,6 +189,17 @@ if test "$NEW_HDA_INFRA" = "yes"; then
   AC_DEFINE(NEW_HDA_INFRA)
 fi
 
+AC_MSG_CHECKING(for hda_bus_ops)
+if grep -q 'struct hda_bus_ops ' hda/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_BUS_OPS=yes
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_BUS_OPS" = "yes"; then
+  AC_DEFINE(HAVE_BUS_OPS)
+fi
+
 AC_MSG_CHECKING(for old bus callbacks)
 ac_save_CFLAGS="$CFLAGS"
 CFLAGS="$CFLAGS -Iinclude"

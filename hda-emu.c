@@ -43,6 +43,15 @@
 #include "hda/hda_beep.h"
 #endif
 
+/* fixup for 4.2+ kernels */
+#ifdef NEW_HDA_INFRA
+#ifndef HAVE_BUS_OPS
+#define snd_hda_calc_stream_format	snd_hdac_calc_stream_format
+#undef STREAM_FORMAT_WITH_CODEC
+#define HAVE_HDA_ATTACH_PCM	1
+#endif
+#endif
+
 #ifndef HAVE_POWER_SAVE
 #define snd_hda_power_up(x)
 #define snd_hda_power_down(x)
@@ -61,6 +70,11 @@ static struct snd_card card = {
 static struct xhda_codec proc;
 
 static struct hda_bus *bus;
+#ifdef NEW_HDA_INFRA
+#ifndef HAVE_BUS_OPS
+static struct hda_bus _bus;
+#endif
+#endif
 
 static struct hda_codec *_codec;
 
@@ -879,7 +893,9 @@ void hda_test_pcm(int id, int op, int subid,
 static int attach_pcm(struct hda_bus *bus, struct hda_codec *codec,
 		      struct hda_pcm *cpcm)
 {
+#ifdef HAVE_HDA_ATTACH_PCM
 	int i, s;
+#endif
 
 	if (cpcm->stream[SNDRV_PCM_STREAM_PLAYBACK].substreams ||
 	    cpcm->stream[SNDRV_PCM_STREAM_CAPTURE].substreams) {
@@ -1309,11 +1325,37 @@ static FILE *file_open(const char *fname)
 }
 
 #ifdef NEW_HDA_INFRA
+#ifdef HAVE_BUS_OPS
 static struct hda_bus_ops bus_ops = {
 	.command = cmd_send,
 	.get_response = resp_get_caddr,
 	.attach_pcm = attach_pcm,
 };
+#else
+int snd_hdac_bus_send_cmd(struct hdac_bus *bus, unsigned int val)
+{
+	return cmd_send(NULL, val);
+}
+
+int snd_hdac_bus_get_response(struct hdac_bus *bus, unsigned int addr,
+			      unsigned int *res)
+{
+	if (res)
+		*res = resp_get(NULL);
+	return 0;
+}
+
+void snd_hda_bus_reset(struct hda_bus *bus)
+{
+	snd_hda_bus_reset_codecs(bus);
+}
+
+int snd_hda_attach_pcm_stream(struct hda_bus *bus, struct hda_codec *codec,
+			      struct hda_pcm *cpcm)
+{
+	return attach_pcm(bus, codec, cpcm);
+}
+#endif /* HAVE_BUS_OPS */
 #else /* !NEW_HDA_INFRA */
 static void setup_bus_template(struct hda_bus_template *temp)
 {
@@ -1493,10 +1535,16 @@ int main(int argc, char **argv)
 	gather_codec_hooks();
 
 #ifdef NEW_HDA_INFRA
+#ifdef HAVE_BUS_OPS
 	err = snd_hda_bus_new(&card, &bus);
-#else
+#else /* HAVE_BUS_OPS */
+	err = snd_hdac_bus_init(&_bus.core, NULL, NULL, NULL);
+	bus = &_bus;
+	mutex_init(&bus->prepare_mutex);
+#endif /* HAVE_BUS_OPS */
+#else /* NEW_HDA_INFRA */
 	err = snd_hda_bus_new(&card, &temp, &bus);
-#endif
+#endif /* NEW_HDA_INFRA */
 	if (err < 0) {
 		hda_log(HDA_LOG_ERR, "cannot create snd_hda_bus\n");
 		return 1;
@@ -1504,8 +1552,10 @@ int main(int argc, char **argv)
 
 #ifdef NEW_HDA_INFRA
 	bus->pci = &mypci;
-	bus->ops = bus_ops;
 	bus->modelname = opt_model;
+#ifdef HAVE_BUS_OPS
+	bus->ops = bus_ops;
+#endif
 #endif /* NEW_HDA_INFRA */
 
 	ignore_invalid_ftype = 1;

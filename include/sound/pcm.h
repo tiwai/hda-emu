@@ -30,6 +30,8 @@ struct snd_pcm_hardware {
 };
 
 struct snd_pcm_runtime {
+	struct timespec trigger_tstamp;	/* trigger timestamp */
+	bool trigger_tstamp_latched;     /* trigger timestamp latched in low-level driver/hardware */
 	snd_pcm_access_t access;	/* access mode */
 	snd_pcm_format_t format;	/* SNDRV_PCM_FORMAT_* */
 	snd_pcm_subformat_t subformat;	/* subformat */
@@ -45,6 +47,7 @@ struct snd_pcm_runtime {
 	unsigned int info;
 	unsigned int rate_num;
 	unsigned int rate_den;
+	unsigned int no_period_wakeup: 1;
 	/* -- mmap -- */
 	struct snd_pcm_mmap_status *status;
 
@@ -315,5 +318,18 @@ struct snd_dma_buffer {
 };
 
 #define snd_pcm_suspend_all(pcm)
+
+static inline ssize_t frames_to_bytes(struct snd_pcm_runtime *runtime, snd_pcm_sframes_t size)
+{
+	return size * runtime->frame_bits / 8;
+}
+
+/* XXX just for compilation, not really working */
+#define snd_sgbuf_get_addr(dmab, offset)	0
+#define snd_sgbuf_get_chunk_size(dmab, ofs, size)	(size)
+#define snd_pcm_get_dma_buf(substream) NULL
+#define snd_pcm_lib_buffer_bytes(substream)	0
+#define snd_pcm_lib_period_bytes(substream)	0
+#define snd_pcm_gettime(runtime, tv) /* nop */
 
 #endif /* __SOUND_PCM_H */
