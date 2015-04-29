@@ -39,8 +39,13 @@ struct snd_jack {
 
 struct device;
 
+#ifdef NEW_JACK_API
+int snd_jack_new(struct snd_card *card, const char *id, int type,
+		 struct snd_jack **jack, bool initial_kctl, bool phantom_jack);
+#else
 int snd_jack_new(struct snd_card *card, const char *id, int type,
 		 struct snd_jack **jack);
+#endif
 
 void snd_jack_set_parent(struct snd_jack *jack, struct device *parent);
 

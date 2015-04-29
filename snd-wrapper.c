@@ -353,8 +353,13 @@ void *__hda_strdup(const char *str, const char *file, int line, int gfp)
 
 /* jack API */
 #include <sound/jack.h>
+#ifdef NEW_JACK_API
+int snd_jack_new(struct snd_card *card, const char *id, int type,
+		 struct snd_jack **jack, bool initial_kctl, bool phantom_jack)
+#else
 int snd_jack_new(struct snd_card *card, const char *id, int type,
 		 struct snd_jack **jack)
+#endif
 {
 	struct snd_jack *jp;
 

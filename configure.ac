@@ -605,4 +605,16 @@ if test "$HAVE_CODEC_USER_MUTEX" = "1"; then
   AC_DEFINE(HAVE_CODEC_USER_MUTEX)
 fi
 
+AC_MSG_CHECKING(for new jack API)
+NEW_JACK_API=
+if grep -q 'phantom_jack' dist/include/sound/jack.h; then
+  AC_MSG_RESULT(yes)
+  NEW_JACK_API=1
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$NEW_JACK_API" = "1"; then
+  AC_DEFINE(NEW_JACK_API)
+fi
+
 AC_OUTPUT(Makefile lib/Makefile kernel/Makefile include/Makefile)
