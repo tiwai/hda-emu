@@ -251,7 +251,7 @@ Node 0x1f [Audio Output] wcaps 0x40211: Stereo Digital
   Digital category: 0x0
   PCM:
     rates [0x5e0]: 44100 48000 88200 96000 192000
-    bits [0x0]: 16 20 24
+    bits [0xe]: 16 20 24
     formats [0x5]: PCM AC3
   Delay: 4 samples
 Node 0x20 [Audio Input] wcaps 0x140311: Stereo Digital
@@ -261,7 +261,7 @@ Node 0x20 [Audio Input] wcaps 0x140311: Stereo Digital
   Digital category: 0x0
   PCM:
     rates [0x160]: 44100 48000 96000
-    bits [0x0]: 16 20 24
+    bits [0xe]: 16 20 24
     formats [0x5]: PCM AC3
   Delay: 4 samples
   Connection: 1
