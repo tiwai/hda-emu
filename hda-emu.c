@@ -1540,6 +1540,7 @@ int main(int argc, char **argv)
 #else /* HAVE_BUS_OPS */
 	err = snd_hdac_bus_init(&_bus.core, NULL, NULL, NULL);
 	bus = &_bus;
+	bus->card = &card;
 	mutex_init(&bus->prepare_mutex);
 #endif /* HAVE_BUS_OPS */
 #else /* NEW_HDA_INFRA */
