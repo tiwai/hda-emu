@@ -168,8 +168,13 @@ void snd_ctl_sync_vmaster(struct snd_kcontrol *kctl, bool hook_only);
 /*
  * Helper functions for jack-detection controls
  */
+#ifdef NEW_JACK_API
+struct snd_kcontrol *
+snd_kctl_jack_new(const char *name, struct snd_card *card);
+#else
 struct snd_kcontrol *
 snd_kctl_jack_new(const char *name, int idx, void *private_data);
+#endif
 void snd_kctl_jack_report(struct snd_card *card,
 			  struct snd_kcontrol *kctl, bool status);
 

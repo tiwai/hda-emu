@@ -374,7 +374,7 @@ int snd_jack_new(struct snd_card *card, const char *id, int type,
 	hda_log(HDA_LOG_INFO, "JACK created %s, type %d\n", id, type);
 	*jack = jp;
 #ifdef NEW_JACK_API
-	jp->kctl = snd_kctl_jack_new(id, 0, NULL);
+	jp->kctl = snd_kctl_jack_new(id, card);
 	snd_ctl_add(card, jp->kctl);
 #endif
 	return 0;
