@@ -28,6 +28,7 @@ enum snd_jack_types {
 
 struct snd_jack {
 	/*struct input_dev *input_dev;*/
+	struct snd_card *card;
 	int registered;
 	int type;
 	const char *id;
@@ -35,6 +36,9 @@ struct snd_jack {
 	unsigned int key[6];   /* Keep in sync with definitions above */
 	void *private_data;
 	void (*private_free)(struct snd_jack *);
+#ifdef NEW_JACK_API
+	struct snd_kcontrol *kctl; /* XXX assuming 1:1 mapping */
+#endif
 };
 
 struct device;

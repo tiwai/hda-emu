@@ -369,9 +369,14 @@ int snd_jack_new(struct snd_card *card, const char *id, int type,
 	jp->id = strdup(id);
 	if (!jp->id)
 		return -ENOMEM;
+	jp->card = card;
 	jp->type = type;
 	hda_log(HDA_LOG_INFO, "JACK created %s, type %d\n", id, type);
 	*jack = jp;
+#ifdef NEW_JACK_API
+	jp->kctl = snd_kctl_jack_new(id, 0, NULL);
+	snd_ctl_add(card, jp->kctl);
+#endif
 	return 0;
 }
 
@@ -383,6 +388,9 @@ void snd_jack_set_parent(struct snd_jack *jack, struct device *parent)
 void snd_jack_report(struct snd_jack *jack, int status)
 {
 	hda_log(HDA_LOG_INFO, "JACK report %s, status %d\n", jack->id, status);
+#ifdef NEW_JACK_API
+	snd_kctl_jack_report(jack->card, jack->kctl, status);
+#endif
 }
 
 /*
