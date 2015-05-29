@@ -838,7 +838,8 @@ static void check_resume(struct device *dev)
 	if (dev->pmcnt > 0 && dev->pmsuspended) {
 		hda_log(HDA_LOG_INFO, "Codec resuming...\n");
 		dev->pmsuspended = false;
-		dev->driver->pm->runtime_resume(dev);
+		if (dev->driver)
+			dev->driver->pm->runtime_resume(dev);
 	}
 }
 
@@ -853,7 +854,8 @@ static void check_suspend(struct device *dev)
 {
 	if (!dev->pmcnt && !dev->pmsuspended && dev->pmallow) {
 		hda_log(HDA_LOG_INFO, "Codec suspending...\n");
-		dev->driver->pm->runtime_suspend(dev);
+		if (dev->driver)
+			dev->driver->pm->runtime_suspend(dev);
 		dev->pmsuspended = true;
 	}
 }
