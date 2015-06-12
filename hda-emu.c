@@ -1389,9 +1389,29 @@ static void setup_bus_template(struct hda_bus_template *temp)
 }
 #endif /* NEW_HDA_INFRA */
 
+struct cfg_chain {
+	char *cfg;
+	struct cfg_chain *next;
+};
+
+static void cfg_chain_add(struct cfg_chain **chain, char *cfg)
+{
+	struct cfg_chain *item, **prev;
+
+	item = malloc(sizeof(*item));
+	if (!item)
+		exit(1);
+	item->cfg = cfg;
+	item->next = NULL;
+	for (prev = chain; *prev; prev = &(*prev)->next)
+		;
+	*prev = item;
+}
+
 int main(int argc, char **argv)
 {
 	int c, err;
+	struct cfg_chain *cfg;
 	FILE *fp;
 	int idx = -1;
 	int pci_subvendor = 0;
@@ -1404,9 +1424,9 @@ int main(int argc, char **argv)
 	struct hda_bus_template temp;
 #endif
 	struct hda_codec *codec;
-	char *init_pincfg = NULL;
-	char *user_pincfg = NULL;
-	char *init_hints = NULL;
+	struct cfg_chain *init_pincfg = NULL;
+	struct cfg_chain *user_pincfg = NULL;
+	struct cfg_chain *init_hints = NULL;
 	int num_active_jacks = 0;
 	int no_configure = 0;
 	unsigned int active_jacks[16];
@@ -1448,13 +1468,13 @@ int main(int argc, char **argv)
 			log_flags &= ~HDA_LOG_FLAG_COLOR;
 			break;
 		case 'P':
-			init_pincfg = optarg;
+			cfg_chain_add(&init_pincfg, optarg);
 			break;
 		case 'U':
-			user_pincfg = optarg;
+			cfg_chain_add(&user_pincfg, optarg);
 			break;
 		case 'H':
-			init_hints = optarg;
+			cfg_chain_add(&init_hints, optarg);
 			break;
 		case 'j':
 			if (num_active_jacks >= ARRAY_SIZE(active_jacks)) {
@@ -1497,8 +1517,8 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	if (init_pincfg) {
-		if (override_pincfg(&proc, init_pincfg, 0) < 0)
+	for (cfg = init_pincfg; cfg; cfg = cfg->next) {
+		if (override_pincfg(&proc, cfg->cfg, 0) < 0)
 			return 1;
 	}
 	if (num_active_jacks) {
@@ -1583,12 +1603,12 @@ int main(int argc, char **argv)
 	snd_array_init(&codec->user_pins, sizeof(struct hda_pincfg), 16);
 #endif
 
-	if (init_hints) {
-		if (load_init_hints(&proc, init_hints) < 0)
+	for (cfg = init_hints; cfg; cfg = cfg->next) {
+		if (load_init_hints(&proc, cfg->cfg) < 0)
 			return 1;
 	}
-	if (user_pincfg) {
-		if (override_pincfg(&proc, user_pincfg, 1) < 0)
+	for (cfg = user_pincfg; cfg; cfg = cfg->next) {
+		if (override_pincfg(&proc, cfg->cfg, 1) < 0)
 			return 1;
 	}
 
