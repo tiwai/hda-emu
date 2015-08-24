@@ -80,6 +80,7 @@ snd_kctl_jack_new(const char *name, int idx, void *private_data)
 	kctl = snd_ctl_new1(&jack_detect_kctl, private_data);
 	if (!kctl)
 		return NULL;
+	snprintf(kctl->id.name, sizeof(kctl->id.name), "%s Jack", name);
 	kctl->id.index = idx;
 #endif
 	kctl->private_value = 0;
