@@ -26,3 +26,5 @@ ltmain.sh
 missing
 kernel/misc_wrapper.c
 kernel/init_hooks.h
+dist
+compile
