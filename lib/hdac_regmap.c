@@ -121,6 +121,8 @@ int regmap_read(struct regmap *map, unsigned int reg, unsigned int *val)
 		return -EINVAL;
 	if (!map->cache_bypass && cache_read_reg(map, reg, val))
 		return 0;
+	if (map->cache_only)
+		return -EBUSY;
 	err = map->config->reg_read(map->bus_context, reg, val);
 	if (!err && !map->cache_bypass &&
 	    !map->config->volatile_reg(map->dev, reg))
