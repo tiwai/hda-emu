@@ -143,6 +143,9 @@ typedef _Bool bool;
 
 typedef unsigned long dma_addr_t;
 
+typedef unsigned long kernel_ulong_t;
+typedef unsigned int uuid_le;
+
 #define PAGE_SIZE	4096
 
 #define __user

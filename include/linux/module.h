@@ -28,4 +28,6 @@ static inline int try_module_get(struct module *x) { return 1; }
 
 #define THIS_MODULE	NULL
 
+#define MODULE_DEVICE_TABLE(type, x)
+
 #endif /* __LINUX_MODULE_H */

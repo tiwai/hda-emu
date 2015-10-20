@@ -7,6 +7,7 @@
 
 struct kobject;
 struct kobj_type;
+struct kobj_uevent_env;
 
 struct kobject {
 	char *name;
@@ -67,5 +68,11 @@ static inline int sysfs_create_group(struct kobject *kobj,
 				     const struct attribute_group *grp) { return 0; }
 static inline void sysfs_remove_group(struct kobject *kobj,
 				      const struct attribute_group *grp) {}
+
+static inline int add_uevent_var(struct kobj_uevent_env *env, const char *fmt,
+				 ...)
+{
+	return 0;
+}
 
 #endif /* __LINUX_SYSFS_H */
