@@ -113,6 +113,8 @@ int snd_card_register(struct snd_card *card)
 	return 0;
 }
 
+#define snd_power_get_state(card)       ({ (void)(card); SNDRV_CTL_POWER_D0; })
+
 #include <linux/list.h>
 #include <linux/mutex.h>
 #include <linux/pci.h>
