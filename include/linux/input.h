@@ -26,6 +26,11 @@ struct input_dev {
 	unsigned long keybit[0x300 / (sizeof(long) * 8)];
 	/* ... */
 
+        unsigned int keycodemax;
+        unsigned int keycodesize;
+        void *keycode;
+	/* ... */
+
 	int (*open)(struct input_dev *dev);
 	void (*close)(struct input_dev *dev);
 	int (*flush)(struct input_dev *dev, struct file *file);
