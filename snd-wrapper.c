@@ -850,6 +850,15 @@ int pm_runtime_get_sync(struct device *dev)
 	return 0;
 }
 
+int pm_runtime_get_if_in_use(struct device *dev)
+{
+	if (dev->pmcnt > 0) {
+		dev->pmcnt++;
+		return 1;
+	}
+	return 0;
+}
+
 static void check_suspend(struct device *dev)
 {
 	if (!dev->pmcnt && !dev->pmsuspended && dev->pmallow) {
