@@ -617,4 +617,12 @@ if test "$NEW_JACK_API" = "1"; then
   AC_DEFINE(NEW_JACK_API)
 fi
 
+AC_MSG_CHECKING(for HDMI chmap helper)
+if test -f dist/sound/hda/hdmi_chmap.c; then
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(HAVE_HDMI_CHMAP)
+else
+  AC_MSG_RESULT(no)
+fi
+
 AC_OUTPUT(Makefile lib/Makefile kernel/Makefile include/Makefile)
