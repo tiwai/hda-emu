@@ -336,5 +336,6 @@ module_exit(__driver##_exit);
 #define __printf(a, b)	__attribute__((format(printf, a, b)))
 
 #define cpu_relax()
+#define wmb()
 
 #endif /* __HDA_WRAPPER_H */
