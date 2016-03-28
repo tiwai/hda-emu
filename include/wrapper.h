@@ -198,7 +198,7 @@ static inline int _WARN_ON(int cond, const char *func, int line)
 	return cond;
 }
 
-#define WARN_ON(cond)	_WARN_ON(cond, __func__, __LINE__)
+#define WARN_ON(cond)	_WARN_ON(!!(cond), __func__, __LINE__)
 
 #define simple_strtoul	strtoul
 #define simple_strtol	strtol
