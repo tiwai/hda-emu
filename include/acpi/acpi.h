@@ -34,5 +34,6 @@ acpi_get_devices(const char *HID,
 }
 
 static inline bool acpi_dev_present(const char *hid) { return true; }
+static inline bool acpi_dev_found(const char *hid) { return true; }
 
 #endif				/* __ACPI_H__ */
