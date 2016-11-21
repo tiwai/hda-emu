@@ -852,6 +852,8 @@ int pm_runtime_get_sync(struct device *dev)
 
 int pm_runtime_get_if_in_use(struct device *dev)
 {
+	if (!hda_get_power_save())
+		return -EINVAL;
 	if (dev->pmcnt > 0) {
 		dev->pmcnt++;
 		return 1;

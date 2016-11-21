@@ -212,15 +212,14 @@ int hda_get_power_save(void)
 
 void hda_set_power_save(int val)
 {
-#ifdef NEW_HDA_INFRA
-	snd_hda_set_power_save(bus, val * 1000);
-#else /* !NEW_HDA_INFRA */
 #ifdef HDA_OLD_POWER_SAVE
 	*power_save_parameter = val;
 #else
 	power_save = val;
+#ifdef NEW_HDA_INFRA
+	snd_hda_set_power_save(bus, val * 1000);
 #endif
-#endif /* NEW_HDA_INFRA */
+#endif /* HDA_OLD_POWER_SAVE */
 }
 
 /*
