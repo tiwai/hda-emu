@@ -746,6 +746,11 @@ int dell_app_wmi_led_set(int whichled, int on)
 	return 0;
 }
 
+int dell_micmute_led_set(int led)
+{
+	hda_log(HDA_LOG_INFO, "Setting Dell LED to %d\n", led);
+}
+
 /*
  * dummy entries just for builds
  */
