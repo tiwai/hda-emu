@@ -131,7 +131,7 @@ cat dist/sound/hda/*.c | grep '^module_init(' | \
 fi
 cat hda/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/void call_init_\1(void);/g' >> kernel/init_hooks.h
-cat hda/patch_*.c | grep '^module_hda_codec_driver(' | \
+cat hda/*.c | grep '^module_hda_codec_driver(' | \
     sed -e's/^module_hda_codec_driver(\(.*\))/void call_init_\1_init(void);/g' >> kernel/init_hooks.h
 
 echo 'static void gather_codec_hooks(void) {' >> kernel/init_hooks.h
@@ -145,7 +145,7 @@ fi
 
 cat hda/patch_*.c | grep '^module_init(' | \
     sed -e's/^module_init(\(.*\))/call_init_\1();/g' >> kernel/init_hooks.h
-cat hda/patch_*.c | grep '^module_hda_codec_driver(' | \
+cat hda/*_*.c | grep '^module_hda_codec_driver(' | \
     sed -e's/^module_hda_codec_driver(\(.*\))/call_init_\1_init();/g' >> kernel/init_hooks.h
 
 echo '}' >> kernel/init_hooks.h
