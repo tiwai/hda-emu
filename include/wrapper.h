@@ -269,6 +269,7 @@ void mylock_write_unlock(int *lock, const char *file, int line);
 /* FIXME */
 #define IS_ENABLED(x)		1
 #define IS_BUILTIN(x)		1
+#define IS_REACHABLE(x)		1
 #define IS_MODULE(x)		0
 
 #define symbol_request(x)	x
