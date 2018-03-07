@@ -192,6 +192,7 @@ int snd_ctl_activate_id(struct snd_card *card, struct snd_ctl_elem_id *id,
 			goto unlock;
 		kctl->vd[0].access |= SNDRV_CTL_ELEM_ACCESS_INACTIVE;
 	}
+	snd_ctl_build_ioff(id, kctl, index_offset);
 	ret = 1;
  unlock:
 	if (ret > 0) {

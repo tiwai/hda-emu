@@ -82,12 +82,14 @@ static int set_cached_verb3(struct xhda_codec *codec, struct xhda_node *node,
 	return set_verb_val(codec, ((cmd >> 8) & 0x7ff) - 2, cmd, 2);
 }
 
+#if 0 /* not used */
 /* fourth byte */
 static int set_cached_verb4(struct xhda_codec *codec, struct xhda_node *node,
 			    unsigned int cmd)
 {
 	return set_verb_val(codec, ((cmd >> 8) & 0x7ff) - 3, cmd, 3);
 }
+#endif
 
 /*
  * IDT 92HD7xx

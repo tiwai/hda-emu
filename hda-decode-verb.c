@@ -52,12 +52,12 @@ static void usage(int mode)
 
 unsigned int hda_decode_verb(struct xhda_codec *codec, unsigned int val)
 {
-	unsigned int cid, dir, nid, verb, parm;
+	unsigned int cid, /*dir,*/ nid, verb, parm;
 
 	hda_log(HDA_LOG_INFO, "raw value = 0x%08x\n", val);
 
 	cid = (val >> 28) & 0xf;
-	dir = (val >> 27) & 1;
+	/* dir = (val >> 27) & 1; */
 	nid = (val >> 20) & 0x7f;
 	verb = (val >> 8) & 0xfff;
 	parm = val & 0xff;

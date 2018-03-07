@@ -242,13 +242,13 @@ static inline int snd_pcm_hw_constraint_step(struct snd_pcm_runtime *runtime,
 }
 
 struct snd_pcm_hw_constraint_list {
+	const unsigned int *list;
 	unsigned int count;
-	unsigned int *list;
 	unsigned int mask;
 };
 
 static inline int snd_pcm_hw_constraint_list(struct snd_pcm_runtime *run,
-					     int var1, int var2, void *ptr)
+					     int var1, int var2, const void *ptr)
 {
 	return 0;
 }
