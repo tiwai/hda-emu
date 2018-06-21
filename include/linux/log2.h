@@ -2,12 +2,6 @@
 #define _LINUX_LOG2_H
 
 /*
- * deal with unrepresentable constant logarithms
- */
-extern __attribute__((const, noreturn))
-int ____ilog2_NaN(void);
-
-/*
  *  Determine whether some value is a power of two, where zero is
  * *not* considered a power of two.
  */
@@ -30,7 +24,7 @@ bool is_power_of_2(unsigned long n)
  */
 #define ilog2(n)				\
 (						\
-		(n) < 1 ? ____ilog2_NaN() :	\
+		(n) < 2 ? 0 :	\
 		(n) & (1ULL << 63) ? 63 :	\
 		(n) & (1ULL << 62) ? 62 :	\
 		(n) & (1ULL << 61) ? 61 :	\
@@ -94,8 +88,7 @@ bool is_power_of_2(unsigned long n)
 		(n) & (1ULL <<  3) ?  3 :	\
 		(n) & (1ULL <<  2) ?  2 :	\
 		(n) & (1ULL <<  1) ?  1 :	\
-		(n) & (1ULL <<  0) ?  0 :	\
-		____ilog2_NaN()			\
+		0 \
  )
 
 /**
