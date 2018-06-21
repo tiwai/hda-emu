@@ -29,7 +29,7 @@ static inline size_t strlcpy(char *dest, const char *src, size_t size)
 
 static inline void *kmemdup(const void *src, size_t size, int gfp)
 {
-	void *dst = malloc(size);
+	void *dst = kmalloc(size, GFP_KERNEL);
 	if (!dst)
 		return NULL;
 	memcpy(dst, src, size);
