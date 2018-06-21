@@ -14,6 +14,7 @@ typedef unsigned int gfp_t;
 #define krealloc(ptr,size,gfp)	__hda_realloc(ptr, size, __FILE__, __LINE__, gfp)
 #define kfree(ptr)		__hda_free((void*)(ptr), __FILE__, __LINE__)
 #define kstrdup(str,gfp)	__hda_strdup(str, __FILE__, __LINE__, gfp)
+#define kmalloc_array(elem,size,gfp)	kmalloc((elem)*(size), gfp)
 
 static inline size_t strlcpy(char *dest, const char *src, size_t size)
 {
