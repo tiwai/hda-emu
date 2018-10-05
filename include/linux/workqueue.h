@@ -49,6 +49,7 @@ static inline void flush_scheduled_work(void)
 #define flush_work(w)		flush_scheduled_work()
 #define delayed_work_pending(q)	0
 #define workqueue_set_max_active(q,n) do {} while (0)
+#define current_work()		NULL /* XXX */
 
 static inline struct delayed_work *to_delayed_work(struct work_struct *work)
 {
