@@ -37,7 +37,7 @@
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 #include "hda/hda_local.h"
 #ifdef HAVE_HDA_BEEP
 #include "hda/hda_beep.h"
@@ -1130,11 +1130,13 @@ static void set_pincfg(struct xhda_codec *codec, int nid, int val, int user)
 {
 	struct xhda_node *node;
 
+#ifdef HAVE_USER_PINCFGS
 	if (user) {
 		hda_log_set_user_pin_configs(nid, val);
 		hda_log(HDA_LOG_INFO, "  User Pin 0x%02x to 0x%08x\n", nid, val);
 		return;
 	}
+#endif
 
 	node = find_node(codec, nid);
 	if (node) {

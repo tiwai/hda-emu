@@ -1,1 +1,1 @@
-#include "../../dist/include/sound/hda_i915.h"
+#include_next <sound/hda_i915.h>

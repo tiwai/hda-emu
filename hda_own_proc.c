@@ -29,7 +29,7 @@
 
 #include <linux/init.h>
 #include <sound/core.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 #include "hda/hda_local.h"
 
 #include "hda-missing-const.h"

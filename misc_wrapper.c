@@ -1,5 +1,5 @@
 #include <sound/core.h>
-#include "../hda/hda_codec.h"
+#include <sound/hda_codec.h>
 #include "../hda/hda_local.h"
 
 #if defined(CONFIG_SND_HDA_POWER_SAVE) && defined(CONFIG_SND_HDA_HWDEP)

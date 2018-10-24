@@ -76,7 +76,7 @@ libhda_a_SOURCES = hda_codec.c hda_generic.c misc_wrapper.c \
 	 $(PATCHES) $(HELPERS)
 noinst_HEADERS = init_hooks.h
 
-INCLUDES = -I$(top_srcdir)/include
+INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/dist/include
 
 misc_wrapper.c: ../misc_wrapper.c
 	ln -s ../misc_wrapper.c

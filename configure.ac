@@ -150,9 +150,20 @@ cat hda/*_*.c | grep '^module_hda_codec_driver(' | \
 
 echo '}' >> kernel/init_hooks.h
 
+AC_MSG_CHECKING(for local hda_codec.h)
+if test -f hda/hda_codec.h; then
+  AC_MSG_RESULT(yes)
+  rm -f include/sound/hda_codec.h
+  ln -s ../../hda/hda_codec.h include/sound/hda_codec.h
+else
+  AC_MSG_RESULT(no)
+  rm -f include/sound/hda_codec.h
+  ln -s ../../dist/include/sound/hda_codec.h include/sound/hda_codec.h
+fi
+
 AC_MSG_CHECKING(for presence of power_save option)
 HAVE_POWER_SAVE=
-if grep -q 'snd_hda_power_up' hda/hda_codec.h; then
+if grep -q 'snd_hda_power_up' include/sound/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_POWER_SAVE=1
 else
@@ -179,7 +190,7 @@ fi
 
 NEW_HDA_INFRA=
 AC_MSG_CHECKING(for new hda structure)
-if grep -q hda_bus_template hda/hda_codec.h; then
+if grep -q hda_bus_template include/sound/hda_codec.h; then
   AC_MSG_RESULT(no)
 else
   AC_MSG_RESULT(yes)
@@ -190,7 +201,7 @@ if test "$NEW_HDA_INFRA" = "yes"; then
 fi
 
 AC_MSG_CHECKING(for hda_bus_ops)
-if grep -q 'struct hda_bus_ops ' hda/hda_codec.h; then
+if grep -q 'struct hda_bus_ops ' include/sound/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_BUS_OPS=yes
 else
@@ -210,7 +221,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   extern struct hda_bus_ops *ops;
   ops->command(NULL, 0, 0, 0, 0);
@@ -234,7 +245,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   extern struct hda_bus_ops *ops;
   ops->pm_notify(NULL, 0);
@@ -258,7 +269,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   extern struct hda_bus_ops *ops;
   ops->attach_pcm(NULL, NULL, NULL);
@@ -283,7 +294,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   extern struct hda_bus_ops *ops;
   ops->get_response(NULL, 1);
@@ -315,7 +326,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   int err = snd_hda_codec_new(NULL, 0, NULL);
 ],
@@ -331,7 +342,7 @@ fi
 HAVE_HDA_PATCH_LOADER=
 if test "$OLD_HDA_CODEC_NEW" = "1"; then
 AC_MSG_CHECKING(for hda-patch)
-if grep -q snd_hda_load_patch hda/hda_codec.h; then
+if grep -q snd_hda_load_patch include/sound/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_HDA_PATCH_LOADER=yes
   AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
@@ -355,7 +366,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   struct hda_pcm pcm;
   pcm.pcm_type = 0;
@@ -370,7 +381,7 @@ if test "$OLD_HDA_PCM" = "1"; then
 fi
 
 AC_MSG_CHECKING(for hda-reconfigure)
-if grep -q snd_hda_codec_configure hda/hda_*.h; then
+if grep -q snd_hda_codec_configure hda/hda_*.h include/sound/hda_*.h; then
   AC_MSG_RESULT(yes)
   HAVE_RECONFIG=yes
   AC_DEFINE(CONFIG_SND_HDA_RECONFIG)
@@ -381,7 +392,7 @@ fi
 
 if test "$HAVE_RECONFIG" = "yes"; then
    AC_MSG_CHECKING(for user pin configs)
-   if grep -q user_pins hda/hda_codec.h; then
+   if grep -q user_pins include/sound/hda_codec.h; then
       AC_MSG_RESULT(yes)
       AC_DEFINE(HAVE_USER_PINCFGS)
    else
@@ -411,7 +422,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   struct hda_codec codec;
   codec.pin_amp_workaround = 1;
@@ -435,7 +446,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   struct hda_codec codec;
   codec.function_id = 1;
@@ -449,7 +460,7 @@ if test "$HDA_CODEC_FUNCTION_ID" = "1"; then
   AC_DEFINE(HDA_CODEC_FUNCTION_ID)
 fi
 
-AC_MSG_CHECKING(for snd_ctl_boolean_mono_info definition)
+AC_MSG_CHECKING(for local snd_ctl_boolean_mono_info definition)
 HAVE_BOOLEAN_INFO=
 if grep -q snd_ctl_boolean_mono_info hda/hda_local.h; then
   AC_MSG_RESULT(yes)
@@ -472,7 +483,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   snd_hda_suspend(NULL);
 ],
@@ -488,7 +499,7 @@ fi # !NEW_HDA_INFRA
 
 HAVE_SND_HDA_JACK=
 AC_MSG_CHECKING(for snd_hda_jack_xxx)
-if grep -q snd_hda_jack_free hda/hda_codec.h; then
+if grep -q snd_hda_jack_free include/sound/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_SND_HDA_JACK=yes
 else
@@ -508,7 +519,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   struct hda_spdif_out *spdif = snd_hda_spdif_out_of_nid(0, 0);
 ],
@@ -532,7 +543,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   snd_hda_calc_stream_format(0, 0, 0, 0, 0);
 ],
@@ -556,7 +567,7 @@ AC_TRY_COMPILE([
 #include <sound/driver.h>
 #include <sound/core.h>
 #include <sound/pcm.h>
-#include "hda/hda_codec.h"
+#include <sound/hda_codec.h>
 ],[
   snd_hda_calc_stream_format(0, 0, 0, 0, 0, 0);
 ],
@@ -571,7 +582,7 @@ fi
 
 HAVE_COMMON_PREPARE=
 AC_MSG_CHECKING(for common snd_hda_codec_prepare/cleanup)
-if grep -q snd_hda_codec_prepare hda/hda_codec.h; then
+if grep -q snd_hda_codec_prepare include/sound/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_COMMON_PREPARE=yes
 else
@@ -583,7 +594,7 @@ fi
 
 AC_MSG_CHECKING(for snd_hda_codec_get_pincfg)
 HAVE_SND_HDA_CODEC_GET_PINCFG=
-if grep -q 'snd_hda_codec_get_pincfg' hda/hda_codec.h; then
+if grep -q 'snd_hda_codec_get_pincfg' include/sound/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_SND_HDA_CODEC_GET_PINCFG=1
 else
@@ -595,7 +606,7 @@ fi
 
 AC_MSG_CHECKING(for codec user_mutex)
 HAVE_CODEC_USER_MUTEX=
-if grep -q 'user_mutex' hda/hda_codec.h; then
+if grep -q 'user_mutex' include/sound/hda_codec.h; then
   AC_MSG_RESULT(yes)
   HAVE_CODEC_USER_MUTEX=1
 else

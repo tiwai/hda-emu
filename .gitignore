@@ -20,6 +20,7 @@ config.status
 config.sub
 configure
 depcomp
+include/sound/hda_codec.h
 install-sh
 libtool
 ltmain.sh
