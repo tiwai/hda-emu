@@ -35,6 +35,8 @@ struct regmap_config {
 	unsigned int max_register;
 	enum regcache_type cache_type;
 	bool use_single_rw;
+	bool use_single_read;
+	bool use_single_write;
 };
 
 struct regmap *regmap_init(struct device *dev,
