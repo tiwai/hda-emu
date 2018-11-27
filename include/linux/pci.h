@@ -46,5 +46,6 @@ static inline void *pci_iomap(struct pci_dev *pci, int bar, int offset)
 }
 
 static inline void iounmap(void *addr) {}
+static inline void pci_iounmap(struct pci_dev *pci, void *addr) {}
 
 #endif /* __LINUX_PCI_H */
