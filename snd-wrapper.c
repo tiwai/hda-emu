@@ -26,6 +26,7 @@
 #include <sound/pcm.h>
 #include <assert.h>
 #include <sound/hda_codec.h>
+#include <linux/leds.h>
 #include "hda-types.h"
 #include "hda-log.h"
 
@@ -908,4 +909,13 @@ void pm_runtime_forbid(struct device *dev)
 {
 	dev->pmallow = 0;
 	check_resume(dev);
+}
+
+enum led_brightness ledtrig_audio_get(enum led_audio type)
+{
+	return LED_OFF;
+}
+
+void ledtrig_audio_set(enum led_audio type, enum led_brightness state)
+{
 }

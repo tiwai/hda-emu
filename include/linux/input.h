@@ -85,6 +85,8 @@ static inline void input_sync(struct input_dev *dev) {}
 #define KEY_MUTE		113
 #define KEY_VOLUMEDOWN		114
 #define KEY_VOLUMEUP		115
+#define KEY_PLAYPAUSE		164
 #define KEY_MICMUTE		248	/* Mute / unmute the microphone */
+#define KEY_VOICECOMMAND		0x246	/* Listening Voice Command */
 
 #endif /* __LINUX_INPUT_H */

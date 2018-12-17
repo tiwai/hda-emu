@@ -5,6 +5,10 @@ typedef struct {
 	int counter;
 } atomic_t;
 
+typedef struct {
+	long counter;
+} atomic_long_t;
+
 #define atomic_read(v)	((v)->counter)
 #define atomic_add_return(n, v)	((v)->counter += (n))
 #define atomic_sub_return(n, v)	((v)->counter -= (n))
