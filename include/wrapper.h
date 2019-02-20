@@ -152,9 +152,6 @@ typedef unsigned int uuid_le;
 #define __bitwise
 #define __iomem
 
-typedef int pm_message_t;
-#define PMSG_SUSPEND	0
-
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 
 #define cond_resched()

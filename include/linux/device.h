@@ -11,6 +11,7 @@ struct device_driver;
 struct bus_type;
 struct class;
 struct attribute_group;
+struct device_node;
 
 struct device {
 	struct kobject kobj;
@@ -21,6 +22,7 @@ struct device {
 	struct class *class;
 	void (*release)(struct device *);
 	const struct attribute_group **groups;
+	struct dev_pm_info power;
 
 	/* hda-emu specific */
 	void *device_data;
