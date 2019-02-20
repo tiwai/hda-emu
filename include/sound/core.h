@@ -79,6 +79,7 @@ typedef int snd_device_type_t;
 #define	SNDRV_DEV_INFO		(0x1006)
 #define	SNDRV_DEV_BUS		(0x1007)
 #define	SNDRV_DEV_CODEC		(0x1008)
+#define	SNDRV_DEV_JACK		(0x1009)
 #define	SNDRV_DEV_LOWLEVEL	(0x2000)
 
 struct snd_device_ops {

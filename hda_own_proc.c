@@ -748,4 +748,3 @@ int snd_hda_codec_proc_new(struct hda_codec *codec)
 	snd_info_set_text_ops(entry, codec, print_codec_info);
 	return 0;
 }
-
