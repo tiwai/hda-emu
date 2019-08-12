@@ -59,6 +59,9 @@
 	(type *)( (char *)__mptr - offsetof(type,member) );})
 #define prefetch(x) (x)
 
+#define struct_size(p, member, n) \
+	(((n) * sizeof(*(p)->member)) + sizeof(*p))
+
 #include <stdio.h>
 #include <stdint.h>
 #include <errno.h>
