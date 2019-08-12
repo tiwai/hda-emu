@@ -636,4 +636,24 @@ else
   AC_MSG_RESULT(no)
 fi
 
+AC_MSG_CHECKING(for HDMI chmap helper)
+if test -f dist/sound/hda/hdmi_chmap.c; then
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(HAVE_HDMI_CHMAP)
+else
+  AC_MSG_RESULT(no)
+fi
+
+AC_MSG_CHECKING(for HDMI chmap helper)
+HAVE_HDAC_IO_OPS=
+if grep -q 'struct hdac_io_ops' dist/include/sound/hdaudio.h; then
+  AC_MSG_RESULT(yes)
+  HAVE_HDAC_IO_OPS=1
+else
+  AC_MSG_RESULT(no)
+fi
+if test "$HAVE_HDAC_IO_OPS" = "1"; then
+  AC_DEFINE(HAVE_HDAC_IO_OPS)
+fi
+
 AC_OUTPUT(Makefile lib/Makefile kernel/Makefile include/Makefile)

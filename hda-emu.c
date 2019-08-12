@@ -1559,7 +1559,11 @@ int main(int argc, char **argv)
 #ifdef HAVE_BUS_OPS
 	err = snd_hda_bus_new(&card, &bus);
 #else /* HAVE_BUS_OPS */
+#ifdef HAVE_HDAC_IO_OPS
 	err = snd_hdac_bus_init(&_bus.core, NULL, NULL, NULL);
+#else
+	err = snd_hdac_bus_init(&_bus.core, NULL, NULL);
+#endif
 	bus = &_bus;
 	bus->card = &card;
 	mutex_init(&bus->prepare_mutex);
