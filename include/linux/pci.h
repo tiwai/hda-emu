@@ -5,6 +5,7 @@
 #include <linux/device.h>
 
 struct pci_dev {
+	struct pci_bus	*bus;
 	unsigned short vendor;
 	unsigned short device;
 	unsigned short subsystem_vendor;
@@ -47,5 +48,8 @@ static inline void *pci_iomap(struct pci_dev *pci, int bar, int offset)
 
 static inline void iounmap(void *addr) {}
 static inline void pci_iounmap(struct pci_dev *pci, void *addr) {}
+
+#define dev_is_pci(d) true
+#define	to_pci_dev(n) container_of(n, struct pci_dev, dev)
 
 #endif /* __LINUX_PCI_H */
