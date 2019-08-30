@@ -222,6 +222,16 @@ void hda_set_power_save(int val)
 #endif /* HDA_OLD_POWER_SAVE */
 }
 
+int hda_get_dump_coef(void)
+{
+	return _codec->dump_coef;
+}
+
+void hda_set_dump_coef(int val)
+{
+	_codec->dump_coef = val;
+}
+
 /*
  * proc dump
  */

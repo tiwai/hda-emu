@@ -379,10 +379,8 @@ static void handle_module_option(char *line)
 	char *opt;
 
 	opt = gettoken(&line);
-	if (!opt) {
-		usage("option");
-		return;
-	}
+	if (!opt)
+		goto usage;
 	if (!strcmp(opt, "power_save")) {
 		char *p = gettoken(&line);
 		if (!p)
@@ -390,10 +388,19 @@ static void handle_module_option(char *line)
 				hda_get_power_save());
 		else
 			hda_set_power_save(atoi(p));
-	} else {
-		hda_log(HDA_LOG_INFO, "Available options: power_save\n");
+		return;
 	}
-	return;
+	if (!strcmp(opt, "dump_coef")) {
+		char *p = gettoken(&line);
+		if (!p)
+			hda_log(HDA_LOG_INFO, "Dump-COEF = %d\n",
+				hda_get_dump_coef());
+		else
+			hda_set_dump_coef(atoi(p));
+		return;
+	}
+ usage:
+	hda_log(HDA_LOG_INFO, "Available options: power_save, dump_coef\n");
 }
 
 static void set_jack(char *line)

@@ -54,6 +54,8 @@ void hda_test_pcm(int stream, int op, int substream,
 
 int hda_get_power_save(void);
 void hda_set_power_save(int val);
+int hda_get_dump_coef(void);
+void hda_set_dump_coef(int val);
 
 struct xhda_codec;
 
