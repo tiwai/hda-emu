@@ -339,4 +339,11 @@ module_exit(__driver##_exit);
 #define cpu_relax()
 #define wmb()
 
+typedef int wait_queue_head_t; // just a hack, no real meaning
+#define init_waitqueue_head(x) // we don't care for now
+
+typedef int irqreturn_t; // just a hack
+
+struct vm_area_struct;
+
 #endif /* __HDA_WRAPPER_H */

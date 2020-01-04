@@ -203,4 +203,6 @@ void snd_kctl_jack_report(struct snd_card *card,
 #define snd_ctl_elem_read(card,ctl) 0
 #define snd_ctl_elem_write(card,file,ctl) 0
 
+#define SNDRV_CTL_ELEM_ACCESS_SKIP_CHECK	0
+
 #endif /* __SOUND_CONTROL_H */

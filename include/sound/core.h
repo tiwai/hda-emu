@@ -90,7 +90,7 @@ struct snd_device_ops {
 
 static inline
 int snd_device_new(struct snd_card *card, snd_device_type_t type,
-		   void *device_data, struct snd_device_ops *ops)
+		   void *device_data, const struct snd_device_ops *ops)
 {
 	return 0;
 }

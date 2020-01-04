@@ -37,6 +37,7 @@ struct regmap_config {
 	bool use_single_rw;
 	bool use_single_read;
 	bool use_single_write;
+	bool disable_locking;
 };
 
 struct regmap *regmap_init(struct device *dev,
