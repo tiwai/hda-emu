@@ -154,6 +154,7 @@ typedef unsigned int uuid_le;
 #define __user
 #define __bitwise
 #define __iomem
+#define __must_check
 
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 

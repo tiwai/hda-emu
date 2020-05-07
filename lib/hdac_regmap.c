@@ -183,3 +183,34 @@ void regcache_mark_dirty(struct regmap *map)
 	map->cache_dirty = true;
 }
 
+int regmap_update_bits(struct regmap *map, unsigned int reg,
+		       unsigned int mask, unsigned int val)
+{
+	return regmap_update_bits_check(map, reg, mask, val, NULL);
+}
+
+int regmap_update_bits_check(struct regmap *map, unsigned int reg,
+			     unsigned int mask, unsigned int val,
+			     bool *change)
+{
+	unsigned int tmp, orig;
+	int ret;
+
+	if (change)
+		*change = false;
+
+	ret = map->config->reg_read(map->bus_context, reg, &orig);
+	if (ret != 0)
+		return ret;
+
+	tmp = orig & ~mask;
+	tmp |= val & mask;
+
+	if (tmp != orig) {
+		ret = map->config->reg_write(map->bus_context, reg, tmp);
+		if (ret == 0 && change)
+			*change = true;
+	}
+
+	return ret;
+}
