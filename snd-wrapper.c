@@ -919,3 +919,10 @@ enum led_brightness ledtrig_audio_get(enum led_audio type)
 void ledtrig_audio_set(enum led_audio type, enum led_brightness state)
 {
 }
+
+int devm_led_classdev_register_ext(struct device *parent,
+				   struct led_classdev *led_cdev,
+				   struct led_init_data *init_data)
+{
+	return 0;
+}
