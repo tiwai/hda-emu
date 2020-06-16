@@ -520,6 +520,7 @@ void hda_test_pm_reinit(void)
 /*
  * unsol even handling
  */
+extern void snd_hdac_bus_queue_event(struct hdac_bus *bus, u32 res, u32 res_ex);
 
 static void issue_unsol(int caddr, int res)
 {
@@ -541,7 +542,11 @@ static void issue_unsol(int caddr, int res)
 	else
 		res = (res & 0x3f) << 26;
 
+#if 0 // old API
 	snd_hda_queue_unsol_event(bus, res, caddr);
+#else
+	snd_hdac_bus_queue_event(&bus->core, res, caddr);
+#endif
 }
 
 #ifdef CONFIG_SND_HDA_RECONFIG
