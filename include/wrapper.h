@@ -347,4 +347,9 @@ typedef int irqreturn_t; // just a hack
 
 struct vm_area_struct;
 
+// UUID
+typedef struct {
+	__u8 b[16];
+} guid_t;
+
 #endif /* __HDA_WRAPPER_H */
