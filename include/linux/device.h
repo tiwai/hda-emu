@@ -115,4 +115,7 @@ struct device_attribute {
 #define DEVICE_ATTR_RO(_name) \
 	struct device_attribute dev_attr_##_name = __ATTR_RO(_name)
 
+#define devm_kmalloc(dev, size, gfp)	kmalloc(size, gfp)
+#define devm_kzalloc(dev, size, gfp)	kzalloc(size, gfp)
+
 #endif /* __LINUX_DEVICE_H */

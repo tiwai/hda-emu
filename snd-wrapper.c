@@ -911,18 +911,36 @@ void pm_runtime_forbid(struct device *dev)
 	check_resume(dev);
 }
 
+static enum led_brightness led_states[2];
+static char *led_names[2] = { "mute", "micmute" };
+static struct led_classdev *led_devs[2];
+
 enum led_brightness ledtrig_audio_get(enum led_audio type)
 {
-	return LED_OFF;
+	return led_states[type];
 }
 
 void ledtrig_audio_set(enum led_audio type, enum led_brightness state)
 {
+	led_states[type] = state;
+	hda_log(HDA_LOG_INFO, "LED state %s = %d\n", led_names[type], state);
+	if (led_devs[type])
+		led_devs[type]->brightness_set_blocking(led_devs[type], state);
 }
 
 int devm_led_classdev_register_ext(struct device *parent,
 				   struct led_classdev *led_cdev,
 				   struct led_init_data *init_data)
 {
+	if (!strcmp(led_cdev->name, "hda::mute")) {
+		led_devs[LED_AUDIO_MUTE] = led_cdev;
+	} else if (!strcmp(led_cdev->name, "hda::micmute")) {
+		led_devs[LED_AUDIO_MICMUTE] = led_cdev;
+	} else {
+		hda_log(HDA_LOG_ERR, "Invalid LED cdev name %s\n", led_cdev->name);
+		return -EINVAL;
+	}
+	led_cdev->dev = calloc(sizeof(struct device), 1);
+	led_cdev->dev->parent = parent;
 	return 0;
 }
