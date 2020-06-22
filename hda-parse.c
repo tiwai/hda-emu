@@ -494,7 +494,19 @@ static int check_alsa_info(char *line, int override)
 		}
 		return 0;
 	}
-	if (sscanf(line, "        Subsystem: %04x:%04x", &vendor, &id) == 2) {
+	if (sscanf(line, "%02x:%02x.%1d Audio device [%04x]:",
+		   &dummy, &dummy, &dummy, &classid) == 4 &&
+	    classid == 0x0403 && 
+	    (override || !codec->pci_vendor)) {
+		if (sscanf(line + strlen(line) - 12, "[%04x:%04x]",
+			   &vendor, &id) == 2) {
+			codec->pci_vendor = vendor;
+			codec->pci_device = id;
+		}
+		return 0;
+	}
+	if (sscanf(line, "\tSubsystem: %04x:%04x", &vendor, &id) == 2 ||
+	    sscanf(line, "        Subsystem: %04x:%04x", &vendor, &id) == 2) {
 		if (override || !codec->pci_subvendor) {
 			codec->pci_subvendor = vendor;
 			codec->pci_subdevice = id;
@@ -505,6 +517,21 @@ static int check_alsa_info(char *line, int override)
 		}
 		return 1;
 	}
+	if (!strncmp(line, "\tSubsystem: ", 12) ||
+	    !strncmp(line, "        Subsystem: ", 19)) {
+		if ((override || !codec->pci_subvendor) &&
+		    sscanf(line + strlen(line) - 12, "[%04x:%04x]",
+			   &vendor, &id) == 2) {
+			codec->pci_subvendor = vendor;
+			codec->pci_subdevice = id;
+			hda_log(HDA_LOG_INFO, "Getting PCI ID %04x:%04x (%04x:%04x) rev %02x\n",
+				codec->pci_vendor, codec->pci_device,
+				codec->pci_subvendor, codec->pci_subdevice,
+				codec->pci_revision);
+			return 1;
+		}
+	}
+
 	return 0;
 }
 
