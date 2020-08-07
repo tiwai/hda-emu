@@ -352,4 +352,6 @@ typedef struct {
 	__u8 b[16];
 } guid_t;
 
+#define fallthrough	/**/
+
 #endif /* __HDA_WRAPPER_H */
