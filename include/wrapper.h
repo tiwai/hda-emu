@@ -354,4 +354,8 @@ typedef struct {
 
 #define fallthrough	/**/
 
+struct completion {
+	int dummy;
+};
+
 #endif /* __HDA_WRAPPER_H */
