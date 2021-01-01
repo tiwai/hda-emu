@@ -838,6 +838,15 @@ int device_attach(struct device *dev)
 	return 0;
 }
 
+int device_release_driver(struct device *dev)
+{
+	if (dev->driver) {
+		dev->driver->remove(dev);
+		dev->driver = NULL;
+	}
+	return 0;
+}
+
 /*
  */
 static void check_resume(struct device *dev)

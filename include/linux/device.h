@@ -78,6 +78,7 @@ struct device_driver {
 int driver_register(struct device_driver *drv);
 void driver_unregister(struct device_driver *drv);
 int device_attach(struct device *dev);
+int device_release_driver(struct device *dev);
 
 struct bus_type {
 	const char		*name;
