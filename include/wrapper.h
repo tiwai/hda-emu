@@ -358,4 +358,7 @@ struct completion {
 	int dummy;
 };
 
+#define DIV_ROUND_UP(a, b)	(((a) + (b) - 1) / (b))
+#define roundup(a, b)		(DIV_ROUND_UP(a, b) * (b))
+
 #endif /* __HDA_WRAPPER_H */
