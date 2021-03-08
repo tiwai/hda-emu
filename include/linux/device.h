@@ -42,7 +42,11 @@ struct device {
 #define dev_info(dev, fmt, args...)	pr_info(fmt, ##args)
 #define dev_dbg(dev, fmt, args...)	pr_debug(fmt, ##args)
 
-/* device management */
+#define dev_err_ratelimited(dev, fmt, args...)	pr_err(fmt, ##args)
+#define dev_warn_ratelimited(dev, fmt, args...)	pr_err(fmt, ##args)
+#define dev_info_ratelimited(dev, fmt, args...)	pr_err(fmt, ##args)
+#define dev_dbg_ratelimited(dev, fmt, args...)	pr_err(fmt, ##args)
+
 struct device;
 #define get_device(dev)		/* NOP */
 #define put_device(dev)		/* NOP */

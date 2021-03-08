@@ -27,6 +27,8 @@ static inline size_t strlcpy(char *dest, const char *src, size_t size)
 	return ret;
 }
 
+#define strscpy(a,b,c) strlcpy(a,b,c)
+
 static inline void *kmemdup(const void *src, size_t size, int gfp)
 {
 	void *dst = kmalloc(size, GFP_KERNEL);

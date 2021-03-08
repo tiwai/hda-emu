@@ -5,6 +5,7 @@
 #define __HDA_WRAPPER_H
 
 #include <stdarg.h>
+#include <linux/delay.h>
 
 #define min(x, y) ({				\
 	typeof(x) _min1 = (x);			\
@@ -159,6 +160,7 @@ typedef unsigned int uuid_le;
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 
 #define cond_resched()
+#define schedule_timeout(x)
 
 #undef abs
 #define abs(x) ({				\
@@ -183,6 +185,9 @@ typedef unsigned int uuid_le;
 static inline bool time_after_eq(unsigned long a, unsigned long b)
 { return 1; }
 
+static inline bool time_after(unsigned long a, unsigned long b)
+{ return 1; }
+
 static inline bool time_before(unsigned long a, unsigned long b)
 { return 0; }
 
@@ -200,6 +205,8 @@ static inline int _WARN_ON(int cond, const char *func, int line)
 }
 
 #define WARN_ON(cond)	_WARN_ON(!!(cond), __func__, __LINE__)
+
+#define WARN_ON_ONCE(cond)	WARN_ON(cond)
 
 #define simple_strtoul	strtoul
 #define simple_strtol	strtol
@@ -360,5 +367,17 @@ struct completion {
 
 #define DIV_ROUND_UP(a, b)	(((a) + (b) - 1) / (b))
 #define roundup(a, b)		(DIV_ROUND_UP(a, b) * (b))
+
+
+/* XXX just for hdac_controller.c */
+typedef int wait_queue_entry_t;
+#define waitqueue_active(x)	false
+#define wake_up(x)		do {} while (0)
+#define init_wait_entry(x,y)	do {} while (0)
+#define prepare_to_wait(x,y,z)	do {} while (0)
+#define finish_wait(x,y)	do {} while (0)
+
+#define snd_dma_alloc_pages(type, dev, size, dp)	0
+#define snd_dma_free_pages(dp)
 
 #endif /* __HDA_WRAPPER_H */
