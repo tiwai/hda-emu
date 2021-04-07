@@ -17,6 +17,7 @@ static inline void pm_runtime_get_noresume(struct device *dev) { dev->pmcnt++; }
 static inline void pm_runtime_put_noidle(struct device *dev) { dev->pmcnt--; }
 
 static inline int pm_runtime_set_suspended(struct device *dev) { return 0; } // XXX
+static inline int pm_request_resume(struct device *dev) { return 0; } // XXX
 
 int pm_runtime_get_sync(struct device *dev);
 int pm_runtime_get_if_in_use(struct device *dev);
